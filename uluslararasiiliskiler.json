@@ -1103,5 +1103,149 @@
     ],
     "dogru_index": 0,
     "aciklama": "Diplomasi, krizlerin erken aşamada çözülmesini ve çatışmaların önlenmesini sağlar."
+  },
+  {
+    "konu": "Dış Politika Analizi",
+    "soru": "Güç dengesi anlayışı aşağıdaki uluslararası ilişkiler teorilerinden hangisiyle en yakından ilişkilidir?",
+    "secenekler": [
+      "Realizm",
+      "İngiliz Okulu",
+      "Konstrüktivizm",
+      "Feminizm"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Realizm devletler arası güç dengesini uluslararası düzenin temel belirleyeni olarak görür."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler Güvenlik Konseyi'nin daimi üyelerinden biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Almanya",
+      "Hindistan",
+      "Japonya",
+      "Fransa"
+    ],
+    "dogru_index": 3,
+    "aciklama": "BMGK daimi üyeleri ABD, Rusya, Çin, Birleşik Krallık ve Fransa'dır."
+  },
+  {
+    "konu": "Teoriler",
+    "soru": "Uluslararası ilişkilerde realizmin temel varsayımı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Devlet dışı aktörler en önemli güçtür.",
+      "Uluslararası sistem hiyerarşiktir.",
+      "Devletler çıkarlarını güç üzerinden maksimize eder.",
+      "İşbirliği güvenlik ikilemini ortadan kaldırır."
+    ],
+    "dogru_index": 2,
+    "aciklama": "Realizm, anarşik sistemde devletlerin güç ve güvenlik arayışıyla hareket ettiğini savunur."
+  },
+  {
+    "konu": "Örgütler",
+    "soru": "NATO'nun kolektif savunma hükmü hangi maddede yer alır?",
+    "secenekler": [
+      "Madde 3",
+      "Madde 5",
+      "Madde 7",
+      "Madde 10"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Üyeye yapılan saldırının tüm üyelere yapılmış sayılacağı Madde 5'te düzenlenir."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye'nin Avrupa Birliği'ne aday ülke statüsü hangi zirvede resmileşmiştir?",
+    "secenekler": [
+      "Lüksemburg 1997",
+      "Helsinki 1999",
+      "Kopenhag 2002",
+      "Lizbon 2007"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1999 Helsinki Zirvesi'nde Türkiye'ye aday ülke statüsü tanındı."
+  },
+  {
+    "konu": "Güvenlik",
+    "soru": "Güvenlik ikilemi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Devletlerin savunma tedbirlerinin karşılıklı güvensizliği artırması",
+      "Sadece ekonomik tehditlerin güvenliği belirlemesi",
+      "Silahsızlanmanın çatışmayı artırması",
+      "İttifakların caydırıcılığı azaltması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bir devletin aldığı önlemler diğerlerinde tehdit algısı doğurarak güvensizliği büyütür."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Birleşmiş Milletler'de bağlayıcı karar alma yetkisi kimdedir?",
+    "secenekler": [
+      "Genel Kurul",
+      "Güvenlik Konseyi",
+      "Ekonomik ve Sosyal Konsey",
+      "Sekretarya"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Güvenlik Konseyi uluslararası barış ve güvenlik konularında bağlayıcı karar alır."
+  },
+  {
+    "konu": "Küreselleşme",
+    "soru": "Yumuşak güç kavramı en çok hangi düşünürle ilişkilendirilir?",
+    "secenekler": [
+      "Kenneth Waltz",
+      "Joseph Nye",
+      "Robert Keohane",
+      "Hans Morgenthau"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Joseph Nye yumuşak güç kavramını literatüre kazandırmıştır."
+  },
+  {
+    "konu": "Bölgesel Örgütler",
+    "soru": "ASEAN hangi bölgenin örgütüdür?",
+    "secenekler": [
+      "Güney Amerika",
+      "Güneydoğu Asya",
+      "Afrika Boynuzu",
+      "Orta Asya"
+    ],
+    "dogru_index": 1,
+    "aciklama": "ASEAN Güneydoğu Asya ülkelerini bir araya getirir."
+  },
+  {
+    "konu": "Dış Politika Araçları",
+    "soru": "Ambargo hangi dış politika aracına örnektir?",
+    "secenekler": [
+      "Askeri güç kullanımı",
+      "Ekonomik yaptırım",
+      "Kültürel diplomasi",
+      "Halkla ilişkiler"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ambargo ekonomik yaptırım niteliğindedir."
+  },
+  {
+    "konu": "Diplomasi",
+    "soru": "Diplomatik dokunulmazlıkları düzenleyen temel belge hangisidir?",
+    "secenekler": [
+      "Viyana Diplomatik İlişkiler Sözleşmesi",
+      "Versay Antlaşması",
+      "Montevideo Sözleşmesi",
+      "Lozan Antlaşması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1961 tarihli Viyana Sözleşmesi diplomatik dokunulmazlıkları belirler."
+  },
+  {
+    "konu": "Enerji Politikaları",
+    "soru": "TürkAkım doğal gaz hattı hangi iki ülke arasında Karadeniz üzerinden uzanır?",
+    "secenekler": [
+      "Rusya-Türkiye",
+      "Azerbaycan-Türkiye",
+      "Rusya-Ukrayna",
+      "Türkmenistan-Türkiye"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hat Rusya'dan başlayıp Karadeniz üzerinden Türkiye'ye uzanır."
   }
 ]
