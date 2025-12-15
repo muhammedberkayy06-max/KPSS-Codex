@@ -54,6 +54,32 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
+
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
 }
@@ -273,7 +299,7 @@ function setMode(mode){
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
 
-  renderLessonIcons(mode);
+  syncLessonUI(mode);
 }
 
 function fillLessonSelect(){
@@ -340,21 +366,31 @@ async function fetchJSON(path){
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
-  for (const [lesson, file] of Object.entries(FILES)) {
+  const missing = [];
+
+  const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
     try {
       const data = await fetchJSON(file);
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.");
-      setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
-      showAlert(tip);
-      throw e;
+      banks[lesson] = [];
+      missing.push({ lesson, file, error: e?.message || e });
     }
-  }
+  });
+
+  await Promise.all(jobs);
   App.allBanks = banks;
-  setNotice("Soru paketleri hazır ✅", "info");
-  renderLessonIcons(App.mode);
+
+  if (missing.length){
+    const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
+    setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
+    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+  } else {
+    setNotice("Soru paketleri hazır ✅", "info");
+  }
+
+  syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -1021,10 +1057,13 @@ async function init(){
 
   try {
     await loadAllBanks();
+    syncLessonUI(App.mode);
     setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
   } catch (e) {
     console.error(e);
     setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
+    // UI boş kalmasın diye son kez senkronla
+    syncLessonUI(App.mode);
   }
 }
 
