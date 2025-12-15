@@ -1,752 +1,652 @@
 [
   {
-    "id": 381,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Yönetimi Tanımı",
     "soru": "Kamu yönetimi hangi amacı taşır?",
-    "secenekler": {
-      "A": "Kamusal hizmetlerin etkin ve verimli yürütülmesini sağlamak",
-      "B": "Sadece ekonomik kazanç elde etmek",
-      "C": "Kültürel etkinlik düzenlemek",
-      "D": "Askeri operasyon yürütmek",
-      "E": "Hiçbir amaç taşımamak"
-    },
-    "dogru": "A",
-    "cozum": "Kamu yönetimi, devletin kamusal hizmetlerini etkin ve verimli bir şekilde yürütmesini sağlar."
+    "secenekler": [
+      "Kamusal hizmetlerin etkin ve verimli yürütülmesini sağlamak",
+      "Sadece ekonomik kazanç elde etmek",
+      "Kültürel etkinlik düzenlemek",
+      "Askeri operasyon yürütmek",
+      "Hiçbir amaç taşımamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu yönetimi, devletin kamusal hizmetlerini etkin ve verimli bir şekilde yürütmesini sağlar."
   },
   {
-    "id": 382,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Yönetiminin Fonksiyonları",
     "soru": "Kamu yönetimi hangi temel fonksiyonları yürütür?",
-    "secenekler": {
-      "A": "Planlama, organizasyon, koordinasyon ve kontrol",
-      "B": "Sadece finansal yönetim",
-      "C": "Kültürel etkinlikler",
-      "D": "Askeri harekât",
-      "E": "Hiçbir fonksiyon"
-    },
-    "dogru": "A",
-    "cozum": "Kamu yönetimi temel olarak planlama, organizasyon, koordinasyon ve kontrol fonksiyonlarını yürütür."
+    "secenekler": [
+      "Planlama, organizasyon, koordinasyon ve kontrol",
+      "Sadece finansal yönetim",
+      "Kültürel etkinlikler",
+      "Askeri harekât",
+      "Hiçbir fonksiyon"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu yönetimi temel olarak planlama, organizasyon, koordinasyon ve kontrol fonksiyonlarını yürütür."
   },
   {
-    "id": 383,
-    "ders": "Kamu Yönetimi",
     "konu": "Merkezi ve Yerel Yönetim",
     "soru": "Merkezi yönetim ile yerel yönetim arasındaki temel fark nedir?",
-    "secenekler": {
-      "A": "Merkezi yönetim ulusal politikaları uygular, yerel yönetim yerel hizmetleri yürütür",
-      "B": "Merkezi yönetim sadece ekonomik karar alır",
-      "C": "Yerel yönetim sadece kültürel etkinlik yürütür",
-      "D": "Hiçbir fark yoktur",
-      "E": "Merkezi yönetim yerel hizmetleri yürütür"
-    },
-    "dogru": "A",
-    "cozum": "Merkezi yönetim, ulusal düzeyde politikaları uygular; yerel yönetim ise bölgesel ve yerel hizmetleri yürütür."
+    "secenekler": [
+      "Merkezi yönetim ulusal politikaları uygular, yerel yönetim yerel hizmetleri yürütür",
+      "Merkezi yönetim sadece ekonomik karar alır",
+      "Yerel yönetim sadece kültürel etkinlik yürütür",
+      "Hiçbir fark yoktur",
+      "Merkezi yönetim yerel hizmetleri yürütür"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Merkezi yönetim, ulusal düzeyde politikaları uygular; yerel yönetim ise bölgesel ve yerel hizmetleri yürütür."
   },
   {
-    "id": 384,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Hizmetlerinin Niteliği",
     "soru": "Kamu hizmetlerinin karakteristik özelliği nedir?",
-    "secenekler": {
-      "A": "Herkese eşit ve adil bir şekilde sunulması",
-      "B": "Sadece belirli gruplara sunulması",
-      "C": "Kâr amacıyla yürütülmesi",
-      "D": "Kültürel etkinlik odaklı olması",
-      "E": "Hiçbir özelliği yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Kamu hizmetleri, herkese eşit ve adil bir şekilde sunulmak zorundadır."
+    "secenekler": [
+      "Herkese eşit ve adil bir şekilde sunulması",
+      "Sadece belirli gruplara sunulması",
+      "Kâr amacıyla yürütülmesi",
+      "Kültürel etkinlik odaklı olması",
+      "Hiçbir özelliği yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu hizmetleri, herkese eşit ve adil bir şekilde sunulmak zorundadır."
   },
   {
-    "id": 385,
-    "ders": "Kamu Yönetimi",
     "konu": "Yönetişim (Governance)",
     "soru": "Yönetişim kavramı neyi ifade eder?",
-    "secenekler": {
-      "A": "Devlet, toplum ve özel sektörün işbirliği ile karar alma ve uygulama süreci",
-      "B": "Sadece devletin karar alması",
-      "C": "Kamuoyu baskısı",
-      "D": "Askeri denetim",
-      "E": "Hiçbir anlam ifade etmez"
-    },
-    "dogru": "A",
-    "cozum": "Yönetişim, devlet, toplum ve özel sektörün işbirliğiyle karar alma ve uygulama sürecini ifade eder."
+    "secenekler": [
+      "Devlet, toplum ve özel sektörün işbirliği ile karar alma ve uygulama süreci",
+      "Sadece devletin karar alması",
+      "Kamuoyu baskısı",
+      "Askeri denetim",
+      "Hiçbir anlam ifade etmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yönetişim, devlet, toplum ve özel sektörün işbirliğiyle karar alma ve uygulama sürecini ifade eder."
   },
   {
-    "id": 386,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Yönetiminde Hesap Verebilirlik",
     "soru": "Kamu yönetiminde hesap verebilirlik neden önemlidir?",
-    "secenekler": {
-      "A": "Kamusal kaynakların doğru ve etkin kullanımını sağlar",
-      "B": "Sadece ekonomik kazanç sağlar",
-      "C": "Kültürel etkinlikleri artırır",
-      "D": "Askeri üstünlük kazandırır",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Hesap verebilirlik, kamusal kaynakların doğru, adil ve etkin kullanılmasını garanti eder."
+    "secenekler": [
+      "Kamusal kaynakların doğru ve etkin kullanımını sağlar",
+      "Sadece ekonomik kazanç sağlar",
+      "Kültürel etkinlikleri artırır",
+      "Askeri üstünlük kazandırır",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hesap verebilirlik, kamusal kaynakların doğru, adil ve etkin kullanılmasını garanti eder."
   },
   {
-    "id": 387,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Politikaları",
     "soru": "Kamu politikalarının hazırlanmasında hangi süreç izlenir?",
-    "secenekler": {
-      "A": "Sorun analizi → Politika tasarımı → Uygulama → Değerlendirme",
-      "B": "Sadece uygulama yapılır",
-      "C": "Kültürel etkinlikler tasarlanır",
-      "D": "Askeri operasyon yapılır",
-      "E": "Hiçbir süreç izlenmez"
-    },
-    "dogru": "A",
-    "cozum": "Kamu politikaları, sorun analizi, tasarım, uygulama ve değerlendirme aşamalarından geçer."
+    "secenekler": [
+      "Sorun analizi → Politika tasarımı → Uygulama → Değerlendirme",
+      "Sadece uygulama yapılır",
+      "Kültürel etkinlikler tasarlanır",
+      "Askeri operasyon yapılır",
+      "Hiçbir süreç izlenmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu politikaları, sorun analizi, tasarım, uygulama ve değerlendirme aşamalarından geçer."
   },
   {
-    "id": 388,
-    "ders": "Kamu Yönetimi",
     "konu": "Etkinlik ve Verimlilik",
     "soru": "Kamu yönetiminde etkinlik ve verimlilik hangi anlamı taşır?",
-    "secenekler": {
-      "A": "Hedeflenen sonuçların minimum kaynakla elde edilmesi",
-      "B": "Sadece maliyetlerin artırılması",
-      "C": "Kültürel etkinliklerin çoğaltılması",
-      "D": "Askeri gücün artırılması",
-      "E": "Hiçbir anlamı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Etkinlik ve verimlilik, kamu hizmetlerinin minimum kaynakla maksimum sonuç sağlamasıdır."
+    "secenekler": [
+      "Hedeflenen sonuçların minimum kaynakla elde edilmesi",
+      "Sadece maliyetlerin artırılması",
+      "Kültürel etkinliklerin çoğaltılması",
+      "Askeri gücün artırılması",
+      "Hiçbir anlamı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Etkinlik ve verimlilik, kamu hizmetlerinin minimum kaynakla maksimum sonuç sağlamasıdır."
   },
   {
-    "id": 389,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Yönetiminde Yenilikçilik",
     "soru": "Kamu yönetiminde yenilikçilik neden önemlidir?",
-    "secenekler": {
-      "A": "Hizmet kalitesini artırmak ve modern yönetim sağlamak",
-      "B": "Sadece maliyetleri artırmak",
-      "C": "Kültürel etkinlikleri yönetmek",
-      "D": "Askeri üstünlük sağlamak",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Yenilikçilik, kamu hizmetlerinin kalitesini artırır ve modern yönetimi destekler."
+    "secenekler": [
+      "Hizmet kalitesini artırmak ve modern yönetim sağlamak",
+      "Sadece maliyetleri artırmak",
+      "Kültürel etkinlikleri yönetmek",
+      "Askeri üstünlük sağlamak",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yenilikçilik, kamu hizmetlerinin kalitesini artırır ve modern yönetimi destekler."
   },
   {
-    "id": 390,
-    "ders": "Kamu Yönetimi",
     "konu": "Performans Ölçümü",
     "soru": "Kamu yönetiminde performans ölçümü hangi amaçla yapılır?",
-    "secenekler": {
-      "A": "Hizmetlerin etkinliğini ve verimliliğini değerlendirmek",
-      "B": "Sadece mali denetim yapmak",
-      "C": "Kültürel etkinlikleri artırmak",
-      "D": "Askeri planlama yapmak",
-      "E": "Hiçbir amaçla yapılmaz"
-    },
-    "dogru": "A",
-    "cozum": "Performans ölçümü, kamu hizmetlerinin etkinlik ve verimliliğini değerlendirmek için yapılır."
+    "secenekler": [
+      "Hizmetlerin etkinliğini ve verimliliğini değerlendirmek",
+      "Sadece mali denetim yapmak",
+      "Kültürel etkinlikleri artırmak",
+      "Askeri planlama yapmak",
+      "Hiçbir amaçla yapılmaz"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Performans ölçümü, kamu hizmetlerinin etkinlik ve verimliliğini değerlendirmek için yapılır."
   },
   {
-    "id": 391,
-    "ders": "Kamu Yönetimi",
     "konu": "Merkezi Yönetim",
     "soru": "Merkezi yönetimin başlıca görevi nedir?",
-    "secenekler": {
-      "A": "Ulusal politikaları uygulamak ve kamu hizmetlerini yönetmek",
-      "B": "Sadece yerel hizmetleri yürütmek",
-      "C": "Kültürel etkinlikler organize etmek",
-      "D": "Askeri operasyonları yönetmek",
-      "E": "Hiçbir görev üstlenmez"
-    },
-    "dogru": "A",
-    "cozum": "Merkezi yönetim, ulusal düzeyde kamu politikalarını uygular ve hizmetleri yönetir."
+    "secenekler": [
+      "Ulusal politikaları uygulamak ve kamu hizmetlerini yönetmek",
+      "Sadece yerel hizmetleri yürütmek",
+      "Kültürel etkinlikler organize etmek",
+      "Askeri operasyonları yönetmek",
+      "Hiçbir görev üstlenmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Merkezi yönetim, ulusal düzeyde kamu politikalarını uygular ve hizmetleri yönetir."
   },
   {
-    "id": 392,
-    "ders": "Kamu Yönetimi",
     "konu": "Yerel Yönetimler",
     "soru": "Yerel yönetimlerin temel görevlerinden biri nedir?",
-    "secenekler": {
-      "A": "Bölgesel ve yerel hizmetleri yürütmek",
-      "B": "Sadece ulusal karar almak",
-      "C": "Askeri planlama yapmak",
-      "D": "Sadece kültürel faaliyet yürütmek",
-      "E": "Hiçbir görev üstlenmez"
-    },
-    "dogru": "A",
-    "cozum": "Yerel yönetimler, bulundukları bölgeye özgü kamu hizmetlerini yürütmekle yükümlüdür."
+    "secenekler": [
+      "Bölgesel ve yerel hizmetleri yürütmek",
+      "Sadece ulusal karar almak",
+      "Askeri planlama yapmak",
+      "Sadece kültürel faaliyet yürütmek",
+      "Hiçbir görev üstlenmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yerel yönetimler, bulundukları bölgeye özgü kamu hizmetlerini yürütmekle yükümlüdür."
   },
   {
-    "id": 393,
-    "ders": "Kamu Yönetimi",
     "konu": "Merkezi ve Yerel Yönetim İlişkisi",
     "soru": "Merkezi ve yerel yönetimler arasındaki ilişkiyi hangi kavram tanımlar?",
-    "secenekler": {
-      "A": "Hiyerarşi ve yetki paylaşımı",
-      "B": "Tam bağımsızlık",
-      "C": "Sadece kültürel işbirliği",
-      "D": "Askeri kontrol",
-      "E": "Hiçbir ilişki yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Merkezi ve yerel yönetimler, hiyerarşi ve yetki paylaşımı ile birbirine bağlıdır."
+    "secenekler": [
+      "Hiyerarşi ve yetki paylaşımı",
+      "Tam bağımsızlık",
+      "Sadece kültürel işbirliği",
+      "Askeri kontrol",
+      "Hiçbir ilişki yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Merkezi ve yerel yönetimler, hiyerarşi ve yetki paylaşımı ile birbirine bağlıdır."
   },
   {
-    "id": 394,
-    "ders": "Kamu Yönetimi",
     "konu": "Yerel Yönetim Türleri",
     "soru": "Türkiye’de yerel yönetim türlerinden biri hangisidir?",
-    "secenekler": {
-      "A": "Belediye",
-      "B": "Milli Eğitim Bakanlığı",
-      "C": "Sağlık Bakanlığı",
-      "D": "Merkez Bankası",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Türkiye’de yerel yönetim türlerinden biri belediyelerdir; diğerleri merkezi yönetim organlarıdır."
+    "secenekler": [
+      "Belediye",
+      "Milli Eğitim Bakanlığı",
+      "Sağlık Bakanlığı",
+      "Merkez Bankası",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Türkiye’de yerel yönetim türlerinden biri belediyelerdir; diğerleri merkezi yönetim organlarıdır."
   },
   {
-    "id": 395,
-    "ders": "Kamu Yönetimi",
     "konu": "Valilik ve Kaymakamlık",
     "soru": "Valilik ve kaymakamlık hangi yönetim türüne aittir?",
-    "secenekler": {
-      "A": "Merkezi yönetim",
-      "B": "Yerel yönetim",
-      "C": "Özel sektör",
-      "D": "STK",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Valilik ve kaymakamlık, merkezi yönetimin taşra teşkilatına aittir."
+    "secenekler": [
+      "Merkezi yönetim",
+      "Yerel yönetim",
+      "Özel sektör",
+      "STK",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Valilik ve kaymakamlık, merkezi yönetimin taşra teşkilatına aittir."
   },
   {
-    "id": 396,
-    "ders": "Kamu Yönetimi",
     "konu": "Belediye Görevleri",
     "soru": "Belediyelerin görev alanına giren hizmetlerden biri hangisidir?",
-    "secenekler": {
-      "A": "İmar, yol, su, temizlik hizmetleri",
-      "B": "Milli savunma politikaları",
-      "C": "Dış ilişkiler",
-      "D": "Vergi yasalarını belirlemek",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Belediyeler, imar, yol, su ve temizlik gibi yerel hizmetleri yürütür."
+    "secenekler": [
+      "İmar, yol, su, temizlik hizmetleri",
+      "Milli savunma politikaları",
+      "Dış ilişkiler",
+      "Vergi yasalarını belirlemek",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Belediyeler, imar, yol, su ve temizlik gibi yerel hizmetleri yürütür."
   },
   {
-    "id": 397,
-    "ders": "Kamu Yönetimi",
     "konu": "İl Özel İdaresi",
     "soru": "İl özel idaresinin temel amacı nedir?",
-    "secenekler": {
-      "A": "Kırsal alanlarda kamu hizmetlerini yürütmek",
-      "B": "Şehir merkezindeki belediyeleri denetlemek",
-      "C": "Milli savunmayı yönetmek",
-      "D": "Kültürel faaliyet düzenlemek",
-      "E": "Hiçbir amacı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "İl özel idaresi, özellikle kırsal alanlarda kamu hizmetlerini yürütmekle görevlidir."
+    "secenekler": [
+      "Kırsal alanlarda kamu hizmetlerini yürütmek",
+      "Şehir merkezindeki belediyeleri denetlemek",
+      "Milli savunmayı yönetmek",
+      "Kültürel faaliyet düzenlemek",
+      "Hiçbir amacı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İl özel idaresi, özellikle kırsal alanlarda kamu hizmetlerini yürütmekle görevlidir."
   },
   {
-    "id": 398,
-    "ders": "Kamu Yönetimi",
     "konu": "Yerinden Yönetim",
     "soru": "Yerinden yönetim neyi ifade eder?",
-    "secenekler": {
-      "A": "Yerel birimlerin kendi yetki alanında karar alabilmesi",
-      "B": "Merkezi yönetimin her kararı alması",
-      "C": "Sadece kültürel faaliyetlerin yönetimi",
-      "D": "Askeri operasyonların yönetimi",
-      "E": "Hiçbir anlamı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Yerinden yönetim, yerel birimlerin kendi yetki alanlarında bağımsız karar alabilmesini ifade eder."
+    "secenekler": [
+      "Yerel birimlerin kendi yetki alanında karar alabilmesi",
+      "Merkezi yönetimin her kararı alması",
+      "Sadece kültürel faaliyetlerin yönetimi",
+      "Askeri operasyonların yönetimi",
+      "Hiçbir anlamı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yerinden yönetim, yerel birimlerin kendi yetki alanlarında bağımsız karar alabilmesini ifade eder."
   },
   {
-    "id": 399,
-    "ders": "Kamu Yönetimi",
     "konu": "Merkezi Yönetimde Hiyerarşi",
     "soru": "Merkezi yönetimde hiyerarşi hangi mantığa dayanır?",
-    "secenekler": {
-      "A": "Üstten alta doğru emir ve yetki zinciri",
-      "B": "Tam bağımsızlık",
-      "C": "Sadece danışma mekanizması",
-      "D": "Kültürel işbirliği",
-      "E": "Hiçbir mantığı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Merkezi yönetimde hiyerarşi, üstten alta doğru emir ve yetki zincirine dayanır."
+    "secenekler": [
+      "Üstten alta doğru emir ve yetki zinciri",
+      "Tam bağımsızlık",
+      "Sadece danışma mekanizması",
+      "Kültürel işbirliği",
+      "Hiçbir mantığı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Merkezi yönetimde hiyerarşi, üstten alta doğru emir ve yetki zincirine dayanır."
   },
   {
-    "id": 400,
-    "ders": "Kamu Yönetimi",
     "konu": "Yerel Yönetimlerin Denetimi",
     "soru": "Yerel yönetimler hangi mekanizmalarla denetlenir?",
-    "secenekler": {
-      "A": "Merkezi idare, Sayıştay ve mahalli denetimler",
-      "B": "Sadece halk oylaması",
-      "C": "Sadece belediye meclisi",
-      "D": "Askeri denetim",
-      "E": "Hiçbir denetim uygulanmaz"
-    },
-    "dogru": "A",
-    "cozum": "Yerel yönetimler, merkezi idare, Sayıştay ve mahalli denetim mekanizmaları ile denetlenir."
+    "secenekler": [
+      "Merkezi idare, Sayıştay ve mahalli denetimler",
+      "Sadece halk oylaması",
+      "Sadece belediye meclisi",
+      "Askeri denetim",
+      "Hiçbir denetim uygulanmaz"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yerel yönetimler, merkezi idare, Sayıştay ve mahalli denetim mekanizmaları ile denetlenir."
   },
   {
-    "id": 401,
-    "ders": "Kamu Yönetimi",
     "konu": "Kamu Politikası Aşamaları",
     "soru": "Kamu politikalarının hazırlanışında hangi aşama ilk sıradadır?",
-    "secenekler": {
-      "A": "Sorun analizi",
-      "B": "Uygulama",
-      "C": "Değerlendirme",
-      "D": "Taslak oluşturma",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Kamu politikalarının hazırlanmasında ilk aşama sorun analizi yapmaktır."
+    "secenekler": [
+      "Sorun analizi",
+      "Uygulama",
+      "Değerlendirme",
+      "Taslak oluşturma",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu politikalarının hazırlanmasında ilk aşama sorun analizi yapmaktır."
   },
   {
-    "id": 402,
-    "ders": "Kamu Yönetimi",
     "konu": "Politika Tasarımı",
     "soru": "Kamu politikası tasarımında dikkat edilmesi gereken en önemli faktör nedir?",
-    "secenekler": {
-      "A": "Sorunların etkin şekilde çözülmesi",
-      "B": "Sadece bütçe tasarrufu sağlanması",
-      "C": "Kültürel etkinliklerin artırılması",
-      "D": "Askeri operasyonların yönetimi",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Kamu politikası tasarımında en önemli faktör, toplumsal sorunları etkin ve verimli bir şekilde çözmektir."
+    "secenekler": [
+      "Sorunların etkin şekilde çözülmesi",
+      "Sadece bütçe tasarrufu sağlanması",
+      "Kültürel etkinliklerin artırılması",
+      "Askeri operasyonların yönetimi",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu politikası tasarımında en önemli faktör, toplumsal sorunları etkin ve verimli bir şekilde çözmektir."
   },
   {
-    "id": 403,
-    "ders": "Kamu Yönetimi",
     "konu": "Uygulama Süreci",
     "soru": "Kamu politikalarının uygulanması sırasında hangi husus önemlidir?",
-    "secenekler": {
-      "A": "Kaynakların etkin kullanımı ve hedeflere uygunluk",
-      "B": "Sadece yöneticilerin tercihleri",
-      "C": "Kültürel faaliyetlere öncelik verilmesi",
-      "D": "Askeri planlama yapılması",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Uygulama sürecinde, kaynakların etkin kullanımı ve politikaların hedeflere uygunluğu önemlidir."
+    "secenekler": [
+      "Kaynakların etkin kullanımı ve hedeflere uygunluk",
+      "Sadece yöneticilerin tercihleri",
+      "Kültürel faaliyetlere öncelik verilmesi",
+      "Askeri planlama yapılması",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uygulama sürecinde, kaynakların etkin kullanımı ve politikaların hedeflere uygunluğu önemlidir."
   },
   {
-    "id": 404,
-    "ders": "Kamu Yönetimi",
     "konu": "Değerlendirme ve Geri Bildirim",
     "soru": "Kamu politikalarının etkili olup olmadığını anlamak için hangi süreç uygulanır?",
-    "secenekler": {
-      "A": "Değerlendirme ve geri bildirim",
-      "B": "Sadece bütçe raporu",
-      "C": "Kültürel faaliyet raporu",
-      "D": "Askeri denetim",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Kamu politikalarının etkinliği, değerlendirme ve geri bildirim süreçleri ile ölçülür."
+    "secenekler": [
+      "Değerlendirme ve geri bildirim",
+      "Sadece bütçe raporu",
+      "Kültürel faaliyet raporu",
+      "Askeri denetim",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kamu politikalarının etkinliği, değerlendirme ve geri bildirim süreçleri ile ölçülür."
   },
   {
-    "id": 405,
-    "ders": "Kamu Yönetimi",
     "konu": "Performans Ölçümü",
     "soru": "Kamu yönetiminde performans ölçümü hangi amacı taşır?",
-    "secenekler": {
-      "A": "Hizmetlerin etkinliğini ve verimliliğini değerlendirmek",
-      "B": "Sadece mali rapor hazırlamak",
-      "C": "Kültürel faaliyet planlamak",
-      "D": "Askeri strateji geliştirmek",
-      "E": "Hiçbir amacı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Performans ölçümü, kamu hizmetlerinin etkinliğini ve verimliliğini değerlendirmek için yapılır."
+    "secenekler": [
+      "Hizmetlerin etkinliğini ve verimliliğini değerlendirmek",
+      "Sadece mali rapor hazırlamak",
+      "Kültürel faaliyet planlamak",
+      "Askeri strateji geliştirmek",
+      "Hiçbir amacı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Performans ölçümü, kamu hizmetlerinin etkinliğini ve verimliliğini değerlendirmek için yapılır."
   },
   {
-    "id": 406,
-    "ders": "Kamu Yönetimi",
     "konu": "Etkinlik ve Verimlilik",
     "soru": "Kamu hizmetlerinde etkinlik ve verimlilik nasıl sağlanır?",
-    "secenekler": {
-      "A": "Hedeflenen sonuçları minimum kaynakla elde ederek",
-      "B": "Sadece kültürel etkinlikleri artırarak",
-      "C": "Mali raporlara bakarak",
-      "D": "Askeri planlamayla",
-      "E": "Hiçbir şekilde"
-    },
-    "dogru": "A",
-    "cozum": "Etkinlik ve verimlilik, hedeflenen sonuçları minimum kaynakla elde etmekle sağlanır."
+    "secenekler": [
+      "Hedeflenen sonuçları minimum kaynakla elde ederek",
+      "Sadece kültürel etkinlikleri artırarak",
+      "Mali raporlara bakarak",
+      "Askeri planlamayla",
+      "Hiçbir şekilde"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Etkinlik ve verimlilik, hedeflenen sonuçları minimum kaynakla elde etmekle sağlanır."
   },
   {
-    "id": 407,
-    "ders": "Kamu Yönetimi",
     "konu": "Performans Göstergeleri",
     "soru": "Kamu yönetiminde performans göstergeleri neden önemlidir?",
-    "secenekler": {
-      "A": "Hedeflere ulaşılıp ulaşılmadığını ölçmek için",
-      "B": "Sadece bütçe kontrolü için",
-      "C": "Kültürel faaliyet planlamak için",
-      "D": "Askeri denetim yapmak için",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Performans göstergeleri, kamu hizmetlerinin hedeflere ulaşıp ulaşmadığını ölçmek için kullanılır."
+    "secenekler": [
+      "Hedeflere ulaşılıp ulaşılmadığını ölçmek için",
+      "Sadece bütçe kontrolü için",
+      "Kültürel faaliyet planlamak için",
+      "Askeri denetim yapmak için",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Performans göstergeleri, kamu hizmetlerinin hedeflere ulaşıp ulaşmadığını ölçmek için kullanılır."
   },
   {
-    "id": 408,
-    "ders": "Kamu Yönetimi",
     "konu": "Veri ve Raporlama",
     "soru": "Performans değerlendirmesinde hangi araçlar kullanılır?",
-    "secenekler": {
-      "A": "Veri analizi, raporlama ve geri bildirim mekanizmaları",
-      "B": "Sadece gözlem",
-      "C": "Kültürel etkinlik raporu",
-      "D": "Askeri planlama",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Performans değerlendirmesinde veri analizi, raporlama ve geri bildirim mekanizmaları kullanılır."
+    "secenekler": [
+      "Veri analizi, raporlama ve geri bildirim mekanizmaları",
+      "Sadece gözlem",
+      "Kültürel etkinlik raporu",
+      "Askeri planlama",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Performans değerlendirmesinde veri analizi, raporlama ve geri bildirim mekanizmaları kullanılır."
   },
   {
-    "id": 409,
-    "ders": "Kamu Yönetimi",
     "konu": "Sürekli İyileştirme",
     "soru": "Kamu yönetiminde sürekli iyileştirme neyi ifade eder?",
-    "secenekler": {
-      "A": "Hizmet süreçlerini sürekli gözden geçirip geliştirmek",
-      "B": "Sadece bütçeyi artırmak",
-      "C": "Kültürel faaliyetleri çoğaltmak",
-      "D": "Askeri stratejileri güncellemek",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Sürekli iyileştirme, kamu hizmet süreçlerinin sürekli gözden geçirilip geliştirilmesini ifade eder."
+    "secenekler": [
+      "Hizmet süreçlerini sürekli gözden geçirip geliştirmek",
+      "Sadece bütçeyi artırmak",
+      "Kültürel faaliyetleri çoğaltmak",
+      "Askeri stratejileri güncellemek",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Sürekli iyileştirme, kamu hizmet süreçlerinin sürekli gözden geçirilip geliştirilmesini ifade eder."
   },
   {
-    "id": 410,
-    "ders": "Kamu Yönetimi",
     "konu": "Geri Bildirim Kültürü",
     "soru": "Kamu yönetiminde geri bildirim kültürü neden önemlidir?",
-    "secenekler": {
-      "A": "Hizmet kalitesini artırmak ve hataları düzeltmek için",
-      "B": "Sadece mali raporlar için",
-      "C": "Kültürel faaliyetlerin planlanması için",
-      "D": "Askeri denetim için",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Geri bildirim kültürü, hizmet kalitesini artırmak ve hataları düzeltmek için önemlidir."
+    "secenekler": [
+      "Hizmet kalitesini artırmak ve hataları düzeltmek için",
+      "Sadece mali raporlar için",
+      "Kültürel faaliyetlerin planlanması için",
+      "Askeri denetim için",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Geri bildirim kültürü, hizmet kalitesini artırmak ve hataları düzeltmek için önemlidir."
   },
   {
-    "id": 411,
-    "ders": "Kamu Yönetimi",
     "konu": "Hesap Verebilirlik",
     "soru": "Kamu yöneticilerinin hesap verebilir olması neyi ifade eder?",
-    "secenekler": {
-      "A": "Yaptıkları işlerden ve kararlarından sorumlu olması",
-      "B": "Sadece kendi tercihlerine göre hareket etmesi",
-      "C": "Hizmetleri yürütmekle yükümlü olmaması",
-      "D": "Sadece bütçe raporu vermesi",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Hesap verebilirlik, kamu yöneticilerinin yaptıkları işlerden ve kararlarından sorumlu olmasıdır."
+    "secenekler": [
+      "Yaptıkları işlerden ve kararlarından sorumlu olması",
+      "Sadece kendi tercihlerine göre hareket etmesi",
+      "Hizmetleri yürütmekle yükümlü olmaması",
+      "Sadece bütçe raporu vermesi",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hesap verebilirlik, kamu yöneticilerinin yaptıkları işlerden ve kararlarından sorumlu olmasıdır."
   },
   {
-    "id": 412,
-    "ders": "Kamu Yönetimi",
     "konu": "Şeffaflık",
     "soru": "Kamu yönetiminde şeffaflık neyi ifade eder?",
-    "secenekler": {
-      "A": "Halkın bilgiye erişiminin açık ve kolay olması",
-      "B": "Sadece yöneticilerin bilgiye sahip olması",
-      "C": "Hizmet süreçlerinin gizli yürütülmesi",
-      "D": "Bütçe raporlarının saklanması",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Şeffaflık, kamu yönetiminde halkın bilgiye açık ve kolay erişebilmesini ifade eder."
+    "secenekler": [
+      "Halkın bilgiye erişiminin açık ve kolay olması",
+      "Sadece yöneticilerin bilgiye sahip olması",
+      "Hizmet süreçlerinin gizli yürütülmesi",
+      "Bütçe raporlarının saklanması",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Şeffaflık, kamu yönetiminde halkın bilgiye açık ve kolay erişebilmesini ifade eder."
   },
   {
-    "id": 413,
-    "ders": "Kamu Yönetimi",
     "konu": "Yönetişim",
     "soru": "İyi yönetişim hangi özellikleri içerir?",
-    "secenekler": {
-      "A": "Hesap verebilirlik, şeffaflık, katılım ve etkinlik",
-      "B": "Sadece mali rapor sunmak",
-      "C": "Sadece kültürel faaliyet yürütmek",
-      "D": "Askeri strateji planlamak",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "İyi yönetişim, hesap verebilirlik, şeffaflık, katılım ve etkinlik gibi özellikleri içerir."
+    "secenekler": [
+      "Hesap verebilirlik, şeffaflık, katılım ve etkinlik",
+      "Sadece mali rapor sunmak",
+      "Sadece kültürel faaliyet yürütmek",
+      "Askeri strateji planlamak",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İyi yönetişim, hesap verebilirlik, şeffaflık, katılım ve etkinlik gibi özellikleri içerir."
   },
   {
-    "id": 414,
-    "ders": "Kamu Yönetimi",
     "konu": "Hesap Verebilirlik Mekanizmaları",
     "soru": "Hesap verebilirliği sağlamak için hangi mekanizmalar kullanılır?",
-    "secenekler": {
-      "A": "Denetim, raporlama ve hukuki sorumluluk",
-      "B": "Sadece toplantı yapmak",
-      "C": "Kültürel faaliyetler düzenlemek",
-      "D": "Askeri denetim yapmak",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Hesap verebilirliği sağlamak için denetim, raporlama ve hukuki sorumluluk mekanizmaları kullanılır."
+    "secenekler": [
+      "Denetim, raporlama ve hukuki sorumluluk",
+      "Sadece toplantı yapmak",
+      "Kültürel faaliyetler düzenlemek",
+      "Askeri denetim yapmak",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hesap verebilirliği sağlamak için denetim, raporlama ve hukuki sorumluluk mekanizmaları kullanılır."
   },
   {
-    "id": 415,
-    "ders": "Kamu Yönetimi",
     "konu": "Şeffaflık Araçları",
     "soru": "Kamu yönetiminde şeffaflığı artırmak için hangi araçlar kullanılır?",
-    "secenekler": {
-      "A": "Bilgi edinme başvuruları ve kamuya açık raporlar",
-      "B": "Sadece gizli toplantılar",
-      "C": "Kültürel etkinlikler",
-      "D": "Askeri planlama",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Şeffaflığı artırmak için bilgi edinme başvuruları ve kamuya açık raporlar kullanılır."
+    "secenekler": [
+      "Bilgi edinme başvuruları ve kamuya açık raporlar",
+      "Sadece gizli toplantılar",
+      "Kültürel etkinlikler",
+      "Askeri planlama",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Şeffaflığı artırmak için bilgi edinme başvuruları ve kamuya açık raporlar kullanılır."
   },
   {
-    "id": 416,
-    "ders": "Kamu Yönetimi",
     "konu": "Katılımcılık",
     "soru": "İyi yönetişimde vatandaş katılımı neden önemlidir?",
-    "secenekler": {
-      "A": "Kararların toplumsal ihtiyaçlara uygun alınmasını sağlar",
-      "B": "Sadece yöneticilerin işlerini kolaylaştırır",
-      "C": "Hizmetleri yavaşlatır",
-      "D": "Askeri kararları etkiler",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Vatandaş katılımı, kararların toplumsal ihtiyaçlara uygun şekilde alınmasını sağlar."
+    "secenekler": [
+      "Kararların toplumsal ihtiyaçlara uygun alınmasını sağlar",
+      "Sadece yöneticilerin işlerini kolaylaştırır",
+      "Hizmetleri yavaşlatır",
+      "Askeri kararları etkiler",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Vatandaş katılımı, kararların toplumsal ihtiyaçlara uygun şekilde alınmasını sağlar."
   },
   {
-    "id": 417,
-    "ders": "Kamu Yönetimi",
     "konu": "Etkinlik ve Verimlilik",
     "soru": "Yönetişimde etkinlik ve verimlilik neyi ifade eder?",
-    "secenekler": {
-      "A": "Kaynakların doğru ve etkili kullanımıyla hedeflere ulaşmak",
-      "B": "Sadece kültürel etkinlik düzenlemek",
-      "C": "Sadece mali rapor sunmak",
-      "D": "Askeri operasyonları yönetmek",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Etkinlik ve verimlilik, kaynakların doğru ve etkili kullanımıyla hedeflere ulaşmayı ifade eder."
+    "secenekler": [
+      "Kaynakların doğru ve etkili kullanımıyla hedeflere ulaşmak",
+      "Sadece kültürel etkinlik düzenlemek",
+      "Sadece mali rapor sunmak",
+      "Askeri operasyonları yönetmek",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Etkinlik ve verimlilik, kaynakların doğru ve etkili kullanımıyla hedeflere ulaşmayı ifade eder."
   },
   {
-    "id": 418,
-    "ders": "Kamu Yönetimi",
     "konu": "Hesap Verebilirlik Raporları",
     "soru": "Kamu yöneticileri hesap verebilirlik raporlarını hangi amaçla hazırlar?",
-    "secenekler": {
-      "A": "Hizmetlerin etkinliğini göstermek ve kamuya bilgi sunmak",
-      "B": "Sadece kendi kariyerlerini yükseltmek için",
-      "C": "Kültürel faaliyetleri artırmak için",
-      "D": "Askeri stratejileri planlamak için",
-      "E": "Hiçbir amaç taşımamak için"
-    },
-    "dogru": "A",
-    "cozum": "Hesap verebilirlik raporları, hizmetlerin etkinliğini göstermek ve kamuya bilgi sunmak için hazırlanır."
+    "secenekler": [
+      "Hizmetlerin etkinliğini göstermek ve kamuya bilgi sunmak",
+      "Sadece kendi kariyerlerini yükseltmek için",
+      "Kültürel faaliyetleri artırmak için",
+      "Askeri stratejileri planlamak için",
+      "Hiçbir amaç taşımamak için"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hesap verebilirlik raporları, hizmetlerin etkinliğini göstermek ve kamuya bilgi sunmak için hazırlanır."
   },
   {
-    "id": 419,
-    "ders": "Kamu Yönetimi",
     "konu": "Şeffaf Karar Alma",
     "soru": "Kamu yönetiminde karar alma süreçlerinin şeffaf olması neyi sağlar?",
-    "secenekler": {
-      "A": "Halkın güvenini artırır ve hataları azaltır",
-      "B": "Sadece yöneticilerin kontrolünü sağlar",
-      "C": "Kültürel etkinliklerin artmasını sağlar",
-      "D": "Askeri denetimi kolaylaştırır",
-      "E": "Hiçbir etkisi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Karar alma süreçlerinin şeffaf olması, halkın güvenini artırır ve hataları azaltır."
+    "secenekler": [
+      "Halkın güvenini artırır ve hataları azaltır",
+      "Sadece yöneticilerin kontrolünü sağlar",
+      "Kültürel etkinliklerin artmasını sağlar",
+      "Askeri denetimi kolaylaştırır",
+      "Hiçbir etkisi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Karar alma süreçlerinin şeffaf olması, halkın güvenini artırır ve hataları azaltır."
   },
   {
-    "id": 420,
-    "ders": "Kamu Yönetimi",
     "konu": "Yönetişim Standartları",
     "soru": "İyi yönetişim standartları hangi ilkelere dayanır?",
-    "secenekler": {
-      "A": "Hesap verebilirlik, şeffaflık, katılım, etkinlik ve hukuka uygunluk",
-      "B": "Sadece mali raporlama",
-      "C": "Sadece kültürel faaliyet planlama",
-      "D": "Askeri strateji oluşturma",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "İyi yönetişim standartları, hesap verebilirlik, şeffaflık, katılım, etkinlik ve hukuka uygunluk ilkelerine dayanır."
+    "secenekler": [
+      "Hesap verebilirlik, şeffaflık, katılım, etkinlik ve hukuka uygunluk",
+      "Sadece mali raporlama",
+      "Sadece kültürel faaliyet planlama",
+      "Askeri strateji oluşturma",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İyi yönetişim standartları, hesap verebilirlik, şeffaflık, katılım, etkinlik ve hukuka uygunluk ilkelerine dayanır."
   },
   {
-    "id": 421,
-    "ders": "Kamu Yönetimi",
     "konu": "Stratejik Planlama",
     "soru": "Stratejik planlama sürecinin ilk adımı nedir?",
-    "secenekler": {
-      "A": "Durum analizi yapmak",
-      "B": "Kaynak tahsisi",
-      "C": "Rapor hazırlamak",
-      "D": "Hedef belirlemek",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Stratejik planlama sürecinde ilk adım durum analizi yapmaktır."
+    "secenekler": [
+      "Durum analizi yapmak",
+      "Kaynak tahsisi",
+      "Rapor hazırlamak",
+      "Hedef belirlemek",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Stratejik planlama sürecinde ilk adım durum analizi yapmaktır."
   },
   {
-    "id": 422,
-    "ders": "Kamu Yönetimi",
     "konu": "Hedef Belirleme",
     "soru": "Stratejik planlamada hedefler nasıl belirlenmelidir?",
-    "secenekler": {
-      "A": "Somut, ölçülebilir ve ulaşılabilir olmalıdır",
-      "B": "Sadece mali kriterlere dayalı olmalıdır",
-      "C": "Yalnızca yöneticilerin fikirlerine göre belirlenmelidir",
-      "D": "Kültürel etkinliklerle ilişkilendirilmelidir",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Hedefler, somut, ölçülebilir ve ulaşılabilir olmalıdır."
+    "secenekler": [
+      "Somut, ölçülebilir ve ulaşılabilir olmalıdır",
+      "Sadece mali kriterlere dayalı olmalıdır",
+      "Yalnızca yöneticilerin fikirlerine göre belirlenmelidir",
+      "Kültürel etkinliklerle ilişkilendirilmelidir",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hedefler, somut, ölçülebilir ve ulaşılabilir olmalıdır."
   },
   {
-    "id": 423,
-    "ders": "Kamu Yönetimi",
     "konu": "Kaynak Planlaması",
     "soru": "Stratejik planlamada kaynak planlamasının amacı nedir?",
-    "secenekler": {
-      "A": "Hedeflere ulaşmak için gerekli kaynakları etkin kullanmak",
-      "B": "Sadece bütçeyi kontrol etmek",
-      "C": "Kültürel faaliyetleri artırmak",
-      "D": "Askeri operasyonları desteklemek",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Kaynak planlaması, hedeflere ulaşmak için gerekli kaynakların etkin kullanılmasını sağlar."
+    "secenekler": [
+      "Hedeflere ulaşmak için gerekli kaynakları etkin kullanmak",
+      "Sadece bütçeyi kontrol etmek",
+      "Kültürel faaliyetleri artırmak",
+      "Askeri operasyonları desteklemek",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kaynak planlaması, hedeflere ulaşmak için gerekli kaynakların etkin kullanılmasını sağlar."
   },
   {
-    "id": 424,
-    "ders": "Kamu Yönetimi",
     "konu": "Performans Ölçümü",
     "soru": "Stratejik planın başarısı nasıl ölçülür?",
-    "secenekler": {
-      "A": "Performans göstergeleri ve hedef gerçekleşmeleri ile",
-      "B": "Sadece mali raporlarla",
-      "C": "Kültürel faaliyetlerle",
-      "D": "Askeri denetimlerle",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Stratejik planın başarısı, performans göstergeleri ve hedef gerçekleşmeleri ile ölçülür."
+    "secenekler": [
+      "Performans göstergeleri ve hedef gerçekleşmeleri ile",
+      "Sadece mali raporlarla",
+      "Kültürel faaliyetlerle",
+      "Askeri denetimlerle",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Stratejik planın başarısı, performans göstergeleri ve hedef gerçekleşmeleri ile ölçülür."
   },
   {
-    "id": 425,
-    "ders": "Kamu Yönetimi",
     "konu": "Yenilikçi Yönetim",
     "soru": "Yenilikçi yönetim hangi yaklaşımı içerir?",
-    "secenekler": {
-      "A": "Yeni fikirler, teknolojik yenilikler ve süreç iyileştirmeleri",
-      "B": "Sadece geleneksel yöntemleri sürdürmek",
-      "C": "Mali raporlara odaklanmak",
-      "D": "Kültürel etkinlikleri artırmak",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Yenilikçi yönetim, yeni fikirler, teknolojik yenilikler ve süreç iyileştirmelerini içerir."
+    "secenekler": [
+      "Yeni fikirler, teknolojik yenilikler ve süreç iyileştirmeleri",
+      "Sadece geleneksel yöntemleri sürdürmek",
+      "Mali raporlara odaklanmak",
+      "Kültürel etkinlikleri artırmak",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yenilikçi yönetim, yeni fikirler, teknolojik yenilikler ve süreç iyileştirmelerini içerir."
   },
   {
-    "id": 426,
-    "ders": "Kamu Yönetimi",
     "konu": "Risk Yönetimi",
     "soru": "Stratejik planlamada risk yönetimi neden önemlidir?",
-    "secenekler": {
-      "A": "Beklenmeyen sorunlara karşı önlem almak için",
-      "B": "Sadece mali raporları düzeltmek için",
-      "C": "Kültürel faaliyetleri artırmak için",
-      "D": "Askeri stratejileri uygulamak için",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Risk yönetimi, beklenmeyen sorunlara karşı önlem almak için stratejik planlamada önemlidir."
+    "secenekler": [
+      "Beklenmeyen sorunlara karşı önlem almak için",
+      "Sadece mali raporları düzeltmek için",
+      "Kültürel faaliyetleri artırmak için",
+      "Askeri stratejileri uygulamak için",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Risk yönetimi, beklenmeyen sorunlara karşı önlem almak için stratejik planlamada önemlidir."
   },
   {
-    "id": 427,
-    "ders": "Kamu Yönetimi",
     "konu": "Süreç İyileştirme",
     "soru": "Yenilikçi yönetimde süreç iyileştirme neyi ifade eder?",
-    "secenekler": {
-      "A": "Mevcut hizmet süreçlerinin daha etkin ve verimli hale getirilmesi",
-      "B": "Sadece bütçe artışı sağlamak",
-      "C": "Kültürel faaliyetleri çoğaltmak",
-      "D": "Askeri planlamayı geliştirmek",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Süreç iyileştirme, mevcut hizmet süreçlerinin daha etkin ve verimli hale getirilmesini ifade eder."
+    "secenekler": [
+      "Mevcut hizmet süreçlerinin daha etkin ve verimli hale getirilmesi",
+      "Sadece bütçe artışı sağlamak",
+      "Kültürel faaliyetleri çoğaltmak",
+      "Askeri planlamayı geliştirmek",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Süreç iyileştirme, mevcut hizmet süreçlerinin daha etkin ve verimli hale getirilmesini ifade eder."
   },
   {
-    "id": 428,
-    "ders": "Kamu Yönetimi",
     "konu": "İnovasyon Kültürü",
     "soru": "Kamu kurumlarında inovasyon kültürü neden önemlidir?",
-    "secenekler": {
-      "A": "Yeni fikirlerin hayata geçirilmesini sağlar ve hizmet kalitesini artırır",
-      "B": "Sadece mali raporları iyileştirir",
-      "C": "Kültürel faaliyetleri destekler",
-      "D": "Askeri operasyonları kolaylaştırır",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "İnovasyon kültürü, yeni fikirlerin hayata geçirilmesini sağlar ve hizmet kalitesini artırır."
+    "secenekler": [
+      "Yeni fikirlerin hayata geçirilmesini sağlar ve hizmet kalitesini artırır",
+      "Sadece mali raporları iyileştirir",
+      "Kültürel faaliyetleri destekler",
+      "Askeri operasyonları kolaylaştırır",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İnovasyon kültürü, yeni fikirlerin hayata geçirilmesini sağlar ve hizmet kalitesini artırır."
   },
   {
-    "id": 429,
-    "ders": "Kamu Yönetimi",
     "konu": "Stratejik Öncelikler",
     "soru": "Stratejik planlamada öncelikler nasıl belirlenir?",
-    "secenekler": {
-      "A": "Toplumsal ihtiyaç ve kaynakların etkin kullanımına göre",
-      "B": "Sadece yöneticilerin tercihlerine göre",
-      "C": "Kültürel etkinliklerin sayısına göre",
-      "D": "Askeri stratejiye göre",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Öncelikler, toplumsal ihtiyaçlar ve kaynakların etkin kullanımı göz önünde bulundurularak belirlenir."
+    "secenekler": [
+      "Toplumsal ihtiyaç ve kaynakların etkin kullanımına göre",
+      "Sadece yöneticilerin tercihlerine göre",
+      "Kültürel etkinliklerin sayısına göre",
+      "Askeri stratejiye göre",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Öncelikler, toplumsal ihtiyaçlar ve kaynakların etkin kullanımı göz önünde bulundurularak belirlenir."
   },
   {
-    "id": 430,
-    "ders": "Kamu Yönetimi",
     "konu": "Sürekli İyileştirme",
     "soru": "Stratejik planlamada sürekli iyileştirme neyi sağlar?",
-    "secenekler": {
-      "A": "Hizmet süreçlerini sürekli geliştirmeyi ve adaptasyonu sağlar",
-      "B": "Sadece mali raporları artırır",
-      "C": "Kültürel etkinlikleri çoğaltır",
-      "D": "Askeri planlamayı günceller",
-      "E": "Hiçbiri"
-    },
-    "dogru": "A",
-    "cozum": "Sürekli iyileştirme, hizmet süreçlerinin sürekli geliştirilmesini ve adaptasyonunu sağlar."
+    "secenekler": [
+      "Hizmet süreçlerini sürekli geliştirmeyi ve adaptasyonu sağlar",
+      "Sadece mali raporları artırır",
+      "Kültürel etkinlikleri çoğaltır",
+      "Askeri planlamayı günceller",
+      "Hiçbiri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Sürekli iyileştirme, hizmet süreçlerinin sürekli geliştirilmesini ve adaptasyonunu sağlar."
   }
 ]
