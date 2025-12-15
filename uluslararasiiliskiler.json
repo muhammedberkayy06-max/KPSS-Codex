@@ -1,1277 +1,1107 @@
 [
   {
-    "id": 301,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Realizm",
     "soru": "Realist teoriye göre uluslararası sistemin temel özelliği nedir?",
-    "secenekler": {
-      "A": "Devletler arasındaki işbirliği",
-      "B": "Devletler arasındaki anarşi ve güç mücadelesi",
-      "C": "Ekonomik entegrasyon",
-      "D": "Uluslararası hukuk",
-      "E": "Küresel sivil toplumun gücü"
-    },
-    "dogru": "B",
-    "cozum": "Realist teori, uluslararası sistemin anarşik olduğunu ve devletlerin güç mücadelesi içinde hareket ettiğini savunur."
+    "secenekler": [
+      "Devletler arasındaki işbirliği",
+      "Devletler arasındaki anarşi ve güç mücadelesi",
+      "Ekonomik entegrasyon",
+      "Uluslararası hukuk",
+      "Küresel sivil toplumun gücü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realist teori, uluslararası sistemin anarşik olduğunu ve devletlerin güç mücadelesi içinde hareket ettiğini savunur."
   },
   {
-    "id": 302,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Liberalizm",
     "soru": "Liberal teoriye göre devletlerin barışı sağlamadaki en önemli aracı hangisidir?",
-    "secenekler": {
-      "A": "Askeri güç",
-      "B": "Ekonomik ve siyasi işbirliği",
-      "C": "Tek taraflı saldırganlık",
-      "D": "Güç dengesi",
-      "E": "Savaş tehdidi"
-    },
-    "dogru": "B",
-    "cozum": "Liberal teori, uluslararası barışı ekonomik ve siyasi işbirliği ile sağlanabileceğini savunur."
+    "secenekler": [
+      "Askeri güç",
+      "Ekonomik ve siyasi işbirliği",
+      "Tek taraflı saldırganlık",
+      "Güç dengesi",
+      "Savaş tehdidi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Liberal teori, uluslararası barışı ekonomik ve siyasi işbirliği ile sağlanabileceğini savunur."
   },
   {
-    "id": 303,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Yapısalcılık / Neorealizm",
     "soru": "Neorealizme göre devletlerin davranışını belirleyen ana faktör nedir?",
-    "secenekler": {
-      "A": "Devlet içi kurumlar",
-      "B": "Uluslararası sistemin yapısı ve güç dağılımı",
-      "C": "Kültürel değerler",
-      "D": "Bireysel liderlerin tercihi",
-      "E": "Ekonomik krizler"
-    },
-    "dogru": "B",
-    "cozum": "Neorealizm, devlet davranışlarını uluslararası sistemin yapısı ve güç dağılımına göre açıklar."
+    "secenekler": [
+      "Devlet içi kurumlar",
+      "Uluslararası sistemin yapısı ve güç dağılımı",
+      "Kültürel değerler",
+      "Bireysel liderlerin tercihi",
+      "Ekonomik krizler"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neorealizm, devlet davranışlarını uluslararası sistemin yapısı ve güç dağılımına göre açıklar."
   },
   {
-    "id": 304,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Kurumlar",
     "soru": "Birleşmiş Milletler gibi uluslararası kurumların temel işlevi nedir?",
-    "secenekler": {
-      "A": "Devletlerin işbirliğini kolaylaştırmak ve barışı korumak",
-      "B": "Ekonomik krizleri başlatmak",
-      "C": "Savaşları körüklemek",
-      "D": "Tek taraflı yaptırım uygulamak",
-      "E": "Devletlerin iç işlerine müdahale etmek"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası kurumlar, devletler arasındaki işbirliğini kolaylaştırarak barışı korumayı amaçlar."
+    "secenekler": [
+      "Devletlerin işbirliğini kolaylaştırmak ve barışı korumak",
+      "Ekonomik krizleri başlatmak",
+      "Savaşları körüklemek",
+      "Tek taraflı yaptırım uygulamak",
+      "Devletlerin iç işlerine müdahale etmek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası kurumlar, devletler arasındaki işbirliğini kolaylaştırarak barışı korumayı amaçlar."
   },
   {
-    "id": 305,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Güç Politikası",
     "soru": "Realist bakış açısına göre devletler hangi ilkeye göre hareket eder?",
-    "secenekler": {
-      "A": "Güç kazanma ve koruma",
-      "B": "Uluslararası normlara uymak",
-      "C": "Sivil toplumun taleplerine uymak",
-      "D": "Ekonomik entegrasyon",
-      "E": "Küresel çevre politikalarına öncelik vermek"
-    },
-    "dogru": "A",
-    "cozum": "Realist bakış açısına göre devletler güç kazanmak ve korumak amacıyla hareket eder."
+    "secenekler": [
+      "Güç kazanma ve koruma",
+      "Uluslararası normlara uymak",
+      "Sivil toplumun taleplerine uymak",
+      "Ekonomik entegrasyon",
+      "Küresel çevre politikalarına öncelik vermek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Realist bakış açısına göre devletler güç kazanmak ve korumak amacıyla hareket eder."
   },
   {
-    "id": 306,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küreselleşme ve Devlet",
     "soru": "Küreselleşme devletlerin hangi fonksiyonunu daha fazla etkiler?",
-    "secenekler": {
-      "A": "İç güvenlik",
-      "B": "Ekonomik bağımlılık ve dış politika",
-      "C": "Askeri kapasiteyi tamamen ortadan kaldırır",
-      "D": "Yalnızca kültürel politikaları",
-      "E": "Hiçbir şekilde etkilenmez"
-    },
-    "dogru": "B",
-    "cozum": "Küreselleşme, devletlerin ekonomik bağımlılığını artırır ve dış politikalarını etkiler."
+    "secenekler": [
+      "İç güvenlik",
+      "Ekonomik bağımlılık ve dış politika",
+      "Askeri kapasiteyi tamamen ortadan kaldırır",
+      "Yalnızca kültürel politikaları",
+      "Hiçbir şekilde etkilenmez"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Küreselleşme, devletlerin ekonomik bağımlılığını artırır ve dış politikalarını etkiler."
   },
   {
-    "id": 307,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Güvenlik",
     "soru": "Soğuk Savaş sonrası uluslararası güvenlik anlayışının önceliği nedir?",
-    "secenekler": {
-      "A": "Nükleer silahlanmayı artırmak",
-      "B": "Çok taraflı diplomasi ve kriz yönetimi",
-      "C": "Tek taraflı işgal",
-      "D": "Askeri bloklar oluşturmak",
-      "E": "Ekonomik yaptırımlar uygulamamak"
-    },
-    "dogru": "B",
-    "cozum": "Soğuk Savaş sonrası güvenlik anlayışı çok taraflı diplomasi ve kriz yönetimini önceliklendirir."
+    "secenekler": [
+      "Nükleer silahlanmayı artırmak",
+      "Çok taraflı diplomasi ve kriz yönetimi",
+      "Tek taraflı işgal",
+      "Askeri bloklar oluşturmak",
+      "Ekonomik yaptırımlar uygulamamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Soğuk Savaş sonrası güvenlik anlayışı çok taraflı diplomasi ve kriz yönetimini önceliklendirir."
   },
   {
-    "id": 308,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Diplomasi Türleri",
     "soru": "Aşağıdakilerden hangisi klasik diplomasi yöntemlerinden biridir?",
-    "secenekler": {
-      "A": "Müzakere ve antlaşma yapma",
-      "B": "Siber saldırı",
-      "C": "Ekonomik yaptırımı ihmal etme",
-      "D": "Tek taraflı işgal",
-      "E": "Kamuoyu baskısını tamamen yok sayma"
-    },
-    "dogru": "A",
-    "cozum": "Klasik diplomasi, müzakere ve antlaşmalarla uluslararası ilişkileri yönetir."
+    "secenekler": [
+      "Müzakere ve antlaşma yapma",
+      "Siber saldırı",
+      "Ekonomik yaptırımı ihmal etme",
+      "Tek taraflı işgal",
+      "Kamuoyu baskısını tamamen yok sayma"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Klasik diplomasi, müzakere ve antlaşmalarla uluslararası ilişkileri yönetir."
   },
   {
-    "id": 309,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Güç Dengesi",
     "soru": "Güç dengesi politikası neyi amaçlar?",
-    "secenekler": {
-      "A": "Devletler arası eşitliği ve istikrarı korumak",
-      "B": "Tek devletin egemenliğini artırmak",
-      "C": "Sadece ekonomik büyümeyi sağlamak",
-      "D": "Askeri harcamaları sıfırlamak",
-      "E": "Kültürel etkileri yok saymak"
-    },
-    "dogru": "A",
-    "cozum": "Güç dengesi politikası, devletler arası eşitliği ve uluslararası istikrarı korumayı amaçlar."
+    "secenekler": [
+      "Devletler arası eşitliği ve istikrarı korumak",
+      "Tek devletin egemenliğini artırmak",
+      "Sadece ekonomik büyümeyi sağlamak",
+      "Askeri harcamaları sıfırlamak",
+      "Kültürel etkileri yok saymak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Güç dengesi politikası, devletler arası eşitliği ve uluslararası istikrarı korumayı amaçlar."
   },
   {
-    "id": 310,
-    "ders": "Uluslararası İlişkiler",
     "konu": "İntergovernmental Organizasyonlar",
     "soru": "Aşağıdakilerden hangisi bir devletlerarası örgüt örneğidir?",
-    "secenekler": {
-      "A": "Birleşmiş Milletler (BM)",
-      "B": "Greenpeace",
-      "C": "Uluslararası Olimpiyat Komitesi",
-      "D": "Amnesty International",
-      "E": "Dünya Sağlık Örgütü (sadece teknik danışmanlık)"
-    },
-    "dogru": "A",
-    "cozum": "Devletlerarası örgütler devletler arasında işbirliği ve koordinasyonu sağlamak için kurulur. BM buna örnektir."
+    "secenekler": [
+      "Birleşmiş Milletler (BM)",
+      "Greenpeace",
+      "Uluslararası Olimpiyat Komitesi",
+      "Amnesty International",
+      "Dünya Sağlık Örgütü (sadece teknik danışmanlık)"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Devletlerarası örgütler devletler arasında işbirliği ve koordinasyonu sağlamak için kurulur. BM buna örnektir."
   },
   {
-    "id": 311,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel Güvenlik",
     "soru": "Aşağıdakilerden hangisi 21. yüzyılın başlıca uluslararası güvenlik tehditlerinden biridir?",
-    "secenekler": {
-      "A": "Siber saldırılar ve terörizm",
-      "B": "Ulusal bayrak tasarımı",
-      "C": "Kültürel festivaller",
-      "D": "Sadece spor yarışmaları",
-      "E": "Yerel yemek politikaları"
-    },
-    "dogru": "A",
-    "cozum": "21. yüzyılda siber saldırılar ve terörizm uluslararası güvenliğe ciddi tehditler oluşturur."
+    "secenekler": [
+      "Siber saldırılar ve terörizm",
+      "Ulusal bayrak tasarımı",
+      "Kültürel festivaller",
+      "Sadece spor yarışmaları",
+      "Yerel yemek politikaları"
+    ],
+    "dogru_index": 0,
+    "aciklama": "21. yüzyılda siber saldırılar ve terörizm uluslararası güvenliğe ciddi tehditler oluşturur."
   },
   {
-    "id": 312,
-    "ders": "Uluslararası İlişkiler",
     "konu": "İklim Diplomasisi",
     "soru": "Paris İklim Anlaşması’nın temel amacı nedir?",
-    "secenekler": {
-      "A": "Küresel sıcaklık artışını sınırlamak",
-      "B": "Sadece enerji fiyatlarını artırmak",
-      "C": "Devletlerin sınırlarını değiştirmek",
-      "D": "Tek taraflı ekonomik yaptırım uygulamak",
-      "E": "Askeri harcamaları artırmak"
-    },
-    "dogru": "A",
-    "cozum": "Paris Anlaşması, küresel sıcaklık artışını sınırlayarak iklim değişikliği ile mücadele etmeyi amaçlar."
+    "secenekler": [
+      "Küresel sıcaklık artışını sınırlamak",
+      "Sadece enerji fiyatlarını artırmak",
+      "Devletlerin sınırlarını değiştirmek",
+      "Tek taraflı ekonomik yaptırım uygulamak",
+      "Askeri harcamaları artırmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Paris Anlaşması, küresel sıcaklık artışını sınırlayarak iklim değişikliği ile mücadele etmeyi amaçlar."
   },
   {
-    "id": 313,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel Ekonomi",
     "soru": "Küresel ekonomik krizlerin uluslararası ilişkilerdeki etkisi nedir?",
-    "secenekler": {
-      "A": "Devletler arası gerilimi artırır ve işbirliğini zorlaştırır",
-      "B": "Sadece kültürel faaliyetleri artırır",
-      "C": "Spor müsabakalarını çoğaltır",
-      "D": "Hiçbir etkisi yoktur",
-      "E": "Sadece yerel yönetimleri etkiler"
-    },
-    "dogru": "A",
-    "cozum": "Küresel ekonomik krizler, devletler arası gerilimi artırır ve uluslararası işbirliğini zorlaştırır."
+    "secenekler": [
+      "Devletler arası gerilimi artırır ve işbirliğini zorlaştırır",
+      "Sadece kültürel faaliyetleri artırır",
+      "Spor müsabakalarını çoğaltır",
+      "Hiçbir etkisi yoktur",
+      "Sadece yerel yönetimleri etkiler"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Küresel ekonomik krizler, devletler arası gerilimi artırır ve uluslararası işbirliğini zorlaştırır."
   },
   {
-    "id": 314,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Kurumlar ve Kriz Yönetimi",
     "soru": "Birleşmiş Milletler barış gücü operasyonlarının amacı nedir?",
-    "secenekler": {
-      "A": "Kriz bölgelerinde barışı korumak ve insan haklarını desteklemek",
-      "B": "Askeri üstünlük sağlamak",
-      "C": "Sadece ekonomik çıkar sağlamak",
-      "D": "Devletleri işgal etmek",
-      "E": "Kültürel değerleri yok saymak"
-    },
-    "dogru": "A",
-    "cozum": "BM barış gücü operasyonları kriz bölgelerinde barışı korumak ve insan haklarını desteklemek için görevlendirilir."
+    "secenekler": [
+      "Kriz bölgelerinde barışı korumak ve insan haklarını desteklemek",
+      "Askeri üstünlük sağlamak",
+      "Sadece ekonomik çıkar sağlamak",
+      "Devletleri işgal etmek",
+      "Kültürel değerleri yok saymak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "BM barış gücü operasyonları kriz bölgelerinde barışı korumak ve insan haklarını desteklemek için görevlendirilir."
   },
   {
-    "id": 315,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Mülteci ve Göç Politikaları",
     "soru": "Uluslararası kuruluşların mülteci krizlerine müdahaledeki temel ilkesi nedir?",
-    "secenekler": {
-      "A": "İnsani yardım ve koruma sağlamak",
-      "B": "Sınırları kapatmak ve geri göndermek",
-      "C": "Ekonomik yaptırımı artırmak",
-      "D": "Askeri işgal başlatmak",
-      "E": "Hiçbir müdahalede bulunmamak"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası kuruluşlar mülteci krizlerinde insani yardım ve koruma sağlamakla yükümlüdür."
+    "secenekler": [
+      "İnsani yardım ve koruma sağlamak",
+      "Sınırları kapatmak ve geri göndermek",
+      "Ekonomik yaptırımı artırmak",
+      "Askeri işgal başlatmak",
+      "Hiçbir müdahalede bulunmamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası kuruluşlar mülteci krizlerinde insani yardım ve koruma sağlamakla yükümlüdür."
   },
   {
-    "id": 316,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel Sağlık",
     "soru": "Dünya Sağlık Örgütü’nün COVID-19 gibi pandemilerdeki rolü nedir?",
-    "secenekler": {
-      "A": "Halk sağlığını korumak ve küresel koordinasyonu sağlamak",
-      "B": "Ülkelerin iç işlerine müdahale etmek",
-      "C": "Sadece askeri yardım sağlamak",
-      "D": "Ekonomik yaptırımlar uygulamak",
-      "E": "Spor organizasyonları düzenlemek"
-    },
-    "dogru": "A",
-    "cozum": "DSÖ, pandemilerde halk sağlığını korumak ve uluslararası koordinasyonu sağlamak amacıyla çalışır."
+    "secenekler": [
+      "Halk sağlığını korumak ve küresel koordinasyonu sağlamak",
+      "Ülkelerin iç işlerine müdahale etmek",
+      "Sadece askeri yardım sağlamak",
+      "Ekonomik yaptırımlar uygulamak",
+      "Spor organizasyonları düzenlemek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "DSÖ, pandemilerde halk sağlığını korumak ve uluslararası koordinasyonu sağlamak amacıyla çalışır."
   },
   {
-    "id": 317,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası İnsan Hakları",
     "soru": "Uluslararası İnsan Hakları Evrensel Beyannamesi hangi temel ilkeleri içerir?",
-    "secenekler": {
-      "A": "Yaşam hakkı, eşitlik, özgürlük ve adalet",
-      "B": "Sadece vergi politikası",
-      "C": "Askeri üstünlük sağlama",
-      "D": "Ekonomik kâr maksimizasyonu",
-      "E": "Kültürel izolasyon"
-    },
-    "dogru": "A",
-    "cozum": "İnsan hakları evrensel beyannamesi yaşam hakkı, eşitlik, özgürlük ve adalet gibi temel ilkeleri içerir."
+    "secenekler": [
+      "Yaşam hakkı, eşitlik, özgürlük ve adalet",
+      "Sadece vergi politikası",
+      "Askeri üstünlük sağlama",
+      "Ekonomik kâr maksimizasyonu",
+      "Kültürel izolasyon"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İnsan hakları evrensel beyannamesi yaşam hakkı, eşitlik, özgürlük ve adalet gibi temel ilkeleri içerir."
   },
   {
-    "id": 318,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji ve Jeopolitik",
     "soru": "Petrol ve doğal gaz kaynakları uluslararası ilişkilerde neden stratejik öneme sahiptir?",
-    "secenekler": {
-      "A": "Enerji bağımlılığı ve güç dengesi için",
-      "B": "Sadece kültürel etkinlikler için",
-      "C": "Spor ve turizm için",
-      "D": "Sadece eğitim amaçlı",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Enerji kaynakları uluslararası ilişkilerde güç dengesi ve devletlerin bağımlılığı açısından stratejik öneme sahiptir."
+    "secenekler": [
+      "Enerji bağımlılığı ve güç dengesi için",
+      "Sadece kültürel etkinlikler için",
+      "Spor ve turizm için",
+      "Sadece eğitim amaçlı",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji kaynakları uluslararası ilişkilerde güç dengesi ve devletlerin bağımlılığı açısından stratejik öneme sahiptir."
   },
   {
-    "id": 319,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Bölgesel İşbirliği",
     "soru": "Avrupa Birliği (AB) hangi amaçla kurulmuştur?",
-    "secenekler": {
-      "A": "Ekonomik ve siyasi entegrasyonu sağlayarak barışı korumak",
-      "B": "Sadece tek devletin üstünlüğünü sağlamak",
-      "C": "Askeri işgal düzenlemek",
-      "D": "Yerel kültürleri yok etmek",
-      "E": "Tek taraflı ekonomik yaptırım uygulamak"
-    },
-    "dogru": "A",
-    "cozum": "AB, ekonomik ve siyasi entegrasyonu sağlayarak üye devletler arasında barışı ve işbirliğini korumayı amaçlar."
+    "secenekler": [
+      "Ekonomik ve siyasi entegrasyonu sağlayarak barışı korumak",
+      "Sadece tek devletin üstünlüğünü sağlamak",
+      "Askeri işgal düzenlemek",
+      "Yerel kültürleri yok etmek",
+      "Tek taraflı ekonomik yaptırım uygulamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "AB, ekonomik ve siyasi entegrasyonu sağlayarak üye devletler arasında barışı ve işbirliğini korumayı amaçlar."
   },
   {
-    "id": 320,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel Çatışmalar",
     "soru": "Birleşmiş Milletler Güvenlik Konseyi (BMGK) hangi durumlarda müdahale eder?",
-    "secenekler": {
-      "A": "Uluslararası barışı tehdit eden durumlarda",
-      "B": "Sadece kültürel festivallerde",
-      "C": "Yerel eğitim etkinliklerinde",
-      "D": "Spor müsabakalarında",
-      "E": "Hiçbir şekilde müdahale etmez"
-    },
-    "dogru": "A",
-    "cozum": "BMGK, uluslararası barışı tehdit eden kriz ve çatışmalarda müdahale eder."
+    "secenekler": [
+      "Uluslararası barışı tehdit eden durumlarda",
+      "Sadece kültürel festivallerde",
+      "Yerel eğitim etkinliklerinde",
+      "Spor müsabakalarında",
+      "Hiçbir şekilde müdahale etmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "BMGK, uluslararası barışı tehdit eden kriz ve çatışmalarda müdahale eder."
   },
   {
-    "id": 6,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Realizm",
     "soru": "Realizm teorisine göre uluslararası sistemdeki temel sorun nedir?",
-    "secenekler": {
-      "A": "Devletlerin sürekli güç mücadelesi içinde olması",
-      "B": "Kültürel farklılıklar",
-      "C": "Uluslararası eğitim politikaları",
-      "D": "Turizm rekabeti",
-      "E": "Sadece ekonomik krizler"
-    },
-    "dogru": "A",
-    "cozum": "Realizm, devletlerin sürekli güç ve güvenlik mücadelesinde olduğunu temel sorun olarak görür."
+    "secenekler": [
+      "Devletlerin sürekli güç mücadelesi içinde olması",
+      "Kültürel farklılıklar",
+      "Uluslararası eğitim politikaları",
+      "Turizm rekabeti",
+      "Sadece ekonomik krizler"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Realizm, devletlerin sürekli güç ve güvenlik mücadelesinde olduğunu temel sorun olarak görür."
   },
   {
-    "id": 7,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Realizm",
     "soru": "Güç dengesi politikası hangi teoriye dayanmaktadır?",
-    "secenekler": {
-      "A": "Realizm",
-      "B": "Liberalizm",
-      "C": "Konstrüktivizm",
-      "D": "Marksizm",
-      "E": "Postmodernizm"
-    },
-    "dogru": "A",
-    "cozum": "Güç dengesi politikası, realizm teorisinin temel ilkelerinden biridir."
+    "secenekler": [
+      "Realizm",
+      "Liberalizm",
+      "Konstrüktivizm",
+      "Marksizm",
+      "Postmodernizm"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Güç dengesi politikası, realizm teorisinin temel ilkelerinden biridir."
   },
   {
-    "id": 8,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Realizm",
     "soru": "Realist bakış açısına göre uluslararası anlaşmaların kalıcılığı hangi faktöre bağlıdır?",
-    "secenekler": {
-      "A": "Devletlerin çıkarlarına ve güç dağılımına",
-      "B": "Sadece kültürel uyuma",
-      "C": "Uluslararası hukuk kurallarına mutlak bağlılık",
-      "D": "Sivil toplum baskısına",
-      "E": "Ekonomik yardım miktarına"
-    },
-    "dogru": "A",
-    "cozum": "Realizm, anlaşmaların kalıcılığının devletlerin çıkarları ve güç dağılımına bağlı olduğunu savunur."
+    "secenekler": [
+      "Devletlerin çıkarlarına ve güç dağılımına",
+      "Sadece kültürel uyuma",
+      "Uluslararası hukuk kurallarına mutlak bağlılık",
+      "Sivil toplum baskısına",
+      "Ekonomik yardım miktarına"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Realizm, anlaşmaların kalıcılığının devletlerin çıkarları ve güç dağılımına bağlı olduğunu savunur."
   },
   {
-    "id": 9,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Liberalizm",
     "soru": "Liberal teoriye göre hangi aktörler uluslararası işbirliğini artırabilir?",
-    "secenekler": {
-      "A": "Devletler, uluslararası örgütler ve sivil toplum",
-      "B": "Sadece askeri ittifaklar",
-      "C": "Kültürel festivaller",
-      "D": "Yerel yönetimler",
-      "E": "Tek taraflı şirketler"
-    },
-    "dogru": "A",
-    "cozum": "Liberalizm, uluslararası işbirliğini devletler, örgütler ve sivil toplum aktörlerinin birlikte artırabileceğini savunur."
+    "secenekler": [
+      "Devletler, uluslararası örgütler ve sivil toplum",
+      "Sadece askeri ittifaklar",
+      "Kültürel festivaller",
+      "Yerel yönetimler",
+      "Tek taraflı şirketler"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Liberalizm, uluslararası işbirliğini devletler, örgütler ve sivil toplum aktörlerinin birlikte artırabileceğini savunur."
   },
   {
-    "id": 10,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Liberalizm",
     "soru": "Kolektif güvenlik sisteminin amacı nedir?",
-    "secenekler": {
-      "A": "Üye devletlerin güvenliğini topluca sağlamak",
-      "B": "Sadece ekonomik büyümeyi desteklemek",
-      "C": "Kültürel etkinlikler düzenlemek",
-      "D": "Tek devletin üstünlüğünü artırmak",
-      "E": "Askeri yaptırımı uygulamamak"
-    },
-    "dogru": "A",
-    "cozum": "Kolektif güvenlik sistemi, üye devletlerin güvenliğini topluca sağlamak için oluşturulmuştur."
+    "secenekler": [
+      "Üye devletlerin güvenliğini topluca sağlamak",
+      "Sadece ekonomik büyümeyi desteklemek",
+      "Kültürel etkinlikler düzenlemek",
+      "Tek devletin üstünlüğünü artırmak",
+      "Askeri yaptırımı uygulamamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kolektif güvenlik sistemi, üye devletlerin güvenliğini topluca sağlamak için oluşturulmuştur."
   },
   {
-    "id": 321,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Müzakere Stratejileri",
     "soru": "Başarılı bir diplomatik müzakerenin temel unsuru nedir?",
-    "secenekler": {
-      "A": "Tarafların karşılıklı güveni ve uzlaşma niyeti",
-      "B": "Askeri güç kullanımı",
-      "C": "Tek taraflı ekonomik yaptırım",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Sadece propaganda yapmak"
-    },
-    "dogru": "A",
-    "cozum": "Diplomatik müzakerelerde başarı, taraflar arasında güvenin kurulması ve uzlaşma niyetinin olmasıyla sağlanır."
+    "secenekler": [
+      "Tarafların karşılıklı güveni ve uzlaşma niyeti",
+      "Askeri güç kullanımı",
+      "Tek taraflı ekonomik yaptırım",
+      "Kamuoyunu manipüle etmek",
+      "Sadece propaganda yapmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Diplomatik müzakerelerde başarı, taraflar arasında güvenin kurulması ve uzlaşma niyetinin olmasıyla sağlanır."
   },
   {
-    "id": 322,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Kriz Diplomasisi",
     "soru": "Bir devlet kriz anında hangi diplomasi yaklaşımını benimsemelidir?",
-    "secenekler": {
-      "A": "Çok taraflı müzakereler ve arabuluculuk",
-      "B": "Tek taraflı saldırganlık",
-      "C": "Ekonomik izolasyon",
-      "D": "Askeri tehdit kullanımı",
-      "E": "Hiçbir müdahale yapmamak"
-    },
-    "dogru": "A",
-    "cozum": "Kriz anlarında devletler, çok taraflı müzakereler ve arabuluculuk yoluyla sorunu çözmelidir."
+    "secenekler": [
+      "Çok taraflı müzakereler ve arabuluculuk",
+      "Tek taraflı saldırganlık",
+      "Ekonomik izolasyon",
+      "Askeri tehdit kullanımı",
+      "Hiçbir müdahale yapmamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kriz anlarında devletler, çok taraflı müzakereler ve arabuluculuk yoluyla sorunu çözmelidir."
   },
   {
-    "id": 323,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Diplomatik Protokoller",
     "soru": "Uluslararası toplantılarda devlet temsilcilerinin uyması gereken temel protokol hangisidir?",
-    "secenekler": {
-      "A": "Resmiyet, sıralama ve doğru hitap kuralları",
-      "B": "Kendi ülkesine öncelik vermek",
-      "C": "Rakip devletleri küçümsemek",
-      "D": "Toplantıya geç katılmak",
-      "E": "Kamuoyuna yanlış bilgi vermek"
-    },
-    "dogru": "A",
-    "cozum": "Diplomatik protokoller, resmi kurallara, sıralamaya ve doğru hitap şekillerine uyulmasını gerektirir."
+    "secenekler": [
+      "Resmiyet, sıralama ve doğru hitap kuralları",
+      "Kendi ülkesine öncelik vermek",
+      "Rakip devletleri küçümsemek",
+      "Toplantıya geç katılmak",
+      "Kamuoyuna yanlış bilgi vermek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Diplomatik protokoller, resmi kurallara, sıralamaya ve doğru hitap şekillerine uyulmasını gerektirir."
   },
   {
-    "id": 324,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Müzakere Taktikleri",
     "soru": "Müzakere sürecinde taraflar arasında anlaşmazlık olduğunda en etkili yöntem hangisidir?",
-    "secenekler": {
-      "A": "Ortak çıkarlar üzerinden uzlaşma",
-      "B": "Tek taraflı baskı",
-      "C": "Kamuoyu manipülasyonu",
-      "D": "Askeri tehdit kullanımı",
-      "E": "Ekonomik yaptırımı geciktirmek"
-    },
-    "dogru": "A",
-    "cozum": "Ortak çıkarlar üzerinden uzlaşma sağlamak, müzakerede anlaşmazlıkları çözmenin en etkili yoludur."
+    "secenekler": [
+      "Ortak çıkarlar üzerinden uzlaşma",
+      "Tek taraflı baskı",
+      "Kamuoyu manipülasyonu",
+      "Askeri tehdit kullanımı",
+      "Ekonomik yaptırımı geciktirmek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ortak çıkarlar üzerinden uzlaşma sağlamak, müzakerede anlaşmazlıkları çözmenin en etkili yoludur."
   },
   {
-    "id": 325,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Diplomatik İletişim",
     "soru": "Diplomatik yazışmalarda en önemli unsur nedir?",
-    "secenekler": {
-      "A": "Açık ve resmi dil kullanımı",
-      "B": "Saldırgan ve agresif üslup",
-      "C": "Sadece kısaltmalar kullanmak",
-      "D": "Kamuoyunu yönlendirmek",
-      "E": "Belirsiz ifadeler kullanmak"
-    },
-    "dogru": "A",
-    "cozum": "Diplomatik yazışmalarda açık, net ve resmi bir dil kullanmak esastır."
+    "secenekler": [
+      "Açık ve resmi dil kullanımı",
+      "Saldırgan ve agresif üslup",
+      "Sadece kısaltmalar kullanmak",
+      "Kamuoyunu yönlendirmek",
+      "Belirsiz ifadeler kullanmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Diplomatik yazışmalarda açık, net ve resmi bir dil kullanmak esastır."
   },
   {
-    "id": 326,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Müzakere Psikolojisi",
     "soru": "Müzakerelerde tarafların davranışlarını anlamak için hangi yaklaşım uygundur?",
-    "secenekler": {
-      "A": "Karşı tarafın çıkar ve motivasyonlarını analiz etmek",
-      "B": "Sadece kendi çıkarını savunmak",
-      "C": "Agresif ve tehditkar olmak",
-      "D": "Kamuoyunu yanıltmak",
-      "E": "Sorunu görmezden gelmek"
-    },
-    "dogru": "A",
-    "cozum": "Tarafların davranışlarını anlamak için çıkar ve motivasyonlarını analiz etmek gerekir."
+    "secenekler": [
+      "Karşı tarafın çıkar ve motivasyonlarını analiz etmek",
+      "Sadece kendi çıkarını savunmak",
+      "Agresif ve tehditkar olmak",
+      "Kamuoyunu yanıltmak",
+      "Sorunu görmezden gelmek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Tarafların davranışlarını anlamak için çıkar ve motivasyonlarını analiz etmek gerekir."
   },
   {
-    "id": 327,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Arabuluculuk",
     "soru": "Bir uluslararası kriz çözümünde arabuluculuk hangi durumda önemlidir?",
-    "secenekler": {
-      "A": "Taraflar arasında doğrudan iletişimin zor olduğu durumlarda",
-      "B": "Hiçbir zaman",
-      "C": "Sadece ekonomik krizlerde",
-      "D": "Spor ve kültürel anlaşmazlıklarda",
-      "E": "Yerel yönetim işlerinde"
-    },
-    "dogru": "A",
-    "cozum": "Arabuluculuk, taraflar arasında doğrudan iletişimin zor olduğu durumlarda çözüm sağlar."
+    "secenekler": [
+      "Taraflar arasında doğrudan iletişimin zor olduğu durumlarda",
+      "Hiçbir zaman",
+      "Sadece ekonomik krizlerde",
+      "Spor ve kültürel anlaşmazlıklarda",
+      "Yerel yönetim işlerinde"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Arabuluculuk, taraflar arasında doğrudan iletişimin zor olduğu durumlarda çözüm sağlar."
   },
   {
-    "id": 328,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Çok Taraflı Diplomasi",
     "soru": "Çok taraflı diplomasi hangi avantajı sağlar?",
-    "secenekler": {
-      "A": "Daha geniş bir işbirliği ve meşruiyet sağlar",
-      "B": "Sadece tek tarafın çıkarını gözetir",
-      "C": "Askeri üstünlük kazandırır",
-      "D": "Ekonomik izolasyonu artırır",
-      "E": "Kamuoyunu yanıltır"
-    },
-    "dogru": "A",
-    "cozum": "Çok taraflı diplomasi, daha geniş işbirliği ve uluslararası meşruiyet sağlar."
+    "secenekler": [
+      "Daha geniş bir işbirliği ve meşruiyet sağlar",
+      "Sadece tek tarafın çıkarını gözetir",
+      "Askeri üstünlük kazandırır",
+      "Ekonomik izolasyonu artırır",
+      "Kamuoyunu yanıltır"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çok taraflı diplomasi, daha geniş işbirliği ve uluslararası meşruiyet sağlar."
   },
   {
-    "id": 329,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Kriz Yönetimi",
     "soru": "Uluslararası krizlerde hızlı ve doğru karar almak için hangi unsur önemlidir?",
-    "secenekler": {
-      "A": "Bilgi akışı ve koordinasyon",
-      "B": "Tek taraflı hareket",
-      "C": "Kamuoyunu yanıltmak",
-      "D": "Saldırgan propaganda",
-      "E": "Sorunu görmezden gelmek"
-    },
-    "dogru": "A",
-    "cozum": "Bilgi akışı ve koordinasyon, kriz yönetiminde hızlı ve doğru karar almayı sağlar."
+    "secenekler": [
+      "Bilgi akışı ve koordinasyon",
+      "Tek taraflı hareket",
+      "Kamuoyunu yanıltmak",
+      "Saldırgan propaganda",
+      "Sorunu görmezden gelmek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bilgi akışı ve koordinasyon, kriz yönetiminde hızlı ve doğru karar almayı sağlar."
   },
   {
-    "id": 330,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Diplomatik Çözümler",
     "soru": "Bir kriz durumunda barışçıl çözümü destekleyen yaklaşım hangisidir?",
-    "secenekler": {
-      "A": "Müzakere ve uzlaşma",
-      "B": "Askeri müdahale",
-      "C": "Tek taraflı yaptırım",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Sorunu ertelemek"
-    },
-    "dogru": "A",
-    "cozum": "Kriz durumlarında barışçıl çözüm için müzakere ve uzlaşma yöntemleri tercih edilmelidir."
+    "secenekler": [
+      "Müzakere ve uzlaşma",
+      "Askeri müdahale",
+      "Tek taraflı yaptırım",
+      "Kamuoyunu manipüle etmek",
+      "Sorunu ertelemek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kriz durumlarında barışçıl çözüm için müzakere ve uzlaşma yöntemleri tercih edilmelidir."
   },
   {
-    "id": 331,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Orta Doğu Politikaları",
     "soru": "Orta Doğu’da devletler arası güç dengesini etkileyen en önemli faktör nedir?",
-    "secenekler": {
-      "A": "Enerji kaynakları ve stratejik konum",
-      "B": "Spor müsabakaları",
-      "C": "Kültürel festivaller",
-      "D": "Yerel yemek politikaları",
-      "E": "Turizm gelirleri"
-    },
-    "dogru": "A",
-    "cozum": "Orta Doğu’da enerji kaynakları ve stratejik konum, devletler arası güç dengesini belirleyen temel faktörlerdir."
+    "secenekler": [
+      "Enerji kaynakları ve stratejik konum",
+      "Spor müsabakaları",
+      "Kültürel festivaller",
+      "Yerel yemek politikaları",
+      "Turizm gelirleri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Orta Doğu’da enerji kaynakları ve stratejik konum, devletler arası güç dengesini belirleyen temel faktörlerdir."
   },
   {
-    "id": 332,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Avrupa Politikaları",
     "soru": "Avrupa Birliği’nin bölgesel bütünleşmeye katkısı nedir?",
-    "secenekler": {
-      "A": "Ekonomik ve siyasi entegrasyonu güçlendirir",
-      "B": "Sadece kültürel yarışmalar düzenler",
-      "C": "Askeri üstünlük sağlar",
-      "D": "Sınırları tamamen kapatır",
-      "E": "Tek taraflı karar verir"
-    },
-    "dogru": "A",
-    "cozum": "AB, üye devletler arasında ekonomik ve siyasi entegrasyonu güçlendirerek bölgesel istikrar sağlar."
+    "secenekler": [
+      "Ekonomik ve siyasi entegrasyonu güçlendirir",
+      "Sadece kültürel yarışmalar düzenler",
+      "Askeri üstünlük sağlar",
+      "Sınırları tamamen kapatır",
+      "Tek taraflı karar verir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "AB, üye devletler arasında ekonomik ve siyasi entegrasyonu güçlendirerek bölgesel istikrar sağlar."
   },
   {
-    "id": 333,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Asya-Pasifik Politikaları",
     "soru": "Asya-Pasifik’teki bölgesel çatışmaların temel nedeni nedir?",
-    "secenekler": {
-      "A": "Ticaret yolları, doğal kaynaklar ve tarihi anlaşmazlıklar",
-      "B": "Sadece spor faaliyetleri",
-      "C": "Yerel yemek kültürü",
-      "D": "Turizm yatırımları",
-      "E": "Kültürel festivaller"
-    },
-    "dogru": "A",
-    "cozum": "Bölgesel çatışmalar genellikle ticaret yolları, doğal kaynaklar ve tarihi anlaşmazlıklardan kaynaklanır."
+    "secenekler": [
+      "Ticaret yolları, doğal kaynaklar ve tarihi anlaşmazlıklar",
+      "Sadece spor faaliyetleri",
+      "Yerel yemek kültürü",
+      "Turizm yatırımları",
+      "Kültürel festivaller"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bölgesel çatışmalar genellikle ticaret yolları, doğal kaynaklar ve tarihi anlaşmazlıklardan kaynaklanır."
   },
   {
-    "id": 334,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Bölgesel Güçler",
     "soru": "Bölgesel güçlerin uluslararası ilişkilerdeki rolü nedir?",
-    "secenekler": {
-      "A": "Yerel ve bölgesel istikrarı sağlamak",
-      "B": "Sadece spor etkinlikleri düzenlemek",
-      "C": "Kültürel üstünlük kurmak",
-      "D": "Hiçbir etkileri yoktur",
-      "E": "Ekonomik izolasyon yaratmak"
-    },
-    "dogru": "A",
-    "cozum": "Bölgesel güçler, bulundukları bölgede istikrar ve dengeyi sağlamada kritik rol oynar."
+    "secenekler": [
+      "Yerel ve bölgesel istikrarı sağlamak",
+      "Sadece spor etkinlikleri düzenlemek",
+      "Kültürel üstünlük kurmak",
+      "Hiçbir etkileri yoktur",
+      "Ekonomik izolasyon yaratmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bölgesel güçler, bulundukları bölgede istikrar ve dengeyi sağlamada kritik rol oynar."
   },
   {
-    "id": 335,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Bölgesel İşbirlikleri",
     "soru": "ASEAN’in temel amacı nedir?",
-    "secenekler": {
-      "A": "Ekonomik işbirliği ve siyasi istikrar sağlamak",
-      "B": "Sadece turizmi artırmak",
-      "C": "Askeri üstünlük sağlamak",
-      "D": "Sınırları kapatmak",
-      "E": "Kültürel etkinlik düzenlemek"
-    },
-    "dogru": "A",
-    "cozum": "ASEAN, üye ülkeler arasında ekonomik işbirliği ve siyasi istikrar sağlamak amacıyla kurulmuştur."
+    "secenekler": [
+      "Ekonomik işbirliği ve siyasi istikrar sağlamak",
+      "Sadece turizmi artırmak",
+      "Askeri üstünlük sağlamak",
+      "Sınırları kapatmak",
+      "Kültürel etkinlik düzenlemek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "ASEAN, üye ülkeler arasında ekonomik işbirliği ve siyasi istikrar sağlamak amacıyla kurulmuştur."
   },
   {
-    "id": 336,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Bölgesel Çatışma Yönetimi",
     "soru": "Bölgesel çatışmalarda en etkili çözüm yöntemi nedir?",
-    "secenekler": {
-      "A": "Çok taraflı diplomasi ve arabuluculuk",
-      "B": "Tek taraflı askeri müdahale",
-      "C": "Ekonomik yaptırım uygulamak",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Hiçbir çözüm aramamak"
-    },
-    "dogru": "A",
-    "cozum": "Çok taraflı diplomasi ve arabuluculuk, bölgesel çatışmaların çözümünde en etkili yöntemdir."
+    "secenekler": [
+      "Çok taraflı diplomasi ve arabuluculuk",
+      "Tek taraflı askeri müdahale",
+      "Ekonomik yaptırım uygulamak",
+      "Kamuoyunu manipüle etmek",
+      "Hiçbir çözüm aramamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çok taraflı diplomasi ve arabuluculuk, bölgesel çatışmaların çözümünde en etkili yöntemdir."
   },
   {
-    "id": 337,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Güç Dengesi",
     "soru": "Bölgesel güç dengesi hangi faktörlerle sağlanır?",
-    "secenekler": {
-      "A": "Askeri kapasite, ekonomik güç ve diplomasi",
-      "B": "Spor etkinlikleri",
-      "C": "Kültürel festivaller",
-      "D": "Yerel yemek politikaları",
-      "E": "Hiçbir faktör etkili değildir"
-    },
-    "dogru": "A",
-    "cozum": "Askeri kapasite, ekonomik güç ve diplomasi, bölgesel güç dengesinin temel unsurlarıdır."
+    "secenekler": [
+      "Askeri kapasite, ekonomik güç ve diplomasi",
+      "Spor etkinlikleri",
+      "Kültürel festivaller",
+      "Yerel yemek politikaları",
+      "Hiçbir faktör etkili değildir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Askeri kapasite, ekonomik güç ve diplomasi, bölgesel güç dengesinin temel unsurlarıdır."
   },
   {
-    "id": 338,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Ticaret ve Bölgesel İşbirliği",
     "soru": "Bölgesel ticaret anlaşmalarının amacı nedir?",
-    "secenekler": {
-      "A": "Üye ülkeler arasında ekonomik entegrasyonu artırmak",
-      "B": "Sadece tek ülkenin ekonomik üstünlüğünü sağlamak",
-      "C": "Askeri üstünlük sağlamak",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Kültürel etkinlikleri azaltmak"
-    },
-    "dogru": "A",
-    "cozum": "Bölgesel ticaret anlaşmaları, üye ülkeler arasında ekonomik entegrasyonu artırmayı hedefler."
+    "secenekler": [
+      "Üye ülkeler arasında ekonomik entegrasyonu artırmak",
+      "Sadece tek ülkenin ekonomik üstünlüğünü sağlamak",
+      "Askeri üstünlük sağlamak",
+      "Kamuoyunu manipüle etmek",
+      "Kültürel etkinlikleri azaltmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bölgesel ticaret anlaşmaları, üye ülkeler arasında ekonomik entegrasyonu artırmayı hedefler."
   },
   {
-    "id": 339,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Bölgesel Organizasyonlar",
     "soru": "NATO’nun bölgesel güvenliğe katkısı nedir?",
-    "secenekler": {
-      "A": "Üye ülkelerin kolektif savunmasını sağlamak",
-      "B": "Sadece kültürel festival düzenlemek",
-      "C": "Ekonomik izolasyon yaratmak",
-      "D": "Tek taraflı saldırganlık uygulamak",
-      "E": "Hiçbir katkısı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "NATO, üye ülkelerin kolektif savunmasını sağlayarak bölgesel güvenliği güçlendirir."
+    "secenekler": [
+      "Üye ülkelerin kolektif savunmasını sağlamak",
+      "Sadece kültürel festival düzenlemek",
+      "Ekonomik izolasyon yaratmak",
+      "Tek taraflı saldırganlık uygulamak",
+      "Hiçbir katkısı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "NATO, üye ülkelerin kolektif savunmasını sağlayarak bölgesel güvenliği güçlendirir."
   },
   {
-    "id": 340,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Bölgesel Krizler",
     "soru": "Bölgesel krizlerin çözümünde hangi yaklaşım en etkilidir?",
-    "secenekler": {
-      "A": "Çok taraflı diplomasi ve koordinasyon",
-      "B": "Tek taraflı baskı",
-      "C": "Kamuoyunu manipüle etmek",
-      "D": "Askeri tehdit kullanımı",
-      "E": "Sorunu görmezden gelmek"
-    },
-    "dogru": "A",
-    "cozum": "Çok taraflı diplomasi ve koordinasyon, bölgesel krizlerin çözümünde en etkili yaklaşımdır."
+    "secenekler": [
+      "Çok taraflı diplomasi ve koordinasyon",
+      "Tek taraflı baskı",
+      "Kamuoyunu manipüle etmek",
+      "Askeri tehdit kullanımı",
+      "Sorunu görmezden gelmek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çok taraflı diplomasi ve koordinasyon, bölgesel krizlerin çözümünde en etkili yaklaşımdır."
   },
   {
-    "id": 341,
-    "ders": "Uluslararası İlişkiler",
     "konu": "BM Antlaşmaları",
     "soru": "Birleşmiş Milletler Antlaşması’na göre, üye devletlerin hangi yükümlülüğü vardır?",
-    "secenekler": {
-      "A": "Uluslararası barış ve güvenliği korumak",
-      "B": "Sadece kendi sınırlarını savunmak",
-      "C": "Diğer devletleri kontrol etmek",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Hiçbir yükümlülük yoktur"
-    },
-    "dogru": "A",
-    "cozum": "BM Antlaşması, üye devletlere uluslararası barış ve güvenliği koruma yükümlülüğü verir."
+    "secenekler": [
+      "Uluslararası barış ve güvenliği korumak",
+      "Sadece kendi sınırlarını savunmak",
+      "Diğer devletleri kontrol etmek",
+      "Kamuoyunu manipüle etmek",
+      "Hiçbir yükümlülük yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "BM Antlaşması, üye devletlere uluslararası barış ve güvenliği koruma yükümlülüğü verir."
   },
   {
-    "id": 342,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Savaş Hukuku",
     "soru": "Uluslararası savaş hukukuna göre sivillere yönelik saldırılar nasıl değerlendirilir?",
-    "secenekler": {
-      "A": "Kesinlikle yasaklanmıştır",
-      "B": "Savaşın bir parçasıdır",
-      "C": "Sadece ekonomik hedeflerde uygulanabilir",
-      "D": "Kamuoyu izni ile yapılabilir",
-      "E": "Hiçbir sınırlama yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Savaş hukukuna göre sivillere yönelik saldırılar kesinlikle yasaktır ve savaş suçları kapsamına girer."
+    "secenekler": [
+      "Kesinlikle yasaklanmıştır",
+      "Savaşın bir parçasıdır",
+      "Sadece ekonomik hedeflerde uygulanabilir",
+      "Kamuoyu izni ile yapılabilir",
+      "Hiçbir sınırlama yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Savaş hukukuna göre sivillere yönelik saldırılar kesinlikle yasaktır ve savaş suçları kapsamına girer."
   },
   {
-    "id": 343,
-    "ders": "Uluslararası İlişkiler",
     "konu": "İnsan Hakları",
     "soru": "Uluslararası insan hakları hukuku hangi ilkeye dayanır?",
-    "secenekler": {
-      "A": "Her bireyin eşit ve vazgeçilmez haklara sahip olması",
-      "B": "Sadece devletlerin hakları önemlidir",
-      "C": "Ekonomik güçle hak sağlanır",
-      "D": "Askeri üstünlük hak kazandırır",
-      "E": "Kamuoyuna göre hak değişir"
-    },
-    "dogru": "A",
-    "cozum": "İnsan hakları hukuku, her bireyin eşit ve vazgeçilmez haklara sahip olduğunu temel alır."
+    "secenekler": [
+      "Her bireyin eşit ve vazgeçilmez haklara sahip olması",
+      "Sadece devletlerin hakları önemlidir",
+      "Ekonomik güçle hak sağlanır",
+      "Askeri üstünlük hak kazandırır",
+      "Kamuoyuna göre hak değişir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İnsan hakları hukuku, her bireyin eşit ve vazgeçilmez haklara sahip olduğunu temel alır."
   },
   {
-    "id": 344,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Deniz Hukuku",
     "soru": "Kıta sahanlığı hakkı hangi durumda geçerlidir?",
-    "secenekler": {
-      "A": "Devletin kara sahilinden itibaren deniz tabanında hak iddia etmesi",
-      "B": "Sadece ulusal sınırlar içinde",
-      "C": "Kamuoyunun onayı ile",
-      "D": "Askeri işgal ile",
-      "E": "Hiçbir zaman geçerli değildir"
-    },
-    "dogru": "A",
-    "cozum": "Kıta sahanlığı, devletin kara sahilinden itibaren deniz tabanında hak iddia etmesini ifade eder."
+    "secenekler": [
+      "Devletin kara sahilinden itibaren deniz tabanında hak iddia etmesi",
+      "Sadece ulusal sınırlar içinde",
+      "Kamuoyunun onayı ile",
+      "Askeri işgal ile",
+      "Hiçbir zaman geçerli değildir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kıta sahanlığı, devletin kara sahilinden itibaren deniz tabanında hak iddia etmesini ifade eder."
   },
   {
-    "id": 345,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Hava Hukuku",
     "soru": "Uluslararası hava sahasında hangi hak devlete aittir?",
-    "secenekler": {
-      "A": "Kendi hava sahasını kontrol etme hakkı",
-      "B": "Komşu devletlerin hava sahasını kullanma hakkı",
-      "C": "Hiçbir sınırlama yoktur",
-      "D": "Kamuoyu izni ile kullanım",
-      "E": "Uluslararası mahkeme kararı ile zorunlu"
-    },
-    "dogru": "A",
-    "cozum": "Devletler, kendi hava sahalarını kontrol etme ve yönetme hakkına sahiptir."
+    "secenekler": [
+      "Kendi hava sahasını kontrol etme hakkı",
+      "Komşu devletlerin hava sahasını kullanma hakkı",
+      "Hiçbir sınırlama yoktur",
+      "Kamuoyu izni ile kullanım",
+      "Uluslararası mahkeme kararı ile zorunlu"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Devletler, kendi hava sahalarını kontrol etme ve yönetme hakkına sahiptir."
   },
   {
-    "id": 346,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Sözleşmeler Hukuku",
     "soru": "Uluslararası bir sözleşmenin geçerliliği için gerekli koşul nedir?",
-    "secenekler": {
-      "A": "Taraf devletlerin rızası",
-      "B": "Tek tarafın onayı",
-      "C": "Kamuoyu desteği",
-      "D": "Askeri güç kullanımı",
-      "E": "Hiçbir koşul gerekmez"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası sözleşmeler, taraf devletlerin rızası ve kabulü ile geçerlilik kazanır."
+    "secenekler": [
+      "Taraf devletlerin rızası",
+      "Tek tarafın onayı",
+      "Kamuoyu desteği",
+      "Askeri güç kullanımı",
+      "Hiçbir koşul gerekmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası sözleşmeler, taraf devletlerin rızası ve kabulü ile geçerlilik kazanır."
   },
   {
-    "id": 347,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Yaptırımlar",
     "soru": "BM yaptırımlarının amacı nedir?",
-    "secenekler": {
-      "A": "Uluslararası barış ve güvenliği korumak",
-      "B": "Sadece ekonomik baskı oluşturmak",
-      "C": "Askeri üstünlük sağlamak",
-      "D": "Kültürel üstünlük sağlamak",
-      "E": "Hiçbir amacı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "BM yaptırımları, uluslararası barış ve güvenliği sağlamak amacıyla uygulanır."
+    "secenekler": [
+      "Uluslararası barış ve güvenliği korumak",
+      "Sadece ekonomik baskı oluşturmak",
+      "Askeri üstünlük sağlamak",
+      "Kültürel üstünlük sağlamak",
+      "Hiçbir amacı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "BM yaptırımları, uluslararası barış ve güvenliği sağlamak amacıyla uygulanır."
   },
   {
-    "id": 348,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Mahkemeler",
     "soru": "Uluslararası Adalet Divanı hangi durumda yetkilidir?",
-    "secenekler": {
-      "A": "Üye devletler arasındaki hukuki anlaşmazlıklarda",
-      "B": "Sadece tek devletin iç hukuku için",
-      "C": "Spor anlaşmazlıklarında",
-      "D": "Kültürel anlaşmazlıklarda",
-      "E": "Hiçbir durumda yetkili değildir"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası Adalet Divanı, üye devletler arasındaki hukuki anlaşmazlıkları çözmekle yetkilidir."
+    "secenekler": [
+      "Üye devletler arasındaki hukuki anlaşmazlıklarda",
+      "Sadece tek devletin iç hukuku için",
+      "Spor anlaşmazlıklarında",
+      "Kültürel anlaşmazlıklarda",
+      "Hiçbir durumda yetkili değildir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası Adalet Divanı, üye devletler arasındaki hukuki anlaşmazlıkları çözmekle yetkilidir."
   },
   {
-    "id": 349,
-    "ders": "Uluslararası İlişkiler",
     "konu": "İnsan Hakları Mahkemeleri",
     "soru": "Avrupa İnsan Hakları Mahkemesi’nin amacı nedir?",
-    "secenekler": {
-      "A": "Bireylerin haklarını korumak ve ihlalleri değerlendirmek",
-      "B": "Sadece devletler arası ekonomik anlaşmazlıkları çözmek",
-      "C": "Askeri strateji geliştirmek",
-      "D": "Kamuoyunu yönlendirmek",
-      "E": "Hiçbir işlevi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "AİHM, bireylerin haklarını korumak ve ihlalleri değerlendirmek amacıyla çalışır."
+    "secenekler": [
+      "Bireylerin haklarını korumak ve ihlalleri değerlendirmek",
+      "Sadece devletler arası ekonomik anlaşmazlıkları çözmek",
+      "Askeri strateji geliştirmek",
+      "Kamuoyunu yönlendirmek",
+      "Hiçbir işlevi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "AİHM, bireylerin haklarını korumak ve ihlalleri değerlendirmek amacıyla çalışır."
   },
   {
-    "id": 350,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Çevre Hukuku",
     "soru": "Uluslararası çevre hukukunda devletlerin sorumluluğu nedir?",
-    "secenekler": {
-      "A": "Çevresel zararları önlemek ve uluslararası anlaşmalara uymak",
-      "B": "Sadece kendi topraklarını korumak",
-      "C": "Askeri güçle çevreyi korumak",
-      "D": "Kamuoyunu yanıltmak",
-      "E": "Hiçbir yükümlülük yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Devletler, çevresel zararları önlemek ve uluslararası çevre anlaşmalarına uymakla yükümlüdür."
+    "secenekler": [
+      "Çevresel zararları önlemek ve uluslararası anlaşmalara uymak",
+      "Sadece kendi topraklarını korumak",
+      "Askeri güçle çevreyi korumak",
+      "Kamuoyunu yanıltmak",
+      "Hiçbir yükümlülük yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Devletler, çevresel zararları önlemek ve uluslararası çevre anlaşmalarına uymakla yükümlüdür."
   },
   {
-    "id": 351,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Ekonomik Krizler",
     "soru": "2008 Küresel Finans Krizi’nin temel nedeni nedir?",
-    "secenekler": {
-      "A": "Mortgage piyasasında yüksek riskli krediler ve finansal regülasyon eksikliği",
-      "B": "Sadece doğal afetler",
-      "C": "Ulusal seçimler",
-      "D": "Kültürel anlaşmazlıklar",
-      "E": "Turizm gelirlerinin düşmesi"
-    },
-    "dogru": "A",
-    "cozum": "2008 krizi, mortgage piyasasında yüksek riskli krediler ve finansal regülasyon eksikliğinden kaynaklanmıştır."
+    "secenekler": [
+      "Mortgage piyasasında yüksek riskli krediler ve finansal regülasyon eksikliği",
+      "Sadece doğal afetler",
+      "Ulusal seçimler",
+      "Kültürel anlaşmazlıklar",
+      "Turizm gelirlerinin düşmesi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "2008 krizi, mortgage piyasasında yüksek riskli krediler ve finansal regülasyon eksikliğinden kaynaklanmıştır."
   },
   {
-    "id": 352,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Sağlık Krizleri",
     "soru": "COVID-19 pandemi yönetiminde hangi uluslararası yaklaşım kritik olmuştur?",
-    "secenekler": {
-      "A": "DSÖ koordinasyonu ve bilgi paylaşımı",
-      "B": "Sadece ulusal sınırlar içinde izolasyon",
-      "C": "Ekonomik yaptırım uygulamak",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Hiçbir müdahale"
-    },
-    "dogru": "A",
-    "cozum": "Pandemi yönetiminde DSÖ koordinasyonu ve ülkeler arası bilgi paylaşımı kritik rol oynamıştır."
+    "secenekler": [
+      "DSÖ koordinasyonu ve bilgi paylaşımı",
+      "Sadece ulusal sınırlar içinde izolasyon",
+      "Ekonomik yaptırım uygulamak",
+      "Kamuoyunu manipüle etmek",
+      "Hiçbir müdahale"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Pandemi yönetiminde DSÖ koordinasyonu ve ülkeler arası bilgi paylaşımı kritik rol oynamıştır."
   },
   {
-    "id": 353,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Çevresel Krizler",
     "soru": "Küresel iklim krizlerinin uluslararası çözümünde hangi yöntem öne çıkar?",
-    "secenekler": {
-      "A": "Paris İklim Anlaşması gibi uluslararası mutabakatlar",
-      "B": "Sadece yerel önlemler",
-      "C": "Askeri müdahale",
-      "D": "Kültürel propagandalar",
-      "E": "Hiçbir önlem alınmaması"
-    },
-    "dogru": "A",
-    "cozum": "Küresel iklim krizlerinin çözümü, uluslararası mutabakatlar ve anlaşmalarla sağlanır."
+    "secenekler": [
+      "Paris İklim Anlaşması gibi uluslararası mutabakatlar",
+      "Sadece yerel önlemler",
+      "Askeri müdahale",
+      "Kültürel propagandalar",
+      "Hiçbir önlem alınmaması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Küresel iklim krizlerinin çözümü, uluslararası mutabakatlar ve anlaşmalarla sağlanır."
   },
   {
-    "id": 354,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Jeopolitik Krizler",
     "soru": "Bölgesel jeopolitik krizlerin çözümünde hangi yaklaşım etkilidir?",
-    "secenekler": {
-      "A": "Çok taraflı diplomasi ve arabuluculuk",
-      "B": "Tek taraflı baskı",
-      "C": "Savaş tehditi",
-      "D": "Kamuoyu manipülasyonu",
-      "E": "Sorunu görmezden gelmek"
-    },
-    "dogru": "A",
-    "cozum": "Çok taraflı diplomasi ve arabuluculuk, jeopolitik krizlerin çözümünde en etkili yaklaşımdır."
+    "secenekler": [
+      "Çok taraflı diplomasi ve arabuluculuk",
+      "Tek taraflı baskı",
+      "Savaş tehditi",
+      "Kamuoyu manipülasyonu",
+      "Sorunu görmezden gelmek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çok taraflı diplomasi ve arabuluculuk, jeopolitik krizlerin çözümünde en etkili yaklaşımdır."
   },
   {
-    "id": 355,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji ve Krizler",
     "soru": "Petrol arzındaki ani düşüşler hangi tür krizlere yol açabilir?",
-    "secenekler": {
-      "A": "Ekonomik ve jeopolitik krizler",
-      "B": "Sadece kültürel krizler",
-      "C": "Sağlık krizleri",
-      "D": "Turizm krizleri",
-      "E": "Hiçbir kriz yaratmaz"
-    },
-    "dogru": "A",
-    "cozum": "Petrol arzındaki ani düşüşler, ekonomik ve jeopolitik krizlere yol açabilir."
+    "secenekler": [
+      "Ekonomik ve jeopolitik krizler",
+      "Sadece kültürel krizler",
+      "Sağlık krizleri",
+      "Turizm krizleri",
+      "Hiçbir kriz yaratmaz"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Petrol arzındaki ani düşüşler, ekonomik ve jeopolitik krizlere yol açabilir."
   },
   {
-    "id": 356,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel İşbirliği",
     "soru": "Uluslararası krizlerde etkin çözüm için hangi mekanizma kritik öneme sahiptir?",
-    "secenekler": {
-      "A": "BM, IMF ve DSÖ gibi uluslararası kuruluşlar",
-      "B": "Sadece tek ülkenin iç mekanizmaları",
-      "C": "Askeri güç kullanımı",
-      "D": "Kamuoyunu yönlendirmek",
-      "E": "Hiçbir mekanizma"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası krizlerde etkin çözüm, BM, IMF ve DSÖ gibi kuruluşlar aracılığıyla sağlanır."
+    "secenekler": [
+      "BM, IMF ve DSÖ gibi uluslararası kuruluşlar",
+      "Sadece tek ülkenin iç mekanizmaları",
+      "Askeri güç kullanımı",
+      "Kamuoyunu yönlendirmek",
+      "Hiçbir mekanizma"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası krizlerde etkin çözüm, BM, IMF ve DSÖ gibi kuruluşlar aracılığıyla sağlanır."
   },
   {
-    "id": 357,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Siber Krizler",
     "soru": "Siber saldırılar uluslararası kriz olarak değerlendirildiğinde hangi önlem önceliklidir?",
-    "secenekler": {
-      "A": "Uluslararası siber güvenlik protokollerine uyum",
-      "B": "Sadece yerel firewall",
-      "C": "Kamuoyu manipülasyonu",
-      "D": "Askeri saldırı",
-      "E": "Hiçbir önlem"
-    },
-    "dogru": "A",
-    "cozum": "Siber krizlerin çözümünde uluslararası siber güvenlik protokollerine uyum kritik öneme sahiptir."
+    "secenekler": [
+      "Uluslararası siber güvenlik protokollerine uyum",
+      "Sadece yerel firewall",
+      "Kamuoyu manipülasyonu",
+      "Askeri saldırı",
+      "Hiçbir önlem"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Siber krizlerin çözümünde uluslararası siber güvenlik protokollerine uyum kritik öneme sahiptir."
   },
   {
-    "id": 358,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel Göç Krizleri",
     "soru": "Küresel göç krizlerinde en etkili çözüm yöntemi nedir?",
-    "secenekler": {
-      "A": "Uluslararası koordinasyon ve insani yardım",
-      "B": "Sınır kapatma",
-      "C": "Askeri müdahale",
-      "D": "Kamuoyu manipülasyonu",
-      "E": "Hiçbir çözüm aramamak"
-    },
-    "dogru": "A",
-    "cozum": "Küresel göç krizlerinde uluslararası koordinasyon ve insani yardım en etkili çözüm yoludur."
+    "secenekler": [
+      "Uluslararası koordinasyon ve insani yardım",
+      "Sınır kapatma",
+      "Askeri müdahale",
+      "Kamuoyu manipülasyonu",
+      "Hiçbir çözüm aramamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Küresel göç krizlerinde uluslararası koordinasyon ve insani yardım en etkili çözüm yoludur."
   },
   {
-    "id": 359,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Finansal Kriz Yönetimi",
     "soru": "IMF’nin kriz dönemlerinde rolü nedir?",
-    "secenekler": {
-      "A": "Üye ülkeleri mali destek ve danışmanlık ile yönlendirmek",
-      "B": "Sadece kültürel etkinlik düzenlemek",
-      "C": "Askeri güç sağlamak",
-      "D": "Kamuoyunu manipüle etmek",
-      "E": "Hiçbir rolü yoktur"
-    },
-    "dogru": "A",
-    "cozum": "IMF, kriz dönemlerinde üye ülkelere mali destek ve danışmanlık sağlar."
+    "secenekler": [
+      "Üye ülkeleri mali destek ve danışmanlık ile yönlendirmek",
+      "Sadece kültürel etkinlik düzenlemek",
+      "Askeri güç sağlamak",
+      "Kamuoyunu manipüle etmek",
+      "Hiçbir rolü yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "IMF, kriz dönemlerinde üye ülkelere mali destek ve danışmanlık sağlar."
   },
   {
-    "id": 360,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Kriz Analizi",
     "soru": "Küresel krizlerin etkili yönetiminde hangi beceri önceliklidir?",
-    "secenekler": {
-      "A": "Stratejik analiz ve hızlı karar alma",
-      "B": "Sadece istatistiksel veri toplama",
-      "C": "Kültürel etkinlik planlama",
-      "D": "Turizm geliştirme",
-      "E": "Hiçbir beceri gerekli değildir"
-    },
-    "dogru": "A",
-    "cozum": "Küresel kriz yönetiminde stratejik analiz ve hızlı karar alma becerisi kritik öneme sahiptir."
+    "secenekler": [
+      "Stratejik analiz ve hızlı karar alma",
+      "Sadece istatistiksel veri toplama",
+      "Kültürel etkinlik planlama",
+      "Turizm geliştirme",
+      "Hiçbir beceri gerekli değildir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Küresel kriz yönetiminde stratejik analiz ve hızlı karar alma becerisi kritik öneme sahiptir."
   },
   {
-    "id": 361,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji Politikaları",
     "soru": "Petrol ve doğal gaz rezervlerinin yoğun olduğu bölgelerde hangi uluslararası durum daha sık yaşanır?",
-    "secenekler": {
-      "A": "Jeopolitik çekişmeler ve diplomatik krizler",
-      "B": "Sadece kültürel etkinlikler",
-      "C": "Doğal afetler",
-      "D": "Turizm artışı",
-      "E": "Hiçbir etki"
-    },
-    "dogru": "A",
-    "cozum": "Enerji rezervlerinin yoğun olduğu bölgelerde jeopolitik çekişmeler ve diplomatik krizler daha sık ortaya çıkar."
+    "secenekler": [
+      "Jeopolitik çekişmeler ve diplomatik krizler",
+      "Sadece kültürel etkinlikler",
+      "Doğal afetler",
+      "Turizm artışı",
+      "Hiçbir etki"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji rezervlerinin yoğun olduğu bölgelerde jeopolitik çekişmeler ve diplomatik krizler daha sık ortaya çıkar."
   },
   {
-    "id": 362,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji Güvenliği",
     "soru": "Uluslararası enerji güvenliği stratejilerinde öncelik nedir?",
-    "secenekler": {
-      "A": "Kesintisiz enerji arzını sağlamak",
-      "B": "Sadece yerel üretimi artırmak",
-      "C": "Kültürel faaliyetleri desteklemek",
-      "D": "Turizm gelirlerini artırmak",
-      "E": "Hiçbir önlem almak"
-    },
-    "dogru": "A",
-    "cozum": "Enerji güvenliği stratejilerinin önceliği, kesintisiz enerji arzını sağlamaktır."
+    "secenekler": [
+      "Kesintisiz enerji arzını sağlamak",
+      "Sadece yerel üretimi artırmak",
+      "Kültürel faaliyetleri desteklemek",
+      "Turizm gelirlerini artırmak",
+      "Hiçbir önlem almak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji güvenliği stratejilerinin önceliği, kesintisiz enerji arzını sağlamaktır."
   },
   {
-    "id": 363,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji Krizleri",
     "soru": "1973 Petrol Krizi’nin temel nedeni nedir?",
-    "secenekler": {
-      "A": "OPEC ülkelerinin petrol ihracatını kısıtlaması",
-      "B": "Doğal afetler",
-      "C": "Ulusal seçimler",
-      "D": "Kamuoyu baskısı",
-      "E": "Hiçbir neden yoktur"
-    },
-    "dogru": "A",
-    "cozum": "1973 Petrol Krizi, OPEC ülkelerinin petrol ihracatını kısıtlamasıyla ortaya çıkmıştır."
+    "secenekler": [
+      "OPEC ülkelerinin petrol ihracatını kısıtlaması",
+      "Doğal afetler",
+      "Ulusal seçimler",
+      "Kamuoyu baskısı",
+      "Hiçbir neden yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1973 Petrol Krizi, OPEC ülkelerinin petrol ihracatını kısıtlamasıyla ortaya çıkmıştır."
   },
   {
-    "id": 364,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji ve Diplomasi",
     "soru": "Enerji kaynaklarının kontrolü hangi diplomatik stratejiyi tetikler?",
-    "secenekler": {
-      "A": "Çok taraflı müzakereler ve enerji anlaşmaları",
-      "B": "Sadece tek taraflı baskı",
-      "C": "Kamuoyu manipülasyonu",
-      "D": "Kültürel propagandalar",
-      "E": "Hiçbir strateji"
-    },
-    "dogru": "A",
-    "cozum": "Enerji kaynaklarının kontrolü, çok taraflı müzakereler ve enerji anlaşmalarını tetikler."
+    "secenekler": [
+      "Çok taraflı müzakereler ve enerji anlaşmaları",
+      "Sadece tek taraflı baskı",
+      "Kamuoyu manipülasyonu",
+      "Kültürel propagandalar",
+      "Hiçbir strateji"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji kaynaklarının kontrolü, çok taraflı müzakereler ve enerji anlaşmalarını tetikler."
   },
   {
-    "id": 365,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji Jeopolitiği",
     "soru": "Enerji jeopolitiğinde hangi unsur en kritik kabul edilir?",
-    "secenekler": {
-      "A": "Kaynakların dağılımı ve ulaşım yolları",
-      "B": "Sadece kültürel değerler",
-      "C": "Ulusal bayraklar",
-      "D": "Kamuoyu destek oranı",
-      "E": "Hiçbir unsur kritik değildir"
-    },
-    "dogru": "A",
-    "cozum": "Enerji jeopolitiğinde kaynakların dağılımı ve ulaşım yolları kritik öneme sahiptir."
+    "secenekler": [
+      "Kaynakların dağılımı ve ulaşım yolları",
+      "Sadece kültürel değerler",
+      "Ulusal bayraklar",
+      "Kamuoyu destek oranı",
+      "Hiçbir unsur kritik değildir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji jeopolitiğinde kaynakların dağılımı ve ulaşım yolları kritik öneme sahiptir."
   },
   {
-    "id": 366,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji Rekabeti",
     "soru": "Enerji kaynaklarının kontrolü devletler arası hangi rekabeti artırır?",
-    "secenekler": {
-      "A": "Jeopolitik ve ekonomik rekabeti",
-      "B": "Sadece kültürel rekabeti",
-      "C": "Askeri stratejik üstünlük",
-      "D": "Turizm rekabeti",
-      "E": "Hiçbir rekabet yaratmaz"
-    },
-    "dogru": "A",
-    "cozum": "Enerji kaynaklarının kontrolü, devletler arası jeopolitik ve ekonomik rekabeti artırır."
+    "secenekler": [
+      "Jeopolitik ve ekonomik rekabeti",
+      "Sadece kültürel rekabeti",
+      "Askeri stratejik üstünlük",
+      "Turizm rekabeti",
+      "Hiçbir rekabet yaratmaz"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji kaynaklarının kontrolü, devletler arası jeopolitik ve ekonomik rekabeti artırır."
   },
   {
-    "id": 367,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji İşbirliği",
     "soru": "Ülkeler arası enerji işbirliğinin faydası nedir?",
-    "secenekler": {
-      "A": "Enerji arz güvenliğini artırmak ve krizleri azaltmak",
-      "B": "Sadece ekonomik üstünlük sağlamak",
-      "C": "Kültürel etkileşimi sağlamak",
-      "D": "Kamuoyu baskısını yönetmek",
-      "E": "Hiçbir faydası yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Enerji işbirliği, enerji arz güvenliğini artırır ve krizleri azaltır."
+    "secenekler": [
+      "Enerji arz güvenliğini artırmak ve krizleri azaltmak",
+      "Sadece ekonomik üstünlük sağlamak",
+      "Kültürel etkileşimi sağlamak",
+      "Kamuoyu baskısını yönetmek",
+      "Hiçbir faydası yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji işbirliği, enerji arz güvenliğini artırır ve krizleri azaltır."
   },
   {
-    "id": 368,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Yenilenebilir Enerji",
     "soru": "Yenilenebilir enerji kaynaklarının önemi nedir?",
-    "secenekler": {
-      "A": "Enerji bağımsızlığını ve sürdürülebilirliği artırmak",
-      "B": "Sadece maliyetleri artırmak",
-      "C": "Askeri üstünlük sağlamak",
-      "D": "Kültürel etkiler yaratmak",
-      "E": "Hiçbir önemi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Yenilenebilir enerji kaynakları, enerji bağımsızlığını ve sürdürülebilirliği artırır."
+    "secenekler": [
+      "Enerji bağımsızlığını ve sürdürülebilirliği artırmak",
+      "Sadece maliyetleri artırmak",
+      "Askeri üstünlük sağlamak",
+      "Kültürel etkiler yaratmak",
+      "Hiçbir önemi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yenilenebilir enerji kaynakları, enerji bağımsızlığını ve sürdürülebilirliği artırır."
   },
   {
-    "id": 369,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji ve Çevre",
     "soru": "Fosil yakıtların yoğun kullanımı hangi uluslararası sorunu tetikler?",
-    "secenekler": {
-      "A": "İklim değişikliği ve çevresel krizler",
-      "B": "Sadece ekonomik durgunluk",
-      "C": "Kültürel farklar",
-      "D": "Turizm azalması",
-      "E": "Hiçbir sorun yaratmaz"
-    },
-    "dogru": "A",
-    "cozum": "Fosil yakıtların yoğun kullanımı, iklim değişikliği ve çevresel krizleri tetikler."
+    "secenekler": [
+      "İklim değişikliği ve çevresel krizler",
+      "Sadece ekonomik durgunluk",
+      "Kültürel farklar",
+      "Turizm azalması",
+      "Hiçbir sorun yaratmaz"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Fosil yakıtların yoğun kullanımı, iklim değişikliği ve çevresel krizleri tetikler."
   },
   {
-    "id": 370,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Enerji Stratejisi",
     "soru": "Enerji stratejilerinin ulusal güvenliğe katkısı nedir?",
-    "secenekler": {
-      "A": "Kaynakların güvenliği ve jeopolitik istikrarı sağlamak",
-      "B": "Sadece ekonomik kazanç sağlamak",
-      "C": "Kültürel etkinlikleri artırmak",
-      "D": "Kamuoyu desteğini yönetmek",
-      "E": "Hiçbir katkısı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Enerji stratejileri, kaynakların güvenliğini ve jeopolitik istikrarı sağlar."
+    "secenekler": [
+      "Kaynakların güvenliği ve jeopolitik istikrarı sağlamak",
+      "Sadece ekonomik kazanç sağlamak",
+      "Kültürel etkinlikleri artırmak",
+      "Kamuoyu desteğini yönetmek",
+      "Hiçbir katkısı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Enerji stratejileri, kaynakların güvenliğini ve jeopolitik istikrarı sağlar."
   },
   {
-    "id": 371,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Birleşmiş Milletler",
     "soru": "Birleşmiş Milletler Genel Kurulu’nun temel işlevi nedir?",
-    "secenekler": {
-      "A": "Üye devletler arasında tartışma, karar ve öneri üretmek",
-      "B": "Sadece askeri operasyon düzenlemek",
-      "C": "Ekonomik yaptırım uygulamak",
-      "D": "Sadece kültürel etkinlik organize etmek",
-      "E": "Hiçbir işlevi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "BM Genel Kurulu, üye devletler arasında tartışma, karar ve öneri üretmekle görevli ana organdır."
+    "secenekler": [
+      "Üye devletler arasında tartışma, karar ve öneri üretmek",
+      "Sadece askeri operasyon düzenlemek",
+      "Ekonomik yaptırım uygulamak",
+      "Sadece kültürel etkinlik organize etmek",
+      "Hiçbir işlevi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "BM Genel Kurulu, üye devletler arasında tartışma, karar ve öneri üretmekle görevli ana organdır."
   },
   {
-    "id": 372,
-    "ders": "Uluslararası İlişkiler",
     "konu": "NATO",
     "soru": "NATO’nun temel amacı nedir?",
-    "secenekler": {
-      "A": "Üye devletlerin karşılıklı savunma garantisi ve güvenliği sağlamak",
-      "B": "Sadece ekonomik işbirliği yapmak",
-      "C": "Kültürel değişim programları yürütmek",
-      "D": "Turizm sektörünü geliştirmek",
-      "E": "Hiçbir amacı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "NATO, üye devletlerin karşılıklı savunma garantisini ve güvenliğini sağlamayı amaçlar."
+    "secenekler": [
+      "Üye devletlerin karşılıklı savunma garantisi ve güvenliği sağlamak",
+      "Sadece ekonomik işbirliği yapmak",
+      "Kültürel değişim programları yürütmek",
+      "Turizm sektörünü geliştirmek",
+      "Hiçbir amacı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "NATO, üye devletlerin karşılıklı savunma garantisini ve güvenliğini sağlamayı amaçlar."
   },
   {
-    "id": 373,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Diplomasi",
     "soru": "Geleneksel diplomasi ile çağdaş diplomasi arasındaki temel fark nedir?",
-    "secenekler": {
-      "A": "Çağdaş diplomasi daha çok kamu diplomasisi ve iletişim araçlarını kullanır",
-      "B": "Geleneksel diplomasi sadece ekonomiyle ilgilenir",
-      "C": "Geleneksel diplomasi kültürel etkinlik odaklıdır",
-      "D": "Çağdaş diplomasi sadece askeri operasyon düzenler",
-      "E": "Hiçbir fark yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Çağdaş diplomasi, kamu diplomasisi ve iletişim araçlarını daha etkin kullanarak ilişkileri yönetir."
+    "secenekler": [
+      "Çağdaş diplomasi daha çok kamu diplomasisi ve iletişim araçlarını kullanır",
+      "Geleneksel diplomasi sadece ekonomiyle ilgilenir",
+      "Geleneksel diplomasi kültürel etkinlik odaklıdır",
+      "Çağdaş diplomasi sadece askeri operasyon düzenler",
+      "Hiçbir fark yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çağdaş diplomasi, kamu diplomasisi ve iletişim araçlarını daha etkin kullanarak ilişkileri yönetir."
   },
   {
-    "id": 374,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Avrupa Birliği",
     "soru": "Avrupa Birliği’nin karar alma mekanizması hangi yapıyı içerir?",
-    "secenekler": {
-      "A": "Avrupa Komisyonu, Avrupa Parlamentosu ve Avrupa Konseyi",
-      "B": "Sadece Avrupa Komisyonu",
-      "C": "Sadece Avrupa Parlamentosu",
-      "D": "Sadece Avrupa Merkez Bankası",
-      "E": "Hiçbir yapı içermez"
-    },
-    "dogru": "A",
-    "cozum": "AB karar alma mekanizması, Avrupa Komisyonu, Avrupa Parlamentosu ve Avrupa Konseyinin koordinasyonu ile işler."
+    "secenekler": [
+      "Avrupa Komisyonu, Avrupa Parlamentosu ve Avrupa Konseyi",
+      "Sadece Avrupa Komisyonu",
+      "Sadece Avrupa Parlamentosu",
+      "Sadece Avrupa Merkez Bankası",
+      "Hiçbir yapı içermez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "AB karar alma mekanizması, Avrupa Komisyonu, Avrupa Parlamentosu ve Avrupa Konseyinin koordinasyonu ile işler."
   },
   {
-    "id": 375,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Diplomasi",
     "soru": "Müzakerelerde 'çok taraflı diplomasi' neyi ifade eder?",
-    "secenekler": {
-      "A": "Birden fazla ülkenin katıldığı, ortak çıkarların tartışıldığı diplomasi",
-      "B": "Sadece iki ülke arasında yapılan pazarlık",
-      "C": "Kültürel değişim programları",
-      "D": "Askeri işbirliği",
-      "E": "Hiçbir anlamı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Çok taraflı diplomasi, birden fazla ülkenin katıldığı ve ortak çıkarların tartışıldığı diplomatik yöntemdir."
+    "secenekler": [
+      "Birden fazla ülkenin katıldığı, ortak çıkarların tartışıldığı diplomasi",
+      "Sadece iki ülke arasında yapılan pazarlık",
+      "Kültürel değişim programları",
+      "Askeri işbirliği",
+      "Hiçbir anlamı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çok taraflı diplomasi, birden fazla ülkenin katıldığı ve ortak çıkarların tartışıldığı diplomatik yöntemdir."
   },
   {
-    "id": 376,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Barış Gücü Operasyonları",
     "soru": "BM Barış Gücü (Peacekeeping) hangi amaçla oluşturulmuştur?",
-    "secenekler": {
-      "A": "Uyuşmazlıkların çözümü ve barışın korunması",
-      "B": "Sadece ekonomik yaptırımlar uygulamak",
-      "C": "Kültürel etkinlik yürütmek",
-      "D": "Askeri işgal yapmak",
-      "E": "Hiçbir amacı yoktur"
-    },
-    "dogru": "A",
-    "cozum": "BM Barış Gücü, uluslararası uyuşmazlıkların çözümüne yardımcı olmak ve barışı korumak amacıyla oluşturulmuştur."
+    "secenekler": [
+      "Uyuşmazlıkların çözümü ve barışın korunması",
+      "Sadece ekonomik yaptırımlar uygulamak",
+      "Kültürel etkinlik yürütmek",
+      "Askeri işgal yapmak",
+      "Hiçbir amacı yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "BM Barış Gücü, uluslararası uyuşmazlıkların çözümüne yardımcı olmak ve barışı korumak amacıyla oluşturulmuştur."
   },
   {
-    "id": 377,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Diplomatik İlişkiler",
     "soru": "Diplomatların temel görevi nedir?",
-    "secenekler": {
-      "A": "Ülkeler arasında iletişim kurmak ve çıkarları korumak",
-      "B": "Sadece turizm tanıtımı yapmak",
-      "C": "Askeri operasyon düzenlemek",
-      "D": "Kültürel festival organize etmek",
-      "E": "Hiçbir görevi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Diplomatlar, ülkeler arasında iletişim kurmak ve kendi ülkesinin çıkarlarını korumakla görevlidir."
+    "secenekler": [
+      "Ülkeler arasında iletişim kurmak ve çıkarları korumak",
+      "Sadece turizm tanıtımı yapmak",
+      "Askeri operasyon düzenlemek",
+      "Kültürel festival organize etmek",
+      "Hiçbir görevi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Diplomatlar, ülkeler arasında iletişim kurmak ve kendi ülkesinin çıkarlarını korumakla görevlidir."
   },
   {
-    "id": 378,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Uluslararası Kuruluşlar",
     "soru": "Uluslararası kuruluşlar kriz çözümünde hangi rolü üstlenir?",
-    "secenekler": {
-      "A": "Ara buluculuk, standart belirleme ve destek sağlama",
-      "B": "Sadece ekonomik yaptırım uygulama",
-      "C": "Kültürel propaganda yürütme",
-      "D": "Askeri müdahale yapma",
-      "E": "Hiçbir rol üstlenmez"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası kuruluşlar, kriz çözümünde ara buluculuk yapar, standartlar belirler ve destek sağlar."
+    "secenekler": [
+      "Ara buluculuk, standart belirleme ve destek sağlama",
+      "Sadece ekonomik yaptırım uygulama",
+      "Kültürel propaganda yürütme",
+      "Askeri müdahale yapma",
+      "Hiçbir rol üstlenmez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası kuruluşlar, kriz çözümünde ara buluculuk yapar, standartlar belirler ve destek sağlar."
   },
   {
-    "id": 379,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Küresel Güvenlik",
     "soru": "Uluslararası güvenlikte en önemli yaklaşım hangisidir?",
-    "secenekler": {
-      "A": "Çok taraflı işbirliği ve diplomatik diyalog",
-      "B": "Tek taraflı güç kullanımı",
-      "C": "Kamuoyu manipülasyonu",
-      "D": "Kültürel etkinlik odaklı politika",
-      "E": "Hiçbir yaklaşım"
-    },
-    "dogru": "A",
-    "cozum": "Uluslararası güvenlikte en etkili yaklaşım çok taraflı işbirliği ve diplomatik diyaloğu içerir."
+    "secenekler": [
+      "Çok taraflı işbirliği ve diplomatik diyalog",
+      "Tek taraflı güç kullanımı",
+      "Kamuoyu manipülasyonu",
+      "Kültürel etkinlik odaklı politika",
+      "Hiçbir yaklaşım"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uluslararası güvenlikte en etkili yaklaşım çok taraflı işbirliği ve diplomatik diyaloğu içerir."
   },
   {
-    "id": 380,
-    "ders": "Uluslararası İlişkiler",
     "konu": "Kriz Önleme",
     "soru": "Diplomasi ile kriz önleme arasındaki ilişki nedir?",
-    "secenekler": {
-      "A": "Diplomasi, krizlerin erken aşamada çözülmesini sağlar",
-      "B": "Sadece ekonomik önlemler alınır",
-      "C": "Kamuoyu manipülasyonu yapılır",
-      "D": "Askeri güç kullanılır",
-      "E": "Hiçbir ilişkisi yoktur"
-    },
-    "dogru": "A",
-    "cozum": "Diplomasi, krizlerin erken aşamada çözülmesini ve çatışmaların önlenmesini sağlar."
+    "secenekler": [
+      "Diplomasi, krizlerin erken aşamada çözülmesini sağlar",
+      "Sadece ekonomik önlemler alınır",
+      "Kamuoyu manipülasyonu yapılır",
+      "Askeri güç kullanılır",
+      "Hiçbir ilişkisi yoktur"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Diplomasi, krizlerin erken aşamada çözülmesini ve çatışmaların önlenmesini sağlar."
   }
 ]
