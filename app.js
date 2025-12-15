@@ -38,18 +38,53 @@ function safeText(v){
 }
 
 function normalizeQuestion(q){
-  // tolerate multiple schemas
   const konu = q.konu || q.topic || "Genel";
   const soru = q.soru || q.question || "";
   const paragraf = (q.paragraf ?? q.paragraph) || null;
-  const options = q.secenekler || q.options || [];
-  const correct = (q.dogru_index ?? q.dogruIndex ?? q.correct_index ?? q.correctIndex ?? q.answer_index ?? q.answerIndex);
-  const explain = q.aciklama || q.explain || q.explanation || "";
+
+  // --- seçenekleri normalize et: array veya {A:..,B:..} gelebilir ---
+  let optionsRaw = q.secenekler ?? q.options ?? [];
+  let options = [];
+
+  if (Array.isArray(optionsRaw)) {
+    options = optionsRaw.map(x => safeText(x));
+  } else if (optionsRaw && typeof optionsRaw === "object") {
+    // {A:"",B:"",C:"",D:"",E:""} => ["","",...]
+    const order = ["A","B","C","D","E","F"];
+    options = order
+      .filter(k => k in optionsRaw)
+      .map(k => safeText(optionsRaw[k]));
+    // eğer anahtarlar farklıysa (nadir), değerleri sırayla al
+    if (options.length === 0) options = Object.values(optionsRaw).map(v => safeText(v));
+  } else {
+    options = [];
+  }
+
+  // --- doğru cevabı normalize et: index veya harf gelebilir ---
+  let correct = (q.dogru_index ?? q.dogruIndex ?? q.correct_index ?? q.correctIndex ?? q.answer_index ?? q.answerIndex);
+  if (correct === undefined || correct === null) {
+    correct = q.dogru ?? q.correct ?? q.answer; // "A" / "B" gibi
+  }
+
+  let ci = 0;
+  if (typeof correct === "string") {
+    const up = correct.trim().toUpperCase();
+    const letter = up[0];
+    const idx = "ABCDEF".indexOf(letter);
+    ci = idx >= 0 ? idx : parseInt(up, 10);
+  } else {
+    ci = correct;
+  }
+
+  ci = Number.isFinite(ci) ? parseInt(ci, 10) : 0;
+  if (!Number.isFinite(ci)) ci = 0;
+
+  // sınır kontrolü
+  if (options.length > 0) ci = clamp(ci, 0, options.length - 1);
+
+  const explain = q.aciklama || q.explain || q.explanation || q.cozum || q.cözüm || "";
   const difficulty = q.zorluk || q.difficulty || null;
   const kazanım = q.kazanim || q.kazanım || null;
-
-  let ci = Number.isInteger(correct) ? correct : parseInt(correct, 10);
-  if (!Number.isFinite(ci)) ci = 0;
 
   return {
     raw:q,
