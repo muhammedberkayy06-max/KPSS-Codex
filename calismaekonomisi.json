@@ -1,587 +1,288 @@
 [
   {
-    "id": 2001,
-    "ders": "ÇEKO",
     "konu": "Çalışma Ekonomisinin Kapsamı",
     "soru": "Çalışma ekonomisinin temel inceleme alanı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Sermaye piyasaları",
-      "B": "Mal ve hizmet piyasaları",
-      "C": "Emek piyasaları",
-      "D": "Dış ticaret",
-      "E": "Kamu maliyesi"
-    },
-    "dogru": "C",
-    "cozum": "Çalışma ekonomisi, emek piyasalarını ve emek–sermaye ilişkilerini inceler."
+    "secenekler": [
+      "Sermaye piyasaları",
+      "Mal ve hizmet piyasaları",
+      "Emek piyasaları",
+      "Dış ticaret",
+      "Kamu maliyesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çalışma ekonomisi, emek piyasalarını ve emek–sermaye ilişkilerini inceler."
   },
   {
-    "id": 2002,
-    "ders": "ÇEKO",
     "konu": "Emek Kavramı",
     "soru": "Aşağıdakilerden hangisi emek kavramını en doğru şekilde tanımlar?",
-    "secenekler": {
-      "A": "Üretimde kullanılan tüm doğal kaynaklar",
-      "B": "Sermayenin bir türü",
-      "C": "İnsanın bedensel ve zihinsel üretim faaliyeti",
-      "D": "Makine ve teçhizat",
-      "E": "Devletin üretim faktörü"
-    },
-    "dogru": "C",
-    "cozum": "Emek, insanın bedensel ve zihinsel üretim faaliyetlerini ifade eder."
+    "secenekler": [
+      "Üretimde kullanılan tüm doğal kaynaklar",
+      "Sermayenin bir türü",
+      "İnsanın bedensel ve zihinsel üretim faaliyeti",
+      "Makine ve teçhizat",
+      "Devletin üretim faktörü"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Emek, insanın bedensel ve zihinsel üretim faaliyetlerini ifade eder."
   },
   {
-    "id": 2003,
-    "ders": "ÇEKO",
     "konu": "Emek Piyasası",
     "soru": "Emek piyasasında arz tarafını oluşturan kesim aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "İşverenler",
-      "B": "Devlet",
-      "C": "Tüketiciler",
-      "D": "İşçiler",
-      "E": "Sendikalar"
-    },
-    "dogru": "D",
-    "cozum": "Emek piyasasında arz tarafını işgücünü sunan işçiler oluşturur."
+    "secenekler": [
+      "İşverenler",
+      "Devlet",
+      "Tüketiciler",
+      "İşçiler",
+      "Sendikalar"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Emek piyasasında arz tarafını işgücünü sunan işçiler oluşturur."
   },
   {
-    "id": 2004,
-    "ders": "ÇEKO",
     "konu": "İşgücü Kavramı",
     "soru": "İşgücü kavramı hangi grubu kapsar?",
-    "secenekler": {
-      "A": "Toplam nüfus",
-      "B": "Çalışan nüfus",
-      "C": "Çalışabilir yaştaki nüfus",
-      "D": "İstihdam edilenler + işsizler",
-      "E": "Emekliler"
-    },
-    "dogru": "D",
-    "cozum": "İşgücü, istihdam edilenler ile işsizlerin toplamıdır."
+    "secenekler": [
+      "Toplam nüfus",
+      "Çalışan nüfus",
+      "Çalışabilir yaştaki nüfus",
+      "İstihdam edilenler + işsizler",
+      "Emekliler"
+    ],
+    "dogru_index": 3,
+    "aciklama": "İşgücü, istihdam edilenler ile işsizlerin toplamıdır."
   },
   {
-    "id": 2005,
-    "ders": "ÇEKO",
     "konu": "İşsizlik Türleri",
     "soru": "Konjonktürel dalgalanmalar nedeniyle ortaya çıkan işsizlik türü hangisidir?",
-    "secenekler": {
-      "A": "Yapısal işsizlik",
-      "B": "Mevsimsel işsizlik",
-      "C": "Friksiyonel işsizlik",
-      "D": "Konjonktürel işsizlik",
-      "E": "Gizli işsizlik"
-    },
-    "dogru": "D",
-    "cozum": "Ekonomik dalgalanmalara bağlı işsizlik konjonktürel işsizliktir."
+    "secenekler": [
+      "Yapısal işsizlik",
+      "Mevsimsel işsizlik",
+      "Friksiyonel işsizlik",
+      "Konjonktürel işsizlik",
+      "Gizli işsizlik"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Ekonomik dalgalanmalara bağlı işsizlik konjonktürel işsizliktir."
   },
   {
-    "id": 2006,
-    "ders": "ÇEKO",
     "konu": "Tam İstihdam",
     "soru": "Tam istihdam aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Hiç işsiz olmaması",
-      "B": "Sadece mevsimsel işsizliğin bulunması",
-      "C": "Konjonktürel işsizliğin bulunmaması",
-      "D": "İşgücünün tamamının kamu sektöründe çalışması",
-      "E": "Kayıt dışı istihdamın olmaması"
-    },
-    "dogru": "C",
-    "cozum": "Tam istihdam, konjonktürel işsizliğin olmadığı durumu ifade eder."
+    "secenekler": [
+      "Hiç işsiz olmaması",
+      "Sadece mevsimsel işsizliğin bulunması",
+      "Konjonktürel işsizliğin bulunmaması",
+      "İşgücünün tamamının kamu sektöründe çalışması",
+      "Kayıt dışı istihdamın olmaması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tam istihdam, konjonktürel işsizliğin olmadığı durumu ifade eder."
   },
   {
-    "id": 2007,
-    "ders": "ÇEKO",
     "konu": "Ücret Kavramı",
     "soru": "Ücret aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Sermayenin getirisi",
-      "B": "Toprağın geliri",
-      "C": "Emeğin fiyatı",
-      "D": "Devlet transferi",
-      "E": "Kâr payı"
-    },
-    "dogru": "C",
-    "cozum": "Ücret, emeğin fiyatıdır."
+    "secenekler": [
+      "Sermayenin getirisi",
+      "Toprağın geliri",
+      "Emeğin fiyatı",
+      "Devlet transferi",
+      "Kâr payı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Ücret, emeğin fiyatıdır."
   },
   {
-    "id": 2008,
-    "ders": "ÇEKO",
     "konu": "Asgari Ücret",
     "soru": "Asgari ücretin temel amacı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "İşveren kârını artırmak",
-      "B": "Emek verimliliğini düşürmek",
-      "C": "Çalışanın insan onuruna yaraşır yaşamını sağlamak",
-      "D": "Kayıt dışılığı artırmak",
-      "E": "Ücretleri serbest bırakmak"
-    },
-    "dogru": "C",
-    "cozum": "Asgari ücret, çalışanın insan onuruna yaraşır yaşamını sağlamayı amaçlar."
+    "secenekler": [
+      "İşveren kârını artırmak",
+      "Emek verimliliğini düşürmek",
+      "Çalışanın insan onuruna yaraşır yaşamını sağlamak",
+      "Kayıt dışılığı artırmak",
+      "Ücretleri serbest bırakmak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Asgari ücret, çalışanın insan onuruna yaraşır yaşamını sağlamayı amaçlar."
   },
   {
-    "id": 2009,
-    "ders": "ÇEKO",
     "konu": "Sendikaların Amacı",
     "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "İşverenleri korumak",
-      "B": "Devlet gelirlerini artırmak",
-      "C": "Çalışanların ekonomik ve sosyal haklarını korumak",
-      "D": "Üretimi azaltmak",
-      "E": "Fiyat istikrarını sağlamak"
-    },
-    "dogru": "C",
-    "cozum": "Sendikalar çalışanların ekonomik ve sosyal haklarını korur."
+    "secenekler": [
+      "İşverenleri korumak",
+      "Devlet gelirlerini artırmak",
+      "Çalışanların ekonomik ve sosyal haklarını korumak",
+      "Üretimi azaltmak",
+      "Fiyat istikrarını sağlamak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sendikalar çalışanların ekonomik ve sosyal haklarını korur."
   },
   {
-    "id": 2010,
-    "ders": "ÇEKO",
     "konu": "Çalışma Ekonomisi Yaklaşımları",
     "soru": "Emek piyasasını arz ve talep dengesiyle açıklayan yaklaşım hangisidir?",
-    "secenekler": {
-      "A": "Marksist yaklaşım",
-      "B": "Kurumsalcı yaklaşım",
-      "C": "Neoklasik yaklaşım",
-      "D": "Keynesyen yaklaşım",
-      "E": "Sosyal politika yaklaşımı"
-    },
-    "dogru": "C",
-    "cozum": "Neoklasik yaklaşım emek piyasasını arz–talep dengesiyle açıklar."
+    "secenekler": [
+      "Marksist yaklaşım",
+      "Kurumsalcı yaklaşım",
+      "Neoklasik yaklaşım",
+      "Keynesyen yaklaşım",
+      "Sosyal politika yaklaşımı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Neoklasik yaklaşım emek piyasasını arz–talep dengesiyle açıklar."
   },
   {
-    "id": 2011,
-    "ders": "ÇEKO",
     "konu": "Friksiyonel İşsizlik",
     "soru": "Aşağıdakilerden hangisi friksiyonel işsizliğin nedenlerinden biri değildir?",
-    "secenekler": {
-      "A": "İş değiştirme süreci",
-      "B": "Bilgi eksikliği",
-      "C": "Mevsimsel üretim değişiklikleri",
-      "D": "Yeni mezun iş arayanlar",
-      "E": "Kısa süreli geçiş işsizliği"
-    },
-    "dogru": "C",
-    "cozum": "Friksiyonel işsizlik, kısa süreli geçiş işsizliğidir; mevsimsel değişiklikler farklı bir işsizlik türünü oluşturur."
+    "secenekler": [
+      "İş değiştirme süreci",
+      "Bilgi eksikliği",
+      "Mevsimsel üretim değişiklikleri",
+      "Yeni mezun iş arayanlar",
+      "Kısa süreli geçiş işsizliği"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Friksiyonel işsizlik, kısa süreli geçiş işsizliğidir; mevsimsel değişiklikler farklı bir işsizlik türünü oluşturur."
   },
   {
-    "id": 2012,
-    "ders": "ÇEKO",
     "konu": "Yapısal İşsizlik",
     "soru": "Yapısal işsizliğin temel nedeni aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Ekonomik durgunluk",
-      "B": "Talep eksikliği",
-      "C": "Sektörel ve teknolojik değişim",
-      "D": "İş arama süresi",
-      "E": "Mevsimsel dalgalanmalar"
-    },
-    "dogru": "C",
-    "cozum": "Yapısal işsizlik, sektörel ve teknolojik değişim nedeniyle ortaya çıkar."
+    "secenekler": [
+      "Ekonomik durgunluk",
+      "Talep eksikliği",
+      "Sektörel ve teknolojik değişim",
+      "İş arama süresi",
+      "Mevsimsel dalgalanmalar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yapısal işsizlik, sektörel ve teknolojik değişim nedeniyle ortaya çıkar."
   },
   {
-    "id": 2013,
-    "ders": "ÇEKO",
     "konu": "Konjonktürel İşsizlik",
     "soru": "Konjonktürel işsizlik hangi ekonomik duruma bağlıdır?",
-    "secenekler": {
-      "A": "Üretim teknolojisine",
-      "B": "Kısa dönem ekonomik dalgalanmalara",
-      "C": "Eğitim seviyesine",
-      "D": "Sendikal yapıya",
-      "E": "Toprak dağılımına"
-    },
-    "dogru": "B",
-    "cozum": "Konjonktürel işsizlik kısa dönem ekonomik dalgalanmalara bağlıdır."
+    "secenekler": [
+      "Üretim teknolojisine",
+      "Kısa dönem ekonomik dalgalanmalara",
+      "Eğitim seviyesine",
+      "Sendikal yapıya",
+      "Toprak dağılımına"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Konjonktürel işsizlik kısa dönem ekonomik dalgalanmalara bağlıdır."
   },
   {
-    "id": 2014,
-    "ders": "ÇEKO",
     "konu": "Gizli İşsizlik",
     "soru": "Gizli işsizlik aşağıdakilerden hangisiyle karakterizedir?",
-    "secenekler": {
-      "A": "İşsizlik yok",
-      "B": "Kayıtlı işgücünün tamamı istihdamda",
-      "C": "İşgücünün bir kısmı verimsiz veya eksik çalışıyor",
-      "D": "İşsizlik sadece mevsimsel",
-      "E": "Ekonomi tam istihdamda"
-    },
-    "dogru": "C",
-    "cozum": "Gizli işsizlik, işgücünün bir kısmının verimsiz veya eksik çalışması durumudur."
+    "secenekler": [
+      "İşsizlik yok",
+      "Kayıtlı işgücünün tamamı istihdamda",
+      "İşgücünün bir kısmı verimsiz veya eksik çalışıyor",
+      "İşsizlik sadece mevsimsel",
+      "Ekonomi tam istihdamda"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Gizli işsizlik, işgücünün bir kısmının verimsiz veya eksik çalışması durumudur."
   },
   {
-    "id": 2015,
-    "ders": "ÇEKO",
     "konu": "İşsizlik Politikaları",
     "soru": "Aşağıdakilerden hangisi işsizliği azaltmayı amaçlayan bir politika aracıdır?",
-    "secenekler": {
-      "A": "Para arzını kısıtlama",
-      "B": "Vergi indirimleri ve teşvikler",
-      "C": "İş gücünü azaltma",
-      "D": "Kamu harcamalarını kısmak",
-      "E": "Sendikaları yasaklamak"
-    },
-    "dogru": "B",
-    "cozum": "Vergi indirimleri ve teşvikler işsizliği azaltıcı politika araçlarındandır."
+    "secenekler": [
+      "Para arzını kısıtlama",
+      "Vergi indirimleri ve teşvikler",
+      "İş gücünü azaltma",
+      "Kamu harcamalarını kısmak",
+      "Sendikaları yasaklamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Vergi indirimleri ve teşvikler işsizliği azaltıcı politika araçlarındandır."
   },
   {
-    "id": 2016,
-    "ders": "ÇEKO",
     "konu": "Kısa Dönem İşsizlik Önlemleri",
     "soru": "Kısa dönemde işsizliği azaltmak için hangi önlem etkilidir?",
-    "secenekler": {
-      "A": "Eğitim reformu",
-      "B": "Makroekonomik canlandırma politikaları",
-      "C": "Sektörel yeniden yapılanma",
-      "D": "Teknoloji yatırımları",
-      "E": "Sendikal müzakere"
-    },
-    "dogru": "B",
-    "cozum": "Kısa dönemde işsizliği azaltmak için makroekonomik canlandırma politikaları etkilidir."
+    "secenekler": [
+      "Eğitim reformu",
+      "Makroekonomik canlandırma politikaları",
+      "Sektörel yeniden yapılanma",
+      "Teknoloji yatırımları",
+      "Sendikal müzakere"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kısa dönemde işsizliği azaltmak için makroekonomik canlandırma politikaları etkilidir."
   },
   {
-    "id": 2017,
-    "ders": "ÇEKO",
     "konu": "Uzun Dönem İşsizlik Önlemleri",
     "soru": "Uzun dönemde yapısal işsizliği azaltmak için hangi önlem uygundur?",
-    "secenekler": {
-      "A": "Para politikasını sıkılaştırmak",
-      "B": "Mesleki eğitim ve yeniden beceri kazandırma programları",
-      "C": "Kısa dönem kamu harcamaları",
-      "D": "Mevsimsel iş planlaması",
-      "E": "İşçi azaltımı"
-    },
-    "dogru": "B",
-    "cozum": "Uzun dönemde yapısal işsizliği azaltmak için mesleki eğitim ve beceri kazandırma programları uygundur."
+    "secenekler": [
+      "Para politikasını sıkılaştırmak",
+      "Mesleki eğitim ve yeniden beceri kazandırma programları",
+      "Kısa dönem kamu harcamaları",
+      "Mevsimsel iş planlaması",
+      "İşçi azaltımı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Uzun dönemde yapısal işsizliği azaltmak için mesleki eğitim ve beceri kazandırma programları uygundur."
   },
   {
-    "id": 2018,
-    "ders": "ÇEKO",
     "konu": "İşsizlik ve Büyüme",
     "soru": "Okun Yasası’na göre işsizlik oranı %1 artarsa, GSMH yaklaşık olarak ne olur?",
-    "secenekler": {
-      "A": "Hiç değişmez",
-      "B": "Yaklaşık %2 azalır",
-      "C": "Yaklaşık %1 azalır",
-      "D": "Yaklaşık %0,5 azalır",
-      "E": "Yaklaşık %3 azalır"
-    },
-    "dogru": "C",
-    "cozum": "Okun Yasası’na göre işsizlik oranındaki her %1 artış, GSMH’yı yaklaşık %1 azaltır."
+    "secenekler": [
+      "Hiç değişmez",
+      "Yaklaşık %2 azalır",
+      "Yaklaşık %1 azalır",
+      "Yaklaşık %0,5 azalır",
+      "Yaklaşık %3 azalır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Okun Yasası’na göre işsizlik oranındaki her %1 artış, GSMH’yı yaklaşık %1 azaltır."
   },
   {
-    "id": 2019,
-    "ders": "ÇEKO",
     "konu": "İşsizlik ve Para Politikası",
     "soru": "İşsizliği azaltmak için merkez bankası hangi politikayı uygular?",
-    "secenekler": {
-      "A": "Para arzını daraltır",
-      "B": "Faiz oranlarını düşürür",
-      "C": "Vergileri artırır",
-      "D": "Kamu harcamalarını azaltır",
-      "E": "Resesyon yaratır"
-    },
-    "dogru": "B",
-    "cozum": "Merkez bankası faiz oranlarını düşürerek ekonomik canlanmayı ve işsizliği azaltabilir."
+    "secenekler": [
+      "Para arzını daraltır",
+      "Faiz oranlarını düşürür",
+      "Vergileri artırır",
+      "Kamu harcamalarını azaltır",
+      "Resesyon yaratır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Merkez bankası faiz oranlarını düşürerek ekonomik canlanmayı ve işsizliği azaltabilir."
   },
   {
-    "id": 2020,
-    "ders": "ÇEKO",
     "konu": "İşsizlik ve Maliye Politikası",
     "soru": "İşsizliği azaltmak için devlet hangi politikayı uygular?",
-    "secenekler": {
-      "A": "Kamu harcamalarını artırır ve vergileri düşürür",
-      "B": "Kamu harcamalarını kısmak",
-      "C": "Vergileri artırmak",
-      "D": "Para arzını kısıtlamak",
-      "E": "Kamu borcunu artırmak"
-    },
-    "dogru": "A",
-    "cozum": "Devlet işsizliği azaltmak için kamu harcamalarını artırır ve vergileri düşürür."
+    "secenekler": [
+      "Kamu harcamalarını artırır ve vergileri düşürür",
+      "Kamu harcamalarını kısmak",
+      "Vergileri artırmak",
+      "Para arzını kısıtlamak",
+      "Kamu borcunu artırmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Devlet işsizliği azaltmak için kamu harcamalarını artırır ve vergileri düşürür."
   },
   {
-    "id": 2021,
-    "ders": "ÇEKO",
     "konu": "Ücretin Belirlenmesi",
     "soru": "Aşağıdakilerden hangisi neoklasik ücret teorisine göre ücretleri belirler?",
-    "secenekler": {
-      "A": "Devlet müdahalesi",
-      "B": "Sendikaların pazarlığı",
-      "C": "Emek arz ve talep dengesi",
-      "D": "Toprak sahiplerinin kararları",
-      "E": "Teknoloji seviyesi"
-    },
-    "dogru": "C",
-    "cozum": "Neoklasik teoriye göre ücretler işgücüne olan arz ve talep dengesine göre belirlenir."
+    "secenekler": [
+      "Devlet müdahalesi",
+      "Sendikaların pazarlığı",
+      "Emek arz ve talep dengesi",
+      "Toprak sahiplerinin kararları",
+      "Teknoloji seviyesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Neoklasik teoriye göre ücretler işgücüne olan arz ve talep dengesine göre belirlenir."
   },
   {
-    "id": 2022,
-    "ders": "ÇEKO",
     "konu": "Marjinal Verim Teorisi",
     "soru": "Bir işçinin marjinal verimi aşağıdakilerden hangisiyle ölçülür?",
-    "secenekler": {
-      "A": "Toplam üretim",
-      "B": "Ek bir işçinin katkısı",
-      "C": "İşçi maliyeti",
-      "D": "Kâr marjı",
-      "E": "Ürün fiyatı"
-    },
-    "dogru": "B",
-    "cozum": "Marjinal verim, ek bir işçinin üretime yaptığı katkıdır."
-  },
-  {
-    "id": 2024,
-    "ders": "ÇEKO",
-    "konu": "Verimlilik ve Ücret",
-    "soru": "Bir işçinin marjinal verimi artarsa, neoklasik teoriye göre ücret ne olur?",
-    "secenekler": {
-      "A": "Azalır",
-      "B": "Artar",
-      "C": "Değişmez",
-      "D": "Sıfırlanır",
-      "E": "Dışsal faktöre bağlıdır"
-    },
-    "dogru": "B",
-    "cozum": "Marjinal verimi artan işçinin ücreti artar."
-  },
-  {
-    "id": 2025,
-    "ders": "ÇEKO",
-    "konu": "Sendika Pazarlığı",
-    "soru": "Sendikaların pazarlık gücünü artıran faktör hangisidir?",
-    "secenekler": {
-      "A": "Üye sayısı ve örgütlenme düzeyi",
-      "B": "Ekonomik durgunluk",
-      "C": "Devlet müdahalesi",
-      "D": "Teknoloji seviyesi",
-      "E": "Sektör küçülmesi"
-    },
-    "dogru": "A",
-    "cozum": "Sendikaların pazarlık gücü, üye sayısı ve örgütlenme düzeyiyle doğru orantılıdır."
-  },
-  {
-    "id": 2026,
-    "ders": "ÇEKO",
-    "konu": "Ücret Yapısı",
-    "soru": "Ücretin temel bileşenleri arasında hangisi yer almaz?",
-    "secenekler": {
-      "A": "Temel ücret",
-      "B": "Prim ve ikramiye",
-      "C": "Yan haklar",
-      "D": "Kâr payı",
-      "E": "Sosyal güvenlik katkısı"
-    },
-    "dogru": "D",
-    "cozum": "Kâr payı ücretin bileşeni değildir; ücret temel, prim, yan haklar ve sosyal güvenlik katkısından oluşur."
-  },
-  {
-    "id": 2027,
-    "ders": "ÇEKO",
-    "konu": "Ücret ve Enflasyon",
-    "soru": "Enflasyon arttığında ücretlerin alım gücünü korumak için hangi önlem alınır?",
-    "secenekler": {
-      "A": "Nominal ücret artırılır",
-      "B": "Reel ücret sabit bırakılır",
-      "C": "Ücret düşürülür",
-      "D": "İşten çıkarma yapılır",
-      "E": "Vergiler artırılır"
-    },
-    "dogru": "A",
-    "cozum": "Enflasyon karşısında işçilerin alım gücünü korumak için nominal ücret artırılır."
-  },
-  {
-    "id": 2028,
-    "ders": "ÇEKO",
-    "konu": "Sendika ve İşgücü Piyasası",
-    "soru": "Sendikaların güçlü olduğu bir piyasada işsizliğe etkisi genellikle nedir?",
-    "secenekler": {
-      "A": "İşsizliği azaltır",
-      "B": "İşsizliği artırabilir",
-      "C": "Hiç etkisi yoktur",
-      "D": "Tamamen rastgele değişir",
-      "E": "Sadece yüksek ücretlileri etkiler"
-    },
-    "dogru": "B",
-    "cozum": "Sendikaların güçlü olduğu piyasada işgücü maliyetleri artacağından bazı işsizliğe yol açabilir."
-  },
-  {
-    "id": 2029,
-    "ders": "ÇEKO",
-    "konu": "Marjinal Verim ve Sendika",
-    "soru": "Sendikanın etkisi altında marjinal verim teorisine göre ücretler nasıl değişir?",
-    "secenekler": {
-      "A": "Artar",
-      "B": "Azalır",
-      "C": "Sabit kalır",
-      "D": "Rastgele değişir",
-      "E": "Sadece üst düzey çalışanlara uygulanır"
-    },
-    "dogru": "A",
-    "cozum": "Sendika pazarlığı işçilerin marjinal verimini dikkate alarak ücretleri artırır."
-  },
-  {
-    "id": 2030,
-    "ders": "ÇEKO",
-    "konu": "Ücret Adaleti",
-    "soru": "Ücret adaletini sağlamak için hangi mekanizma kullanılır?",
-    "secenekler": {
-      "A": "Sendika ve toplu sözleşmeler",
-      "B": "Tek taraflı işveren kararı",
-      "C": "Devlet müdahalesi olmadan serbest piyasa",
-      "D": "Sadece performans primleri",
-      "E": "Ücret rastgele belirlenir"
-    },
-    "dogru": "A",
-    "cozum": "Ücret adaleti sendika ve toplu sözleşmeler yoluyla sağlanır."
-  },
-  {
-    "id": 2031,
-    "ders": "ÇEKO",
-    "konu": "Sendikaların Temel Fonksiyonları",
-    "soru": "Aşağıdakilerden hangisi sendikaların temel fonksiyonlarından biri değildir?",
-    "secenekler": {
-      "A": "Üyelerinin ücretlerini korumak",
-      "B": "Çalışma koşullarını iyileştirmek",
-      "C": "Kamu politikalarını şekillendirmek",
-      "D": "Sosyal güvenlik haklarını savunmak",
-      "E": "Sadece kâr maksimizasyonu sağlamak"
-    },
-    "dogru": "E",
-    "cozum": "Sendikalar kâr maksimizasyonu için değil, üyelerinin haklarını korumak ve çalışma koşullarını iyileştirmek için vardır."
-  },
-  {
-    "id": 2032,
-    "ders": "ÇEKO",
-    "konu": "Toplu Pazarlık",
-    "soru": "Toplu pazarlık sürecinde işçi ve işveren arasındaki temel amaç nedir?",
-    "secenekler": {
-      "A": "Ücret ve çalışma koşullarını belirlemek",
-      "B": "Piyasa fiyatlarını kontrol etmek",
-      "C": "Üretim miktarını artırmak",
-      "D": "Kâr oranını yükseltmek",
-      "E": "Vergi politikasını belirlemek"
-    },
-    "dogru": "A",
-    "cozum": "Toplu pazarlık işçi ve işverenin ücret ve çalışma koşullarını belirleme sürecidir."
-  },
-  {
-    "id": 2033,
-    "ders": "ÇEKO",
-    "konu": "Sendika Üyelik Türleri",
-    "soru": "Aşağıdakilerden hangisi sendika üyelik türlerinden biridir?",
-    "secenekler": {
-      "A": "Zorunlu üyelik",
-      "B": "Serbest piyasa üyeliği",
-      "C": "Tek taraflı üyelik",
-      "D": "Vergi bazlı üyelik",
-      "E": "Performansa dayalı üyelik"
-    },
-    "dogru": "A",
-    "cozum": "Sendikalar zorunlu ve gönüllü üyelik türlerine sahiptir."
-  },
-  {
-    "id": 2034,
-    "ders": "ÇEKO",
-    "konu": "Sendika ve İşçi Hakları",
-    "soru": "Sendikaların güçlü olduğu bir işyerinde hangi haklar genellikle daha güvence altındadır?",
-    "secenekler": {
-      "A": "Ücret ve izin hakları",
-      "B": "Sadece yıllık izin",
-      "C": "Sadece işten çıkarılma",
-      "D": "Vergi avantajları",
-      "E": "Piyasa denetimi"
-    },
-    "dogru": "A",
-    "cozum": "Sendikalar işçilerin ücret ve izin haklarını güvence altına alır."
-  },
-  {
-    "id": 2035,
-    "ders": "ÇEKO",
-    "konu": "Toplu İş Sözleşmesi",
-    "soru": "Toplu iş sözleşmesi hangi amaçla yapılır?",
-    "secenekler": {
-      "A": "İşçi ve işveren arasındaki hak ve sorumlulukları belirlemek",
-      "B": "Devlet politikalarını uygulamak",
-      "C": "Kamu harcamalarını düzenlemek",
-      "D": "Teknoloji yatırımlarını belirlemek",
-      "E": "Sendikaları feshetmek"
-    },
-    "dogru": "A",
-    "cozum": "Toplu iş sözleşmesi işçi ve işverenin hak ve sorumluluklarını belirler."
-  },
-  {
-    "id": 2036,
-    "ders": "ÇEKO",
-    "konu": "Greve Çıkma Hakkı",
-    "soru": "Sendikaların greve çıkma hakkı hangi koşulda kullanılır?",
-    "secenekler": {
-      "A": "Toplu pazarlık görüşmeleri başarısız olursa",
-      "B": "İşveren yüksek kâr elde ederse",
-      "C": "Hükümet zam yaparsa",
-      "D": "Ekonomik büyüme varsa",
-      "E": "Yalnızca tatilde"
-    },
-    "dogru": "A",
-    "cozum": "Greve çıkma hakkı, toplu pazarlık görüşmeleri başarısız olduğunda kullanılır."
-  },
-  {
-    "id": 2037,
-    "ders": "ÇEKO",
-    "konu": "Sendika Üyeliğinin Önemi",
-    "soru": "Sendika üyeliği neden önemlidir?",
-    "secenekler": {
-      "A": "İşçilerin toplu pazarlık gücünü artırır",
-      "B": "Sadece işsizlikten korur",
-      "C": "Vergi ödemelerini azaltır",
-      "D": "İşverenin kârını artırır",
-      "E": "Ücretleri düşürür"
-    },
-    "dogru": "A",
-    "cozum": "Sendika üyeliği işçilerin toplu pazarlık gücünü artırır ve haklarını güvence altına alır."
-  },
-  {
-    "id": 2038,
-    "ders": "ÇEKO",
-    "konu": "Sendika ve İşletme Verimliliği",
-    "soru": "Sendikalar işletme verimliliğini hangi şekilde etkileyebilir?",
-    "secenekler": {
-      "A": "Olumlu: İşçilerin motivasyonu artar",
-      "B": "Hiç etkilemez",
-      "C": "Sadece maliyet artırır",
-      "D": "Üretim miktarını düşürür",
-      "E": "Sadece üst düzey yönetimi etkiler"
-    },
-    "dogru": "A",
-    "cozum": "Sendikalar işçilerin motivasyonunu artırarak işletme verimliliğini olumlu etkileyebilir."
-  },
-  {
-    "id": 2039,
-    "ders": "ÇEKO",
-    "konu": "Toplu Pazarlığın Sınırları",
-    "soru": "Toplu pazarlıkta hangi konu görüşülmez?",
-    "secenekler": {
-      "A": "Ücret ve sosyal haklar",
-      "B": "Çalışma saatleri",
-      "C": "Kamu politikaları",
-      "D": "İş güvenliği",
-      "E": "Tatil ve izin hakları"
-    },
-    "dogru": "C",
-    "cozum": "Toplu pazarlıkta genellikle ücret, sosyal haklar, iş güvenliği ve izinler konuşulur; kamu politikaları görüşülmez."
-  },
-  {
-    "id": 2040,
-    "ders": "ÇEKO",
-    "konu": "Sendikaların Hukuki Statüsü",
-    "soru": "Sendikalar hangi hukuk kapsamında faaliyet gösterir?",
-    "secenekler": {
-      "A": "İş Kanunu ve Toplu İş Sözleşmesi Yasası",
-      "B": "Ceza Kanunu",
-      "C": "Vergi Kanunu",
-      "D": "Ticaret Kanunu",
-      "E": "Medeni Kanun"
-    },
-    "dogru": "A",
-    "cozum": "Sendikalar, İş Kanunu ve Toplu İş Sözleşmesi Yasası kapsamında faaliyet gösterir."
+    "secenekler": [
+      "Toplam üretim",
+      "Ek bir işçinin katkısı",
+      "İşçi maliyeti",
+      "Kâr marjı",
+      "Ürün fiyatı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Marjinal verim, ek bir işçinin üretime yaptığı katkıdır."
   }
 ]
