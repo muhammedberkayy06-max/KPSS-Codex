@@ -12,7 +12,7 @@ const FILES = {
   "İktisat": "iktisat.json",
   "Çalışma Ekonomisi": "calismaekonomisi.json",
   "Hukuk": "hukuk.json",
-  "Kamu Yönetimi": "kamuyönetimi.json",
+  "Kamu Yönetimi": "kamuyonetimi.json",
   "Uluslararası İlişkiler": "uluslararasiiliskiler.json",
 };
 
