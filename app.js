@@ -16,6 +16,19 @@ const FILES = {
   "Uluslararası İlişkiler": "uluslararasiiliskiler.json",
 };
 
+const LESSON_ICONS = {
+  "Türkçe": "📝",
+  "Matematik": "🔢",
+  "Tarih": "📜",
+  "Coğrafya": "🗺️",
+  "Vatandaşlık": "⚖️",
+  "İktisat": "📈",
+  "Çalışma Ekonomisi": "🏭",
+  "Hukuk": "🏛️",
+  "Kamu Yönetimi": "🏢",
+  "Uluslararası İlişkiler": "🌐",
+};
+
 const GK_GY_DISTRIBUTION = {
   "Türkçe": 30,
   "Matematik": 30,
@@ -253,6 +266,8 @@ function setMode(mode){
     $("countInput").disabled = false;
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
+
+  renderLessonIcons(mode);
 }
 
 function fillLessonSelect(){
@@ -265,6 +280,46 @@ function fillLessonSelect(){
     sel.appendChild(opt);
   });
   sel.value = App.lesson;
+}
+
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
 }
 
 // ---------- loading question banks ----------
@@ -293,6 +348,7 @@ async function loadAllBanks(){
   }
   App.allBanks = banks;
   setNotice("Soru paketleri hazır ✅", "info");
+  renderLessonIcons(App.mode);
 }
 
 // ---------- test builder ----------
@@ -804,7 +860,7 @@ function handleVoiceCommand(raw){
     };
     const lesson = map[name] || "Matematik";
     setMode("single");
-    $("lessonSelect").value = lesson;
+    setLesson(lesson);
     $("countInput").value = clamp(n,5,300);
     return;
   }
@@ -913,7 +969,7 @@ function init(){
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
   });
 
-  $("lessonSelect").addEventListener("change", (e)=>{ App.lesson = e.target.value; });
+  $("lessonSelect").addEventListener("change", (e)=> setLesson(e.target.value));
 
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
