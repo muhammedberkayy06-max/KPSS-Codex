@@ -38,8 +38,9 @@
   <main class="container space-y-6">
     <div id="loadStatus" class="notice" hidden></div>
 
-    <div class="notice">
-      Çakışma uyarısı görürsen sayfayı yenile, sonra ⚡ Güncellemeleri denetle ve 🏠 Ana sayfa butonuyla başlangıca dönerek testi yeniden başlat.
+    <div id="alertBox" class="notice flex items-start gap-3" hidden>
+      <div class="flex-1" id="alertText"></div>
+      <button id="alertClose" class="chip">Kapat</button>
     </div>
 
     <section id="setupCard" class="card space-y-5">
