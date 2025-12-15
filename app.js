@@ -892,7 +892,9 @@ async function startTest(){
   }catch{ return; }
 
   const mode = App.mode;
-  const lesson = $("lessonSelect").value;
+  // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
+  // doğrudan bu kaynaktan alarak seçim sorunlarını önlüyoruz.
+  const lesson = App.lesson;
   const count = clamp(parseInt($("countInput").value||"10",10), 5, 300);
   const goal = $("goal").value;
   const diffSel = $("difficulty").value;
