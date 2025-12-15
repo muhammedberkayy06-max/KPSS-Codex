@@ -247,7 +247,7 @@ function goHome(){
 
 function setMode(mode){
   App.mode = mode;
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.classList.toggle("active", b.dataset.mode===mode);
   });
 
@@ -334,11 +334,11 @@ async function fetchJSON(path){
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
-  for (const [lesson, file] of Object.entries(FILES)){
-    try{
+  for (const [lesson, file] of Object.entries(FILES)) {
+    try {
       const data = await fetchJSON(file);
       banks[lesson] = data;
-    } catch (e){
+    } catch (e) {
       console.error(e);
       const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.");
       setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
