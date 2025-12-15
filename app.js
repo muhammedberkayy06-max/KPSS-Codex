@@ -16,6 +16,19 @@ const FILES = {
   "Uluslararası İlişkiler": "uluslararasiiliskiler.json",
 };
 
+const LESSON_ICONS = {
+  "Türkçe": "📝",
+  "Matematik": "🔢",
+  "Tarih": "📜",
+  "Coğrafya": "🗺️",
+  "Vatandaşlık": "⚖️",
+  "İktisat": "📈",
+  "Çalışma Ekonomisi": "🏭",
+  "Hukuk": "🏛️",
+  "Kamu Yönetimi": "🏢",
+  "Uluslararası İlişkiler": "🌐",
+};
+
 const GK_GY_DISTRIBUTION = {
   "Türkçe": 30,
   "Matematik": 30,
@@ -32,6 +45,14 @@ const STORE_KEY = "kpss_ultimate_v1";
 const $ = (id) => document.getElementById(id);
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
+
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
 
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
@@ -207,6 +228,23 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
   document.querySelectorAll(".seg-btn").forEach(b=>{
@@ -228,6 +266,8 @@ function setMode(mode){
     $("countInput").disabled = false;
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
+
+  renderLessonIcons(mode);
 }
 
 function fillLessonSelect(){
@@ -240,6 +280,46 @@ function fillLessonSelect(){
     sel.appendChild(opt);
   });
   sel.value = App.lesson;
+}
+
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
 }
 
 // ---------- loading question banks ----------
@@ -260,12 +340,15 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e){
       console.error(e);
+      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.");
       setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
+      showAlert(tip);
       throw e;
     }
   }
   App.allBanks = banks;
   setNotice("Soru paketleri hazır ✅", "info");
+  renderLessonIcons(App.mode);
 }
 
 // ---------- test builder ----------
@@ -417,6 +500,8 @@ function renderQuestion(){
     paintOptions();
     showExplanation();
   }
+
+  typesetMath($("quizCard"));
 }
 
 function inferLesson(q){
@@ -475,7 +560,9 @@ function showExplanation(){
   $("tagResult").className = "tag " + (ok ? "ok" : "bad");
 
   const explain = q.explain || "";
-  $("explainText").textContent = explain ? explain : (ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.");
+  const fallback = ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.";
+  const html = (explain || fallback).replace(/\n/g, "<br>");
+  $("explainText").innerHTML = html;
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
@@ -483,6 +570,8 @@ function showExplanation(){
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
   }
+
+  typesetMath($("explain"));
 }
 
 function onPick(i){
@@ -771,7 +860,7 @@ function handleVoiceCommand(raw){
     };
     const lesson = map[name] || "Matematik";
     setMode("single");
-    $("lessonSelect").value = lesson;
+    setLesson(lesson);
     $("countInput").value = clamp(n,5,300);
     return;
   }
@@ -803,7 +892,9 @@ async function startTest(){
   }catch{ return; }
 
   const mode = App.mode;
-  const lesson = $("lessonSelect").value;
+  // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
+  // doğrudan bu kaynaktan alarak seçim sorunlarını önlüyoruz.
+  const lesson = App.lesson;
   const count = clamp(parseInt($("countInput").value||"10",10), 5, 300);
   const goal = $("goal").value;
   const diffSel = $("difficulty").value;
@@ -880,11 +971,12 @@ function init(){
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
   });
 
-  $("lessonSelect").addEventListener("change", (e)=>{ App.lesson = e.target.value; });
+  $("lessonSelect").addEventListener("change", (e)=> setLesson(e.target.value));
 
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
+  $("btnHome").addEventListener("click", goHome);
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -898,6 +990,7 @@ function init(){
   $("btnVoice").addEventListener("click", ()=> startVoice());
   $("btnRead").addEventListener("click", ()=> readCurrent());
   $("btnInstall").addEventListener("click", ()=> installPWA());
+  $("alertClose").addEventListener("click", ()=> showAlert(null));
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;
