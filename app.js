@@ -962,12 +962,12 @@ async function installPWA(){
   deferredPrompt = null;
 }
 
-function init(){
+async function init(){
   fillLessonSelect();
   setMode("single");
 
-  // mode buttons
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  // mode buttons (yalnızca mod anahtarları)
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
   });
 
@@ -1008,7 +1008,15 @@ function init(){
   // initial state info
   const state = ensureState();
   saveState(state);
-  setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  setNotice("Soru paketleri yükleniyor…", "info");
+
+  try {
+    await loadAllBanks();
+    setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  } catch (e) {
+    console.error(e);
+    setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
+  }
 }
 
 window.addEventListener("DOMContentLoaded", init);
