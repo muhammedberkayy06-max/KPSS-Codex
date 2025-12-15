@@ -9,7 +9,8 @@
       "8"
     ],
     "dogru_index": 1,
-    "aciklama": "3x − 5 = 16 → 3x = 21 → x = 7"
+    "aciklama": "3x − 5 = 16 ise her iki tarafa 5 ekleyip 3'e böleriz.",
+    "cozum": "\\(3x - 5 = 16 \\Rightarrow 3x = 21 \\Rightarrow x = 7\\)"
   },
   {
     "konu": "Temel Kavramlar",
@@ -21,7 +22,8 @@
       "24"
     ],
     "dogru_index": 2,
-    "aciklama": "x/2 + 4 = 14 → x/2 = 10 → x = 20"
+    "aciklama": "Denklemi x/2 + 4 = 14 şeklinde yazar, 4'ü diğer tarafa alırız.",
+    "cozum": "\\(\frac{x}{2} + 4 = 14 \\Rightarrow \frac{x}{2} = 10 \\Rightarrow x = 20\\)"
   },
   {
     "konu": "Problemler",
