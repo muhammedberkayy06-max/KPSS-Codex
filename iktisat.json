@@ -1,1427 +1,1237 @@
 [
   {
-    "id": 1,
-    "ders": "İktisat",
     "konu": "Fayda Teorisi",
     "soru": "Kardinal fayda yaklaşımına göre aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Fayda ölçülemez, sadece sıralanabilir",
-      "B": "Tüketici tercihleri yalnızca kayıtsızlık eğrileriyle açıklanır",
-      "C": "Fayda sayısal olarak ölçülebilir kabul edilir",
-      "D": "Marjinal fayda her zaman sabittir",
-      "E": "Toplam fayda azalan bir fonksiyondur"
-    },
-    "dogru": "C",
-    "cozum": "Kardinal fayda yaklaşımı, faydanın sayısal olarak ölçülebileceğini varsayar. Ordinal yaklaşımda ise yalnızca sıralama yapılır."
+    "secenekler": [
+      "Fayda ölçülemez, sadece sıralanabilir",
+      "Tüketici tercihleri yalnızca kayıtsızlık eğrileriyle açıklanır",
+      "Fayda sayısal olarak ölçülebilir kabul edilir",
+      "Marjinal fayda her zaman sabittir",
+      "Toplam fayda azalan bir fonksiyondur"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kardinal fayda yaklaşımı, faydanın sayısal olarak ölçülebileceğini varsayar. Ordinal yaklaşımda ise yalnızca sıralama yapılır."
   },
   {
-    "id": 2,
-    "ders": "İktisat",
     "konu": "Marjinal Fayda",
     "soru": "Azalan marjinal fayda kanunu aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Toplam faydanın her zaman azalmasını",
-      "B": "Tüketilen her ek birimin toplam faydayı azaltmasını",
-      "C": "Tüketim arttıkça marjinal faydanın azalmasını",
-      "D": "Faydanın ölçülemez olduğunu",
-      "E": "Tüketicinin rasyonel olmadığını"
-    },
-    "dogru": "C",
-    "cozum": "Azalan marjinal fayda kanununa göre, bir maldan tüketilen her ek birimin sağladığı ek fayda giderek azalır."
+    "secenekler": [
+      "Toplam faydanın her zaman azalmasını",
+      "Tüketilen her ek birimin toplam faydayı azaltmasını",
+      "Tüketim arttıkça marjinal faydanın azalmasını",
+      "Faydanın ölçülemez olduğunu",
+      "Tüketicinin rasyonel olmadığını"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Azalan marjinal fayda kanununa göre, bir maldan tüketilen her ek birimin sağladığı ek fayda giderek azalır."
   },
   {
-    "id": 3,
-    "ders": "İktisat",
     "konu": "Bütçe Kısıtı",
     "soru": "Bütçe doğrusu aşağıdakilerden hangisini gösterir?",
-    "secenekler": {
-      "A": "Tüketicinin tercih sıralamasını",
-      "B": "Tüketicinin ulaşabileceği maksimum faydayı",
-      "C": "Gelir ve fiyatlara bağlı olarak satın alınabilecek mal bileşimlerini",
-      "D": "Marjinal fayda eşitliğini",
-      "E": "Talep eğrisini"
-    },
-    "dogru": "C",
-    "cozum": "Bütçe doğrusu, tüketicinin geliri ve malların fiyatları verildiğinde satın alabileceği tüm mal kombinasyonlarını gösterir."
+    "secenekler": [
+      "Tüketicinin tercih sıralamasını",
+      "Tüketicinin ulaşabileceği maksimum faydayı",
+      "Gelir ve fiyatlara bağlı olarak satın alınabilecek mal bileşimlerini",
+      "Marjinal fayda eşitliğini",
+      "Talep eğrisini"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Bütçe doğrusu, tüketicinin geliri ve malların fiyatları verildiğinde satın alabileceği tüm mal kombinasyonlarını gösterir."
   },
   {
-    "id": 4,
-    "ders": "İktisat",
     "konu": "Gelir Etkisi",
     "soru": "Normal bir mal için gelir artışı aşağıdakilerden hangisine yol açar?",
-    "secenekler": {
-      "A": "Talep azalır",
-      "B": "Talep değişmez",
-      "C": "Talep artar",
-      "D": "İkame etkisi sıfır olur",
-      "E": "Bütçe doğrusu sola kayar"
-    },
-    "dogru": "C",
-    "cozum": "Normal mallarda gelir arttıkça talep artar. Bu durum gelir etkisinin pozitif olduğunu gösterir."
+    "secenekler": [
+      "Talep azalır",
+      "Talep değişmez",
+      "Talep artar",
+      "İkame etkisi sıfır olur",
+      "Bütçe doğrusu sola kayar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Normal mallarda gelir arttıkça talep artar. Bu durum gelir etkisinin pozitif olduğunu gösterir."
   },
   {
-    "id": 5,
-    "ders": "İktisat",
     "konu": "Giffen Malı",
     "soru": "Giffen malı için aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Fiyat artınca talep azalır",
-      "B": "Gelir etkisi ikame etkisinden küçüktür",
-      "C": "Fiyat artınca talep artar",
-      "D": "Lüks mallardır",
-      "E": "Talep eğrisi her zaman negatiftir"
-    },
-    "dogru": "C",
-    "cozum": "Giffen mallarında gelir etkisi, ikame etkisinden büyüktür. Bu nedenle fiyat arttığında talep de artabilir."
+    "secenekler": [
+      "Fiyat artınca talep azalır",
+      "Gelir etkisi ikame etkisinden küçüktür",
+      "Fiyat artınca talep artar",
+      "Lüks mallardır",
+      "Talep eğrisi her zaman negatiftir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Giffen mallarında gelir etkisi, ikame etkisinden büyüktür. Bu nedenle fiyat arttığında talep de artabilir."
   },
   {
-    "id": 6,
-    "ders": "İktisat",
     "konu": "Talep",
     "soru": "Talep yasasına göre, diğer koşullar sabitken bir malın fiyatı düştüğünde aşağıdakilerden hangisi gerçekleşir?",
-    "secenekler": {
-      "A": "Talep eğrisi sağa kayar",
-      "B": "Talep edilen miktar artar",
-      "C": "Talep edilen miktar azalır",
-      "D": "Talep eğrisi sola kayar",
-      "E": "Talep değişmez"
-    },
-    "dogru": "B",
-    "cozum": "Talep yasasına göre fiyat ile talep edilen miktar ters yönlüdür. Fiyat düşünce talep edilen miktar artar; eğri üzerinde hareket olur."
+    "secenekler": [
+      "Talep eğrisi sağa kayar",
+      "Talep edilen miktar artar",
+      "Talep edilen miktar azalır",
+      "Talep eğrisi sola kayar",
+      "Talep değişmez"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Talep yasasına göre fiyat ile talep edilen miktar ters yönlüdür. Fiyat düşünce talep edilen miktar artar; eğri üzerinde hareket olur."
   },
   {
-    "id": 7,
-    "ders": "İktisat",
     "konu": "Talep Eğrisi",
     "soru": "Aşağıdakilerden hangisi talep eğrisinin tamamının sağa kaymasına neden olur?",
-    "secenekler": {
-      "A": "Malın fiyatının düşmesi",
-      "B": "İkame malın fiyatının düşmesi",
-      "C": "Tüketici gelirinin artması (normal mal)",
-      "D": "Talep edilen miktarın artması",
-      "E": "Malın fiyatının artması"
-    },
-    "dogru": "C",
-    "cozum": "Gelir artışı normal mallar için talep eğrisini sağa kaydırır. Fiyat değişimi eğri üzerinde harekettir."
+    "secenekler": [
+      "Malın fiyatının düşmesi",
+      "İkame malın fiyatının düşmesi",
+      "Tüketici gelirinin artması (normal mal)",
+      "Talep edilen miktarın artması",
+      "Malın fiyatının artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Gelir artışı normal mallar için talep eğrisini sağa kaydırır. Fiyat değişimi eğri üzerinde harekettir."
   },
   {
-    "id": 8,
-    "ders": "İktisat",
     "konu": "Fiyat Esnekliği",
     "soru": "Talebin fiyat esnekliği mutlak değerce 1’den büyükse bu durum aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Talep birim esnektir",
-      "B": "Talep esnek değildir",
-      "C": "Talep esnektir",
-      "D": "Toplam gelir sabittir",
-      "E": "Fiyat artınca toplam gelir artar"
-    },
-    "dogru": "C",
-    "cozum": "Esneklik mutlak değerce 1’den büyükse talep esnektir. Fiyat değişimine miktar daha duyarlıdır."
+    "secenekler": [
+      "Talep birim esnektir",
+      "Talep esnek değildir",
+      "Talep esnektir",
+      "Toplam gelir sabittir",
+      "Fiyat artınca toplam gelir artar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Esneklik mutlak değerce 1’den büyükse talep esnektir. Fiyat değişimine miktar daha duyarlıdır."
   },
   {
-    "id": 9,
-    "ders": "İktisat",
     "konu": "Toplam Gelir – Esneklik",
     "soru": "Talebin esnek olduğu bir malda fiyat düşürülürse toplam gelir nasıl değişir?",
-    "secenekler": {
-      "A": "Azalır",
-      "B": "Değişmez",
-      "C": "Artar",
-      "D": "Önce artar sonra azalır",
-      "E": "Esneklikle ilgisi yoktur"
-    },
-    "dogru": "C",
-    "cozum": "Talep esnekse fiyat düşüşü, miktar artışını daha fazla artırır ve toplam gelir yükselir."
+    "secenekler": [
+      "Azalır",
+      "Değişmez",
+      "Artar",
+      "Önce artar sonra azalır",
+      "Esneklikle ilgisi yoktur"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Talep esnekse fiyat düşüşü, miktar artışını daha fazla artırır ve toplam gelir yükselir."
   },
   {
-    "id": 10,
-    "ders": "İktisat",
     "konu": "Birim Esneklik",
     "soru": "Talebin fiyat esnekliğinin 1’e eşit olduğu durumda aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Fiyat artarsa toplam gelir artar",
-      "B": "Fiyat azalırsa toplam gelir azalır",
-      "C": "Toplam gelir maksimumdur",
-      "D": "Toplam gelir sabittir",
-      "E": "Talep tamamen esneksizdir"
-    },
-    "dogru": "D",
-    "cozum": "Birim esneklikte fiyat değişimleri toplam geliri değiştirmez."
+    "secenekler": [
+      "Fiyat artarsa toplam gelir artar",
+      "Fiyat azalırsa toplam gelir azalır",
+      "Toplam gelir maksimumdur",
+      "Toplam gelir sabittir",
+      "Talep tamamen esneksizdir"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Birim esneklikte fiyat değişimleri toplam geliri değiştirmez."
   },
   {
-    "id": 11,
-    "ders": "İktisat",
     "konu": "Çapraz Talep Esnekliği",
     "soru": "İki mal arasında çapraz talep esnekliği pozitifse bu mallar için aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Tamamlayıcı mallardır",
-      "B": "İkame mallardır",
-      "C": "Bağımsız mallardır",
-      "D": "Giffen mallardır",
-      "E": "Lüks mallardır"
-    },
-    "dogru": "B",
-    "cozum": "Çapraz talep esnekliği pozitifse mallar ikamedir; birinin fiyatı artınca diğerine talep artar."
+    "secenekler": [
+      "Tamamlayıcı mallardır",
+      "İkame mallardır",
+      "Bağımsız mallardır",
+      "Giffen mallardır",
+      "Lüks mallardır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Çapraz talep esnekliği pozitifse mallar ikamedir; birinin fiyatı artınca diğerine talep artar."
   },
   {
-    "id": 12,
-    "ders": "İktisat",
     "konu": "Gelir Esnekliği",
     "soru": "Gelir esnekliği negatif olan bir mal aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Lüks mal",
-      "B": "Normal mal",
-      "C": "İkame mal",
-      "D": "Düşük mal",
-      "E": "Giffen malı"
-    },
-    "dogru": "D",
-    "cozum": "Gelir arttıkça talebi azalan mallar düşük (inferior) mallardır ve gelir esneklikleri negatiftir."
+    "secenekler": [
+      "Lüks mal",
+      "Normal mal",
+      "İkame mal",
+      "Düşük mal",
+      "Giffen malı"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Gelir arttıkça talebi azalan mallar düşük (inferior) mallardır ve gelir esneklikleri negatiftir."
   },
   {
-    "id": 13,
-    "ders": "İktisat",
     "konu": "Tam Esneksiz Talep",
     "soru": "Talebin tam esneksiz olduğu durumda talep eğrisi nasıldır?",
-    "secenekler": {
-      "A": "Yatay",
-      "B": "Negatif eğimli",
-      "C": "Pozitif eğimli",
-      "D": "Dikey",
-      "E": "Kırıklı"
-    },
-    "dogru": "D",
-    "cozum": "Tam esneksiz talepte miktar fiyattan bağımsızdır; talep eğrisi diktir."
+    "secenekler": [
+      "Yatay",
+      "Negatif eğimli",
+      "Pozitif eğimli",
+      "Dikey",
+      "Kırıklı"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Tam esneksiz talepte miktar fiyattan bağımsızdır; talep eğrisi diktir."
   },
   {
-    "id": 14,
-    "ders": "İktisat",
     "konu": "Toplam Gelir – Esneksiz Talep",
     "soru": "Talebin esneksiz olduğu bir malda fiyat artırılırsa toplam gelir nasıl değişir?",
-    "secenekler": {
-      "A": "Azalır",
-      "B": "Artar",
-      "C": "Değişmez",
-      "D": "Önce artar sonra azalır",
-      "E": "Belirsizdir"
-    },
-    "dogru": "B",
-    "cozum": "Esneksiz talepte fiyat artışı miktarı çok az etkiler; toplam gelir artar."
+    "secenekler": [
+      "Azalır",
+      "Artar",
+      "Değişmez",
+      "Önce artar sonra azalır",
+      "Belirsizdir"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Esneksiz talepte fiyat artışı miktarı çok az etkiler; toplam gelir artar."
   },
   {
-    "id": 15,
-    "ders": "İktisat",
     "konu": "Talep – KPSS Tuzağı",
     "soru": "Aşağıdakilerden hangisi talep eğrisinin kaymasına değil, talep edilen miktarın değişmesine yol açar?",
-    "secenekler": {
-      "A": "Gelirin artması",
-      "B": "Nüfusun artması",
-      "C": "İkame malın fiyatının değişmesi",
-      "D": "Malın kendi fiyatının değişmesi",
-      "E": "Tüketici zevklerinin değişmesi"
-    },
-    "dogru": "D",
-    "cozum": "Malın kendi fiyatındaki değişim talep eğrisi üzerinde harekete, yani talep edilen miktarın değişmesine yol açar."
+    "secenekler": [
+      "Gelirin artması",
+      "Nüfusun artması",
+      "İkame malın fiyatının değişmesi",
+      "Malın kendi fiyatının değişmesi",
+      "Tüketici zevklerinin değişmesi"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Malın kendi fiyatındaki değişim talep eğrisi üzerinde harekete, yani talep edilen miktarın değişmesine yol açar."
   },
   {
-    "id": 16,
-    "ders": "İktisat",
     "konu": "Üretim – Kısa Dönem",
     "soru": "Kısa dönemde üretim yapılırken aşağıdakilerden hangisi sabit faktör olarak kabul edilir?",
-    "secenekler": {
-      "A": "İş gücü",
-      "B": "Hammadde",
-      "C": "Sermaye",
-      "D": "Enerji",
-      "E": "Ara malı"
-    },
-    "dogru": "C",
-    "cozum": "Kısa dönemde en az bir üretim faktörü sabittir. Genellikle sermaye (makine, bina) sabit kabul edilir."
+    "secenekler": [
+      "İş gücü",
+      "Hammadde",
+      "Sermaye",
+      "Enerji",
+      "Ara malı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kısa dönemde en az bir üretim faktörü sabittir. Genellikle sermaye (makine, bina) sabit kabul edilir."
   },
   {
-    "id": 17,
-    "ders": "İktisat",
     "konu": "Azalan Verimler Kanunu",
     "soru": "Azalan verimler kanununa göre, kısa dönemde değişken faktör artırıldıkça ne olur?",
-    "secenekler": {
-      "A": "Toplam ürün sürekli azalır",
-      "B": "Marjinal ürün artar",
-      "C": "Marjinal ürün bir noktadan sonra azalır",
-      "D": "Ortalama ürün sabit kalır",
-      "E": "Toplam ürün azalır"
-    },
-    "dogru": "C",
-    "cozum": "Sabit faktör varken değişken faktör artırıldığında marjinal ürün önce artar, sonra azalmaya başlar. Bu durum azalan verimler kanunudur."
+    "secenekler": [
+      "Toplam ürün sürekli azalır",
+      "Marjinal ürün artar",
+      "Marjinal ürün bir noktadan sonra azalır",
+      "Ortalama ürün sabit kalır",
+      "Toplam ürün azalır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sabit faktör varken değişken faktör artırıldığında marjinal ürün önce artar, sonra azalmaya başlar. Bu durum azalan verimler kanunudur."
   },
   {
-    "id": 18,
-    "ders": "İktisat",
     "konu": "Toplam – Ortalama – Marjinal Ürün",
     "soru": "Marjinal ürün, ortalama ürüne eşit olduğunda aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Toplam ürün maksimumdur",
-      "B": "Ortalama ürün maksimumdur",
-      "C": "Marjinal ürün sıfırdır",
-      "D": "Toplam ürün azalmaktadır",
-      "E": "Azalan verimler başlamıştır"
-    },
-    "dogru": "B",
-    "cozum": "Marjinal ürün, ortalama ürünü yukarı çekerken büyük, aşağı çekerken küçüktür. Eşit olduklarında ortalama ürün maksimumdadır."
+    "secenekler": [
+      "Toplam ürün maksimumdur",
+      "Ortalama ürün maksimumdur",
+      "Marjinal ürün sıfırdır",
+      "Toplam ürün azalmaktadır",
+      "Azalan verimler başlamıştır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Marjinal ürün, ortalama ürünü yukarı çekerken büyük, aşağı çekerken küçüktür. Eşit olduklarında ortalama ürün maksimumdadır."
   },
   {
-    "id": 19,
-    "ders": "İktisat",
     "konu": "Toplam Ürün – KPSS Tuzağı",
     "soru": "Marjinal ürün sıfır olduğunda toplam ürün için hangisi doğrudur?",
-    "secenekler": {
-      "A": "Toplam ürün artmaktadır",
-      "B": "Toplam ürün azalmaktadır",
-      "C": "Toplam ürün maksimumdur",
-      "D": "Toplam ürün minimumdur",
-      "E": "Toplam ürün sabittir"
-    },
-    "dogru": "C",
-    "cozum": "Marjinal ürün sıfır olduğunda toplam ürün en yüksek seviyesine ulaşmıştır."
+    "secenekler": [
+      "Toplam ürün artmaktadır",
+      "Toplam ürün azalmaktadır",
+      "Toplam ürün maksimumdur",
+      "Toplam ürün minimumdur",
+      "Toplam ürün sabittir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Marjinal ürün sıfır olduğunda toplam ürün en yüksek seviyesine ulaşmıştır."
   },
   {
-    "id": 20,
-    "ders": "İktisat",
     "konu": "Maliyet – Tanım",
     "soru": "Aşağıdakilerden hangisi kısa dönem toplam maliyetin bileşenlerinden biridir?",
-    "secenekler": {
-      "A": "Sabit maliyet",
-      "B": "Fırsat maliyeti",
-      "C": "Batık maliyet",
-      "D": "Alternatif maliyet",
-      "E": "İktisadi kâr"
-    },
-    "dogru": "A",
-    "cozum": "Kısa dönem toplam maliyet, sabit maliyet ve değişken maliyetten oluşur."
+    "secenekler": [
+      "Sabit maliyet",
+      "Fırsat maliyeti",
+      "Batık maliyet",
+      "Alternatif maliyet",
+      "İktisadi kâr"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kısa dönem toplam maliyet, sabit maliyet ve değişken maliyetten oluşur."
   },
   {
-    "id": 21,
-    "ders": "İktisat",
     "konu": "Ortalama Maliyet – Marjinal Maliyet",
     "soru": "Marjinal maliyet, ortalama toplam maliyete eşit olduğunda aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Toplam maliyet maksimumdur",
-      "B": "Ortalama maliyet maksimumdur",
-      "C": "Ortalama maliyet minimumdur",
-      "D": "Marjinal maliyet sıfırdır",
-      "E": "Toplam maliyet azalır"
-    },
-    "dogru": "C",
-    "cozum": "Marjinal maliyet, ortalama maliyet eğrisini minimum noktasında keser. Bu KPSS’nin klasik grafik sorusudur."
+    "secenekler": [
+      "Toplam maliyet maksimumdur",
+      "Ortalama maliyet maksimumdur",
+      "Ortalama maliyet minimumdur",
+      "Marjinal maliyet sıfırdır",
+      "Toplam maliyet azalır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Marjinal maliyet, ortalama maliyet eğrisini minimum noktasında keser. Bu KPSS’nin klasik grafik sorusudur."
   },
   {
-    "id": 22,
-    "ders": "İktisat",
     "konu": "MC – AVC İlişkisi",
     "soru": "Marjinal maliyet eğrisi, ortalama değişken maliyet eğrisini nerede keser?",
-    "secenekler": {
-      "A": "Maksimum noktasında",
-      "B": "Minimum noktasında",
-      "C": "Sıfır noktasında",
-      "D": "Y ekseninde",
-      "E": "Hiçbir noktada"
-    },
-    "dogru": "B",
-    "cozum": "Marjinal maliyet, ortalama değişken maliyet eğrisini minimum noktasında keser."
+    "secenekler": [
+      "Maksimum noktasında",
+      "Minimum noktasında",
+      "Sıfır noktasında",
+      "Y ekseninde",
+      "Hiçbir noktada"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Marjinal maliyet, ortalama değişken maliyet eğrisini minimum noktasında keser."
   },
   {
-    "id": 23,
-    "ders": "İktisat",
     "konu": "Uzun Dönem Maliyet",
     "soru": "Uzun dönemde firmalar için aşağıdakilerden hangisi geçerlidir?",
-    "secenekler": {
-      "A": "Sabit maliyet vardır",
-      "B": "Değişken maliyet yoktur",
-      "C": "Tüm maliyetler değişkendir",
-      "D": "Marjinal maliyet sabittir",
-      "E": "Üretim sabittir"
-    },
-    "dogru": "C",
-    "cozum": "Uzun dönemde tüm üretim faktörleri değişken olduğu için sabit maliyet yoktur."
+    "secenekler": [
+      "Sabit maliyet vardır",
+      "Değişken maliyet yoktur",
+      "Tüm maliyetler değişkendir",
+      "Marjinal maliyet sabittir",
+      "Üretim sabittir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Uzun dönemde tüm üretim faktörleri değişken olduğu için sabit maliyet yoktur."
   },
   {
-    "id": 24,
-    "ders": "İktisat",
     "konu": "Ölçeğe Göre Getiri",
     "soru": "Üretim faktörleri aynı oranda artırıldığında çıktı daha fazla artıyorsa bu durum aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Azalan getiri",
-      "B": "Sabit getiri",
-      "C": "Artan getiri",
-      "D": "Azalan verimler",
-      "E": "Marjinal getiri"
-    },
-    "dogru": "C",
-    "cozum": "Girdiler aynı oranda artarken çıktı daha fazla artıyorsa ölçeğe göre artan getiri vardır."
+    "secenekler": [
+      "Azalan getiri",
+      "Sabit getiri",
+      "Artan getiri",
+      "Azalan verimler",
+      "Marjinal getiri"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Girdiler aynı oranda artarken çıktı daha fazla artıyorsa ölçeğe göre artan getiri vardır."
   },
   {
-    "id": 25,
-    "ders": "İktisat",
     "konu": "KPSS Grafik Yorumu",
     "soru": "Aşağıdakilerden hangisi marjinal maliyet eğrisinin yükselmesinin temel nedenidir?",
-    "secenekler": {
-      "A": "Sabit maliyetlerin artması",
-      "B": "Azalan verimler kanunu",
-      "C": "Talep artışı",
-      "D": "Fiyat artışı",
-      "E": "Rekabetin artması"
-    },
-    "dogru": "B",
-    "cozum": "Kısa dönemde azalan verimler kanunu nedeniyle her ek birim üretim daha fazla maliyet gerektirir ve MC yükselir."
+    "secenekler": [
+      "Sabit maliyetlerin artması",
+      "Azalan verimler kanunu",
+      "Talep artışı",
+      "Fiyat artışı",
+      "Rekabetin artması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kısa dönemde azalan verimler kanunu nedeniyle her ek birim üretim daha fazla maliyet gerektirir ve MC yükselir."
   },
   {
-    "id": 26,
-    "ders": "İktisat",
     "konu": "Tam Rekabet",
     "soru": "Tam rekabet piyasasında bir firmanın talep eğrisi neden yataydır?",
-    "secenekler": {
-      "A": "Fiyatları belirleyebildiği için",
-      "B": "Piyasada tek satıcı olduğu için",
-      "C": "Piyasa fiyatını veri kabul ettiği için",
-      "D": "Talep esnek olmadığı için",
-      "E": "Ürün farklılaştırması olduğu için"
-    },
-    "dogru": "C",
-    "cozum": "Tam rekabette firmalar fiyat alıcıdır. Piyasa fiyatını değiştiremezler, bu nedenle talep eğrileri yataydır."
+    "secenekler": [
+      "Fiyatları belirleyebildiği için",
+      "Piyasada tek satıcı olduğu için",
+      "Piyasa fiyatını veri kabul ettiği için",
+      "Talep esnek olmadığı için",
+      "Ürün farklılaştırması olduğu için"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tam rekabette firmalar fiyat alıcıdır. Piyasa fiyatını değiştiremezler, bu nedenle talep eğrileri yataydır."
   },
   {
-    "id": 27,
-    "ders": "İktisat",
     "konu": "Tam Rekabet – Kâr Maksimizasyonu",
     "soru": "Tam rekabet piyasasında kâr maksimizasyonu hangi koşulda sağlanır?",
-    "secenekler": {
-      "A": "MC = ATC",
-      "B": "MC = AVC",
-      "C": "MR = MC",
-      "D": "P = ATC",
-      "E": "P = AVC"
-    },
-    "dogru": "C",
-    "cozum": "Tüm piyasa türlerinde kâr maksimizasyonu koşulu MR = MC’dir. Tam rekabette MR = P’dir."
+    "secenekler": [
+      "MC = ATC",
+      "MC = AVC",
+      "MR = MC",
+      "P = ATC",
+      "P = AVC"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tüm piyasa türlerinde kâr maksimizasyonu koşulu MR = MC’dir. Tam rekabette MR = P’dir."
   },
   {
-    "id": 28,
-    "ders": "İktisat",
     "konu": "Kısa Dönem – Kapanma",
     "soru": "Tam rekabet piyasasında bir firma hangi durumda üretime ara verir (kapanır)?",
-    "secenekler": {
-      "A": "P < ATC",
-      "B": "P = ATC",
-      "C": "P > ATC",
-      "D": "P < AVC",
-      "E": "P = AVC"
-    },
-    "dogru": "D",
-    "cozum": "Kısa dönemde fiyat, ortalama değişken maliyetin altına düşerse firma kapanır."
+    "secenekler": [
+      "P < ATC",
+      "P = ATC",
+      "P > ATC",
+      "P < AVC",
+      "P = AVC"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Kısa dönemde fiyat, ortalama değişken maliyetin altına düşerse firma kapanır."
   },
   {
-    "id": 29,
-    "ders": "İktisat",
     "konu": "Monopol",
     "soru": "Monopol piyasasında aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Talep eğrisi yataydır",
-      "B": "MR = Talep",
-      "C": "Fiyat alıcıdır",
-      "D": "Fiyat belirleyicidir",
-      "E": "Ekonomik kâr uzun dönemde sıfırdır"
-    },
-    "dogru": "D",
-    "cozum": "Monopol piyasasında tek satıcı vardır ve fiyat belirleyicidir. Talep eğrisi aşağı eğimlidir."
+    "secenekler": [
+      "Talep eğrisi yataydır",
+      "MR = Talep",
+      "Fiyat alıcıdır",
+      "Fiyat belirleyicidir",
+      "Ekonomik kâr uzun dönemde sıfırdır"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Monopol piyasasında tek satıcı vardır ve fiyat belirleyicidir. Talep eğrisi aşağı eğimlidir."
   },
   {
-    "id": 30,
-    "ders": "İktisat",
     "konu": "Monopol – MR İlişkisi",
     "soru": "Monopol piyasasında marjinal gelir (MR) eğrisi talep eğrisine göre nasıldır?",
-    "secenekler": {
-      "A": "Talep eğrisinin üzerindedir",
-      "B": "Talep eğrisiyle çakışıktır",
-      "C": "Talep eğrisinin altındadır",
-      "D": "Yataydır",
-      "E": "Dikeydir"
-    },
-    "dogru": "C",
-    "cozum": "Monopolde MR, talep eğrisinin altında yer alır çünkü fiyat düşürülerek daha fazla satış yapılır."
+    "secenekler": [
+      "Talep eğrisinin üzerindedir",
+      "Talep eğrisiyle çakışıktır",
+      "Talep eğrisinin altındadır",
+      "Yataydır",
+      "Dikeydir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Monopolde MR, talep eğrisinin altında yer alır çünkü fiyat düşürülerek daha fazla satış yapılır."
   },
   {
-    "id": 31,
-    "ders": "İktisat",
     "konu": "Monopol – Refah Kaybı",
     "soru": "Monopol piyasasında ortaya çıkan refah kaybının temel nedeni aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Üretimin artması",
-      "B": "Fiyatın marjinal maliyete eşitlenmesi",
-      "C": "Üretimin etkin düzeyin altında kalması",
-      "D": "Talebin esnek olması",
-      "E": "Girdi fiyatlarının düşmesi"
-    },
-    "dogru": "C",
-    "cozum": "Monopol, üretimi etkin düzeyin altında tutarak fiyatı yükseltir ve refah kaybına yol açar."
+    "secenekler": [
+      "Üretimin artması",
+      "Fiyatın marjinal maliyete eşitlenmesi",
+      "Üretimin etkin düzeyin altında kalması",
+      "Talebin esnek olması",
+      "Girdi fiyatlarının düşmesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Monopol, üretimi etkin düzeyin altında tutarak fiyatı yükseltir ve refah kaybına yol açar."
   },
   {
-    "id": 32,
-    "ders": "İktisat",
     "konu": "Monopolcü Rekabet",
     "soru": "Monopolcü rekabet piyasasında uzun dönemde aşağıdakilerden hangisi gerçekleşir?",
-    "secenekler": {
-      "A": "Ekonomik kâr oluşur",
-      "B": "Fiyat = Marjinal maliyet",
-      "C": "Ekonomik kâr sıfırdır",
-      "D": "Talep yataydır",
-      "E": "Tek firma vardır"
-    },
-    "dogru": "C",
-    "cozum": "Giriş-çıkış serbestliği nedeniyle uzun dönemde ekonomik kâr sıfırlanır."
+    "secenekler": [
+      "Ekonomik kâr oluşur",
+      "Fiyat = Marjinal maliyet",
+      "Ekonomik kâr sıfırdır",
+      "Talep yataydır",
+      "Tek firma vardır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Giriş-çıkış serbestliği nedeniyle uzun dönemde ekonomik kâr sıfırlanır."
   },
   {
-    "id": 33,
-    "ders": "İktisat",
     "konu": "Oligopol",
     "soru": "Oligopol piyasasının en belirgin özelliği aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Ürün homojendir",
-      "B": "Çok sayıda firma vardır",
-      "C": "Firmalar arası karşılıklı bağımlılık vardır",
-      "D": "Talep esneksizdir",
-      "E": "Fiyat alıcıdırlar"
-    },
-    "dogru": "C",
-    "cozum": "Oligopolde firmalar birbirlerinin kararlarını dikkate alır; karşılıklı bağımlılık esastır."
+    "secenekler": [
+      "Ürün homojendir",
+      "Çok sayıda firma vardır",
+      "Firmalar arası karşılıklı bağımlılık vardır",
+      "Talep esneksizdir",
+      "Fiyat alıcıdırlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Oligopolde firmalar birbirlerinin kararlarını dikkate alır; karşılıklı bağımlılık esastır."
   },
   {
-    "id": 34,
-    "ders": "İktisat",
     "konu": "Kartel",
     "soru": "Kartel anlaşmalarının temel amacı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Rekabeti artırmak",
-      "B": "Toplam üretimi artırmak",
-      "C": "Fiyatı marjinal maliyete eşitlemek",
-      "D": "Monopol kârı elde etmek",
-      "E": "Tüketici refahını artırmak"
-    },
-    "dogru": "D",
-    "cozum": "Karteller, firmaların birlikte hareket ederek monopol benzeri kâr elde etmesini amaçlar."
+    "secenekler": [
+      "Rekabeti artırmak",
+      "Toplam üretimi artırmak",
+      "Fiyatı marjinal maliyete eşitlemek",
+      "Monopol kârı elde etmek",
+      "Tüketici refahını artırmak"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Karteller, firmaların birlikte hareket ederek monopol benzeri kâr elde etmesini amaçlar."
   },
   {
-    "id": 35,
-    "ders": "İktisat",
     "konu": "Cournot Modeli",
     "soru": "Cournot oligopol modelinde firmalar hangi değişkeni belirler?",
-    "secenekler": {
-      "A": "Fiyat",
-      "B": "Talep",
-      "C": "Üretim miktarı",
-      "D": "Maliyet",
-      "E": "Kâr oranı"
-    },
-    "dogru": "C",
-    "cozum": "Cournot modelinde firmalar üretim miktarını belirler, fiyat piyasada oluşur."
+    "secenekler": [
+      "Fiyat",
+      "Talep",
+      "Üretim miktarı",
+      "Maliyet",
+      "Kâr oranı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Cournot modelinde firmalar üretim miktarını belirler, fiyat piyasada oluşur."
   },
   {
-    "id": 101,
-    "ders": "İktisat",
     "konu": "Makro İktisat – Tanım",
     "soru": "Makro iktisadın temel inceleme alanı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Tek bir firmanın üretim kararı",
-      "B": "Bireysel tüketici tercihleri",
-      "C": "Genel fiyat düzeyi ve milli gelir",
-      "D": "Tek bir malın arzı",
-      "E": "Firma maliyet yapısı"
-    },
-    "dogru": "C",
-    "cozum": "Makro iktisat; milli gelir, enflasyon, işsizlik ve büyüme gibi ekonominin genelini kapsayan büyüklükleri inceler."
+    "secenekler": [
+      "Tek bir firmanın üretim kararı",
+      "Bireysel tüketici tercihleri",
+      "Genel fiyat düzeyi ve milli gelir",
+      "Tek bir malın arzı",
+      "Firma maliyet yapısı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Makro iktisat; milli gelir, enflasyon, işsizlik ve büyüme gibi ekonominin genelini kapsayan büyüklükleri inceler."
   },
   {
-    "id": 102,
-    "ders": "İktisat",
     "konu": "Milli Gelir",
     "soru": "Aşağıdakilerden hangisi Gayrisafi Yurtiçi Hasıla (GSYH) hesaplamasına dahil edilmez?",
-    "secenekler": {
-      "A": "Devletin mal ve hizmet alımları",
-      "B": "Hanehalkı tüketim harcamaları",
-      "C": "Özel sektör yatırımları",
-      "D": "İkinci el otomobil satışı",
-      "E": "İhracat"
-    },
-    "dogru": "D",
-    "cozum": "GSYH sadece cari dönemde üretilen nihai malları kapsar. İkinci el satışlar üretim olmadığı için dahil edilmez."
+    "secenekler": [
+      "Devletin mal ve hizmet alımları",
+      "Hanehalkı tüketim harcamaları",
+      "Özel sektör yatırımları",
+      "İkinci el otomobil satışı",
+      "İhracat"
+    ],
+    "dogru_index": 3,
+    "aciklama": "GSYH sadece cari dönemde üretilen nihai malları kapsar. İkinci el satışlar üretim olmadığı için dahil edilmez."
   },
   {
-    "id": 103,
-    "ders": "İktisat",
     "konu": "Nominal – Reel Gelir",
     "soru": "Bir ülkede nominal milli gelir artarken reel milli gelir azalıyor ise aşağıdakilerden hangisi kesinlikle doğrudur?",
-    "secenekler": {
-      "A": "Üretim artmıştır",
-      "B": "Enflasyon vardır",
-      "C": "İşsizlik azalmıştır",
-      "D": "Refah artmıştır",
-      "E": "İhracat artmıştır"
-    },
-    "dogru": "B",
-    "cozum": "Nominal gelir artmasına rağmen reel gelir düşüyorsa fiyat artışları (enflasyon) üretim artışının önüne geçmiştir."
+    "secenekler": [
+      "Üretim artmıştır",
+      "Enflasyon vardır",
+      "İşsizlik azalmıştır",
+      "Refah artmıştır",
+      "İhracat artmıştır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Nominal gelir artmasına rağmen reel gelir düşüyorsa fiyat artışları (enflasyon) üretim artışının önüne geçmiştir."
   },
   {
-    "id": 104,
-    "ders": "İktisat",
     "konu": "Harcama Yöntemi",
     "soru": "Milli gelirin harcama yöntemiyle hesaplanmasında aşağıdakilerden hangisi yer almaz?",
-    "secenekler": {
-      "A": "Tüketim",
-      "B": "Yatırım",
-      "C": "Kamu harcamaları",
-      "D": "Transfer harcamaları",
-      "E": "Net ihracat"
-    },
-    "dogru": "D",
-    "cozum": "Transfer harcamaları karşılığında üretim olmadığı için milli gelire dahil edilmez."
+    "secenekler": [
+      "Tüketim",
+      "Yatırım",
+      "Kamu harcamaları",
+      "Transfer harcamaları",
+      "Net ihracat"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Transfer harcamaları karşılığında üretim olmadığı için milli gelire dahil edilmez."
   },
   {
-    "id": 105,
-    "ders": "İktisat",
     "konu": "Enflasyon",
     "soru": "Enflasyonun temel tanımı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Tek bir malın fiyatının artması",
-      "B": "Üretimin azalması",
-      "C": "Genel fiyat düzeyinin sürekli artması",
-      "D": "Faiz oranlarının yükselmesi",
-      "E": "İthalatın artması"
-    },
-    "dogru": "C",
-    "cozum": "Enflasyon, genel fiyat düzeyinin sürekli ve yaygın şekilde artmasıdır."
+    "secenekler": [
+      "Tek bir malın fiyatının artması",
+      "Üretimin azalması",
+      "Genel fiyat düzeyinin sürekli artması",
+      "Faiz oranlarının yükselmesi",
+      "İthalatın artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Enflasyon, genel fiyat düzeyinin sürekli ve yaygın şekilde artmasıdır."
   },
   {
-    "id": 106,
-    "ders": "İktisat",
     "konu": "Talep Enflasyonu",
     "soru": "Aşağıdakilerden hangisi talep enflasyonuna yol açar?",
-    "secenekler": {
-      "A": "Üretim maliyetlerinin artması",
-      "B": "Vergilerin artırılması",
-      "C": "Toplam talebin üretim kapasitesini aşması",
-      "D": "Kurun sabitlenmesi",
-      "E": "İthalatın artması"
-    },
-    "dogru": "C",
-    "cozum": "Talep enflasyonu, ekonomide toplam talebin toplam arzı aşması sonucu ortaya çıkar."
+    "secenekler": [
+      "Üretim maliyetlerinin artması",
+      "Vergilerin artırılması",
+      "Toplam talebin üretim kapasitesini aşması",
+      "Kurun sabitlenmesi",
+      "İthalatın artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Talep enflasyonu, ekonomide toplam talebin toplam arzı aşması sonucu ortaya çıkar."
   },
   {
-    "id": 107,
-    "ders": "İktisat",
     "konu": "Maliyet Enflasyonu",
     "soru": "Ücretlerin artması sonucu fiyatların yükselmesi aşağıdaki enflasyon türlerinden hangisine örnektir?",
-    "secenekler": {
-      "A": "Talep enflasyonu",
-      "B": "Maliyet enflasyonu",
-      "C": "Parasal enflasyon",
-      "D": "Hiperenflasyon",
-      "E": "Deflasyon"
-    },
-    "dogru": "B",
-    "cozum": "Girdi maliyetlerindeki artışlar üretim maliyetlerini yükselterek maliyet enflasyonuna yol açar."
+    "secenekler": [
+      "Talep enflasyonu",
+      "Maliyet enflasyonu",
+      "Parasal enflasyon",
+      "Hiperenflasyon",
+      "Deflasyon"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Girdi maliyetlerindeki artışlar üretim maliyetlerini yükselterek maliyet enflasyonuna yol açar."
   },
   {
-    "id": 108,
-    "ders": "İktisat",
     "konu": "Deflatör – TÜFE",
     "soru": "GSYH deflatörü ile TÜFE arasındaki temel fark aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Deflatör sadece ithal malları kapsar",
-      "B": "TÜFE tüm malları kapsar",
-      "C": "Deflatör yerli üretimi kapsar",
-      "D": "TÜFE üretim mallarını ölçer",
-      "E": "İkisi aynı şeyi ölçer"
-    },
-    "dogru": "C",
-    "cozum": "GSYH deflatörü yalnızca yurtiçinde üretilen nihai malları kapsar; TÜFE sabit bir tüketim sepetini ölçer."
+    "secenekler": [
+      "Deflatör sadece ithal malları kapsar",
+      "TÜFE tüm malları kapsar",
+      "Deflatör yerli üretimi kapsar",
+      "TÜFE üretim mallarını ölçer",
+      "İkisi aynı şeyi ölçer"
+    ],
+    "dogru_index": 2,
+    "aciklama": "GSYH deflatörü yalnızca yurtiçinde üretilen nihai malları kapsar; TÜFE sabit bir tüketim sepetini ölçer."
   },
   {
-    "id": 109,
-    "ders": "İktisat",
     "konu": "İşsizlik",
     "soru": "Aşağıdakilerden hangisi konjonktürel işsizliğe örnektir?",
-    "secenekler": {
-      "A": "Teknolojik gelişmeler",
-      "B": "Mevsimlik tarım işçiliği",
-      "C": "Ekonomik durgunluk",
-      "D": "Mesleki uyumsuzluk",
-      "E": "Nüfus artışı"
-    },
-    "dogru": "C",
-    "cozum": "Konjonktürel işsizlik ekonomik dalgalanmalara, özellikle durgunluk dönemlerine bağlıdır."
+    "secenekler": [
+      "Teknolojik gelişmeler",
+      "Mevsimlik tarım işçiliği",
+      "Ekonomik durgunluk",
+      "Mesleki uyumsuzluk",
+      "Nüfus artışı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Konjonktürel işsizlik ekonomik dalgalanmalara, özellikle durgunluk dönemlerine bağlıdır."
   },
   {
-    "id": 110,
-    "ders": "İktisat",
     "konu": "Doğal İşsizlik",
     "soru": "Doğal işsizlik oranı aşağıdakilerden hangisini kapsar?",
-    "secenekler": {
-      "A": "Konjonktürel işsizlik",
-      "B": "Yapısal ve friksiyonel işsizlik",
-      "C": "Mevsimsel işsizlik",
-      "D": "Gizli işsizlik",
-      "E": "Eksik istihdam"
-    },
-    "dogru": "B",
-    "cozum": "Doğal işsizlik oranı friksiyonel ve yapısal işsizliğin toplamından oluşur."
+    "secenekler": [
+      "Konjonktürel işsizlik",
+      "Yapısal ve friksiyonel işsizlik",
+      "Mevsimsel işsizlik",
+      "Gizli işsizlik",
+      "Eksik istihdam"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Doğal işsizlik oranı friksiyonel ve yapısal işsizliğin toplamından oluşur."
   },
   {
-    "id": 201,
-    "ders": "İktisat",
     "konu": "Para Politikası",
     "soru": "Para politikasının temel amacı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Bütçe açığını azaltmak",
-      "B": "Fiyat istikrarını sağlamak",
-      "C": "Gelir dağılımını düzeltmek",
-      "D": "İhracatı artırmak",
-      "E": "Vergi gelirlerini artırmak"
-    },
-    "dogru": "B",
-    "cozum": "Merkez bankalarının temel ve öncelikli amacı fiyat istikrarını sağlamaktır."
+    "secenekler": [
+      "Bütçe açığını azaltmak",
+      "Fiyat istikrarını sağlamak",
+      "Gelir dağılımını düzeltmek",
+      "İhracatı artırmak",
+      "Vergi gelirlerini artırmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Merkez bankalarının temel ve öncelikli amacı fiyat istikrarını sağlamaktır."
   },
   {
-    "id": 202,
-    "ders": "İktisat",
     "konu": "Merkez Bankası Araçları",
     "soru": "Aşağıdakilerden hangisi merkez bankasının doğrudan para politikası araçlarından biridir?",
-    "secenekler": {
-      "A": "Vergi oranları",
-      "B": "Kamu harcamaları",
-      "C": "Açık piyasa işlemleri",
-      "D": "Asgari ücret",
-      "E": "Gümrük tarifeleri"
-    },
-    "dogru": "C",
-    "cozum": "Açık piyasa işlemleri merkez bankasının en etkin para politikası aracıdır."
+    "secenekler": [
+      "Vergi oranları",
+      "Kamu harcamaları",
+      "Açık piyasa işlemleri",
+      "Asgari ücret",
+      "Gümrük tarifeleri"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Açık piyasa işlemleri merkez bankasının en etkin para politikası aracıdır."
   },
   {
-    "id": 203,
-    "ders": "İktisat",
     "konu": "Açık Piyasa İşlemleri",
     "soru": "Merkez bankasının tahvil satması aşağıdakilerden hangisine yol açar?",
-    "secenekler": {
-      "A": "Para arzının artması",
-      "B": "Faiz oranlarının düşmesi",
-      "C": "Para arzının azalması",
-      "D": "Toplam talebin artması",
-      "E": "Enflasyonun artması"
-    },
-    "dogru": "C",
-    "cozum": "Tahvil satışı piyasadan para çekilmesine neden olur; para arzı azalır."
+    "secenekler": [
+      "Para arzının artması",
+      "Faiz oranlarının düşmesi",
+      "Para arzının azalması",
+      "Toplam talebin artması",
+      "Enflasyonun artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tahvil satışı piyasadan para çekilmesine neden olur; para arzı azalır."
   },
   {
-    "id": 204,
-    "ders": "İktisat",
     "konu": "Zorunlu Karşılık",
     "soru": "Zorunlu karşılık oranının artırılması aşağıdakilerden hangisini doğurur?",
-    "secenekler": {
-      "A": "Kredi hacminin artması",
-      "B": "Para çarpanının artması",
-      "C": "Bankaların kredi verme kapasitesinin azalması",
-      "D": "Para arzının artması",
-      "E": "Toplam talebin artması"
-    },
-    "dogru": "C",
-    "cozum": "Zorunlu karşılık oranı arttığında bankaların serbest fonları azalır."
+    "secenekler": [
+      "Kredi hacminin artması",
+      "Para çarpanının artması",
+      "Bankaların kredi verme kapasitesinin azalması",
+      "Para arzının artması",
+      "Toplam talebin artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Zorunlu karşılık oranı arttığında bankaların serbest fonları azalır."
   },
   {
-    "id": 205,
-    "ders": "İktisat",
     "konu": "Faiz Politikası",
     "soru": "Merkez bankasının politika faizini artırması kısa vadede aşağıdakilerden hangisine yol açar?",
-    "secenekler": {
-      "A": "Yatırımların artması",
-      "B": "Toplam talebin artması",
-      "C": "Kredi maliyetlerinin artması",
-      "D": "Enflasyonun artması",
-      "E": "Para arzının artması"
-    },
-    "dogru": "C",
-    "cozum": "Faiz artışı kredi maliyetlerini yükselterek yatırımları ve talebi sınırlar."
+    "secenekler": [
+      "Yatırımların artması",
+      "Toplam talebin artması",
+      "Kredi maliyetlerinin artması",
+      "Enflasyonun artması",
+      "Para arzının artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Faiz artışı kredi maliyetlerini yükselterek yatırımları ve talebi sınırlar."
   },
   {
-    "id": 206,
-    "ders": "İktisat",
     "konu": "Genişletici Para Politikası",
     "soru": "Aşağıdakilerden hangisi genişletici para politikası uygulamasıdır?",
-    "secenekler": {
-      "A": "Faiz oranlarının artırılması",
-      "B": "Zorunlu karşılık oranlarının artırılması",
-      "C": "Tahvil satışı",
-      "D": "Tahvil alımı",
-      "E": "Vergilerin artırılması"
-    },
-    "dogru": "D",
-    "cozum": "Tahvil alımı piyasaya para verilmesi anlamına gelir."
+    "secenekler": [
+      "Faiz oranlarının artırılması",
+      "Zorunlu karşılık oranlarının artırılması",
+      "Tahvil satışı",
+      "Tahvil alımı",
+      "Vergilerin artırılması"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Tahvil alımı piyasaya para verilmesi anlamına gelir."
   },
   {
-    "id": 207,
-    "ders": "İktisat",
     "konu": "Daraltıcı Para Politikası",
     "soru": "Daraltıcı para politikası hangi ekonomik durumda tercih edilir?",
-    "secenekler": {
-      "A": "Durgunluk",
-      "B": "Yüksek işsizlik",
-      "C": "Deflasyon",
-      "D": "Yüksek enflasyon",
-      "E": "Düşük talep"
-    },
-    "dogru": "D",
-    "cozum": "Daraltıcı politika enflasyonu kontrol altına almak için uygulanır."
+    "secenekler": [
+      "Durgunluk",
+      "Yüksek işsizlik",
+      "Deflasyon",
+      "Yüksek enflasyon",
+      "Düşük talep"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Daraltıcı politika enflasyonu kontrol altına almak için uygulanır."
   },
   {
-    "id": 208,
-    "ders": "İktisat",
     "konu": "Aktarım Mekanizması",
     "soru": "Para politikasının faizler yoluyla yatırımları etkilemesine ne ad verilir?",
-    "secenekler": {
-      "A": "Kredi kanalı",
-      "B": "Faiz kanalı",
-      "C": "Döviz kuru kanalı",
-      "D": "Beklentiler kanalı",
-      "E": "Varlık fiyatları kanalı"
-    },
-    "dogru": "B",
-    "cozum": "Faiz kanalı, para politikasının en temel aktarım mekanizmalarından biridir."
+    "secenekler": [
+      "Kredi kanalı",
+      "Faiz kanalı",
+      "Döviz kuru kanalı",
+      "Beklentiler kanalı",
+      "Varlık fiyatları kanalı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Faiz kanalı, para politikasının en temel aktarım mekanizmalarından biridir."
   },
   {
-    "id": 209,
-    "ders": "İktisat",
     "konu": "Merkez Bankası Bağımsızlığı",
     "soru": "Merkez bankası bağımsızlığının temel gerekçesi aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Büyümeyi hızlandırmak",
-      "B": "Siyasi baskılardan arınmış fiyat istikrarı sağlamak",
-      "C": "Vergi gelirlerini artırmak",
-      "D": "İhracatı artırmak",
-      "E": "Bütçe açığını kapatmak"
-    },
-    "dogru": "B",
-    "cozum": "Bağımsız merkez bankaları enflasyonla daha etkin mücadele eder."
+    "secenekler": [
+      "Büyümeyi hızlandırmak",
+      "Siyasi baskılardan arınmış fiyat istikrarı sağlamak",
+      "Vergi gelirlerini artırmak",
+      "İhracatı artırmak",
+      "Bütçe açığını kapatmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bağımsız merkez bankaları enflasyonla daha etkin mücadele eder."
   },
   {
-    "id": 210,
-    "ders": "İktisat",
     "konu": "Likidite Tuzağı",
     "soru": "Likidite tuzağı durumunda para politikası neden etkisizdir?",
-    "secenekler": {
-      "A": "Faizler çok yüksektir",
-      "B": "Talep fazlası vardır",
-      "C": "Faizler çok düşüktür ve para talebi sonsuzdur",
-      "D": "Para arzı düşüktür",
-      "E": "Vergiler yüksektir"
-    },
-    "dogru": "C",
-    "cozum": "Faizlerin çok düşük olduğu ortamda para arzı artsa da yatırımlar artmaz."
+    "secenekler": [
+      "Faizler çok yüksektir",
+      "Talep fazlası vardır",
+      "Faizler çok düşüktür ve para talebi sonsuzdur",
+      "Para arzı düşüktür",
+      "Vergiler yüksektir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Faizlerin çok düşük olduğu ortamda para arzı artsa da yatırımlar artmaz."
   },
   {
-    "id": 301,
-    "ders": "İktisat",
     "konu": "IS Eğrisi",
     "soru": "IS eğrisinin sağa kaymasına neden olan gelişme aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Vergilerin artırılması",
-      "B": "Kamu harcamalarının azaltılması",
-      "C": "Faiz oranlarının artması",
-      "D": "Özel sektör yatırımlarının artması",
-      "E": "Para arzının azaltılması"
-    },
-    "dogru": "D",
-    "cozum": "IS eğrisi mal piyasasını temsil eder. Yatırımların artması toplam talebi artırır ve IS sağa kayar."
+    "secenekler": [
+      "Vergilerin artırılması",
+      "Kamu harcamalarının azaltılması",
+      "Faiz oranlarının artması",
+      "Özel sektör yatırımlarının artması",
+      "Para arzının azaltılması"
+    ],
+    "dogru_index": 3,
+    "aciklama": "IS eğrisi mal piyasasını temsil eder. Yatırımların artması toplam talebi artırır ve IS sağa kayar."
   },
   {
-    "id": 302,
-    "ders": "İktisat",
     "konu": "LM Eğrisi",
     "soru": "Para arzının artırılması LM eğrisini nasıl etkiler?",
-    "secenekler": {
-      "A": "Sağa kaydırır",
-      "B": "Sola kaydırır",
-      "C": "Dikleşmesine neden olur",
-      "D": "Yataylaştırır",
-      "E": "Etkilemez"
-    },
-    "dogru": "A",
-    "cozum": "Para arzı arttığında aynı gelir düzeyinde faiz düşer; LM eğrisi sağa kayar."
+    "secenekler": [
+      "Sağa kaydırır",
+      "Sola kaydırır",
+      "Dikleşmesine neden olur",
+      "Yataylaştırır",
+      "Etkilemez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Para arzı arttığında aynı gelir düzeyinde faiz düşer; LM eğrisi sağa kayar."
   },
   {
-    "id": 303,
-    "ders": "İktisat",
     "konu": "IS-LM Dengesi",
     "soru": "Genişletici maliye politikası IS-LM modelinde hangi sonucu doğurur?",
-    "secenekler": {
-      "A": "Faiz ve gelir azalır",
-      "B": "Gelir artar, faiz artar",
-      "C": "Gelir azalır, faiz artar",
-      "D": "Faiz düşer, gelir sabit kalır",
-      "E": "Hiçbir etki yaratmaz"
-    },
-    "dogru": "B",
-    "cozum": "Kamu harcamaları arttığında IS sağa kayar; denge noktası daha yüksek gelir ve faiz düzeyinde oluşur."
+    "secenekler": [
+      "Faiz ve gelir azalır",
+      "Gelir artar, faiz artar",
+      "Gelir azalır, faiz artar",
+      "Faiz düşer, gelir sabit kalır",
+      "Hiçbir etki yaratmaz"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu harcamaları arttığında IS sağa kayar; denge noktası daha yüksek gelir ve faiz düzeyinde oluşur."
   },
   {
-    "id": 304,
-    "ders": "İktisat",
     "konu": "Dışlama Etkisi",
     "soru": "Faiz artışı nedeniyle özel yatırımların azalmasına ne ad verilir?",
-    "secenekler": {
-      "A": "Likidite tuzağı",
-      "B": "Beklentiler etkisi",
-      "C": "Dışlama etkisi",
-      "D": "Çarpan etkisi",
-      "E": "Enflasyonist boşluk"
-    },
-    "dogru": "C",
-    "cozum": "Kamu harcamaları faizleri yükseltirse özel yatırımlar azalır; buna dışlama etkisi denir."
+    "secenekler": [
+      "Likidite tuzağı",
+      "Beklentiler etkisi",
+      "Dışlama etkisi",
+      "Çarpan etkisi",
+      "Enflasyonist boşluk"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kamu harcamaları faizleri yükseltirse özel yatırımlar azalır; buna dışlama etkisi denir."
   },
   {
-    "id": 305,
-    "ders": "İktisat",
     "konu": "Para Politikası – IS-LM",
     "soru": "IS eğrisi dik ise para politikası neden etkisizdir?",
-    "secenekler": {
-      "A": "Faizler çok yüksektir",
-      "B": "Para talebi esnek değildir",
-      "C": "Yatırımlar faize duyarsızdır",
-      "D": "Kamu harcamaları sıfırdır",
-      "E": "Likidite tuzağı vardır"
-    },
-    "dogru": "C",
-    "cozum": "Yatırımlar faize duyarsızsa faiz değişimi geliri etkilemez."
+    "secenekler": [
+      "Faizler çok yüksektir",
+      "Para talebi esnek değildir",
+      "Yatırımlar faize duyarsızdır",
+      "Kamu harcamaları sıfırdır",
+      "Likidite tuzağı vardır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yatırımlar faize duyarsızsa faiz değişimi geliri etkilemez."
   },
   {
-    "id": 306,
-    "ders": "İktisat",
     "konu": "AD Eğrisi",
     "soru": "Toplam talep eğrisi neden negatif eğimlidir?",
-    "secenekler": {
-      "A": "Faiz etkisi",
-      "B": "Vergi etkisi",
-      "C": "Gelir etkisi",
-      "D": "İkame etkisi",
-      "E": "Ücret etkisi"
-    },
-    "dogru": "A",
-    "cozum": "Fiyatlar arttıkça reel para arzı azalır, faiz yükselir, talep düşer."
+    "secenekler": [
+      "Faiz etkisi",
+      "Vergi etkisi",
+      "Gelir etkisi",
+      "İkame etkisi",
+      "Ücret etkisi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Fiyatlar arttıkça reel para arzı azalır, faiz yükselir, talep düşer."
   },
   {
-    "id": 307,
-    "ders": "İktisat",
     "konu": "AS Eğrisi",
     "soru": "Kısa dönem toplam arz eğrisinin pozitif eğimli olmasının temel nedeni aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Teknolojik gelişmeler",
-      "B": "Ücretlerin kısa dönemde katı olması",
-      "C": "Vergilerin artması",
-      "D": "Para arzının artması",
-      "E": "Talep artışı"
-    },
-    "dogru": "B",
-    "cozum": "Nominal ücretler kısa dönemde esnek olmadığından fiyat artışları üretimi teşvik eder."
+    "secenekler": [
+      "Teknolojik gelişmeler",
+      "Ücretlerin kısa dönemde katı olması",
+      "Vergilerin artması",
+      "Para arzının artması",
+      "Talep artışı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Nominal ücretler kısa dönemde esnek olmadığından fiyat artışları üretimi teşvik eder."
   },
   {
-    "id": 308,
-    "ders": "İktisat",
     "konu": "AD-AS Politikası",
     "soru": "Talep yönlü enflasyon hangi durumda ortaya çıkar?",
-    "secenekler": {
-      "A": "AS sola kaydığında",
-      "B": "AD sağa kaydığında",
-      "C": "Ücretler düştüğünde",
-      "D": "Teknoloji arttığında",
-      "E": "Vergiler arttığında"
-    },
-    "dogru": "B",
-    "cozum": "Toplam talebin artması fiyatlar genel düzeyini yükseltir."
+    "secenekler": [
+      "AS sola kaydığında",
+      "AD sağa kaydığında",
+      "Ücretler düştüğünde",
+      "Teknoloji arttığında",
+      "Vergiler arttığında"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toplam talebin artması fiyatlar genel düzeyini yükseltir."
   },
   {
-    "id": 309,
-    "ders": "İktisat",
     "konu": "Stagflasyon",
     "soru": "Stagflasyon aşağıdakilerden hangisinin birlikte görülmesidir?",
-    "secenekler": {
-      "A": "Enflasyon ve büyüme",
-      "B": "Durgunluk ve deflasyon",
-      "C": "Enflasyon ve işsizlik",
-      "D": "Büyüme ve işsizlik",
-      "E": "Faiz ve enflasyon"
-    },
-    "dogru": "C",
-    "cozum": "Stagflasyon, yüksek enflasyon ve yüksek işsizliğin birlikte görülmesidir."
+    "secenekler": [
+      "Enflasyon ve büyüme",
+      "Durgunluk ve deflasyon",
+      "Enflasyon ve işsizlik",
+      "Büyüme ve işsizlik",
+      "Faiz ve enflasyon"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Stagflasyon, yüksek enflasyon ve yüksek işsizliğin birlikte görülmesidir."
   },
   {
-    "id": 310,
-    "ders": "İktisat",
     "konu": "Politika Yorumu",
     "soru": "Stagflasyon durumunda yalnızca genişletici para politikası uygulanırsa ne olur?",
-    "secenekler": {
-      "A": "Enflasyon düşer",
-      "B": "İşsizlik artar",
-      "C": "Enflasyon daha da artar",
-      "D": "Sorun çözülür",
-      "E": "Talep azalır"
-    },
-    "dogru": "C",
-    "cozum": "Stagflasyonda talep artırıcı politikalar enflasyonu daha da yükseltir."
+    "secenekler": [
+      "Enflasyon düşer",
+      "İşsizlik artar",
+      "Enflasyon daha da artar",
+      "Sorun çözülür",
+      "Talep azalır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Stagflasyonda talep artırıcı politikalar enflasyonu daha da yükseltir."
   },
   {
-    "id": 401,
-    "ders": "Uluslararası İktisat",
     "konu": "Döviz Kuru",
     "soru": "Nominal döviz kuru aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Bir ülkenin satın alma gücü",
-      "B": "İki ülke fiyat düzeyleri oranı",
-      "C": "Bir birim yabancı paranın ulusal para cinsinden değeri",
-      "D": "Faiz oranları farkı",
-      "E": "Cari işlemler dengesi"
-    },
-    "dogru": "C",
-    "cozum": "Nominal döviz kuru, bir birim yabancı paranın ulusal para cinsinden fiyatıdır."
+    "secenekler": [
+      "Bir ülkenin satın alma gücü",
+      "İki ülke fiyat düzeyleri oranı",
+      "Bir birim yabancı paranın ulusal para cinsinden değeri",
+      "Faiz oranları farkı",
+      "Cari işlemler dengesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Nominal döviz kuru, bir birim yabancı paranın ulusal para cinsinden fiyatıdır."
   },
   {
-    "id": 402,
-    "ders": "Uluslararası İktisat",
     "konu": "Reel Döviz Kuru",
     "soru": "Reel döviz kuru artışı aşağıdakilerden hangisini gösterir?",
-    "secenekler": {
-      "A": "Ulusal paranın reel değer kazanması",
-      "B": "Ulusal paranın reel değer kaybetmesi",
-      "C": "Enflasyonun düşmesi",
-      "D": "Faiz oranlarının artması",
-      "E": "Cari açığın kapanması"
-    },
-    "dogru": "B",
-    "cozum": "Reel döviz kuru artışı, yerli malların görece pahalılaşması ve ulusal paranın reel değer kaybetmesi anlamına gelir."
+    "secenekler": [
+      "Ulusal paranın reel değer kazanması",
+      "Ulusal paranın reel değer kaybetmesi",
+      "Enflasyonun düşmesi",
+      "Faiz oranlarının artması",
+      "Cari açığın kapanması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Reel döviz kuru artışı, yerli malların görece pahalılaşması ve ulusal paranın reel değer kaybetmesi anlamına gelir."
   },
   {
-    "id": 403,
-    "ders": "Uluslararası İktisat",
     "konu": "Sabit Kur Sistemi",
     "soru": "Sabit döviz kuru sisteminde merkez bankasının temel görevi aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Faiz oranlarını serbest bırakmak",
-      "B": "Kur hedefini piyasaya bırakmak",
-      "C": "Döviz piyasasına müdahale ederek kuru korumak",
-      "D": "Enflasyonu sıfıra indirmek",
-      "E": "Cari açığı kapatmak"
-    },
-    "dogru": "C",
-    "cozum": "Sabit kurda merkez bankası döviz alım–satımıyla kuru hedef düzeyde tutar."
+    "secenekler": [
+      "Faiz oranlarını serbest bırakmak",
+      "Kur hedefini piyasaya bırakmak",
+      "Döviz piyasasına müdahale ederek kuru korumak",
+      "Enflasyonu sıfıra indirmek",
+      "Cari açığı kapatmak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sabit kurda merkez bankası döviz alım–satımıyla kuru hedef düzeyde tutar."
   },
   {
-    "id": 404,
-    "ders": "Uluslararası İktisat",
     "konu": "Esnek Kur Sistemi",
     "soru": "Esnek döviz kuru sisteminin en önemli avantajı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Kur istikrarı sağlar",
-      "B": "Dış ticareti sınırlar",
-      "C": "Para politikasına bağımsızlık kazandırır",
-      "D": "Cari açığı otomatik kapatır",
-      "E": "Enflasyonu ortadan kaldırır"
-    },
-    "dogru": "C",
-    "cozum": "Esnek kur sistemi, merkez bankasına bağımsız para politikası uygulama imkânı verir."
+    "secenekler": [
+      "Kur istikrarı sağlar",
+      "Dış ticareti sınırlar",
+      "Para politikasına bağımsızlık kazandırır",
+      "Cari açığı otomatik kapatır",
+      "Enflasyonu ortadan kaldırır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Esnek kur sistemi, merkez bankasına bağımsız para politikası uygulama imkânı verir."
   },
   {
-    "id": 405,
-    "ders": "Uluslararası İktisat",
     "konu": "Devalüasyon",
     "soru": "Sabit kur sisteminde ulusal paranın değerinin resmi olarak düşürülmesine ne ad verilir?",
-    "secenekler": {
-      "A": "Revalüasyon",
-      "B": "Depresyon",
-      "C": "Devalüasyon",
-      "D": "Enflasyon",
-      "E": "Açık piyasa işlemi"
-    },
-    "dogru": "C",
-    "cozum": "Sabit kurda kur değişikliği resmi kararla yapılır ve buna devalüasyon denir."
+    "secenekler": [
+      "Revalüasyon",
+      "Depresyon",
+      "Devalüasyon",
+      "Enflasyon",
+      "Açık piyasa işlemi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sabit kurda kur değişikliği resmi kararla yapılır ve buna devalüasyon denir."
   },
   {
-    "id": 406,
-    "ders": "Uluslararası İktisat",
     "konu": "Revalüasyon",
     "soru": "Ulusal paranın sabit kur rejiminde değerinin artırılması hangi kavramla ifade edilir?",
-    "secenekler": {
-      "A": "Devalüasyon",
-      "B": "Revalüasyon",
-      "C": "Appreciation",
-      "D": "Depreciation",
-      "E": "Sterilizasyon"
-    },
-    "dogru": "B",
-    "cozum": "Revalüasyon, sabit kurda ulusal paranın resmi olarak değer kazanmasıdır."
+    "secenekler": [
+      "Devalüasyon",
+      "Revalüasyon",
+      "Appreciation",
+      "Depreciation",
+      "Sterilizasyon"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Revalüasyon, sabit kurda ulusal paranın resmi olarak değer kazanmasıdır."
   },
   {
-    "id": 407,
-    "ders": "Uluslararası İktisat",
     "konu": "Depreciation",
     "soru": "Esnek döviz kuru sisteminde ulusal paranın piyasa koşullarıyla değer kaybetmesine ne ad verilir?",
-    "secenekler": {
-      "A": "Devalüasyon",
-      "B": "Revalüasyon",
-      "C": "Depreciation",
-      "D": "Sterilizasyon",
-      "E": "Deflasyon"
-    },
-    "dogru": "C",
-    "cozum": "Esnek kurda piyasa kaynaklı değer kaybına depreciation denir."
+    "secenekler": [
+      "Devalüasyon",
+      "Revalüasyon",
+      "Depreciation",
+      "Sterilizasyon",
+      "Deflasyon"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Esnek kurda piyasa kaynaklı değer kaybına depreciation denir."
   },
   {
-    "id": 408,
-    "ders": "Uluslararası İktisat",
     "konu": "Appreciation",
     "soru": "Esnek döviz kuru sisteminde ulusal paranın değer kazanması hangi kavramla ifade edilir?",
-    "secenekler": {
-      "A": "Revalüasyon",
-      "B": "Devalüasyon",
-      "C": "Appreciation",
-      "D": "Sterilizasyon",
-      "E": "Enflasyon"
-    },
-    "dogru": "C",
-    "cozum": "Esnek kurda piyasa koşullarıyla değer kazanması appreciation olarak adlandırılır."
+    "secenekler": [
+      "Revalüasyon",
+      "Devalüasyon",
+      "Appreciation",
+      "Sterilizasyon",
+      "Enflasyon"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Esnek kurda piyasa koşullarıyla değer kazanması appreciation olarak adlandırılır."
   },
   {
-    "id": 409,
-    "ders": "Uluslararası İktisat",
     "konu": "Sterilizasyon",
     "soru": "Merkez bankasının döviz müdahalesinin para arzı üzerindeki etkisini gidermesine ne ad verilir?",
-    "secenekler": {
-      "A": "Devalüasyon",
-      "B": "Sterilizasyon",
-      "C": "Reeskont",
-      "D": "Depreciation",
-      "E": "Arbitraj"
-    },
-    "dogru": "B",
-    "cozum": "Sterilizasyon, döviz müdahalesinin parasal etkisinin açık piyasa işlemleriyle dengelenmesidir."
+    "secenekler": [
+      "Devalüasyon",
+      "Sterilizasyon",
+      "Reeskont",
+      "Depreciation",
+      "Arbitraj"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sterilizasyon, döviz müdahalesinin parasal etkisinin açık piyasa işlemleriyle dengelenmesidir."
   },
   {
-    "id": 410,
-    "ders": "Uluslararası İktisat",
     "konu": "Trilemma",
     "soru": "Uluslararası iktisatta imkânsız üçleme (trilemma) aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Üç farklı para birimi kullanımı",
-      "B": "Sabit kur – sermaye hareketleri – bağımsız para politikası üçlüsünün aynı anda sağlanamaması",
-      "C": "Üç ülke arasında ticaret",
-      "D": "Üçlü denge",
-      "E": "Üçlü bütçe açığı"
-    },
-    "dogru": "B",
-    "cozum": "Bir ülke bu üç hedeften yalnızca ikisini aynı anda gerçekleştirebilir."
+    "secenekler": [
+      "Üç farklı para birimi kullanımı",
+      "Sabit kur – sermaye hareketleri – bağımsız para politikası üçlüsünün aynı anda sağlanamaması",
+      "Üç ülke arasında ticaret",
+      "Üçlü denge",
+      "Üçlü bütçe açığı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bir ülke bu üç hedeften yalnızca ikisini aynı anda gerçekleştirebilir."
   },
   {
-    "id": 411,
-    "ders": "Uluslararası İktisat",
     "konu": "Ödemeler Dengesi",
     "soru": "Ödemeler dengesi aşağıdakilerden hangisini gösterir?",
-    "secenekler": {
-      "A": "Bir ülkenin milli gelirini",
-      "B": "Bir ülkenin dış ticaret fazlasını",
-      "C": "Bir ülkenin dış dünya ile tüm ekonomik işlemlerini",
-      "D": "Sadece ihracat ve ithalatı",
-      "E": "Merkez bankası rezervlerini"
-    },
-    "dogru": "C",
-    "cozum": "Ödemeler dengesi, belirli bir dönemde ülkenin dış dünya ile yaptığı tüm ekonomik işlemlerin kaydıdır."
+    "secenekler": [
+      "Bir ülkenin milli gelirini",
+      "Bir ülkenin dış ticaret fazlasını",
+      "Bir ülkenin dış dünya ile tüm ekonomik işlemlerini",
+      "Sadece ihracat ve ithalatı",
+      "Merkez bankası rezervlerini"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Ödemeler dengesi, belirli bir dönemde ülkenin dış dünya ile yaptığı tüm ekonomik işlemlerin kaydıdır."
   },
   {
-    "id": 412,
-    "ders": "Uluslararası İktisat",
     "konu": "Cari İşlemler Hesabı",
     "soru": "Aşağıdakilerden hangisi cari işlemler hesabında yer almaz?",
-    "secenekler": {
-      "A": "Mal ihracatı",
-      "B": "Hizmet gelirleri",
-      "C": "Yatırım gelirleri",
-      "D": "Doğrudan yabancı yatırımlar",
-      "E": "Karşılıksız transferler"
-    },
-    "dogru": "D",
-    "cozum": "Doğrudan yabancı yatırımlar finans hesabında yer alır."
+    "secenekler": [
+      "Mal ihracatı",
+      "Hizmet gelirleri",
+      "Yatırım gelirleri",
+      "Doğrudan yabancı yatırımlar",
+      "Karşılıksız transferler"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Doğrudan yabancı yatırımlar finans hesabında yer alır."
   },
   {
-    "id": 413,
-    "ders": "Uluslararası İktisat",
     "konu": "Dış Ticaret Dengesi",
     "soru": "İhracatın ithalattan fazla olması durumuna ne ad verilir?",
-    "secenekler": {
-      "A": "Cari açık",
-      "B": "Dış ticaret açığı",
-      "C": "Dış ticaret fazlası",
-      "D": "Sermaye açığı",
-      "E": "Finansman açığı"
-    },
-    "dogru": "C",
-    "cozum": "İhracat > ithalat ise dış ticaret fazlası oluşur."
+    "secenekler": [
+      "Cari açık",
+      "Dış ticaret açığı",
+      "Dış ticaret fazlası",
+      "Sermaye açığı",
+      "Finansman açığı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İhracat > ithalat ise dış ticaret fazlası oluşur."
   },
   {
-    "id": 414,
-    "ders": "Uluslararası İktisat",
     "konu": "Hizmetler Dengesi",
     "soru": "Turizm gelirleri ödemeler dengesinde hangi hesapta yer alır?",
-    "secenekler": {
-      "A": "Finans hesabı",
-      "B": "Sermaye hesabı",
-      "C": "Cari işlemler hesabı",
-      "D": "Rezerv varlıklar",
-      "E": "Hata ve noksan"
-    },
-    "dogru": "C",
-    "cozum": "Turizm gelirleri hizmet geliridir ve cari işlemler hesabında yer alır."
+    "secenekler": [
+      "Finans hesabı",
+      "Sermaye hesabı",
+      "Cari işlemler hesabı",
+      "Rezerv varlıklar",
+      "Hata ve noksan"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Turizm gelirleri hizmet geliridir ve cari işlemler hesabında yer alır."
   },
   {
-    "id": 415,
-    "ders": "Uluslararası İktisat",
     "konu": "Birincil Gelir",
     "soru": "Yurt dışına ödenen faiz ve kâr transferleri hangi hesapta izlenir?",
-    "secenekler": {
-      "A": "Finans hesabı",
-      "B": "Birincil gelir dengesi",
-      "C": "İkincil gelir dengesi",
-      "D": "Sermaye hesabı",
-      "E": "Rezervler"
-    },
-    "dogru": "B",
-    "cozum": "Faiz ve kâr transferleri birincil gelir kapsamında değerlendirilir."
+    "secenekler": [
+      "Finans hesabı",
+      "Birincil gelir dengesi",
+      "İkincil gelir dengesi",
+      "Sermaye hesabı",
+      "Rezervler"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Faiz ve kâr transferleri birincil gelir kapsamında değerlendirilir."
   },
   {
-    "id": 416,
-    "ders": "Uluslararası İktisat",
     "konu": "İkincil Gelir",
     "soru": "Yurt dışından karşılıksız alınan hibeler hangi hesapta yer alır?",
-    "secenekler": {
-      "A": "Birincil gelir",
-      "B": "Finans hesabı",
-      "C": "İkincil gelir",
-      "D": "Sermaye hesabı",
-      "E": "Hata ve noksan"
-    },
-    "dogru": "C",
-    "cozum": "Karşılıksız transferler ikincil gelir hesabında izlenir."
+    "secenekler": [
+      "Birincil gelir",
+      "Finans hesabı",
+      "İkincil gelir",
+      "Sermaye hesabı",
+      "Hata ve noksan"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Karşılıksız transferler ikincil gelir hesabında izlenir."
   },
   {
-    "id": 417,
-    "ders": "Uluslararası İktisat",
     "konu": "Finans Hesabı",
     "soru": "Aşağıdakilerden hangisi finans hesabında yer alır?",
-    "secenekler": {
-      "A": "İhracat gelirleri",
-      "B": "Turizm harcamaları",
-      "C": "Doğrudan yabancı yatırımlar",
-      "D": "İşçi dövizleri",
-      "E": "Faiz gelirleri"
-    },
-    "dogru": "C",
-    "cozum": "Doğrudan yabancı yatırımlar finans hesabının bir unsurudur."
+    "secenekler": [
+      "İhracat gelirleri",
+      "Turizm harcamaları",
+      "Doğrudan yabancı yatırımlar",
+      "İşçi dövizleri",
+      "Faiz gelirleri"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Doğrudan yabancı yatırımlar finans hesabının bir unsurudur."
   },
   {
-    "id": 418,
-    "ders": "Uluslararası İktisat",
     "konu": "Rezerv Varlıklar",
     "soru": "Merkez bankasının döviz rezervlerindeki artış ödemeler dengesinde nasıl kaydedilir?",
-    "secenekler": {
-      "A": "Alacak (+)",
-      "B": "Borç (-)",
-      "C": "Cari fazla",
-      "D": "Sermaye girişi",
-      "E": "Hata ve noksan"
-    },
-    "dogru": "B",
-    "cozum": "Rezerv artışı döviz çıkışı anlamına geldiği için borç (-) olarak kaydedilir."
+    "secenekler": [
+      "Alacak (+)",
+      "Borç (-)",
+      "Cari fazla",
+      "Sermaye girişi",
+      "Hata ve noksan"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Rezerv artışı döviz çıkışı anlamına geldiği için borç (-) olarak kaydedilir."
   },
   {
-    "id": 419,
-    "ders": "Uluslararası İktisat",
     "konu": "Hata ve Noksan",
     "soru": "Ödemeler dengesinde kayıt dışı işlemleri dengeleyen kalem hangisidir?",
-    "secenekler": {
-      "A": "Cari işlemler",
-      "B": "Finans hesabı",
-      "C": "Rezervler",
-      "D": "Hata ve noksan",
-      "E": "Sermaye hesabı"
-    },
-    "dogru": "D",
-    "cozum": "Ölçüm ve kayıt hataları hata ve noksan kalemiyle dengelenir."
+    "secenekler": [
+      "Cari işlemler",
+      "Finans hesabı",
+      "Rezervler",
+      "Hata ve noksan",
+      "Sermaye hesabı"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Ölçüm ve kayıt hataları hata ve noksan kalemiyle dengelenir."
   },
   {
-    "id": 420,
-    "ders": "Uluslararası İktisat",
     "konu": "Cari Açık Yorumu",
     "soru": "Cari açığın finansmanında sıcak para girişlerinin ağırlık kazanması hangi riski doğurur?",
-    "secenekler": {
-      "A": "Kur istikrarı",
-      "B": "Uzun vadeli büyüme",
-      "C": "Finansal kırılganlık",
-      "D": "Dış ticaret fazlası",
-      "E": "Enflasyon düşüşü"
-    },
-    "dogru": "C",
-    "cozum": "Sıcak para kısa vadeli olduğu için ani çıkış riski taşır ve kırılganlık yaratır."
+    "secenekler": [
+      "Kur istikrarı",
+      "Uzun vadeli büyüme",
+      "Finansal kırılganlık",
+      "Dış ticaret fazlası",
+      "Enflasyon düşüşü"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sıcak para kısa vadeli olduğu için ani çıkış riski taşır ve kırılganlık yaratır."
   },
   {
-    "id": 421,
-    "ders": "Uluslararası İktisat",
     "konu": "Mundell–Fleming",
     "soru": "Mundell–Fleming modeli hangi varsayım altında geçerlidir?",
-    "secenekler": {
-      "A": "Kapalı ekonomi",
-      "B": "Uzun dönem",
-      "C": "Kısa dönem ve açık ekonomi",
-      "D": "Tam istihdam",
-      "E": "Sabit fiyatlar"
-    },
-    "dogru": "C",
-    "cozum": "Mundell–Fleming modeli, IS-LM modelinin açık ekonomi ve kısa dönem uyarlamasıdır."
+    "secenekler": [
+      "Kapalı ekonomi",
+      "Uzun dönem",
+      "Kısa dönem ve açık ekonomi",
+      "Tam istihdam",
+      "Sabit fiyatlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Mundell–Fleming modeli, IS-LM modelinin açık ekonomi ve kısa dönem uyarlamasıdır."
   },
   {
-    "id": 422,
-    "ders": "Uluslararası İktisat",
     "konu": "Esnek Kur – Para Politikası",
     "soru": "Esnek kur rejiminde genişletici para politikası hangi sonucu doğurur?",
-    "secenekler": {
-      "A": "Gelir azalır",
-      "B": "Kur değer kazanır",
-      "C": "Kur değer kaybeder ve gelir artar",
-      "D": "Para politikası etkisizdir",
-      "E": "Cari açık kapanır"
-    },
-    "dogru": "C",
-    "cozum": "Faiz düşer, sermaye çıkışı olur, kur değer kaybeder, net ihracat artar."
+    "secenekler": [
+      "Gelir azalır",
+      "Kur değer kazanır",
+      "Kur değer kaybeder ve gelir artar",
+      "Para politikası etkisizdir",
+      "Cari açık kapanır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Faiz düşer, sermaye çıkışı olur, kur değer kaybeder, net ihracat artar."
   },
   {
-    "id": 423,
-    "ders": "Uluslararası İktisat",
     "konu": "Esnek Kur – Maliye Politikası",
     "soru": "Esnek kur rejiminde genişletici maliye politikasının etkisi neden sınırlıdır?",
-    "secenekler": {
-      "A": "Likidite tuzağı",
-      "B": "Dışlama etkisi",
-      "C": "Kurun değer kazanması",
-      "D": "Sermaye kontrolü",
-      "E": "Rezerv kaybı"
-    },
-    "dogru": "C",
-    "cozum": "Maliye politikası faizleri artırır, sermaye girişi olur, kur değer kazanır, net ihracat azalır."
+    "secenekler": [
+      "Likidite tuzağı",
+      "Dışlama etkisi",
+      "Kurun değer kazanması",
+      "Sermaye kontrolü",
+      "Rezerv kaybı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Maliye politikası faizleri artırır, sermaye girişi olur, kur değer kazanır, net ihracat azalır."
   },
   {
-    "id": 424,
-    "ders": "Uluslararası İktisat",
     "konu": "Sabit Kur – Para Politikası",
     "soru": "Sabit kur rejiminde bağımsız para politikası neden mümkün değildir?",
-    "secenekler": {
-      "A": "Enflasyon riski",
-      "B": "Sermaye hareketleri",
-      "C": "Merkez bankası kuru korumak zorundadır",
-      "D": "Bütçe açığı",
-      "E": "İşsizlik"
-    },
-    "dogru": "C",
-    "cozum": "Sabit kurda merkez bankası kuru korumak için müdahale eder, para arzı endojenleşir."
+    "secenekler": [
+      "Enflasyon riski",
+      "Sermaye hareketleri",
+      "Merkez bankası kuru korumak zorundadır",
+      "Bütçe açığı",
+      "İşsizlik"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sabit kurda merkez bankası kuru korumak için müdahale eder, para arzı endojenleşir."
   },
   {
-    "id": 425,
-    "ders": "Uluslararası İktisat",
     "konu": "Sabit Kur – Maliye Politikası",
     "soru": "Sabit kur rejiminde genişletici maliye politikası neden etkilidir?",
-    "secenekler": {
-      "A": "Kur serbesttir",
-      "B": "Merkez bankası müdahalesi para arzını artırır",
-      "C": "Faizler düşer",
-      "D": "Net ihracat azalır",
-      "E": "Cari açık kapanır"
-    },
-    "dogru": "B",
-    "cozum": "Faiz artışı sermaye girişi yaratır, MB döviz alır, para arzı genişler."
+    "secenekler": [
+      "Kur serbesttir",
+      "Merkez bankası müdahalesi para arzını artırır",
+      "Faizler düşer",
+      "Net ihracat azalır",
+      "Cari açık kapanır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Faiz artışı sermaye girişi yaratır, MB döviz alır, para arzı genişler."
   },
   {
-    "id": 426,
-    "ders": "Uluslararası İktisat",
     "konu": "Sermaye Hareketliliği",
     "soru": "Sermaye hareketliliğinin tam olduğu durumda hangi politika daha etkilidir?",
-    "secenekler": {
-      "A": "Maliye politikası (esnek kur)",
-      "B": "Para politikası (esnek kur)",
-      "C": "Para politikası (sabit kur)",
-      "D": "Maliye politikası (sabit kur)",
-      "E": "Hiçbiri"
-    },
-    "dogru": "B",
-    "cozum": "Esnek kur + tam sermaye hareketliliğinde para politikası en etkilidir."
+    "secenekler": [
+      "Maliye politikası (esnek kur)",
+      "Para politikası (esnek kur)",
+      "Para politikası (sabit kur)",
+      "Maliye politikası (sabit kur)",
+      "Hiçbiri"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Esnek kur + tam sermaye hareketliliğinde para politikası en etkilidir."
   },
   {
-    "id": 427,
-    "ders": "Uluslararası İktisat",
     "konu": "Politika Çatışması",
     "soru": "Sabit kur rejiminde genişletici para politikası uygulanmak istenirse ne olur?",
-    "secenekler": {
-      "A": "Gelir artar",
-      "B": "Kur değer kaybeder",
-      "C": "Merkez bankası döviz satar ve para arzı geri çekilir",
-      "D": "Politika başarılı olur",
-      "E": "Cari fazla oluşur"
-    },
-    "dogru": "C",
-    "cozum": "Kur baskı altında kalır, MB müdahale eder ve politika etkisizleşir."
+    "secenekler": [
+      "Gelir artar",
+      "Kur değer kaybeder",
+      "Merkez bankası döviz satar ve para arzı geri çekilir",
+      "Politika başarılı olur",
+      "Cari fazla oluşur"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kur baskı altında kalır, MB müdahale eder ve politika etkisizleşir."
   },
   {
-    "id": 428,
-    "ders": "Uluslararası İktisat",
     "konu": "İmkânsız Üçleme",
     "soru": "Mundell–Fleming modeli aşağıdaki hangi kavramla doğrudan ilişkilidir?",
-    "secenekler": {
-      "A": "Çarpan etkisi",
-      "B": "Phillips eğrisi",
-      "C": "İmkânsız üçleme",
-      "D": "Lorenz eğrisi",
-      "E": "Laffer eğrisi"
-    },
-    "dogru": "C",
-    "cozum": "Model, sabit kur – sermaye hareketleri – para politikası üçlüsünü açıklar."
+    "secenekler": [
+      "Çarpan etkisi",
+      "Phillips eğrisi",
+      "İmkânsız üçleme",
+      "Lorenz eğrisi",
+      "Laffer eğrisi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Model, sabit kur – sermaye hareketleri – para politikası üçlüsünü açıklar."
   },
   {
-    "id": 429,
-    "ders": "Uluslararası İktisat",
     "konu": "Grafik Yorumu",
     "soru": "Esnek kur rejiminde genişletici para politikası IS-LM-BP modelinde hangi eğrinin kaymasına neden olur?",
-    "secenekler": {
-      "A": "IS",
-      "B": "BP",
-      "C": "LM",
-      "D": "AS",
-      "E": "AD"
-    },
-    "dogru": "C",
-    "cozum": "Para arzı artışı LM eğrisini sağa kaydırır."
+    "secenekler": [
+      "IS",
+      "BP",
+      "LM",
+      "AS",
+      "AD"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Para arzı artışı LM eğrisini sağa kaydırır."
   },
   {
-    "id": 430,
-    "ders": "Uluslararası İktisat",
     "konu": "Final Yorum",
     "soru": "Tam sermaye hareketliliği ve esnek kur rejiminde enflasyonla mücadelede hangi politika tercih edilmelidir?",
-    "secenekler": {
-      "A": "Genişletici maliye",
-      "B": "Daraltıcı maliye",
-      "C": "Genişletici para",
-      "D": "Daraltıcı para",
-      "E": "Kur müdahalesi"
-    },
-    "dogru": "D",
-    "cozum": "Daraltıcı para politikası faizleri artırır, sermaye girişi olur, kur değer kazanır ve enflasyon düşer."
+    "secenekler": [
+      "Genişletici maliye",
+      "Daraltıcı maliye",
+      "Genişletici para",
+      "Daraltıcı para",
+      "Kur müdahalesi"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Daraltıcı para politikası faizleri artırır, sermaye girişi olur, kur değer kazanır ve enflasyon düşer."
   }
 ]
