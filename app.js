@@ -54,32 +54,6 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
-function syncLessonUI(mode = App.mode){
-  const sel = $("lessonSelect");
-  const wrap = $("lessonIcons");
-  if (!sel || !wrap) return;
-
-  // Seçili ders geçersizse veya yoksa ilk derse düş
-  if (!App.lesson || !FILES[App.lesson]) {
-    App.lesson = Object.keys(FILES)[0];
-  }
-
-  // Select boş kaldıysa yeniden doldur
-  if (!sel.options.length) {
-    Object.keys(FILES).forEach(name => {
-      const opt = document.createElement("option");
-      opt.value = name;
-      opt.textContent = name;
-      sel.appendChild(opt);
-    });
-  }
-
-  sel.value = App.lesson;
-
-  // Ikonları görünür kıl
-  renderLessonIcons(mode);
-}
-
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
 }
@@ -299,7 +273,7 @@ function setMode(mode){
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
 
-  syncLessonUI(mode);
+  renderLessonIcons(mode);
 }
 
 function fillLessonSelect(){
@@ -344,8 +318,7 @@ function renderLessonIcons(mode="single"){
     const div = document.createElement("button");
     div.className = "icon-tile";
     div.dataset.lesson = lesson;
-    const lessonBank = (App.allBanks && App.allBanks[lesson]) ? App.allBanks[lesson] : [];
-    const count = lessonBank.length || 0;
+    const count = App.allBanks?.[lesson]?.length || 0;
     div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
                     `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
     div.addEventListener("click", ()=> setLesson(lesson));
@@ -373,7 +346,7 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.";
+      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.");
       setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
       showAlert(tip);
       throw e;
@@ -381,7 +354,7 @@ async function loadAllBanks(){
   }
   App.allBanks = banks;
   setNotice("Soru paketleri hazır ✅", "info");
-  syncLessonUI(App.mode);
+  renderLessonIcons(App.mode);
 }
 
 // ---------- test builder ----------
@@ -1048,13 +1021,10 @@ async function init(){
 
   try {
     await loadAllBanks();
-    syncLessonUI(App.mode);
     setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
   } catch (e) {
     console.error(e);
     setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
-    // UI boş kalmasın diye son kez senkronla
-    syncLessonUI(App.mode);
   }
 }
 
