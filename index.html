@@ -28,6 +28,7 @@
       </div>
     </div>
     <div class="top-actions">
+      <button id="btnHome" class="chip">🏠 Ana sayfa</button>
       <button id="btnInstall" class="chip" style="display:none">📱 Ana ekrana ekle</button>
       <button id="btnUpdate" class="chip">⚡ Güncellemeleri denetle</button>
       <button id="btnExport" class="chip">🗂️ Verileri indir</button>
@@ -36,6 +37,11 @@
 
   <main class="container space-y-6">
     <div id="loadStatus" class="notice" hidden></div>
+
+    <div id="alertBox" class="notice flex items-start gap-3" hidden>
+      <div class="flex-1" id="alertText"></div>
+      <button id="alertClose" class="chip">Kapat</button>
+    </div>
 
     <section id="setupCard" class="card space-y-5">
       <div class="flex items-center justify-between gap-4 flex-wrap">

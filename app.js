@@ -215,6 +215,23 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
   document.querySelectorAll(".seg-btn").forEach(b=>{
@@ -268,7 +285,9 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e){
       console.error(e);
+      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.");
       setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
+      showAlert(tip);
       throw e;
     }
   }
@@ -899,6 +918,7 @@ function init(){
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
+  $("btnHome").addEventListener("click", goHome);
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -912,6 +932,7 @@ function init(){
   $("btnVoice").addEventListener("click", ()=> startVoice());
   $("btnRead").addEventListener("click", ()=> readCurrent());
   $("btnInstall").addEventListener("click", ()=> installPWA());
+  $("alertClose").addEventListener("click", ()=> showAlert(null));
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;
