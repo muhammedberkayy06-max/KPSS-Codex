@@ -340,7 +340,7 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.";
+      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.");
       setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
       showAlert(tip);
       throw e;
