@@ -101,6 +101,36 @@
       </div>
     </section>
 
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="field">
+          <label for="goal">Hedef</label>
+          <select id="goal">
+            <option value="speed">Hız</option>
+            <option value="mastery">Eksik Konu</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="difficulty">Zorluk</label>
+          <select id="difficulty">
+            <option value="auto">Otomatik</option>
+            <option value="easy">Kolay</option>
+            <option value="medium">Orta</option>
+            <option value="hard">Zor</option>
+          </select>
+        </div>
+        <div class="field flex flex-col justify-end">
+          <label class="toggle"><input id="ttsToggle" type="checkbox">Cevapları sesli oku</label>
+        </div>
+      </div>
+
+      <div class="row actions">
+        <button id="btnStart" class="btn primary">🚀 Testi Başlat</button>
+        <button id="btnQuick10" class="btn">🎯 2 saatlik plan</button>
+        <button id="btnRead" class="btn sm">🔊 Soruyu oku</button>
+        <button id="btnVoice" class="btn sm">🎙️ Sesli komut</button>
+      </div>
+    </section>
+
     <section id="quizCard" class="card space-y-4" hidden>
       <div class="quiz-top">
         <span id="pillMeta" class="pill">Ders · Konu</span>
