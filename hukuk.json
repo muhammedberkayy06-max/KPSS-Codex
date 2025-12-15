@@ -1,902 +1,782 @@
 [
   {
-    "id": 501,
-    "ders": "Hukuk",
     "konu": "Anayasanın Üstünlüğü",
     "soru": "Anayasanın üstünlüğü ilkesi aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Anayasanın kanunlarla değiştirilebilmesi",
-      "B": "Anayasanın yalnızca TBMM’yi bağlaması",
-      "C": "Kanunların Anayasaya uygun olmak zorunda olması",
-      "D": "Yürütmenin Anayasadan üstün olması",
-      "E": "Anayasanın teamüllerle değişmesi"
-    },
-    "dogru": "C",
-    "cozum": "Anayasanın üstünlüğü, tüm hukuk kurallarının Anayasaya uygun olması gerektiğini ifade eder."
+    "secenekler": [
+      "Anayasanın kanunlarla değiştirilebilmesi",
+      "Anayasanın yalnızca TBMM’yi bağlaması",
+      "Kanunların Anayasaya uygun olmak zorunda olması",
+      "Yürütmenin Anayasadan üstün olması",
+      "Anayasanın teamüllerle değişmesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasanın üstünlüğü, tüm hukuk kurallarının Anayasaya uygun olması gerektiğini ifade eder."
   },
   {
-    "id": 502,
-    "ders": "Hukuk",
     "konu": "Cumhuriyetçilik",
     "soru": "Cumhuriyet ilkesinin zorunlu sonucu aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Egemenliğin kayıtsız şartsız millete ait olması",
-      "B": "Laiklik",
-      "C": "Sosyal devlet",
-      "D": "Hukuk devleti",
-      "E": "Üniter devlet"
-    },
-    "dogru": "A",
-    "cozum": "Cumhuriyet, egemenliğin millete ait olduğu yönetim biçimidir."
+    "secenekler": [
+      "Egemenliğin kayıtsız şartsız millete ait olması",
+      "Laiklik",
+      "Sosyal devlet",
+      "Hukuk devleti",
+      "Üniter devlet"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Cumhuriyet, egemenliğin millete ait olduğu yönetim biçimidir."
   },
   {
-    "id": 503,
-    "ders": "Hukuk",
     "konu": "Laiklik",
     "soru": "Laiklik ilkesinin temel amacı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Devletin dine müdahalesi",
-      "B": "Din ve devlet işlerinin ayrılması",
-      "C": "Dinin devlet yönetimine egemen olması",
-      "D": "Dini özgürlüklerin kaldırılması",
-      "E": "Devletin resmi dininin olması"
-    },
-    "dogru": "B",
-    "cozum": "Laiklik, din ve devlet işlerinin ayrılmasını ve din özgürlüğünü güvence altına alır."
+    "secenekler": [
+      "Devletin dine müdahalesi",
+      "Din ve devlet işlerinin ayrılması",
+      "Dinin devlet yönetimine egemen olması",
+      "Dini özgürlüklerin kaldırılması",
+      "Devletin resmi dininin olması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik, din ve devlet işlerinin ayrılmasını ve din özgürlüğünü güvence altına alır."
   },
   {
-    "id": 504,
-    "ders": "Hukuk",
     "konu": "Hukuk Devleti",
     "soru": "Hukuk devleti ilkesinin bir sonucu aşağıdakilerden hangisi değildir?",
-    "secenekler": {
-      "A": "Kanun önünde eşitlik",
-      "B": "İdarenin yargı denetimine tabi olması",
-      "C": "Temel hak ve özgürlüklerin güvence altına alınması",
-      "D": "Yargı bağımsızlığı",
-      "E": "Yasama işlemlerinin yargı denetimine tabi olması"
-    },
-    "dogru": "E",
-    "cozum": "Yasama işlemleri genel olarak yargı denetimine tabi değildir."
+    "secenekler": [
+      "Kanun önünde eşitlik",
+      "İdarenin yargı denetimine tabi olması",
+      "Temel hak ve özgürlüklerin güvence altına alınması",
+      "Yargı bağımsızlığı",
+      "Yasama işlemlerinin yargı denetimine tabi olması"
+    ],
+    "dogru_index": 4,
+    "aciklama": "Yasama işlemleri genel olarak yargı denetimine tabi değildir."
   },
   {
-    "id": 505,
-    "ders": "Hukuk",
     "konu": "Demokratik Devlet",
     "soru": "Demokratik devlet ilkesinin zorunlu unsuru aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Tek parti sistemi",
-      "B": "Serbest ve adil seçimler",
-      "C": "Merkeziyetçilik",
-      "D": "Atanmış meclis",
-      "E": "Kuvvetler birliği"
-    },
-    "dogru": "B",
-    "cozum": "Demokratik devletin temel unsuru serbest ve adil seçimlerdir."
+    "secenekler": [
+      "Tek parti sistemi",
+      "Serbest ve adil seçimler",
+      "Merkeziyetçilik",
+      "Atanmış meclis",
+      "Kuvvetler birliği"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Demokratik devletin temel unsuru serbest ve adil seçimlerdir."
   },
   {
-    "id": 506,
-    "ders": "Hukuk",
     "konu": "Sosyal Devlet",
     "soru": "Sosyal devlet ilkesinin amacı aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Devletin ekonomik hayattan çekilmesi",
-      "B": "Gelir dağılımında adaletin sağlanması",
-      "C": "Serbest piyasanın sınırsızlığı",
-      "D": "Vergilerin kaldırılması",
-      "E": "Özel mülkiyetin sınırlandırılamaması"
-    },
-    "dogru": "B",
-    "cozum": "Sosyal devlet, sosyal adalet ve gelir dağılımında dengeyi amaçlar."
+    "secenekler": [
+      "Devletin ekonomik hayattan çekilmesi",
+      "Gelir dağılımında adaletin sağlanması",
+      "Serbest piyasanın sınırsızlığı",
+      "Vergilerin kaldırılması",
+      "Özel mülkiyetin sınırlandırılamaması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal devlet, sosyal adalet ve gelir dağılımında dengeyi amaçlar."
   },
   {
-    "id": 507,
-    "ders": "Hukuk",
     "konu": "Üniter Devlet",
     "soru": "Üniter devlet yapısının sonucu aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Federal yasama organı",
-      "B": "Çift anayasa",
-      "C": "Tek egemenlik",
-      "D": "Eyalet sistemi",
-      "E": "Yerel egemenlik"
-    },
-    "dogru": "C",
-    "cozum": "Üniter devlette egemenlik tektir ve bölünemez."
+    "secenekler": [
+      "Federal yasama organı",
+      "Çift anayasa",
+      "Tek egemenlik",
+      "Eyalet sistemi",
+      "Yerel egemenlik"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Üniter devlette egemenlik tektir ve bölünemez."
   },
   {
-    "id": 508,
-    "ders": "Hukuk",
     "konu": "Atatürk Milliyetçiliği",
     "soru": "Atatürk milliyetçiliğinin temel özelliği aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Irk esasına dayanması",
-      "B": "Kültürel ve vatandaşlık esasına dayanması",
-      "C": "Dışlayıcı olması",
-      "D": "Etnik kökeni esas alması",
-      "E": "Sınıfsal yapıyı esas alması"
-    },
-    "dogru": "B",
-    "cozum": "Atatürk milliyetçiliği kültür ve vatandaşlık bağına dayanır."
+    "secenekler": [
+      "Irk esasına dayanması",
+      "Kültürel ve vatandaşlık esasına dayanması",
+      "Dışlayıcı olması",
+      "Etnik kökeni esas alması",
+      "Sınıfsal yapıyı esas alması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Atatürk milliyetçiliği kültür ve vatandaşlık bağına dayanır."
   },
   {
-    "id": 509,
-    "ders": "Hukuk",
     "konu": "İnsan Haklarına Saygılı Devlet",
     "soru": "Anayasaya göre devletin insan haklarına saygılı olması ne anlama gelir?",
-    "secenekler": {
-      "A": "Hakları sınırsız tanıması",
-      "B": "Hakları yalnızca tanıması",
-      "C": "Hakları koruması ve geliştirmesi",
-      "D": "Hakları kaldırabilmesi",
-      "E": "Hakları yürütmeye bırakması"
-    },
-    "dogru": "C",
-    "cozum": "Devlet yalnızca tanımakla değil, hakları korumak ve geliştirmekle yükümlüdür."
+    "secenekler": [
+      "Hakları sınırsız tanıması",
+      "Hakları yalnızca tanıması",
+      "Hakları koruması ve geliştirmesi",
+      "Hakları kaldırabilmesi",
+      "Hakları yürütmeye bırakması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Devlet yalnızca tanımakla değil, hakları korumak ve geliştirmekle yükümlüdür."
   },
   {
-    "id": 510,
-    "ders": "Hukuk",
     "konu": "Değiştirilemez Hükümler",
     "soru": "Aşağıdakilerden hangisi Anayasanın değiştirilmesi teklif dahi edilemeyecek hükümlerindendir?",
-    "secenekler": {
-      "A": "Sosyal devlet",
-      "B": "Demokratik devlet",
-      "C": "Laiklik",
-      "D": "Cumhuriyetin nitelikleri",
-      "E": "Hukuk devleti"
-    },
-    "dogru": "D",
-    "cozum": "Cumhuriyetin nitelikleri değiştirilmesi teklif dahi edilemez."
+    "secenekler": [
+      "Sosyal devlet",
+      "Demokratik devlet",
+      "Laiklik",
+      "Cumhuriyetin nitelikleri",
+      "Hukuk devleti"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Cumhuriyetin nitelikleri değiştirilmesi teklif dahi edilemez."
   },
   {
-    "id": 601,
-    "ders": "Hukuk",
     "konu": "Temel Hakların Niteliği",
     "soru": "1982 Anayasasına göre temel hak ve hürriyetlerin niteliği aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "Devlet tarafından verilen haklardır",
-      "B": "Yalnızca vatandaşlara tanınmıştır",
-      "C": "İnsan olmanın doğal sonucudur",
-      "D": "Kanunla yaratılır",
-      "E": "Sınırsızdır"
-    },
-    "dogru": "C",
-    "cozum": "Temel haklar, insan olmaktan kaynaklanan doğal haklardır; devlet bunları tanır ve güvence altına alır."
+    "secenekler": [
+      "Devlet tarafından verilen haklardır",
+      "Yalnızca vatandaşlara tanınmıştır",
+      "İnsan olmanın doğal sonucudur",
+      "Kanunla yaratılır",
+      "Sınırsızdır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Temel haklar, insan olmaktan kaynaklanan doğal haklardır; devlet bunları tanır ve güvence altına alır."
   },
   {
-    "id": 602,
-    "ders": "Hukuk",
     "konu": "Hakların Sınırlanması",
     "soru": "Temel hak ve özgürlüklerin sınırlanmasında aşağıdakilerden hangisi zorunludur?",
-    "secenekler": {
-      "A": "Cumhurbaşkanı kararı",
-      "B": "Yönetmelik",
-      "C": "Kanun",
-      "D": "Teamül",
-      "E": "Yargı içtihadı"
-    },
-    "dogru": "C",
-    "cozum": "Anayasaya göre temel hak ve özgürlükler yalnızca kanunla sınırlandırılabilir."
+    "secenekler": [
+      "Cumhurbaşkanı kararı",
+      "Yönetmelik",
+      "Kanun",
+      "Teamül",
+      "Yargı içtihadı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasaya göre temel hak ve özgürlükler yalnızca kanunla sınırlandırılabilir."
   },
   {
-    "id": 603,
-    "ders": "Hukuk",
     "konu": "Ölçülülük İlkesi",
     "soru": "Ölçülülük ilkesi aşağıdakilerden hangisini ifade etmez?",
-    "secenekler": {
-      "A": "Elverişlilik",
-      "B": "Gereklilik",
-      "C": "Orantılılık",
-      "D": "Eşitlik",
-      "E": "Amaç–araç dengesi"
-    },
-    "dogru": "D",
-    "cozum": "Ölçülülük; elverişlilik, gereklilik ve orantılılıktan oluşur. Eşitlik ayrı bir ilkedir."
+    "secenekler": [
+      "Elverişlilik",
+      "Gereklilik",
+      "Orantılılık",
+      "Eşitlik",
+      "Amaç–araç dengesi"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Ölçülülük; elverişlilik, gereklilik ve orantılılıktan oluşur. Eşitlik ayrı bir ilkedir."
   },
   {
-    "id": 604,
-    "ders": "Hukuk",
     "konu": "Özüne Dokunma Yasağı",
     "soru": "Temel hakların özüne dokunulamaz ilkesi neyi ifade eder?",
-    "secenekler": {
-      "A": "Hakların hiç sınırlandırılamamasını",
-      "B": "Hakların tamamen kaldırılabilmesini",
-      "C": "Hakkın kullanılmasını anlamsız kılacak sınırlamaların yapılamamasını",
-      "D": "Hakların yalnızca savaş halinde sınırlandırılmasını",
-      "E": "Hakların yürütme tarafından sınırlandırılmasını"
-    },
-    "dogru": "C",
-    "cozum": "Sınırlama, hakkın kullanılmasını fiilen ortadan kaldıracak boyuta ulaşamaz."
+    "secenekler": [
+      "Hakların hiç sınırlandırılamamasını",
+      "Hakların tamamen kaldırılabilmesini",
+      "Hakkın kullanılmasını anlamsız kılacak sınırlamaların yapılamamasını",
+      "Hakların yalnızca savaş halinde sınırlandırılmasını",
+      "Hakların yürütme tarafından sınırlandırılmasını"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sınırlama, hakkın kullanılmasını fiilen ortadan kaldıracak boyuta ulaşamaz."
   },
   {
-    "id": 605,
-    "ders": "Hukuk",
     "konu": "Genel Sınırlama Sebepleri",
     "soru": "Aşağıdakilerden hangisi Anayasada temel hakların genel sınırlama sebebi değildir?",
-    "secenekler": {
-      "A": "Milli güvenlik",
-      "B": "Kamu düzeni",
-      "C": "Genel ahlak",
-      "D": "Kamu yararı",
-      "E": "Başkasının şöhreti"
-    },
-    "dogru": "E",
-    "cozum": "Başkasının şöhreti özel sınırlama sebebidir, genel sınırlama sebebi değildir."
+    "secenekler": [
+      "Milli güvenlik",
+      "Kamu düzeni",
+      "Genel ahlak",
+      "Kamu yararı",
+      "Başkasının şöhreti"
+    ],
+    "dogru_index": 4,
+    "aciklama": "Başkasının şöhreti özel sınırlama sebebidir, genel sınırlama sebebi değildir."
   },
   {
-    "id": 606,
-    "ders": "Hukuk",
     "konu": "Hakların Kötüye Kullanılması",
     "soru": "Temel hak ve özgürlüklerin kötüye kullanılması yasağı aşağıdakilerden hangisini hedef alır?",
-    "secenekler": {
-      "A": "Hakların sınırsız kullanılmasını",
-      "B": "Hakların Anayasayı ortadan kaldıracak şekilde kullanılmasını",
-      "C": "Hakların hiç kullanılmamasını",
-      "D": "Hakların yalnızca devlete karşı kullanılmasını",
-      "E": "Hakların yalnızca vatandaşlara tanınmasını"
-    },
-    "dogru": "B",
-    "cozum": "Haklar, demokratik ve anayasal düzeni ortadan kaldırmak amacıyla kullanılamaz."
+    "secenekler": [
+      "Hakların sınırsız kullanılmasını",
+      "Hakların Anayasayı ortadan kaldıracak şekilde kullanılmasını",
+      "Hakların hiç kullanılmamasını",
+      "Hakların yalnızca devlete karşı kullanılmasını",
+      "Hakların yalnızca vatandaşlara tanınmasını"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Haklar, demokratik ve anayasal düzeni ortadan kaldırmak amacıyla kullanılamaz."
   },
   {
-    "id": 607,
-    "ders": "Hukuk",
     "konu": "Hakların Durdurulması",
     "soru": "Temel hak ve özgürlüklerin durdurulabilmesi için aşağıdakilerden hangisi gereklidir?",
-    "secenekler": {
-      "A": "Kanun",
-      "B": "Cumhurbaşkanı kararı",
-      "C": "Olağanüstü hal veya savaş",
-      "D": "Yönetmelik",
-      "E": "Anayasa Mahkemesi kararı"
-    },
-    "dogru": "C",
-    "cozum": "Hakların durdurulması ancak OHAL veya savaş hallerinde mümkündür."
+    "secenekler": [
+      "Kanun",
+      "Cumhurbaşkanı kararı",
+      "Olağanüstü hal veya savaş",
+      "Yönetmelik",
+      "Anayasa Mahkemesi kararı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hakların durdurulması ancak OHAL veya savaş hallerinde mümkündür."
   },
   {
-    "id": 608,
-    "ders": "Hukuk",
     "konu": "Çekirdek Haklar",
     "soru": "Aşağıdakilerden hangisi durdurulması mümkün olmayan çekirdek haklardandır?",
-    "secenekler": {
-      "A": "Seyahat özgürlüğü",
-      "B": "Toplantı özgürlüğü",
-      "C": "Yaşama hakkı",
-      "D": "Basın özgürlüğü",
-      "E": "Dernek kurma hakkı"
-    },
-    "dogru": "C",
-    "cozum": "Yaşama hakkı, maddi ve manevi varlığın bütünlüğü çekirdek haklardandır."
+    "secenekler": [
+      "Seyahat özgürlüğü",
+      "Toplantı özgürlüğü",
+      "Yaşama hakkı",
+      "Basın özgürlüğü",
+      "Dernek kurma hakkı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yaşama hakkı, maddi ve manevi varlığın bütünlüğü çekirdek haklardandır."
   },
   {
-    "id": 609,
-    "ders": "Hukuk",
     "konu": "Yabancıların Hakları",
     "soru": "Yabancıların temel hak ve özgürlükleri hangi ilkeye göre sınırlandırılabilir?",
-    "secenekler": {
-      "A": "Eşitlik",
-      "B": "Karşılıklılık",
-      "C": "Laiklik",
-      "D": "Cumhuriyetçilik",
-      "E": "Üniterlik"
-    },
-    "dogru": "B",
-    "cozum": "Yabancıların hakları milletlerarası hukuk ve karşılıklılık esasına göre sınırlandırılabilir."
+    "secenekler": [
+      "Eşitlik",
+      "Karşılıklılık",
+      "Laiklik",
+      "Cumhuriyetçilik",
+      "Üniterlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yabancıların hakları milletlerarası hukuk ve karşılıklılık esasına göre sınırlandırılabilir."
   },
   {
-    "id": 610,
-    "ders": "Hukuk",
     "konu": "Hakların Korunması",
     "soru": "Temel hak ve özgürlüklerin korunmasında son başvuru yolu aşağıdakilerden hangisidir?",
-    "secenekler": {
-      "A": "İdari başvuru",
-      "B": "Yargıtay",
-      "C": "Danıştay",
-      "D": "Anayasa Mahkemesine bireysel başvuru",
-      "E": "TBMM dilekçe komisyonu"
-    },
-    "dogru": "D",
-    "cozum": "Bireysel başvuru, temel hakların korunmasında iç hukukta son yoldur."
+    "secenekler": [
+      "İdari başvuru",
+      "Yargıtay",
+      "Danıştay",
+      "Anayasa Mahkemesine bireysel başvuru",
+      "TBMM dilekçe komisyonu"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Bireysel başvuru, temel hakların korunmasında iç hukukta son yoldur."
   },
   {
-    "id": 701,
-    "ders": "Hukuk",
     "konu": "Kişi Hürriyeti ve Güvenliği",
     "soru": "Aşağıdakilerden hangisi kişi hürriyeti ve güvenliği hakkının Anayasaya uygun şekilde sınırlandırılmasına örnek teşkil eder?",
-    "secenekler": {
-      "A": "İdarenin keyfi kararıyla gözaltı",
-      "B": "Kanunda öngörülen hallerde hâkim kararıyla tutuklama",
-      "C": "Vali talimatıyla süresiz alıkoyma",
-      "D": "Emniyet birimlerinin sözlü emriyle yakalama",
-      "E": "Savcılık talebi olmaksızın gözaltı"
-    },
-    "dogru": "B",
-    "cozum": "Kişi hürriyeti ancak kanunda belirtilen hallerde ve hâkim kararıyla sınırlandırılabilir."
+    "secenekler": [
+      "İdarenin keyfi kararıyla gözaltı",
+      "Kanunda öngörülen hallerde hâkim kararıyla tutuklama",
+      "Vali talimatıyla süresiz alıkoyma",
+      "Emniyet birimlerinin sözlü emriyle yakalama",
+      "Savcılık talebi olmaksızın gözaltı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kişi hürriyeti ancak kanunda belirtilen hallerde ve hâkim kararıyla sınırlandırılabilir."
   },
   {
-    "id": 702,
-    "ders": "Hukuk",
     "konu": "Yakalama ve Gözaltı",
     "soru": "Yakalanan kişinin durumu en geç ne kadar süre içinde hâkim önüne çıkarılmalıdır?",
-    "secenekler": {
-      "A": "12 saat",
-      "B": "24 saat",
-      "C": "36 saat",
-      "D": "48 saat",
-      "E": "72 saat"
-    },
-    "dogru": "B",
-    "cozum": "Yakalanan kişi en geç 24 saat içinde hâkim önüne çıkarılmalıdır."
+    "secenekler": [
+      "12 saat",
+      "24 saat",
+      "36 saat",
+      "48 saat",
+      "72 saat"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yakalanan kişi en geç 24 saat içinde hâkim önüne çıkarılmalıdır."
   },
   {
-    "id": 703,
-    "ders": "Hukuk",
     "konu": "Masumiyet Karinesi",
     "soru": "Masumiyet karinesi aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "Suçluluğu ispatlanan kişinin cezalandırılmasını",
-      "B": "Herkesin suçlu kabul edilmesini",
-      "C": "Suçluluğu hükmen sabit oluncaya kadar kimsenin suçlu sayılamamasını",
-      "D": "Ceza sorumluluğunun kaldırılmasını",
-      "E": "Yargılamanın yapılmamasını"
-    },
-    "dogru": "C",
-    "cozum": "Masumiyet karinesi, kesinleşmiş mahkeme kararı olmadan kimsenin suçlu sayılamayacağını ifade eder."
+    "secenekler": [
+      "Suçluluğu ispatlanan kişinin cezalandırılmasını",
+      "Herkesin suçlu kabul edilmesini",
+      "Suçluluğu hükmen sabit oluncaya kadar kimsenin suçlu sayılamamasını",
+      "Ceza sorumluluğunun kaldırılmasını",
+      "Yargılamanın yapılmamasını"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Masumiyet karinesi, kesinleşmiş mahkeme kararı olmadan kimsenin suçlu sayılamayacağını ifade eder."
   },
   {
-    "id": 704,
-    "ders": "Hukuk",
     "konu": "Özel Hayatın Gizliliği",
     "soru": "Özel hayatın gizliliği hakkının ihlali aşağıdakilerden hangisine örnektir?",
-    "secenekler": {
-      "A": "Mahkeme kararıyla telefon dinlenmesi",
-      "B": "Kanuna dayalı arama",
-      "C": "Hâkim kararı olmadan konutun aranması",
-      "D": "OHAL döneminde kanuni sınırlama",
-      "E": "Kamu düzeni gerekçesiyle kanunla sınırlama"
-    },
-    "dogru": "C",
-    "cozum": "Konut dokunulmazlığı ve özel hayat ancak hâkim kararıyla sınırlandırılabilir."
+    "secenekler": [
+      "Mahkeme kararıyla telefon dinlenmesi",
+      "Kanuna dayalı arama",
+      "Hâkim kararı olmadan konutun aranması",
+      "OHAL döneminde kanuni sınırlama",
+      "Kamu düzeni gerekçesiyle kanunla sınırlama"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Konut dokunulmazlığı ve özel hayat ancak hâkim kararıyla sınırlandırılabilir."
   },
   {
-    "id": 705,
-    "ders": "Hukuk",
     "konu": "Konut Dokunulmazlığı",
     "soru": "Aşağıdakilerden hangisi konut dokunulmazlığının istisnasıdır?",
-    "secenekler": {
-      "A": "İdari emir",
-      "B": "Savcının sözlü talimatı",
-      "C": "Hâkim kararı",
-      "D": "Kolluk amirinin emri",
-      "E": "Valilik genelgesi"
-    },
-    "dogru": "C",
-    "cozum": "Konut dokunulmazlığı yalnızca hâkim kararıyla sınırlandırılabilir."
+    "secenekler": [
+      "İdari emir",
+      "Savcının sözlü talimatı",
+      "Hâkim kararı",
+      "Kolluk amirinin emri",
+      "Valilik genelgesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Konut dokunulmazlığı yalnızca hâkim kararıyla sınırlandırılabilir."
   },
   {
-    "id": 706,
-    "ders": "Hukuk",
     "konu": "Haberleşme Hürriyeti",
     "soru": "Haberleşme hürriyeti aşağıdakilerden hangisini kapsar?",
-    "secenekler": {
-      "A": "Yalnızca mektuplaşmayı",
-      "B": "Yalnızca telefon görüşmelerini",
-      "C": "Her türlü iletişim aracını",
-      "D": "Sadece elektronik haberleşmeyi",
-      "E": "Yalnızca basın yayın faaliyetlerini"
-    },
-    "dogru": "C",
-    "cozum": "Haberleşme hürriyeti her türlü iletişim aracını kapsar."
+    "secenekler": [
+      "Yalnızca mektuplaşmayı",
+      "Yalnızca telefon görüşmelerini",
+      "Her türlü iletişim aracını",
+      "Sadece elektronik haberleşmeyi",
+      "Yalnızca basın yayın faaliyetlerini"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Haberleşme hürriyeti her türlü iletişim aracını kapsar."
   },
   {
-    "id": 707,
-    "ders": "Hukuk",
     "konu": "Yerleşme ve Seyahat Özgürlüğü",
     "soru": "Yerleşme ve seyahat özgürlüğü aşağıdakilerden hangisi gerekçe gösterilerek sınırlandırılamaz?",
-    "secenekler": {
-      "A": "Suç soruşturması",
-      "B": "Suç işlenmesini önleme",
-      "C": "Kamu düzeni",
-      "D": "Genel ahlak",
-      "E": "Keyfi idari takdir"
-    },
-    "dogru": "E",
-    "cozum": "Haklar keyfi idari takdirle sınırlandırılamaz."
+    "secenekler": [
+      "Suç soruşturması",
+      "Suç işlenmesini önleme",
+      "Kamu düzeni",
+      "Genel ahlak",
+      "Keyfi idari takdir"
+    ],
+    "dogru_index": 4,
+    "aciklama": "Haklar keyfi idari takdirle sınırlandırılamaz."
   },
   {
-    "id": 708,
-    "ders": "Hukuk",
     "konu": "Mülkiyet Hakkı",
     "soru": "Mülkiyet hakkının kamu yararı amacıyla sınırlandırılmasına ne ad verilir?",
-    "secenekler": {
-      "A": "Müsadere",
-      "B": "Kamulaştırma",
-      "C": "Devletleştirme",
-      "D": "El koyma",
-      "E": "Tahsis"
-    },
-    "dogru": "B",
-    "cozum": "Kamu yararı amacıyla bedeli ödenerek yapılan sınırlama kamulaştırmadır."
+    "secenekler": [
+      "Müsadere",
+      "Kamulaştırma",
+      "Devletleştirme",
+      "El koyma",
+      "Tahsis"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı amacıyla bedeli ödenerek yapılan sınırlama kamulaştırmadır."
   },
   {
-    "id": 709,
-    "ders": "Hukuk",
     "konu": "Zorla Çalıştırma Yasağı",
     "soru": "Aşağıdakilerden hangisi zorla çalıştırma yasağının istisnasıdır?",
-    "secenekler": {
-      "A": "Angarya",
-      "B": "Kamu hizmeti",
-      "C": "Mahkeme kararıyla hükümlü çalıştırılması",
-      "D": "Özel sektör emri",
-      "E": "İdari talimat"
-    },
-    "dogru": "C",
-    "cozum": "Hükümlülerin çalıştırılması zorla çalıştırma yasağının istisnasıdır."
+    "secenekler": [
+      "Angarya",
+      "Kamu hizmeti",
+      "Mahkeme kararıyla hükümlü çalıştırılması",
+      "Özel sektör emri",
+      "İdari talimat"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hükümlülerin çalıştırılması zorla çalıştırma yasağının istisnasıdır."
   },
   {
-    "id": 710,
-    "ders": "Hukuk",
     "konu": "Hak Arama Hürriyeti",
     "soru": "Hak arama hürriyeti aşağıdakilerden hangisini kapsar?",
-    "secenekler": {
-      "A": "Sadece dava açmayı",
-      "B": "Sadece savunma hakkını",
-      "C": "Meşru vasıta ve yollardan yararlanmayı",
-      "D": "Yalnızca ceza davalarını",
-      "E": "Sadece idari başvuruyu"
-    },
-    "dogru": "C",
-    "cozum": "Hak arama hürriyeti, meşru vasıta ve yollardan yararlanma hakkını kapsar."
+    "secenekler": [
+      "Sadece dava açmayı",
+      "Sadece savunma hakkını",
+      "Meşru vasıta ve yollardan yararlanmayı",
+      "Yalnızca ceza davalarını",
+      "Sadece idari başvuruyu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hak arama hürriyeti, meşru vasıta ve yollardan yararlanma hakkını kapsar."
   },
   {
-    "id": 801,
-    "ders": "Hukuk",
     "konu": "Seçme ve Seçilme Hakkı",
     "soru": "Aşağıdakilerden hangisi seçme ve seçilme hakkının Anayasaya göre sınırlandırılabileceği bir durumdur?",
-    "secenekler": {
-      "A": "Eğitim düzeyi",
-      "B": "Gelir seviyesi",
-      "C": "Silah altında bulunan er ve erbaşlar",
-      "D": "Meslek grubu",
-      "E": "Medeni hal"
-    },
-    "dogru": "C",
-    "cozum": "Silah altında bulunan er ve erbaşlar seçme ve seçilme hakkını kullanamaz."
+    "secenekler": [
+      "Eğitim düzeyi",
+      "Gelir seviyesi",
+      "Silah altında bulunan er ve erbaşlar",
+      "Meslek grubu",
+      "Medeni hal"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Silah altında bulunan er ve erbaşlar seçme ve seçilme hakkını kullanamaz."
   },
   {
-    "id": 802,
-    "ders": "Hukuk",
     "konu": "Seçimlerin Genel İlkeleri",
     "soru": "Aşağıdakilerden hangisi seçimlerin genel ilkelerinden biri değildir?",
-    "secenekler": {
-      "A": "Serbest",
-      "B": "Eşit",
-      "C": "Gizli",
-      "D": "Dolaylı",
-      "E": "Genel oy"
-    },
-    "dogru": "D",
-    "cozum": "Anayasaya göre seçimler doğrudan yapılır; dolaylı seçim ilkesi yoktur."
+    "secenekler": [
+      "Serbest",
+      "Eşit",
+      "Gizli",
+      "Dolaylı",
+      "Genel oy"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Anayasaya göre seçimler doğrudan yapılır; dolaylı seçim ilkesi yoktur."
   },
   {
-    "id": 803,
-    "ders": "Hukuk",
     "konu": "Siyasi Parti Üyeliği",
     "soru": "Aşağıdakilerden hangisi siyasi partilere üye olamaz?",
-    "secenekler": {
-      "A": "Öğretim görevlileri",
-      "B": "İşçiler",
-      "C": "Hakimler ve savcılar",
-      "D": "Serbest meslek sahipleri",
-      "E": "Emekliler"
-    },
-    "dogru": "C",
-    "cozum": "Hakimler ve savcılar siyasi partilere üye olamaz."
+    "secenekler": [
+      "Öğretim görevlileri",
+      "İşçiler",
+      "Hakimler ve savcılar",
+      "Serbest meslek sahipleri",
+      "Emekliler"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hakimler ve savcılar siyasi partilere üye olamaz."
   },
   {
-    "id": 804,
-    "ders": "Hukuk",
     "konu": "Siyasi Partilerin Kapatılması",
     "soru": "Siyasi partilerin kapatılmasına kim karar verir?",
-    "secenekler": {
-      "A": "Yargıtay",
-      "B": "Danıştay",
-      "C": "Anayasa Mahkemesi",
-      "D": "TBMM",
-      "E": "Cumhurbaşkanı"
-    },
-    "dogru": "C",
-    "cozum": "Siyasi partilerin kapatılmasına Anayasa Mahkemesi karar verir."
+    "secenekler": [
+      "Yargıtay",
+      "Danıştay",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Cumhurbaşkanı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Siyasi partilerin kapatılmasına Anayasa Mahkemesi karar verir."
   },
   {
-    "id": 805,
-    "ders": "Hukuk",
     "konu": "Siyasi Partilere Devlet Yardımı",
     "soru": "Devlet yardımı alabilmek için siyasi partinin hangi şartı sağlaması gerekir?",
-    "secenekler": {
-      "A": "Mecliste grup kurmak",
-      "B": "Genel seçimlerde belli bir oy oranını aşmak",
-      "C": "Kuruluş süresini tamamlamak",
-      "D": "En az üç ilde teşkilatlanmak",
-      "E": "İktidar partisi olmak"
-    },
-    "dogru": "B",
-    "cozum": "Devlet yardımı, genel seçimlerde belirli oy oranını aşan partilere verilir."
+    "secenekler": [
+      "Mecliste grup kurmak",
+      "Genel seçimlerde belli bir oy oranını aşmak",
+      "Kuruluş süresini tamamlamak",
+      "En az üç ilde teşkilatlanmak",
+      "İktidar partisi olmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devlet yardımı, genel seçimlerde belirli oy oranını aşan partilere verilir."
   },
   {
-    "id": 806,
-    "ders": "Hukuk",
     "konu": "Kamu Hizmetine Girme Hakkı",
     "soru": "Kamu hizmetine girme hakkı hangi ilkeye dayanır?",
-    "secenekler": {
-      "A": "Siyasi sadakat",
-      "B": "Eşitlik ve liyakat",
-      "C": "Parti üyeliği",
-      "D": "İdari takdir",
-      "E": "Hükümet tercihi"
-    },
-    "dogru": "B",
-    "cozum": "Kamu hizmetine girme eşitlik ve liyakat esasına dayanır."
+    "secenekler": [
+      "Siyasi sadakat",
+      "Eşitlik ve liyakat",
+      "Parti üyeliği",
+      "İdari takdir",
+      "Hükümet tercihi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu hizmetine girme eşitlik ve liyakat esasına dayanır."
   },
   {
-    "id": 807,
-    "ders": "Hukuk",
     "konu": "Vergi Ödevi",
     "soru": "Vergi ödevi Anayasaya göre hangi ilkeye dayanır?",
-    "secenekler": {
-      "A": "Gelir eşitliği",
-      "B": "Mali güç",
-      "C": "Sosyal devlet",
-      "D": "Hukuk devleti",
-      "E": "Kamu düzeni"
-    },
-    "dogru": "B",
-    "cozum": "Vergi ödevi, mali güce göre ödeme ilkesine dayanır."
+    "secenekler": [
+      "Gelir eşitliği",
+      "Mali güç",
+      "Sosyal devlet",
+      "Hukuk devleti",
+      "Kamu düzeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Vergi ödevi, mali güce göre ödeme ilkesine dayanır."
   },
   {
-    "id": 808,
-    "ders": "Hukuk",
     "konu": "Dilekçe Hakkı",
     "soru": "Dilekçe hakkı aşağıdakilerden hangisini kapsar?",
-    "secenekler": {
-      "A": "Yalnızca TBMM’ye başvurmayı",
-      "B": "Sadece idari makamlara başvurmayı",
-      "C": "Yetkili makamlara yazılı başvuruda bulunmayı",
-      "D": "Yalnızca elektronik başvuruyu",
-      "E": "Sadece yargı mercilerine başvuruyu"
-    },
-    "dogru": "C",
-    "cozum": "Dilekçe hakkı, yetkili makamlara yazılı başvuruda bulunma hakkıdır."
+    "secenekler": [
+      "Yalnızca TBMM’ye başvurmayı",
+      "Sadece idari makamlara başvurmayı",
+      "Yetkili makamlara yazılı başvuruda bulunmayı",
+      "Yalnızca elektronik başvuruyu",
+      "Sadece yargı mercilerine başvuruyu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Dilekçe hakkı, yetkili makamlara yazılı başvuruda bulunma hakkıdır."
   },
   {
-    "id": 809,
-    "ders": "Hukuk",
     "konu": "Siyasi Hakların Askıya Alınması",
     "soru": "Aşağıdakilerden hangisi siyasi hakların kullanılmasının durdurulmasına yol açabilir?",
-    "secenekler": {
-      "A": "İdari para cezası",
-      "B": "Disiplin cezası",
-      "C": "Hapis cezası",
-      "D": "Uyarı cezası",
-      "E": "Kınama"
-    },
-    "dogru": "C",
-    "cozum": "Hapis cezası siyasi hakların kullanımını etkileyebilir."
+    "secenekler": [
+      "İdari para cezası",
+      "Disiplin cezası",
+      "Hapis cezası",
+      "Uyarı cezası",
+      "Kınama"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hapis cezası siyasi hakların kullanımını etkileyebilir."
   },
   {
-    "id": 810,
-    "ders": "Hukuk",
     "konu": "Siyasi Hakların Niteliği",
     "soru": "Siyasi haklar hangi hak grubuna girer?",
-    "secenekler": {
-      "A": "Kişisel haklar",
-      "B": "Sosyal haklar",
-      "C": "Ekonomik haklar",
-      "D": "Aktif statü hakları",
-      "E": "Negatif statü hakları"
-    },
-    "dogru": "D",
-    "cozum": "Siyasi haklar, aktif statü hakları arasında yer alır."
+    "secenekler": [
+      "Kişisel haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar",
+      "Aktif statü hakları",
+      "Negatif statü hakları"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Siyasi haklar, aktif statü hakları arasında yer alır."
   },
   {
-    "id": 901,
-    "ders": "Hukuk",
     "konu": "Sosyal Devlet İlkesi",
     "soru": "Aşağıdakilerden hangisi sosyal devlet ilkesinin Anayasadaki yansımasıdır?",
-    "secenekler": {
-      "A": "Devletin ekonomik hayata hiç karışmaması",
-      "B": "Devletin yalnızca güvenlik sağlaması",
-      "C": "Devletin sosyal adaleti sağlama yükümlülüğü",
-      "D": "Bireylerin tamamen serbest bırakılması",
-      "E": "Kamu hizmetlerinin özelleştirilmesi"
-    },
-    "dogru": "C",
-    "cozum": "Sosyal devlet, sosyal adalet ve refahı sağlamakla yükümlüdür."
+    "secenekler": [
+      "Devletin ekonomik hayata hiç karışmaması",
+      "Devletin yalnızca güvenlik sağlaması",
+      "Devletin sosyal adaleti sağlama yükümlülüğü",
+      "Bireylerin tamamen serbest bırakılması",
+      "Kamu hizmetlerinin özelleştirilmesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sosyal devlet, sosyal adalet ve refahı sağlamakla yükümlüdür."
   },
   {
-    "id": 902,
-    "ders": "Hukuk",
     "konu": "Çalışma Hakkı ve Ödevi",
     "soru": "Çalışma hakkı Anayasaya göre nasıl düzenlenmiştir?",
-    "secenekler": {
-      "A": "Yalnızca bir hak olarak",
-      "B": "Yalnızca bir ödev olarak",
-      "C": "Hem hak hem ödev olarak",
-      "D": "Sadece kamu görevlileri için",
-      "E": "Sadece özel sektör için"
-    },
-    "dogru": "C",
-    "cozum": "Çalışma hakkı ve ödevi Anayasada birlikte düzenlenmiştir."
+    "secenekler": [
+      "Yalnızca bir hak olarak",
+      "Yalnızca bir ödev olarak",
+      "Hem hak hem ödev olarak",
+      "Sadece kamu görevlileri için",
+      "Sadece özel sektör için"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çalışma hakkı ve ödevi Anayasada birlikte düzenlenmiştir."
   },
   {
-    "id": 903,
-    "ders": "Hukuk",
     "konu": "Sendika Hakkı",
     "soru": "Sendika kurma hakkı aşağıdakilerden hangisine örnektir?",
-    "secenekler": {
-      "A": "Negatif statü hakkı",
-      "B": "Aktif statü hakkı",
-      "C": "Sosyal hak",
-      "D": "Kişisel hak",
-      "E": "Siyasi hak"
-    },
-    "dogru": "C",
-    "cozum": "Sendika kurma hakkı sosyal ve ekonomik haklar arasında yer alır."
+    "secenekler": [
+      "Negatif statü hakkı",
+      "Aktif statü hakkı",
+      "Sosyal hak",
+      "Kişisel hak",
+      "Siyasi hak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sendika kurma hakkı sosyal ve ekonomik haklar arasında yer alır."
   },
   {
-    "id": 904,
-    "ders": "Hukuk",
     "konu": "Toplu İş Sözleşmesi",
     "soru": "Toplu iş sözleşmesi hakkı hangi ilkenin sonucudur?",
-    "secenekler": {
-      "A": "Hukuk devleti",
-      "B": "Sosyal devlet",
-      "C": "Laiklik",
-      "D": "Milli egemenlik",
-      "E": "Kuvvetler ayrılığı"
-    },
-    "dogru": "B",
-    "cozum": "Toplu iş sözleşmesi sosyal devlet ilkesinin bir sonucudur."
+    "secenekler": [
+      "Hukuk devleti",
+      "Sosyal devlet",
+      "Laiklik",
+      "Milli egemenlik",
+      "Kuvvetler ayrılığı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toplu iş sözleşmesi sosyal devlet ilkesinin bir sonucudur."
   },
   {
-    "id": 905,
-    "ders": "Hukuk",
     "konu": "Grev ve Lokavt",
     "soru": "Grev hakkı aşağıdakilerden hangisiyle sınırlandırılamaz?",
-    "secenekler": {
-      "A": "Milli güvenlik",
-      "B": "Genel sağlık",
-      "C": "Kamu düzeni",
-      "D": "İdari takdir",
-      "E": "Toplum yararı"
-    },
-    "dogru": "D",
-    "cozum": "Haklar keyfi idari takdirle sınırlandırılamaz."
+    "secenekler": [
+      "Milli güvenlik",
+      "Genel sağlık",
+      "Kamu düzeni",
+      "İdari takdir",
+      "Toplum yararı"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Haklar keyfi idari takdirle sınırlandırılamaz."
   },
   {
-    "id": 906,
-    "ders": "Hukuk",
     "konu": "Ücrette Adalet",
     "soru": "Ücrette adalet ilkesi hangi anayasal ilkeyle ilişkilidir?",
-    "secenekler": {
-      "A": "Laiklik",
-      "B": "Eşitlik",
-      "C": "Hukuk devleti",
-      "D": "Cumhuriyetçilik",
-      "E": "Milliyetçilik"
-    },
-    "dogru": "B",
-    "cozum": "Ücrette adalet, eşitlik ilkesinin bir yansımasıdır."
+    "secenekler": [
+      "Laiklik",
+      "Eşitlik",
+      "Hukuk devleti",
+      "Cumhuriyetçilik",
+      "Milliyetçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ücrette adalet, eşitlik ilkesinin bir yansımasıdır."
   },
   {
-    "id": 907,
-    "ders": "Hukuk",
     "konu": "Sosyal Güvenlik Hakkı",
     "soru": "Sosyal güvenlik hakkı bakımından aşağıdakilerden hangisi doğrudur?",
-    "secenekler": {
-      "A": "Devletin hiçbir yükümlülüğü yoktur",
-      "B": "Yalnızca çalışanları kapsar",
-      "C": "Devlet bu güvenliği sağlayacak tedbirleri alır",
-      "D": "Sadece özel sigortalarla sağlanır",
-      "E": "Yalnızca emeklileri kapsar"
-    },
-    "dogru": "C",
-    "cozum": "Devlet, sosyal güvenliği sağlayacak gerekli tedbirleri alır."
+    "secenekler": [
+      "Devletin hiçbir yükümlülüğü yoktur",
+      "Yalnızca çalışanları kapsar",
+      "Devlet bu güvenliği sağlayacak tedbirleri alır",
+      "Sadece özel sigortalarla sağlanır",
+      "Yalnızca emeklileri kapsar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Devlet, sosyal güvenliği sağlayacak gerekli tedbirleri alır."
   },
   {
-    "id": 908,
-    "ders": "Hukuk",
     "konu": "Sağlık Hakkı",
     "soru": "Sağlık hizmetlerinin planlanması hangi ilkenin gereğidir?",
-    "secenekler": {
-      "A": "Hukuk devleti",
-      "B": "Sosyal devlet",
-      "C": "Demokrasi",
-      "D": "Cumhuriyet",
-      "E": "Laiklik"
-    },
-    "dogru": "B",
-    "cozum": "Sağlık hakkı sosyal devlet ilkesinin bir sonucudur."
+    "secenekler": [
+      "Hukuk devleti",
+      "Sosyal devlet",
+      "Demokrasi",
+      "Cumhuriyet",
+      "Laiklik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sağlık hakkı sosyal devlet ilkesinin bir sonucudur."
   },
   {
-    "id": 909,
-    "ders": "Hukuk",
     "konu": "Eğitim ve Öğrenim Hakkı",
     "soru": "Eğitim ve öğrenim hakkı ile ilgili aşağıdakilerden hangisi yanlıştır?",
-    "secenekler": {
-      "A": "Devletin gözetim ve denetimi altındadır",
-      "B": "Zorunlu ilköğretim ücretsizdir",
-      "C": "Özel öğretim serbesttir",
-      "D": "Tamamen bireysel sorumluluktur",
-      "E": "Atatürk ilke ve inkılaplarına aykırı olamaz"
-    },
-    "dogru": "D",
-    "cozum": "Eğitim yalnızca bireysel değil, devletin de sorumluluğundadır."
+    "secenekler": [
+      "Devletin gözetim ve denetimi altındadır",
+      "Zorunlu ilköğretim ücretsizdir",
+      "Özel öğretim serbesttir",
+      "Tamamen bireysel sorumluluktur",
+      "Atatürk ilke ve inkılaplarına aykırı olamaz"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Eğitim yalnızca bireysel değil, devletin de sorumluluğundadır."
   },
   {
-    "id": 910,
-    "ders": "Hukuk",
     "konu": "Devletin Mali İmkânları",
     "soru": "Sosyal ve ekonomik hakların kullanılmasında devletin mali imkânları hangi sonucu doğurur?",
-    "secenekler": {
-      "A": "Hakların tamamen kaldırılmasını",
-      "B": "Hakların keyfi sınırlandırılmasını",
-      "C": "Hakların kullanılmasının ölçülü şekilde düzenlenmesini",
-      "D": "Hakların uygulanmamasını",
-      "E": "Hakların devredilmesini"
-    },
-    "dogru": "C",
-    "cozum": "Sosyal ve ekonomik haklar, devletin mali imkânları ölçüsünde ve ölçülülük ilkesine uygun olarak düzenlenir."
+    "secenekler": [
+      "Hakların tamamen kaldırılmasını",
+      "Hakların keyfi sınırlandırılmasını",
+      "Hakların kullanılmasının ölçülü şekilde düzenlenmesini",
+      "Hakların uygulanmamasını",
+      "Hakların devredilmesini"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sosyal ve ekonomik haklar, devletin mali imkânları ölçüsünde ve ölçülülük ilkesine uygun olarak düzenlenir."
   },
   {
-    "id": 1001,
-    "ders": "Hukuk",
     "konu": "Yasama Yetkisi",
     "soru": "Yasama yetkisinin devredilemezliği ilkesi aşağıdakilerden hangisini ifade eder?",
-    "secenekler": {
-      "A": "TBMM’nin kanun yapma yetkisini devredebilmesi",
-      "B": "Yasama yetkisinin sadece TBMM’ye ait olması",
-      "C": "Cumhurbaşkanının kanun yapabilmesi",
-      "D": "CBK’lerin kanun gücünde olması",
-      "E": "Yürütmenin yasama yetkisini paylaşması"
-    },
-    "dogru": "B",
-    "cozum": "Yasama yetkisi devredilemez ve yalnızca TBMM’ye aittir."
+    "secenekler": [
+      "TBMM’nin kanun yapma yetkisini devredebilmesi",
+      "Yasama yetkisinin sadece TBMM’ye ait olması",
+      "Cumhurbaşkanının kanun yapabilmesi",
+      "CBK’lerin kanun gücünde olması",
+      "Yürütmenin yasama yetkisini paylaşması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yasama yetkisi devredilemez ve yalnızca TBMM’ye aittir."
   },
   {
-    "id": 1002,
-    "ders": "Hukuk",
     "konu": "TBMM’nin Görevleri",
     "soru": "Aşağıdakilerden hangisi TBMM’nin görev ve yetkileri arasında yer almaz?",
-    "secenekler": {
-      "A": "Kanun yapmak",
-      "B": "Bütçe kanununu kabul etmek",
-      "C": "Genel ve özel af ilan etmek",
-      "D": "Cumhurbaşkanı kararnamesi çıkarmak",
-      "E": "Savaş ilanına karar vermek"
-    },
-    "dogru": "D",
-    "cozum": "Cumhurbaşkanı kararnamesi çıkarma yetkisi TBMM’ye değil, Cumhurbaşkanına aittir."
+    "secenekler": [
+      "Kanun yapmak",
+      "Bütçe kanununu kabul etmek",
+      "Genel ve özel af ilan etmek",
+      "Cumhurbaşkanı kararnamesi çıkarmak",
+      "Savaş ilanına karar vermek"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Cumhurbaşkanı kararnamesi çıkarma yetkisi TBMM’ye değil, Cumhurbaşkanına aittir."
   },
   {
-    "id": 1003,
-    "ders": "Hukuk",
     "konu": "Cumhurbaşkanı Kararnamesi (CBK)",
     "soru": "Cumhurbaşkanı kararnameleri aşağıdakilerden hangisiyle çatıştığında uygulanmaz?",
-    "secenekler": {
-      "A": "Yönetmelik",
-      "B": "Tüzük",
-      "C": "Kanun",
-      "D": "Genelge",
-      "E": "İdari işlem"
-    },
-    "dogru": "C",
-    "cozum": "Kanun ile CBK çatışırsa kanun uygulanır."
+    "secenekler": [
+      "Yönetmelik",
+      "Tüzük",
+      "Kanun",
+      "Genelge",
+      "İdari işlem"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kanun ile CBK çatışırsa kanun uygulanır."
   },
   {
-    "id": 1004,
-    "ders": "Hukuk",
     "konu": "CBK Sınırı",
     "soru": "Aşağıdakilerden hangisi Cumhurbaşkanı kararnamesi ile düzenlenemez?",
-    "secenekler": {
-      "A": "Üst kademe kamu yöneticilerinin atanması",
-      "B": "Bakanlıkların kurulması",
-      "C": "Temel hak ve özgürlükler",
-      "D": "Cumhurbaşkanlığı teşkilatı",
-      "E": "Kamu tüzel kişiliği kurulması"
-    },
-    "dogru": "C",
-    "cozum": "Temel hak ve özgürlükler CBK ile düzenlenemez."
+    "secenekler": [
+      "Üst kademe kamu yöneticilerinin atanması",
+      "Bakanlıkların kurulması",
+      "Temel hak ve özgürlükler",
+      "Cumhurbaşkanlığı teşkilatı",
+      "Kamu tüzel kişiliği kurulması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Temel hak ve özgürlükler CBK ile düzenlenemez."
   },
   {
-    "id": 1005,
-    "ders": "Hukuk",
     "konu": "Yürütmenin Denetimi",
     "soru": "Cumhurbaşkanının cezai sorumluluğu ile ilgili soruşturmayı kim açar?",
-    "secenekler": {
-      "A": "AYM",
-      "B": "Yargıtay",
-      "C": "TBMM",
-      "D": "Danıştay",
-      "E": "Savcılık"
-    },
-    "dogru": "C",
-    "cozum": "Cumhurbaşkanının cezai sorumluluğu TBMM tarafından başlatılan süreçle gündeme gelir."
+    "secenekler": [
+      "AYM",
+      "Yargıtay",
+      "TBMM",
+      "Danıştay",
+      "Savcılık"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Cumhurbaşkanının cezai sorumluluğu TBMM tarafından başlatılan süreçle gündeme gelir."
   },
   {
-    "id": 1006,
-    "ders": "Hukuk",
     "konu": "Yargı Yetkisi",
     "soru": "Yargı yetkisi aşağıdakilerden hangisi adına kullanılır?",
-    "secenekler": {
-      "A": "TBMM",
-      "B": "Cumhurbaşkanı",
-      "C": "Millet",
-      "D": "Devlet",
-      "E": "Hükümet"
-    },
-    "dogru": "C",
-    "cozum": "Yargı yetkisi Türk Milleti adına kullanılır."
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Millet",
+      "Devlet",
+      "Hükümet"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı yetkisi Türk Milleti adına kullanılır."
   },
   {
-    "id": 1007,
-    "ders": "Hukuk",
     "konu": "Mahkemelerin Bağımsızlığı",
     "soru": "Aşağıdakilerden hangisi hâkimlerin bağımsızlığının bir sonucudur?",
-    "secenekler": {
-      "A": "İdarenin talimat verebilmesi",
-      "B": "Hâkimlerin emir alması",
-      "C": "Hâkimlerin görevlerinde bağımsız olması",
-      "D": "Siyasi denetim",
-      "E": "Yürütmeye bağlılık"
-    },
-    "dogru": "C",
-    "cozum": "Hâkimler görevlerinde bağımsızdır; hiçbir makamdan emir almaz."
+    "secenekler": [
+      "İdarenin talimat verebilmesi",
+      "Hâkimlerin emir alması",
+      "Hâkimlerin görevlerinde bağımsız olması",
+      "Siyasi denetim",
+      "Yürütmeye bağlılık"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hâkimler görevlerinde bağımsızdır; hiçbir makamdan emir almaz."
   },
   {
-    "id": 1008,
-    "ders": "Hukuk",
     "konu": "Anayasa Mahkemesi",
     "soru": "Anayasa Mahkemesi aşağıdakilerden hangisini denetler?",
-    "secenekler": {
-      "A": "Yönetmelikleri",
-      "B": "Tüzükleri",
-      "C": "Kanunları",
-      "D": "İdari işlemleri",
-      "E": "Mahkeme kararlarını"
-    },
-    "dogru": "C",
-    "cozum": "Anayasa Mahkemesi kanunların Anayasaya uygunluğunu denetler."
+    "secenekler": [
+      "Yönetmelikleri",
+      "Tüzükleri",
+      "Kanunları",
+      "İdari işlemleri",
+      "Mahkeme kararlarını"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasa Mahkemesi kanunların Anayasaya uygunluğunu denetler."
   },
   {
-    "id": 1009,
-    "ders": "Hukuk",
     "konu": "OHAL",
     "soru": "Olağanüstü hal ilan etmeye kim yetkilidir?",
-    "secenekler": {
-      "A": "TBMM",
-      "B": "Anayasa Mahkemesi",
-      "C": "Cumhurbaşkanı",
-      "D": "Milli Güvenlik Kurulu",
-      "E": "Danıştay"
-    },
-    "dogru": "C",
-    "cozum": "Olağanüstü hal ilan etme yetkisi Cumhurbaşkanına aittir."
+    "secenekler": [
+      "TBMM",
+      "Anayasa Mahkemesi",
+      "Cumhurbaşkanı",
+      "Milli Güvenlik Kurulu",
+      "Danıştay"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Olağanüstü hal ilan etme yetkisi Cumhurbaşkanına aittir."
   },
   {
-    "id": 1010,
-    "ders": "Hukuk",
     "konu": "Kuvvetler Ayrılığı",
     "soru": "Türkiye’de kuvvetler ayrılığı sistemi aşağıdakilerden hangisiyle ifade edilir?",
-    "secenekler": {
-      "A": "Yumuşak kuvvetler ayrılığı",
-      "B": "Sert kuvvetler ayrılığı",
-      "C": "Fonksiyonlar birliği",
-      "D": "Yetki tekliği",
-      "E": "İdari birlik"
-    },
-    "dogru": "B",
-    "cozum": "Cumhurbaşkanlığı Hükümet Sistemi sert kuvvetler ayrılığına dayanır."
+    "secenekler": [
+      "Yumuşak kuvvetler ayrılığı",
+      "Sert kuvvetler ayrılığı",
+      "Fonksiyonlar birliği",
+      "Yetki tekliği",
+      "İdari birlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Cumhurbaşkanlığı Hükümet Sistemi sert kuvvetler ayrılığına dayanır."
   }
 ]
