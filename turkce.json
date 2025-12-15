@@ -2,7 +2,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Aşağıdaki paragrafın ana düşüncesi nedir?",
-    "paragraf": "Günümüzde teknoloji, bireylerin bilgiye erişimini kolaylaştırmış; ancak yüz yüze iletişimi azaltarak sosyal ilişkilerin zayıflamasına yol açmıştır.",
     "secenekler": [
       "Teknoloji sosyal ilişkileri güçlendirir",
       "Teknoloji bilgiye erişimi zorlaştırır",
@@ -15,7 +14,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragraftan çıkarılabilecek en genel yargı aşağıdakilerden hangisidir?",
-    "paragraf": "Okuma alışkanlığı, bireyin kelime dağarcığını geliştirir ve düşünme becerisini artırır. Bu nedenle erken yaşta kazandırılması büyük önem taşır.",
     "secenekler": [
       "Okuma alışkanlığı yalnızca akademik başarıyı etkiler",
       "Okuma alışkanlığı bireyin zihinsel gelişimine katkı sağlar",
@@ -28,7 +26,6 @@
   {
     "konu": "Cümlede Anlam",
     "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
-    "paragraf": null,
     "secenekler": [
       "Hava soğuk olduğu için dışarı çıkmadı",
       "Kitap okumayı sever",
@@ -41,7 +38,6 @@
   {
     "konu": "Sözel Mantık",
     "soru": "Ali, Ayşe’den uzundur. Ayşe, Mehmet’ten kısadır. Buna göre aşağıdakilerden hangisi kesinlikle doğrudur?",
-    "paragraf": null,
     "secenekler": [
       "Ali, Mehmet’ten uzundur",
       "Mehmet, Ali’den uzundur",
@@ -54,7 +50,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta yazarın asıl vurgulamak istediği düşünce aşağıdakilerden hangisidir?",
-    "paragraf": "Başarı, yalnızca yetenekle değil; düzenli çalışma ve sabırla elde edilir. Zorluklar karşısında pes etmeyen bireyler, hedeflerine ulaşmada daha avantajlıdır.",
     "secenekler": [
       "Yetenek başarı için yeterlidir",
       "Sabır ve çalışma başarıyı getirir",
@@ -67,7 +62,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Aşağıdaki paragraftan hangisi kesin olarak çıkarılamaz?",
-    "paragraf": "Kitap okumak bireyin hayal gücünü geliştirir, empati yeteneğini artırır ve farklı bakış açıları kazandırır.",
     "secenekler": [
       "Kitap okuyan bireyler daha empatik olabilir",
       "Kitap okumak düşünme becerilerini geliştirir",
@@ -80,7 +74,6 @@
   {
     "konu": "Cümlede Anlam",
     "soru": "Aşağıdaki cümlelerin hangisinde amaç-sonuç ilişkisi vardır?",
-    "paragraf": null,
     "secenekler": [
       "Başarılı olmak için çok çalışıyor",
       "Hava yağmurlu olduğu için gelmedi",
@@ -93,7 +86,6 @@
   {
     "konu": "Sözel Mantık",
     "soru": "A, B’den büyüktür. C, A’dan küçüktür. Buna göre aşağıdakilerden hangisi kesin doğrudur?",
-    "paragraf": null,
     "secenekler": [
       "C, B’den büyüktür",
       "B, C’den büyüktür",
@@ -106,7 +98,6 @@
   {
     "konu": "Sözcük Türleri",
     "soru": "Aşağıdaki cümlelerin hangisinde altı çizili sözcük sıfattır?",
-    "paragraf": null,
     "secenekler": [
       "Güzel bir gün geçirdik",
       "Güzeli herkes sever",
@@ -119,7 +110,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta anlatılmak istenen temel düşünce aşağıdakilerden hangisidir?",
-    "paragraf": "Teknolojinin gelişmesiyle birlikte bilgiye ulaşmak kolaylaşmıştır. Ancak bu durum, doğru bilgiye ulaşmanın da kolay olduğu anlamına gelmez. Bilgi kirliliği, bireylerin eleştirel düşünme becerilerini kullanmasını zorunlu kılmaktadır.",
     "secenekler": [
       "Teknoloji bilgiye erişimi hızlandırmıştır",
       "Bilgiye ulaşmak artık zahmetlidir",
@@ -132,7 +122,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta yazar aşağıdakilerden hangisine değinmemiştir?",
-    "paragraf": "Sanat, bireyin duygu ve düşüncelerini ifade etmesinin en etkili yollarından biridir. Toplumların kültürel birikimi, sanat eserleri aracılığıyla gelecek nesillere aktarılır.",
     "secenekler": [
       "Sanatın bireysel yönü",
       "Sanatın toplumsal işlevi",
@@ -145,7 +134,6 @@
   {
     "konu": "Cümlede Anlam",
     "soru": "Aşağıdaki cümlelerin hangisinde koşul-sonuç ilişkisi vardır?",
-    "paragraf": null,
     "secenekler": [
       "Çok çalışırsan başarılı olursun",
       "Başarılı olduğu için ödüllendirildi",
@@ -158,7 +146,6 @@
   {
     "konu": "Cümlede Anlam",
     "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
-    "paragraf": null,
     "secenekler": [
       "Ders çalıştı ve başarılı oldu",
       "İstedi ama başaramadı",
@@ -171,7 +158,6 @@
   {
     "konu": "Sözel Mantık",
     "soru": "Ali, Ayşe’den uzundur. Mehmet, Ali’den kısadır. Buna göre aşağıdakilerden hangisi kesin doğrudur?",
-    "paragraf": null,
     "secenekler": [
       "Mehmet, Ayşe’den uzundur",
       "Ayşe, Mehmet’ten uzundur",
@@ -184,7 +170,6 @@
   {
     "konu": "Sözel Mantık",
     "soru": "Tüm öğretmenler üniversite mezunudur. Bazı üniversite mezunları yazardır. Buna göre aşağıdakilerden hangisi kesin doğrudur?",
-    "paragraf": null,
     "secenekler": [
       "Tüm yazarlar öğretmendir",
       "Bazı öğretmenler yazardır",
@@ -197,7 +182,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta anlatılmak istenen temel düşünce aşağıdakilerden hangisidir?",
-    "paragraf": "Başarı, yalnızca yetenekle açıklanamaz. Disiplinli çalışma, hedef belirleme ve sabır, başarının kalıcı olmasını sağlar. Anlık motivasyonlar kısa sürede tükenirken, istikrarlı çaba bireyi sonuca ulaştırır.",
     "secenekler": [
       "Başarı sadece yetenekle mümkündür",
       "Motivasyon başarının temelidir",
@@ -210,7 +194,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta yazar aşağıdakilerden hangisine değinmemiştir?",
-    "paragraf": "Okuma alışkanlığı, bireyin düşünme becerilerini geliştirir. Düzenli okuyan kişiler olaylara daha geniş bir perspektiften bakabilir.",
     "secenekler": [
       "Okumanın zihinsel katkısı",
       "Eleştirel düşünme",
@@ -223,7 +206,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta asıl vurgulanmak istenen düşünce aşağıdakilerden hangisidir?",
-    "paragraf": "İnsan, çoğu zaman başarısızlıklarının nedenini dış etkenlerde arar. Oysa gerçek gelişim, bireyin kendi eksiklerini fark etmesiyle başlar. Kendini eleştirebilen kişi, değişime daha açıktır.",
     "secenekler": [
       "Başarısızlık tamamen çevresel faktörlerden kaynaklanır",
       "Kendini eleştirmek insanı zayıflatır",
@@ -236,7 +218,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragraftan aşağıdakilerden hangisi çıkarılamaz?",
-    "paragraf": "Teknolojik gelişmeler hayatı kolaylaştırsa da insan ilişkilerini zayıflatabilmektedir. Yüz yüze iletişimin yerini alan dijital mesajlaşma, duyguların aktarımında yetersiz kalabilir.",
     "secenekler": [
       "Teknoloji iletişim biçimlerini değiştirmiştir",
       "Dijital iletişim her zaman daha etkilidir",
@@ -321,7 +302,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafın anlatım biçimi aşağıdakilerden hangisidir?",
-    "paragraf": "Sabah erkenden uyanıp pencereyi açtım. Sokaktan gelen kuş sesleriyle güne başladım.",
     "secenekler": [
       "Açıklayıcı",
       "Tartışmacı",
@@ -334,7 +314,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta yazarın tutumu aşağıdakilerden hangisidir?",
-    "paragraf": "Doğayı korumak, yalnızca bugünü değil geleceği de düşünmektir. Bu nedenle herkes üzerine düşen sorumluluğu yerine getirmelidir.",
     "secenekler": [
       "Eleştirel",
       "Öğüt verici",
@@ -347,7 +326,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta anlatılmak istenen aşağıdakilerden hangisidir?",
-    "paragraf": "Zaman yönetimi, yalnızca işleri yetiştirmekle ilgili değildir. Aynı zamanda bireyin kendine ayırdığı zamanı verimli kullanabilmesi anlamına gelir. Plansız geçen bir gün, çoğu zaman yorgunluk ve tatminsizlikle sonuçlanır.",
     "secenekler": [
       "Zaman yönetimi sadece iş hayatında önemlidir",
       "Plansızlık verimliliği düşürür",
@@ -360,7 +338,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafın ana düşüncesi aşağıdakilerden hangisidir?",
-    "paragraf": "Bilgiye ulaşmanın kolaylaştığı günümüzde, önemli olan bilgiye sahip olmak değil, onu doğru değerlendirebilmektir. Aksi halde bilgi, bireyi geliştirmek yerine yanıltabilir.",
     "secenekler": [
       "Bilgiye ulaşmak her zaman zordur",
       "Bilgi tek başına yeterlidir",
@@ -445,7 +422,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafın anlatım biçimi aşağıdakilerden hangisidir?",
-    "paragraf": "Bilim, deney ve gözleme dayanır. Bu yönüyle dogmatik düşüncelerden ayrılır.",
     "secenekler": [
       "Öyküleyici",
       "Betimleyici",
@@ -458,7 +434,6 @@
   {
     "konu": "Paragrafta Anlam",
     "soru": "Bu paragrafta yazar aşağıdakilerden hangisini savunmaktadır?",
-    "paragraf": "Sürekli eleştiren bir yaklaşım, bireyin motivasyonunu düşürür. Yapıcı eleştiriler ise gelişimi destekler.",
     "secenekler": [
       "Eleştirinin gereksiz olduğunu",
       "Eleştirinin zararlı olduğunu",
@@ -470,7 +445,6 @@
   },
   {
     "konu": "Paragrafta Ana Düşünce",
-    "paragraf": "Bir metni anlamak, yalnızca sözcüklerin ne anlama geldiğini bilmekle sınırlı değildir. Asıl önemli olan, yazarın bu sözcükleri hangi amaçla ve nasıl bir bağlam içinde kullandığını kavrayabilmektir. Bu nedenle okur, metni oluşturan unsurlar arasındaki ilişkiyi çözümleyebilmelidir.",
     "soru": "Bu paragrafta asıl vurgulanmak istenen aşağıdakilerden hangisidir?",
     "secenekler": [
       "Sözcük bilgisi metni anlamak için yeterlidir.",
@@ -483,7 +457,6 @@
   },
   {
     "konu": "Paragrafta Yardımcı Düşünce",
-    "paragraf": "Teknolojinin gelişmesiyle bilgiye ulaşmak kolaylaşmıştır. Ancak bu durum, bilginin doğruluğunu sorgulamadan kabul etme alışkanlığını da beraberinde getirmiştir. Bu nedenle bireylerin eleştirel düşünme becerilerini geliştirmeleri her zamankinden daha önemlidir.",
     "soru": "Bu paragrafta aşağıdakilerden hangisine değinilmemiştir?",
     "secenekler": [
       "Bilgiye ulaşmanın kolaylaşması",
@@ -496,7 +469,6 @@
   },
   {
     "konu": "Paragrafta Çıkarım",
-    "paragraf": "Bir toplumun kültürel birikimi, o toplumun ürettiği sanat eserlerinde açıkça görülür. Sanat, bireyin dünyayı algılama biçimini yansıttığı gibi, yaşadığı dönemin izlerini de taşır.",
     "soru": "Bu paragraftan aşağıdakilerden hangisi çıkarılabilir?",
     "secenekler": [
       "Sanat evrensel değildir.",
@@ -509,7 +481,6 @@
   },
   {
     "konu": "Paragrafın Yapısı",
-    "paragraf": "Okuma alışkanlığı, bireyin düşünce dünyasını geliştirir. Düzenli okuyan bireyler, farklı bakış açılarını tanıma fırsatı bulur. Bu da onların olaylara daha geniş bir perspektiften bakmalarını sağlar.",
     "soru": "Bu paragrafın anlatım biçimi aşağıdakilerden hangisidir?",
     "secenekler": [
       "Öyküleyici",
@@ -522,7 +493,6 @@
   },
   {
     "konu": "Paragrafta Anlam – Başlık",
-    "paragraf": "Bilimsel araştırmalar, merak duygusuyla başlar. İnsan, anlamadığı ya da açıklamak istediği durumlar karşısında sorular sorar. Bu sorular, sistemli bir çalışma sonucunda bilimsel bilgiye dönüşür.",
     "soru": "Bu paragrafa en uygun başlık aşağıdakilerden hangisidir?",
     "secenekler": [
       "Bilimin Amacı",
@@ -547,7 +517,6 @@
   },
   {
     "konu": "Paragrafta Ana Düşünce",
-    "paragraf": "Günümüzde hızla tüketilen içerikler, okurun metinle kurduğu ilişkiyi yüzeyselleştirmektedir. Oysa derinlikli okuma, metnin yalnızca ilettiği bilgiyi değil, ima ettiklerini ve sessiz bıraktıklarını da yakalamayı gerektirir.",
     "soru": "Bu paragrafta asıl vurgulanan düşünce aşağıdakilerden hangisidir?",
     "secenekler": [
       "İçerik üretiminin artması okuma alışkanlığını güçlendirir.",
@@ -560,7 +529,6 @@
   },
   {
     "konu": "Paragrafta Yardımcı Düşünce",
-    "paragraf": "Bilimsel ilerleme, çoğu zaman başarısızlıkların üzerine inşa edilir. Denemeler sırasında yapılan hatalar, araştırmacıya yeni yollar gösterir ve sürecin doğal bir parçası olarak kabul edilir.",
     "soru": "Bu paragrafta aşağıdakilerden hangisine değinilmemiştir?",
     "secenekler": [
       "Başarısızlıkların öğretici olabileceği",
@@ -573,7 +541,6 @@
   },
   {
     "konu": "Paragrafta Çıkarım",
-    "paragraf": "Bir yazarın üslubu, onun dünyaya bakışını ele verir. Sözcük seçimleri ve cümle kuruluşu, yazarın düşünce sistematiği hakkında ipuçları sunar.",
     "soru": "Bu paragraftan aşağıdakilerden hangisi çıkarılabilir?",
     "secenekler": [
       "Üslup, yazarın kişisel özelliklerinden bağımsızdır.",
@@ -586,7 +553,6 @@
   },
   {
     "konu": "Paragrafın Yapısı",
-    "paragraf": "Kentleşme, beraberinde çevresel sorunları da getirmektedir. Plansız yapılaşma, yeşil alanların azalmasına yol açarken yaşam kalitesini de düşürmektedir.",
     "soru": "Bu paragrafın anlatım biçimi aşağıdakilerden hangisidir?",
     "secenekler": [
       "Öyküleyici",
@@ -599,7 +565,6 @@
   },
   {
     "konu": "Paragrafta Başlık",
-    "paragraf": "Sanat, yalnızca estetik bir uğraş değildir; aynı zamanda toplumsal değişimlerin de bir yansımasıdır. Dönemin ekonomik, siyasal ve kültürel koşulları sanat eserlerinde iz bırakır.",
     "soru": "Bu paragrafa en uygun başlık aşağıdakilerden hangisidir?",
     "secenekler": [
       "Sanatın Evrenselliği",
@@ -612,7 +577,6 @@
   },
   {
     "konu": "Paragrafta Amaç",
-    "paragraf": "Eleştiri, bir eseri yermek ya da övmek için değil; onu anlamak ve değerlendirmek için yapılır. Bu yaklaşım, eserin güçlü ve zayıf yönlerini nesnel biçimde ortaya koymayı hedefler.",
     "soru": "Bu paragrafın yazılış amacı aşağıdakilerden hangisidir?",
     "secenekler": [
       "Eleştirinin gereksizliğini savunmak",
@@ -625,7 +589,6 @@
   },
   {
     "konu": "Paragrafta Tutum",
-    "paragraf": "Teknolojik gelişmelerin eğitimdeki rolü yadsınamaz. Ancak bu araçların bilinçsiz kullanımı, öğrenme sürecini olumsuz etkileyebilir.",
     "soru": "Yazarın teknolojiye yaklaşımı aşağıdakilerden hangisidir?",
     "secenekler": [
       "Tamamen olumsuz",
@@ -638,7 +601,6 @@
   },
   {
     "konu": "Paragrafta Anlam – Karşıtlık",
-    "paragraf": "Sessizlik, bazıları için huzurun kaynağıdır; bazıları içinse rahatsız edicidir. Bu durum, bireylerin algı farklılıklarından kaynaklanır.",
     "soru": "Bu paragrafta aşağıdakilerden hangisi vurgulanmaktadır?",
     "secenekler": [
       "Sessizliğin evrensel bir anlamı vardır.",
@@ -663,7 +625,6 @@
   },
   {
     "konu": "Paragrafta Çıkarım",
-    "paragraf": "Okur, metinle kurduğu bağ ölçüsünde metinden anlam devşirir. Bu bağ güçlendikçe okuma deneyimi de zenginleşir.",
     "soru": "Bu paragraftan aşağıdakilerden hangisi çıkarılabilir?",
     "secenekler": [
       "Her okur metni aynı şekilde anlar.",
@@ -676,7 +637,6 @@
   },
   {
     "konu": "Paragrafta Anlam – Genelleme",
-    "paragraf": "Doğayla iç içe yaşayan toplumların çevre bilinci daha gelişmiştir. Bu toplumlar, kaynakların sınırlı olduğunun farkındadır.",
     "soru": "Bu paragrafta aşağıdakilerden hangisi yapılmıştır?",
     "secenekler": [
       "Örnekleme",
@@ -689,7 +649,6 @@
   },
   {
     "konu": "Paragrafta Anlam – Neden Sonuç",
-    "paragraf": "Plansız kentleşme yeşil alanları azaltır; bu da hava kalitesinin düşmesine yol açar.",
     "soru": "Bu paragrafta aşağıdakilerden hangisi vardır?",
     "secenekler": [
       "Koşul-sonuç",
@@ -702,7 +661,6 @@
   },
   {
     "konu": "Paragrafta Anlam – Örtük Anlam",
-    "paragraf": "Bir eserin kalıcılığı, dönemsel beğenilerin ötesine geçebilmesine bağlıdır.",
     "soru": "Bu paragrafta örtük olarak aşağıdakilerden hangisi vurgulanmaktadır?",
     "secenekler": [
       "Her eser kalıcıdır.",
@@ -727,7 +685,6 @@
   },
   {
     "konu": "Paragrafta Anlam – Tutarlılık",
-    "paragraf": "Yaratıcılık, yalnızca doğuştan gelen bir özellik değildir; disiplinli çalışmayla da geliştirilebilir.",
     "soru": "Bu paragrafla tutarlı olan yargı aşağıdakilerden hangisidir?",
     "secenekler": [
       "Yaratıcılık sadece yetenek işidir.",
