@@ -33,6 +33,14 @@ const $ = (id) => document.getElementById(id);
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
 
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
 }
@@ -205,6 +213,12 @@ function setNotice(msg, kind="info"){
   el.textContent = msg;
   el.style.background = kind==="error" ? "rgba(220,38,38,.07)" : "rgba(10,132,255,.06)";
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
 }
 
 function setMode(mode){
@@ -417,6 +431,8 @@ function renderQuestion(){
     paintOptions();
     showExplanation();
   }
+
+  typesetMath($("quizCard"));
 }
 
 function inferLesson(q){
@@ -475,7 +491,9 @@ function showExplanation(){
   $("tagResult").className = "tag " + (ok ? "ok" : "bad");
 
   const explain = q.explain || "";
-  $("explainText").textContent = explain ? explain : (ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.");
+  const fallback = ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.";
+  const html = (explain || fallback).replace(/\n/g, "<br>");
+  $("explainText").innerHTML = html;
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
@@ -483,6 +501,8 @@ function showExplanation(){
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
   }
+
+  typesetMath($("explain"));
 }
 
 function onPick(i){
@@ -885,6 +905,7 @@ function init(){
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
+  $("btnHome").addEventListener("click", goHome);
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
