@@ -1,0 +1,710 @@
+[
+  {
+    "konu": "İlk Türk Devletleri",
+    "soru": "Aşağıdakilerden hangisi Orta Asya Türk devletlerinde sosyal devlet anlayışının göstergesidir?",
+    "secenekler": [
+      "Kut inancı",
+      "Toy meclisi",
+      "Ülüş sistemi",
+      "İkili teşkilat"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Ülüş sistemi, halkın geçiminin devlet tarafından düzenlenmesini ifade eder."
+  },
+  {
+    "konu": "İlk Türk Devletleri",
+    "soru": "Türklerde hükümdarın yetkilerini tanrısal bir kaynağa dayandırmasına ne ad verilir?",
+    "secenekler": [
+      "Töre",
+      "Kut",
+      "Ülüş",
+      "Kurultay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kut anlayışı, hükümdarın Tanrı tarafından seçildiğine inanılmasıdır."
+  },
+  {
+    "konu": "İslamiyet Öncesi Türk Kültürü",
+    "soru": "Türklerin tarih boyunca konar-göçer yaşamalarının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Savaşçı yapıları",
+      "Hayvancılıkla uğraşmaları",
+      "İklim koşulları",
+      "Nüfus azlığı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ekonominin hayvancılığa dayanması konar-göçerliği zorunlu kılmıştır."
+  },
+  {
+    "konu": "İslam Tarihi",
+    "soru": "Hz. Muhammed döneminde yapılan ilk antlaşma aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Hudeybiye Antlaşması",
+      "Medine Sözleşmesi",
+      "Bedir Antlaşması",
+      "Hayber Antlaşması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Medine Sözleşmesi, Müslümanlar ve Yahudiler arasında yapılmıştır."
+  },
+  {
+    "konu": "Türk-İslam Devletleri",
+    "soru": "Aşağıdakilerden hangisi Büyük Selçuklu Devleti’nin eğitim alanındaki en önemli faaliyetidir?",
+    "secenekler": [
+      "Enderun Mektebi",
+      "Nizamiye Medreseleri",
+      "Lonca teşkilatı",
+      "Ahilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Nizamiye Medreseleri devlet eliyle açılan ilk yükseköğretim kurumlarıdır."
+  },
+  {
+    "konu": "Osmanlı Kuruluş",
+    "soru": "Osmanlı Devleti’nin kısa sürede büyümesinde aşağıdakilerden hangisi etkili olmamıştır?",
+    "secenekler": [
+      "Gaza anlayışı",
+      "Bizans’ın zayıf olması",
+      "Merkeziyetçi yapı",
+      "İskân politikası"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Merkeziyetçilik kuruluş döneminde henüz tam gelişmemiştir."
+  },
+  {
+    "konu": "Osmanlı Kültür ve Medeniyet",
+    "soru": "Osmanlı’da devşirme sisteminin temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Vergi toplamak",
+      "Asker ihtiyacını karşılamak",
+      "Toprak düzenini sağlamak",
+      "Esnaf yetiştirmek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devşirme sistemi, kapıkulu askerlerini yetiştirmek için uygulanmıştır."
+  },
+  {
+    "konu": "Osmanlı Islahatları",
+    "soru": "Tanzimat Fermanı ile aşağıdakilerden hangisi ilk kez güvence altına alınmıştır?",
+    "secenekler": [
+      "Eğitim hakkı",
+      "Can ve mal güvenliği",
+      "Seçme hakkı",
+      "Basın özgürlüğü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tanzimat ile can, mal ve namus güvenliği devlet güvencesine alınmıştır."
+  },
+  {
+    "konu": "Osmanlı Islahatları",
+    "soru": "Islahat Fermanı’nın temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Azınlık haklarını genişletmek",
+      "Merkezi otoriteyi güçlendirmek",
+      "Vergi sistemini düzenlemek",
+      "Toprak reformu yapmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Islahat Fermanı, özellikle gayrimüslimlere haklar tanımıştır."
+  },
+  {
+    "konu": "XX. Yüzyıl Başlarında Osmanlı",
+    "soru": "Osmanlı Devleti’nin I. Dünya Savaşı’na girmesinde aşağıdakilerden hangisi etkili olmamıştır?",
+    "secenekler": [
+      "Kaybedilen toprakları geri alma isteği",
+      "Almanya’ya güven",
+      "Sömürgecilik faaliyetleri",
+      "İttihatçıların politikaları"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sömürgecilik Osmanlı’nın değil, büyük devletlerin politikasıdır."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Milli Mücadele’nin gerekçesi, yöntemi ve hedefinin açıkça belirtildiği belge hangisidir?",
+    "secenekler": [
+      "Amasya Genelgesi",
+      "Erzurum Kongresi",
+      "Sivas Kongresi",
+      "Misak-ı Milli"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Amasya Genelgesi, Milli Mücadele’nin programıdır."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Aşağıdakilerden hangisi bölgesel nitelikli bir kongredir?",
+    "secenekler": [
+      "Sivas Kongresi",
+      "Erzurum Kongresi",
+      "TBMM",
+      "Amasya Genelgesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Erzurum Kongresi bölgesel, kararları ulusaldır."
+  },
+  {
+    "konu": "Atatürk Dönemi",
+    "soru": "Halifeliğin kaldırılması aşağıdaki ilkelerden hangisiyle doğrudan ilişkilidir?",
+    "secenekler": [
+      "Cumhuriyetçilik",
+      "Milliyetçilik",
+      "Laiklik",
+      "Devletçilik"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifeliğin kaldırılması laiklik ilkesinin gereğidir."
+  },
+  {
+    "konu": "Atatürk Dönemi",
+    "soru": "Aşağıdakilerden hangisi Atatürk’ün ekonomik alanda yaptığı çalışmalardan biridir?",
+    "secenekler": [
+      "Tevhid-i Tedrisat",
+      "Kabotaj Kanunu",
+      "Şapka Kanunu",
+      "Medeni Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kabotaj Kanunu ekonomik bağımsızlığı güçlendirmiştir."
+  },
+  {
+    "konu": "Çağdaş Türk ve Dünya Tarihi",
+    "soru": "Türkiye’nin NATO’ya üye olmasında aşağıdaki gelişmelerden hangisi etkili olmuştur?",
+    "secenekler": [
+      "Balkan Antantı",
+      "Sadabat Paktı",
+      "Kore Savaşı",
+      "Lozan Antlaşması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kore Savaşı’na asker göndermemiz NATO üyeliğini hızlandırmıştır."
+  },
+  {
+    "konu": "Çağdaş Türk Tarihi",
+    "soru": "Atatürk’ün ‘Yurtta sulh, cihanda sulh’ sözü aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Yayılmacı politika",
+      "Saldırgan tutum",
+      "Barışçı dış politika",
+      "Askerî güç"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Bu ilke barışçı dış politikanın temelidir."
+  },
+  {
+    "konu": "Osmanlı Ekonomi",
+    "soru": "Osmanlı’da toprağın devlete ait olması aşağıdakilerden hangisinin göstergesidir?",
+    "secenekler": [
+      "Feodal yapı",
+      "Merkeziyetçilik",
+      "Özel mülkiyet",
+      "Sömürgecilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Miri arazi sistemi merkezi otoriteyi güçlendirmiştir."
+  },
+  {
+    "konu": "Osmanlı Askerî",
+    "soru": "Kapıkulu askerlerinin maaşlarına ne ad verilirdi?",
+    "secenekler": [
+      "Ulufe",
+      "Tımar",
+      "Dirlik",
+      "Cizye"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulufe üç ayda bir ödenen maaştır."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Misak-ı Milli kararları ilk kez hangi gelişmede kabul edilmiştir?",
+    "secenekler": [
+      "TBMM",
+      "Son Osmanlı Mebusan Meclisi",
+      "Amasya Genelgesi",
+      "Sivas Kongresi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Misak-ı Milli, Son Osmanlı Mebusan Meclisi’nde kabul edilmiştir."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Türkiye’de çok partili hayata geçiş denemelerinin temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ekonomiyi güçlendirmek",
+      "Demokratikleşmeyi sağlamak",
+      "Askerî gücü artırmak",
+      "Eğitimi yaygınlaştırmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç demokratik yönetimi güçlendirmektir."
+  },
+  {
+    "konu": "İlk Türk Devletleri",
+    "soru": "Türklerde devlet yönetiminde ‘kut’ anlayışının varlığı aşağıdakilerden hangisinin kanıtıdır?",
+    "secenekler": [
+      "Devletin laik yapıda olduğunun",
+      "Hükümdarlığın ilahi kaynaklı sayıldığının",
+      "Demokratik yönetimin benimsendiğinin",
+      "Halk egemenliğinin esas alındığının"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kut anlayışı, yönetme yetkisinin Tanrı tarafından verildiğine inanılmasıdır."
+  },
+  {
+    "konu": "İslamiyet Öncesi Türk Tarihi",
+    "soru": "Türklerde ikili teşkilat sisteminin uygulanmasının temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Vergi gelirlerini artırmak",
+      "Ülke yönetimini kolaylaştırmak",
+      "Toprakları genişletmek",
+      "Sosyal sınıf farkını azaltmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İkili teşkilat, geniş coğrafyada yönetimi kolaylaştırmak için uygulanmıştır."
+  },
+  {
+    "konu": "İslam Tarihi",
+    "soru": "Medine Sözleşmesi’nin, İslam Devleti açısından en önemli sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İslamiyet’in yayılmasının hızlanması",
+      "Siyasi birliğin sağlanması",
+      "Farklı dinlerin bir arada yaşama esaslarının belirlenmesi",
+      "Ekonomik refahın artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Medine Sözleşmesi, farklı dinlerin birlikte yaşamasına yönelik ilk yazılı belgedir."
+  },
+  {
+    "konu": "Türk-İslam Devletleri",
+    "soru": "Nizamiye Medreselerinin kurulmasıyla aşağıdakilerden hangisi amaçlanmıştır?",
+    "secenekler": [
+      "Askeri gücü artırmak",
+      "Eğitimde birlik sağlamak",
+      "Devlet memuru yetiştirmek",
+      "Bilimsel gelişmeleri durdurmak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Nizamiye Medreseleri, devlet yönetiminde görev alacak kişileri yetiştirmiştir."
+  },
+  {
+    "konu": "Osmanlı Kuruluş",
+    "soru": "Osmanlı Devleti’nin kuruluş döneminde Bizans’a karşı hızlı ilerleyişinin temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Osmanlı ordusunun sayıca üstün olması",
+      "Bizans’ın iç karışıklıklar yaşaması",
+      "Osmanlı’nın deniz gücünün güçlü olması",
+      "Osmanlı’nın ekonomik olarak zengin olması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bizans’ın siyasi ve askeri zayıflığı Osmanlı’nın ilerlemesini kolaylaştırmıştır."
+  },
+  {
+    "konu": "Osmanlı Kültür ve Medeniyet",
+    "soru": "Osmanlı Devleti’nde tımar sisteminin bozulmasının doğrudan sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Merkezi otoritenin güçlenmesi",
+      "Kapıkulu askerlerinin azalması",
+      "Celali İsyanlarının artması",
+      "Eğitim seviyesinin yükselmesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tımar sisteminin bozulması taşrada güvenliği zayıflatmış ve isyanlara yol açmıştır."
+  },
+  {
+    "konu": "Osmanlı Islahatları",
+    "soru": "Tanzimat Fermanı’nın ilan edilmesinde aşağıdakilerden hangisinin etkili olduğu söylenemez?",
+    "secenekler": [
+      "Avrupa devletlerinin baskısı",
+      "Devleti dağılmaktan kurtarma isteği",
+      "Milliyetçilik akımının yayılması",
+      "Sanayi Devrimi’nin Osmanlı’da başlaması"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Sanayi Devrimi Osmanlı’da etkili olmamıştır."
+  },
+  {
+    "konu": "XX. Yüzyıl Başlarında Osmanlı",
+    "soru": "Balkan Savaşları’nın Osmanlı Devleti üzerindeki en önemli etkisi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Anadolu’nun kaybedilmesi",
+      "Avrupa’daki toprakların büyük ölçüde yitirilmesi",
+      "Halifeliğin kaldırılması",
+      "Sanayinin gelişmesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Balkan Savaşları sonucunda Osmanlı’nın Avrupa’daki toprakları büyük ölçüde kaybolmuştur."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Amasya Genelgesi’nde yer alan ‘Milletin istiklalini yine milletin azim ve kararı kurtaracaktır.’ ifadesi aşağıdakilerden hangisini vurgular?",
+    "secenekler": [
+      "Saltanatın gücünü",
+      "Ulusal egemenliği",
+      "Yabancı devletlerin etkisini",
+      "Askeri yönetimi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bu ifade ulusal egemenlik anlayışının temelidir."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Sivas Kongresi’nin ulusal nitelik kazanmasını sağlayan karar aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Temsil Heyeti’nin kurulması",
+      "Manda ve himayenin reddedilmesi",
+      "Kongrenin toplanması",
+      "Milli cemiyetlerin birleştirilmesi"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Tüm cemiyetlerin tek çatı altında toplanması ulusal birlik sağlamıştır."
+  },
+  {
+    "konu": "Atatürk Dönemi",
+    "soru": "Halifeliğin kaldırılmasıyla aşağıdakilerden hangisinin güçlendiği söylenebilir?",
+    "secenekler": [
+      "Saltanat",
+      "Laik devlet anlayışı",
+      "Ümmetçilik",
+      "Monarşi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Halifeliğin kaldırılması laiklik ilkesini güçlendirmiştir."
+  },
+  {
+    "konu": "Atatürk Dönemi",
+    "soru": "Atatürk ilkelerinden hangisi devletin ekonomik hayata doğrudan müdahalesini savunur?",
+    "secenekler": [
+      "Cumhuriyetçilik",
+      "Milliyetçilik",
+      "Devletçilik",
+      "Halkçılık"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Devletçilik, devletin ekonomide aktif rol almasını savunur."
+  },
+  {
+    "konu": "Çağdaş Türk ve Dünya Tarihi",
+    "soru": "Türkiye’nin Balkan Antantı’na katılmasının temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ekonomik kalkınmayı sağlamak",
+      "Sınır güvenliğini sağlamak",
+      "Askeri yayılmacılık",
+      "Sömürgecilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç Balkanlar’da sınır güvenliğini sağlamaktır."
+  },
+  {
+    "konu": "Çağdaş Türk Tarihi",
+    "soru": "Türkiye’nin II. Dünya Savaşı sürecinde izlediği politika aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Saldırgan",
+      "Yayılmacı",
+      "Tarafsızlık",
+      "Bloklaşma"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Türkiye savaş boyunca denge ve tarafsızlık politikası izlemiştir."
+  },
+  {
+    "konu": "Osmanlı Ekonomi",
+    "soru": "Kapitülasyonların Osmanlı ekonomisine en önemli olumsuz etkisi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Vergi gelirlerinin artması",
+      "Yerel üretimin zayıflaması",
+      "Sanayinin gelişmesi",
+      "Ticaretin canlanması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kapitülasyonlar yerli üretimi olumsuz etkilemiştir."
+  },
+  {
+    "konu": "Osmanlı Askerî",
+    "soru": "Yeniçeri Ocağı’nın kaldırılmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Asker sayısının yetersizliği",
+      "Islahatlara karşı çıkmaları",
+      "Maaşların fazla olması",
+      "Savaşların azalması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yeniçeriler modernleşmeye karşı çıkmıştır."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Misak-ı Milli kararlarının kabul edilmesiyle aşağıdakilerden hangisi kesinleşmiştir?",
+    "secenekler": [
+      "Saltanatın kaldırılması",
+      "Ulusal sınırların belirlenmesi",
+      "Cumhuriyetin ilanı",
+      "Halifeliğin kaldırılması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Misak-ı Milli, ulusal sınırları belirlemiştir."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Atatürk döneminde yapılan hukuk inkılaplarının temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Şeriat düzenini güçlendirmek",
+      "Toplumsal eşitliği sağlamak",
+      "Saltanatı korumak",
+      "Askeri yapıyı güçlendirmek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hukuk inkılapları eşitlik ve çağdaşlaşma hedeflidir."
+  },
+  {
+    "konu": "Genel Değerlendirme",
+    "soru": "Osmanlı’dan Cumhuriyet’e geçiş sürecinde aşağıdakilerden hangisi süreklilik gösteren bir anlayıştır?",
+    "secenekler": [
+      "Ümmetçilik",
+      "Saltanat",
+      "Merkeziyetçi yönetim",
+      "Teokratik yapı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Merkeziyetçi yönetim anlayışı Osmanlı’dan Cumhuriyet’e devam etmiştir."
+  },
+  {
+    "konu": "Kurtuluş Savaşı Hazırlık Dönemi",
+    "soru": "Amasya Genelgesi’nde yer alan kararlar birlikte değerlendirildiğinde, aşağıdakilerden hangisine ulaşılabilir?",
+    "secenekler": [
+      "Saltanatın kaldırılacağı kesinleşmiştir",
+      "Ulusal egemenliğe dayalı yeni bir yönetimin temelleri atılmıştır",
+      "TBMM’nin açılması kararlaştırılmıştır",
+      "Cumhuriyet rejimi açıkça ilan edilmiştir"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ulusal iradenin ön plana çıkarılması yeni yönetim anlayışının temelidir."
+  },
+  {
+    "konu": "Kongreler Dönemi",
+    "soru": "Erzurum Kongresi kararlarının bazıları Sivas Kongresi’nde aynen kabul edilmiştir. Bu durum aşağıdakilerden hangisinin göstergesidir?",
+    "secenekler": [
+      "Erzurum Kongresi’nin bölgesel nitelikte kalmadığının",
+      "Sivas Kongresi’nin toplanmasına gerek olmadığının",
+      "İstanbul Hükümeti’nin kongreleri desteklediğinin",
+      "Milli Mücadele’nin sona erdiğinin"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bazı kararların genelleştirilmesi Erzurum Kongresi’ni ulusal nitelikli yapar."
+  },
+  {
+    "konu": "Son Osmanlı Mebusan Meclisi",
+    "soru": "Misak-ı Milli kararlarının kabul edilmesi Osmanlı Devleti açısından aşağıdakilerden hangisinin kanıtıdır?",
+    "secenekler": [
+      "Saltanatın kaldırıldığının",
+      "Ulusal bağımsızlığın benimsendiğinin",
+      "Cumhuriyetin ilan edildiğinin",
+      "İtilaf Devletleri ile uzlaşıldığının"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Misak-ı Milli, bağımsızlık anlayışının resmî olarak benimsenmesidir."
+  },
+  {
+    "konu": "TBMM’nin Açılması",
+    "soru": "TBMM’nin açılmasıyla birlikte aşağıdakilerden hangisi ilk kez fiilen uygulanmaya başlanmıştır?",
+    "secenekler": [
+      "Laiklik",
+      "Ulusal egemenlik",
+      "Cumhuriyetçilik",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemenliğin millete ait olması ilk kez TBMM ile uygulanmıştır."
+  },
+  {
+    "konu": "İç İsyanlar",
+    "soru": "TBMM’nin Hıyanet-i Vataniye Kanunu’nu çıkarmasının temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Saltanatı korumak",
+      "Ulusal birliği sağlamak",
+      "Ekonomik düzeni kurmak",
+      "Dış politikayı yönlendirmek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kanun, Milli Mücadele’ye karşı çıkan unsurları engellemeyi amaçlamıştır."
+  },
+  {
+    "konu": "Doğu Cephesi",
+    "soru": "Gümrü Antlaşması’nın önemi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "TBMM’nin imzaladığı ilk antlaşma olması",
+      "Doğu sınırının kesin olarak belirlenmesi",
+      "Ermenistan’ın işgal edilmesi",
+      "Sovyetlerle ilişkilerin kopması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "TBMM’nin uluslararası alanda ilk kez tanınmasını sağlamıştır."
+  },
+  {
+    "konu": "Güney Cephesi",
+    "soru": "Fransa’nın Ankara Antlaşması’nı imzalamasında aşağıdakilerden hangisi etkili olmuştur?",
+    "secenekler": [
+      "Düzenli ordunun başarısı",
+      "Kuva-yı Milliye direnişi",
+      "İtilaf Devletleri’nin baskısı",
+      "Sovyet tehdidi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bölgede halk direnişi Fransa’yı geri adım atmaya zorlamıştır."
+  },
+  {
+    "konu": "Batı Cephesi",
+    "soru": "I. İnönü Zaferi’nin TBMM’ye sağladığı en önemli kazanım aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Saltanatın kaldırılması",
+      "Londra Konferansı’na davet edilme",
+      "Doğu sınırının çizilmesi",
+      "Cumhuriyetin ilanı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Askeri başarı, diplomatik alanda meşruiyet sağlamıştır."
+  },
+  {
+    "konu": "Sakarya Savaşı",
+    "soru": "Sakarya Savaşı’nın ‘savunma’ anlayışı açısından önemi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Saldırı savaşına geçilmesi",
+      "Vatanın tamamının savunulması",
+      "Cephe savaşlarının bitmesi",
+      "Dış desteğin kesilmesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Hattı müdafaa yoktur, sathı müdafaa vardır’ anlayışı benimsenmiştir."
+  },
+  {
+    "konu": "Büyük Taarruz",
+    "soru": "Büyük Taarruz’un başarıya ulaşmasının aşağıdakilerden hangisinin kesin kanıtı olduğu söylenebilir?",
+    "secenekler": [
+      "Ordunun modernleştiğinin",
+      "TBMM’nin kapatıldığının",
+      "Saltanatın korunduğunun",
+      "İtilaf Devletleri’nin birleştiğinin"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Planlı ve modern ordu anlayışı zaferi getirmiştir."
+  },
+  {
+    "konu": "Mudanya Ateşkesi",
+    "soru": "Mudanya Ateşkes Antlaşması’nın en önemli sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Savaşın resmen sona ermesi",
+      "Lozan’ın imzalanması",
+      "Doğu Trakya’nın savaşsız alınması",
+      "Halifeliğin kaldırılması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Doğu Trakya çatışma olmadan kazanılmıştır."
+  },
+  {
+    "konu": "Saltanatın Kaldırılması",
+    "soru": "Saltanatın kaldırılmasıyla aşağıdakilerden hangisi ortadan kalkmıştır?",
+    "secenekler": [
+      "Ulusal egemenlik",
+      "İkili yönetim anlayışı",
+      "Cumhuriyet rejimi",
+      "Laik devlet yapısı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "TBMM–Osmanlı ikiliği sona ermiştir."
+  },
+  {
+    "konu": "Lozan Barış Antlaşması",
+    "soru": "Lozan Antlaşması’nda kapitülasyonların kaldırılması aşağıdakilerden hangisinin göstergesidir?",
+    "secenekler": [
+      "Ekonomik bağımsızlık",
+      "Askeri üstünlük",
+      "Sömürgecilik",
+      "Ümmetçilik"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ekonomik bağımsızlık tam anlamıyla sağlanmıştır."
+  },
+  {
+    "konu": "Cumhuriyetin İlanı",
+    "soru": "Cumhuriyetin ilan edilmesiyle aşağıdakilerden hangisi kesinlik kazanmıştır?",
+    "secenekler": [
+      "Laiklik",
+      "Ulusal egemenlik",
+      "Devletçilik",
+      "Halkçılık"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemenliğin millete ait olduğu yönetim biçimi resmileşmiştir."
+  },
+  {
+    "konu": "Halifeliğin Kaldırılması",
+    "soru": "Halifeliğin kaldırılması aşağıdaki ilkelerden hangisiyle doğrudan ilişkilidir?",
+    "secenekler": [
+      "Milliyetçilik",
+      "Laiklik",
+      "Devletçilik",
+      "Cumhuriyetçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Din ve devlet işlerinin ayrılması hedeflenmiştir."
+  },
+  {
+    "konu": "Çok Partili Hayat Denemeleri",
+    "soru": "Terakkiperver Cumhuriyet Fırkası’nın kapatılmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ekonomik başarısızlık",
+      "Laiklik karşıtı faaliyetler",
+      "Dış baskılar",
+      "Askeri yenilgiler"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik ilkesine aykırı faaliyetler gerekçe gösterilmiştir."
+  },
+  {
+    "konu": "Hukuk İnkılapları",
+    "soru": "Medeni Kanun’un kabul edilmesiyle aşağıdakilerden hangisi amaçlanmıştır?",
+    "secenekler": [
+      "Sınıf ayrımını artırmak",
+      "Toplumsal eşitliği sağlamak",
+      "Saltanatı güçlendirmek",
+      "Ümmetçilik anlayışını sürdürmek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kadın–erkek eşitliği temel hedeflerdendir."
+  },
+  {
+    "konu": "Eğitim İnkılapları",
+    "soru": "Tevhid-i Tedrisat Kanunu’nun temel sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Eğitimde birlik",
+      "Eğitimde özerklik",
+      "Medreselerin güçlenmesi",
+      "Yerel eğitim sistemleri"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Eğitim tek çatı altında toplanmıştır."
+  },
+  {
+    "konu": "Ekonomi Politikaları",
+    "soru": "Atatürk döneminde devletçilik ilkesinin uygulanmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Özel sektörün güçlü olması",
+      "Sermaye yetersizliği",
+      "Sömürgecilik",
+      "Dış borçların fazlalığı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Özel sektör yetersiz kaldığı için devlet devreye girmiştir."
+  },
+  {
+    "konu": "Genel Değerlendirme",
+    "soru": "Atatürk inkılaplarının ortak hedefi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Teokratik devlet",
+      "Çağdaş ve milli devlet",
+      "Saltanat düzeni",
+      "Ümmetçi toplum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Modern, bağımsız ve milli bir devlet hedeflenmiştir."
+  }
+]

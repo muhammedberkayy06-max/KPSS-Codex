@@ -1,0 +1,242 @@
+[
+  {
+    "konu": "Türkiye’nin Matematik Konumu",
+    "soru": "Türkiye’de dört mevsimin belirgin olarak yaşanmasında aşağıdakilerden hangisi doğrudan etkilidir?",
+    "secenekler": [
+      "Yer şekillerinin engebeli olması",
+      "Özel konum",
+      "Orta kuşakta yer alması",
+      "Denizlerle çevrili olması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Orta kuşakta yer alan ülkelerde mevsimler belirgin yaşanır."
+  },
+  {
+    "konu": "Türkiye’nin Özel Konumu",
+    "soru": "Türkiye’nin Asya ile Avrupa arasında yer almasının aşağıdakilerden hangisine etkisi yoktur?",
+    "secenekler": [
+      "Jeopolitik önem",
+      "Ulaşım faaliyetleri",
+      "İklim çeşitliliği",
+      "Ticaret yolları"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İklim özel konumdan değil matematik konumdan etkilenir."
+  },
+  {
+    "konu": "Yer Şekilleri",
+    "soru": "Türkiye’de kısa mesafede iklim farklılıklarının görülmesinin temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Denizlerin etkisi",
+      "Yükselti farkları",
+      "Enlem farkı",
+      "Bitki örtüsü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kısa mesafede yükselti değişimi iklimi etkiler."
+  },
+  {
+    "konu": "Dağların Uzantısı",
+    "soru": "Türkiye’de dağların kıyıya paralel uzanmasının aşağıdakilerden hangisine yol açtığı söylenemez?",
+    "secenekler": [
+      "Kıyı–iç kesimler arasında ulaşımın zorlaşması",
+      "Kıyıda nem oranının yüksek olması",
+      "İç kesimlere deniz etkisinin sokulması",
+      "Kıyıda yağış miktarının artması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Dağlar paralel uzandığı için deniz etkisi içeri giremez."
+  },
+  {
+    "konu": "Yükselti",
+    "soru": "Türkiye’nin ortalama yükseltisinin fazla olması aşağıdakilerden hangisini artırır?",
+    "secenekler": [
+      "Tarım ürün çeşitliliğini",
+      "Ulaşım kolaylığını",
+      "Sıcaklık farkını",
+      "Nüfus yoğunluğunu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yükselti arttıkça sıcaklık düşer ve fark artar."
+  },
+  {
+    "konu": "İklim Tipleri",
+    "soru": "Karadeniz ikliminin görüldüğü alanlarda aşağıdakilerden hangisi yaygındır?",
+    "secenekler": [
+      "Step bitki örtüsü",
+      "Yaz kuraklığı",
+      "Her mevsim yağış",
+      "Sıcaklık farkının fazla olması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Karadeniz ikliminde yıl boyu yağış görülür."
+  },
+  {
+    "konu": "Akdeniz İklimi",
+    "soru": "Akdeniz ikliminin görüldüğü alanlarda aşağıdakilerden hangisi beklenmez?",
+    "secenekler": [
+      "Maki bitki örtüsü",
+      "Yaz kuraklığı",
+      "Kış yağışlarının fazla olması",
+      "Yıllık sıcaklık farkının çok fazla olması"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Deniz etkisi nedeniyle sıcaklık farkı çok fazla değildir."
+  },
+  {
+    "konu": "Bitki Örtüsü",
+    "soru": "Türkiye’de bozkır bitki örtüsünün yaygın olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Yükseltinin az olması",
+      "Yağış miktarının yetersizliği",
+      "Deniz etkisi",
+      "Nem oranının yüksekliği"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yetersiz yağış bozkır oluşumuna neden olur."
+  },
+  {
+    "konu": "Nüfus Dağılışı",
+    "soru": "Aşağıdakilerden hangisi Türkiye’de nüfusun dağılışını en az etkiler?",
+    "secenekler": [
+      "Yer şekilleri",
+      "İklim",
+      "Sanayi",
+      "Enlem"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Enlem ülke içinde değişmez."
+  },
+  {
+    "konu": "Göç",
+    "soru": "Türkiye’de kırsaldan kente göçün temel sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Tarım üretiminin artması",
+      "Kentlerde işsizliğin artması",
+      "Nüfusun dengeli dağılması",
+      "Ulaşımın kolaylaşması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Plansız göç işsizliği artırır."
+  },
+  {
+    "konu": "Tarım",
+    "soru": "Türkiye’de tarım ürün çeşitliliğinin fazla olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Yer şekillerinin sade olması",
+      "İklim çeşitliliği",
+      "Nüfusun fazla olması",
+      "Toprakların verimsizliği"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Farklı iklimler farklı ürünleri mümkün kılar."
+  },
+  {
+    "konu": "Hayvancılık",
+    "soru": "Küçükbaş hayvancılığın Türkiye’de yaygın olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ormanların geniş yer kaplaması",
+      "Bozkır alanlarının yaygınlığı",
+      "Yağışın fazla olması",
+      "Nüfus yoğunluğu"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bozkır alanları küçükbaş hayvancılığa uygundur."
+  },
+  {
+    "konu": "Sanayi",
+    "soru": "Türkiye’de sanayi tesislerinin Marmara Bölgesi’nde yoğunlaşmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Yükseltinin fazla olması",
+      "Hammadde bolluğu",
+      "Ulaşım olanakları",
+      "Tarım alanlarının genişliği"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Ulaşım ve pazar avantajı sanayiyi çeker."
+  },
+  {
+    "konu": "Enerji Kaynakları",
+    "soru": "Türkiye’de hidroelektrik enerji üretiminin fazla olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Akarsuların rejiminin düzenli olması",
+      "Yükselti ve eğimin fazla olması",
+      "Yağışın az olması",
+      "Nüfus yoğunluğu"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Eğim ve yükselti HES için avantajdır."
+  },
+  {
+    "konu": "Ulaşım",
+    "soru": "Türkiye’de doğu–batı yönlü ulaşımın kuzey–güney yönlü ulaşıma göre daha gelişmiş olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Dağların uzanışı",
+      "İklim",
+      "Nüfus",
+      "Denizlerin etkisi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Dağlar doğu–batı uzanır."
+  },
+  {
+    "konu": "Ticaret",
+    "soru": "Türkiye’nin dış ticaretinde deniz yolunun tercih edilmesinin temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ucuz ve taşıma kapasitesinin yüksek olması",
+      "Hızlı olması",
+      "Her yere ulaşması",
+      "İklimden etkilenmemesi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Deniz yolu ucuzdur ve çok yük taşır."
+  },
+  {
+    "konu": "Turizm",
+    "soru": "Türkiye’de turizmin dört mevsime yayılmasında aşağıdakilerden hangisi en etkilidir?",
+    "secenekler": [
+      "Nüfus yoğunluğu",
+      "İklim ve yer şekilleri çeşitliliği",
+      "Sanayi gelişmişliği",
+      "Ulaşım maliyeti"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Farklı iklim ve doğal özellikler turizmi çeşitlendirir."
+  },
+  {
+    "konu": "Doğal Afetler",
+    "soru": "Türkiye’de depremlerin sık görülmesinin temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İklim özellikleri",
+      "Yer şekilleri",
+      "Levha sınırlarında yer alması",
+      "Yükseltinin fazla olması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Türkiye aktif fay hatları üzerindedir."
+  },
+  {
+    "konu": "Çevre Sorunları",
+    "soru": "Türkiye’de erozyonun yaygın olmasının temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Bitki örtüsünün tahrip edilmesi",
+      "Nüfusun az olması",
+      "Yağışın düzenli olması",
+      "Deniz etkisi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bitki örtüsü toprağı tutar."
+  },
+  {
+    "konu": "Genel Değerlendirme",
+    "soru": "Türkiye coğrafyasının genel özellikleri birlikte değerlendirildiğinde aşağıdakilerden hangisine ulaşılabilir?",
+    "secenekler": [
+      "Tek tip iklim görülür",
+      "Doğal çeşitlilik fazladır",
+      "Yer şekilleri sadedir",
+      "Tarım sınırlıdır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye doğal çeşitlilik açısından zengindir."
+  }
+]

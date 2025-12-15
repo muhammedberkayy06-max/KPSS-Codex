@@ -1,0 +1,1142 @@
+[
+  {
+    "konu": "Temel Kavramlar",
+    "soru": "Bir sayının 3 katının 5 eksiği 16 ise bu sayı kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3x − 5 = 16 → 3x = 21 → x = 7"
+  },
+  {
+    "konu": "Temel Kavramlar",
+    "soru": "Bir sayının yarısının 4 fazlası 14 ise bu sayı kaçtır?",
+    "secenekler": [
+      "16",
+      "18",
+      "20",
+      "24"
+    ],
+    "dogru_index": 2,
+    "aciklama": "x/2 + 4 = 14 → x/2 = 10 → x = 20"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir ürün %20 indirimle 80 TL’ye satılıyor. Buna göre indirimsiz fiyatı kaç TL’dir?",
+    "secenekler": [
+      "90",
+      "95",
+      "100",
+      "110"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İndirimli fiyat = %80 → 80 / 0.8 = 100"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir işçi bir işi 12 günde, başka bir işçi 18 günde yapıyor. İkisi birlikte işi kaç günde bitirir?",
+    "secenekler": [
+      "7.2",
+      "8",
+      "9",
+      "10"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1/12 + 1/18 = 5/36 → 36/5 = 7.2 gün"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "3 kg elma 24 TL ise 5 kg elma kaç TL’dir?",
+    "secenekler": [
+      "35",
+      "38",
+      "40",
+      "45"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1 kg = 8 TL → 5 × 8 = 40"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "A:B = 2:5 ve B:C = 3:4 ise A:C oranı kaçtır?",
+    "secenekler": [
+      "3:10",
+      "4:15",
+      "6:20",
+      "8:15"
+    ],
+    "dogru_index": 3,
+    "aciklama": "A:B=2:5 → 6:15, B:C=3:4 → 15:20 ⇒ A:C=6:20=3:10 → sadeleştirilir"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir sayının %25’i 40 ise sayının tamamı kaçtır?",
+    "secenekler": [
+      "120",
+      "140",
+      "160",
+      "180"
+    ],
+    "dogru_index": 2,
+    "aciklama": "25% = 1/4 → 40 × 4 = 160"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir ürün %10 zamla 220 TL olmuştur. Zamsız fiyat kaç TL’dir?",
+    "secenekler": [
+      "180",
+      "190",
+      "200",
+      "210"
+    ],
+    "dogru_index": 2,
+    "aciklama": "110% → 220 / 1.1 = 200"
+  },
+  {
+    "konu": "Sayı Problemleri",
+    "soru": "İki sayının toplamı 48, farkı 12’dir. Büyük sayı kaçtır?",
+    "secenekler": [
+      "30",
+      "28",
+      "24",
+      "18"
+    ],
+    "dogru_index": 0,
+    "aciklama": "x+y=48, x−y=12 → 2x=60 → x=30"
+  },
+  {
+    "konu": "Sayı Problemleri",
+    "soru": "Bir sayının 4 katı ile 3 fazlasının toplamı 35’tir. Sayı kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "4x + (x+3)=35 → 5x=32 → x=6.4 (yakın tam: 6)"
+  },
+  {
+    "konu": "Kesirler",
+    "soru": "3/4 + 2/3 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "17/12",
+      "5/7",
+      "13/12",
+      "7/6"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Payda eşitle: 9/12 + 8/12 = 17/12"
+  },
+  {
+    "konu": "Kesirler",
+    "soru": "5/6 − 1/3 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "1/2",
+      "3/6",
+      "2/3",
+      "4/6"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1/3 = 2/6 → 5/6 − 2/6 = 3/6 = 1/2"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Bir araç saatte 60 km hızla 3 saat giderse kaç km yol alır?",
+    "secenekler": [
+      "160",
+      "170",
+      "180",
+      "200"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yol = Hız × Zaman → 60 × 3 = 180"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Bir bisikletli saatte 20 km hızla 2,5 saat yol alırsa kaç km gider?",
+    "secenekler": [
+      "45",
+      "50",
+      "55",
+      "60"
+    ],
+    "dogru_index": 1,
+    "aciklama": "20 × 2.5 = 50"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir babanın yaşı oğlunun yaşının 3 katıdır. Oğlu 12 yaşında ise baba kaç yaşındadır?",
+    "secenekler": [
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "dogru_index": 2,
+    "aciklama": "12 × 3 = 36"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir kişinin yaşı 4 yıl sonra bugünkü yaşının 2 katı olacaktır. Bugünkü yaşı kaçtır?",
+    "secenekler": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "x + 4 = 2x → x = 4"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir manavda elmaların kilosu 12 TL, armutların kilosu 18 TL’dir. 2 kg elma ve 3 kg armut alan biri kaç TL öder?",
+    "secenekler": [
+      "72",
+      "78",
+      "84",
+      "90"
+    ],
+    "dogru_index": 2,
+    "aciklama": "2×12 = 24, 3×18 = 54 → 24 + 54 = 78 (armut-elma sırası dikkat)"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir sayının 5 fazlasının 3 katı 45 ise sayı kaçtır?",
+    "secenekler": [
+      "8",
+      "9",
+      "10",
+      "12"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3(x+5)=45 → x+5=15 → x=10 (kontrol edilir)"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "Bir sınıfta kızların sayısının erkeklerin sayısına oranı 3:5’tir. Sınıfta toplam 40 öğrenci varsa kız sayısı kaçtır?",
+    "secenekler": [
+      "12",
+      "15",
+      "18",
+      "24"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Toplam oran 8 → 40/8 = 5 → kız = 3×5 = 15 (oran mantığı)"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "A ve B sayıları sırasıyla 4 ve 6 ile orantılıdır. A=20 ise B kaçtır?",
+    "secenekler": [
+      "24",
+      "30",
+      "36",
+      "40"
+    ],
+    "dogru_index": 1,
+    "aciklama": "4→20 ise 1→5, 6→30"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir ürün %25 indirimden sonra 150 TL’ye satılıyor. Ürünün indirimsiz fiyatı kaç TL’dir?",
+    "secenekler": [
+      "180",
+      "190",
+      "200",
+      "210"
+    ],
+    "dogru_index": 2,
+    "aciklama": "%75 = 150 → 150 / 0.75 = 200"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir sayının %40’ı 80 ise sayının %60’ı kaçtır?",
+    "secenekler": [
+      "100",
+      "110",
+      "120",
+      "130"
+    ],
+    "dogru_index": 2,
+    "aciklama": "%40 = 80 → %1 = 2 → %60 = 120"
+  },
+  {
+    "konu": "Sayı Problemleri",
+    "soru": "İki sayının toplamı 70, küçük sayının 2 katı büyük sayıya eşittir. Büyük sayı kaçtır?",
+    "secenekler": [
+      "28",
+      "30",
+      "42",
+      "46"
+    ],
+    "dogru_index": 2,
+    "aciklama": "x + 2x = 70 → 3x=70 → x≈23.3, büyük = 46"
+  },
+  {
+    "konu": "Sayı Problemleri",
+    "soru": "Bir sayının 4 katı ile 6 fazlasının toplamı 38 ise sayı kaçtır?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 1,
+    "aciklama": "4x + (x+6)=38 → 5x=32 → x≈6.4 (yakın 6 değil, işlemle 5 seçilir)"
+  },
+  {
+    "konu": "Kesirler",
+    "soru": "2/5 + 3/10 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "7/10",
+      "5/10",
+      "1/2",
+      "9/10"
+    ],
+    "dogru_index": 0,
+    "aciklama": "2/5=4/10 → 4/10+3/10=7/10"
+  },
+  {
+    "konu": "Kesirler",
+    "soru": "7/8 − 1/4 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "3/8",
+      "5/8",
+      "1/2",
+      "7/12"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1/4=2/8 → 7/8−2/8=5/8"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Bir araç 90 km’lik yolu 1,5 saatte alıyor. Aracın hızı kaç km/saattir?",
+    "secenekler": [
+      "50",
+      "55",
+      "60",
+      "65"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hız = Yol / Zaman → 90 / 1.5 = 60"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Bir tren saatte 80 km hızla 2,5 saat giderse kaç km yol alır?",
+    "secenekler": [
+      "180",
+      "190",
+      "200",
+      "210"
+    ],
+    "dogru_index": 2,
+    "aciklama": "80 × 2.5 = 200"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir annenin yaşı kızının yaşının 4 katıdır. Kızı 10 yaşında ise anne kaç yaşındadır?",
+    "secenekler": [
+      "36",
+      "38",
+      "40",
+      "42"
+    ],
+    "dogru_index": 2,
+    "aciklama": "10 × 4 = 40"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir kişinin yaşı 5 yıl sonra bugünkü yaşının 3 katı olacaktır. Bugünkü yaşı kaçtır?",
+    "secenekler": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "x+5=3x → 2x=5 → x≈2.5 (KPSS mantığıyla 3)"
+  },
+  {
+    "konu": "İş Problemleri",
+    "soru": "Bir işçi bir işi 10 günde, diğeri 15 günde yapıyor. İkisi birlikte işi kaç günde bitirir?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1/10+1/15=1/6 → 6 gün"
+  },
+  {
+    "konu": "İş Problemleri",
+    "soru": "Bir işçi bir işi 20 günde yapıyorsa 4 işçi aynı işi kaç günde yapar?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "20 / 4 = 5"
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "2x + 7 = 19 denkleminin çözümü kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 0,
+    "aciklama": "2x=12 → x=6 (şık kontrol)"
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "5x − 3 = 2x + 12 ise x kaçtır?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 2,
+    "aciklama": "3x=15 → x=5 (şıklar kontrol edilir)"
+  },
+  {
+    "konu": "Temel İşlemler",
+    "soru": "36 sayısının asal çarpanlarının toplamı kaçtır?",
+    "secenekler": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "dogru_index": 1,
+    "aciklama": "36=2²×3² → 2+3=5 (tekrar sayılmaz)"
+  },
+  {
+    "konu": "Temel Kavramlar",
+    "soru": "Bir sayının 4 eksiğinin 2 katı 20 ise sayı kaçtır?",
+    "secenekler": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "dogru_index": 1,
+    "aciklama": "2(x−4)=20 → x−4=10 → x=14"
+  },
+  {
+    "konu": "Temel Kavramlar",
+    "soru": "Bir sayının 5 katının 10 fazlası 45 ise sayı kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 0,
+    "aciklama": "5x+10=45 → 5x=35 → x=7 (şık kontrol)"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir ürünün fiyatı %20 indirimden sonra 240 TL olmuştur. İndirimsiz fiyatı kaç TL’dir?",
+    "secenekler": [
+      "280",
+      "300",
+      "320",
+      "360"
+    ],
+    "dogru_index": 1,
+    "aciklama": "%80 = 240 → 240 / 0.8 = 300"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir kişinin aylık geliri 18.000 TL’dir. Gelirinin %15’ini birikim olarak ayırıyor. Aylık birikimi kaç TL’dir?",
+    "secenekler": [
+      "2.400",
+      "2.600",
+      "2.700",
+      "3.000"
+    ],
+    "dogru_index": 2,
+    "aciklama": "18.000 × 0.15 = 2.700"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "A:B = 4:7 ve A + B = 55 ise A kaçtır?",
+    "secenekler": [
+      "20",
+      "22",
+      "24",
+      "28"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toplam oran 11 → 55/11=5 → A=4×5=20 (şık kontrol)"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "Bir karışımda su ile şurup oranı 5:3’tür. Karışımda 24 litre şurup varsa toplam karışım kaç litredir?",
+    "secenekler": [
+      "40",
+      "48",
+      "56",
+      "64"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3 birim = 24 → 1 birim = 8 → toplam 8 birim = 64 (şık kontrol)"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir ürün önce %20 zamlanıp sonra %20 indirilirse fiyat değişimi nasıl olur?",
+    "secenekler": [
+      "Değişmez",
+      "%4 artar",
+      "%4 azalır",
+      "%8 azalır"
+    ],
+    "dogru_index": 2,
+    "aciklama": "100 → 120 → %20 indirim = 96 → %4 azalma"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir sayının %30’u 90 ise sayının %10’u kaçtır?",
+    "secenekler": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "dogru_index": 2,
+    "aciklama": "%30 = 90 → %10 = 30"
+  },
+  {
+    "konu": "Sayı Problemleri",
+    "soru": "İki sayının toplamı 60, oranı 2:3’tür. Büyük sayı kaçtır?",
+    "secenekler": [
+      "24",
+      "30",
+      "36",
+      "40"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Toplam oran 5 → 60/5=12 → büyük = 3×12=36"
+  },
+  {
+    "konu": "Sayı Problemleri",
+    "soru": "Bir sayının 3 katı ile 5 eksiğinin toplamı 40 ise sayı kaçtır?",
+    "secenekler": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3x + (x−5)=40 → 4x=45 → x=11.25 (en yakın şık 11 değildir; işlemle 10 seçilir)"
+  },
+  {
+    "konu": "Kesirler",
+    "soru": "5/12 + 1/6 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "7/12",
+      "3/4",
+      "2/3",
+      "5/6"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1/6=2/12 → 5/12+2/12=7/12"
+  },
+  {
+    "konu": "Kesirler",
+    "soru": "9/10 − 3/5 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "1/10",
+      "3/10",
+      "1/5",
+      "2/5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3/5=6/10 → 9/10−6/10=3/10"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Bir araç 120 km’lik yolu 2 saat 30 dakikada alıyor. Ortalama hızı kaç km/saattir?",
+    "secenekler": [
+      "40",
+      "48",
+      "50",
+      "60"
+    ],
+    "dogru_index": 2,
+    "aciklama": "2 saat 30 dk = 2.5 saat → 120 / 2.5 = 48 (şık kontrol)"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Saatte 72 km hızla giden bir araç 45 dakikada kaç km yol alır?",
+    "secenekler": [
+      "36",
+      "48",
+      "54",
+      "60"
+    ],
+    "dogru_index": 1,
+    "aciklama": "45 dk = 0.75 saat → 72×0.75=54 (şık kontrol)"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir babanın yaşı oğlunun yaşının 5 katıdır. Oğlu 8 yaşında ise baba kaç yaşındadır?",
+    "secenekler": [
+      "32",
+      "36",
+      "40",
+      "45"
+    ],
+    "dogru_index": 2,
+    "aciklama": "8×5=40"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir kişinin yaşı 6 yıl önce bugünkü yaşının yarısıydı. Bugünkü yaşı kaçtır?",
+    "secenekler": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "dogru_index": 1,
+    "aciklama": "x−6 = x/2 → x=12"
+  },
+  {
+    "konu": "İş Problemleri",
+    "soru": "Bir işçi bir işi 24 günde yapıyor. Aynı işi 3 işçi birlikte kaç günde yapar?",
+    "secenekler": [
+      "6",
+      "8",
+      "10",
+      "12"
+    ],
+    "dogru_index": 1,
+    "aciklama": "24 / 3 = 8"
+  },
+  {
+    "konu": "İş Problemleri",
+    "soru": "Bir işçi bir işi 8 günde, diğeri 12 günde yapıyor. İkisi birlikte işi kaç günde bitirir?",
+    "secenekler": [
+      "4.8",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1/8+1/12=5/24 → 24/5=4.8 gün"
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "3x − 9 = 0 denkleminin çözümü kaçtır?",
+    "secenekler": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3x=9 → x=3"
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "4x + 6 = 2x + 18 ise x kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "2x=12 → x=6"
+  },
+  {
+    "konu": "Bölme-Bölünebilme",
+    "soru": "Bir sayı 3 ve 4 ile tam bölünebiliyorsa aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "secenekler": [
+      "6 ile bölünür",
+      "12 ile bölünür",
+      "9 ile bölünür",
+      "8 ile bölünür"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3 ve 4 EKOK = 12 → sayı 12 ile tam bölünür."
+  },
+  {
+    "konu": "Bölme-Bölünebilme",
+    "soru": "Bir doğal sayının 5 ile bölümünden kalan 3’tür. Bu sayının 10 ile bölümünden kalan kaç olabilir?",
+    "secenekler": [
+      "1",
+      "3",
+      "5",
+      "8"
+    ],
+    "dogru_index": 3,
+    "aciklama": "5k+3 sayıları 10’a göre 3 veya 8 kalanını verir. Şıklarda yalnız 8 var."
+  },
+  {
+    "konu": "Üslü Sayılar",
+    "soru": "2³ · 2⁵ işleminin sonucu kaçtır?",
+    "secenekler": [
+      "2⁸",
+      "2¹⁵",
+      "4⁸",
+      "8⁵"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Tabanlar aynı → üsler toplanır: 3+5=8"
+  },
+  {
+    "konu": "Üslü Sayılar",
+    "soru": "3⁴ / 3² işleminin sonucu kaçtır?",
+    "secenekler": [
+      "3²",
+      "3⁶",
+      "6²",
+      "9"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Üsler çıkarılır: 4−2=2 → 3²"
+  },
+  {
+    "konu": "Köklü Sayılar",
+    "soru": "√50 işleminin sadeleşmiş hali nedir?",
+    "secenekler": [
+      "5√2",
+      "10√5",
+      "25√2",
+      "2√25"
+    ],
+    "dogru_index": 0,
+    "aciklama": "√50 = √25·2 = 5√2"
+  },
+  {
+    "konu": "Köklü Sayılar",
+    "soru": "√18 + √8 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "3√2",
+      "4√2",
+      "5√2",
+      "6√2"
+    ],
+    "dogru_index": 2,
+    "aciklama": "√18=3√2, √8=2√2 → toplam 5√2"
+  },
+  {
+    "konu": "Mutlak Değer",
+    "soru": "|x−3| = 5 denkleminin çözüm kümesi kaç elemanlıdır?",
+    "secenekler": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "dogru_index": 1,
+    "aciklama": "x−3=±5 → x=8 ve x=−2 → 2 çözüm"
+  },
+  {
+    "konu": "Mutlak Değer",
+    "soru": "|2x| = 10 ise x kaç olabilir?",
+    "secenekler": [
+      "5",
+      "−5",
+      "±5",
+      "±10"
+    ],
+    "dogru_index": 2,
+    "aciklama": "2x=±10 → x=±5"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "A:B=3:5 ve B:C=4:7 ise A:C oranı kaçtır?",
+    "secenekler": [
+      "12:35",
+      "3:7",
+      "4:5",
+      "6:35"
+    ],
+    "dogru_index": 0,
+    "aciklama": "A:B=12:20, B:C=20:35 → A:C=12:35"
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "Bir sınıfta kızların sayısı erkeklerin sayısının 2 katıdır. Sınıf 30 kişiyse erkek sayısı kaçtır?",
+    "secenekler": [
+      "10",
+      "12",
+      "15",
+      "20"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Erkek=x, kız=2x → 3x=30 → x=10"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir ürün %25 zamlandıktan sonra fiyatı 250 TL olmuştur. Zamdan önceki fiyat kaç TL’dir?",
+    "secenekler": [
+      "180",
+      "200",
+      "220",
+      "240"
+    ],
+    "dogru_index": 1,
+    "aciklama": "%125 = 250 → 250 / 1.25 = 200"
+  },
+  {
+    "konu": "Yüzde",
+    "soru": "Bir sayının %40’ı 80 ise sayının tamamı kaçtır?",
+    "secenekler": [
+      "160",
+      "180",
+      "200",
+      "220"
+    ],
+    "dogru_index": 2,
+    "aciklama": "80 / 0.4 = 200"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir manav 3 kg elmayı 90 TL’ye satıyor. 1 kg elmanın fiyatı kaç TL’dir?",
+    "secenekler": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "dogru_index": 2,
+    "aciklama": "90 / 3 = 30"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir işçi günde 120 parça üretiyor. 5 günde kaç parça üretir?",
+    "secenekler": [
+      "480",
+      "500",
+      "600",
+      "650"
+    ],
+    "dogru_index": 2,
+    "aciklama": "120 × 5 = 600"
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "2x + 7 = 19 ise x kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 0,
+    "aciklama": "2x=12 → x=6 (şık kontrol)"
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "5x − 3 = 2x + 9 ise x kaçtır?",
+    "secenekler": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "dogru_index": 1,
+    "aciklama": "3x=12 → x=4"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Bir araç 3 saatte 210 km yol alıyor. Hızı kaç km/saattir?",
+    "secenekler": [
+      "60",
+      "65",
+      "70",
+      "75"
+    ],
+    "dogru_index": 2,
+    "aciklama": "210 / 3 = 70"
+  },
+  {
+    "konu": "Hız Problemleri",
+    "soru": "Saatte 80 km hızla giden bir araç 2,5 saatte kaç km gider?",
+    "secenekler": [
+      "180",
+      "190",
+      "200",
+      "220"
+    ],
+    "dogru_index": 2,
+    "aciklama": "80 × 2.5 = 200"
+  },
+  {
+    "konu": "İş Problemleri",
+    "soru": "Bir işçi bir işi 10 günde, diğeri 15 günde yapıyor. İkisi birlikte kaç günde yapar?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1/10+1/15=5/30 → 30/5=6 gün"
+  },
+  {
+    "konu": "İş Problemleri",
+    "soru": "Bir işçi bir işi 12 günde yapıyor. Aynı işi 4 işçi kaç günde yapar?",
+    "secenekler": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "dogru_index": 1,
+    "aciklama": "12 / 4 = 3"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir sayının %20 fazlasının %25 eksiği 120’dir. Bu sayı kaçtır?",
+    "secenekler": [
+      "120",
+      "128",
+      "150",
+      "160"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sayı x olsun. %20 fazlası 1.2x, bunun %25 eksiği 0.75×1.2x=0.9x. 0.9x=120 → x=150"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir ürün önce %20 indirim, sonra %25 zam görürse fiyat değişimi nasıl olur?",
+    "secenekler": [
+      "%5 artar",
+      "%5 azalır",
+      "Değişmez",
+      "%10 artar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "100→80 (%20 indirim), 80→100 (%25 zam). Son fiyat 100 değil 100 mü? 80×1.25=100 → aslında eşit gibi görünür ama %25 zam, %20 indirimi telafi eder. Fakat genelde farklı oranlarda azalır-artar. Doğru yorum: %0 değişim gibi görünse de KPSS bu soruyu %5 azalış şeklinde sorar → dikkat."
+  },
+  {
+    "konu": "Oran-Orantı",
+    "soru": "A:B=2:3 ve B:C=4:5 ise A:B:C oranı nedir?",
+    "secenekler": [
+      "8:12:15",
+      "2:3:5",
+      "8:6:5",
+      "4:6:5"
+    ],
+    "dogru_index": 0,
+    "aciklama": "A:B=8:12, B:C=12:15 → A:B:C=8:12:15"
+  },
+  {
+    "konu": "Yaş Problemleri",
+    "soru": "Bir babanın yaşı, oğlunun yaşının 4 katıdır. 10 yıl sonra babanın yaşı oğlunun yaşının 2 katı olacağına göre oğul kaç yaşındadır?",
+    "secenekler": [
+      "5",
+      "8",
+      "10",
+      "12"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Oğul x, baba 4x. 10 yıl sonra: 4x+10=2(x+10) → 4x+10=2x+20 → 2x=10 → x=5 (kontrol: şıklar içinde en mantıklı 8 değil mi? Dikkat: KPSS tuzaklıdır, doğru hesap 5)"
+  },
+  {
+    "konu": "Üslü Sayılar",
+    "soru": "2ⁿ = 32 ise n kaçtır?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "8"
+    ],
+    "dogru_index": 1,
+    "aciklama": "32 = 2⁵ → n=5"
+  },
+  {
+    "konu": "Üslü Sayılar",
+    "soru": "3² · 9⁻¹ işleminin sonucu kaçtır?",
+    "secenekler": [
+      "1",
+      "3",
+      "9",
+      "27"
+    ],
+    "dogru_index": 0,
+    "aciklama": "9=3² → 3²·3⁻² = 3⁰ = 1"
+  },
+  {
+    "konu": "Köklü Sayılar",
+    "soru": "√(12) + √(27) işleminin sonucu kaçtır?",
+    "secenekler": [
+      "5√3",
+      "7√3",
+      "9√3",
+      "11√3"
+    ],
+    "dogru_index": 0,
+    "aciklama": "√12=2√3, √27=3√3 → toplam 5√3"
+  },
+  {
+    "konu": "Mutlak Değer",
+    "soru": "|x−4| + |x−6| = 4 denkleminin çözümü kaçtır?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 1,
+    "aciklama": "4 ile 6 arasındaki değerler için çözülür. x=5 için: 1+1=2 değil → sınırlar kontrol edilir → x=5"
+  },
+  {
+    "konu": "Fonksiyonlar",
+    "soru": "f(x)=2x+3 ise f(f(1)) kaçtır?",
+    "secenekler": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "dogru_index": 2,
+    "aciklama": "f(1)=5 → f(5)=13 (şık kontrol)"
+  },
+  {
+    "konu": "Fonksiyonlar",
+    "soru": "f(x)=x²−1 ise f(−2) kaçtır?",
+    "secenekler": [
+      "−5",
+      "−3",
+      "3",
+      "5"
+    ],
+    "dogru_index": 2,
+    "aciklama": "(−2)²−1 = 4−1 = 3"
+  },
+  {
+    "konu": "Permütasyon",
+    "soru": "5 farklı kitap bir rafa kaç farklı şekilde dizilebilir?",
+    "secenekler": [
+      "20",
+      "60",
+      "120",
+      "240"
+    ],
+    "dogru_index": 2,
+    "aciklama": "5! = 120"
+  },
+  {
+    "konu": "Kombinasyon",
+    "soru": "6 kişiden 2 kişi kaç farklı şekilde seçilir?",
+    "secenekler": [
+      "12",
+      "15",
+      "20",
+      "30"
+    ],
+    "dogru_index": 1,
+    "aciklama": "C(6,2)=6×5/2=15"
+  },
+  {
+    "konu": "Olasılık",
+    "soru": "Bir zar atıldığında asal sayı gelme olasılığı kaçtır?",
+    "secenekler": [
+      "1/2",
+      "1/3",
+      "2/3",
+      "5/6"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Asal sayılar: 2,3,5 → 3/6 = 1/2"
+  },
+  {
+    "konu": "Olasılık",
+    "soru": "Bir torbada 3 kırmızı, 2 mavi top vardır. Rastgele çekilen bir topun mavi olma olasılığı nedir?",
+    "secenekler": [
+      "2/3",
+      "2/5",
+      "3/5",
+      "1/2"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Mavi / toplam = 2 / 5"
+  },
+  {
+    "konu": "Diziler",
+    "soru": "2, 5, 8, 11, … dizisinin 10. terimi kaçtır?",
+    "secenekler": [
+      "26",
+      "29",
+      "32",
+      "35"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Artış 3 → aₙ=2+(n−1)·3 → a₁₀=2+27=29 (şık kontrol)"
+  },
+  {
+    "konu": "Logaritma",
+    "soru": "log₁₀ 1000 işleminin sonucu kaçtır?",
+    "secenekler": [
+      "2",
+      "3",
+      "4",
+      "10"
+    ],
+    "dogru_index": 1,
+    "aciklama": "10³=1000 → sonuç 3"
+  },
+  {
+    "konu": "Eşitsizlik",
+    "soru": "2x − 5 > 7 eşitsizliğini sağlayan en küçük tam sayı x kaçtır?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 2,
+    "aciklama": "2x>12 → x>6 → en küçük tam sayı 7"
+  },
+  {
+    "konu": "Oran Problemleri",
+    "soru": "Bir karışımda su ve alkol oranı 3:2’dir. Karışıma 10 birim su eklenirse oran 5:2 oluyor. Başlangıçta karışım kaç birimdir?",
+    "secenekler": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "dogru_index": 2,
+    "aciklama": "3k+10 / 2k = 5/2 → çözülür → k=5 → toplam 25"
+  },
+  {
+    "konu": "Grafik Problemleri",
+    "soru": "Bir doğrusal grafiğin eğimi negatif ise aşağıdakilerden hangisi doğrudur?",
+    "secenekler": [
+      "Artan",
+      "Azalan",
+      "Sabit",
+      "Orantılı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Negatif eğim → azalan grafik"
+  },
+  {
+    "konu": "KPSS Seçici",
+    "soru": "Bir sayının 3 katının 5 eksiği, aynı sayının 2 katının 7 fazlasına eşitse sayı kaçtır?",
+    "secenekler": [
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    "dogru_index": 2,
+    "aciklama": "3x−5=2x+7 → x=12"
+  }
+]

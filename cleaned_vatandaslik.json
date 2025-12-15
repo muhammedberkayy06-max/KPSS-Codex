@@ -1,0 +1,950 @@
+[
+  {
+    "konu": "Anayasanın Temel Nitelikleri",
+    "soru": "Türkiye Cumhuriyeti’nin nitelikleri aşağıdaki anayasa maddelerinin hangisinde düzenlenmiştir?",
+    "secenekler": [
+      "Madde 1",
+      "Madde 2",
+      "Madde 3",
+      "Madde 4"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletin nitelikleri Anayasa’nın 2. maddesinde yer alır."
+  },
+  {
+    "konu": "Devlet Şekli",
+    "soru": "Türkiye Devleti’nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Teokrasi",
+      "Oligarşi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa Madde 1: Türkiye Devleti bir Cumhuriyettir."
+  },
+  {
+    "konu": "Devletin Bütünlüğü",
+    "soru": "Türkiye Devleti, ülkesi ve milletiyle bölünmez bir bütündür ifadesi aşağıdakilerden hangisini vurgular?",
+    "secenekler": [
+      "Üniter devlet yapısını",
+      "Federal sistemi",
+      "Yerinden yönetimi",
+      "Çoğulculuğu"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bu ifade üniter devlet anlayışını belirtir."
+  },
+  {
+    "konu": "Değiştirilemez Hükümler",
+    "soru": "Aşağıdakilerden hangisi Anayasa’ya göre değiştirilemez ve değiştirilmesi teklif dahi edilemez?",
+    "secenekler": [
+      "Devletin başkentinin Ankara olması",
+      "Devletin laik olması",
+      "Resmî dilin Türkçe olması",
+      "Devlet şeklinin Cumhuriyet olması"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Devlet şeklinin Cumhuriyet olması Madde 1 ve Madde 4 kapsamında değiştirilemez."
+  },
+  {
+    "konu": "Egemenlik",
+    "soru": "Egemenliğin kayıtsız şartsız millete ait olması ilkesi aşağıdakilerden hangisinin göstergesidir?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Kuvvetler ayrılığı",
+      "Hukuk devleti",
+      "Sosyal devlet"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Egemenliğin millete ait olması milli egemenlik ilkesidir."
+  },
+  {
+    "konu": "Atatürk Milliyetçiliği",
+    "soru": "Atatürk milliyetçiliği aşağıdakilerden hangisine dayanır?",
+    "secenekler": [
+      "Irk esasına",
+      "Din esasına",
+      "Kültür ve vatandaşlık bağına",
+      "Soy birliğine"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Atatürk milliyetçiliği vatandaşlık bağına dayanır."
+  },
+  {
+    "konu": "Laiklik",
+    "soru": "Laiklik ilkesinin temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Din işlerinin devlet işlerine karışmasını sağlamak",
+      "Devletin resmi bir dininin olması",
+      "Din ve devlet işlerini birbirinden ayırmak",
+      "Dini kuralları hukuk kaynağı yapmak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Laiklik, din ve devlet işlerinin ayrılmasını ifade eder."
+  },
+  {
+    "konu": "Hukuk Devleti",
+    "soru": "Aşağıdakilerden hangisi hukuk devleti ilkesinin bir sonucudur?",
+    "secenekler": [
+      "Kanunsuz suç ve ceza olmaz",
+      "Devletin sosyal yardımları artırması",
+      "Egemenliğin millete ait olması",
+      "Din özgürlüğünün sınırsız olması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kanunilik ilkesi hukuk devletinin temel unsurudur."
+  },
+  {
+    "konu": "Sosyal Devlet",
+    "soru": "Sosyal devlet ilkesinin temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Devletin ekonomiye hiç karışmaması",
+      "Toplumsal adaleti sağlamak",
+      "Serbest piyasa ekonomisini kaldırmak",
+      "Devletin sadece güvenliği sağlaması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal devlet sosyal adalet ve refahı amaçlar."
+  },
+  {
+    "konu": "Demokratik Devlet",
+    "soru": "Aşağıdakilerden hangisi demokratik devletin bir özelliğidir?",
+    "secenekler": [
+      "Seçimlerin tek adayla yapılması",
+      "Çoğulcu siyasal yapı",
+      "Egemenliğin belli bir zümreye ait olması",
+      "Basının devlet kontrolünde olması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Demokrasi çoğulculuğu esas alır."
+  },
+  {
+    "konu": "Cumhuriyetin Nitelikleri",
+    "soru": "Aşağıdakilerden hangisi Türkiye Cumhuriyeti’nin nitelikleri arasında yer almaz?",
+    "secenekler": [
+      "Sosyal",
+      "Laik",
+      "Federal",
+      "Hukuk devleti"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Türkiye üniter devlettir, federal değildir."
+  },
+  {
+    "konu": "Başlangıç Hükümleri",
+    "soru": "Anayasa’nın Başlangıç kısmı aşağıdakilerden hangisiyle ilgilidir?",
+    "secenekler": [
+      "Devletin idari teşkilatı",
+      "Temel ilke ve değerler",
+      "Yargı organları",
+      "Seçim sistemi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Başlangıç kısmı anayasanın temel felsefesini ortaya koyar."
+  },
+  {
+    "konu": "Anayasanın Bağlayıcılığı",
+    "soru": "Anayasa hükümleri aşağıdakilerden hangisini bağlar?",
+    "secenekler": [
+      "Yalnızca yasama organını",
+      "Yalnızca yürütme organını",
+      "Yasama, yürütme ve yargıyı",
+      "Sadece vatandaşları"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasa tüm devlet organlarını bağlar."
+  },
+  {
+    "konu": "Resmî Dil",
+    "soru": "Türkiye Devleti’nin resmî dili aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Türkçe",
+      "Osmanlıca",
+      "Arapça",
+      "Kürtçe"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Anayasa Madde 3: Resmî dil Türkçedir."
+  },
+  {
+    "konu": "Başkent",
+    "soru": "Türkiye Cumhuriyeti’nin başkenti aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İstanbul",
+      "Ankara",
+      "İzmir",
+      "Bursa"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa Madde 3: Başkent Ankara’dır."
+  },
+  {
+    "konu": "Bayrak",
+    "soru": "Türk bayrağı ile ilgili esaslar aşağıdakilerden hangisiyle belirlenmiştir?",
+    "secenekler": [
+      "Anayasa",
+      "Kanun",
+      "Cumhurbaşkanlığı kararnamesi",
+      "Yönetmelik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bayrak kanunla düzenlenmiştir."
+  },
+  {
+    "konu": "Milli Marş",
+    "soru": "Türkiye Cumhuriyeti’nin milli marşı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Gençlik Marşı",
+      "İzmir Marşı",
+      "İstiklal Marşı",
+      "Onuncu Yıl Marşı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasa Madde 3: Milli marş İstiklal Marşı’dır."
+  },
+  {
+    "konu": "Anayasanın Üstünlüğü",
+    "soru": "Anayasa’ya aykırı bir kanun için aşağıdakilerden hangisi geçerlidir?",
+    "secenekler": [
+      "Uygulanmaya devam eder",
+      "Geçerliliğini korur",
+      "İptal edilebilir",
+      "Cumhurbaşkanı onaylarsa geçerli olur"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasa’ya aykırı kanunlar Anayasa Mahkemesince iptal edilir."
+  },
+  {
+    "konu": "Değiştirilemezlik",
+    "soru": "Anayasa’nın hangi maddeleri değiştirilmesi teklif dahi edilemez?",
+    "secenekler": [
+      "1, 2 ve 3",
+      "2 ve 3",
+      "1 ve 2",
+      "Sadece 1"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Madde 1, 2 ve 3; Madde 4 ile güvence altındadır."
+  },
+  {
+    "konu": "Temel Hakların Niteliği",
+    "soru": "Temel hak ve hürriyetlerin kaynağı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Devlet",
+      "Kanun",
+      "İnsan olma",
+      "Anayasa Mahkemesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Temel haklar insan olmaktan kaynaklanır."
+  },
+  {
+    "konu": "Hakların Sınırlanması",
+    "soru": "Temel hak ve özgürlükler hangi ölçüte göre sınırlanabilir?",
+    "secenekler": [
+      "Cumhurbaşkanı kararıyla",
+      "Genel ahlaka göre",
+      "Anayasanın sözüne ve ruhuna uygun olarak",
+      "Yönetmelikle"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sınırlama anayasanın sözüne ve ruhuna uygun olmalıdır."
+  },
+  {
+    "konu": "Ölçülülük",
+    "soru": "Hakların sınırlandırılmasında gerekli, elverişli ve orantılı olma şartı hangi ilkeye aittir?",
+    "secenekler": [
+      "Hukuk devleti",
+      "Ölçülülük",
+      "Laiklik",
+      "Eşitlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ölçülülük ilkesi bu üç unsuru içerir."
+  },
+  {
+    "konu": "Dokunulamayacak Haklar",
+    "soru": "Aşağıdakilerden hangisi olağanüstü hallerde dahi dokunulamayacak haklardandır?",
+    "secenekler": [
+      "Seyahat özgürlüğü",
+      "Konut dokunulmazlığı",
+      "Yaşama hakkı",
+      "Toplantı özgürlüğü"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yaşama hakkı çekirdek haklardandır."
+  },
+  {
+    "konu": "Eşitlik İlkesi",
+    "soru": "Kanun önünde eşitlik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Herkese aynı muamelenin yapılmasını",
+      "Herkese mutlak eşitlik sağlanmasını",
+      "Aynı durumda olanlara aynı işlemin uygulanmasını",
+      "Sosyal adaletin sağlanmasını"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Eşitlik, aynı durumda olanlara aynı işlemin uygulanmasıdır."
+  },
+  {
+    "konu": "Kişi Dokunulmazlığı",
+    "soru": "Aşağıdakilerden hangisi kişi dokunulmazlığı kapsamındadır?",
+    "secenekler": [
+      "Mülkiyet hakkı",
+      "Yaşama ve maddi-manevi varlık",
+      "Seçme hakkı",
+      "Çalışma hakkı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kişi dokunulmazlığı yaşama ve maddi-manevi varlığı kapsar."
+  },
+  {
+    "konu": "Zorla Çalıştırma",
+    "soru": "Aşağıdakilerden hangisi zorla çalıştırma yasağının istisnasıdır?",
+    "secenekler": [
+      "Angarya",
+      "Ceza infaz kurumlarında çalışma",
+      "Özel sektörde ücretsiz çalışma",
+      "Borç karşılığı çalışma"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hükümlülerin çalıştırılması istisnadır."
+  },
+  {
+    "konu": "Özel Hayat",
+    "soru": "Özel hayatın gizliliği hangi hak grubunda yer alır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal ve ekonomik haklar",
+      "Siyasi haklar",
+      "Çevresel haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Özel hayat kişi haklarındandır."
+  },
+  {
+    "konu": "Konut Dokunulmazlığı",
+    "soru": "Konut dokunulmazlığı hangi durumlarda sınırlandırılabilir?",
+    "secenekler": [
+      "Kanunla",
+      "Cumhurbaşkanı kararıyla",
+      "Emniyet talimatıyla",
+      "Vali izniyle"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı ancak kanunla sınırlandırılabilir."
+  },
+  {
+    "konu": "Haberleşme",
+    "soru": "Haberleşmenin gizliliği aşağıdaki hak gruplarından hangisine girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Ekonomik haklar",
+      "Kolektif haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Haberleşme gizliliği kişi haklarındandır."
+  },
+  {
+    "konu": "Yerleşme ve Seyahat",
+    "soru": "Yerleşme ve seyahat özgürlüğü hangi sebeple sınırlandırılamaz?",
+    "secenekler": [
+      "Suç soruşturması",
+      "Kamu sağlığı",
+      "Ekonomik kriz",
+      "Suç işlenmesini önleme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Ekonomik kriz sınırlandırma sebebi değildir."
+  },
+  {
+    "konu": "Din ve Vicdan",
+    "soru": "Aşağıdakilerden hangisi din ve vicdan özgürlüğünün kapsamındadır?",
+    "secenekler": [
+      "Zorla ibadet",
+      "Dini inancı açıklamaya zorlanma",
+      "İbadet etmeme hakkı",
+      "Devlet dininin belirlenmesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İbadet etmeme de özgürlük kapsamındadır."
+  },
+  {
+    "konu": "Düşünce Özgürlüğü",
+    "soru": "Düşünceyi açıklama ve yayma özgürlüğü hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Çevre hakları"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünce özgürlüğü kişi haklarındandır."
+  },
+  {
+    "konu": "Basın Özgürlüğü",
+    "soru": "Basın özgürlüğü ile ilgili aşağıdakilerden hangisi doğrudur?",
+    "secenekler": [
+      "Sansür edilebilir",
+      "Önceden izin alınır",
+      "Sansür edilemez",
+      "Yalnızca devlet basını içindir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasaya göre basın sansür edilemez."
+  },
+  {
+    "konu": "Toplantı ve Gösteri",
+    "soru": "Toplantı ve gösteri yürüyüşü hakkı hangi özelliktedir?",
+    "secenekler": [
+      "Önceden izin alma şartına bağlı",
+      "Silahlı yapılabilir",
+      "Barışçıl olmak zorundadır",
+      "Yalnızca kapalı alanlarda"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Barışçıl olması anayasal şarttır."
+  },
+  {
+    "konu": "Mülkiyet",
+    "soru": "Mülkiyet hakkı hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal ve ekonomik haklar",
+      "Siyasi haklar",
+      "Kolektif haklar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Mülkiyet sosyal ve ekonomik haktır."
+  },
+  {
+    "konu": "Çalışma Hakkı",
+    "soru": "Çalışma hakkı aşağıdakilerden hangisine örnektir?",
+    "secenekler": [
+      "Kişi hakkı",
+      "Siyasi hak",
+      "Sosyal ve ekonomik hak",
+      "Negatif statü hakkı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çalışma hakkı sosyal ve ekonomik haktır."
+  },
+  {
+    "konu": "Seçme ve Seçilme",
+    "soru": "Seçme ve seçilme hakkı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Seçme ve seçilme siyasi haktır."
+  },
+  {
+    "konu": "Vergi Ödevi",
+    "soru": "Vergi ödevi aşağıdakilerden hangisinin kapsamındadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Temel ödevler"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Vergi ödemek temel ödevdir."
+  },
+  {
+    "konu": "Hakların Kötüye Kullanılması",
+    "soru": "Temel hak ve özgürlüklerin kötüye kullanılması neyi amaçlayamaz?",
+    "secenekler": [
+      "Devletin bölünmezliğini",
+      "Demokratik düzeni",
+      "İnsan haklarını",
+      "Laik Cumhuriyeti ortadan kaldırmayı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İnsan hakları kötüye kullanılamaz."
+  },
+  {
+    "konu": "Yasama Yetkisi",
+    "soru": "Türkiye’de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Türkiye Büyük Millet Meclisi",
+      "Bakanlar Kurulu",
+      "Anayasa Mahkemesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir ve devredilemez."
+  },
+  {
+    "konu": "TBMM Yapısı",
+    "soru": "TBMM kaç milletvekilinden oluşur?",
+    "secenekler": [
+      "550",
+      "600",
+      "650",
+      "700"
+    ],
+    "dogru_index": 1,
+    "aciklama": "2018 sonrası TBMM 600 milletvekilinden oluşur."
+  },
+  {
+    "konu": "Seçim Dönemi",
+    "soru": "TBMM ve Cumhurbaşkanının görev süresi kaç yıldır?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Her ikisinin de görev süresi 5 yıldır."
+  },
+  {
+    "konu": "TBMM Görevleri",
+    "soru": "Aşağıdakilerden hangisi TBMM’nin görevlerinden biri değildir?",
+    "secenekler": [
+      "Kanun koymak",
+      "Bütçeyi kabul etmek",
+      "Cumhurbaşkanını denetlemek",
+      "Anayasa Mahkemesine üye seçmek"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Cumhurbaşkanı, Meclis tarafından denetlenmez."
+  },
+  {
+    "konu": "Meclis Başkanlığı",
+    "soru": "TBMM Başkanı kaç yıl için seçilir?",
+    "secenekler": [
+      "1",
+      "2",
+      "3",
+      "5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "TBMM Başkanı 2 yıl için seçilir."
+  },
+  {
+    "konu": "Milletvekilliği",
+    "soru": "Milletvekili seçilme yaşı kaçtır?",
+    "secenekler": [
+      "18",
+      "21",
+      "25",
+      "30"
+    ],
+    "dogru_index": 0,
+    "aciklama": "2017 değişikliğiyle seçilme yaşı 18’dir."
+  },
+  {
+    "konu": "Yasama Dokunulmazlığı",
+    "soru": "Yasama dokunulmazlığının kaldırılması kimin yetkisindedir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Yargıtay"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Dokunulmazlık TBMM kararıyla kaldırılır."
+  },
+  {
+    "konu": "Yasama Sorumsuzluğu",
+    "soru": "Yasama sorumsuzluğu aşağıdakilerden hangisini kapsar?",
+    "secenekler": [
+      "Meclis dışı konuşmaları",
+      "Oy ve sözlerinden dolayı sorumluluk",
+      "Ceza sorumluluğunu",
+      "Mal varlığı beyanını"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Milletvekilleri Meclisteki oy ve sözlerinden sorumlu tutulamaz."
+  },
+  {
+    "konu": "Cumhurbaşkanı",
+    "soru": "Cumhurbaşkanı aşağıdakilerden hangisini yapamaz?",
+    "secenekler": [
+      "Kanunları yayımlamak",
+      "TBMM’yi feshetmek",
+      "Üst kademe atamaları yapmak",
+      "Bütçe teklifini sunmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Cumhurbaşkanı Meclisi feshedemez, ancak seçimlerin yenilenmesine karar verebilir."
+  },
+  {
+    "konu": "Yürütme Yetkisi",
+    "soru": "Yürütme yetkisi ve görevi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bakanlar",
+      "Anayasa Mahkemesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanına aittir."
+  },
+  {
+    "konu": "Cumhurbaşkanlığı Kararnamesi",
+    "soru": "Cumhurbaşkanlığı kararnamesi hangi konuda çıkarılamaz?",
+    "secenekler": [
+      "Yürütmeye ilişkin konular",
+      "Temel hak ve özgürlükler",
+      "Üst kademe atamaları",
+      "Kamu idaresi teşkilatı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Temel hak ve özgürlükler CBK ile düzenlenemez."
+  },
+  {
+    "konu": "Yargı Yetkisi",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız ve tarafsız mahkemeler",
+      "Adalet Bakanlığı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı yetkisi bağımsız ve tarafsız mahkemelere aittir."
+  },
+  {
+    "konu": "Yargı Bağımsızlığı",
+    "soru": "Yargı bağımsızlığı aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Hakimlerin emir alması",
+      "Siyasi baskı altında karar vermesi",
+      "Anayasaya, kanuna ve hukuka uygun karar",
+      "Yürütmenin denetimi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hakimler Anayasa ve kanuna göre karar verir."
+  },
+  {
+    "konu": "Anayasa Mahkemesi",
+    "soru": "Anayasa Mahkemesi kaç üyeden oluşur?",
+    "secenekler": [
+      "11",
+      "13",
+      "15",
+      "17"
+    ],
+    "dogru_index": 2,
+    "aciklama": "AYM 15 üyeden oluşur."
+  },
+  {
+    "konu": "AYM Görevleri",
+    "soru": "Aşağıdakilerden hangisi Anayasa Mahkemesinin görevlerindendir?",
+    "secenekler": [
+      "Kanun teklifi vermek",
+      "Bireysel başvuruları incelemek",
+      "Cumhurbaşkanını denetlemek",
+      "TBMM’yi feshetmek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "AYM bireysel başvuruları inceler."
+  },
+  {
+    "konu": "Yargıtay",
+    "soru": "Yargıtay aşağıdakilerden hangisinin yüksek mahkemesidir?",
+    "secenekler": [
+      "İdari yargı",
+      "Askeri yargı",
+      "Adli yargı",
+      "Anayasal yargı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargıtay adli yargının en üst mahkemesidir."
+  },
+  {
+    "konu": "Danıştay",
+    "soru": "Danıştay hangi yargı kolunun en üst mahkemesidir?",
+    "secenekler": [
+      "Adli",
+      "İdari",
+      "Askeri",
+      "Anayasal"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Danıştay idari yargının en üst mahkemesidir."
+  },
+  {
+    "konu": "Hâkimler ve Savcılar Kurulu",
+    "soru": "Hâkimler ve Savcılar Kurulu kaç üyeden oluşur?",
+    "secenekler": [
+      "7",
+      "11",
+      "13",
+      "15"
+    ],
+    "dogru_index": 2,
+    "aciklama": "HSK 13 üyeden oluşur."
+  },
+  {
+    "konu": "HSK Görevleri",
+    "soru": "HSK’nın görev alanına giren konu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Kanun yapmak",
+      "Hakim ve savcıların atanması",
+      "Anayasa yorumu",
+      "Bütçe kabulü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "HSK atama ve disiplin işlerine bakar."
+  },
+  {
+    "konu": "Yargı Denetimi",
+    "soru": "Aşağıdakilerden hangisi yargı denetimi dışındadır?",
+    "secenekler": [
+      "İdari işlemler",
+      "Cumhurbaşkanlığı kararnameleri",
+      "Yüksek Askerî Şûra kararları",
+      "Vergi cezaları"
+    ],
+    "dogru_index": 2,
+    "aciklama": "YAŞ kararları yargı denetimi dışındadır."
+  },
+  {
+    "konu": "İdarenin Bütünlüğü",
+    "soru": "İdarenin bütünlüğü ilkesi aşağıdakilerden hangisiyle sağlanır?",
+    "secenekler": [
+      "Yerinden yönetim",
+      "Merkezden yönetim",
+      "Hiyerarşi ve idari vesayet",
+      "Kamu tüzel kişiliği"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İdarenin bütünlüğü hiyerarşi ve idari vesayetle sağlanır."
+  },
+  {
+    "konu": "Merkezden Yönetim",
+    "soru": "Merkezden yönetim ilkesinin temel özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Yetki genişliği",
+      "Hizmette yerellik",
+      "Kararların merkezden alınması",
+      "Özerklik"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Merkezden yönetimde kararlar merkezde alınır."
+  },
+  {
+    "konu": "Yerinden Yönetim",
+    "soru": "Aşağıdakilerden hangisi yerinden yönetim kuruluşudur?",
+    "secenekler": [
+      "Bakanlık",
+      "Cumhurbaşkanlığı",
+      "Belediye",
+      "Valilik"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Belediyeler yerinden yönetim kuruluşudur."
+  },
+  {
+    "konu": "İdari Vesayet",
+    "soru": "İdari vesayet aşağıdakilerden hangisi üzerinde uygulanır?",
+    "secenekler": [
+      "Merkez teşkilatı",
+      "Yerel yönetimler",
+      "Mahkemeler",
+      "TBMM"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İdari vesayet yerel yönetimler üzerinde uygulanır."
+  },
+  {
+    "konu": "Yetki Genişliği",
+    "soru": "Yetki genişliği ilkesi en çok hangi idareci için geçerlidir?",
+    "secenekler": [
+      "Kaymakam",
+      "Vali",
+      "Belediye Başkanı",
+      "Muhtar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yetki genişliği vali için geçerlidir."
+  },
+  {
+    "konu": "Kamu Tüzel Kişiliği",
+    "soru": "Aşağıdakilerden hangisi kamu tüzel kişiliğine sahiptir?",
+    "secenekler": [
+      "Dernek",
+      "Vakıf",
+      "Üniversite",
+      "Şirket"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Devlet üniversiteleri kamu tüzel kişiliğine sahiptir."
+  },
+  {
+    "konu": "İdari İşlemler",
+    "soru": "İdari işlemin unsurları arasında aşağıdakilerden hangisi yer almaz?",
+    "secenekler": [
+      "Yetki",
+      "Şekil",
+      "Sebep",
+      "Yargı"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Yargı idari işlemin unsuru değildir."
+  },
+  {
+    "konu": "İdarenin Sorumluluğu",
+    "soru": "İdarenin kusursuz sorumluluğu hangi ilkeye dayanır?",
+    "secenekler": [
+      "Hizmet kusuru",
+      "Risk ilkesi",
+      "Yetki devri",
+      "İdari vesayet"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kusursuz sorumluluk risk ilkesine dayanır."
+  },
+  {
+    "konu": "Kamu Hizmeti",
+    "soru": "Aşağıdakilerden hangisi kamu hizmetinin temel ilkelerindendir?",
+    "secenekler": [
+      "Kârlılık",
+      "Eşitlik",
+      "Rekabet",
+      "Serbestlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu hizmetlerinde eşitlik ilkesi esastır."
+  },
+  {
+    "konu": "İdari Denetim",
+    "soru": "İdarenin kendi iç denetimine ne ad verilir?",
+    "secenekler": [
+      "Yargısal denetim",
+      "Siyasal denetim",
+      "Hiyerarşik denetim",
+      "Kamuoyu denetimi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İç denetim hiyerarşik denetimdir."
+  },
+  {
+    "konu": "Cumhurbaşkanlığı Sistemi",
+    "soru": "Cumhurbaşkanlığı Hükümet Sisteminde yürütme yetkisi kime aittir?",
+    "secenekler": [
+      "Bakanlar Kurulu",
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Cumhurbaşkanı Yardımcıları"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanına aittir."
+  },
+  {
+    "konu": "Cumhurbaşkanı Yardımcıları",
+    "soru": "Cumhurbaşkanı yardımcıları kim tarafından atanır?",
+    "secenekler": [
+      "TBMM",
+      "Anayasa Mahkemesi",
+      "Cumhurbaşkanı",
+      "Yargıtay"
+    ],
+    "dogru_index": 2,
+    "aciklama": "CB yardımcıları Cumhurbaşkanı tarafından atanır."
+  },
+  {
+    "konu": "Bakanlar",
+    "soru": "Bakanlar aşağıdakilerden hangisine karşı sorumludur?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "Yargıtay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Bakanlar Cumhurbaşkanına karşı sorumludur."
+  },
+  {
+    "konu": "Seçimlerin Yenilenmesi",
+    "soru": "Cumhurbaşkanı seçimlerin yenilenmesine karar verirse ne olur?",
+    "secenekler": [
+      "Sadece CB seçimi yapılır",
+      "Sadece TBMM seçimi yapılır",
+      "Her ikisi birlikte yapılır",
+      "Hiçbiri yapılmaz"
+    ],
+    "dogru_index": 2,
+    "aciklama": "CB seçim yenilerse her iki seçim birlikte yapılır."
+  },
+  {
+    "konu": "Cumhurbaşkanının Sorumluluğu",
+    "soru": "Cumhurbaşkanının cezai sorumluluğu hangi suçlar için vardır?",
+    "secenekler": [
+      "Siyasi suçlar",
+      "Görev suçları",
+      "Her türlü suç",
+      "Yalnızca vatana ihanet"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Cumhurbaşkanı her türlü suçtan sorumludur."
+  },
+  {
+    "konu": "Olağanüstü Hal",
+    "soru": "Olağanüstü hal ilan etme yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Milli Güvenlik Kurulu",
+      "Anayasa Mahkemesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "OHAL ilan yetkisi Cumhurbaşkanına aittir."
+  },
+  {
+    "konu": "OHAL Kararnameleri",
+    "soru": "OHAL döneminde çıkarılan Cumhurbaşkanlığı kararnameleri ne zaman TBMM’ye sunulur?",
+    "secenekler": [
+      "Hiç sunulmaz",
+      "3 ay içinde",
+      "Aynı gün",
+      "Resmi Gazete’de yayımlandığı gün"
+    ],
+    "dogru_index": 3,
+    "aciklama": "OHAL CBK’ları yayımlandığı gün TBMM’ye sunulur."
+  },
+  {
+    "konu": "İdari Yargı",
+    "soru": "İdari yargının en üst mahkemesi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Yargıtay",
+      "Anayasa Mahkemesi",
+      "Danıştay",
+      "Sayıştay"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Danıştay idari yargının en üst mahkemesidir."
+  },
+  {
+    "konu": "Sayıştay",
+    "soru": "Sayıştay’ın temel görevi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Kanun yapmak",
+      "Anayasa denetimi",
+      "Kamu harcamalarını denetlemek",
+      "İdari yargı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sayıştay kamu harcamalarını denetler."
+  },
+  {
+    "konu": "İdarenin Denetlenmesi",
+    "soru": "Aşağıdakilerden hangisi idarenin yargı dışı denetim yollarındandır?",
+    "secenekler": [
+      "Danıştay",
+      "Anayasa Mahkemesi",
+      "Kamu Denetçiliği Kurumu",
+      "Yargıtay"
+    ],
+    "dogru_index": 2,
+    "aciklama": "KDK yargı dışı denetim yoludur."
+  }
+]
