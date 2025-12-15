@@ -16,6 +16,19 @@ const FILES = {
   "Uluslararası İlişkiler": "uluslararasiiliskiler.json",
 };
 
+const LESSON_ICONS = {
+  "Türkçe": "📝",
+  "Matematik": "🔢",
+  "Tarih": "📜",
+  "Coğrafya": "🗺️",
+  "Vatandaşlık": "⚖️",
+  "İktisat": "📈",
+  "Çalışma Ekonomisi": "🏭",
+  "Hukuk": "🏛️",
+  "Kamu Yönetimi": "🏢",
+  "Uluslararası İlişkiler": "🌐",
+};
+
 const GK_GY_DISTRIBUTION = {
   "Türkçe": 30,
   "Matematik": 30,
@@ -33,6 +46,40 @@ const $ = (id) => document.getElementById(id);
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
 
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
+
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
 }
@@ -40,10 +87,10 @@ function safeText(v){
 function normalizeQuestion(q){
   const konu = q.konu || q.topic || "Genel";
   const soru = q.soru || q.question || "";
-  const paragraf = (q.paragraf ?? q.paragraph) || null;
+  const paragraf = (q.paragraf !== undefined && q.paragraf !== null) ? q.paragraf : (q.paragraph || null);
 
   // --- seçenekleri normalize et: array veya {A:..,B:..} gelebilir ---
-  let optionsRaw = q.secenekler ?? q.options ?? [];
+  let optionsRaw = (q.secenekler !== undefined && q.secenekler !== null) ? q.secenekler : (q.options !== undefined && q.options !== null ? q.options : []);
   let options = [];
 
   if (Array.isArray(optionsRaw)) {
@@ -61,9 +108,15 @@ function normalizeQuestion(q){
   }
 
   // --- doğru cevabı normalize et: index veya harf gelebilir ---
-  let correct = (q.dogru_index ?? q.dogruIndex ?? q.correct_index ?? q.correctIndex ?? q.answer_index ?? q.answerIndex);
+  let correct = (q.dogru_index !== undefined && q.dogru_index !== null) ? q.dogru_index
+    : (q.dogruIndex !== undefined && q.dogruIndex !== null ? q.dogruIndex
+    : (q.correct_index !== undefined && q.correct_index !== null ? q.correct_index
+    : (q.correctIndex !== undefined && q.correctIndex !== null ? q.correctIndex
+    : (q.answer_index !== undefined && q.answer_index !== null ? q.answer_index
+    : q.answerIndex))));
   if (correct === undefined || correct === null) {
-    correct = q.dogru ?? q.correct ?? q.answer; // "A" / "B" gibi
+    const alt = (q.dogru !== undefined && q.dogru !== null) ? q.dogru : (q.correct !== undefined && q.correct !== null ? q.correct : q.answer);
+    correct = alt; // "A" / "B" gibi
   }
 
   let ci = 0;
@@ -101,7 +154,7 @@ function normalizeQuestion(q){
 
 function estimateDifficulty(q){
   // heuristic: longer prompt/paragraph and options => harder
-  const len = (q.soru?.length||0) + (q.paragraf?.length||0);
+  const len = ((q.soru && q.soru.length) || 0) + ((q.paragraf && q.paragraf.length) || 0);
   if (len < 90) return "easy";
   if (len < 170) return "medium";
   return "hard";
@@ -144,9 +197,9 @@ function saveState(s){
 
 function ensureState(){
   const s = loadState();
-  s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
-  s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
-  s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
+  if (!s.profile) s.profile = { xp:0, level:1, streak:0, badges:[], lastActive:null };
+  if (!s.history) s.history = []; // {date, lesson, mode, total, correct, topicStats}
+  if (!s.topicPerf) s.topicPerf = {}; // lesson -> topic -> {correct,total}
   return s;
 }
 
@@ -207,9 +260,26 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.classList.toggle("active", b.dataset.mode===mode);
   });
 
@@ -228,6 +298,8 @@ function setMode(mode){
     $("countInput").disabled = false;
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
+
+  syncLessonUI(mode);
 }
 
 function fillLessonSelect(){
@@ -242,6 +314,47 @@ function fillLessonSelect(){
   sel.value = App.lesson;
 }
 
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const lessonBank = (App.allBanks && App.allBanks[lesson]) ? App.allBanks[lesson] : [];
+    const count = lessonBank.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
+}
+
 // ---------- loading question banks ----------
 async function fetchJSON(path){
   const res = await fetch(path, { cache: "no-store" });
@@ -254,18 +367,21 @@ async function fetchJSON(path){
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
-  for (const [lesson, file] of Object.entries(FILES)){
-    try{
+  for (const [lesson, file] of Object.entries(FILES)) {
+    try {
       const data = await fetchJSON(file);
       banks[lesson] = data;
-    } catch (e){
+    } catch (e) {
       console.error(e);
+      const tip = "Tarayıcıda güncel olmayan dosya veya yarım kalmış bir güncelleme olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle ve ardından 🏠 Ana sayfa ile yeniden başlat.";
       setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
+      showAlert(tip);
       throw e;
     }
   }
   App.allBanks = banks;
   setNotice("Soru paketleri hazır ✅", "info");
+  syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -281,7 +397,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   };
 
   const preferWeak = (lessonName, topic) => {
-    const tp = state.topicPerf?.[lessonName]?.[topic];
+    const tp = (state.topicPerf && state.topicPerf[lessonName]) ? state.topicPerf[lessonName][topic] : undefined;
     if (!tp || tp.total < 6) return 1.0;
     const acc = tp.correct / tp.total;
     // lower accuracy => higher weight
@@ -348,7 +464,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   shuffle(out);
 
   return {
-    id: crypto.randomUUID?.() || String(Math.random()).slice(2),
+    id: (crypto && typeof crypto.randomUUID === "function" ? crypto.randomUUID() : String(Math.random()).slice(2)),
     mode,
     lesson,
     createdAt: now(),
@@ -396,7 +512,7 @@ function renderQuestion(){
 
   const opts = $("options");
   opts.innerHTML = "";
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const locked = t.answers[t.index] !== null;
 
   q.options.forEach((text, i)=>{
@@ -417,18 +533,20 @@ function renderQuestion(){
     paintOptions();
     showExplanation();
   }
+
+  typesetMath($("quizCard"));
 }
 
 function inferLesson(q){
   // We don’t store lesson inside question; use current mode mapping by reference
   // fall back to selected
-  return App.currentTest?.lesson || "Ders";
+  return (App.currentTest && App.currentTest.lesson) ? App.currentTest.lesson : "Ders";
 }
 
 function paintOptions(){
   const t = App.currentTest;
   const q = t.questions[t.index];
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const correct = q.correctIndex;
   const buttons = [...$("options").children];
 
@@ -468,14 +586,16 @@ function showExplanation(){
   const t = App.currentTest;
   const q = t.questions[t.index];
   const ans = t.answers[t.index];
-  const ok = !!ans?.correct;
+  const ok = !!(ans && ans.correct);
 
   $("explain").hidden = false;
   $("tagResult").textContent = ok ? "Doğru ✅" : "Yanlış ❌";
   $("tagResult").className = "tag " + (ok ? "ok" : "bad");
 
   const explain = q.explain || "";
-  $("explainText").textContent = explain ? explain : (ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.");
+  const fallback = ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.";
+  const html = (explain || fallback).replace(/\n/g, "<br>");
+  $("explainText").innerHTML = html;
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
@@ -483,6 +603,8 @@ function showExplanation(){
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
   }
+
+  typesetMath($("explain"));
 }
 
 function onPick(i){
@@ -498,7 +620,7 @@ function onPick(i){
   // stats
   if (ok) t.correct++;
   const topic = q.konu;
-  t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
   t.topicStats[topic].total++;
   if (ok) t.topicStats[topic].correct++;
 
@@ -544,7 +666,7 @@ function skip(){
     t.answers[t.index] = {picked:null, correct:false, skipped:true};
     const q = t.questions[t.index];
     const topic = q.konu;
-    t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
     t.topicStats[topic].total++;
   }
   next();
@@ -559,8 +681,8 @@ function finish(){
   // merge topic perf
   for (const [topic, st] of Object.entries(t.topicStats)){
     const lessonName = (t.mode === "single") ? t.lesson : "Karma";
-    state.topicPerf[lessonName] ??= {};
-    state.topicPerf[lessonName][topic] ??= {correct:0,total:0};
+    if (!state.topicPerf[lessonName]) state.topicPerf[lessonName] = {};
+    if (!state.topicPerf[lessonName][topic]) state.topicPerf[lessonName][topic] = {correct:0,total:0};
     state.topicPerf[lessonName][topic].correct += st.correct;
     state.topicPerf[lessonName][topic].total += st.total;
   }
@@ -590,7 +712,7 @@ function renderResults(){
 
   const acc = t.total ? Math.round((t.correct / t.total) * 100) : 0;
   const lvl = state.profile.level;
-  const badges = state.profile.badges?.slice(0,6).join(" · ") || "—";
+  const badges = (state.profile.badges ? state.profile.badges.slice(0,6).join(" · ") : null) || "—";
 
   $("summary").textContent = `Doğru: ${t.correct} / ${t.total}  ·  Başarı: %${acc}  ·  Seviye: ${lvl}  ·  Rozetler: ${badges}`;
 
@@ -712,7 +834,8 @@ function startVoice(){
   rec.maxAlternatives = 1;
 
   rec.onresult = (e)=>{
-    const text = (e.results?.[0]?.[0]?.transcript || "").trim();
+    const res = (e && e.results && e.results[0] && e.results[0][0]) ? e.results[0][0].transcript : "";
+    const text = (res || "").trim();
     if (!text) return;
     handleVoiceCommand(text);
   };
@@ -771,7 +894,7 @@ function handleVoiceCommand(raw){
     };
     const lesson = map[name] || "Matematik";
     setMode("single");
-    $("lessonSelect").value = lesson;
+    setLesson(lesson);
     $("countInput").value = clamp(n,5,300);
     return;
   }
@@ -803,7 +926,9 @@ async function startTest(){
   }catch{ return; }
 
   const mode = App.mode;
-  const lesson = $("lessonSelect").value;
+  // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
+  // doğrudan bu kaynaktan alarak seçim sorunlarını önlüyoruz.
+  const lesson = App.lesson;
   const count = clamp(parseInt($("countInput").value||"10",10), 5, 300);
   const goal = $("goal").value;
   const diffSel = $("difficulty").value;
@@ -848,7 +973,9 @@ function share(){
   if (navigator.share){
     navigator.share({ title:"KPSS Dijital Koç", text: msg, url: location.href }).catch(()=>{});
   } else {
-    navigator.clipboard?.writeText(msg + " " + location.href);
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(msg + " " + location.href);
+    }
     setNotice("Paylaşım metni panoya kopyalandı ✅", "info");
   }
 }
@@ -871,20 +998,21 @@ async function installPWA(){
   deferredPrompt = null;
 }
 
-function init(){
+async function init(){
   fillLessonSelect();
   setMode("single");
 
-  // mode buttons
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  // mode buttons (yalnızca mod anahtarları)
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
   });
 
-  $("lessonSelect").addEventListener("change", (e)=>{ App.lesson = e.target.value; });
+  $("lessonSelect").addEventListener("change", (e)=> setLesson(e.target.value));
 
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
+  $("btnHome").addEventListener("click", goHome);
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -898,6 +1026,7 @@ function init(){
   $("btnVoice").addEventListener("click", ()=> startVoice());
   $("btnRead").addEventListener("click", ()=> readCurrent());
   $("btnInstall").addEventListener("click", ()=> installPWA());
+  $("alertClose").addEventListener("click", ()=> showAlert(null));
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;
@@ -915,7 +1044,18 @@ function init(){
   // initial state info
   const state = ensureState();
   saveState(state);
-  setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  setNotice("Soru paketleri yükleniyor…", "info");
+
+  try {
+    await loadAllBanks();
+    syncLessonUI(App.mode);
+    setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  } catch (e) {
+    console.error(e);
+    setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
+    // UI boş kalmasın diye son kez senkronla
+    syncLessonUI(App.mode);
+  }
 }
 
 window.addEventListener("DOMContentLoaded", init);
