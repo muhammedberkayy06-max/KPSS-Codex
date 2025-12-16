@@ -380,13 +380,24 @@ async function fetchJSON(path){
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
   };
 
-  // Ana deneme
-  try {
-    const data = await fetchAndParse();
-    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-    return data.map(normalizeQuestion);
-  } catch (err) {
-    console.warn(`İlk deneme başarısız (${path}):`, err);
+    // Ana deneme
+    try {
+      const data = await fetchAndParse();
+      if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+
+      const normalized = data.map((item, idx) => {
+        try {
+          return normalizeQuestion(item);
+        } catch (e) {
+          console.warn(`Soruda hata: ${path} #${idx + 1}`, e);
+          return null;
+        }
+      }).filter(Boolean);
+
+      if (normalized.length === 0) throw new Error(`${path} içindeki kayıtlar okunamadı.`);
+      return normalized;
+    } catch (err) {
+      console.warn(`İlk deneme başarısız (${path}):`, err);
 
     // SW cache veya tarayıcı cache'inde kalan sağlam kopyayı deneyelim
     if (typeof caches !== "undefined") {
@@ -397,12 +408,17 @@ async function fetchJSON(path){
           if (cached) {
             const txt = await cached.text();
             const parsed = tryParse(txt);
-            if (Array.isArray(parsed)) {
-              console.info(`Cache'ten geri yüklendi (${key})`);
-              return parsed.map(normalizeQuestion);
+              if (Array.isArray(parsed)) {
+                console.info(`Cache'ten geri yüklendi (${key})`);
+                const normalized = parsed.map((item, idx) => {
+                  try { return normalizeQuestion(item); }
+                  catch (e) { console.warn(`Cache kaydı hatası ${path} #${idx + 1}`, e); return null; }
+                }).filter(Boolean);
+                if (normalized.length === 0) continue;
+                return normalized;
+              }
             }
-          }
-        } catch (e) {
+          } catch (e) {
           console.warn(`Cache okuma hatası (${key}):`, e);
         }
       }
@@ -444,20 +460,6 @@ async function loadAllBanks(){
   }
 
   syncLessonUI(App.mode);
-}
-
-async function purgeOldCaches(){
-  if (typeof caches === "undefined") return;
-  try {
-    const keys = await caches.keys();
-    await Promise.all(keys.map(k => {
-      if (!CACHE_KEYS.includes(k)){
-        return caches.delete(k);
-      }
-    }));
-  } catch (e) {
-    console.warn("Cache temizlenemedi", e);
-  }
 }
 
 // ---------- test builder ----------
@@ -1074,12 +1076,9 @@ async function installPWA(){
   deferredPrompt = null;
 }
 
-  async function init(){
-    fillLessonSelect();
-    setMode("single");
-
-    // eski cache'leri temizleyip yeni sürüm verilerini zorla al
-    await purgeOldCaches();
+async function init(){
+  fillLessonSelect();
+  setMode("single");
 
   // mode buttons (yalnızca mod anahtarları)
   document.querySelectorAll(".mode-btn").forEach(b=>{
