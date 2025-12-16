@@ -1,4 +1,4 @@
-// Generated embedded banks for offline fallback
+// Generated embedded banks for offline fallback (APP_VERSION v9)
 window.EMBEDDED_BANKS = {};
 window.EMBEDDED_BANKS['turkce.json'] = 
 [

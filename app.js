@@ -395,35 +395,19 @@ async function fetchJSON(path){
   const cacheKey = bare.split("?")[0];
 
   const tryParse = (txt) => {
-    const withoutBom = txt.replace(/^\uFEFF/, "");
-    const trimmed = withoutBom.trim();
-    if (!trimmed || /^[<]/.test(trimmed)) return null; // büyük ihtimalle HTML veya boş yanıt
-
-    const tryJSON = (payload) => {
-      try { return JSON.parse(payload); } catch { return null; }
-    };
-
-    const direct = tryJSON(trimmed);
-    if (direct) return direct;
-
-    // HTML/artık metin arasına gömülü JSON dizisini çekmeye çalış
-    const arrStart = trimmed.indexOf("[");
-    const arrEnd = trimmed.lastIndexOf("]");
-    if (arrStart !== -1 && arrEnd > arrStart){
-      const fragment = trimmed.slice(arrStart, arrEnd + 1);
-      const salvaged = tryJSON(fragment);
-      if (salvaged) return salvaged;
+    const clean = txt.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
+    if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
+    try {
+      return JSON.parse(clean);
+    } catch (err) {
+      try {
+        const fixed = clean.replace(/,\s*([}\]])/g, "$1");
+        return JSON.parse(fixed);
+      } catch (err2) {
+        console.warn("JSON ayrıştırma hatası:", err2?.message || err2);
+        return null;
+      }
     }
-
-    const objStart = trimmed.indexOf("{");
-    const objEnd = trimmed.lastIndexOf("}");
-    if (objStart !== -1 && objEnd > objStart){
-      const fragObj = trimmed.slice(objStart, objEnd + 1);
-      const salvagedObj = tryJSON(fragObj);
-      if (salvagedObj) return Array.isArray(salvagedObj) ? salvagedObj : [salvagedObj];
-    }
-
-    return null;
   };
 
   const tryEmbedded = () => {
