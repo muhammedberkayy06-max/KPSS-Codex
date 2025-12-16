@@ -42,7 +42,7 @@ const GK_GY_DISTRIBUTION = {
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
 
 const STORE_KEY = "kpss_ultimate_v1";
-const CACHE_KEYS = ["kpss-ultimate-static-v7", "kpss-ultimate-runtime-v7"];
+const BANK_CACHE_KEY = "kpss_ultimate_banks_v1";
 
 // ---------- small helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -192,6 +192,35 @@ function loadState(){
   try{
     return JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
   }catch{ return {}; }
+}
+
+function loadCachedBanks(){
+  try{
+    const raw = localStorage.getItem(BANK_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    const banks = {};
+    for (const [lesson, list] of Object.entries(parsed)){
+      if (Array.isArray(list)) banks[lesson] = list.map(normalizeQuestion);
+    }
+    return banks;
+  }catch(e){
+    console.warn("Banka cache okuma hatası", e);
+    return null;
+  }
+}
+
+function saveCachedBanks(banks){
+  try{
+    const out = {};
+    for (const [lesson, list] of Object.entries(banks||{})){
+      if (Array.isArray(list) && list.length){
+        out[lesson] = list.map(q=> q.raw || q);
+      }
+    }
+    localStorage.setItem(BANK_CACHE_KEY, JSON.stringify(out));
+  }catch(e){ console.warn("Banka cache yazma hatası", e); }
 }
 
 function saveState(s){
@@ -376,21 +405,14 @@ async function fetchJSON(path){
   const fetchAndParse = async (reqLabel, reqInit) => {
     const res = await fetch(reqLabel, { cache: "reload", ...reqInit });
     if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+    const ct = res.headers.get("content-type") || "";
+    if (!ct.includes("json") && !ct.includes("application")){
+      console.warn(`${path} beklenmedik içerik türü: ${ct}`);
+    }
     const rawText = await res.text();
     const parsed = tryParse(rawText);
     if (parsed) return parsed;
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
-  };
-
-  const purgeCachesFor = async () => {
-    if (typeof caches === "undefined") return;
-    const keys = await caches.keys();
-    await Promise.all(keys.map(async (k)=>{
-      const c = await caches.open(k);
-      await c.delete(versioned);
-      await c.delete(bare);
-      await c.delete(cacheKey);
-    }));
   };
 
   const restoreFromCache = async () => {
@@ -426,24 +448,23 @@ async function fetchJSON(path){
       console.warn(`İkinci deneme başarısız (${path}):`, err2);
       const cached = await restoreFromCache();
       if (cached) return cached.map(normalizeQuestion);
-      try {
-        await purgeCachesFor();
-        const data = await fetchAndParse(bare, { cache: "no-store" });
-        if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-        return data.map(normalizeQuestion);
-      } catch (err3) {
-        console.warn(`Tamamen temiz deneme başarısız (${path}):`, err3);
-        throw err3;
-      }
+      throw err2;
     }
   }
 }
 
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
-  const previous = App.allBanks || {};
-  const banks = {};
+  const cached = loadCachedBanks();
+  const banks = cached ? {...cached} : {};
   const missing = [];
+
+  // varsa önbellekten hemen ikonları doldur
+  if (Object.keys(banks).length){
+    App.allBanks = banks;
+    renderLessonIcons(App.mode);
+    syncLessonUI(App.mode);
+  }
 
   const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
     try {
@@ -451,13 +472,21 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      banks[lesson] = [];
+      // çevrimdışı/HTML yanıtı durumunda önbellekteki son sağlam kopyayı düşür
+      if (cached?.[lesson]?.length){
+        banks[lesson] = cached[lesson];
+      } else if (App.allBanks?.[lesson]?.length){
+        banks[lesson] = App.allBanks[lesson];
+      } else {
+        banks[lesson] = [];
+      }
       missing.push({ lesson, file, error: e?.message || e });
     }
   });
 
   await Promise.all(jobs);
   App.allBanks = banks;
+  saveCachedBanks(banks);
 
   renderLessonIcons(App.mode);
 
