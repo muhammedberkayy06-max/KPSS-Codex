@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v6";
+const APP_VERSION = "v7";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -42,6 +42,7 @@ const GK_GY_DISTRIBUTION = {
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
 
 const STORE_KEY = "kpss_ultimate_v1";
+const CACHE_KEYS = ["kpss-ultimate-static-v7", "kpss-ultimate-runtime-v7"];
 
 // ---------- small helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -411,20 +412,6 @@ async function fetchJSON(path){
   }
 }
 
-async function purgeOldCaches(){
-  if (!("caches" in window)) return;
-  const keep = new Set([
-    `${CACHE_PREFIX}-static-${APP_VERSION}`,
-    `${CACHE_PREFIX}-runtime-${APP_VERSION}`
-  ]);
-  const keys = await caches.keys();
-  await Promise.all(keys.map(k => {
-    if (k.startsWith(`${CACHE_PREFIX}-`) && !keep.has(k)){
-      return caches.delete(k);
-    }
-  }));
-}
-
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const previous = App.allBanks || {};
@@ -457,6 +444,20 @@ async function loadAllBanks(){
   }
 
   syncLessonUI(App.mode);
+}
+
+async function purgeOldCaches(){
+  if (typeof caches === "undefined") return;
+  try {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => {
+      if (!CACHE_KEYS.includes(k)){
+        return caches.delete(k);
+      }
+    }));
+  } catch (e) {
+    console.warn("Cache temizlenemedi", e);
+  }
 }
 
 // ---------- test builder ----------
@@ -1073,9 +1074,12 @@ async function installPWA(){
   deferredPrompt = null;
 }
 
-async function init(){
-  fillLessonSelect();
-  setMode("single");
+  async function init(){
+    fillLessonSelect();
+    setMode("single");
+
+    // eski cache'leri temizleyip yeni sürüm verilerini zorla al
+    await purgeOldCaches();
 
   // mode buttons (yalnızca mod anahtarları)
   document.querySelectorAll(".mode-btn").forEach(b=>{
