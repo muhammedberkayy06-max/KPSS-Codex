@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v17";
+const APP_VERSION = "v18";
 
 const Diagnostics = { entries: [] };
 
@@ -313,12 +313,30 @@ function appendQuestions(lesson, questions, sourceLabel, desiredCount){
   const bank = App.allBanks[lesson] || [];
   const stamped = [];
   const seen = App.fingerprints || new Set();
+  const canonicals = App.canonicals || loadCanonicalList();
+
+  const canonicalSets = canonicals.map(c=>({ text:c, set: trigramSet(c) }));
+  const similarityTooHigh = (candidate)=>{
+    const set = trigramSet(candidate);
+    for (const item of canonicalSets){
+      const sim = jaccard(set, item.set);
+      if (sim >= 0.82) return true;
+    }
+    return false;
+  };
 
   const tryAdd = (q, idx)=>{
     const base = normalizeQuestion(q);
     const fp = fingerprintQuestion(base);
     if (fp && seen.has(fp)) return false;
+    const canon = canonicalQuestionText(base);
+    if (canon && similarityTooHigh(canon)) return false;
     if (fp) seen.add(fp);
+    if (canon){
+      canonicals.push(canon);
+      if (canonicals.length > 4000) canonicals.shift();
+      canonicalSets.push({ text: canon, set: trigramSet(canon) });
+    }
     base.id = base.id || `${sourceLabel||"AI"}-${lesson}-${Date.now()}-${idx}-${Math.random().toString(36).slice(2,6)}`;
     base.kaynak = sourceLabel || base.kaynak || "AI";
     base.lesson = base.lesson || lesson;
@@ -343,6 +361,8 @@ function appendQuestions(lesson, questions, sourceLabel, desiredCount){
 
   App.fingerprints = seen;
   persistFingerprintSet(seen);
+  App.canonicals = canonicals;
+  persistCanonicalList(canonicals);
 
   if (stamped.length < questions.length){
     recordError(lesson, `${questions.length - stamped.length} soru yinelenme nedeniyle atlandı`, { kind:"warn" });
@@ -357,10 +377,28 @@ function appendQuestions(lesson, questions, sourceLabel, desiredCount){
 function buildAIPrompt(lesson, count){
   const topics = TOPIC_GUIDE[lesson] || ["genel"];
   const hedefler = topics.slice(0, 8).map((t,i)=> `${i+1}. ${t}`).join("\n");
+  const blueprint = buildBlueprint(lesson, count);
+  const novelty = `Her soru benzersiz olacak: aynı kalıp/sayı/isim tekrarı yasak. Farklı senaryolar, farklı sayılar ve seçenek yapıları kullan. Aynı paragraf veya problem şablonunu tekrar etme.`;
   return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet çoktan seçmeli soru üret.
 Her kayıt JSON olarak dönsün: {"konu","soru","paragraf"(isteğe bağlı),"secenekler":["A","B","C","D"],"dogru_index":0-3,"aciklama":"kısa çözüm"}.
 Kazanımlar (öncelik sırasıyla):\n${hedefler}\n
-Kurallar: Türkçe yanıtla, seçenekler 4-5 adet olsun, paragraf alanı varsa string olarak gönder, sadece JSON array döndür.`;
+Plan: ${blueprint}
+${novelty}
+Kurallar: Türkçe yanıtla, seçenekler 4-5 adet olsun, paragraf alanı varsa string olarak gönder, sadece JSON array döndür, soruları birbirinden farklılaştır.`;
+}
+
+function buildBlueprint(lesson, count){
+  const topics = [...(TOPIC_GUIDE[lesson] || [])];
+  if (!topics.length) return "Genel karışık";
+  const bins = Math.max(3, Math.min(8, Math.floor(count / 10)));
+  const selected = shuffle(topics).slice(0, bins);
+  const parts = selected.map(t => {
+    const quota = Math.max(2, Math.round(count / bins));
+    const diff = ["kolay","orta","zor"][rand(0,2)];
+    const form = pick(["yorum","bilgi","hesap","paragraf","tablo"]);
+    return `${t}: ${quota} soru (${diff}, ${form})`;
+  });
+  return parts.join(" | ");
 }
 
 function extractJSONSegment(text){
@@ -453,30 +491,37 @@ function typesetMath(root){
 }
 
 function openExamWindowShell(title, subtitle){
-  const w = window.open("about:blank", "_blank", "noopener");
+  const w = window.open("about:blank", "exam_window", "noopener");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return null;
   }
-  w.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
-  <style>
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
-    .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:480px;margin:60px auto;text-align:center;}
-    h1{margin:0 0 8px;font-size:20px;font-weight:800;}
-    p{margin:0;color:#475569;}
-  </style></head><body>
-    <div class="box">
-      <h1>${escapeHTML(title)}</h1>
-      <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
-      <p>Yeni sekme açıldıysa lütfen bekleyin.</p>
-    </div>
-  </body></html>`);
-  w.document.close();
+  renderExamLoadingShell(w, title, subtitle);
   return w;
 }
 
+function renderExamLoadingShell(win, title, subtitle){
+  try{
+    win.document.open();
+    win.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+    <style>
+      body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+      .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:520px;margin:60px auto;text-align:center;}
+      h1{margin:0 0 8px;font-size:20px;font-weight:800;}
+      p{margin:0;color:#475569;}
+    </style></head><body>
+      <div class="box">
+        <h1>${escapeHTML(title)}</h1>
+        <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
+        <p>Hazırlanıyor, lütfen bu sekmeyi açık tut.</p>
+      </div>
+    </body></html>`);
+    win.document.close();
+  }catch(e){ console.warn(e); }
+}
+
 function renderExamWindow(title, questions, subtitle, existingWin){
-  const w = existingWin || window.open("", "_blank");
+  const w = existingWin || window.open("about:blank", "exam_window", "noopener");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return;
@@ -578,6 +623,33 @@ function normalizeForFingerprint(text){
     .replace(/[^a-zçğıöşüâêîôû0-9#]+/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function canonicalQuestionText(q){
+  const base = q && q.soru !== undefined ? q : normalizeQuestion(q);
+  const parts = [base.konu, base.paragraf || "", base.soru, ...(base.options||[]), base.explain || ""]
+    .map(normalizeForFingerprint);
+  return parts.join(" | ");
+}
+
+function trigramSet(text){
+  const t = `  ${text}  `;
+  const out = new Set();
+  for (let i=0; i<t.length-2; i++){
+    out.add(t.slice(i, i+3));
+  }
+  return out;
+}
+
+function jaccard(aSet, bSet){
+  let inter = 0;
+  const aSize = aSet.size;
+  const bSize = bSet.size;
+  if (aSize === 0 || bSize === 0) return 0;
+  for (const val of aSet){
+    if (bSet.has(val)) inter++;
+  }
+  return inter / (aSize + bSize - inter);
 }
 
 function hashString(str){
@@ -1074,6 +1146,7 @@ function ensureState(){
   s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
   s.ai ??= { provider: "hf", token: "", model: HF_MODEL_DEFAULT };
   s.aiFingerprints ??= [];
+  s.aiCanonicals ??= [];
   return s;
 }
 
@@ -1087,6 +1160,17 @@ function persistFingerprintSet(set){
   const arr = Array.from(set || []);
   // limit to last 8000 fingerprint
   state.aiFingerprints = arr.slice(-8000);
+  saveState(state);
+}
+
+function loadCanonicalList(){
+  const state = ensureState();
+  return Array.from(state.aiCanonicals || []);
+}
+
+function persistCanonicalList(list){
+  const state = ensureState();
+  state.aiCanonicals = Array.from(list || []).slice(-4000);
   saveState(state);
 }
 
@@ -1138,6 +1222,7 @@ const App = {
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
   fingerprints: loadFingerprintSet(),
+  canonicals: loadCanonicalList(),
 };
 
 // ---------- UI wiring ----------
@@ -1467,6 +1552,95 @@ function showAlert(msg){
   }
   txt.textContent = msg;
   box.hidden = false;
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function togglePlanCta(show){
+  const box = $("planCta");
+  if (!box) return;
+  box.hidden = !show;
+  if (show){
+    $("btnPlanStart")?.focus();
+  }
 }
 
 function syncAIForm(){
