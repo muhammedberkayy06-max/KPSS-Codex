@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v16";
+const APP_VERSION = "v17";
 
 const Diagnostics = { entries: [] };
 
@@ -62,6 +62,52 @@ const now = () => new Date().toISOString();
 const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
 const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const delay = (ms) => new Promise((resolve)=> setTimeout(resolve, ms));
+const FINGERPRINT_LIMIT = 4000;
+const CANON_PER_LESSON = 800;
+
+function normalizePlain(text){
+  return safeText(text)
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hashString(str){
+  let h = 0;
+  for (let i = 0; i < str.length; i++){
+    h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
+  }
+  return (h >>> 0).toString(36);
+}
+
+function canonicalizeQuestion(q, lessonOverride){
+  const opts = q.options || [];
+  const parts = [lessonOverride || q.lesson || "", q.konu || "", q.paragraf || "", q.soru || "", ...opts];
+  return normalizePlain(parts.join(" | "));
+}
+
+function trigrams(text){
+  const grams = new Set();
+  const padded = `  ${text}  `;
+  for (let i = 0; i < padded.length - 2; i++){
+    grams.add(padded.slice(i, i + 3));
+  }
+  return grams;
+}
+
+function similarity(a, b){
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  const ga = trigrams(a);
+  const gb = trigrams(b);
+  let inter = 0;
+  for (const g of ga){
+    if (gb.has(g)) inter++;
+  }
+  const union = ga.size + gb.size - inter;
+  return union === 0 ? 0 : inter / union;
+}
 
 // ---------- konu rehberi (AI istemi için) ----------
 const TOPIC_GUIDE = {
@@ -301,17 +347,18 @@ function generateAIQuestion(lesson){
   return normalizeQuestion(q);
 }
 
-function injectAIQuestions(lesson, count){
+function injectAIQuestions(lesson, count, opts = {}){
   const list = [];
   for (let i=0; i<count; i++){
     list.push(generateAIQuestion(lesson));
   }
-  return appendQuestions(lesson, list, "AI (ücretsiz yerel)");
+  return appendQuestions(lesson, list, "AI (ücretsiz yerel)", opts);
 }
 
-function appendQuestions(lesson, questions, sourceLabel){
+function appendQuestions(lesson, questions, sourceLabel, opts = {}){
   const bank = App.allBanks[lesson] || [];
-  const stamped = questions.map((q, idx)=>{
+  const filtered = applyNoveltyFilter(lesson, questions, { sessionSet: opts.sessionSet, similarityThreshold: opts.similarityThreshold });
+  const stamped = filtered.accepted.map((q, idx)=>{
     const base = normalizeQuestion(q);
     base.id = base.id || `${sourceLabel||"AI"}-${lesson}-${Date.now()}-${idx}-${Math.random().toString(36).slice(2,6)}`;
     base.kaynak = sourceLabel || base.kaynak || "AI";
@@ -327,10 +374,21 @@ function appendQuestions(lesson, questions, sourceLabel){
 function buildAIPrompt(lesson, count){
   const topics = TOPIC_GUIDE[lesson] || ["genel"];
   const hedefler = topics.slice(0, 8).map((t,i)=> `${i+1}. ${t}`).join("\n");
+  const novelty = pick([
+    "isimler, tarihler ve sayılar benzersiz olsun; aynı şablonu tekrar etme",
+    "her soru farklı bağlam/karakter ve veri seti kullansın",
+    "paragraf/soru köklerinde farklı üslup ve anlatım biçimi olsun",
+    "sorular yoruma, tablo/yorum ve kısa problem karışımına sahip olsun",
+  ]);
+  const structure = pick([
+    "en az 1 paragraf yorumu, 1 kavram eşleştirme, 1 işlem/yorum karışımı",
+    "en az 1 grafik/tablolu anlatım, 1 çıkarım, 1 kavram tanımı",
+    "en az 1 günlük yaşam senaryosu, 1 tarihsel bağlam, 1 kavram karşılaştırma",
+  ]);
   return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet çoktan seçmeli soru üret.
 Her kayıt JSON olarak dönsün: {"konu","soru","paragraf"(isteğe bağlı),"secenekler":["A","B","C","D"],"dogru_index":0-3,"aciklama":"kısa çözüm"}.
 Kazanımlar (öncelik sırasıyla):\n${hedefler}\n
-Kurallar: Türkçe yanıtla, seçenekler 4-5 adet olsun, paragraf alanı varsa string olarak gönder, sadece JSON array döndür.`;
+Kurallar: Türkçe yanıtla, seçenekler 4-5 adet olsun, paragraf alanı varsa string olarak gönder, sadece JSON array döndür. ${novelty}. ${structure}. Aynı soruyu veya çok benzerini üretme; her kaydın anahtar kelimeleri ve senaryosu farklı olsun.`;
 }
 
 function extractJSONSegment(text){
@@ -376,8 +434,8 @@ async function fetchHuggingFaceAI(lesson, count, opts = {}){
     inputs: prompt,
     parameters: {
       max_new_tokens: Math.min(opts.maxTokens || (520 * count), 4096),
-      temperature: opts.temperature ?? 0.65,
-      top_p: opts.top_p ?? 0.9,
+      temperature: opts.temperature ?? (0.78 + Math.random() * 0.14),
+      top_p: opts.top_p ?? 0.92,
       return_full_text: false,
     },
     options: { wait_for_model: true },
@@ -397,19 +455,21 @@ async function fetchHuggingFaceAI(lesson, count, opts = {}){
 
 async function fetchHFBatched(lesson, total){
   const out = [];
-  const guard = Math.max(3, Math.ceil(total / 12));
+  const sessionSet = new Set();
+  const guard = Math.max(5, Math.ceil(total / 8));
   let tries = 0;
   while (out.length < total && tries < guard){
     tries++;
-    const need = Math.min(12, total - out.length);
+    const need = Math.min(14, total - out.length + 4);
     try {
-      const batch = await fetchHuggingFaceAI(lesson, need, { maxTokens: 600 * need });
-      out.push(...batch);
+      const batch = await fetchHuggingFaceAI(lesson, need, { maxTokens: 650 * need });
+      const filtered = applyNoveltyFilter(lesson, batch, { sessionSet, skipRegister:true, similarityThreshold:0.83 });
+      out.push(...filtered.accepted);
     } catch (e) {
       console.warn("HF batch hatası", e);
       if (tries >= guard) throw e;
     }
-    if (out.length < total) await delay(320);
+    if (out.length < total) await delay(360 + rand(0,140));
   }
   return out.slice(0, total);
 }
@@ -920,6 +980,8 @@ function ensureState(){
   s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
   s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
   s.ai ??= { provider: "hf", token: "", model: HF_MODEL_DEFAULT };
+  s.aiFingerprints ??= [];
+  s.aiCanon ??= {};
   return s;
 }
 
@@ -973,16 +1035,30 @@ const App = {
   currentTest:null,
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
-  aiEnabled:true,
-  aiCount:5,
+  fingerprints:new Set(),
+  canonByLesson:{},
 };
 
 // ---------- UI wiring ----------
-function setNotice(msg, kind="info"){
+function setNotice(msg, kind="info", opts = {}){
   const el = $("loadStatus");
   el.hidden = !msg;
-  if (!msg) return;
-  el.textContent = msg;
+  if (!msg){
+    el.innerHTML = "";
+    return;
+  }
+  el.innerHTML = "";
+  const span = document.createElement("span");
+  span.textContent = msg;
+  el.appendChild(span);
+  if (opts.actionText && typeof opts.onAction === "function"){
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn sm notice-action";
+    btn.textContent = opts.actionText;
+    btn.addEventListener("click", opts.onAction);
+    el.appendChild(btn);
+  }
   el.style.background = kind==="error" ? "rgba(220,38,38,.07)" : "rgba(10,132,255,.06)";
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
@@ -1008,6 +1084,86 @@ function recordError(scope, message, opts={}){
   });
   if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
   renderDiagnostics();
+}
+
+function hydrateNoveltyIndex(){
+  const state = ensureState();
+  App.fingerprints = new Set(state.aiFingerprints || []);
+  App.canonByLesson = Object.fromEntries(Object.entries(state.aiCanon || {}).map(([k,v])=> [k, Array.isArray(v) ? v : []]));
+}
+
+function persistFingerprints(){
+  const state = ensureState();
+  state.aiFingerprints = Array.from(App.fingerprints || []).slice(-FINGERPRINT_LIMIT);
+  const canonState = {};
+  for (const [lesson, arr] of Object.entries(App.canonByLesson || {})){
+    canonState[lesson] = arr.slice(-CANON_PER_LESSON);
+  }
+  state.aiCanon = canonState;
+  saveState(state);
+}
+
+function seedNoveltyFromBanks(banks){
+  hydrateNoveltyIndex();
+  for (const [lesson, list] of Object.entries(banks || {})){
+    const canonList = [];
+    for (const q of (list || [])){
+      const canon = canonicalizeQuestion(normalizeQuestion(q), lesson);
+      if (!canon) continue;
+      canonList.push(canon);
+      App.fingerprints.add(hashString(canon));
+    }
+    const merged = [...(App.canonByLesson[lesson] || []), ...canonList];
+    App.canonByLesson[lesson] = merged.slice(-CANON_PER_LESSON);
+  }
+  persistFingerprints();
+}
+
+function isNearDuplicate(lesson, canon, threshold = 0.86, sessionSet){
+  if (!canon) return false;
+  const fp = hashString(canon);
+  if (App.fingerprints?.has(fp)) return true;
+  if (sessionSet?.has(canon)) return true;
+  const list = App.canonByLesson?.[lesson] || [];
+  for (const prev of list){
+    if (prev === canon) return true;
+    if (similarity(prev, canon) >= threshold) return true;
+  }
+  return false;
+}
+
+function applyNoveltyFilter(lesson, questions, opts = {}){
+  const sessionSet = opts.sessionSet;
+  const accepted = [];
+  const rejected = [];
+
+  for (const raw of questions){
+    const base = normalizeQuestion(raw);
+    const canon = canonicalizeQuestion(base, lesson);
+    if (!canon){
+      rejected.push({ reason:"empty" });
+      continue;
+    }
+    if (isNearDuplicate(lesson, canon, opts.similarityThreshold ?? 0.86, sessionSet)){
+      rejected.push({ reason:"duplicate", canon });
+      continue;
+    }
+    accepted.push({ question: base, canon });
+    sessionSet?.add(canon);
+  }
+
+  if (!opts.skipRegister && accepted.length){
+    const canonList = accepted.map(a => a.canon);
+    if (!App.canonByLesson[lesson]) App.canonByLesson[lesson] = [];
+    App.canonByLesson[lesson].push(...canonList);
+    if (App.canonByLesson[lesson].length > CANON_PER_LESSON){
+      App.canonByLesson[lesson].splice(0, App.canonByLesson[lesson].length - CANON_PER_LESSON);
+    }
+    canonList.forEach(c => App.fingerprints.add(hashString(c)));
+    persistFingerprints();
+  }
+
+  return { accepted: accepted.map(a=> a.question), rejected };
 }
 
 function clearDiagnostics(){
@@ -1259,6 +1415,8 @@ async function loadAllBanks(){
 
   await Promise.all(jobs);
   App.allBanks = banks;
+
+  seedNoveltyFromBanks(banks);
 
    renderLessonIcons(App.mode);
 
@@ -1850,7 +2008,8 @@ function quick2hPlan(){
   setMode("gkgy");
   $("goal").value = "mastery";
   $("difficulty").value = "auto";
-  setNotice("2 saat plan: GK-GY karışık + zayıf konulara ağırlık. Başlat’a bas.", "info");
+  $("countInput").value = 120;
+  setNotice("2 saat plan: GK-GY karışık + zayıf konulara ağırlık.", "info", { actionText:"Başlat", onAction: startTest });
 }
 
 function exportData(){
@@ -1911,6 +2070,7 @@ async function handleAIExam(type){
 
   setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
   const created = [];
+  const sessionSet = new Set();
   for (const [lesson, n] of Object.entries(plan)){
     let batch = [];
     try {
@@ -1920,10 +2080,15 @@ async function handleAIExam(type){
       setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
     }
     if (batch.length < n){
-      const fallback = injectAIQuestions(lesson, n - batch.length);
+      const fallback = injectAIQuestions(lesson, n - batch.length, { sessionSet });
       batch.push(...fallback);
     }
-    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)");
+    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)", { sessionSet });
+    if (stamped.length < n){
+      const need = n - stamped.length;
+      const extra = injectAIQuestions(lesson, need, { sessionSet });
+      stamped.push(...extra);
+    }
     stamped.forEach(q=> created.push({ ...q, lesson }));
   }
 
@@ -1959,11 +2124,12 @@ async function handleAIGenerate(){
     await loadAllBanks();
   }
 
+  const sessionSet = new Set();
   let fresh = [];
   if (provider === "hf"){
     try{
       const onlineQs = await fetchHuggingFaceAI(lesson, count);
-      fresh = appendQuestions(lesson, onlineQs, "AI (Hugging Face internet)");
+      fresh = appendQuestions(lesson, onlineQs, "AI (Hugging Face internet)", { sessionSet });
     }catch(e){
       console.warn(e);
       setNotice("İnternet AI üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
@@ -1971,7 +2137,13 @@ async function handleAIGenerate(){
   }
 
   if (!fresh.length){
-    fresh = injectAIQuestions(lesson, count);
+    fresh = injectAIQuestions(lesson, count, { sessionSet });
+  }
+
+  if (fresh.length < count){
+    const need = count - fresh.length;
+    const extra = injectAIQuestions(lesson, need, { sessionSet });
+    fresh.push(...extra);
   }
 
   const total = App.allBanks[lesson]?.length || 0;
@@ -2000,6 +2172,7 @@ async function installPWA(){
 }
 
 async function init(){
+  hydrateNoveltyIndex();
   fillLessonSelect();
   syncAIForm();
   setMode("single");
