@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v5";
+const APP_VERSION = "v6";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -363,9 +363,16 @@ async function fetchJSON(path){
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
 
   // Bazı ortamlarda (GH Pages, SW kalıntısı) JSON yerine HTML/yanıt kırpığı dönebilir;
-  // önce metni alıp temizlemeyi deneriz, yine de olmazsa hatayı detaylı loglarız.
+  // öncelikle metni alıp başı/sonu temizlemeyi deneriz, ardından yalnızca gerçek
+  // JSON gövdesini parse ederiz.
   const rawText = await res.text();
-  const cleanText = rawText.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
+  const noBom = rawText.replace(/^\uFEFF/, "");
+  const start = noBom.search(/[\[{]/);
+  const end = Math.max(noBom.lastIndexOf(']'), noBom.lastIndexOf('}'));
+  const sliced = (start >= 0 && end > start)
+    ? noBom.slice(start, end + 1)
+    : noBom.replace(/^[^\[{]+/, "").trim();
+  const cleanText = sliced.trim();
 
   let data;
   try {
