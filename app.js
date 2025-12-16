@@ -395,22 +395,23 @@ async function fetchJSON(path){
   const cacheKey = bare.split("?")[0];
 
   const tryParse = (txt) => {
-    const clean = txt.replace(/^\uFEFF/, "").trim();
-    if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
-
-    const attempt = (payload) => {
-      try { return JSON.parse(payload); } catch { return null; }
+    const attempt = (raw) => {
+      const clean = raw.replace(/^\uFEFF/, "").trim();
+      if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
+      try { return JSON.parse(clean); } catch { return null; }
     };
 
-    // doğrudan dene
-    const direct = attempt(clean);
+    // İlk deneme: doğrudan temiz içerik
+    const direct = attempt(txt);
     if (direct) return direct;
 
-    // Dosya başı/sonuna sızan gereksiz metinleri ayıkla
-    const match = clean.match(/(\{[\s\S]*\}|\[[\s\S]*\])/);
-    if (match) {
-      const trimmed = attempt(match[1]);
-      if (trimmed) return trimmed;
+    // Kurtarma: metindeki ilk [/{ ile son ]/} arasını dene (HTML veya log enkapsülasyonunda işe yarar)
+    const start = txt.search(/[\[{]/);
+    const end = Math.max(txt.lastIndexOf("]"), txt.lastIndexOf("}"));
+    if (start >= 0 && end > start){
+      const sliced = txt.slice(start, end + 1);
+      const rescued = attempt(sliced);
+      if (rescued) return rescued;
     }
     return null;
   };
