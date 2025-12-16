@@ -56,7 +56,7 @@ async function networkFirst(req){
     cache.put(req, fresh.clone());
     return fresh;
   } catch (e) {
-    const cached = await cache.match(req) || await caches.match(req);
+    const cached = await cache.match(req, { ignoreSearch:true }) || await caches.match(req, { ignoreSearch:true });
     if (cached) return cached;
     return new Response('Offline', {status: 503, statusText: 'Offline'});
   }

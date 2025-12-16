@@ -371,60 +371,52 @@ async function fetchJSON(path){
     } catch { return null; }
   };
 
-  const fetchAndParse = async () => {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+  const attempt = async (target, label) => {
+    const res = await fetch(target, { cache: "no-store" });
+    if (!res.ok) throw new Error(`${label} (${target}) ${res.status}`);
     const rawText = await res.text();
     const parsed = tryParse(rawText);
     if (parsed) return parsed;
-    throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
+    throw new Error(`JSON parse hatası (${label}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
   };
 
-    // Ana deneme
+  // önce versiyon parametresiyle dene, sonra düz URL'e ve cache'e düş
+  try {
+    const data = await attempt(url, "versiyonlu istek");
+    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+    return data.map(normalizeQuestion);
+  } catch (err1) {
+    console.warn(`Versiyonlu deneme başarısız (${path}):`, err1);
+
     try {
-      const data = await fetchAndParse();
+      const data = await attempt(path, "parametresiz istek");
       if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+      return data.map(normalizeQuestion);
+    } catch (err2) {
+      console.warn(`Parametresiz deneme de başarısız (${path}):`, err2);
 
-      const normalized = data.map((item, idx) => {
-        try {
-          return normalizeQuestion(item);
-        } catch (e) {
-          console.warn(`Soruda hata: ${path} #${idx + 1}`, e);
-          return null;
-        }
-      }).filter(Boolean);
-
-      if (normalized.length === 0) throw new Error(`${path} içindeki kayıtlar okunamadı.`);
-      return normalized;
-    } catch (err) {
-      console.warn(`İlk deneme başarısız (${path}):`, err);
-
-    // SW cache veya tarayıcı cache'inde kalan sağlam kopyayı deneyelim
-    if (typeof caches !== "undefined") {
-      const cacheKeys = [url, path];
-      for (const key of cacheKeys) {
-        try {
-          const cached = await caches.match(key);
-          if (cached) {
-            const txt = await cached.text();
-            const parsed = tryParse(txt);
+      // SW cache veya tarayıcı cache'inde kalan sağlam kopyayı deneyelim (ignoreSearch)
+      if (typeof caches !== "undefined") {
+        const cacheKeys = [url, path];
+        for (const key of cacheKeys) {
+          try {
+            const cached = await caches.match(key, { ignoreSearch:true });
+            if (cached) {
+              const txt = await cached.text();
+              const parsed = tryParse(txt);
               if (Array.isArray(parsed)) {
                 console.info(`Cache'ten geri yüklendi (${key})`);
-                const normalized = parsed.map((item, idx) => {
-                  try { return normalizeQuestion(item); }
-                  catch (e) { console.warn(`Cache kaydı hatası ${path} #${idx + 1}`, e); return null; }
-                }).filter(Boolean);
-                if (normalized.length === 0) continue;
-                return normalized;
+                return parsed.map(normalizeQuestion);
               }
             }
           } catch (e) {
-          console.warn(`Cache okuma hatası (${key}):`, e);
+            console.warn(`Cache okuma hatası (${key}):`, e);
+          }
         }
       }
-    }
 
-    throw err;
+      throw err2;
+    }
   }
 }
 
