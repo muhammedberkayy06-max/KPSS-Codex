@@ -1233,5 +1233,149 @@
     ],
     "dogru_index": 3,
     "aciklama": "Daraltıcı para politikası faizleri artırır, sermaye girişi olur, kur değer kazanır ve enflasyon düşer."
+  },
+  {
+    "konu": "Makroekonomi",
+    "soru": "Toplam talep eğrisi sağa kaydığında kısa dönemde aşağıdakilerden hangisi beklenir?",
+    "secenekler": [
+      "Fiyatlar düşer",
+      "Üretim artar",
+      "İşsizlik artar",
+      "Para arzı daralır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toplam talep artışı kısa dönemde üretim ve istihdamı yükseltir, fiyatlar üzerinde yukarı baskı oluşturur."
+  },
+  {
+    "konu": "Mikroekonomi",
+    "soru": "Talebin fiyat esnekliği mutlak değerce 1'den büyükse aşağıdakilerden hangisi doğrudur?",
+    "secenekler": [
+      "Talep esnek değildir",
+      "Fiyat düştüğünde toplam gelir azalır",
+      "Fiyat arttığında toplam gelir artar",
+      "Fiyat düştüğünde toplam gelir artar"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Esnek talepte fiyat düştükçe talep edilen miktar oransal olarak daha fazla artar ve toplam gelir yükselir."
+  },
+  {
+    "konu": "Mikro İktisat",
+    "soru": "Talep esnekliği -1,5 olan bir malın fiyatı %10 düşerse talep miktarı yaklaşık yüzde kaç artar?",
+    "secenekler": [
+      "%10",
+      "%12",
+      "%15",
+      "%18"
+    ],
+    "dogru_index": 2,
+    "aciklama": "|E|=1,5 ve fiyat %10 düşerse talep %15 artar."
+  },
+  {
+    "konu": "Makro İktisat",
+    "soru": "Para arzı arttığında kısa dönemde faiz oranı ve yatırım harcamaları nasıl etkilenir?",
+    "secenekler": [
+      "Faiz artar, yatırım artar",
+      "Faiz düşer, yatırım artar",
+      "Faiz artar, yatırım düşer",
+      "Her ikisi de değişmez"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Para arzı artınca faiz düşer, bu da yatırımı teşvik eder."
+  },
+  {
+    "konu": "Uluslararası Ticaret",
+    "soru": "Karşılaştırmalı üstünlük teorisi hangi iktisatçı tarafından geliştirilmiştir?",
+    "secenekler": [
+      "Adam Smith",
+      "David Ricardo",
+      "John M. Keynes",
+      "Paul Samuelson"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Teori David Ricardo'ya aittir."
+  },
+  {
+    "konu": "Para Teorisi",
+    "soru": "Paranın dolanım hızı arttığında, para arzı ve çıktı sabitken fiyatlar genel düzeyi ne olur?",
+    "secenekler": [
+      "Düşer",
+      "Artar",
+      "Değişmez",
+      "Önce düşer sonra artar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Fisher denklemi MV=PY; V artarsa P artar."
+  },
+  {
+    "konu": "Büyüme",
+    "soru": "İçsel büyüme modelleri büyümeyi özellikle hangi faktöre bağlar?",
+    "secenekler": [
+      "Dış ticaret kısıtları",
+      "Dışsal teknoloji",
+      "İnsan sermayesi ve AR-GE",
+      "Doğal kaynaklar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İçsel modeller bilgi, eğitim ve AR-GE'yi büyümenin kaynağı görür."
+  },
+  {
+    "konu": "Makro İktisat",
+    "soru": "Phillips Eğrisi kısa dönemde hangi ilişkiyi gösterir?",
+    "secenekler": [
+      "Enflasyon ile işsizlik arasında ters ilişki",
+      "Faiz ile yatırım arasında ters ilişki",
+      "Enflasyon ile büyüme arasında doğru ilişki",
+      "İşsizlik ile büyüme arasında doğru ilişki"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kısa dönemde enflasyon ile işsizlik arasında ters yönlü ilişki öngörür."
+  },
+  {
+    "konu": "Kamu Maliyesi",
+    "soru": "Dolaylı vergilere örnek aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Gelir vergisi",
+      "Motorlu Taşıtlar Vergisi",
+      "KDV",
+      "Kurumlar vergisi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "KDV tüketim üzerinden alınan dolaylı bir vergidir."
+  },
+  {
+    "konu": "Piyasa Yapıları",
+    "soru": "Tekelci rekabet piyasasının temel özelliği nedir?",
+    "secenekler": [
+      "Tek satıcı ve giriş engeli",
+      "Az sayıda satıcı ve fiyat liderliği",
+      "Çok sayıda satıcı ve ürün farklılaştırması",
+      "Tam homojen ürün"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tekelci rekabette çok sayıda firma benzer ama farklılaştırılmış ürün satar."
+  },
+  {
+    "konu": "Finansal Piyasalar",
+    "soru": "Tahvil fiyatı ile faiz oranı arasındaki ilişki nasıldır?",
+    "secenekler": [
+      "Doğru orantılı",
+      "Ters orantılı",
+      "İlişkisiz",
+      "Sabit"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Faiz artınca tahvil fiyatı düşer, ters orantı vardır."
+  },
+  {
+    "konu": "Ekonometri",
+    "soru": "Basit doğrusal regresyonda bağımlı değişkenin açıklanan varyans oranı hangi istatistikle ölçülür?",
+    "secenekler": [
+      "t istatistiği",
+      "R-kare",
+      "Durbin-Watson",
+      "F istatistiği"
+    ],
+    "dogru_index": 1,
+    "aciklama": "R² modelin açıklama gücünü gösterir."
   }
 ]

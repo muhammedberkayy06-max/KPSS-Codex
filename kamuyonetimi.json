@@ -648,5 +648,149 @@
     ],
     "dogru_index": 0,
     "aciklama": "Sürekli iyileştirme, hizmet süreçlerinin sürekli geliştirilmesini ve adaptasyonunu sağlar."
+  },
+  {
+    "konu": "Yönetim Bilimi",
+    "soru": "Kamu yönetiminde 'yeni kamu işletmeciliği' yaklaşımı aşağıdakilerden hangisini öne çıkarır?",
+    "secenekler": [
+      "Merkeziyetçiliği",
+      "Hiyerarşiyi güçlendirmeyi",
+      "Performans ve sonuç odaklılığı",
+      "Katı kuralcılığı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yeni kamu işletmeciliği performans, etkinlik ve vatandaş odaklılık ilkelerini vurgular."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Politika döngüsünde sorunların gündeme taşınmasını ifade eden aşama hangisidir?",
+    "secenekler": [
+      "Politika oluşturma",
+      "Gündem belirleme",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Gündem belirleme, kamusal sorunların karar alıcıların dikkatine sunulduğu ilk aşamadır."
+  },
+  {
+    "konu": "Yönetim Bilimi",
+    "soru": "Klasik yönetim yaklaşımının öncülerinden biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Henri Fayol",
+      "Herbert Simon",
+      "Peter Drucker",
+      "Mary Parker Follett"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Henri Fayol klasik yönetimin kurucularındandır."
+  },
+  {
+    "konu": "Örgüt Teorisi",
+    "soru": "Hangi örgüt yapısı proje bazlı çalışmayı kolaylaştırır?",
+    "secenekler": [
+      "Fonksiyonel",
+      "Matris",
+      "Basamaklı",
+      "Bürokratik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Matris yapı, hem fonksiyonel hem proje eksenini birleştirerek esneklik sağlar."
+  },
+  {
+    "konu": "Kamu Politikaları",
+    "soru": "Politika döngüsünde sorun tanımlama aşamasını izleyen adım hangisidir?",
+    "secenekler": [
+      "Politika formülasyonu",
+      "Uygulama",
+      "Değerlendirme",
+      "Gündem oluşturma"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Sorun belirlendikten sonra çözüm seçenekleri geliştirilir (formülasyon)."
+  },
+  {
+    "konu": "Personel Yönetimi",
+    "soru": "Performans değerlendirmede 360 derece geri bildirim hangi özelliğiyle öne çıkar?",
+    "secenekler": [
+      "Sadece üst yöneticinin değerlendirmesi",
+      "Çoklu kaynaklardan geribildirim",
+      "Yılda bir defa yapılması",
+      "Maaş artışına etkisi olmaması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "360 derece modelinde ast, üst, eş ve müşterilerden geribildirim alınır."
+  },
+  {
+    "konu": "Yerel Yönetimler",
+    "soru": "Belediyelerin karar organı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Belediye başkanı",
+      "Encümen",
+      "Belediye meclisi",
+      "Vali"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Belediye meclisi belediyenin karar organıdır."
+  },
+  {
+    "konu": "Kamu Bütçesi",
+    "soru": "Program bütçe sisteminde harcamalar hangi temele göre sınıflandırılır?",
+    "secenekler": [
+      "Ödenek türü",
+      "Fonksiyonel programlar",
+      "Gelir kaynakları",
+      "Ekonomik sınıflandırma"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Program bütçede kaynaklar program ve faaliyetlere göre ayrılır."
+  },
+  {
+    "konu": "Denetim",
+    "soru": "Sayıştay denetimi hangi ilkeye dayanır?",
+    "secenekler": [
+      "Yargısal denetim",
+      "Parlamenter denetim",
+      "Yürütme denetimi",
+      "Yönetişim"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sayıştay, TBMM adına dış denetim yapar."
+  },
+  {
+    "konu": "Yönetim Yaklaşımları",
+    "soru": "Yeni kamu yönetimi anlayışı hangi kavrama vurgu yapar?",
+    "secenekler": [
+      "Kuralcılık",
+      "Şeffaflık ve hesap verebilirlik",
+      "Katı hiyerarşi",
+      "Kamu tekeli"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yeni kamu yönetimi şeffaflık, hesap verebilirlik ve vatandaş odaklılığa önem verir."
+  },
+  {
+    "konu": "Stratejik Yönetim",
+    "soru": "SWOT analizinde 'O' harfi neyi ifade eder?",
+    "secenekler": [
+      "Obje",
+      "Opsiyon",
+      "Olasılık",
+      "Fırsat"
+    ],
+    "dogru_index": 3,
+    "aciklama": "SWOT: Strengths, Weaknesses, Opportunities, Threats."
+  },
+  {
+    "konu": "İdari Yapı",
+    "soru": "Türkiye'de il genel idaresi başında kim bulunur?",
+    "secenekler": [
+      "Vali",
+      "Kaymakam",
+      "Belediye Başkanı",
+      "Müsteşar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İl genel idaresinin başı validir."
   }
 ]
