@@ -362,16 +362,31 @@ async function fetchJSON(path){
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
 
-  let text;
+  // Bazı istemcilerde BOM veya HTML kalıntıları gelebiliyor; temizle
+  const rawText = await res.text();
+  const cleaned = rawText
+    .replace(/^\uFEFF/, "") // BOM
+    .trim();
+
+  let data;
   try {
-    text = await res.text();
-    const data = JSON.parse(text);
-    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-    return data.map(normalizeQuestion);
+    data = JSON.parse(cleaned);
   } catch (e) {
-    const preview = (text || "").slice(0, 120).replace(/\s+/g, " ");
-    throw new Error(`${path} JSON hatası: ${e?.message || e}. Önizleme: ${preview}`);
+    // Baştaki beklenmeyen karakterleri atarak tekrar dene (örn. BOM, log çıktısı)
+    const idx = cleaned.search(/[\[{]/);
+    if (idx > 0) {
+      try {
+        data = JSON.parse(cleaned.slice(idx));
+      } catch (e2) {
+        throw new Error(`${path} JSON parse hatası: ${e2.message}`);
+      }
+    } else {
+      throw new Error(`${path} JSON parse hatası: ${e.message}`);
+    }
   }
+
+  if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+  return data.map(normalizeQuestion);
 }
 
 async function loadAllBanks(){
@@ -386,7 +401,7 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      banks[lesson] = previous[lesson] || [];
+      banks[lesson] = [];
       missing.push({ lesson, file, error: e?.message || e });
     }
   });
@@ -399,8 +414,7 @@ async function loadAllBanks(){
   if (missing.length){
     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
-    const details = missing.map(m => `• ${m.lesson}: ${m.error}`).join("\n");
-    showAlert(`Bazı dersler yüklenemedi. Tarayıcı önbelleğini temizleyip sayfayı yenileyin.\n${details}`);
+    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
   } else {
     const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
     setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
