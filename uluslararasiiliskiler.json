@@ -1248,4 +1248,1206 @@
     "dogru_index": 0,
     "aciklama": "Hat Rusya'dan başlayıp Karadeniz üzerinden Türkiye'ye uzanır."
   }
+],
+[
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realist teoriye göre devletlerin temel amacı nedir?",
+    "secenekler": [
+      "İşbirliği",
+      "Güç ve güvenlik",
+      "Ekonomik büyüme",
+      "Kültürel yayılma"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realist teori, devletlerin uluslararası sistemde öncelikli amacının kendi güvenliklerini ve güçlerini maksimize etmek olduğunu savunur."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Bir devletin tanınması ne anlama gelir?",
+    "secenekler": [
+      "Devletin iç işlerine müdahale",
+      "O devlete ait uluslararası hak ve yükümlülüklerin kabulü",
+      "Sınırlarının genişletilmesi",
+      "Ekonomik yaptırım uygulanması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tanınma, bir devletin uluslararası hukukun süjesi olarak kabul edilmesi ve hak, sorumluluklarının tanınmasıdır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş dönemi hangi yıl Berlin Duvarı’nın yıkılması ile sona ermiştir?",
+    "secenekler": [
+      "1989",
+      "1991",
+      "1985",
+      "1995"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1989’da Berlin Duvarı’nın yıkılması Soğuk Savaş’ın sona erdiğinin sembolik göstergesidir."
+  },
+  {
+    "konu": "Uluslararası Güncel Sorunlar",
+    "soru": "İklim değişikliğinin temel nedeni aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Güneş lekeleri",
+      "Fosil yakıt kullanımı",
+      "Ay’ın çekim gücü",
+      "Deprem"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Fosil yakıtların yakılması sonucu atmosfere salınan sera gazları iklim değişikliğinin başlıca sebebidir."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler Güvenlik Konseyi’nde veto hakkına sahip ülkelerden biri hangisidir?",
+    "secenekler": [
+      "Brezilya",
+      "Almanya",
+      "Rusya",
+      "Hindistan"
+    ],
+    "dogru_index": 2,
+    "aciklama": "BM Güvenlik Konseyi’nde ABD, Rusya, Çin, Fransa ve Birleşik Krallık veto yetkisine sahiptir."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1963",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya katılmıştır."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Liberal teori uluslararası ilişkilerde neyi vurgular?",
+    "secenekler": [
+      "Güç mücadelesi",
+      "Anarşi",
+      "İşbirliği ve kurumlar",
+      "Savaş kaçınılmazlığı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Liberal teorisyenler, devletler arasında işbirliği ve uluslararası kurumların çatışmayı azaltma potansiyelini vurgular."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Diplomatik dokunulmazlık neyi sağlar?",
+    "secenekler": [
+      "Diplomatlara trafik cezası verilmesini",
+      "Diplomatların yargı bağışıklığını",
+      "Diplomatların çalışma iznini",
+      "Diplomatların vergilendirilmesini"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Diplomatik dokunulmazlık, diplomatların görev yaptıkları ülkede yargılanamamalarını ve bazı ayrıcalıkları içerir."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Versay Antlaşması hangi savaşı resmi olarak sona erdirmiştir?",
+    "secenekler": [
+      "I. Dünya Savaşı",
+      "II. Dünya Savaşı",
+      "Fransız-Prusya Savaşı",
+      "Kore Savaşı"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1919 Versay Antlaşması I. Dünya Savaşı’nı resmi olarak sona erdirmiştir."
+  },
+  {
+    "konu": "Uluslararası Güncel Sorunlar",
+    "soru": "Göç krizinin artmasının en önemli nedeni hangisidir?",
+    "secenekler": [
+      "Tarımda verimlilik",
+      "Siyasi istikrarsızlık ve savaşlar",
+      "Turizm hareketleri",
+      "Teknolojik gelişmeler"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Savaş ve siyasi istikrarsızlık gibi faktörler, insanların ülkelerinden ayrılarak başka ülkelere sığınmasına yol açar."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizm teorisine göre uluslararası sistemin temel aktörü kimdir?",
+    "secenekler": [
+      "Birey",
+      "Devlet",
+      "Uluslararası örgüt",
+      "STK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizme göre temel aktör devlettir."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye’nin NATO’ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1960",
+      "1974"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Türkiye 1952 yılında NATO’ya üye olmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler hangi yıl kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1950",
+      "1961"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Birleşmiş Milletler 1945 yılında kurulmuştur."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Liberal kuram, uluslararası iş birliğinin artmasında en çok hangi unsuru vurgular?",
+    "secenekler": [
+      "Sadece askeri güç",
+      "Karşılıklı bağımlılık ve kurumlar",
+      "Coğrafi izolasyon",
+      "Tek kutupluluk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Liberalizm kurumlar ve karşılıklı bağımlılığı vurgular."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin antlaşmalarla bağlı olmasını ifade eden ilke hangisidir?",
+    "secenekler": [
+      "Pacta sunt servanda",
+      "Realpolitik",
+      "Deterrence",
+      "Balance of power"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Pacta sunt servanda: ahde vefa."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş döneminde iki kutuplu sistemin oluşmasında temel aktörler hangileridir?",
+    "secenekler": [
+      "ABD-SSCB",
+      "Almanya-İtalya",
+      "Fransa-İngiltere",
+      "Çin-Japonya"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaşın iki süper gücü ABD ve SSCB'dir."
+  },
+  {
+    "konu": "Uluslararası Güncel Sorunlar",
+    "soru": "İklim değişikliğiyle mücadelede uluslararası iş birliğini güçlendiren anlaşmalardan biri hangisidir?",
+    "secenekler": [
+      "Lozan",
+      "Paris İklim Anlaşması",
+      "Sevr",
+      "Versay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Paris Anlaşması iklim değişikliğiyle mücadeleyi hedefler."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "NATO'nun temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ekonomik birlik",
+      "Kolektif savunma",
+      "Kültürel iş birliği",
+      "Tarım politikası"
+    ],
+    "dogru_index": 1,
+    "aciklama": "NATO kolektif savunma örgütüdür."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Montrö Boğazlar Sözleşmesi hangi yıl imzalanmıştır?",
+    "secenekler": [
+      "1923",
+      "1936",
+      "1945",
+      "1952"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Montrö 1936'da imzalanmıştır."
+  },
+  {
+    "konu": "Uluslararası İlişkiler Teorisi",
+    "soru": "Realizme göre devletlerin temel hedefi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Mutlak eşitlik",
+      "Güvenlik ve güç",
+      "Sınırsız ticaret",
+      "Tek dünya devleti"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Realizm güç ve güvenliği temel alır."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Bir devletin kara sularının genişliği genellikle en fazla kaç deniz milidir?",
+    "secenekler": [
+      "3",
+      "6",
+      "12",
+      "24"
+    ],
+    "dogru_index": 2,
+    "aciklama": "BM Deniz Hukuku Sözleşmesine göre genellikle 12 mildir."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "Birleşmiş Milletler Güvenlik Konseyi'nin daimi üyeleri arasında aşağıdakilerden hangisi vardır?",
+    "secenekler": [
+      "Türkiye",
+      "Almanya",
+      "Fransa",
+      "Brezilya"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Daimi üyelerden biri Fransa'dır."
+  },
+  {
+    "konu": "Uluslararası Güncel Sorunlar",
+    "soru": "Küresel salgınlar gibi sınır aşan tehditler literatürde çoğunlukla hangi güvenlik kavramıyla açıklanır?",
+    "secenekler": [
+      "Geleneksel güvenlik",
+      "İnsani güvenlik",
+      "Sadece askeri güvenlik",
+      "Jeopolitik yalnızlık"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İnsani güvenlik, sağlık gibi tehditleri de kapsar."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uluslararası",
+    "soru": "Devletlerin eşitliği ilkesi hangi hukuk dalında yer alır?",
+    "secenekler": [
+      "İç hukuk",
+      "Uluslararası hukuk",
+      "Ceza hukuku",
+      "Medeni hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devletlerin eşitliği uluslararası hukuktadır."
+  },
+  {
+    "konu": "Uİ Teorileri",
+    "soru": "Konstrüktivizm yaklaşımı uluslararası ilişkilerde en çok neyi vurgular?",
+    "secenekler": [
+      "Sadece güç dengesi",
+      "Kimlik ve normlar",
+      "Coğrafi determinism",
+      "Sadece ekonomi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Konstrüktivizm kimlik/normların inşasını vurgular."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Diplomatik temsilcilerin dokunulmazlığı hangi sözleşmeyle düzenlenmiştir?",
+    "secenekler": [
+      "Lozan",
+      "Viyana Diplomatik İlişkiler Sözleşmesi",
+      "Paris",
+      "Sevr"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1961 Viyana Sözleşmesi."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Küba Krizi hangi iki ülke arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD-SSCB",
+      "ABD-Çin",
+      "SSCB-İngiltere",
+      "Fransa-Almanya"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1962'de ABD-SSCB."
+  },
+  {
+    "konu": "Güncel Sorunlar",
+    "soru": "Kitle imha silahlarının yayılmasını önlemeye yönelik temel anlaşma hangisidir?",
+    "secenekler": [
+      "NPT",
+      "NAFTA",
+      "OPEC",
+      "GATT"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Nükleer Silahların Yayılmasının Önlenmesi Antlaşması (NPT)."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "AB'nin yürütme organına en yakın kurum hangisidir?",
+    "secenekler": [
+      "Avrupa Parlamentosu",
+      "Avrupa Komisyonu",
+      "AB Konseyi",
+      "Avrupa Adalet Divanı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Komisyon yürütme işlevi görür."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye-AB ilişkilerinde Gümrük Birliği hangi yıl yürürlüğe girmiştir?",
+    "secenekler": [
+      "1987",
+      "1996",
+      "2004",
+      "2016"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Gümrük Birliği 1996."
+  },
+  {
+    "konu": "Uİ Teorileri",
+    "soru": "Neorealizm (yapısal realizm) en çok hangi unsura odaklanır?",
+    "secenekler": [
+      "İç politika",
+      "Sistem yapısı/anarki",
+      "Din",
+      "Kültür"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Waltz: sistem yapısı belirleyicidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Savaş suçlarını yargılamak üzere kurulan sürekli mahkeme hangisidir?",
+    "secenekler": [
+      "UAD",
+      "UCM",
+      "AİHM",
+      "Yargıtay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Uluslararası Ceza Mahkemesi (UCM)."
+  },
+  {
+    "konu": "Uluslararası Örgütler",
+    "soru": "BM Genel Kurulu kararları genellikle hangi niteliktedir?",
+    "secenekler": [
+      "Bağlayıcı",
+      "Tavsiye niteliğinde",
+      "Anayasa hükmünde",
+      "Yargı kararı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Genel Kurul kararları çoğunlukla tavsiyedir."
+  },
+  {
+    "konu": "Güncel Sorunlar",
+    "soru": "Enerji güvenliği tartışmalarında en sık vurgulanan unsur hangisidir?",
+    "secenekler": [
+      "Arz güvenliği",
+      "Sadece fiyat",
+      "Sadece iklim",
+      "Sadece turizm"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Arzın sürekliliği (arz güvenliği) temel başlıktır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş hangi iki blok arasında yaşanmıştır?",
+    "secenekler": [
+      "ABD–SSCB",
+      "ABD–Almanya",
+      "SSCB–Çin",
+      "İngiltere–Fransa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soğuk Savaş ABD ve SSCB arasında yaşanmıştır."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin egemen eşitliği hangi ilkeye dayanır?",
+    "secenekler": [
+      "Güç",
+      "Eşitlik",
+      "Bağımsızlık",
+      "Hukuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Egemen eşitlik ilkesidir."
+  },
+  {
+    "konu": "Teoriler",
+    "soru": "Realizm yaklaşımında uluslararası sistemin temel özelliği hangisidir?",
+    "secenekler": [
+      "Hiyerarşi",
+      "Anarşi",
+      "Tek merkez",
+      "Tam eşitlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Merkezi otorite yok → anarşi."
+  },
+  {
+    "konu": "Teoriler",
+    "soru": "Liberalizm uluslararası ilişkilerde en çok neyi ön plana çıkarır?",
+    "secenekler": [
+      "Kurumlar ve iş birliği",
+      "Sadece savaş",
+      "Coğrafya",
+      "Din"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kurumlar iş birliğini artırır."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Uluslararası Adalet Divanı (UAD) hangi örgütün yargı organıdır?",
+    "secenekler": [
+      "NATO",
+      "BM",
+      "AB",
+      "OECD"
+    ],
+    "dogru_index": 1,
+    "aciklama": "BM'nin başlıca yargı organı."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "I. Dünya Savaşı'nı sona erdiren anlaşmalardan biri hangisidir?",
+    "secenekler": [
+      "Versay",
+      "Lozan",
+      "Montrö",
+      "Ankara"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Versay 1919."
+  },
+  {
+    "konu": "Güncel Sorunlar",
+    "soru": "Göç krizleri genellikle hangi güvenlik yaklaşımıyla ele alınır?",
+    "secenekler": [
+      "İnsani güvenlik",
+      "Sadece askeri",
+      "Sadece ekonomik",
+      "Jeolojik"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İnsani güvenlik."
+  },
+  {
+    "konu": "Örgütler",
+    "soru": "AB hukukunun yorumunda en yetkili yargı organı hangisidir?",
+    "secenekler": [
+      "AİHM",
+      "ABAD",
+      "UAD",
+      "Danıştay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Avrupa Birliği Adalet Divanı."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Türkiye'nin NATO'ya üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1949",
+      "1952",
+      "1963",
+      "1996"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1952."
+  },
+  {
+    "konu": "Uluslararası Hukuk",
+    "soru": "Devletlerin iç işlerine karışmama ilkesi hangi ilkeyle ilişkilidir?",
+    "secenekler": [
+      "Egemenlik",
+      "Sömürgecilik",
+      "Gümrük",
+      "Vize"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Egemenlik ve bağımsızlık."
+  },
+  {
+    "konu": "Siyasi Tarih",
+    "soru": "Soğuk Savaş'ın sembolik yıkım olaylarından biri hangisidir?",
+    "secenekler": [
+      "Berlin Duvarı'nın yıkılması",
+      "Lozan",
+      "Kıbrıs Barış Harekatı",
+      "Kongre"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1989 Berlin Duvarı."
+  },
+  {
+    "konu": "Örgütler",
+    "soru": "BM Güvenlik Konseyi kararları genellikle hangi niteliktedir?",
+    "secenekler": [
+      "Bağlayıcı",
+      "Tavsiye",
+      "Yerel",
+      "Özel"
+    ],
+    "dogru_index": 0,
+    "aciklama": "GK kararları bağlayıcıdır."
+  }
 ]
