@@ -362,14 +362,17 @@ async function fetchJSON(path){
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
 
-  const raw = await res.text();
-  let data;
+  // Bazı ortamlarda (GH Pages, SW kalıntısı) JSON yerine HTML/yanıt kırpığı dönebilir;
+  // önce metni alıp temizlemeyi deneriz, yine de olmazsa hatayı detaylı loglarız.
+  const rawText = await res.text();
+  const cleanText = rawText.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
 
+  let data;
   try {
-    data = JSON.parse(raw);
+    data = JSON.parse(cleanText);
   } catch (err) {
-    const preview = raw.slice(0, 180).replace(/\s+/g, " ");
-    throw new Error(`${path} JSON parse hatası: ${err.message}. Örnek: ${preview}`);
+    console.error(`JSON parse hatası (${path}):`, err, rawText.slice(0, 200));
+    throw new Error(`${path} JSON okunamadı: ${err.message}`);
   }
 
   if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
