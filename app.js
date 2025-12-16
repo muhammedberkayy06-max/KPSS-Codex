@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v4";
+const APP_VERSION = "v5";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -361,13 +361,22 @@ async function fetchJSON(path){
   const url = `${path}?v=${APP_VERSION}`;
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
-  const data = await res.json();
-  if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-  return data.map(normalizeQuestion);
+
+  let text;
+  try {
+    text = await res.text();
+    const data = JSON.parse(text);
+    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+    return data.map(normalizeQuestion);
+  } catch (e) {
+    const preview = (text || "").slice(0, 120).replace(/\s+/g, " ");
+    throw new Error(`${path} JSON hatası: ${e?.message || e}. Önizleme: ${preview}`);
+  }
 }
 
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
+  const previous = App.allBanks || {};
   const banks = {};
   const missing = [];
 
@@ -377,7 +386,7 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      banks[lesson] = [];
+      banks[lesson] = previous[lesson] || [];
       missing.push({ lesson, file, error: e?.message || e });
     }
   });
@@ -390,7 +399,8 @@ async function loadAllBanks(){
   if (missing.length){
     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
-    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+    const details = missing.map(m => `• ${m.lesson}: ${m.error}`).join("\n");
+    showAlert(`Bazı dersler yüklenemedi. Tarayıcı önbelleğini temizleyip sayfayı yenileyin.\n${details}`);
   } else {
     const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
     setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
