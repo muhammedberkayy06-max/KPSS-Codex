@@ -402,15 +402,20 @@ async function fetchJSON(path){
     } catch { return null; }
   };
 
-  const fetchAndParse = async (reqLabel, reqInit) => {
-    const res = await fetch(reqLabel, { cache: "no-store", ...reqInit });
-    const rawText = await res.text();
-    const ct = (res.headers.get("content-type") || "").toLowerCase();
-    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
-    if (ct && !ct.includes("json")) {
-      const first = (rawText.trim?.() || rawText || "?")[0] || "?";
-      throw new Error(`JSON beklenirken farklı içerik (type: ${ct}, ilk bayt: ${first})`);
+  const tryEmbedded = () => {
+    const fname = cacheKey.split("/").pop();
+    const embedded = window.EMBEDDED_BANKS?.[fname];
+    if (Array.isArray(embedded)) {
+      console.info(`Gömülü banka kullanılıyor (${fname})`);
+      return embedded;
     }
+    return null;
+  };
+
+  const fetchAndParse = async (reqLabel, reqInit) => {
+    const res = await fetch(reqLabel, { cache: "reload", ...reqInit });
+    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+    const rawText = await res.text();
     const parsed = tryParse(rawText);
     if (parsed) return parsed;
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
@@ -449,6 +454,8 @@ async function fetchJSON(path){
       console.warn(`İkinci deneme başarısız (${path}):`, err2);
       const cached = await restoreFromCache();
       if (cached) return cached.map(normalizeQuestion);
+      const embedded = tryEmbedded();
+      if (embedded) return embedded.map(normalizeQuestion);
       throw err2;
     }
   }
