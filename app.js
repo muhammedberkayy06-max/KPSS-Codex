@@ -53,6 +53,7 @@ const GK_GY_EXAM_DISTRIBUTION = {
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
 
 const STORE_KEY = "kpss_ultimate_v1";
+const BANK_CACHE_KEY = "kpss_ultimate_banks_v1";
 
 // ---------- small helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -672,10 +673,10 @@ function fingerprintQuestion(q){
 function normalizeQuestion(q){
   const konu = q.konu || q.topic || "Genel";
   const soru = q.soru || q.question || "";
-  const paragraf = (q.paragraf ?? q.paragraph) || null;
+  const paragraf = (q.paragraf !== undefined && q.paragraf !== null) ? q.paragraf : (q.paragraph || null);
 
   // --- seçenekleri normalize et: array veya {A:..,B:..} gelebilir ---
-  let optionsRaw = q.secenekler ?? q.options ?? [];
+  let optionsRaw = (q.secenekler !== undefined && q.secenekler !== null) ? q.secenekler : (q.options !== undefined && q.options !== null ? q.options : []);
   let options = [];
 
   if (Array.isArray(optionsRaw)) {
@@ -693,9 +694,15 @@ function normalizeQuestion(q){
   }
 
   // --- doğru cevabı normalize et: index veya harf gelebilir ---
-  let correct = (q.dogru_index ?? q.dogruIndex ?? q.correct_index ?? q.correctIndex ?? q.answer_index ?? q.answerIndex);
+  let correct = (q.dogru_index !== undefined && q.dogru_index !== null) ? q.dogru_index
+    : (q.dogruIndex !== undefined && q.dogruIndex !== null ? q.dogruIndex
+    : (q.correct_index !== undefined && q.correct_index !== null ? q.correct_index
+    : (q.correctIndex !== undefined && q.correctIndex !== null ? q.correctIndex
+    : (q.answer_index !== undefined && q.answer_index !== null ? q.answer_index
+    : q.answerIndex))));
   if (correct === undefined || correct === null) {
-    correct = q.dogru ?? q.correct ?? q.answer; // "A" / "B" gibi
+    const alt = (q.dogru !== undefined && q.dogru !== null) ? q.dogru : (q.correct !== undefined && q.correct !== null ? q.correct : q.answer);
+    correct = alt; // "A" / "B" gibi
   }
 
   let ci = 0;
@@ -728,15 +735,111 @@ function normalizeQuestion(q){
     explain,
     difficulty,
     kazanım,
+    source: q.source || null,
   };
+}
+
+function computeFingerprint(q){
+  const parts = [canonicalText(q.soru), canonicalText(q.paragraf || "")];
+  (q.options || []).forEach(opt => parts.push(canonicalText(opt)));
+  const base = parts.join("|");
+  if (!base.trim()) return null;
+  return hashFingerprint(base);
 }
 
 function estimateDifficulty(q){
   // heuristic: longer prompt/paragraph and options => harder
-  const len = (q.soru?.length||0) + (q.paragraf?.length||0);
+  const len = ((q.soru && q.soru.length) || 0) + ((q.paragraf && q.paragraf.length) || 0);
   if (len < 90) return "easy";
   if (len < 170) return "medium";
   return "hard";
+}
+
+// ---------- benzersizlik koruması ----------
+const FINGERPRINT_KEY = "kpss_fingerprints_v1";
+const Fingerprints = { loaded:false, seen:new Set(), changed:false };
+
+function normalizeFingerprintText(text){
+  return safeText(text)
+    .toLowerCase()
+    .replace(/[0-9]+/g, "#")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hashString(str){
+  let h = 5381;
+  for (let i=0;i<str.length;i++){
+    h = ((h << 5) + h) + str.charCodeAt(i);
+    h = h & 0xffffffff;
+  }
+  return "h" + (h >>> 0).toString(16);
+}
+
+function questionFingerprint(q){
+  const parts = [q.lesson || "", q.konu || "", q.paragraf || "", q.soru || ""];
+  const opts = q.options || q.secenekler || q.optionsRaw || [];
+  if (Array.isArray(opts)) parts.push(...opts);
+  const normalized = normalizeFingerprintText(parts.join(" | "));
+  if (!normalized) return null;
+  return hashString(normalized);
+}
+
+function ensureFingerprintsLoaded(){
+  if (Fingerprints.loaded) return;
+  try {
+    const raw = localStorage?.getItem(FINGERPRINT_KEY);
+    if (raw){
+      const arr = JSON.parse(raw);
+      if (Array.isArray(arr)) arr.forEach(fp => Fingerprints.seen.add(fp));
+    }
+  } catch (e){ console.warn("Fingerprint load", e); }
+  Fingerprints.loaded = true;
+}
+
+function persistFingerprints(){
+  if (!Fingerprints.changed) return;
+  try {
+    const arr = Array.from(Fingerprints.seen).slice(-8000);
+    localStorage?.setItem(FINGERPRINT_KEY, JSON.stringify(arr));
+    Fingerprints.changed = false;
+  } catch (e){ console.warn("Fingerprint save", e); }
+}
+
+function indexBanksForFingerprints(){
+  ensureFingerprintsLoaded();
+  Object.values(App.allBanks || {}).forEach(list => {
+    (list||[]).forEach(q => {
+      const fp = questionFingerprint(q);
+      if (fp) Fingerprints.seen.add(fp);
+    });
+  });
+}
+
+function dedupeQuestions(lesson, questions, sourceLabel){
+  ensureFingerprintsLoaded();
+  const unique = [];
+  let skipped = 0;
+  questions.forEach((q, idx) => {
+    const fp = questionFingerprint(q);
+    if (fp && Fingerprints.seen.has(fp)){
+      skipped++;
+      recordError("AI-Tekrar", `Tekrar soru atlandı (${lesson})`, { detail: `${sourceLabel||"AI"} · ${fp}` });
+      return;
+    }
+    const normalized = normalizeQuestion(q);
+    normalized.fingerprint = fp;
+    if (fp){
+      Fingerprints.seen.add(fp);
+      Fingerprints.changed = true;
+    }
+    unique.push(normalized);
+  });
+  if (skipped && sourceLabel){
+    setNotice(`${sourceLabel}: ${skipped} tekrar soru elendi, ${unique.length} soru kaldı`, "info");
+  }
+  return unique;
 }
 
 function shuffle(arr){
@@ -746,6 +849,236 @@ function shuffle(arr){
   }
   return arr;
 }
+
+function randInt(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function pickOne(arr){
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+const AI_GENERATORS = {
+  "Matematik": () => {
+    const a = randInt(8, 24);
+    const b = randInt(4, 18);
+    const perc = randInt(5, 30);
+    const base = a * b;
+    const correct = Math.round(base * (1 + perc/100));
+    const opts = shuffle([
+      correct,
+      correct - randInt(1,5)*2,
+      correct + randInt(1,4)*3,
+      base,
+      correct + randInt(2,6)
+    ]).slice(0,4);
+    return {
+      konu:"Yüzdeler",
+      soru:`${a} × ${b} işleminin sonucunun %${perc} fazlası kaçtır?`,
+      options: opts,
+      correctIndex: opts.indexOf(correct),
+      explain:`Önce ${a}×${b}=${base} bulunur. %${perc} fazlası ${base}×(1+${perc}/100)=${correct} olur.`,
+      source:"AI"
+    };
+  },
+  "Türkçe": () => {
+    const theme = pickOne(["ana düşünce","yardımcı düşünce","anlatım biçimi","tonlama"]);
+    const parag = pickOne([
+      "Okuma alışkanlığı, düşüncenin sınırlarını genişletir ve hayal gücünü besler.",
+      "Kent yaşamı insanı hızlandırırken, doğa yürüyüşü zihni yavaşlatır ve dinginlik getirir.",
+      "Bir fikri savunurken örnek vermek, okuyucunun ikna olmasını kolaylaştırır."
+    ]);
+    const options = [
+      `Parçada vurgulanan ${theme}`,
+      "Kişisel gözlemlerden kaçınma",
+      "Olay örgüsünü kronolojik verme",
+      "Karşılaştırma ve tez–antitez",
+    ];
+    return {
+      konu:"Paragrafta anlam",
+      paragraf: parag,
+      soru:"Bu parçada aşağıdakilerden hangisine değinilmiştir?",
+      options,
+      correctIndex:0,
+      explain:"Parçada asıl vurgulanan düşünce ilk seçenekte özetlenmiştir; diğerleri parçayla ilişkili değildir.",
+      source:"AI"
+    };
+  },
+  "Tarih": () => {
+    const pair = pickOne([
+      {event:"Malazgirt Zaferi", year:1071, actor:"Alp Arslan"},
+      {event:"İstanbul'un Fethi", year:1453, actor:"Fatih Sultan Mehmet"},
+      {event:"Sakarya Meydan Muharebesi", year:1921, actor:"Mustafa Kemal"}
+    ]);
+    const options = shuffle([
+      `${pair.year} – ${pair.actor}`,
+      `${pair.year+1} – ${pair.actor}`,
+      `${pair.year-5} – ${pair.actor}`,
+      `${pair.year} – ${pickOne(["II. Murad","Yıldırım Bayezid","Kazım Karabekir"])}`,
+    ]);
+    return {
+      konu:"Kronoloji",
+      soru:`${pair.event} hangi yıl gerçekleşmiş ve komutanı kimdir?`,
+      options,
+      correctIndex: options.indexOf(`${pair.year} – ${pair.actor}`),
+      explain:`Tarih: ${pair.year}; öne çıkan komutan: ${pair.actor}.`,
+      source:"AI"
+    };
+  },
+  "Coğrafya": () => {
+    const region = pickOne([
+      {name:"Karadeniz", feature:"yağışın yıl içine dengeli dağılması"},
+      {name:"İç Anadolu", feature:"yaz kuraklığı ve step bitki örtüsü"},
+      {name:"Akdeniz", feature:"kışın ılık ve yağışlı, yazın sıcak ve kurak"}
+    ]);
+    const opts = [
+      `${region.name} Bölgesi`,
+      "Doğu Anadolu Bölgesi",
+      "Marmara Bölgesi",
+      "Ege Bölgesi"
+    ];
+    return {
+      konu:"İklim",
+      soru:`"${region.feature}" özelliği Türkiye'de en çok hangi bölgede görülür?`,
+      options: opts,
+      correctIndex:0,
+      explain:`Tanımlanan iklim özelliği ${region.name} Bölgesi'ni işaret eder.`,
+      source:"AI"
+    };
+  },
+  "Vatandaşlık": () => {
+    const art = pickOne([
+      {topic:"yasama", body:"TBMM", desc:"kanun çıkarma"},
+      {topic:"yürütme", body:"Cumhurbaşkanı", desc:"kararname yayımlama"},
+      {topic:"yargı", body:"Anayasa Mahkemesi", desc:"iptal davası görme"}
+    ]);
+    const opts = shuffle([
+      `${art.topic} – ${art.body}`,
+      `yasama – ${art.body}`,
+      `yürütme – Danıştay`,
+      `yargı – TBMM`
+    ]);
+    return {
+      konu:"Devlet organları",
+      soru:`Anayasal düzende ${art.desc} yetkisi hangi organa aittir?`,
+      options: opts,
+      correctIndex: opts.indexOf(`${art.topic} – ${art.body}`),
+      explain:`${art.desc} görevi ${art.body}'nın ${art.topic} fonksiyonunda yer alır.`,
+      source:"AI"
+    };
+  },
+  "İktisat": () => {
+    const gdp = randInt(200, 900);
+    const growth = randInt(2, 8);
+    const options = [
+      `${growth}% reel büyüme`,
+      `${growth+2}% enflasyon`,
+      `${growth-1}% bütçe açığı`,
+      `${growth+5}% faiz oranı`
+    ];
+    return {
+      konu:"Makro iktisat",
+      soru:`Bir ekonominin GSYH'sı ${gdp} milyar TL iken %${growth} büyürse bu oran neyi ifade eder?`,
+      options,
+      correctIndex:0,
+      explain:"Verilen oran reel çıktı artışını, yani ekonomik büyümeyi gösterir.",
+      source:"AI"
+    };
+  },
+  "Hukuk": () => {
+    const inst = pickOne([
+      {court:"Anayasa Mahkemesi", topic:"iptal davası"},
+      {court:"Danıştay", topic:"idari uyuşmazlık"},
+      {court:"Yargıtay", topic:"temyiz"}
+    ]);
+    const opts = [
+      inst.court,
+      "Sayıştay",
+      "Bölge Adliye Mahkemesi",
+      "Hakimler ve Savcılar Kurulu"
+    ];
+    return {
+      konu:"Yargı organları",
+      soru:`${inst.topic} hangi yüksek yargı organının görevidir?`,
+      options: opts,
+      correctIndex:0,
+      explain:`${inst.topic} konusunda yetkili organ ${inst.court}'dır.`,
+      source:"AI"
+    };
+  },
+  "Kamu Yönetimi": () => {
+    const models = ["merkeziyetçilik", "yerinden yönetim", "kamu girişimciliği", "yeni kamu işletmeciliği"];
+    const picked = pickOne(models);
+    const opts = shuffle([
+      picked,
+      pickOne(models.filter(m=>m!==picked)),
+      "bürokratik elitizm",
+      "hanehalkı teorisi"
+    ]);
+    return {
+      konu:"Yönetim modelleri",
+      soru:`Aşağıdakilerden hangisi ${picked.includes("kamu") ? "modern" : "klasik"} bir kamu yönetimi yaklaşımıdır?`,
+      options: opts,
+      correctIndex: opts.indexOf(picked),
+      explain:`${picked}, kamu yönetimi literatüründe ayrı bir yaklaşım olarak incelenir.`,
+      source:"AI"
+    };
+  },
+  "Çalışma Ekonomisi": () => {
+    const ratio = randInt(5, 18);
+    const opts = [
+      "İşgücüne katılım oranı",
+      "Enflasyon oranı",
+      "Faiz dışı fazla",
+      "Cari açık"
+    ];
+    return {
+      konu:"Emek piyasası",
+      soru:`Genç nüfusun işgücü içindeki payı %${ratio} ise bu değer aşağıdakilerden hangisine örnektir?`,
+      options: opts,
+      correctIndex:0,
+      explain:"İşgücüne katılım oranı, çalışabilir nüfusun işgücüne dahil olma yüzdesini gösterir.",
+      source:"AI"
+    };
+  },
+  "Uluslararası İlişkiler": () => {
+    const org = pickOne([
+      {name:"NATO", focus:"kolektif savunma"},
+      {name:"BM", focus:"uluslararası barış"},
+      {name:"OECD", focus:"ekonomik iş birliği"}
+    ]);
+    const opts = shuffle([
+      `${org.focus} odaklı örgüt`,
+      "Bölgesel ticaret anlaşması",
+      "Finans piyasası kurumu",
+      "Tek taraflı ittifak"
+    ]);
+    return {
+      konu:"Uluslararası örgütler",
+      soru:`${org.name} temel olarak nasıl bir yapıdır?`,
+      options: opts,
+      correctIndex: opts.indexOf(`${org.focus} odaklı örgüt`),
+      explain:`${org.name}, ${org.focus} amacıyla kurulmuş hükümetler arası bir örgüttür.`,
+      source:"AI"
+    };
+  },
+  generic: () => {
+    const focus = pickOne(["zorlanılan konulara tekrar", "zaman yönetimi", "okuma hızını artırma"]);
+    return {
+      konu:"Çalışma stratejisi",
+      soru:`Sürekli ${focus} sağlayan yöntem hangisidir?`,
+      options:[
+        "Kısa döngülü tekrar ve mini testler",
+        "Tekrar yapmadan tüm denemeleri çözmek",
+        "Sadece özet okumak",
+        "Konuları atlayarak ilerlemek"
+      ],
+      correctIndex:0,
+      explain:"En verimli yöntem, konuyu kısa tekrarlarla pekiştirip sık sık test etmektir.",
+      source:"AI"
+    };
+  }
+};
 
 function pickN(arr, n){
   if (n<=0) return [];
@@ -770,8 +1103,40 @@ function loadState(){
   }catch{ return {}; }
 }
 
+function loadCachedBanks(){
+  try{
+    const raw = localStorage.getItem(BANK_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    const banks = {};
+    for (const [lesson, list] of Object.entries(parsed)){
+      if (Array.isArray(list)) banks[lesson] = list.map(normalizeQuestion);
+    }
+    return banks;
+  }catch(e){
+    console.warn("Banka cache okuma hatası", e);
+    return null;
+  }
+}
+
+function saveCachedBanks(banks){
+  try{
+    const out = {};
+    for (const [lesson, list] of Object.entries(banks||{})){
+      if (Array.isArray(list) && list.length){
+        out[lesson] = list.map(q=> q.raw || q);
+      }
+    }
+    localStorage.setItem(BANK_CACHE_KEY, JSON.stringify(out));
+  }catch(e){ console.warn("Banka cache yazma hatası", e); }
+}
+
 function saveState(s){
-  localStorage.setItem(STORE_KEY, JSON.stringify(s));
+  const clone = JSON.parse(JSON.stringify(s || {}));
+  // Güvenlik: Token'ı kalıcı olarak saklamıyoruz.
+  if (clone.ai) clone.ai.token = "";
+  localStorage.setItem(STORE_KEY, JSON.stringify(clone));
 }
 
 function ensureState(){
@@ -851,6 +1216,8 @@ const App = {
   mode:"single",
   lesson:"Matematik",
   allBanks:{}, // lesson -> questions[]
+  bankMeta:{}, // file -> {source, ts}
+  loadErrors:[],
   currentTest:null,
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
@@ -859,13 +1226,440 @@ const App = {
 };
 
 // ---------- UI wiring ----------
-function setNotice(msg, kind="info"){
+function setNotice(msg, kind="info", action){
   const el = $("loadStatus");
-  el.hidden = !msg;
-  if (!msg) return;
-  el.textContent = msg;
+  const text = $("loadStatusText") || el;
+  const btn = $("noticeAction");
+  if (!el) return;
+  if (!msg){
+    el.hidden = true;
+    if (text) text.textContent = "";
+    if (btn){ btn.hidden = true; btn.onclick = null; }
+    return;
+  }
+  el.hidden = false;
+  text.textContent = msg;
   el.style.background = kind==="error" ? "rgba(220,38,38,.07)" : "rgba(10,132,255,.06)";
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
+  if (btn){
+    if (action && typeof action.onClick === "function"){
+      btn.hidden = false;
+      btn.textContent = action.label || "Başlat";
+      btn.onclick = () => action.onClick();
+    } else {
+      btn.hidden = true;
+      btn.onclick = null;
+    }
+  }
+}
+
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function hydrateNoveltyIndex(){
+  const state = ensureState();
+  App.fingerprints = new Set(state.aiFingerprints || []);
+  App.canonByLesson = Object.fromEntries(Object.entries(state.aiCanon || {}).map(([k,v])=> [k, Array.isArray(v) ? v : []]));
+}
+
+function persistFingerprints(){
+  const state = ensureState();
+  state.aiFingerprints = Array.from(App.fingerprints || []).slice(-FINGERPRINT_LIMIT);
+  const canonState = {};
+  for (const [lesson, arr] of Object.entries(App.canonByLesson || {})){
+    canonState[lesson] = arr.slice(-CANON_PER_LESSON);
+  }
+  state.aiCanon = canonState;
+  saveState(state);
+}
+
+function seedNoveltyFromBanks(banks){
+  hydrateNoveltyIndex();
+  for (const [lesson, list] of Object.entries(banks || {})){
+    const canonList = [];
+    for (const q of (list || [])){
+      const canon = canonicalizeQuestion(normalizeQuestion(q), lesson);
+      if (!canon) continue;
+      canonList.push(canon);
+      App.fingerprints.add(hashString(canon));
+    }
+    const merged = [...(App.canonByLesson[lesson] || []), ...canonList];
+    App.canonByLesson[lesson] = merged.slice(-CANON_PER_LESSON);
+  }
+  persistFingerprints();
+}
+
+function isNearDuplicate(lesson, canon, threshold = 0.86, sessionSet){
+  if (!canon) return false;
+  const fp = hashString(canon);
+  if (App.fingerprints?.has(fp)) return true;
+  if (sessionSet?.has(canon)) return true;
+  const list = App.canonByLesson?.[lesson] || [];
+  for (const prev of list){
+    if (prev === canon) return true;
+    if (similarity(prev, canon) >= threshold) return true;
+  }
+  return false;
+}
+
+function applyNoveltyFilter(lesson, questions, opts = {}){
+  const sessionSet = opts.sessionSet;
+  const accepted = [];
+  const rejected = [];
+
+  for (const raw of questions){
+    const base = normalizeQuestion(raw);
+    const canon = canonicalizeQuestion(base, lesson);
+    if (!canon){
+      rejected.push({ reason:"empty" });
+      continue;
+    }
+    if (isNearDuplicate(lesson, canon, opts.similarityThreshold ?? 0.86, sessionSet)){
+      rejected.push({ reason:"duplicate", canon });
+      continue;
+    }
+    accepted.push({ question: base, canon });
+    sessionSet?.add(canon);
+  }
+
+  if (!opts.skipRegister && accepted.length){
+    const canonList = accepted.map(a => a.canon);
+    if (!App.canonByLesson[lesson]) App.canonByLesson[lesson] = [];
+    App.canonByLesson[lesson].push(...canonList);
+    if (App.canonByLesson[lesson].length > CANON_PER_LESSON){
+      App.canonByLesson[lesson].splice(0, App.canonByLesson[lesson].length - CANON_PER_LESSON);
+    }
+    canonList.forEach(c => App.fingerprints.add(hashString(c)));
+    persistFingerprints();
+  }
+
+  return { accepted: accepted.map(a=> a.question), rejected };
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function togglePlanCta(show){
+  const box = $("planCta");
+  if (!box) return;
+  box.hidden = !show;
+  if (show){
+    $("btnPlanStart")?.focus();
+  }
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
 }
 
 function renderDiagnostics(){
@@ -1192,7 +1986,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   };
 
   const preferWeak = (lessonName, topic) => {
-    const tp = state.topicPerf?.[lessonName]?.[topic];
+    const tp = (state.topicPerf && state.topicPerf[lessonName]) ? state.topicPerf[lessonName][topic] : undefined;
     if (!tp || tp.total < 6) return 1.0;
     const acc = tp.correct / tp.total;
     // lower accuracy => higher weight
@@ -1259,7 +2053,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   shuffle(out);
 
   return {
-    id: crypto.randomUUID?.() || String(Math.random()).slice(2),
+    id: (crypto && typeof crypto.randomUUID === "function" ? crypto.randomUUID() : String(Math.random()).slice(2)),
     mode,
     lesson,
     createdAt: now(),
@@ -1281,6 +2075,23 @@ function setView(view){
   $("resultsCard").hidden = view !== "results";
 }
 
+function showQuickStartCTA(){
+  const btn = $("btnQuickStart");
+  if (!btn) return;
+  btn.style.display = "inline-flex";
+  btn.textContent = "▶ Başlat";
+  btn.onclick = ()=>{
+    hideQuickStartCTA();
+    startTest();
+  };
+}
+
+function hideQuickStartCTA(){
+  const btn = $("btnQuickStart");
+  if (!btn) return;
+  btn.style.display = "none";
+}
+
 function renderQuestion(){
   const t = App.currentTest;
   if (!t || t.total === 0){
@@ -1291,7 +2102,9 @@ function renderQuestion(){
   const q = t.questions[t.index];
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
 
-  $("pillMeta").textContent = `${lessonName} · ${q.konu}`;
+  const aiLabel = (q.source === "AI" || q.raw?.source === "AI") ? " · Yapay Zekâ" : "";
+
+  $("pillMeta").textContent = `${lessonName} · ${q.konu}${aiLabel}`;
   $("qTitle").textContent = q.soru;
 
   if (q.paragraf){
@@ -1307,13 +2120,13 @@ function renderQuestion(){
 
   const opts = $("options");
   opts.innerHTML = "";
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const locked = t.answers[t.index] !== null;
 
   q.options.forEach((text, i)=>{
     const b = document.createElement("button");
     b.className = "opt";
-    b.innerHTML = `${String.fromCharCode(65+i)}) ${safeText(text)}`;
+    b.textContent = `${String.fromCharCode(65+i)}) ${safeText(text)}`;
     b.onclick = () => onPick(i);
     if (locked) b.classList.add("disabled");
     opts.appendChild(b);
@@ -1341,7 +2154,7 @@ function inferLesson(q){
 function paintOptions(){
   const t = App.currentTest;
   const q = t.questions[t.index];
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const correct = q.correctIndex;
   const buttons = [...$("options").children];
 
@@ -1381,7 +2194,7 @@ function showExplanation(){
   const t = App.currentTest;
   const q = t.questions[t.index];
   const ans = t.answers[t.index];
-  const ok = !!ans?.correct;
+  const ok = !!(ans && ans.correct);
 
   $("explain").hidden = false;
   $("tagResult").textContent = ok ? "Doğru ✅" : "Yanlış ❌";
@@ -1394,6 +2207,9 @@ function showExplanation(){
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
+  if (q.source === "AI" || q.raw?.source === "AI") {
+    $("coachTip").textContent += " · Yapay zekâ tarafından üretilmiş deneme sorusu (ücretsiz).";
+  }
 
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
@@ -1415,7 +2231,7 @@ function onPick(i){
   // stats
   if (ok) t.correct++;
   const topic = q.konu;
-  t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
   t.topicStats[topic].total++;
   if (ok) t.topicStats[topic].correct++;
 
@@ -1461,7 +2277,7 @@ function skip(){
     t.answers[t.index] = {picked:null, correct:false, skipped:true};
     const q = t.questions[t.index];
     const topic = q.konu;
-    t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
     t.topicStats[topic].total++;
   }
   next();
@@ -1476,8 +2292,8 @@ function finish(){
   // merge topic perf
   for (const [topic, st] of Object.entries(t.topicStats)){
     const lessonName = (t.mode === "single") ? t.lesson : "Karma";
-    state.topicPerf[lessonName] ??= {};
-    state.topicPerf[lessonName][topic] ??= {correct:0,total:0};
+    if (!state.topicPerf[lessonName]) state.topicPerf[lessonName] = {};
+    if (!state.topicPerf[lessonName][topic]) state.topicPerf[lessonName][topic] = {correct:0,total:0};
     state.topicPerf[lessonName][topic].correct += st.correct;
     state.topicPerf[lessonName][topic].total += st.total;
   }
@@ -1507,7 +2323,7 @@ function renderResults(){
 
   const acc = t.total ? Math.round((t.correct / t.total) * 100) : 0;
   const lvl = state.profile.level;
-  const badges = state.profile.badges?.slice(0,6).join(" · ") || "—";
+  const badges = (state.profile.badges ? state.profile.badges.slice(0,6).join(" · ") : null) || "—";
 
   $("summary").textContent = `Doğru: ${t.correct} / ${t.total}  ·  Başarı: %${acc}  ·  Seviye: ${lvl}  ·  Rozetler: ${badges}`;
 
@@ -1629,7 +2445,8 @@ function startVoice(){
   rec.maxAlternatives = 1;
 
   rec.onresult = (e)=>{
-    const text = (e.results?.[0]?.[0]?.transcript || "").trim();
+    const res = (e && e.results && e.results[0] && e.results[0][0]) ? e.results[0][0].transcript : "";
+    const text = (res || "").trim();
     if (!text) return;
     handleVoiceCommand(text);
   };
@@ -1754,6 +2571,7 @@ function quick2hPlan(){
   start?.classList.add("pulse");
   start?.scrollIntoView({ behavior:"smooth", block:"center" });
   setNotice("2 saat plan: GK-GY karışık + zayıf konulara ağırlık. Başlat’a bas.", "info");
+  showQuickStartCTA();
 }
 
 function exportData(){
@@ -1775,7 +2593,9 @@ function share(){
   if (navigator.share){
     navigator.share({ title:"KPSS Dijital Koç", text: msg, url: location.href }).catch(()=>{});
   } else {
-    navigator.clipboard?.writeText(msg + " " + location.href);
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(msg + " " + location.href);
+    }
     setNotice("Paylaşım metni panoya kopyalandı ✅", "info");
   }
 }
