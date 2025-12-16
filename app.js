@@ -357,6 +357,40 @@ function syncLessonUI(mode = App.mode){
   renderLessonIcons(mode);
 }
 
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
+
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
 }
@@ -426,6 +460,7 @@ function normalizeQuestion(q){
     explain,
     difficulty,
     kazanım,
+    source: q.source || null,
   };
 }
 
@@ -444,6 +479,236 @@ function shuffle(arr){
   }
   return arr;
 }
+
+function randInt(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function pickOne(arr){
+  return arr[Math.floor(Math.random()*arr.length)];
+}
+
+const AI_GENERATORS = {
+  "Matematik": () => {
+    const a = randInt(8, 24);
+    const b = randInt(4, 18);
+    const perc = randInt(5, 30);
+    const base = a * b;
+    const correct = Math.round(base * (1 + perc/100));
+    const opts = shuffle([
+      correct,
+      correct - randInt(1,5)*2,
+      correct + randInt(1,4)*3,
+      base,
+      correct + randInt(2,6)
+    ]).slice(0,4);
+    return {
+      konu:"Yüzdeler",
+      soru:`${a} × ${b} işleminin sonucunun %${perc} fazlası kaçtır?`,
+      options: opts,
+      correctIndex: opts.indexOf(correct),
+      explain:`Önce ${a}×${b}=${base} bulunur. %${perc} fazlası ${base}×(1+${perc}/100)=${correct} olur.`,
+      source:"AI"
+    };
+  },
+  "Türkçe": () => {
+    const theme = pickOne(["ana düşünce","yardımcı düşünce","anlatım biçimi","tonlama"]);
+    const parag = pickOne([
+      "Okuma alışkanlığı, düşüncenin sınırlarını genişletir ve hayal gücünü besler.",
+      "Kent yaşamı insanı hızlandırırken, doğa yürüyüşü zihni yavaşlatır ve dinginlik getirir.",
+      "Bir fikri savunurken örnek vermek, okuyucunun ikna olmasını kolaylaştırır."
+    ]);
+    const options = [
+      `Parçada vurgulanan ${theme}`,
+      "Kişisel gözlemlerden kaçınma",
+      "Olay örgüsünü kronolojik verme",
+      "Karşılaştırma ve tez–antitez",
+    ];
+    return {
+      konu:"Paragrafta anlam",
+      paragraf: parag,
+      soru:"Bu parçada aşağıdakilerden hangisine değinilmiştir?",
+      options,
+      correctIndex:0,
+      explain:"Parçada asıl vurgulanan düşünce ilk seçenekte özetlenmiştir; diğerleri parçayla ilişkili değildir.",
+      source:"AI"
+    };
+  },
+  "Tarih": () => {
+    const pair = pickOne([
+      {event:"Malazgirt Zaferi", year:1071, actor:"Alp Arslan"},
+      {event:"İstanbul'un Fethi", year:1453, actor:"Fatih Sultan Mehmet"},
+      {event:"Sakarya Meydan Muharebesi", year:1921, actor:"Mustafa Kemal"}
+    ]);
+    const options = shuffle([
+      `${pair.year} – ${pair.actor}`,
+      `${pair.year+1} – ${pair.actor}`,
+      `${pair.year-5} – ${pair.actor}`,
+      `${pair.year} – ${pickOne(["II. Murad","Yıldırım Bayezid","Kazım Karabekir"])}`,
+    ]);
+    return {
+      konu:"Kronoloji",
+      soru:`${pair.event} hangi yıl gerçekleşmiş ve komutanı kimdir?`,
+      options,
+      correctIndex: options.indexOf(`${pair.year} – ${pair.actor}`),
+      explain:`Tarih: ${pair.year}; öne çıkan komutan: ${pair.actor}.`,
+      source:"AI"
+    };
+  },
+  "Coğrafya": () => {
+    const region = pickOne([
+      {name:"Karadeniz", feature:"yağışın yıl içine dengeli dağılması"},
+      {name:"İç Anadolu", feature:"yaz kuraklığı ve step bitki örtüsü"},
+      {name:"Akdeniz", feature:"kışın ılık ve yağışlı, yazın sıcak ve kurak"}
+    ]);
+    const opts = [
+      `${region.name} Bölgesi`,
+      "Doğu Anadolu Bölgesi",
+      "Marmara Bölgesi",
+      "Ege Bölgesi"
+    ];
+    return {
+      konu:"İklim",
+      soru:`"${region.feature}" özelliği Türkiye'de en çok hangi bölgede görülür?`,
+      options: opts,
+      correctIndex:0,
+      explain:`Tanımlanan iklim özelliği ${region.name} Bölgesi'ni işaret eder.`,
+      source:"AI"
+    };
+  },
+  "Vatandaşlık": () => {
+    const art = pickOne([
+      {topic:"yasama", body:"TBMM", desc:"kanun çıkarma"},
+      {topic:"yürütme", body:"Cumhurbaşkanı", desc:"kararname yayımlama"},
+      {topic:"yargı", body:"Anayasa Mahkemesi", desc:"iptal davası görme"}
+    ]);
+    const opts = shuffle([
+      `${art.topic} – ${art.body}`,
+      `yasama – ${art.body}`,
+      `yürütme – Danıştay`,
+      `yargı – TBMM`
+    ]);
+    return {
+      konu:"Devlet organları",
+      soru:`Anayasal düzende ${art.desc} yetkisi hangi organa aittir?`,
+      options: opts,
+      correctIndex: opts.indexOf(`${art.topic} – ${art.body}`),
+      explain:`${art.desc} görevi ${art.body}'nın ${art.topic} fonksiyonunda yer alır.`,
+      source:"AI"
+    };
+  },
+  "İktisat": () => {
+    const gdp = randInt(200, 900);
+    const growth = randInt(2, 8);
+    const options = [
+      `${growth}% reel büyüme`,
+      `${growth+2}% enflasyon`,
+      `${growth-1}% bütçe açığı`,
+      `${growth+5}% faiz oranı`
+    ];
+    return {
+      konu:"Makro iktisat",
+      soru:`Bir ekonominin GSYH'sı ${gdp} milyar TL iken %${growth} büyürse bu oran neyi ifade eder?`,
+      options,
+      correctIndex:0,
+      explain:"Verilen oran reel çıktı artışını, yani ekonomik büyümeyi gösterir.",
+      source:"AI"
+    };
+  },
+  "Hukuk": () => {
+    const inst = pickOne([
+      {court:"Anayasa Mahkemesi", topic:"iptal davası"},
+      {court:"Danıştay", topic:"idari uyuşmazlık"},
+      {court:"Yargıtay", topic:"temyiz"}
+    ]);
+    const opts = [
+      inst.court,
+      "Sayıştay",
+      "Bölge Adliye Mahkemesi",
+      "Hakimler ve Savcılar Kurulu"
+    ];
+    return {
+      konu:"Yargı organları",
+      soru:`${inst.topic} hangi yüksek yargı organının görevidir?`,
+      options: opts,
+      correctIndex:0,
+      explain:`${inst.topic} konusunda yetkili organ ${inst.court}'dır.`,
+      source:"AI"
+    };
+  },
+  "Kamu Yönetimi": () => {
+    const models = ["merkeziyetçilik", "yerinden yönetim", "kamu girişimciliği", "yeni kamu işletmeciliği"];
+    const picked = pickOne(models);
+    const opts = shuffle([
+      picked,
+      pickOne(models.filter(m=>m!==picked)),
+      "bürokratik elitizm",
+      "hanehalkı teorisi"
+    ]);
+    return {
+      konu:"Yönetim modelleri",
+      soru:`Aşağıdakilerden hangisi ${picked.includes("kamu") ? "modern" : "klasik"} bir kamu yönetimi yaklaşımıdır?`,
+      options: opts,
+      correctIndex: opts.indexOf(picked),
+      explain:`${picked}, kamu yönetimi literatüründe ayrı bir yaklaşım olarak incelenir.`,
+      source:"AI"
+    };
+  },
+  "Çalışma Ekonomisi": () => {
+    const ratio = randInt(5, 18);
+    const opts = [
+      "İşgücüne katılım oranı",
+      "Enflasyon oranı",
+      "Faiz dışı fazla",
+      "Cari açık"
+    ];
+    return {
+      konu:"Emek piyasası",
+      soru:`Genç nüfusun işgücü içindeki payı %${ratio} ise bu değer aşağıdakilerden hangisine örnektir?`,
+      options: opts,
+      correctIndex:0,
+      explain:"İşgücüne katılım oranı, çalışabilir nüfusun işgücüne dahil olma yüzdesini gösterir.",
+      source:"AI"
+    };
+  },
+  "Uluslararası İlişkiler": () => {
+    const org = pickOne([
+      {name:"NATO", focus:"kolektif savunma"},
+      {name:"BM", focus:"uluslararası barış"},
+      {name:"OECD", focus:"ekonomik iş birliği"}
+    ]);
+    const opts = shuffle([
+      `${org.focus} odaklı örgüt`,
+      "Bölgesel ticaret anlaşması",
+      "Finans piyasası kurumu",
+      "Tek taraflı ittifak"
+    ]);
+    return {
+      konu:"Uluslararası örgütler",
+      soru:`${org.name} temel olarak nasıl bir yapıdır?`,
+      options: opts,
+      correctIndex: opts.indexOf(`${org.focus} odaklı örgüt`),
+      explain:`${org.name}, ${org.focus} amacıyla kurulmuş hükümetler arası bir örgüttür.`,
+      source:"AI"
+    };
+  },
+  generic: () => {
+    const focus = pickOne(["zorlanılan konulara tekrar", "zaman yönetimi", "okuma hızını artırma"]);
+    return {
+      konu:"Çalışma stratejisi",
+      soru:`Sürekli ${focus} sağlayan yöntem hangisidir?`,
+      options:[
+        "Kısa döngülü tekrar ve mini testler",
+        "Tekrar yapmadan tüm denemeleri çözmek",
+        "Sadece özet okumak",
+        "Konuları atlayarak ilerlemek"
+      ],
+      correctIndex:0,
+      explain:"En verimli yöntem, konuyu kısa tekrarlarla pekiştirip sık sık test etmektir.",
+      source:"AI"
+    };
+  }
+};
 
 function pickN(arr, n){
   if (n<=0) return [];
@@ -551,9 +816,12 @@ const App = {
   mode:"single",
   lesson:"Matematik",
   allBanks:{}, // lesson -> questions[]
+  baseBanks:{},
   currentTest:null,
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
+  aiEnabled:true,
+  aiCount:5,
 };
 
 // ---------- UI wiring ----------
@@ -623,6 +891,46 @@ function fillLessonSelect(){
     });
     target.value = App.lesson;
   });
+}
+
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
 }
 
 function setLesson(lesson){
@@ -811,7 +1119,8 @@ async function loadAllBanks(){
   });
 
   await Promise.all(jobs);
-  App.allBanks = banks;
+  App.baseBanks = banks;
+  applyAIQuestions();
 
   renderLessonIcons(App.mode);
 
@@ -825,6 +1134,32 @@ async function loadAllBanks(){
   }
 
   syncLessonUI(App.mode);
+}
+
+function generateAIQuestions(lesson, count){
+  const list = [];
+  const gen = AI_GENERATORS[lesson] || AI_GENERATORS.generic;
+  for (let i=0;i<count;i++){
+    const raw = gen();
+    list.push(normalizeQuestion(raw));
+  }
+  return list;
+}
+
+function applyAIQuestions(){
+  const aiCountInput = parseInt($("aiCount")?.value || App.aiCount || 0, 10);
+  App.aiCount = clamp(isNaN(aiCountInput) ? 0 : aiCountInput, 0, 30);
+  const enable = $("aiToggle") ? $("aiToggle").checked : App.aiEnabled;
+  App.aiEnabled = !!enable;
+
+  const augmented = {};
+  Object.entries(App.baseBanks || {}).forEach(([lesson, base])=>{
+    const aiQs = enable ? generateAIQuestions(lesson, App.aiCount) : [];
+    augmented[lesson] = [...(base||[]), ...aiQs];
+  });
+
+  App.allBanks = augmented;
+  renderLessonIcons(App.mode);
 }
 
 // ---------- test builder ----------
@@ -939,7 +1274,9 @@ function renderQuestion(){
   const q = t.questions[t.index];
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
 
-  $("pillMeta").textContent = `${lessonName} · ${q.konu}`;
+  const aiLabel = (q.source === "AI" || q.raw?.source === "AI") ? " · Yapay Zekâ" : "";
+
+  $("pillMeta").textContent = `${lessonName} · ${q.konu}${aiLabel}`;
   $("qTitle").textContent = q.soru;
 
   if (q.paragraf){
@@ -1042,6 +1379,9 @@ function showExplanation(){
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
+  if (q.source === "AI" || q.raw?.source === "AI") {
+    $("coachTip").textContent += " · Yapay zekâ tarafından üretilmiş deneme sorusu (ücretsiz).";
+  }
 
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
@@ -1368,6 +1708,8 @@ async function startTest(){
     if (!Object.keys(App.allBanks||{}).length) await loadAllBanks();
   }catch{ return; }
 
+  if (App.aiEnabled) applyAIQuestions();
+
   const mode = App.mode;
   // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
   // doğrudan bu kaynaktan alarak seçim sorunlarını önlüyoruz.
@@ -1472,7 +1814,6 @@ async function init(){
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
   $("btnHome").addEventListener("click", goHome);
-  $("btnAiGenerate")?.addEventListener("click", ()=> handleAIGenerate());
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -1487,6 +1828,22 @@ async function init(){
   $("btnRead").addEventListener("click", ()=> readCurrent());
   $("btnInstall").addEventListener("click", ()=> installPWA());
   $("alertClose").addEventListener("click", ()=> showAlert(null));
+
+  const aiToggle = $("aiToggle");
+  if (aiToggle){
+    aiToggle.checked = App.aiEnabled;
+    aiToggle.addEventListener("change", ()=>{
+      App.aiEnabled = aiToggle.checked;
+      applyAIQuestions();
+      setNotice(aiToggle.checked ? "Yapay zekâ üreticisi aktif: her derse yeni sorular eklendi." : "Yapay zekâ üreticisi kapatıldı.", "info");
+    });
+  }
+
+  const aiCount = $("aiCount");
+  if (aiCount){
+    aiCount.value = App.aiCount;
+    aiCount.addEventListener("change", ()=> applyAIQuestions());
+  }
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;

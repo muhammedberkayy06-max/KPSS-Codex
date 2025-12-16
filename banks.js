@@ -1,6 +1,6 @@
 // Generated embedded banks for offline fallback
 
-window.EMBEDDED_BANKS = {}
+window.EMBEDDED_BANKS = {};
 
 window.EMBEDDED_BANKS['calismaekonomisi.json'] = 
 [
@@ -434,9 +434,7 @@ window.EMBEDDED_BANKS['calismaekonomisi.json'] =
     "dogru_index": 3,
     "aciklama": "Sendika üyeliği için vatandaşlık ve fiil ehliyeti şarttır."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['cografya.json'] = 
 [
@@ -824,9 +822,7 @@ window.EMBEDDED_BANKS['cografya.json'] =
     "dogru_index": 3,
     "aciklama": "Yüksek plato özelliği nedeniyle Erzurum yazın bile serindir."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['hukuk.json'] = 
 [
@@ -1754,9 +1750,7 @@ window.EMBEDDED_BANKS['hukuk.json'] =
     "dogru_index": 0,
     "aciklama": "İhtiyati tedbir, dava sonuçlanana kadar geçici koruma sağlayan usul kurumudur."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['iktisat.json'] = 
 [
@@ -3139,9 +3133,7 @@ window.EMBEDDED_BANKS['iktisat.json'] =
     "dogru_index": 1,
     "aciklama": "R² modelin açıklama gücünü gösterir."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['kamuyonetimi.json'] = 
 [
@@ -3939,9 +3931,7 @@ window.EMBEDDED_BANKS['kamuyonetimi.json'] =
     "dogru_index": 0,
     "aciklama": "İl genel idaresinin başı validir."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['matematik.json'] = 
 [
@@ -5250,9 +5240,7 @@ window.EMBEDDED_BANKS['matematik.json'] =
     "dogru_index": 2,
     "aciklama": "Determinant 1·3−0·2=3."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['tarih.json'] = 
 [
@@ -6108,9 +6096,7 @@ window.EMBEDDED_BANKS['tarih.json'] =
     "dogru_index": 3,
     "aciklama": "Genelgede saltanatın korunması vurgulanmamıştır."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['turkce.json'] = 
 [
@@ -7000,9 +6986,7 @@ window.EMBEDDED_BANKS['turkce.json'] =
     "dogru_index": 1,
     "aciklama": "Parçada dil öğrenmenin kültür ve iletişim boyutuna vurgu yapılarak ana düşünce destekleniyor."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['uluslararasiiliskiler.json'] = 
 [
@@ -8255,9 +8239,7 @@ window.EMBEDDED_BANKS['uluslararasiiliskiler.json'] =
     "dogru_index": 0,
     "aciklama": "Hat Rusya'dan başlayıp Karadeniz üzerinden Türkiye'ye uzanır."
   }
-]
-;
-
+];
 
 window.EMBEDDED_BANKS['vatandaslik.json'] = 
 [
@@ -9353,6 +9335,4 @@ window.EMBEDDED_BANKS['vatandaslik.json'] =
     "dogru_index": 0,
     "aciklama": "Ombudsman TBMM'ye bağlıdır."
   }
-]
-;
-
+];
