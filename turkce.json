@@ -885,4 +885,1207 @@
     "dogru_index": 1,
     "aciklama": "Parçada dil öğrenmenin kültür ve iletişim boyutuna vurgu yapılarak ana düşünce destekleniyor."
   }
-]
+],
+[
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde kullanılan sözcüğün anlamı diğerlerinden farklıdır?",
+    "secenekler": [
+      "Bu olaydan sonra yüzü asıldı.",
+      "Burası ne kadar da sessiz.",
+      "Zor günler yaşıyoruz.",
+      "Toplantıya yüz kişi katıldı."
+    ],
+    "dogru_index": 3,
+    "aciklama": "Diğer üç cümlede sözcük mecaz anlamda, son seçenek ise gerçek anlamda kullanılmıştır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Eve gelir gelmez televizyonu açtı.",
+      "Çok yorgundu, bu yüzden erkenden uyudu.",
+      "Okula gitmeden önce kahvaltı yapar.",
+      "Kitabı okuyunca çok etkilendi."
+    ],
+    "dogru_index": 1,
+    "aciklama": "İkinci cümlede yorgun olma sebebiyle erken uyuma eylemi gerçekleşmiştir."
+  },
+  {
+    "konu": "Paragraf",
+    "paragraf": "Sosyal medya sayesinde insanlar birbirlerine daha kolay ulaşabiliyorlar. Ancak bu kolaylık, yüz yüze iletişimin yerini tamamen alamıyor.",
+    "soru": "Yukarıdaki paragrafın ana düşüncesi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Sosyal medya iletişimi zorlaştırır.",
+      "Sosyal medya yüz yüze iletişimin yerini tutamaz.",
+      "Yüz yüze iletişim artık gereksizdir.",
+      "İletişim sadece sosyal medyada yapılır."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Paragrafta sosyal medyanın olumlu yanından bahsedilirken, yüz yüze iletişimin öneminin sürdüğü vurgulanmıştır."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "Hepiniz hoş geldiniz.",
+      "Bu yılki bütçe açık verdi.",
+      "Akşamüstü buluşalım.",
+      "Herkez aynı fikirde değil."
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Herkes' kelimesi yanlış yazılmıştır, doğrusu 'herkes' olmalıdır."
+  },
+  {
+    "konu": "Noktalama İşaretleri",
+    "soru": "Aşağıdaki seçeneklerden hangisinde virgül (,) yanlış kullanılmıştır?",
+    "secenekler": [
+      "Ali, Ahmet ve Ayşe dışarı çıktı.",
+      "Kitap, defter, kalemlerini aldı.",
+      "Kışın, hava çok soğuk olur.",
+      "Bahçede, oynayan çocuklar vardı."
+    ],
+    "dogru_index": 3,
+    "aciklama": "Son seçenek gereksiz yere özne ile yüklem arasına virgül konulmuştur."
+  },
+  {
+    "konu": "Ses Bilgisi",
+    "soru": "Aşağıdaki sözcüklerden hangisinde ünlü daralması vardır?",
+    "secenekler": [
+      "gidiyorum",
+      "geliyorsun",
+      "yürüyorum",
+      "okuyorum"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Oku-yor-um' kelimesinde 'u' ünlüsü daralarak 'o'ya dönüşmüştür."
+  },
+  {
+    "konu": "Sözcük Türleri",
+    "soru": "'Yarın sınavım var.' cümlesinde altı çizili sözcük hangi türde kullanılmıştır?",
+    "secenekler": [
+      "Zamir",
+      "Zarf",
+      "Sıfat",
+      "Ad"
+    ],
+    "dogru_index": 0,
+    "aciklama": "'Yarın' kelimesi burada zaman zarfı değil, zamanı işaret eden zamir olarak kullanılmıştır."
+  },
+  {
+    "konu": "Cümlenin Türleri",
+    "soru": "Aşağıdaki cümlelerin hangisi devrik cümledir?",
+    "secenekler": [
+      "Akşam eve geç geldim.",
+      "Dışarı çıktı yağmur başladığında.",
+      "Bugün çok mutluyum.",
+      "O, bizimle gelecek."
+    ],
+    "dogru_index": 1,
+    "aciklama": "İkinci cümlede yüklem sonda değil ortada yer aldığı için devrik cümledir."
+  },
+  {
+    "konu": "Sözel Mantık",
+    "soru": "Ali, Veli ve Can bir yarışmada ilk üçe girmiştir. Birincinin saatinde kırmızı kayış, ikincinin saatinde mavi kayış, üçüncünün saatinde yeşil kayış vardır. Can'ın saatinde mavi kayış olduğuna göre, Veli kaçıncı olmuştur?",
+    "secenekler": [
+      "Birinci",
+      "İkinci",
+      "Üçüncü",
+      "Belirlenemez"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Can'ın mavi kayışlı olması, ikinci olduğu anlamına gelir; dolayısıyla Veli birinci olur."
+  },
+  {
+    "konu": "Anlatım Bozuklukları",
+    "soru": "Aşağıdaki cümlelerin hangisinde anlatım bozukluğu vardır?",
+    "secenekler": [
+      "Bu haber beni çok sevindirdi.",
+      "Fırsat buldukça kitap okur ve film seyrederim.",
+      "Sizleri gördüğüme memnun oldum.",
+      "Sinemaya gidip de gelmedin mi?"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Son cümlede gereksiz 'de' bağlacı kullanılmıştır, anlatım bozukluğuna yol açar."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdakilerden hangisi paragrafta ana düşünceyi bulmaya yöneliktir?",
+    "secenekler": [
+      "Yazarın hangi örnekleri verdiği",
+      "Parçada vurgulanan temel yargı",
+      "Metnin kaç cümleden oluştuğu",
+      "Paragrafta kullanılan bağlaçlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ana düşünce, paragrafta verilmek istenen temel yargıdır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde neden-sonuç ilişkisi vardır?",
+    "secenekler": [
+      "Yağmur yağıyor ama dışarı çıkacağım.",
+      "Çok çalıştığı için başarılı oldu.",
+      "Bugün hava oldukça sıcak.",
+      "Kitabı masanın üzerine bıraktı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Neden-sonuç ilişkisi 'çok çalıştığı için başarılı oldu' cümlesinde vardır."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "herkes",
+      "birçok",
+      "hiçbir",
+      "bir şey"
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Bir şey' ayrı yazılır, diğerleri doğrudur."
+  },
+  {
+    "konu": "Noktalama İşaretleri",
+    "soru": "Aşağıdaki cümlelerin hangisinde virgül (,) kullanımı yanlıştır?",
+    "secenekler": [
+      "Ali, Ayşe ve Mehmet geldi.",
+      "Bugün, ders çalışacağım.",
+      "Kitabı aldım, okudum.",
+      "Seni görünce, sevindim."
+    ],
+    "dogru_index": 1,
+    "aciklama": "'Bugün ders çalışacağım.' ifadesinde virgül gereksizdir."
+  },
+  {
+    "konu": "Anlatım Bozuklukları",
+    "soru": "Aşağıdaki cümlelerin hangisinde anlatım bozukluğu vardır?",
+    "secenekler": [
+      "Bu konuyu hem sen hem de ben biliyoruz.",
+      "Toplantıya birçok kişi katıldı.",
+      "Seni arayıp haber vereceğim.",
+      "Kitapları masaya koydu ve çıktı."
+    ],
+    "dogru_index": 0,
+    "aciklama": "Özne uyumsuzluğu: 'hem sen hem ben' → 'biliyoruz' doğru gibi görünse de seçeneklerde bozukluk arandığından 'hem...hem...' yapısında vurgu hatası kabul edilir; doğru kullanım 'Bu konuyu sen de ben de biliyoruz.'"
+  },
+  {
+    "konu": "Ses Bilgisi",
+    "soru": "Aşağıdakilerden hangisinde ünsüz yumuşaması vardır?",
+    "secenekler": [
+      "kitap + ı",
+      "ağaç + ı",
+      "renk + i",
+      "saat + i"
+    ],
+    "dogru_index": 1,
+    "aciklama": "ağaç → ağacı (ç→c) ünsüz yumuşamasıdır."
+  },
+  {
+    "konu": "Sözcük Türleri",
+    "soru": "Aşağıdaki cümlelerin hangisinde 'yalnız' sözcüğü edat görevindedir?",
+    "secenekler": [
+      "Yalnız insanlar daha çok düşünür.",
+      "Seni yalnız bırakmayacağım.",
+      "Bu işi yalnız sen yapabilirsin.",
+      "Yalnız, bunu bir daha yapma."
+    ],
+    "dogru_index": 2,
+    "aciklama": "'Bu işi yalnız sen yapabilirsin.' cümlesinde 'yalnız' = 'sadece' anlamında edat gibi kullanılır."
+  },
+  {
+    "konu": "Cümle Türleri",
+    "soru": "Aşağıdakilerden hangisi olumsuz soru cümlesidir?",
+    "secenekler": [
+      "Bugün gelecek misin?",
+      "Bugün gelmeyecek misin?",
+      "Bugün gelirsen sevinirim.",
+      "Bugün gel de konuşalım."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Olumsuzluk eki + soru eki birlikte kullanılmıştır."
+  },
+  {
+    "konu": "Sözcükte Yapı",
+    "soru": "Aşağıdaki sözcüklerin hangisi yapım eki almıştır?",
+    "secenekler": [
+      "evler",
+      "güzellik",
+      "kitabım",
+      "kalemle"
+    ],
+    "dogru_index": 1,
+    "aciklama": "güzel + lik (yapım eki) → güzellik."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde koşul anlamı vardır?",
+    "secenekler": [
+      "Seni görünce sevindim.",
+      "Erken gelirsen birlikte gideriz.",
+      "Dün çok yoruldum.",
+      "Bu konu çok önemli."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Koşul anlamı '-se/-sa' ile kurulmuştur."
+  },
+  {
+    "konu": "Sözel Mantık",
+    "soru": "Beş arkadaş yan yana oturacaktır. Ahmet en solda, Can en sağda ise, aşağıdakilerden hangisi kesinlikle doğrudur?",
+    "secenekler": [
+      "Ahmet ile Can arasında 3 kişi vardır.",
+      "Ahmet ile Can arasında 2 kişi vardır.",
+      "Ahmet ile Can arasında 1 kişi vardır.",
+      "Ahmet ile Can yan yanadır."
+    ],
+    "dogru_index": 0,
+    "aciklama": "5 kişilik sırada uçlarda otururlarsa arada 3 kişi bulunur."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Parçada örnekler verilmesinin temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Konu dışına çıkmak",
+      "Düşünceyi somutlaştırmak",
+      "Okuru şaşırtmak",
+      "Cümle sayısını artırmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Örnekleme, düşünceyi açıklamak ve somutlaştırmak için kullanılır."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdaki yazımlardan hangisi doğrudur?",
+    "secenekler": [
+      "her şey",
+      "herşey",
+      "herşey",
+      "herşeyi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "'Her şey' ayrı yazılır."
+  },
+  {
+    "konu": "Cümle Ögeleri",
+    "soru": "Aşağıdaki cümlede özne hangisidir? 'Kitapları masaya bıraktı.'",
+    "secenekler": [
+      "Kitapları",
+      "masaya",
+      "bıraktı",
+      "(gizli özne)"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Özne gizlidir; yüklemi yapan kişi bellidir."
+  },
+  {
+    "konu": "Anlatım Biçimleri",
+    "soru": "Aşağıdakilerden hangisi öyküleyici anlatıma örnektir?",
+    "secenekler": [
+      "Tanım yapılması",
+      "Betimleme",
+      "Olayların zaman içinde anlatılması",
+      "Tartışma"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Öyküleyici anlatım olay akışı içerir."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Paragrafta ana düşünce genellikle nerede bulunur?",
+    "secenekler": [
+      "Başta",
+      "Sonda",
+      "Ortada",
+      "Her yerde"
+    ],
+    "dogru_index": 0,
+    "aciklama": "KPSS’de çoğunlukla giriş cümlesindedir."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdakilerden hangisi doğru yazımdır?",
+    "secenekler": [
+      "pekçok",
+      "pek çok",
+      "pek-çok",
+      "pekçoktur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "'Pek çok' ayrı yazılır."
+  },
+  {
+    "konu": "Noktalama",
+    "soru": "Aşağıdakilerden hangisinde iki nokta (:) doğru kullanılmıştır?",
+    "secenekler": [
+      "Şunları aldı: kalem silgi.",
+      "Şunları aldı: kalem, silgi.",
+      "Şunları aldı; kalem, silgi.",
+      "Şunları aldı kalem: silgi."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Açıklama/örnekleme öncesi iki nokta kullanılır."
+  },
+  {
+    "konu": "Sözel Mantık",
+    "soru": "Ali Ayşe'den uzun, Ayşe Mehmet'ten kısaysa en uzun kimdir?",
+    "secenekler": [
+      "Ali",
+      "Ayşe",
+      "Mehmet",
+      "Kesin değil"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ali > Ayşe > Mehmet."
+  },
+  {
+    "konu": "Ses Bilgisi",
+    "soru": "Aşağıdakilerden hangisinde ünlü daralması vardır?",
+    "secenekler": [
+      "bekle-yor",
+      "gel-iyor",
+      "ara-yor",
+      "de-iyor"
+    ],
+    "dogru_index": 2,
+    "aciklama": "ara-yor → arıyor (a→ı) daralma."
+  },
+  {
+    "konu": "Sözcük Türleri",
+    "soru": "'Hızlı' sözcüğü aşağıdakilerin hangisinde zarf görevindedir?",
+    "secenekler": [
+      "Hızlı araba",
+      "Hızlı koştu",
+      "Hızlı tren",
+      "Hızlı öğrenci"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Fiili nitelediği için zarftır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdakilerden hangisi amaç-sonuç cümlesidir?",
+    "secenekler": [
+      "Yağmur yağdı.",
+      "Erken kalktı.",
+      "Sınavı kazanmak için çalıştı.",
+      "Geç kaldı."
+    ],
+    "dogru_index": 2,
+    "aciklama": "Amaç 'kazanmak için' ifadesiyle belirtilmiştir."
+  },
+  {
+    "konu": "Anlatım Bozukluğu",
+    "soru": "Aşağıdakilerden hangisinde anlatım bozukluğu vardır?",
+    "secenekler": [
+      "Seni arayıp haber vereceğim.",
+      "Bu konuyu sen ve ben biliyoruz.",
+      "Toplantıya birçok kişi katıldı.",
+      "Kitabı okuyup kapattı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Özne uyumsuzluğu vardır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi anlamca birbirine en yakındır?",
+    "secenekler": [
+      "çabuk - hızlı",
+      "kırgın - neşeli",
+      "uzak - yakın",
+      "az - çok"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Çabuk ve hızlı yakın anlamlıdır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde 'varsayım' vardır?",
+    "secenekler": [
+      "Diyelim ki yarın yağmur yağdı.",
+      "Seni görünce sevindim.",
+      "Kitabı dün bitirdim.",
+      "Bu iş çok zor."
+    ],
+    "dogru_index": 0,
+    "aciklama": "'Diyelim ki' varsayım bildirir."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Parçada 'karşılaştırma' yapılmasının amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Kavramları netleştirmek",
+      "Konu dışına çıkmak",
+      "Sadece örnek vermek",
+      "Tanım yapmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Karşılaştırma benzer/farklı yönleri belirginleştirir."
+  },
+  {
+    "konu": "Ses Bilgisi",
+    "soru": "Aşağıdaki sözcüklerin hangisinde ünsüz benzeşmesi (sertleşme) vardır?",
+    "secenekler": [
+      "kitapçı",
+      "ağacı",
+      "renge",
+      "yüreğim"
+    ],
+    "dogru_index": 0,
+    "aciklama": "kitap+cı → kitapçı (c→ç) sertleşme."
+  },
+  {
+    "konu": "Sözcükte Yapı",
+    "soru": "Aşağıdakilerden hangisi türemiş sözcüktür?",
+    "secenekler": [
+      "gözlük",
+      "masa",
+      "kalem",
+      "ağaç"
+    ],
+    "dogru_index": 0,
+    "aciklama": "göz + lük yapım eki almıştır."
+  },
+  {
+    "konu": "Sözcük Türleri",
+    "soru": "'Çünkü' sözcüğü aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Bağlaç",
+      "Edat",
+      "Zarf",
+      "Ünlem"
+    ],
+    "dogru_index": 0,
+    "aciklama": "'Çünkü' neden-sonuç bağlacı olarak kullanılır."
+  },
+  {
+    "konu": "Cümlenin Türleri",
+    "soru": "Aşağıdakilerden hangisi devrik cümledir?",
+    "secenekler": [
+      "Bugün okula gittim.",
+      "Gittim bugün okula.",
+      "Yarın sınav var.",
+      "Kitabı masaya koydu."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yüklem sonda değil: 'Gittim...'"
+  },
+  {
+    "konu": "Noktalama İşaretleri",
+    "soru": "Aşağıdaki cümlelerin hangisinde kesme işareti (') doğru kullanılmıştır?",
+    "secenekler": [
+      "Türkçe'yi seviyorum.",
+      "Ahmet'le geldim.",
+      "Ankara'da yaşıyorum.",
+      "Masa'nın üstü temiz."
+    ],
+    "dogru_index": 2,
+    "aciklama": "Özel adlara gelen hâl eki kesmeyle ayrılır: Ankara'da."
+  },
+  {
+    "konu": "Anlatım Bozuklukları",
+    "soru": "Aşağıdaki cümlelerin hangisinde gereksiz sözcük kullanımı vardır?",
+    "secenekler": [
+      "Geriye dönüp baktı.",
+      "Bu konu çok önemlidir.",
+      "Seni yarın ararım.",
+      "Ders çalışmaya başladı."
+    ],
+    "dogru_index": 0,
+    "aciklama": "'Geriye dönmek'te 'geriye' gereksizdir."
+  },
+  {
+    "konu": "Sözel Mantık",
+    "soru": "Dört öğrenci (A,B,C,D) sıraya diziliyor. A, B'nin solunda; C, D'nin sağında ise aşağıdakilerden hangisi kesin değildir?",
+    "secenekler": [
+      "A, B'nin solundadır.",
+      "C, D'nin sağındadır.",
+      "A en soldadır.",
+      "C en sağdadır."
+    ],
+    "dogru_index": 2,
+    "aciklama": "A'nın en solda olması zorunlu değildir."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "Aşağıdaki sözcük çiftlerinden hangisi eş anlamlıdır?",
+    "secenekler": [
+      "ak–kara",
+      "zengin–varlıklı",
+      "uzun–kısa",
+      "eski–yeni"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Zengin ve varlıklı eş anlamlıdır."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde karşıtlık vardır?",
+    "secenekler": [
+      "Çalıştı ve kazandı.",
+      "Çok istedi fakat başaramadı.",
+      "Erken kalktı.",
+      "Okula gitti."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Fakat’ karşıtlık bildirir."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Paragrafta yardımcı düşünceyi bulmada en etkili yöntem aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Başlığı ezberlemek",
+      "Ana düşünceyi bulup destekleyen cümleleri ayırt etmek",
+      "Sadece ilk cümleyi okumak",
+      "Seçenekleri rastgele işaretlemek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yardımcı düşünceler ana düşünceyi destekleyen yargılardır."
+  },
+  {
+    "konu": "Sözcükte Anlam",
+    "soru": "'Sert' sözcüğü aşağıdakilerin hangisinde mecaz anlamda kullanılmıştır?",
+    "secenekler": [
+      "Sert rüzgâr esti.",
+      "Sert kayaya çarptı.",
+      "Sert konuşması herkesi üzdü.",
+      "Sert zeminde yürüdü."
+    ],
+    "dogru_index": 2,
+    "aciklama": "Konuşma 'sert' → mecaz (kaba/katı)."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerin hangisinde 'yakınma' vardır?",
+    "secenekler": [
+      "Keşke sen de gelseydin.",
+      "Yine geç kaldın.",
+      "Bugün çok mutluyum.",
+      "Bu kitabı çok sevdim."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Geç kalmaya yönelik sitem/yakınma var."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdaki yazımlardan hangisi doğrudur?",
+    "secenekler": [
+      "bir takım",
+      "birtakım",
+      "bir takımcık",
+      "bir-takım"
+    ],
+    "dogru_index": 1,
+    "aciklama": "'Birtakım' (=bazı) bitişik yazılır."
+  },
+  {
+    "konu": "Noktalama İşaretleri",
+    "soru": "Aşağıdaki cümlelerin hangisinde noktalı virgül (;) doğru kullanılmıştır?",
+    "secenekler": [
+      "Kalemi; masaya koydu.",
+      "Ders çalıştı; çünkü sınavı vardı.",
+      "Bugün; hava güzel.",
+      "Geldi;."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Noktalı virgül, yakın ilişkili cümleleri ayırabilir."
+  },
+  {
+    "konu": "Anlatım Bozuklukları",
+    "soru": "Aşağıdaki cümlelerin hangisinde çatı uyumsuzluğundan kaynaklı anlatım bozukluğu vardır?",
+    "secenekler": [
+      "Kapı çalındı ve içeri girildi.",
+      "Kitaplar masaya koyuldu.",
+      "Sorular çözüldü.",
+      "Ben de geldi."
+    ],
+    "dogru_index": 3,
+    "aciklama": "'Ben de geldi' özne-yüklem uyumsuzluğu."
+  },
+  {
+    "konu": "Ses Bilgisi",
+    "soru": "Aşağıdakilerden hangisinde kaynaştırma harfi (y) kullanılmıştır?",
+    "secenekler": [
+      "ev-i",
+      "araba-sı",
+      "su-yu",
+      "kitap-ta"
+    ],
+    "dogru_index": 2,
+    "aciklama": "su+u → suyu (y kaynaştırma)."
+  },
+  {
+    "konu": "Sözcük Türleri",
+    "soru": "'Yalnızca' sözcüğü aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Edat",
+      "Bağlaç",
+      "Zarf",
+      "İsim"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Cümlede genellikle 'sadece' anlamıyla zarf görevindedir."
+  },
+  {
+    "konu": "Cümle Türleri",
+    "soru": "Aşağıdakilerden hangisi birleşik zamanlı fiil içerir?",
+    "secenekler": [
+      "Gidiyorum.",
+      "Gidecektim.",
+      "Gittim.",
+      "Giderim."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Gidecek+ti = birleşik zaman."
+  },
+  {
+    "konu": "Sözel Mantık",
+    "soru": "Üç arkadaş (A,B,C) yan yana oturuyor. A, B'nin yanında değilse A nerede oturabilir?",
+    "secenekler": [
+      "Sadece ortada",
+      "Sadece uçta",
+      "B'nin yanında",
+      "Kesin belirlenemez"
+    ],
+    "dogru_index": 1,
+    "aciklama": "A, B'nin yanında değilse uçta oturmalıdır."
+  }
+    ]
