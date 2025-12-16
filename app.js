@@ -420,35 +420,8 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
-function openExamWindowShell(title, message){
-  const w = window.open("about:blank", "_blank");
-  if (!w){
-    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
-    return null;
-  }
-  const html = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
-    <style>
-      body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:32px;display:flex;align-items:center;justify-content:center;min-height:100vh;}
-      .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px 20px;box-shadow:0 12px 30px rgba(15,23,42,0.08);text-align:center;max-width:520px;}
-      h1{margin:0 0 6px;font-size:20px;font-weight:800;}
-      p{margin:0;color:#475569;}
-      .spin{margin:14px auto;width:34px;height:34px;border-radius:50%;border:4px solid #e2e8f0;border-top-color:#0ea5e9;animation:spin 1s linear infinite;}
-      @keyframes spin{to{transform:rotate(360deg);}}
-    </style></head><body>
-    <div class="box">
-      <div class="spin"></div>
-      <h1>${escapeHTML(title)}</h1>
-      <p>${escapeHTML(message||"Sorular hazırlanıyor…")}</p>
-    </div>
-  </body></html>`;
-  w.document.open();
-  w.document.write(html);
-  w.document.close();
-  return w;
-}
-
-function renderExamWindow(title, questions, subtitle, existingWin){
-  const w = (existingWin && !existingWin.closed) ? existingWin : window.open("", "_blank");
+function renderExamWindow(title, questions, subtitle, preOpened){
+  const w = preOpened || window.open("", "_blank");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return;
@@ -499,7 +472,6 @@ function renderExamWindow(title, questions, subtitle, existingWin){
   <p class="hint">Yeni sekmeye her tıklamada farklı sorular üretilir. Sorular Hugging Face (internet, ücretsiz) yanıtı veya yerel üretici ile tamamlandı.</p>
   </body></html>`;
 
-  w.document.open();
   w.document.write(html);
   w.document.close();
 }
@@ -1212,35 +1184,22 @@ async function loadAllBanks(){
   });
 
   await Promise.all(jobs);
-  const usedFallback = [];
-  Object.entries(FILES).forEach(([lesson, file]) => {
-    if (!Array.isArray(banks[lesson]) || banks[lesson].length === 0){
-      const embedded = window.EMBEDDED_BANKS?.[file];
-      if (Array.isArray(embedded)){
-        banks[lesson] = embedded.map(normalizeQuestion);
-        usedFallback.push(lesson);
-      }
-    }
-  });
-
   App.allBanks = banks;
 
-  renderLessonIcons(App.mode);
+   renderLessonIcons(App.mode);
 
-  const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
-  updateStats(total);
+   const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
+   updateStats(total);
 
-  const stillMissing = Object.entries(FILES).filter(([lesson]) => !banks[lesson]?.length);
-  if (stillMissing.length){
-    const names = stillMissing.map(([lesson, file])=>`${lesson} (${file})`).join(", ");
-    setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
-    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
-  } else {
-    const fallbackMsg = usedFallback.length ? ` · ${usedFallback.join(', ')} dersleri gömülü yedekten yüklendi` : "";
-    setNotice(`Soru paketleri hazır ✅ · ${total} soru${fallbackMsg}`, "info");
-  }
+   if (missing.length){
+     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
+     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
+     showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+   } else {
+     setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
+   }
 
-  syncLessonUI(App.mode);
+   syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -1863,10 +1822,14 @@ async function handleAIExam(type){
     setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılıyor.", "info");
   }
 
-  const examWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…");
-  if (!examWin){
+  // Mobil/iPad pop-up engeline takılmamak için sekmeyi hemen açıp içeride güncelleriz
+  const examWin = window.open("about:blank", "_blank");
+  if (!examWin) {
+    setNotice("Yeni sekme açılamadı. Tarayıcıdan pop-up izni verip tekrar dene.", "error");
     return;
   }
+  examWin.document.write(`<p style="font-family:Inter, sans-serif; padding:18px;">${label} hazırlanıyor…</p>`);
+  examWin.document.close();
 
   // var olan AI ayarlarını formdan çekip sakla
   const state = ensureState();
