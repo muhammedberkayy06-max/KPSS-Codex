@@ -946,5 +946,149 @@
     ],
     "dogru_index": 2,
     "aciklama": "KDK yargı dışı denetim yoludur."
+  },
+  {
+    "konu": "Temel Hak ve Özgürlükler",
+    "soru": "Aşağıdakilerden hangisi kişi hak ve hürriyetlerinden değildir?",
+    "secenekler": [
+      "Konut dokunulmazlığı",
+      "Basın özgürlüğü",
+      "Mülkiyet hakkı",
+      "Seçme ve seçilme hakkı"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Seçme ve seçilme hakkı siyasi haklar arasında yer alır."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "1982 Anayasası'na göre olağanüstü hal ilan etme yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM Başkanlık Divanı",
+      "Cumhurbaşkanı",
+      "Danıştay",
+      "Anayasa Mahkemesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Cumhurbaşkanı başkanlığındaki Cumhurbaşkanlığı kararıyla OHAL ilan edilir, TBMM onayına sunulur."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin konutuna izinsiz girilmemesi hangi hak kategorisinde değerlendirilir?",
+    "secenekler": [
+      "Kişi dokunulmazlığı",
+      "Konut dokunulmazlığı",
+      "Mülkiyet hakkı",
+      "Seyahat özgürlüğü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'da konut dokunulmazlığı güvence altına alınmıştır."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "TBMM'de kabul edilen kanunları yayımlayan makam hangisidir?",
+    "secenekler": [
+      "TBMM Başkanı",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "Danıştay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Cumhurbaşkanı onaylayarak Resmi Gazete'de yayımlar."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Aşağıdakilerden hangisi yüksek mahkeme değildir?",
+    "secenekler": [
+      "Danıştay",
+      "Yargıtay",
+      "Sayıştay",
+      "İdare Mahkemesi"
+    ],
+    "dogru_index": 3,
+    "aciklama": "İdare Mahkemesi ilk derece mahkemesidir."
+  },
+  {
+    "konu": "Temel İlkeler",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Devletin resmi dininin olması",
+      "Din ve devlet işlerinin ayrılması",
+      "Din özgürlüğünün yasaklanması",
+      "Din hizmetlerinin sadece devlete verilmesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasını, inanç özgürlüğünün korunmasını ifade eder."
+  },
+  {
+    "konu": "Seçim",
+    "soru": "Türkiye'de milletvekili seçimleri kaç yılda bir yapılır?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre genel seçimler 5 yılda bir yapılır."
+  },
+  {
+    "konu": "İdare",
+    "soru": "Büyükşehir belediye başkanını kim seçer?",
+    "secenekler": [
+      "İl genel meclisi",
+      "Büyükşehir belediye meclisi",
+      "İlçe belediye başkanları",
+      "Seçmenler"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Büyükşehir belediye başkanları doğrudan halk tarafından seçilir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Anayasa değişikliklerinde TBMM'nin kabul ettiği metnin halkoyuna sunulması için gereken çoğunluk hangi seçenekte doğrudur?",
+    "secenekler": [
+      "Üye tamsayısının salt çoğunluğu",
+      "Üye tamsayısının 3/5'i",
+      "Üye tamsayısının 2/3'ü",
+      "Üye tamsayısının 1/3'ü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "360-400 arası oyla kabul edilirse Cumhurbaşkanı isterse referanduma götürebilir."
+  },
+  {
+    "konu": "Vatandaşlık",
+    "soru": "Türkiye Cumhuriyeti vatandaşlığı hangi yolla kazanılamaz?",
+    "secenekler": [
+      "Soy bağı",
+      "Doğum yeri",
+      "Evlilik",
+      "Başka ülke vatandaşlığına geçme"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Başka ülke vatandaşlığına geçmek T.C. vatandaşlığını kazandırmaz, kaybettirebilir."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin seyahat özgürlüğü hangi durumlarda sınırlanabilir?",
+    "secenekler": [
+      "Seçim dönemi",
+      "Askerlik çağı",
+      "Salgın hastalık ve suç soruşturması",
+      "Eğitim amacı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Seyahat özgürlüğü ancak kanunla ve kamu yararı/güvenliği gerekçesiyle sınırlanabilir."
+  },
+  {
+    "konu": "Hak Arama",
+    "soru": "Kamu Denetçiliği Kurumu hangi organa bağlıdır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanlığı",
+      "Adalet Bakanlığı",
+      "Anayasa Mahkemesi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ombudsman TBMM'ye bağlıdır."
   }
 ]
