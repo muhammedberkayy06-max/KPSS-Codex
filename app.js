@@ -3,6 +3,8 @@
    - Offline için sw.js cache'ler
 */
 
+const APP_VERSION = "v4";
+
 const FILES = {
   "Türkçe": "turkce.json",
   "Matematik": "matematik.json",
@@ -14,6 +16,19 @@ const FILES = {
   "Hukuk": "hukuk.json",
   "Kamu Yönetimi": "kamuyonetimi.json",
   "Uluslararası İlişkiler": "uluslararasiiliskiler.json",
+};
+
+const LESSON_ICONS = {
+  "Türkçe": "📝",
+  "Matematik": "🔢",
+  "Tarih": "📜",
+  "Coğrafya": "🗺️",
+  "Vatandaşlık": "⚖️",
+  "İktisat": "📈",
+  "Çalışma Ekonomisi": "🏭",
+  "Hukuk": "🏛️",
+  "Kamu Yönetimi": "🏢",
+  "Uluslararası İlişkiler": "🌐",
 };
 
 const GK_GY_DISTRIBUTION = {
@@ -32,6 +47,40 @@ const STORE_KEY = "kpss_ultimate_v1";
 const $ = (id) => document.getElementById(id);
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
+
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
 
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
@@ -207,9 +256,26 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.classList.toggle("active", b.dataset.mode===mode);
   });
 
@@ -228,6 +294,8 @@ function setMode(mode){
     $("countInput").disabled = false;
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
+
+  syncLessonUI(mode);
 }
 
 function fillLessonSelect(){
@@ -242,9 +310,50 @@ function fillLessonSelect(){
   sel.value = App.lesson;
 }
 
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
+}
+
 // ---------- loading question banks ----------
 async function fetchJSON(path){
-  const res = await fetch(path, { cache: "no-store" });
+  const url = `${path}?v=${APP_VERSION}`;
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
   const data = await res.json();
   if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
@@ -254,18 +363,34 @@ async function fetchJSON(path){
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
-  for (const [lesson, file] of Object.entries(FILES)){
-    try{
+  const missing = [];
+
+  const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
+    try {
       const data = await fetchJSON(file);
       banks[lesson] = data;
-    } catch (e){
+    } catch (e) {
       console.error(e);
-      setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
-      throw e;
+      banks[lesson] = [];
+      missing.push({ lesson, file, error: e?.message || e });
     }
-  }
+  });
+
+  await Promise.all(jobs);
   App.allBanks = banks;
-  setNotice("Soru paketleri hazır ✅", "info");
+
+  renderLessonIcons(App.mode);
+
+  if (missing.length){
+    const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
+    setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
+    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+  } else {
+    const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
+    setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
+  }
+
+  syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -417,6 +542,8 @@ function renderQuestion(){
     paintOptions();
     showExplanation();
   }
+
+  typesetMath($("quizCard"));
 }
 
 function inferLesson(q){
@@ -475,7 +602,9 @@ function showExplanation(){
   $("tagResult").className = "tag " + (ok ? "ok" : "bad");
 
   const explain = q.explain || "";
-  $("explainText").textContent = explain ? explain : (ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.");
+  const fallback = ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.";
+  const html = (explain || fallback).replace(/\n/g, "<br>");
+  $("explainText").innerHTML = html;
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
@@ -483,6 +612,8 @@ function showExplanation(){
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
   }
+
+  typesetMath($("explain"));
 }
 
 function onPick(i){
@@ -771,7 +902,7 @@ function handleVoiceCommand(raw){
     };
     const lesson = map[name] || "Matematik";
     setMode("single");
-    $("lessonSelect").value = lesson;
+    setLesson(lesson);
     $("countInput").value = clamp(n,5,300);
     return;
   }
@@ -803,7 +934,9 @@ async function startTest(){
   }catch{ return; }
 
   const mode = App.mode;
-  const lesson = $("lessonSelect").value;
+  // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
+  // doğrudan bu kaynaktan alarak seçim sorunlarını önlüyoruz.
+  const lesson = App.lesson;
   const count = clamp(parseInt($("countInput").value||"10",10), 5, 300);
   const goal = $("goal").value;
   const diffSel = $("difficulty").value;
@@ -871,20 +1004,21 @@ async function installPWA(){
   deferredPrompt = null;
 }
 
-function init(){
+async function init(){
   fillLessonSelect();
   setMode("single");
 
-  // mode buttons
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  // mode buttons (yalnızca mod anahtarları)
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
   });
 
-  $("lessonSelect").addEventListener("change", (e)=>{ App.lesson = e.target.value; });
+  $("lessonSelect").addEventListener("change", (e)=> setLesson(e.target.value));
 
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
+  $("btnHome").addEventListener("click", goHome);
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -898,6 +1032,7 @@ function init(){
   $("btnVoice").addEventListener("click", ()=> startVoice());
   $("btnRead").addEventListener("click", ()=> readCurrent());
   $("btnInstall").addEventListener("click", ()=> installPWA());
+  $("alertClose").addEventListener("click", ()=> showAlert(null));
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;
@@ -915,7 +1050,18 @@ function init(){
   // initial state info
   const state = ensureState();
   saveState(state);
-  setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  setNotice("Soru paketleri yükleniyor…", "info");
+
+  try {
+    await loadAllBanks();
+    syncLessonUI(App.mode);
+    setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  } catch (e) {
+    console.error(e);
+    setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
+    // UI boş kalmasın diye son kez senkronla
+    syncLessonUI(App.mode);
+  }
 }
 
 window.addEventListener("DOMContentLoaded", init);
