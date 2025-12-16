@@ -706,5 +706,149 @@
     ],
     "dogru_index": 1,
     "aciklama": "Modern, bağımsız ve milli bir devlet hedeflenmiştir."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Aşağıdakilerden hangisi Tanzimat Fermanı'nın ilanına ortam hazırlayan gelişmelerden biridir?",
+    "secenekler": [
+      "III. Selim'in tahttan indirilmesi",
+      "Yeniçeri Ocağı'nın kaldırılması",
+      "Sened-i İttifak'ın imzalanması",
+      "Kırım Savaşı'nın başlaması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sened-i İttifak merkez-taşra ilişkisini gündeme getirmiş, Tanzimat'a giden süreci beslemiştir."
+  },
+  {
+    "konu": "Türkiye Cumhuriyeti Tarihi",
+    "soru": "Aşağıdakilerden hangisi 1921 Anayasası'nın temel özelliklerinden biridir?",
+    "secenekler": [
+      "Kuvvetler ayrılığı ilkesini benimsemesi",
+      "Laiklik ilkesini açıkça düzenlemesi",
+      "Egemenliğin millete ait olduğunu vurgulaması",
+      "Cumhuriyet rejimini ilan etmesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1921 Anayasası'nda egemenlik kayıtsız şartsız milletindir vurgusu temel ilkedir."
+  },
+  {
+    "konu": "Osmanlı Kuruluş",
+    "soru": "Osmanlı Beyliği'nin Söğüt'e yerleşmesi hangi bey zamanında olmuştur?",
+    "secenekler": [
+      "Ertuğrul Bey",
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murad"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Söğüt'e yerleşme Ertuğrul Bey döneminde gerçekleşmiştir."
+  },
+  {
+    "konu": "Kuruluş Dönemi",
+    "soru": "Osmanlı'da ilk medrese hangi padişah döneminde açılmıştır?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murad",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İznik Orhaniye Medresesi Orhan Bey döneminde açılmıştır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "TBMM'nin açılışında meclis başkanlığına seçilen kişi kimdir?",
+    "secenekler": [
+      "Mustafa Kemal",
+      "Fevzi Çakmak",
+      "Rauf Orbay",
+      "Kazım Karabekir"
+    ],
+    "dogru_index": 0,
+    "aciklama": "TBMM açıldığında Mustafa Kemal meclis başkanı seçildi."
+  },
+  {
+    "konu": "İnkılaplar",
+    "soru": "Medeni Kanun hangi yıl yürürlüğe girmiştir?",
+    "secenekler": [
+      "1924",
+      "1925",
+      "1926",
+      "1928"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Türk Medeni Kanunu 1926'da kabul edilip yürürlüğe girdi."
+  },
+  {
+    "konu": "Osmanlı Gerileme",
+    "soru": "Karlofça Antlaşması ile ilk büyük toprak kaybı hangi devletlere karşı yaşanmıştır?",
+    "secenekler": [
+      "Venedik ve Rusya",
+      "Avusturya ve Rusya",
+      "Avusturya, Lehistan, Venedik",
+      "İran ve Rusya"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Karlofça Avusturya, Lehistan ve Venedik'e karşı imzalandı."
+  },
+  {
+    "konu": "Kapitülasyonlar",
+    "soru": "Osmanlı'da kapitülasyonları sürekli hale getiren padişah kimdir?",
+    "secenekler": [
+      "Kanuni Sultan Süleyman",
+      "I. Ahmet",
+      "I. Abdülhamit",
+      "III. Selim"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kanuni döneminde Fransa'ya verilen kapitülasyonlar sürekli hale geldi."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Soyadı Kanunu hangi yıl kabul edilmiştir?",
+    "secenekler": [
+      "1932",
+      "1933",
+      "1934",
+      "1935"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Soyadı Kanunu 1934'te çıkarıldı."
+  },
+  {
+    "konu": "Türk Dış Politikası",
+    "soru": "Hatay'ın Türkiye'ye katılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1936",
+      "1938",
+      "1939",
+      "1940"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hatay 1939'da referandumla Türkiye'ye katıldı."
+  },
+  {
+    "konu": "Osmanlı Devleti",
+    "soru": "Lale Devri hangi antlaşmadan sonra başlamıştır?",
+    "secenekler": [
+      "Pasarofça",
+      "Belgrad",
+      "Zitvatorok",
+      "Prut"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Lale Devri, 1718 Pasarofça Antlaşması sonrası başladı."
+  },
+  {
+    "konu": "Milli Mücadele",
+    "soru": "Amasya Genelgesi'nde aşağıdakilerden hangisi vurgulanmamıştır?",
+    "secenekler": [
+      "Milletin bağımsızlığını yine milletin azim ve kararı kurtaracaktır.",
+      "İstanbul Hükümeti görevini yapmamaktadır.",
+      "Milli Meclis'in açılması gerekmektedir.",
+      "Saltanatın korunması önceliklidir."
+    ],
+    "dogru_index": 3,
+    "aciklama": "Genelgede saltanatın korunması vurgulanmamıştır."
   }
 ]
