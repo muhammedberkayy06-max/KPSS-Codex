@@ -284,5 +284,149 @@
     ],
     "dogru_index": 1,
     "aciklama": "Marjinal verim, ek bir işçinin üretime yaptığı katkıdır."
+  },
+  {
+    "konu": "Endüstri İlişkileri",
+    "soru": "Toplu iş sözleşmesinin tarafları kimlerdir?",
+    "secenekler": [
+      "Devlet ve işveren",
+      "İşçi ve işveren sendikaları",
+      "İşçi ve tüketici birlikleri",
+      "Devlet ve işçi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toplu iş sözleşmesi işçi sendikası ile işveren veya işveren sendikası arasında yapılır."
+  },
+  {
+    "konu": "Çalışma Hukuku",
+    "soru": "İş sağlığı ve güvenliği kurulları hangi işyerlerinde kurulmak zorundadır?",
+    "secenekler": [
+      "En az 30 çalışanı olan işyerlerinde",
+      "En az 50 çalışanı olan ve 6 aydan fazla süreli işlerin yapıldığı işyerlerinde",
+      "Sadece çok tehlikeli sınıftaki işyerlerinde",
+      "Kamu işyerlerinde değil özel sektörde"
+    ],
+    "dogru_index": 1,
+    "aciklama": "50 ve üzeri çalışanı olan, 6 aydan uzun sürekli işlerin yapıldığı işyerlerinde kurulması zorunludur."
+  },
+  {
+    "konu": "Sendikalar",
+    "soru": "Toplu iş sözleşmesi yapma yetkisi hangi koşula bağlanmıştır?",
+    "secenekler": [
+      "İşçinin kıdemi",
+      "Sendikanın yetki tespiti alması",
+      "İşyerinin büyüklüğü",
+      "Çalışanın unvanı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yetki tespiti alınmadan sendika toplu iş sözleşmesi yapamaz."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı alabilmek için asgari çalışma süresi kaç yıldır?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "3 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "En az 1 yıl çalışma şartı aranır."
+  },
+  {
+    "konu": "İş Sağlığı",
+    "soru": "İş kazalarının bildirimi en geç kaç gün içinde yapılmalıdır?",
+    "secenekler": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İş kazası, en geç 3 gün içinde SGK'ya bildirilmelidir."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "İşsizlik maaşı alabilmek için son kaç ay prim ödenmiş olması gerekir?",
+    "secenekler": [
+      "60",
+      "90",
+      "120",
+      "180"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Son 120 gün kesintisiz prim ödemesi gerekir."
+  },
+  {
+    "konu": "Çalışma İlişkileri",
+    "soru": "Esnek çalışma modeli aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Çalışanın tek vardiyada çalışması",
+      "Çalışma saatlerinin ihtiyaca göre ayarlanması",
+      "Sadece uzaktan çalışma",
+      "Sabit süreli sözleşme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Esnek çalışma, süre ve mekânın ihtiyaca göre düzenlenmesidir."
+  },
+  {
+    "konu": "Ücret",
+    "soru": "Brüt ücret ile net ücret arasındaki fark başlıca hangi kalemlerden oluşur?",
+    "secenekler": [
+      "Yol ve yemek desteği",
+      "Vergi ve sosyal güvenlik kesintileri",
+      "Primler",
+      "Kıdem tazminatı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Net ücreti düşüren temel kalem vergi ve SGK kesintileridir."
+  },
+  {
+    "konu": "Endüstri İlişkileri",
+    "soru": "Grevin uygulanabilmesi için aşağıdakilerden hangisi zorunludur?",
+    "secenekler": [
+      "Arabuluculuk aşamasının tamamlanması",
+      "İşveren onayı",
+      "Yargı kararı",
+      "Çalışanların tümünün katılımı"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Arabuluculuk süreci tamamlanmadan grev kararı alınamaz."
+  },
+  {
+    "konu": "İşgücü Piyasası",
+    "soru": "Aşağıdakilerden hangisi işsizliğin yapısal nedenlerinden biridir?",
+    "secenekler": [
+      "Mevsimsel dalgalanmalar",
+      "Teknolojik değişim",
+      "Geçici durgunluk",
+      "Turizm gelirlerinin azalması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Teknoloji değiştikçe bazı meslekler ortadan kalkar, yapısal işsizlik doğar."
+  },
+  {
+    "konu": "İş Güvencesi",
+    "soru": "Belirsiz süreli iş sözleşmesinin feshi öncesi işçiye bildirim süresi tanınması hangi kavrama dayanır?",
+    "secenekler": [
+      "Kıdem",
+      "İhbar",
+      "İzin",
+      "Tazminat"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Fesih öncesi bildirim yükümlülüğü ihbar süresidir."
+  },
+  {
+    "konu": "Sendikal Haklar",
+    "soru": "İşçilerin sendikaya üye olabilmesi için aranan temel şart hangisidir?",
+    "secenekler": [
+      "En az iki yıl çalışma",
+      "18 yaşını doldurma",
+      "İşveren izni",
+      "Türkiye Cumhuriyeti vatandaşı olma"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Sendika üyeliği için vatandaşlık ve fiil ehliyeti şarttır."
   }
 ]

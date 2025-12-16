@@ -9,7 +9,8 @@
       "Yüz yüze iletişim tamamen ortadan kalkmıştır"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafta teknolojinin bilgiye erişimi kolaylaştırmasına rağmen sosyal ilişkileri zayıflattığı vurgulanmaktadır."
+    "aciklama": "Paragrafta teknolojinin bilgiye erişimi kolaylaştırmasına rağmen sosyal ilişkileri zayıflattığı vurgulanmaktadır.",
+    "paragraf": "Dijital araçlar hayatımızı kolaylaştırırken insanların birbirleriyle yüz yüze geçirdikleri zaman azaldı; sanal mesajlar çoğu zaman derinlikli sohbetlerin yerini alıyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -21,7 +22,8 @@
       "Okuma alışkanlığı ileri yaşta kazanılmalıdır"
     ],
     "dogru_index": 1,
-    "aciklama": "Paragraf, okumanın düşünme ve kelime dağarcığına katkısını vurgulamaktadır."
+    "aciklama": "Paragraf, okumanın düşünme ve kelime dağarcığına katkısını vurgulamaktadır.",
+    "paragraf": "Düzenli okuma alışkanlığı, kişinin düşünme biçimini geliştirir; yeni kavramlar öğrenmek zihnimizi besler ve olaylara farklı açılardan bakmamıza yardımcı olur."
   },
   {
     "konu": "Cümlede Anlam",
@@ -57,7 +59,8 @@
       "Başarı tesadüflerle kazanılır"
     ],
     "dogru_index": 1,
-    "aciklama": "Paragrafta başarının sabır ve düzenli çalışmayla elde edildiği vurgulanmaktadır."
+    "aciklama": "Paragrafta başarının sabır ve düzenli çalışmayla elde edildiği vurgulanmaktadır.",
+    "paragraf": "Yazar, başarının tesadüflere değil sabırla sürdürülen istikrarlı çalışmaya dayandığını, hedefe giden yolun emek gerektirdiğini vurguluyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -69,7 +72,8 @@
       "Kitap okumak hayal gücüne katkı sağlar"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafta kitap okumanın yalnızlaştırdığına dair bir ifade yoktur."
+    "aciklama": "Paragrafta kitap okumanın yalnızlaştırdığına dair bir ifade yoktur.",
+    "paragraf": "Metinde kitap okumanın empatiyi güçlendirdiği, düşünme becerilerini geliştirdiği ve hayal gücünü beslediği belirtiliyor; okumanın insanı yalnızlaştırdığına dair bir ifade yer almıyor."
   },
   {
     "konu": "Cümlede Anlam",
@@ -117,7 +121,8 @@
       "Teknoloji insanları tembelleştirmiştir"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafın ana vurgusu bilgi kirliliği ve eleştirel düşünme gerekliliğidir."
+    "aciklama": "Paragrafın ana vurgusu bilgi kirliliği ve eleştirel düşünme gerekliliğidir.",
+    "paragraf": "Bilgiye erişimin hızlanması beraberinde yoğun bir bilgi kirliliği getirdi; bu nedenle okur, karşılaştığı bilgileri eleştirel süzgeçten geçirmediğinde kolayca yanılabilir."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -129,7 +134,8 @@
       "Sanatın kültürel aktarım rolü"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafta sanatın ekonomik yönüne değinilmemiştir."
+    "aciklama": "Paragrafta sanatın ekonomik yönüne değinilmemiştir.",
+    "paragraf": "Paragrafta sanatın bireyin kendini ifade etmesine ve toplumun kültürel değerlerini aktarmasına katkısı anlatılıyor; ekonomik yönüne dair bir değerlendirme yapılmıyor."
   },
   {
     "konu": "Cümlede Anlam",
@@ -189,7 +195,8 @@
       "Hedef belirlemek gereksizdir"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafın ana vurgusu istikrarlı çalışmanın başarıdaki rolüdür."
+    "aciklama": "Paragrafın ana vurgusu istikrarlı çalışmanın başarıdaki rolüdür.",
+    "paragraf": "Metin, yetenekten çok düzenli ve disiplinli çalışmanın başarıyı getireceğini, küçük ama sürekli adımların büyük hedefleri mümkün kıldığını anlatıyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -201,7 +208,8 @@
       "Bakış açısının genişlemesi"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafta kelime dağarcığına değinilmemiştir."
+    "aciklama": "Paragrafta kelime dağarcığına değinilmemiştir.",
+    "paragraf": "Paragrafta okumanın zihinsel katkısı, eleştirel düşünmeyi beslemesi ve farklı bakış açıları kazandırması üzerinde duruluyor; kelime dağarcığının gelişmesine dair bir ifade yok."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -213,7 +221,8 @@
       "Değişim yalnızca dış baskılarla gerçekleşir"
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafın ana fikri, bireyin kendini eleştirmesinin gelişim için gerekli olduğudur."
+    "aciklama": "Paragrafın ana fikri, bireyin kendini eleştirmesinin gelişim için gerekli olduğudur.",
+    "paragraf": "Yazar, kişinin kendini sorgulayıp hatalarını görmesinin gelişimin ön koşulu olduğunu, başkalarını suçlamak yerine içe dönük bir değerlendirme yapmanın önemini vurguluyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -225,7 +234,8 @@
       "Teknolojinin olumsuz etkileri olabilir"
     ],
     "dogru_index": 1,
-    "aciklama": "Paragrafta dijital iletişimin her zaman daha etkili olduğuna dair bir yargı yoktur."
+    "aciklama": "Paragrafta dijital iletişimin her zaman daha etkili olduğuna dair bir yargı yoktur.",
+    "paragraf": "Metin, teknolojinin iletişim biçimlerini dönüştürdüğünü ama yüz yüze kurulan ilişkinin duygusal derinliğinin yerini tamamen alamadığını, bu nedenle dijital mesajların her durumda daha etkili sayılamayacağını belirtiyor."
   },
   {
     "konu": "Cümlede Anlam",
@@ -309,7 +319,8 @@
       "Öyküleyici"
     ],
     "dogru_index": 3,
-    "aciklama": "Olay akışı olduğu için öyküleyici anlatım vardır."
+    "aciklama": "Olay akışı olduğu için öyküleyici anlatım vardır.",
+    "paragraf": "Öğrenci, sabah tramvayı kaçırıp yağmur altında okula yürüdüğünü, bu sırada arkadaşının paylaştığı şemsiyeyle birlikte derse yetişmeyi başardıklarını anlatıyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -321,7 +332,8 @@
       "Tarafsız"
     ],
     "dogru_index": 1,
-    "aciklama": "Yazar, okuyucuya sorumluluk yükleyerek öğüt vermektedir."
+    "aciklama": "Yazar, okuyucuya sorumluluk yükleyerek öğüt vermektedir.",
+    "paragraf": "Yazar, deneyimlerini aktararak okura adım adım nasıl ilerlemesi gerektiğini söylüyor; cesaret verici ve yol gösterici bir dil kullanıyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -333,7 +345,8 @@
       "Yorgunluk yalnızca fiziksel nedenlere bağlıdır"
     ],
     "dogru_index": 1,
-    "aciklama": "Paragraf, plansızlığın verimsizliğe yol açtığını vurgulamaktadır."
+    "aciklama": "Paragraf, plansızlığın verimsizliğe yol açtığını vurgulamaktadır.",
+    "paragraf": "Günü plansız geçirmek, küçük işler arasında kaybolmaya ve verimin düşmesine yol açar; zamanı önceden bölmek hem yorgunluğu azaltır hem de işlerin tamamlanmasını kolaylaştırır."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -345,7 +358,8 @@
       "Bilgi çağında yaşamak kolaydır"
     ],
     "dogru_index": 2,
-    "aciklama": "Ana vurgu, bilginin doğru değerlendirilmesi gerekliliğidir."
+    "aciklama": "Ana vurgu, bilginin doğru değerlendirilmesi gerekliliğidir.",
+    "paragraf": "Metin, bilginin tek başına yeterli olmadığını, onu doğru yerde ve zamanda kullanmanın bireyin asıl gücü olduğunu ifade ediyor."
   },
   {
     "konu": "Cümlede Anlam",
@@ -429,7 +443,8 @@
       "Tartışmacı"
     ],
     "dogru_index": 2,
-    "aciklama": "Bilgi verme amacı olduğu için açıklayıcı anlatım vardır."
+    "aciklama": "Bilgi verme amacı olduğu için açıklayıcı anlatım vardır.",
+    "paragraf": "Paragrafta güneş enerjisinin nasıl elde edildiği ve panellerin temel çalışma prensipleri basit bir dille aktarılıyor."
   },
   {
     "konu": "Paragrafta Anlam",
@@ -441,7 +456,8 @@
       "Motivasyonun önemsiz olduğunu"
     ],
     "dogru_index": 2,
-    "aciklama": "Yazar yapıcı eleştirinin gelişimi desteklediğini savunur."
+    "aciklama": "Yazar yapıcı eleştirinin gelişimi desteklediğini savunur.",
+    "paragraf": "Yazar, yapıcı eleştirinin kişiyi geliştirdiğini, iyi niyetli geri bildirimlerin kör noktalarımızı görmemize yardım ettiğini savunuyor."
   },
   {
     "konu": "Paragrafta Ana Düşünce",
@@ -453,7 +469,8 @@
       "Yazarlar sözcükleri rastgele kullanır."
     ],
     "dogru_index": 2,
-    "aciklama": "Paragrafın ana fikri, anlamanın bağlam ve yazarın amacıyla mümkün olduğu yönündedir."
+    "aciklama": "Paragrafın ana fikri, anlamanın bağlam ve yazarın amacıyla mümkün olduğu yönündedir.",
+    "paragraf": "Metin, bir yazıyı anlamak için yalnızca sözcükleri bilmenin yetmeyeceğini; yazarın amacı, bağlamı ve verdiği ipuçlarını değerlendirmek gerektiğini açıklıyor."
   },
   {
     "konu": "Paragrafta Yardımcı Düşünce",
@@ -465,7 +482,8 @@
       "Teknolojinin eğitimi olumsuz etkilemesi"
     ],
     "dogru_index": 3,
-    "aciklama": "Eğitimin olumsuz etkilenmesine dair bir ifade yoktur."
+    "aciklama": "Eğitimin olumsuz etkilenmesine dair bir ifade yoktur.",
+    "paragraf": "Paragraf, bilgiye ulaşmanın kolaylaştığını, bu nedenle kaynakların doğruluğunu sorgulayıp eleştirel düşünmenin önemli olduğunu anlatıyor; teknolojinin eğitime zarar verdiği gibi bir ifade yok."
   },
   {
     "konu": "Paragrafta Çıkarım",
@@ -477,7 +495,8 @@
       "Sanat yalnızca bireysel bir üründür."
     ],
     "dogru_index": 1,
-    "aciklama": "Sanat eserlerinin dönemin izlerini taşıdığı belirtilmiştir."
+    "aciklama": "Sanat eserlerinin dönemin izlerini taşıdığı belirtilmiştir.",
+    "paragraf": "Metinde sanat eserlerinin ortaya çıktıkları dönemin ruhunu yansıttığı, her eserle o dönemin toplumsal ve kültürel özelliklerinin izlerinin görülebileceği belirtiliyor."
   },
   {
     "konu": "Paragrafın Yapısı",
@@ -489,7 +508,8 @@
       "Tartışmacı"
     ],
     "dogru_index": 2,
-    "aciklama": "Bilgi verme ve neden-sonuç ilişkisi kurma vardır."
+    "aciklama": "Bilgi verme ve neden-sonuç ilişkisi kurma vardır.",
+    "paragraf": "Paragrafta su döngüsü, buharlaşma ve yağış süreçleriyle açıklanarak okura doğadaki suyun nasıl yenilendiği anlatılıyor."
   },
   {
     "konu": "Paragrafta Anlam – Başlık",
@@ -501,7 +521,8 @@
       "Araştırma Yöntemleri"
     ],
     "dogru_index": 1,
-    "aciklama": "Bilimsel bilginin merak ve soru sormayla başladığı anlatılmaktadır."
+    "aciklama": "Bilimsel bilginin merak ve soru sormayla başladığı anlatılmaktadır.",
+    "paragraf": "Bilimsel bilginin gözlem ve deneyle sınanarak doğrulandığı, araştırmacının varsayımlarını sürekli test ederek ilerlediği aktarılıyor."
   },
   {
     "konu": "Sözel Mantık",
@@ -525,7 +546,8 @@
       "Okur, metni yalnızca hızla tüketmelidir."
     ],
     "dogru_index": 2,
-    "aciklama": "Paragraf, derinlikli okumanın örtük anlamları yakalamayı sağladığını vurgular."
+    "aciklama": "Paragraf, derinlikli okumanın örtük anlamları yakalamayı sağladığını vurgular.",
+    "paragraf": "Yazar, metni aceleyle tüketmek yerine satır aralarını da okumak, imaların ve tonlamaların farkına varmak gerektiğini; bunun okuma deneyimini derinleştirdiğini vurguluyor."
   },
   {
     "konu": "Paragrafta Yardımcı Düşünce",
@@ -537,7 +559,8 @@
       "Denemelerin yeni yollar açtığı"
     ],
     "dogru_index": 2,
-    "aciklama": "Zamana yayılma ifadesi doğrudan yer almamaktadır."
+    "aciklama": "Zamana yayılma ifadesi doğrudan yer almamaktadır.",
+    "paragraf": "Paragrafta bilimsel süreçte denemelerin ve hataların öğretici olduğu, başarısızlıkların yeni yollar açtığı ve sabırlı olmanın gerekliliği anlatılıyor; ilerlemenin zamana yayılması açıkça belirtilmiyor."
   },
   {
     "konu": "Paragrafta Çıkarım",
@@ -549,7 +572,8 @@
       "Üslup yalnızca sözcük bilgisiyle ilgilidir."
     ],
     "dogru_index": 2,
-    "aciklama": "Üslubun düşünce sistematiğini yansıttığı belirtilmiştir."
+    "aciklama": "Üslubun düşünce sistematiğini yansıttığı belirtilmiştir.",
+    "paragraf": "Metin, bir yazarın kelime seçimleri ve cümle kurma biçiminin düşünce dünyasını nasıl yansıttığını örneklerle açıklıyor."
   },
   {
     "konu": "Paragrafın Yapısı",
@@ -561,7 +585,8 @@
       "Tartışmacı"
     ],
     "dogru_index": 2,
-    "aciklama": "Neden–sonuç ilişkisi kurularak bilgi verilmektedir."
+    "aciklama": "Neden–sonuç ilişkisi kurularak bilgi verilmektedir.",
+    "paragraf": "Paragrafta geri dönüşümün çevreye katkısı ve atıkların ayrıştırılma süreci adım adım anlatılıyor."
   },
   {
     "konu": "Paragrafta Başlık",
@@ -573,7 +598,8 @@
       "Sanat Akımları"
     ],
     "dogru_index": 1,
-    "aciklama": "Paragraf, sanatın toplumsal koşullarla ilişkisini ele alır."
+    "aciklama": "Paragraf, sanatın toplumsal koşullarla ilişkisini ele alır.",
+    "paragraf": "Metin, sanatın toplumun değerlerinden beslendiğini ve aynı zamanda topluma yeni bakış açıları kazandırarak değişime öncülük ettiğini ifade ediyor."
   },
   {
     "konu": "Paragrafta Amaç",
@@ -585,7 +611,8 @@
       "Sanat eserlerini sınıflandırmak"
     ],
     "dogru_index": 1,
-    "aciklama": "Eleştirinin ne amaçla yapıldığı açıklanmaktadır."
+    "aciklama": "Eleştirinin ne amaçla yapıldığı açıklanmaktadır.",
+    "paragraf": "Paragraf, eleştirinin bir eseri yermek için değil, güçlü ve zayıf yönlerini gösterip geliştirmek için yapıldığını açıklıyor."
   },
   {
     "konu": "Paragrafta Tutum",
@@ -609,7 +636,8 @@
       "Rahatsızlık kişisel değildir."
     ],
     "dogru_index": 1,
-    "aciklama": "Aynı durumun farklı algılanması vurgulanır."
+    "aciklama": "Aynı durumun farklı algılanması vurgulanır.",
+    "paragraf": "Sessiz bir sınıfta aynı çıtırtının kimini rahatsız edip kimini etkilememesi, insanların algılarının ve deneyimlerinin farklılığından kaynaklandığı anlatılıyor."
   },
   {
     "konu": "Sözel Mantık",
@@ -633,7 +661,8 @@
       "Okuma süreci değişmezdir."
     ],
     "dogru_index": 1,
-    "aciklama": "Okur–metin ilişkisi vurgulanmaktadır."
+    "aciklama": "Okur–metin ilişkisi vurgulanmaktadır.",
+    "paragraf": "Yazar, bir metinden alınan tadın okurun geçmişi, ilgileri ve merakıyla şekillendiğini; aynı satırların herkeste farklı duygular uyandırabileceğini söylüyor."
   },
   {
     "konu": "Paragrafta Anlam – Genelleme",
@@ -645,7 +674,8 @@
       "Karşılaştırma"
     ],
     "dogru_index": 2,
-    "aciklama": "Toplumlar hakkında genel bir yargı sunulmuştur."
+    "aciklama": "Toplumlar hakkında genel bir yargı sunulmuştur.",
+    "paragraf": "Paragrafta, insanların genellikle benzer durumlarda benzer duygular yaşadığı belirtilerek geniş bir kitleyi kapsayan genel bir ifade kullanılıyor."
   },
   {
     "konu": "Paragrafta Anlam – Neden Sonuç",
@@ -657,7 +687,8 @@
       "Karşıtlık"
     ],
     "dogru_index": 2,
-    "aciklama": "Plansız kentleşme neden, hava kalitesinin düşmesi sonuçtur."
+    "aciklama": "Plansız kentleşme neden, hava kalitesinin düşmesi sonuçtur.",
+    "paragraf": "Metinde sabah erken kalkan birinin işi vaktinde bitirebilmesinin, erken kalkma ile zamanında tamamlama arasında doğrudan bir neden-sonuç ilişkisi kurduğu anlatılıyor."
   },
   {
     "konu": "Paragrafta Anlam – Örtük Anlam",
@@ -669,7 +700,8 @@
       "Eserler yalnızca dönemini yansıtır."
     ],
     "dogru_index": 1,
-    "aciklama": "Dönemsel beğenilerin değişebileceği örtük olarak ima edilir."
+    "aciklama": "Dönemsel beğenilerin değişebileceği örtük olarak ima edilir.",
+    "paragraf": "Paragrafta, bugün çok sevilen bir eserin zamanla gözden düşebileceği, zevklerin döneme göre değiştiği örtük biçimde ifade ediliyor."
   },
   {
     "konu": "Sözel Mantık",
@@ -693,6 +725,164 @@
       "Yaratıcılık öğrenilemez."
     ],
     "dogru_index": 2,
-    "aciklama": "Paragraf, yaratıcılığın geliştirilebileceğini savunur."
+    "aciklama": "Paragraf, yaratıcılığın geliştirilebileceğini savunur.",
+    "paragraf": "Yazar, merakla yapılan denemelerin ve düzenli alıştırmaların yaratıcılığı beslediğini, hayal gücünün çalıştıkça güçlendiğini anlatıyor."
+  },
+  {
+    "konu": "Paragrafta Anlam – Örnekleme",
+    "soru": "Bu paragrafta anlatımın desteklenmesinde hangi yöntem kullanılmıştır?",
+    "secenekler": [
+      "Tanımlama",
+      "Örnekleme",
+      "Karşılaştırma",
+      "Betimleme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Paragrafta ana düşünceyi somutlaştıran örnekler verilmiştir.",
+    "paragraf": "Yazar, okuma alışkanlığının gelişmesi için kısa hikâyelerden, biyografilerden ve incelemelerden örnekler vererek her türün kişiye farklı katkılar sunduğunu gösteriyor."
+  },
+  {
+    "konu": "Dil Bilgisi",
+    "soru": "Aşağıdaki cümlelerin hangisinde ek fiil kullanılmamıştır?",
+    "secenekler": [
+      "Sınıf oldukça sessizdi.",
+      "Bu konu anlaşılır.",
+      "Arkadaşlarımdı onlar.",
+      "Hava birden soğudu."
+    ],
+    "dogru_index": 3,
+    "aciklama": "‘Soğudu’ fiili çekimlenmiştir, ek fiil yoktur."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerden hangisi olasılık anlamı taşır?",
+    "secenekler": [
+      "Yarın toplantıya kesinlikle geleceğim.",
+      "Bu akşam belki sinemaya gideriz.",
+      "Bu konuyu daha sonra konuşacağız.",
+      "Şimdi ders çalışıyorum."
+    ],
+    "dogru_index": 1,
+    "aciklama": "‘Belki’ sözcüğü olasılık bildirir."
+  },
+  {
+    "konu": "Paragraf",
+    "soru": "Aşağıdaki parçada vurgulanmak istenen temel düşünce hangisidir?\n\nOkuma alışkanlığı, yalnızca bilgi edinmeyi değil, düşüncelerin kıyaslanmasını ve yeni fikirlerin doğmasını da sağlar. Aynı zamanda okur, farklı bakış açılarını tanıyarak empati yeteneğini geliştirir.",
+    "secenekler": [
+      "Okuma, yalnızca bilgi birikimini artırır.",
+      "Okuma, empati ve düşünsel gelişimi destekler.",
+      "Okuma, zaman kaybına yol açabilir.",
+      "Okuma alışkanlığı disiplin gerektirmez."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Metinde okumanın hem düşünsel gelişimi hem de empatiyi güçlendirdiği vurgulanıyor."
+  },
+  {
+    "konu": "Paragrafta Yapı",
+    "soru": "Aşağıdaki cümlelerin hangisi, giriş cümlesi olmaya en uygundur?",
+    "secenekler": [
+      "Bu yüzden yazar, eserlerinde hep aynı temayı işler.",
+      "Kısacası anlatılanlar, gerçeği tam karşılamıyor.",
+      "Öncelikle romanın yazıldığı dönemi tanımak gerekir.",
+      "Ancak eleştirmenlerin çoğu bu görüşte birleşmez."
+    ],
+    "dogru_index": 2,
+    "aciklama": "Öncelikle ifadesi konuyu açan, giriş cümlesi niteliği taşıyor."
+  },
+  {
+    "konu": "Cümlede Anlam",
+    "soru": "Aşağıdaki cümlelerden hangisinde neden-sonuç ilişkisi yoktur?",
+    "secenekler": [
+      "Geç kaldığı için toplantıya alınmadı.",
+      "Ders çalışmadığından sınavda başarısız oldu.",
+      "Hava yağmurlu olduğundan piknik iptal edildi.",
+      "Konser çok güzel geçti, bu yüzden biletler önceden tükendi."
+    ],
+    "dogru_index": 3,
+    "aciklama": "Son cümlede güzel geçen konserle biletlerin önceden tükenmesi arasında kronolojik değil değerlendirme var."
+  },
+  {
+    "konu": "Yazım Kuralları",
+    "soru": "Aşağıdaki cümlelerin hangisinde yazım yanlışı vardır?",
+    "secenekler": [
+      "Yarınki toplantıya hazırlanmayı unutma.",
+      "Dışişleri Bakanlığı'nda bir seminer düzenlenecek.",
+      "Kocaeli'ne hafta sonu gideceğiz.",
+      "Bugünlerde havalar oldukca serinledi."
+    ],
+    "dogru_index": 3,
+    "aciklama": "Oldukca sözcüğü 'oldukça' şeklinde yazılmalıdır."
+  },
+  {
+    "konu": "Noktalama İşaretleri",
+    "soru": "Aşağıdaki cümlelerin hangisinde noktalama işareti yanlış kullanılmıştır?",
+    "secenekler": [
+      "Sınavdan önce; konuları tekrar etmek gerekir.",
+      "Toplantı saat 14.00'te başlayacak.",
+      "Bu yıl en çok; roman ve öykü okudum.",
+      "Yağmur yağarsa, pikniğe gitmeyeceğiz."
+    ],
+    "dogru_index": 0,
+    "aciklama": "Giriş cümlesinde virgül yeterli; noktalı virgül gereksiz kullanılmış."
+  },
+  {
+    "konu": "Sözcük Türleri",
+    "soru": "Altı çizili sözcüklerden hangisi zamirdir?\n\nBu kitabı *onu* çok sevdiği için hediye aldım.",
+    "secenekler": [
+      "bu",
+      "onu",
+      "hediye",
+      "kitabı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "'Onu' sözcüğü zamirdir, adı belirtir."
+  },
+  {
+    "konu": "Anlatım Bozukluğu",
+    "soru": "Aşağıdaki cümlelerin hangisinde anlatım bozukluğu vardır?",
+    "secenekler": [
+      "Yazar, bu kitapta farklı anlatım tekniklerini başarıyla kullanmış.",
+      "Toplantıya katılan üyeler ve öğrenciler yoktu.",
+      "Projeyi zamanında yetiştirebilmek için çok çalıştık.",
+      "Konser sonrası dinleyiciler sanatçıyı ayakta alkışladı."
+    ],
+    "dogru_index": 1,
+    "aciklama": "'Katılan ... yoktu' ifadesi çelişki oluşturuyor, katılan yoksa 'katılan' denemez."
+  },
+  {
+    "konu": "Paragrafta Anlatım Teknikleri",
+    "soru": "Aşağıdaki parçada hangi anlatım biçimi ağır basmaktadır?\n\nKaradeniz kıyısındaki köy, sabah sisinin altında kaybolmuştu; ahşap evlerin pencerelerinden sızan ışıklar sisle birlikte yumuşuyordu.",
+    "secenekler": [
+      "Betimleme",
+      "Öyküleme",
+      "Tartışma",
+      "Açıklama"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Parça, ortamı tasvir ederek betimleme yapıyor."
+  },
+  {
+    "konu": "Düşünceyi Geliştirme Yolları",
+    "soru": "Aşağıdaki cümlelerin hangisinde tanımlamadan yararlanılmıştır?",
+    "secenekler": [
+      "Öykü, yaşanmış ya da yaşanabilir olayları kısa biçimde anlatan türdür.",
+      "Çünkü roman daha geniş bir zaman dilimini işler.",
+      "Yazarın başarısının nedeni güçlü gözlem gücüdür.",
+      "Bu yüzden öyküde ayrıntıdan kaçınılmalıdır."
+    ],
+    "dogru_index": 0,
+    "aciklama": "İlk cümlede öykünün ne olduğuna dair tanım yapılmış."
+  },
+  {
+    "konu": "Paragrafta Yardımcı Düşünce",
+    "soru": "Aşağıdaki parçada asıl düşünceyi destekleyen yardımcı düşünce hangisidir?\n\nYabancı dil öğrenmek, yalnızca kelime ezberlemek değildir; kültürü tanımak, o dilde düşünüp iletişim kurabilmek anlamına gelir.",
+    "secenekler": [
+      "Kelimeleri ezberlemek dil öğrenmenin tek yoludur.",
+      "Dil öğrenirken kültürel bağlam önem taşır.",
+      "Yabancı dil öğrenmek gereksizdir.",
+      "İletişim kurmadan dil öğrenmek mümkündür."
+    ],
+    "dogru_index": 1,
+    "aciklama": "Parçada dil öğrenmenin kültür ve iletişim boyutuna vurgu yapılarak ana düşünce destekleniyor."
   }
 ]
