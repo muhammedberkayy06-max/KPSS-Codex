@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v7";
+const APP_VERSION = "v8";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -382,6 +382,17 @@ async function fetchJSON(path){
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
   };
 
+  const purgeCachesFor = async () => {
+    if (typeof caches === "undefined") return;
+    const keys = await caches.keys();
+    await Promise.all(keys.map(async (k)=>{
+      const c = await caches.open(k);
+      await c.delete(versioned);
+      await c.delete(bare);
+      await c.delete(cacheKey);
+    }));
+  };
+
   const restoreFromCache = async () => {
     if (typeof caches === "undefined") return null;
     const keys = [versioned, bare, cacheKey];
@@ -415,7 +426,15 @@ async function fetchJSON(path){
       console.warn(`İkinci deneme başarısız (${path}):`, err2);
       const cached = await restoreFromCache();
       if (cached) return cached.map(normalizeQuestion);
-      throw err2;
+      try {
+        await purgeCachesFor();
+        const data = await fetchAndParse(bare, { cache: "no-store" });
+        if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+        return data.map(normalizeQuestion);
+      } catch (err3) {
+        console.warn(`Tamamen temiz deneme başarısız (${path}):`, err3);
+        throw err3;
+      }
     }
   }
 }
