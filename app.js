@@ -42,6 +42,7 @@ const GK_GY_DISTRIBUTION = {
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
 
 const STORE_KEY = "kpss_ultimate_v1";
+const BANK_CACHE_KEY = "kpss_ultimate_banks_v1";
 
 // ---------- small helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -322,6 +323,40 @@ function syncLessonUI(mode = App.mode){
   renderLessonIcons(mode);
 }
 
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
+
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
 }
@@ -329,10 +364,10 @@ function safeText(v){
 function normalizeQuestion(q){
   const konu = q.konu || q.topic || "Genel";
   const soru = q.soru || q.question || "";
-  const paragraf = (q.paragraf ?? q.paragraph) || null;
+  const paragraf = (q.paragraf !== undefined && q.paragraf !== null) ? q.paragraf : (q.paragraph || null);
 
   // --- seçenekleri normalize et: array veya {A:..,B:..} gelebilir ---
-  let optionsRaw = q.secenekler ?? q.options ?? [];
+  let optionsRaw = (q.secenekler !== undefined && q.secenekler !== null) ? q.secenekler : (q.options !== undefined && q.options !== null ? q.options : []);
   let options = [];
 
   if (Array.isArray(optionsRaw)) {
@@ -350,9 +385,15 @@ function normalizeQuestion(q){
   }
 
   // --- doğru cevabı normalize et: index veya harf gelebilir ---
-  let correct = (q.dogru_index ?? q.dogruIndex ?? q.correct_index ?? q.correctIndex ?? q.answer_index ?? q.answerIndex);
+  let correct = (q.dogru_index !== undefined && q.dogru_index !== null) ? q.dogru_index
+    : (q.dogruIndex !== undefined && q.dogruIndex !== null ? q.dogruIndex
+    : (q.correct_index !== undefined && q.correct_index !== null ? q.correct_index
+    : (q.correctIndex !== undefined && q.correctIndex !== null ? q.correctIndex
+    : (q.answer_index !== undefined && q.answer_index !== null ? q.answer_index
+    : q.answerIndex))));
   if (correct === undefined || correct === null) {
-    correct = q.dogru ?? q.correct ?? q.answer; // "A" / "B" gibi
+    const alt = (q.dogru !== undefined && q.dogru !== null) ? q.dogru : (q.correct !== undefined && q.correct !== null ? q.correct : q.answer);
+    correct = alt; // "A" / "B" gibi
   }
 
   let ci = 0;
@@ -390,7 +431,7 @@ function normalizeQuestion(q){
 
 function estimateDifficulty(q){
   // heuristic: longer prompt/paragraph and options => harder
-  const len = (q.soru?.length||0) + (q.paragraf?.length||0);
+  const len = ((q.soru && q.soru.length) || 0) + ((q.paragraf && q.paragraf.length) || 0);
   if (len < 90) return "easy";
   if (len < 170) return "medium";
   return "hard";
@@ -427,15 +468,44 @@ function loadState(){
   }catch{ return {}; }
 }
 
+function loadCachedBanks(){
+  try{
+    const raw = localStorage.getItem(BANK_CACHE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    const banks = {};
+    for (const [lesson, list] of Object.entries(parsed)){
+      if (Array.isArray(list)) banks[lesson] = list.map(normalizeQuestion);
+    }
+    return banks;
+  }catch(e){
+    console.warn("Banka cache okuma hatası", e);
+    return null;
+  }
+}
+
+function saveCachedBanks(banks){
+  try{
+    const out = {};
+    for (const [lesson, list] of Object.entries(banks||{})){
+      if (Array.isArray(list) && list.length){
+        out[lesson] = list.map(q=> q.raw || q);
+      }
+    }
+    localStorage.setItem(BANK_CACHE_KEY, JSON.stringify(out));
+  }catch(e){ console.warn("Banka cache yazma hatası", e); }
+}
+
 function saveState(s){
   localStorage.setItem(STORE_KEY, JSON.stringify(s));
 }
 
 function ensureState(){
   const s = loadState();
-  s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
-  s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
-  s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
+  if (!s.profile) s.profile = { xp:0, level:1, streak:0, badges:[], lastActive:null };
+  if (!s.history) s.history = []; // {date, lesson, mode, total, correct, topicStats}
+  if (!s.topicPerf) s.topicPerf = {}; // lesson -> topic -> {correct,total}
   return s;
 }
 
@@ -553,6 +623,46 @@ function fillLessonSelect(){
     });
     target.value = App.lesson;
   });
+}
+
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
 }
 
 function setLesson(lesson){
@@ -730,7 +840,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   };
 
   const preferWeak = (lessonName, topic) => {
-    const tp = state.topicPerf?.[lessonName]?.[topic];
+    const tp = (state.topicPerf && state.topicPerf[lessonName]) ? state.topicPerf[lessonName][topic] : undefined;
     if (!tp || tp.total < 6) return 1.0;
     const acc = tp.correct / tp.total;
     // lower accuracy => higher weight
@@ -797,7 +907,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   shuffle(out);
 
   return {
-    id: crypto.randomUUID?.() || String(Math.random()).slice(2),
+    id: (crypto && typeof crypto.randomUUID === "function" ? crypto.randomUUID() : String(Math.random()).slice(2)),
     mode,
     lesson,
     createdAt: now(),
@@ -845,7 +955,7 @@ function renderQuestion(){
 
   const opts = $("options");
   opts.innerHTML = "";
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const locked = t.answers[t.index] !== null;
 
   q.options.forEach((text, i)=>{
@@ -873,13 +983,13 @@ function renderQuestion(){
 function inferLesson(q){
   // We don’t store lesson inside question; use current mode mapping by reference
   // fall back to selected
-  return App.currentTest?.lesson || "Ders";
+  return (App.currentTest && App.currentTest.lesson) ? App.currentTest.lesson : "Ders";
 }
 
 function paintOptions(){
   const t = App.currentTest;
   const q = t.questions[t.index];
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const correct = q.correctIndex;
   const buttons = [...$("options").children];
 
@@ -919,7 +1029,7 @@ function showExplanation(){
   const t = App.currentTest;
   const q = t.questions[t.index];
   const ans = t.answers[t.index];
-  const ok = !!ans?.correct;
+  const ok = !!(ans && ans.correct);
 
   $("explain").hidden = false;
   $("tagResult").textContent = ok ? "Doğru ✅" : "Yanlış ❌";
@@ -953,7 +1063,7 @@ function onPick(i){
   // stats
   if (ok) t.correct++;
   const topic = q.konu;
-  t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
   t.topicStats[topic].total++;
   if (ok) t.topicStats[topic].correct++;
 
@@ -999,7 +1109,7 @@ function skip(){
     t.answers[t.index] = {picked:null, correct:false, skipped:true};
     const q = t.questions[t.index];
     const topic = q.konu;
-    t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
     t.topicStats[topic].total++;
   }
   next();
@@ -1014,8 +1124,8 @@ function finish(){
   // merge topic perf
   for (const [topic, st] of Object.entries(t.topicStats)){
     const lessonName = (t.mode === "single") ? t.lesson : "Karma";
-    state.topicPerf[lessonName] ??= {};
-    state.topicPerf[lessonName][topic] ??= {correct:0,total:0};
+    if (!state.topicPerf[lessonName]) state.topicPerf[lessonName] = {};
+    if (!state.topicPerf[lessonName][topic]) state.topicPerf[lessonName][topic] = {correct:0,total:0};
     state.topicPerf[lessonName][topic].correct += st.correct;
     state.topicPerf[lessonName][topic].total += st.total;
   }
@@ -1045,7 +1155,7 @@ function renderResults(){
 
   const acc = t.total ? Math.round((t.correct / t.total) * 100) : 0;
   const lvl = state.profile.level;
-  const badges = state.profile.badges?.slice(0,6).join(" · ") || "—";
+  const badges = (state.profile.badges ? state.profile.badges.slice(0,6).join(" · ") : null) || "—";
 
   $("summary").textContent = `Doğru: ${t.correct} / ${t.total}  ·  Başarı: %${acc}  ·  Seviye: ${lvl}  ·  Rozetler: ${badges}`;
 
@@ -1167,7 +1277,8 @@ function startVoice(){
   rec.maxAlternatives = 1;
 
   rec.onresult = (e)=>{
-    const text = (e.results?.[0]?.[0]?.transcript || "").trim();
+    const res = (e && e.results && e.results[0] && e.results[0][0]) ? e.results[0][0].transcript : "";
+    const text = (res || "").trim();
     if (!text) return;
     handleVoiceCommand(text);
   };
@@ -1305,7 +1416,9 @@ function share(){
   if (navigator.share){
     navigator.share({ title:"KPSS Dijital Koç", text: msg, url: location.href }).catch(()=>{});
   } else {
-    navigator.clipboard?.writeText(msg + " " + location.href);
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(msg + " " + location.href);
+    }
     setNotice("Paylaşım metni panoya kopyalandı ✅", "info");
   }
 }
