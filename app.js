@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const CACHE_BUSTER = "v4";
+const APP_VERSION = "v4";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -358,7 +358,7 @@ function renderLessonIcons(mode="single"){
 
 // ---------- loading question banks ----------
 async function fetchJSON(path){
-  const url = CACHE_BUSTER ? `${path}?v=${CACHE_BUSTER}` : path;
+  const url = `${path}?v=${APP_VERSION}`;
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
   const data = await res.json();
@@ -385,12 +385,15 @@ async function loadAllBanks(){
   await Promise.all(jobs);
   App.allBanks = banks;
 
+  renderLessonIcons(App.mode);
+
   if (missing.length){
     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
     showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
   } else {
-    setNotice("Soru paketleri hazır ✅", "info");
+    const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
+    setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
   }
 
   syncLessonUI(App.mode);
