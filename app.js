@@ -403,13 +403,14 @@ async function fetchJSON(path){
   };
 
   const fetchAndParse = async (reqLabel, reqInit) => {
-    const res = await fetch(reqLabel, { cache: "reload", ...reqInit });
-    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
-    const ct = res.headers.get("content-type") || "";
-    if (!ct.includes("json") && !ct.includes("application")){
-      console.warn(`${path} beklenmedik içerik türü: ${ct}`);
-    }
+    const res = await fetch(reqLabel, { cache: "no-store", ...reqInit });
     const rawText = await res.text();
+    const ct = (res.headers.get("content-type") || "").toLowerCase();
+    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+    if (ct && !ct.includes("json")) {
+      const first = (rawText.trim?.() || rawText || "?")[0] || "?";
+      throw new Error(`JSON beklenirken farklı içerik (type: ${ct}, ilk bayt: ${first})`);
+    }
     const parsed = tryParse(rawText);
     if (parsed) return parsed;
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
@@ -455,16 +456,8 @@ async function fetchJSON(path){
 
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
-  const cached = loadCachedBanks();
-  const banks = cached ? {...cached} : {};
+  const banks = {};
   const missing = [];
-
-  // varsa önbellekten hemen ikonları doldur
-  if (Object.keys(banks).length){
-    App.allBanks = banks;
-    renderLessonIcons(App.mode);
-    syncLessonUI(App.mode);
-  }
 
   const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
     try {
@@ -472,21 +465,13 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
-      // çevrimdışı/HTML yanıtı durumunda önbellekteki son sağlam kopyayı düşür
-      if (cached?.[lesson]?.length){
-        banks[lesson] = cached[lesson];
-      } else if (App.allBanks?.[lesson]?.length){
-        banks[lesson] = App.allBanks[lesson];
-      } else {
-        banks[lesson] = [];
-      }
+      banks[lesson] = [];
       missing.push({ lesson, file, error: e?.message || e });
     }
   });
 
   await Promise.all(jobs);
   App.allBanks = banks;
-  saveCachedBanks(banks);
 
   renderLessonIcons(App.mode);
 

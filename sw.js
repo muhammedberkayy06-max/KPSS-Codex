@@ -54,7 +54,15 @@ async function networkFirst(req, cacheKeyOverride){
   const cacheKey = cacheKeyOverride || req;
   try {
     const fresh = await fetch(req);
-    cache.put(cacheKey, fresh.clone());
+    const ok = fresh && fresh.ok;
+    const ct = fresh.headers?.get('content-type')?.toLowerCase() || '';
+
+    // JSON isteklerinde HTML/404 yanıtlarını cache'lemeyelim
+    const isJSON = (cacheKeyOverride && cacheKeyOverride.url?.endsWith('.json')) || req.url.endsWith('.json');
+    if (!ok) throw new Error(`HTTP ${fresh.status}`);
+    if (!(isJSON && ct && !ct.includes('json'))) {
+      cache.put(cacheKey, fresh.clone());
+    }
     return fresh;
   } catch (e) {
     const cached = await cache.match(cacheKey) || await caches.match(cacheKey);
