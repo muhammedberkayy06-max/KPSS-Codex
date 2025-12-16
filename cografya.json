@@ -238,5 +238,149 @@
     ],
     "dogru_index": 1,
     "aciklama": "Türkiye doğal çeşitlilik açısından zengindir."
+  },
+  {
+    "konu": "Türkiye Fiziki Coğrafyası",
+    "soru": "Aşağıdaki dağlardan hangisi volkanik kökenlidir?",
+    "secenekler": [
+      "Kazan Dağı",
+      "Erciyes Dağı",
+      "Küre Dağları",
+      "Yıldız Dağları"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Erciyes sönmüş volkanik dağdır; diğerleri kırık veya kıvrım kökenlidir."
+  },
+  {
+    "konu": "İklim Bilgisi",
+    "soru": "Karasal iklimin etkili olduğu bölgelerde aşağıdakilerden hangisi beklenmez?",
+    "secenekler": [
+      "Yıllık sıcaklık farkının yüksek olması",
+      "Kışların sert geçmesi",
+      "Yazların kurak ve sıcak olması",
+      "Nem oranının çok yüksek olması"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Karasal iklimde nem oranı düşüktür; yüksek nem denizel iklim özelliğidir."
+  },
+  {
+    "konu": "İklim",
+    "soru": "Türkiye'de kış sıcaklıklarının en düşük olduğu bölge hangisidir?",
+    "secenekler": [
+      "Marmara",
+      "Karadeniz",
+      "Doğu Anadolu",
+      "Ege"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Karasal iklimin en sert yaşandığı Doğu Anadolu'da kış sıcaklıkları en düşüktür."
+  },
+  {
+    "konu": "Nüfus",
+    "soru": "Türkiye'de nüfus yoğunluğunun en fazla olduğu bölge hangisidir?",
+    "secenekler": [
+      "Marmara",
+      "İç Anadolu",
+      "Ege",
+      "Akdeniz"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Sanayi ve ticaretin yoğun olduğu Marmara Bölgesi nüfus yoğunluğunda ilk sıradadır."
+  },
+  {
+    "konu": "Ulaşım",
+    "soru": "Türkiye'de limanların en yoğun olduğu deniz hangisidir?",
+    "secenekler": [
+      "Ege Denizi",
+      "Akdeniz",
+      "Marmara Denizi",
+      "Karadeniz"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Marmara Denizi kıyılarında yük ve yolcu taşımacılığı için birçok liman bulunur."
+  },
+  {
+    "konu": "Yer Şekilleri",
+    "soru": "Aşağıdaki dağlardan hangisi volkanik kökenlidir?",
+    "secenekler": [
+      "Uludağ",
+      "Kaçkar",
+      "Erciyes",
+      "Ilgaz"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Erciyes volkanik kökenli bir dağdır."
+  },
+  {
+    "konu": "Tarım",
+    "soru": "Türkiye'de pamuk üretiminin en yoğun olduğu bölge hangisidir?",
+    "secenekler": [
+      "Ege",
+      "Akdeniz",
+      "Güneydoğu Anadolu",
+      "Marmara"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Şanlıurfa ve çevresiyle Güneydoğu Anadolu pamuk üretiminde öndedir."
+  },
+  {
+    "konu": "Doğal Kaynaklar",
+    "soru": "Bor minerali Türkiye'de en çok hangi bölgede çıkarılır?",
+    "secenekler": [
+      "İç Anadolu",
+      "Marmara",
+      "Ege",
+      "Akdeniz"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Eskişehir-Kırka ve Kütahya-Emet havzalarıyla Ege bölgesinde yoğunlaşır."
+  },
+  {
+    "konu": "Akarsular",
+    "soru": "Dicle Nehri hangi denize dökülür?",
+    "secenekler": [
+      "Basra Körfezi",
+      "Karadeniz",
+      "Akdeniz",
+      "Hazar Denizi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Dicle ve Fırat birleşip Şattülarap ile Basra Körfezi'ne dökülür."
+  },
+  {
+    "konu": "Beşeri Coğrafya",
+    "soru": "Türkiye'de sanayi üretiminin en yoğun olduğu il hangisidir?",
+    "secenekler": [
+      "Ankara",
+      "İstanbul",
+      "İzmir",
+      "Bursa"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İstanbul sanayi ve finansın merkezi konumundadır."
+  },
+  {
+    "konu": "Bölgeler",
+    "soru": "Karadeniz Bölgesi'nde fındık üretiminin en yoğun olduğu bölüm hangisidir?",
+    "secenekler": [
+      "Orta Karadeniz",
+      "Doğu Karadeniz",
+      "Batı Karadeniz",
+      "Marmara geçiş"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Fındık üretimi Rize, Trabzon, Giresun hattında yoğunlaşır."
+  },
+  {
+    "konu": "İklim",
+    "soru": "Türkiye'de yaz mevsiminde en düşük sıcaklıkların görüldüğü il aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Hakkari",
+      "Artvin",
+      "Kars",
+      "Erzurum"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Yüksek plato özelliği nedeniyle Erzurum yazın bile serindir."
   }
 ]
