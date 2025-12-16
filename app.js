@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v10";
+const APP_VERSION = "v11";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -48,6 +48,280 @@ const BANK_CACHE_KEY = "kpss_ultimate_banks_v1";
 const $ = (id) => document.getElementById(id);
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
+const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+
+// ---------- ücretsiz yerel AI soru üretici ----------
+const AI_TEMPLATES = {
+  "Türkçe": () => {
+    const temas = ["dil bilgisi", "paragraf yorumu", "anlatım bozukluğu", "anlam ilişkisi"];
+    const konu = pick(temas);
+    const paragraf = "Okuma alışkanlığı, düşünme biçimimizi ve kelime hazinemizi geliştirirken, " +
+      "farklı bakış açılarını tanımamıza da yardımcı olur.";
+    const yorumlar = [
+      "Okuma, zihinsel esnekliği artırır",
+      "Okuma yalnızca akademik başarı için değildir",
+      "Okuma, empati kurma becerisini güçlendirir",
+      "Okuma zamanı planlı olmalıdır",
+    ];
+    const dogru = pick(yorumlar);
+    const secenekler = [dogru,
+      "Okuma yalnızca sınav başarısını etkiler",
+      "Okuma kelime hazinesini daraltır",
+      "Okuma alışkanlığı iletişim becerisine katkı sağlamaz",
+      "Okuma eleştirel düşünmeyi zayıflatır"].sort(() => Math.random() - 0.5);
+    const dogru_index = secenekler.indexOf(dogru);
+    return {
+      konu: `AI ${konu}`,
+      soru: "Paragrafın temel çıkarımı nedir?",
+      paragraf,
+      secenekler,
+      dogru_index,
+      aciklama: "Yerel üretici, paragrafın vurguladığı olumlu etkilerden birini seçmeni ister.",
+    };
+  },
+  "Matematik": () => {
+    const a = rand(5, 30);
+    const b = rand(2, 15);
+    const c = rand(2, 9);
+    const soruTipi = pick(["işlem", "oran-orantı", "kâr-zarar"]);
+    if (soruTipi === "işlem") {
+      const sonuc = a * b - c;
+      return {
+        konu: "AI İşlem",
+        soru: `${a} × ${b} - ${c} işleminin sonucu kaçtır?`,
+        secenekler: [sonuc, sonuc + 2, sonuc - 3, sonuc + 5].map(String),
+        dogru_index: 0,
+        aciklama: "Çarpma önce yapılır, ardından çıkarma uygulanır.",
+      };
+    }
+    const toplam = a + b;
+    const oran = toplam / c;
+    const dogru = oran.toFixed(1);
+    const secenekler = [dogru, (oran + 0.5).toFixed(1), (oran - 0.5).toFixed(1), (oran + 1).toFixed(1)];
+    return {
+      konu: "AI Oran-Orantı",
+      soru: `${a} ve ${b} sayılarının toplamının ${c} katına oranı kaçtır?`,
+      secenekler,
+      dogru_index: 0,
+      aciklama: "Toplam hesaplanır, ardından oran bulunur.",
+    };
+  },
+  "Tarih": () => {
+    const olaylar = [
+      { y: 1921, acik: "Teşkilat-ı Esasiye" },
+      { y: 1923, acik: "Cumhuriyetin ilanı" },
+      { y: 1934, acik: "Soyadı Kanunu" },
+      { y: 1946, acik: "Çok partili hayata geçiş" },
+    ];
+    const sec = pick(olaylar);
+    const sirali = olaylar.map(o => `${o.y} - ${o.acik}`);
+    return {
+      konu: "AI İnkılap Tarihi",
+      soru: `${sec.y} yılında gerçekleşen gelişme aşağıdakilerden hangisidir?`,
+      secenekler: sirali,
+      dogru_index: sirali.indexOf(`${sec.y} - ${sec.acik}`),
+      aciklama: "Zaman çizelgesindeki yıl-gelişme eşleşmesi istenir.",
+    };
+  },
+  "Coğrafya": () => {
+    const sehirler = [
+      { ad: "Erzurum", iklim: "Karasal iklim etkilidir" },
+      { ad: "Antalya", iklim: "Akdeniz iklimi baskındır" },
+      { ad: "Rize", iklim: "Karadeniz iklimi hâkimdir" },
+      { ad: "İzmir", iklim: "Akdeniz iklimi özellikleri görülür" },
+    ];
+    const sec = pick(sehirler);
+    const dogru = `${sec.ad} - ${sec.iklim}`;
+    const yanlis = sehirler.filter(s => s.ad !== sec.ad).map(s => `${sec.ad} - ${s.iklim}`);
+    const secenekler = [dogru, ...yanlis.slice(0,3)].sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI İklim Bilgisi",
+      soru: `${sec.ad} şehri için doğru iklim eşleşmesi hangisidir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Şehir-iklim eşleştirmesi temel coğrafya bilgisidir.",
+    };
+  },
+  "Vatandaşlık": () => {
+    const kavramlar = [
+      { k: "yürütme", org: "Cumhurbaşkanı ve Cumhurbaşkanlığı kabinesi" },
+      { k: "yasama", org: "TBMM" },
+      { k: "yargı", org: "Bağımsız ve tarafsız mahkemeler" },
+    ];
+    const sec = pick(kavramlar);
+    const dogru = `${sec.k} - ${sec.org}`;
+    const secenekler = kavramlar.map(x => `${x.k} - ${x.org}`);
+    const karisik = [...secenekler];
+    while (karisik.length < 4) karisik.push("Temel hak ve özgürlükler");
+    karisik.sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Anayasa",
+      soru: "Kuvvetler ayrılığına göre aşağıdaki eşleşmelerden hangisi doğrudur?",
+      secenekler: karisik,
+      dogru_index: karisik.indexOf(dogru),
+      aciklama: "Yasama-yürütme-yargı organlarının doğru eşleşmesi istenir.",
+    };
+  },
+  "Uluslararası İlişkiler": () => {
+    const kurumlar = ["NATO", "BM", "AB", "OECD"];
+    const gorev = {
+      "NATO": "kolektif savunma",
+      "BM": "barış ve güvenliği koruma",
+      "AB": "ekonomik ve siyasal bütünleşme",
+      "OECD": "ekonomik iş birliği",
+    };
+    const sec = pick(kurumlar);
+    const dogru = `${sec} - ${gorev[sec]}`;
+    const yanlis = kurumlar.filter(k => k !== sec).map(k => `${sec} - ${gorev[k]}`);
+    const secenekler = [dogru, ...yanlis.slice(0,3)].sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Uluslararası Kurumlar",
+      soru: `${sec} kurumunun temel fonksiyonu nedir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Kurumsal misyonu doğru eşleştiren seçenek doğrudur.",
+    };
+  },
+  "Çalışma Ekonomisi": () => {
+    const kavramlar = [
+      { t: "işsizlik türü", cevap: "doğal işsizlik" },
+      { t: "sendika", cevap: "toplu pazarlık" },
+      { t: "ücret", cevap: "reel ücret" },
+    ];
+    const sec = pick(kavramlar);
+    const dogru = `${sec.t} - ${sec.cevap}`;
+    const secenekler = [dogru, "işgücü maliyeti", "asgari ücret", "işgücü devri"];
+    secenekler.sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Emek Piyasası",
+      soru: `${sec.t} kavramı ile en doğru ilişki hangisidir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Temel çalışma ekonomisi kavram eşleştirmesi sorusudur.",
+    };
+  },
+  "Hukuk": () => {
+    const dallar = [
+      { d: "Anayasa Hukuku", oz: "temel hak ve özgürlükler" },
+      { d: "İdare Hukuku", oz: "idarenin işlemleri" },
+      { d: "Ceza Hukuku", oz: "suç ve yaptırım" },
+    ];
+    const sec = pick(dallar);
+    const dogru = `${sec.d} - ${sec.oz}`;
+    const secenekler = [dogru, ...dallar.filter(x => x.d !== sec.d).map(x => `${sec.d} - ${x.oz}`)];
+    secenekler.sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Hukuk Dalları",
+      soru: `${sec.d} aşağıdakilerden hangisi ile en yakından ilişkilidir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Hukuk dalının konu edindiği temel alan sorgulanır.",
+    };
+  },
+  "İktisat": () => {
+    const arz = rand(10,50);
+    const talep = rand(20,60);
+    const fiyat = rand(5,25);
+    const denge = Math.round((arz + talep)/2);
+    const secenekler = [denge, denge+5, denge-5, denge+10].map(String).sort(() => Math.random() - 0.5);
+    const dogru = secenekler.indexOf(String(denge));
+    return {
+      konu: "AI Mikro İktisat",
+      soru: `Arz ${arz}, talep ${talep} iken denge miktarı yaklaşık kaç olur?`,
+      secenekler,
+      dogru_index: dogru,
+      aciklama: "Basitleştirilmiş arz-talep ortalaması kullanıldı.",
+    };
+  },
+  "Kamu Yönetimi": () => {
+    const yaklasimlar = [
+      { ad: "Yeni Kamu Yönetimi", vurgu: "piyasa mekanizmaları ve performans" },
+      { ad: "Klasik Bürokrasi", vurgu: "hiyerarşi ve kurallar" },
+      { ad: "Yönetişim", vurgu: "katılımcılık ve ağlar" },
+    ];
+    const sec = pick(yaklasimlar);
+    const dogru = `${sec.ad} - ${sec.vurgu}`;
+    const secenekler = yaklasimlar.map(y => `${y.ad} - ${y.vurgu}`).sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Yönetim Yaklaşımları",
+      soru: `${sec.ad} yaklaşımının temel vurgusu nedir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Yönetim yaklaşımının öne çıkan ilkesine odaklanır.",
+    };
+  }
+};
+
+function genericAIQuestion(lesson){
+  const tema = pick(["temel kavram", "yorum", "eşleştirme", "uygulama"]);
+  const dogru = "Analitik düşünme gerektirir";
+  const secenekler = [dogru, "Sadece ezbere dayalıdır", "Uygulaması yoktur", "Tesadüfi sonuç verir"].sort(() => Math.random() - 0.5);
+  return {
+    konu: `AI ${tema}`,
+    soru: `${lesson} dersinde ${tema} sorusu için doğru yaklaşım nedir?`,
+    secenekler,
+    dogru_index: secenekler.indexOf(dogru),
+    aciklama: "Ücretsiz yerel üretici, analitik/yorum temelli yaklaşımı vurgular.",
+  };
+}
+
+function generateAIQuestion(lesson){
+  const fn = AI_TEMPLATES[lesson] || genericAIQuestion;
+  const q = fn(lesson);
+  q.kaynak = "AI (ücretsiz yerel)";
+  return normalizeQuestion(q);
+}
+
+function injectAIQuestions(lesson, count){
+  const bank = App.allBanks[lesson] || [];
+  const fresh = [];
+  for (let i=0; i<count; i++){
+    const q = generateAIQuestion(lesson);
+    q.id = `ai-${lesson}-${Date.now()}-${i}-${Math.random().toString(36).slice(2,6)}`;
+    fresh.push(q);
+  }
+  bank.push(...fresh);
+  App.allBanks[lesson] = bank;
+  renderLessonIcons(App.mode);
+  return fresh;
+}
+
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+  const aiSel = $("aiLesson");
+  if (aiSel) aiSel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
 
 function typesetMath(root){
   try{
@@ -337,13 +611,58 @@ function setMode(mode){
 function fillLessonSelect(){
   const sel = $("lessonSelect");
   sel.innerHTML = "";
-  Object.keys(FILES).forEach(name=>{
-    const opt = document.createElement("option");
-    opt.value = name;
-    opt.textContent = name;
-    sel.appendChild(opt);
+  const aiSel = $("aiLesson");
+  [sel, aiSel].forEach(target => {
+    if (!target) return;
+    target.innerHTML = "";
+    Object.keys(FILES).forEach(name=>{
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      target.appendChild(opt);
+    });
+    target.value = App.lesson;
   });
-  sel.value = App.lesson;
+}
+
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
 }
 
 function setLesson(lesson){
@@ -1104,6 +1423,22 @@ function share(){
   }
 }
 
+async function handleAIGenerate(){
+  const lesson = $("aiLesson")?.value || App.lesson;
+  const count = clamp(parseInt($("aiCount")?.value || "3", 10) || 3, 1, 20);
+
+  if (!Object.keys(App.allBanks||{}).length){
+    await loadAllBanks();
+  }
+
+  const fresh = injectAIQuestions(lesson, count);
+  const total = App.allBanks[lesson]?.length || 0;
+  const msg = `🤖 ${lesson}: ${fresh.length} yeni soru eklendi (toplam ${total})`;
+  setNotice(msg, "info");
+  const status = $("aiStatus");
+  if (status) status.textContent = msg + " · yerel üretim";
+}
+
 // PWA install helper
 let deferredPrompt = null;
 window.addEventListener("beforeinstallprompt", (e)=>{
@@ -1137,6 +1472,7 @@ async function init(){
   $("btnQuick10").addEventListener("click", quick2hPlan);
   $("btnUpdate").addEventListener("click", checkUpdates);
   $("btnHome").addEventListener("click", goHome);
+  $("btnAiGenerate")?.addEventListener("click", ()=> handleAIGenerate());
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);

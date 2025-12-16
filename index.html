@@ -102,6 +102,33 @@
       </div>
     </section>
 
+    <section id="aiCard" class="card space-y-4">
+      <div class="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <p class="text-sm text-slate-500 font-semibold uppercase">Ücretsiz yapay zeka</p>
+          <h3 class="text-xl font-extrabold">Yerel soru üretici (beta)</h3>
+          <p class="hint">İnternet gerekmez; ders seçip tek tuşla yeni sorular eklenir.</p>
+        </div>
+        <button id="btnAiGenerate" class="btn sm primary">🤖 Yapay soru üret</button>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="field">
+          <label for="aiLesson">Ders</label>
+          <select id="aiLesson" class="w-full"></select>
+        </div>
+        <div class="field">
+          <label for="aiCount">Adet</label>
+          <input id="aiCount" type="number" min="1" max="20" value="3" class="w-full">
+          <p class="hint">Üretim sonrası ders bankasına eklenir, çevrimdışı da kalır.</p>
+        </div>
+        <div class="field">
+          <label>Durum</label>
+          <div id="aiStatus" class="hint">Hazır · tamamen ücretsiz, yerel üretim</div>
+        </div>
+      </div>
+    </section>
+
     <section id="quizCard" class="card space-y-4" hidden>
       <div class="quiz-top">
         <span id="pillMeta" class="pill">Ders · Konu</span>
