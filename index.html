@@ -92,14 +92,6 @@
         <div class="field flex flex-col justify-end">
           <label class="toggle"><input id="ttsToggle" type="checkbox">Cevapları sesli oku</label>
         </div>
-        <div class="field">
-          <label class="toggle"><input id="aiToggle" type="checkbox" checked>Ücretsiz yapay zekâ soruları</label>
-          <div class="flex items-center gap-3 mt-2">
-            <input id="aiCount" type="number" min="1" max="30" value="5" class="w-24">
-            <span class="hint">Ders başına üretilecek soru</span>
-          </div>
-          <p class="hint">Tamamen yerel ve ücretsiz üretici; çevrimdışı da çalışır.</p>
-        </div>
       </div>
 
       <div class="row actions">
@@ -107,6 +99,54 @@
         <button id="btnQuick10" class="btn">🎯 2 saatlik plan</button>
         <button id="btnRead" class="btn sm">🔊 Soruyu oku</button>
         <button id="btnVoice" class="btn sm">🎙️ Sesli komut</button>
+      </div>
+    </section>
+
+    <section id="aiCard" class="card space-y-4">
+      <div class="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <p class="text-sm text-slate-500 font-semibold uppercase">Ücretsiz yapay zeka</p>
+          <h3 class="text-xl font-extrabold">İnternet + Yerel Soru Üretici</h3>
+          <p class="hint">Hugging Face (ücretsiz, internet) veya yerel üreticiyle sınırsız soru ekleyebilirsin.</p>
+        </div>
+        <button id="btnAiGenerate" class="btn sm primary">🤖 Yapay soru üret</button>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="field">
+          <label for="aiLesson">Ders</label>
+          <select id="aiLesson" class="w-full"></select>
+        </div>
+        <div class="field">
+          <label for="aiCount">Adet</label>
+          <input id="aiCount" type="number" min="1" max="20" value="3" class="w-full">
+          <p class="hint">Üretim sonrası ders bankasına eklenir, çevrimdışı da kalır.</p>
+        </div>
+        <div class="field">
+          <label>Durum</label>
+          <div id="aiStatus" class="hint">Hazır · internet veya yerel üretim</div>
+        </div>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3">
+        <div class="field">
+          <label for="aiProvider">Üretici</label>
+          <select id="aiProvider" class="w-full">
+            <option value="hf">Hugging Face (ücretsiz, internet)</option>
+            <option value="local">Yerel (offline)</option>
+          </select>
+          <p class="hint">Hugging Face seçildiğinde en yüksek kapasite için ücretsiz community endpoint kullanılır.</p>
+        </div>
+        <div class="field">
+          <label for="hfToken">HF Token (opsiyonel)</label>
+          <input id="hfToken" type="password" class="w-full" placeholder="hf_...">
+          <p class="hint">Ücretsiz erişim için token ekleyebilirsin; boş bırakırsan halka açık quota kullanılır.</p>
+        </div>
+        <div class="field">
+          <label for="hfModel">HF Model</label>
+          <input id="hfModel" type="text" class="w-full" value="HuggingFaceH4/zephyr-7b-beta">
+          <p class="hint">Topik listesine göre JSON dönen üretim ister. Dilersen başka ücretsiz modeli yazabilirsin.</p>
+        </div>
       </div>
     </section>
 
