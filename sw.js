@@ -25,11 +25,17 @@ const STATIC_ASSETS = [
 const CDN_ALLOWLIST = [
   'https://cdn.tailwindcss.com',
   'https://cdn.jsdelivr.net',
+  'https://api-inference.huggingface.co',
+];
+
+const CDN_PRECACHE = [
+  'https://cdn.tailwindcss.com',
+  'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
 ];
 
 async function precache(){
   const cache = await caches.open(STATIC_CACHE);
-  await cache.addAll(STATIC_ASSETS);
+  await cache.addAll([...STATIC_ASSETS, ...CDN_PRECACHE]);
 }
 
 async function cleanupOldCaches(){
