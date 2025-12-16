@@ -5,6 +5,8 @@
 
 const APP_VERSION = "v16";
 
+const Diagnostics = { entries: [] };
+
 const FILES = {
   "Türkçe": "turkce.json",
   "Matematik": "matematik.json",
@@ -917,7 +919,7 @@ function ensureState(){
   s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
   s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
   s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
-  s.ai ??= { provider: "hf", model: HF_MODEL_DEFAULT };
+  s.ai ??= { provider: "hf", token: "", model: HF_MODEL_DEFAULT };
   return s;
 }
 
@@ -985,6 +987,45 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
 function updateStats(totalProvided){
   const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
   const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
@@ -1010,7 +1051,7 @@ function showAlert(msg){
 function syncAIForm(){
   const state = ensureState();
   const provider = state.ai?.provider || "hf";
-  const token = aiSessionToken;
+  const token = state.ai?.token || "";
   const model = state.ai?.model || HF_MODEL_DEFAULT;
   const sel = $("aiProvider");
   if (sel) sel.value = provider;
@@ -1182,12 +1223,14 @@ async function fetchJSON(path){
     return data.map(normalizeQuestion);
   } catch (err) {
     console.warn(`İlk deneme başarısız (${path}):`, err);
+    recordError(path, err?.message || "İlk deneme başarısız", { detail: err?.stack || String(err) });
     try {
       const data = await fetchAndParse(bare);
       if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
       return data.map(normalizeQuestion);
     } catch (err2) {
       console.warn(`İkinci deneme başarısız (${path}):`, err2);
+      recordError(path, err2?.message || "İkinci deneme başarısız", { detail: err2?.stack || String(err2) });
       const cached = await restoreFromCache();
       if (cached) return cached.map(normalizeQuestion);
       const embedded = tryEmbedded();
@@ -1208,6 +1251,7 @@ async function loadAllBanks(){
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
+      recordError(file, e?.message || "Bankası okunamadı", { detail: String(e) });
       banks[lesson] = [];
       missing.push({ lesson, file, error: e?.message || e });
     }
@@ -1855,7 +1899,7 @@ async function handleAIExam(type){
   // var olan AI ayarlarını formdan çekip sakla
   const state = ensureState();
   state.ai.provider = "hf";
-  aiSessionToken = $("hfToken")?.value || "";
+  state.ai.token = $("hfToken")?.value || "";
   state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
   saveState(state);
 
@@ -1907,7 +1951,7 @@ async function handleAIGenerate(){
 
   const state = ensureState();
   state.ai.provider = provider;
-  aiSessionToken = $("hfToken")?.value || "";
+  state.ai.token = $("hfToken")?.value || "";
   state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
   saveState(state);
 
@@ -1996,6 +2040,15 @@ async function init(){
   $("btnExamA")?.addEventListener("click", ()=> handleAIExam("a"));
   $("btnInstall").addEventListener("click", ()=> installPWA());
   $("alertClose").addEventListener("click", ()=> showAlert(null));
+  $("btnDiagClear")?.addEventListener("click", clearDiagnostics);
+  $("btnDiagExport")?.addEventListener("click", exportDiagnostics);
+
+  window.addEventListener("error", (ev)=>{
+    recordError(ev.filename || "window", ev.message || "Bilinmeyen hata", { detail: ev.error?.stack || "" });
+  });
+  window.addEventListener("unhandledrejection", (ev)=>{
+    recordError("promise", ev.reason?.message || "Yakalanmayan söz verisi", { detail: ev.reason?.stack || String(ev.reason) });
+  });
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;
@@ -2022,6 +2075,7 @@ async function init(){
     setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
   } catch (e) {
     console.error(e);
+    recordError("init", e?.message || "Soru bankaları yüklenemedi", { detail: e?.stack || String(e) });
     setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
     // UI boş kalmasın diye son kez senkronla
     syncLessonUI(App.mode);

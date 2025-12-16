@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; img-src 'self' data:; font-src 'self' https://cdn.jsdelivr.net data:; connect-src 'self' https://api-inference.huggingface.co https://cdn.jsdelivr.net; worker-src 'self'; frame-ancestors 'self';">
   <title>KPSS Dijital Koç – Ultimate</title>
   <meta name="theme-color" content="#0A84FF">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://cdn.jsdelivr.net https://huggingface.co; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://*.hf.space https://cdn.jsdelivr.net data:; font-src 'self' data: https://cdn.jsdelivr.net; manifest-src 'self'; frame-ancestors 'self'; base-uri 'self';" />
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
@@ -80,6 +80,21 @@
       <div class="flex-1" id="alertText"></div>
       <button id="alertClose" class="chip">Kapat</button>
     </div>
+
+    <section id="diagPanel" class="card space-y-3" hidden>
+      <div class="flex items-start justify-between gap-3 flex-wrap">
+        <div>
+          <p class="text-sm text-slate-500 font-semibold uppercase">Teşhis</p>
+          <h3 class="text-xl font-extrabold">Hata Günlüğü</h3>
+          <p class="hint">Ağ ve veri hataları burada görünür; JSON/AI sorunlarını hızlıca tespit etmek için kullan.</p>
+        </div>
+        <div class="row gap-2">
+          <button id="btnDiagExport" class="btn sm ghost">💾 Dışa aktar</button>
+          <button id="btnDiagClear" class="btn sm">🧹 Temizle</button>
+        </div>
+      </div>
+      <ol id="diagList" class="diag-list"></ol>
+    </section>
 
     <section id="setupCard" class="card space-y-5">
       <div class="flex items-center justify-between gap-4 flex-wrap">
@@ -177,7 +192,7 @@
         <div class="field">
           <label for="hfToken">HF Token (opsiyonel)</label>
           <input id="hfToken" type="password" class="w-full" placeholder="hf_...">
-          <p class="hint">Ücretsiz erişim için token ekleyebilirsin; boş bırakırsan halka açık quota kullanılır. Token tarayıcıda kalıcı saklanmaz.</p>
+          <p class="hint">Ücretsiz erişim için token ekleyebilirsin; boş bırakırsan halka açık quota kullanılır.</p>
         </div>
         <div class="field">
           <label for="hfModel">HF Model</label>
