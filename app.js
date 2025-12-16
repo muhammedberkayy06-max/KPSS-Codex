@@ -4,7 +4,6 @@
 */
 
 const APP_VERSION = "v6";
-const CACHE_PREFIX = "kpss-ultimate";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -359,25 +358,57 @@ function renderLessonIcons(mode="single"){
 
 // ---------- loading question banks ----------
 async function fetchJSON(path){
-  const url = `${path}?v=${APP_VERSION}`;
-  const res = await fetch(url, { cache: "no-store" });
-  if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+  const urlObj = new URL(path, location.href);
+  urlObj.searchParams.set("v", APP_VERSION);
+  const url = urlObj.toString();
 
-  // Bazı ortamlarda (GH Pages, SW kalıntısı) JSON yerine HTML/yanıt kırpığı dönebilir;
-  // önce metni alıp temizlemeyi deneriz, yine de olmazsa hatayı detaylı loglarız.
-  const rawText = await res.text();
-  const cleanText = rawText.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
+  const tryParse = (txt) => {
+    const clean = txt.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
+    if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
+    try {
+      return JSON.parse(clean);
+    } catch { return null; }
+  };
 
-  let data;
+  const fetchAndParse = async () => {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+    const rawText = await res.text();
+    const parsed = tryParse(rawText);
+    if (parsed) return parsed;
+    throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
+  };
+
+  // Ana deneme
   try {
-    data = JSON.parse(cleanText);
+    const data = await fetchAndParse();
+    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+    return data.map(normalizeQuestion);
   } catch (err) {
-    console.error(`JSON parse hatası (${path}):`, err, rawText.slice(0, 200));
-    throw new Error(`${path} JSON okunamadı: ${err.message}`);
-  }
+    console.warn(`İlk deneme başarısız (${path}):`, err);
 
-  if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-  return data.map(normalizeQuestion);
+    // SW cache veya tarayıcı cache'inde kalan sağlam kopyayı deneyelim
+    if (typeof caches !== "undefined") {
+      const cacheKeys = [url, path];
+      for (const key of cacheKeys) {
+        try {
+          const cached = await caches.match(key);
+          if (cached) {
+            const txt = await cached.text();
+            const parsed = tryParse(txt);
+            if (Array.isArray(parsed)) {
+              console.info(`Cache'ten geri yüklendi (${key})`);
+              return parsed.map(normalizeQuestion);
+            }
+          }
+        } catch (e) {
+          console.warn(`Cache okuma hatası (${key}):`, e);
+        }
+      }
+    }
+
+    throw err;
+  }
 }
 
 async function purgeOldCaches(){
@@ -1043,7 +1074,6 @@ async function installPWA(){
 }
 
 async function init(){
-  await purgeOldCaches();
   fillLessonSelect();
   setMode("single");
 
