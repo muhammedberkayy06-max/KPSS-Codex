@@ -960,7 +960,8 @@ const App = {
   mode:"single",
   lesson:"Matematik",
   allBanks:{}, // lesson -> questions[]
-  baseBanks:{},
+  bankMeta:{}, // file -> {source, ts}
+  loadErrors:[],
   currentTest:null,
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
@@ -976,6 +977,48 @@ function setNotice(msg, kind="info"){
   el.textContent = msg;
   el.style.background = kind==="error" ? "rgba(220,38,38,.07)" : "rgba(10,132,255,.06)";
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
+}
+
+function renderDiagnostics(){
+  const list = $("diagList");
+  const status = $("diagSummary");
+  if (!list || !status) return;
+
+  list.innerHTML = "";
+  const entries = Object.entries(FILES).map(([lesson, file]) => {
+    const count = App.allBanks?.[lesson]?.length || 0;
+    const meta = App.bankMeta?.[file];
+    return { lesson, file, count, source: meta?.source || "—", ts: meta?.ts || "" };
+  });
+
+  const errs = App.loadErrors || [];
+  const okCount = entries.filter(e=>e.count>0).length;
+  const total = entries.length;
+  status.textContent = errs.length
+    ? `Bazı paketler okunamadı (${okCount}/${total}). Sayfayı yenileyip Güncellemeleri denetle.`
+    : `Tüm dersler hazır (${okCount}/${total}). Kaynak: ağ/cache/gömülü.`;
+
+  const frag = document.createDocumentFragment();
+  entries.forEach((e)=>{
+    const li = document.createElement("li");
+    li.className = "diag-item";
+    const badge = `<span class="diag-count">${e.count || 0}</span>`;
+    const src = `<span class="diag-src">${e.source}</span>`;
+    const ts = e.ts ? `<span class="diag-ts">${e.ts}</span>` : "";
+    li.innerHTML = `${badge}<div><div class="diag-title">${escapeHTML(e.lesson)}</div><div class="diag-meta">${escapeHTML(e.file)} · ${src} ${ts}</div></div>`;
+    frag.appendChild(li);
+  });
+
+  if (errs.length){
+    errs.forEach(err=>{
+      const li = document.createElement("li");
+      li.className = "diag-item error";
+      li.innerHTML = `<span class="diag-count">!</span><div><div class="diag-title">${escapeHTML(err.lesson)}</div><div class="diag-meta">${escapeHTML(err.file)} · ${escapeHTML(err.error||"Parse hatası")}</div></div>`;
+      frag.appendChild(li);
+    });
+  }
+
+  list.appendChild(frag);
 }
 
 function updateStats(totalProvided){
@@ -1092,25 +1135,8 @@ function renderLessonIcons(mode="single"){
     div.className = "icon-tile";
     div.dataset.lesson = lesson;
     const count = App.allBanks?.[lesson]?.length || 0;
-    const emoji = document.createElement("span");
-    emoji.className = "emoji";
-    emoji.textContent = LESSON_ICONS[lesson] || "📘";
-
-    const meta = document.createElement("div");
-    meta.className = "meta";
-
-    const name = document.createElement("span");
-    name.className = "name";
-    name.textContent = lesson;
-
-    const cnt = document.createElement("span");
-    cnt.className = "count";
-    cnt.textContent = `${count} soru`;
-
-    meta.appendChild(name);
-    meta.appendChild(cnt);
-    div.appendChild(emoji);
-    div.appendChild(meta);
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
     div.addEventListener("click", ()=> setLesson(lesson));
     wrap.appendChild(div);
   });
@@ -1125,6 +1151,11 @@ async function fetchJSON(path){
   const versioned = urlObj.toString();
   const bare = new URL(path, location.href).toString();
   const cacheKey = bare.split("?")[0];
+  const fname = cacheKey.split("/").pop();
+
+  const markSource = (source) => {
+    App.bankMeta[fname] = { source, ts: new Date().toLocaleTimeString("tr-TR") };
+  };
 
   const tryParse = (txt) => {
     const attempt = (raw) => {
@@ -1149,10 +1180,10 @@ async function fetchJSON(path){
   };
 
   const tryEmbedded = () => {
-    const fname = cacheKey.split("/").pop();
     const embedded = window.EMBEDDED_BANKS?.[fname];
     if (Array.isArray(embedded)) {
       console.info(`Gömülü banka kullanılıyor (${fname})`);
+      markSource("gömülü");
       return embedded;
     }
     return null;
@@ -1189,17 +1220,22 @@ async function fetchJSON(path){
   try {
     const data = await fetchAndParse(versioned);
     if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+    markSource("ağ (v)");
     return data.map(normalizeQuestion);
   } catch (err) {
     console.warn(`İlk deneme başarısız (${path}):`, err);
     try {
       const data = await fetchAndParse(bare);
       if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+      markSource("ağ (bare)");
       return data.map(normalizeQuestion);
     } catch (err2) {
       console.warn(`İkinci deneme başarısız (${path}):`, err2);
       const cached = await restoreFromCache();
-      if (cached) return cached.map(normalizeQuestion);
+      if (cached) {
+        markSource("cache");
+        return cached.map(normalizeQuestion);
+      }
       const embedded = tryEmbedded();
       if (embedded) return embedded.map(normalizeQuestion);
       throw err2;
@@ -1211,6 +1247,7 @@ async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
   const missing = [];
+  App.loadErrors = [];
 
   const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
     try {
@@ -1219,7 +1256,9 @@ async function loadAllBanks(){
     } catch (e) {
       console.error(e);
       banks[lesson] = [];
-      missing.push({ lesson, file, error: e?.message || e });
+      const errItem = { lesson, file, error: e?.message || e };
+      missing.push(errItem);
+      App.loadErrors.push(errItem);
     }
   });
 
@@ -1227,6 +1266,8 @@ async function loadAllBanks(){
   App.allBanks = banks;
 
    renderLessonIcons(App.mode);
+
+   renderDiagnostics();
 
    const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
    updateStats(total);
@@ -1990,6 +2031,7 @@ async function init(){
   $("btnUpdate").addEventListener("click", checkUpdates);
   $("btnHome").addEventListener("click", goHome);
   $("btnAiGenerate")?.addEventListener("click", ()=> handleAIGenerate());
+  $("btnDiagRefresh")?.addEventListener("click", ()=> loadAllBanks());
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -2024,6 +2066,7 @@ async function init(){
   const state = ensureState();
   saveState(state);
   updateStats();
+  renderDiagnostics();
   setNotice("Soru paketleri yükleniyor…", "info");
 
   try {

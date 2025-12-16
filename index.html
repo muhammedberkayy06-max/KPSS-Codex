@@ -8,8 +8,9 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon-192.png">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com" integrity="sha384-qbt1R8iZVkOFhPEyAo6G9R3qL6quFqcYlmUAixcVZ6I/0PoYAYbXoPZpZcggo0iP" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://cdn.jsdelivr.net; connect-src 'self' https://huggingface.co https://cdn.jsdelivr.net https://*.hf.space; font-src 'self' data:;">
   <script>
     window.MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -59,10 +60,10 @@
             <div class="stat-label">Ders</div>
           </div>
           <div class="stat-tile">
-            <div class="stat-value" id="statVersion">v16</div>
-            <div class="stat-label">Sürüm</div>
-          </div>
+          <div class="stat-value" id="statVersion">v16</div>
+          <div class="stat-label">Sürüm</div>
         </div>
+      </div>
       </div>
       <div class="nav-bar" id="navShortcuts">
         <button class="nav-link active" data-scroll="setupCard">Hazırlık</button>
@@ -79,6 +80,19 @@
       <div class="flex-1" id="alertText"></div>
       <button id="alertClose" class="chip">Kapat</button>
     </div>
+
+    <section id="diagCard" class="card space-y-3">
+      <div class="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <p class="text-sm text-slate-500 font-semibold uppercase">Tanılama</p>
+          <h3 class="text-xl font-extrabold">Soru paketleri ve kaynak durumu</h3>
+          <p class="hint">Ağ, önbellek veya gömülü kaynaklardan yüklenen paketleri ve hata kayıtlarını gör.</p>
+        </div>
+        <button id="btnDiagRefresh" class="btn sm">🔄 Yeniden tara</button>
+      </div>
+      <div id="diagSummary" class="hint">Hazırlanıyor…</div>
+      <ul id="diagList" class="diag-list"></ul>
+    </section>
 
     <section id="setupCard" class="card space-y-5">
       <div class="flex items-center justify-between gap-4 flex-wrap">
