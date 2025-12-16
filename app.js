@@ -3,6 +3,8 @@
    - Offline için sw.js cache'ler
 */
 
+const CACHE_BUSTER = "v4";
+
 const FILES = {
   "Türkçe": "turkce.json",
   "Matematik": "matematik.json",
@@ -356,7 +358,8 @@ function renderLessonIcons(mode="single"){
 
 // ---------- loading question banks ----------
 async function fetchJSON(path){
-  const res = await fetch(path, { cache: "no-store" });
+  const url = CACHE_BUSTER ? `${path}?v=${CACHE_BUSTER}` : path;
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
   const data = await res.json();
   if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
