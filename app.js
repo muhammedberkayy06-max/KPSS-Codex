@@ -78,6 +78,7 @@ const TOPIC_GUIDE = {
 };
 
 const HF_MODEL_DEFAULT = "HuggingFaceH4/zephyr-7b-beta";
+const OLLAMA_MODEL_DEFAULT = "mistral";
 
 // ---------- ücretsiz yerel AI soru üretici ----------
 const AI_TEMPLATES = {
@@ -414,6 +415,7 @@ Anti-tekrar ve çeşitlilik kuralları:
 - Paragraf varsa özgün metin yaz, başka sorularla paylaşma.
 - Matematikte sayıları, katsayıları ve işlemleri değiştir; aynı çözüm yolunu kopyalama.
 - Açıklama kısa ve hedefe yönelik olsun, MathJax/LaTeX uyumlu yazılabilir.
+ - Her soru farklı soru tipi (tanım/yorum/çıkarım/problem/grafik) rotasyonuyla gelsin; aynı tip arka arkaya gelmesin.
 
 Yalnızca JSON array döndür.`;
 }
@@ -479,6 +481,56 @@ async function fetchHuggingFaceAI(lesson, count, opts = {}){
   return questions;
 }
 
+async function fetchOllamaAI(lesson, count, opts = {}){
+  const state = ensureState();
+  const baseUrl = (opts.baseUrlOverride || state.ai?.ollamaUrl || "http://localhost:11434").replace(/\/$/, "");
+  const model = (opts.modelOverride || state.ai?.model || OLLAMA_MODEL_DEFAULT || "mistral").trim();
+  const prompt = buildAIPrompt(lesson, count);
+
+  const res = await fetch(`${baseUrl}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model,
+      prompt,
+      stream: false,
+      options: {
+        temperature: opts.temperature ?? 0.9,
+        top_p: opts.topP ?? 0.9,
+        num_predict: opts.maxTokens ?? 512 * count,
+      },
+    }),
+  });
+
+  if (!res.ok){
+    const detail = await res.text();
+    throw new Error(`Ollama yanıtı başarısız (${res.status}): ${detail.slice(0,120)}`);
+  }
+
+  const data = await res.json();
+  const text = data?.response || "";
+  return parseAITextToQuestions(text, lesson).map(q => ({ ...q, kaynak: q.kaynak || "AI (Ollama yerel)" }));
+}
+
+async function fetchOllamaBatched(lesson, total){
+  const out = [];
+  const guard = Math.max(3, Math.ceil(total / 10));
+  let tries = 0;
+  while (out.length < total && tries < guard){
+    tries++;
+    const need = Math.min(10, total - out.length);
+    try {
+      const batch = await fetchOllamaAI(lesson, need, { maxTokens: 600 * need });
+      out.push(...batch);
+    } catch (e) {
+      console.warn("Ollama batch hatası", e);
+      if (tries >= guard) throw e;
+    }
+    if (out.length < total) await delay(320);
+  }
+  return out.slice(0, total);
+}
+
 async function fetchHFBatched(lesson, total){
   const out = [];
   const guard = Math.max(3, Math.ceil(total / 12));
@@ -530,12 +582,14 @@ function openExamWindowShell(title, subtitle){
   w.document.open();
   w.document.write(shellHTML);
   w.document.close();
+  try {
+    w.history.replaceState(null, "", `${location.origin}${location.pathname}#exam-shell`);
+  } catch (e){ /* history replace can fail on some browsers */ }
   return w;
 }
 
 function renderExamWindow(title, questions, subtitle, existingWin){
-  const targetUrl = `${location.origin}${location.pathname}#exam-shell`;
-  const w = existingWin || window.open(targetUrl, "exam-shell", "noopener");
+  const w = existingWin || window.open(`${location.origin}${location.pathname}#exam-shell`, "exam-shell");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return;
@@ -2073,6 +2127,122 @@ function syncAIForm(){
   if (ou) ou.value = ollamaUrl;
 }
 
+function ensureState(){
+  const s = loadState();
+  s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
+  s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
+  s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
+  s.ai ??= { provider: "local", token: "", model: HF_MODEL_DEFAULT, ollamaUrl: "http://localhost:11434" };
+  s.aiFingerprints ??= [];
+  s.aiCanonicals ??= [];
+  return s;
+}
+
+function loadFingerprintSet(){
+  const state = ensureState();
+  return new Set(state.aiFingerprints || []);
+}
+
+function loadCanonicalCorpus(){
+  const state = ensureState();
+  return Array.isArray(state.aiCanonicals) ? [...state.aiCanonicals] : [];
+}
+
+function persistFingerprintSet(set){
+  const state = ensureState();
+  const arr = Array.from(set || []);
+  // limit to last 8000 fingerprint
+  state.aiFingerprints = arr.slice(-8000);
+  saveState(state);
+}
+
+function persistCanonicalCorpus(list){
+  const state = ensureState();
+  state.aiCanonicals = (list || []).slice(-1200);
+  saveState(state);
+}
+
+function addXP(state, amount){
+  state.profile.xp += amount;
+  const lvl = Math.floor(state.profile.xp / 250) + 1;
+  state.profile.level = lvl;
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+// ---------- app state ----------
+const App = {
+  mode:"single",
+  lesson:"Matematik",
+  allBanks:{}, // lesson -> questions[]
+  currentTest:null,
+  voice:{ rec:null, enabled:false },
+  ttsEnabled:false,
+  fingerprints: loadFingerprintSet(),
+  canonicals: loadCanonicalCorpus(),
+};
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "local";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
 function goHome(){
   setView("setup");
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -2160,6 +2330,8 @@ function syncAIForm(){
   if (t) t.value = token;
   const m = $("hfModel");
   if (m) m.value = model;
+  const o = $("ollamaUrl");
+  if (o) o.value = state.ai?.ollamaUrl || "http://localhost:11434";
 }
 
 function goHome(){
@@ -3031,11 +3203,20 @@ async function handleAIExam(type){
   const providerSel = $("aiProvider");
   const provider = providerSel?.value || "local";
 
+  if (provider === "hf") {
+    setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılacak.", "info");
+  } else if (provider === "ollama") {
+    setNotice("AI denemeleri yerel Ollama üzerinden üretilecek (ücretsiz, offline).", "info");
+  } else {
+    setNotice("AI denemeleri yerel üretici ile üretilecek (ücretsiz, offline).", "info");
+  }
+
   // var olan AI ayarlarını formdan çekip sakla
   const state = ensureState();
   state.ai.provider = provider;
   state.ai.token = $("hfToken")?.value || "";
   state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
+  state.ai.ollamaUrl = $("ollamaUrl")?.value || state.ai.ollamaUrl || "http://localhost:11434";
   saveState(state);
 
   const previewWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…");
@@ -3044,18 +3225,18 @@ async function handleAIExam(type){
     await loadAllBanks();
   }
 
-  setNotice(`${label} deneme için ${provider === "hf" ? "Hugging Face" : "yerel"} üretim başlatıldı…`, "info");
+  setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
   const created = [];
   for (const [lesson, n] of Object.entries(plan)){
     let batch = [];
-    if (provider === "hf"){
-      try {
-        batch = await fetchHFBatched(lesson, n);
-      } catch (e) {
-        console.warn(e);
-        setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
-      }
+    try {
+      if (provider === "hf") batch = await fetchHFBatched(lesson, n);
+      else if (provider === "ollama") batch = await fetchOllamaBatched(lesson, n);
+    } catch (e) {
+      console.warn(e);
+      setNotice(`${lesson} için ${provider.toUpperCase()} üretimi kısmen başarısız: ${e.message}`, "error");
     }
+
     if (batch.length < n){
       const fallback = injectAIQuestions(lesson, n - batch.length);
       batch.push(...fallback);
@@ -3076,8 +3257,7 @@ async function handleAIExam(type){
     return;
   }
 
-  const providerTag = provider === "hf" ? "Hugging Face (internet) + yerel yedek" : "Yerel üretici";
-  const subtitle = `${label} · ${created.length} soru · ${now()} · ${providerTag}`;
+  const subtitle = `${label} · ${created.length} soru · ${now()} · ${provider === "hf" ? "Hugging Face (internet)" : provider === "ollama" ? "Ollama (yerel)" : "Yerel üretici"}`;
   renderExamWindow(`${label} AI Deneme`, created, subtitle, previewWin);
   setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
 }
@@ -3085,12 +3265,13 @@ async function handleAIExam(type){
 async function handleAIGenerate(){
   const lesson = $("aiLesson")?.value || App.lesson;
   const count = clamp(parseInt($("aiCount")?.value || "3", 10) || 3, 1, 20);
-  const provider = $("aiProvider")?.value || "local";
+  const provider = $("aiProvider")?.value || "hf";
 
   const state = ensureState();
   state.ai.provider = provider;
   state.ai.token = $("hfToken")?.value || "";
   state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
+  state.ai.ollamaUrl = $("ollamaUrl")?.value || state.ai.ollamaUrl || "http://localhost:11434";
   saveState(state);
 
   if (!Object.keys(App.allBanks||{}).length){
@@ -3105,6 +3286,14 @@ async function handleAIGenerate(){
     }catch(e){
       console.warn(e);
       setNotice("İnternet AI üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
+    }
+  } else if (provider === "ollama"){
+    try{
+      const localQs = await fetchOllamaAI(lesson, count);
+      fresh = appendQuestions(lesson, localQs, "AI (Ollama yerel)", count);
+    }catch(e){
+      console.warn(e);
+      setNotice("Yerel Ollama üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
     }
   }
 

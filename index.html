@@ -191,10 +191,11 @@
         <div class="field">
           <label for="aiProvider">Üretici</label>
           <select id="aiProvider" class="w-full">
-            <option value="local">Yerel (offline, ücretsiz)</option>
+            <option value="local" selected>Yerel (offline, ücretsiz)</option>
+            <option value="ollama">Ollama (localhost, ücretsiz)</option>
             <option value="hf">Hugging Face (ücretsiz, internet)</option>
           </select>
-          <p class="hint">Varsayılan yerel üretici ücretsiz/çevrimdışı çalışır; internet seçeneği opt-in.</p>
+          <p class="hint">Varsayılan yerel üretici ücretsizdir; Ollama seçersen localhost'ta çalışan modeli kullanır.</p>
         </div>
         <div class="field">
           <label for="hfToken">HF Token (opsiyonel)</label>
@@ -205,6 +206,11 @@
           <label for="hfModel">HF Model</label>
           <input id="hfModel" type="text" class="w-full" value="HuggingFaceH4/zephyr-7b-beta">
           <p class="hint">Topik listesine göre JSON dönen üretim ister. Dilersen başka ücretsiz modeli yazabilirsin.</p>
+        </div>
+        <div class="field">
+          <label for="ollamaUrl">Ollama URL</label>
+          <input id="ollamaUrl" type="text" class="w-full" value="http://localhost:11434">
+          <p class="hint">Ollama çalışıyorsa bu URL üzerinden ücretsiz ve güçlü yerel üretim yapılır.</p>
         </div>
       </div>
     </section>
