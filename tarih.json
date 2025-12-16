@@ -851,4 +851,1206 @@
     "dogru_index": 3,
     "aciklama": "Genelgede saltanatın korunması vurgulanmamıştır."
   }
+],
+[
+  {
+    "konu": "İslamiyet Öncesi Türk Tarihi",
+    "soru": "Aşağıdaki boylardan hangisi Göktürkler’e ait değildir?",
+    "secenekler": [
+      "Avar",
+      "Basmil",
+      "Kıpçak",
+      "Karluk"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kıpçaklar daha sonra Karadeniz’in kuzeyinde yerleşmiş bir Türk halkıdır, Göktürk döneminde boy olarak anılmaz."
+  },
+  {
+    "konu": "İlk Müslüman Türk Devletleri",
+    "soru": "Karahanlılar’ın resmî dili aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Arapça",
+      "Farsça",
+      "Türkçe",
+      "Çince"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Karahanlılar, İslamiyet’i kabul eden ilk Türk devletidir ve resmî dilleri Türkçedir."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Lale Devri’nde Avrupa’ya gönderilen ilk Osmanlı elçisi kimdir?",
+    "secenekler": [
+      "Yirmisekiz Çelebi Mehmet",
+      "Nevşehirli Damat İbrahim Paşa",
+      "Köprülü Mehmet Paşa",
+      "Koca Ragıp Paşa"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Paris’e elçi olarak gönderilen Yirmisekiz Çelebi Mehmet Efendi, Lale Devri’nde Osmanlı’nın ilk resmî büyükelçisidir."
+  },
+  {
+    "konu": "Yenileşme ve Demokratikleşme Hareketleri",
+    "soru": "Tanzimat Fermanı hangi padişah döneminde ilan edilmiştir?",
+    "secenekler": [
+      "II. Mahmut",
+      "Abdülmecid",
+      "Sultan Abdülaziz",
+      "V. Murat"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1839’da ilan edilen Tanzimat Fermanı, Sultan Abdülmecid dönemine aittir."
+  },
+  {
+    "konu": "XX. Yüzyıl Osmanlı",
+    "soru": "I. Dünya Savaşı’nda Osmanlı Devleti hangi cephede başarılı olmuştur?",
+    "secenekler": [
+      "Kafkas",
+      "Çanakkale",
+      "Kanal",
+      "Irak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Osmanlı Devleti Çanakkale Cephesi’nde İtilaf Devletleri’ne karşı başarılı olmuştur."
+  },
+  {
+    "konu": "Kurtuluş Savaşı Hazırlık & Muharebeler",
+    "soru": "TBMM’nin açıldığı tarih aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "19 Mayıs 1919",
+      "23 Nisan 1920",
+      "29 Ekim 1923",
+      "30 Ağustos 1922"
+    ],
+    "dogru_index": 1,
+    "aciklama": "23 Nisan 1920, Türkiye Büyük Millet Meclisi’nin açıldığı tarihtir."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Aşağıdaki reformlardan hangisi kadınlara siyasal haklar tanımak için yapılmıştır?",
+    "secenekler": [
+      "Soyadı Kanunu",
+      "Medeni Kanun",
+      "Harf Devrimi",
+      "Tevhid-i Tedrisat"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1926 tarihli Medeni Kanun ile kadınlara miras ve boşanma gibi haklar verilmiştir; 1930-34 arasında da siyasal haklar tanınmıştır."
+  },
+  {
+    "konu": "Atatürk Dönemi Dış Politika",
+    "soru": "Lozan Antlaşması ile çözümlenemeyen ve 1936’da Montrö Sözleşmesi ile çözüme kavuşan sorun hangisidir?",
+    "secenekler": [
+      "Hatay",
+      "Musul",
+      "Boğazlar",
+      "Nüfus Mübadelesi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Lozan’da Boğazlar sorunu Milletler Cemiyeti’ne bırakılmış; 1936 Montrö Sözleşmesi ile Türkiye’nin tam egemenliğine geçmiştir."
+  },
+  {
+    "konu": "Çağdaş Türk & Dünya Tarihi",
+    "soru": "Birleşmiş Milletler hangi tarihte kurulmuştur?",
+    "secenekler": [
+      "1919",
+      "1945",
+      "1956",
+      "1965"
+    ],
+    "dogru_index": 1,
+    "aciklama": "II. Dünya Savaşı sonrasında, 24 Ekim 1945’te Birleşmiş Milletler resmen kurulmuştur."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Aşağıdakilerden hangisi Atatürk’ün kişilik özelliklerinden biridir?",
+    "secenekler": [
+      "Pasiflik",
+      "İleri görüşlülük",
+      "Kararsızlık",
+      "Tutuculuk"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Atatürk olayları önceden sezip önlem alma yeteneği ile ileri görüşlü bir lider olarak bilinir."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk düzenli ordunun kurulduğu padişah kimdir?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "Yıldırım Bayezid"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yaya ve müsellem ordusu Orhan Bey döneminde kurulmuştur."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Kurtuluş Savaşı",
+    "soru": "Amasya Genelgesi'nin en önemli özelliği aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İlk kez ulusal egemenlikten bahsedilmesi",
+      "İlk kez manda reddedilmesi",
+      "İlk kez TBMM'nin açılması",
+      "İlk kez saltanatın kaldırılması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ulusun bağımsızlığını yine ulusun azmi kurtaracaktır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Saltanatın kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1920",
+      "1921",
+      "1922",
+      "1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Saltanat 1922 yılında kaldırılmıştır."
+  },
+  {
+    "konu": "İslamiyet Öncesi Türk Tarihi",
+    "soru": "Türklerde 'kut' anlayışı aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Toprak mülkiyetini",
+      "Hükümdarlık yetkisinin Tanrı tarafından verildiğini",
+      "Vergi sistemini",
+      "Ordu düzenini"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kut, yönetme yetkisinin ilahi kaynaklı kabul edilmesidir."
+  },
+  {
+    "konu": "İlk Müslüman Türk Devletleri",
+    "soru": "Karahanlılar döneminde yazılan ve Türk-İslam kültürünün önemli eserlerinden biri olan 'Kutadgu Bilig' kime aittir?",
+    "secenekler": [
+      "Yusuf Has Hacip",
+      "Kaşgarlı Mahmut",
+      "Edip Ahmet Yükneki",
+      "Ahmet Yesevi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kutadgu Bilig'in yazarı Yusuf Has Hacip'tir."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı Devleti'nde ilk medrese hangi padişah döneminde açılmıştır?",
+    "secenekler": [
+      "Osman Bey",
+      "Orhan Bey",
+      "I. Murat",
+      "II. Mehmet"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İznik Medresesi Orhan Bey döneminde açılmıştır."
+  },
+  {
+    "konu": "Yenileşme ve Demokratikleşme",
+    "soru": "Tanzimat Fermanı hangi yıl ilan edilmiştir?",
+    "secenekler": [
+      "1789",
+      "1839",
+      "1856",
+      "1876"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tanzimat Fermanı 1839'da ilan edilmiştir."
+  },
+  {
+    "konu": "XX. Yüzyıl Osmanlı",
+    "soru": "II. Meşrutiyet'in ilan edilmesinde etkili olan cemiyet aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Yeniçeriler",
+      "İttihat ve Terakki",
+      "Ayanlar",
+      "Hürriyet ve İtilaf"
+    ],
+    "dogru_index": 1,
+    "aciklama": "II. Meşrutiyet'in ilanında İttihat ve Terakki etkilidir."
+  },
+  {
+    "konu": "Kurtuluş Savaşı Hazırlık",
+    "soru": "Erzurum Kongresi'nde alınan kararlardan hangisi ulusal egemenliğe vurgu yapar?",
+    "secenekler": [
+      "Vatan bir bütündür bölünemez",
+      "Manda ve himaye kabul edilemez",
+      "Milli iradeyi hakim kılmak esastır",
+      "Cemiyetler birleştirilecektir"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Ulusal egemenliği 'milli irade' vurgusu ifade eder."
+  },
+  {
+    "konu": "Kurtuluş Savaşı Muharebeler",
+    "soru": "Sakarya Meydan Muharebesi'nin kazanılmasının en önemli sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İstanbul'un işgalinin sona ermesi",
+      "TBMM'nin uluslararası alanda tanınması",
+      "Taarruz gücünün Türk tarafına geçmesi",
+      "Saltanatın kaldırılması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Sakarya ile savunmadan taarruza geçiş süreci başlamıştır."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Halifeliğin kaldırılması hangi yıl gerçekleşmiştir?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "Atatürk Dönemi Dış Politika",
+    "soru": "Türkiye'nin Milletler Cemiyeti'ne üye olduğu yıl hangisidir?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1932",
+      "1939"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Türkiye 1932'de Milletler Cemiyeti'ne üye olmuştur."
+  },
+  {
+    "konu": "Çağdaş Türk & Dünya Tarihi",
+    "soru": "II. Dünya Savaşı'ndan sonra kurulan ve ekonomik iş birliğini amaçlayan kuruluş aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "NATO",
+      "Birleşmiş Milletler",
+      "IMF",
+      "Lozan"
+    ],
+    "dogru_index": 2,
+    "aciklama": "IMF 1944 Bretton Woods sistemiyle kurulan ekonomik kuruluştur."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "Osmanlı",
+    "soru": "Osmanlı'nın ilk başkenti neresidir?",
+    "secenekler": [
+      "Bursa",
+      "Söğüt",
+      "Edirne",
+      "İstanbul"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Söğüt ilk merkezdir."
+  },
+  {
+    "konu": "İslamiyet Öncesi Türk Tarihi",
+    "soru": "Türklerde devlet yönetiminde 'toy' aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Ordu",
+      "Meclis/kurultay",
+      "Vergi",
+      "Din adamı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toy (kurultay) danışma meclisidir."
+  },
+  {
+    "konu": "İlk Müslüman Türk Devletleri",
+    "soru": "Gazneliler döneminde Hindistan seferleriyle tanınan hükümdar kimdir?",
+    "secenekler": [
+      "Sultan Mahmut",
+      "Alparslan",
+      "Melikşah",
+      "Satuk Buğra Han"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Gazneli Mahmut Hindistan seferleriyle bilinir."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Devşirme sistemi Osmanlı'da en çok hangi amaçla uygulanmıştır?",
+    "secenekler": [
+      "Vergi toplamak",
+      "Kapıkulu asker ve yöneticisi yetiştirmek",
+      "Toprak dağıtmak",
+      "Ticaret geliştirmek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kapıkulu ocaklarına insan kaynağı sağlardı."
+  },
+  {
+    "konu": "Yenileşme",
+    "soru": "Islahat Fermanı hangi yıl ilan edilmiştir?",
+    "secenekler": [
+      "1839",
+      "1856",
+      "1876",
+      "1908"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Islahat Fermanı 1856."
+  },
+  {
+    "konu": "XX. Yüzyıl Osmanlı",
+    "soru": "Trablusgarp Savaşı'nın Osmanlı açısından sonucu aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Balkan Savaşları bitti",
+      "Libya kaybedildi",
+      "Kıbrıs alındı",
+      "Edirne geri alındı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Libya (Trablusgarp) İtalya'ya bırakıldı."
+  },
+  {
+    "konu": "Kurtuluş Savaşı Hazırlık",
+    "soru": "Sivas Kongresi'nin en önemli kararlarından biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Misak-ı Milli",
+      "Cemiyetlerin Anadolu ve Rumeli Müdafaa-i Hukuk adıyla birleştirilmesi",
+      "Saltanatın kaldırılması",
+      "Cumhuriyetin ilanı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ulusal direniş cemiyetleri birleştirildi."
+  },
+  {
+    "konu": "Muharebeler",
+    "soru": "Büyük Taarruz hangi tarihte başlamıştır?",
+    "secenekler": [
+      "19 Mayıs 1919",
+      "23 Nisan 1920",
+      "26 Ağustos 1922",
+      "29 Ekim 1923"
+    ],
+    "dogru_index": 2,
+    "aciklama": "26 Ağustos 1922."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Tevhid-i Tedrisat Kanunu hangi alanda düzenleme yapmıştır?",
+    "secenekler": [
+      "Ekonomi",
+      "Eğitim",
+      "Dış politika",
+      "Sağlık"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Öğretim birliğini sağladı."
+  },
+  {
+    "konu": "Dış Politika",
+    "soru": "Balkan Antantı'nın imzalanma yılı hangisidir?",
+    "secenekler": [
+      "1934",
+      "1936",
+      "1932",
+      "1923"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Balkan Antantı 1934."
+  },
+  {
+    "konu": "Çağdaş Dünya",
+    "soru": "Birleşmiş Milletler Şartı hangi konferansta kabul edilmiştir?",
+    "secenekler": [
+      "Yalta",
+      "San Francisco",
+      "Potsdam",
+      "Lozan"
+    ],
+    "dogru_index": 1,
+    "aciklama": "BM Şartı 1945 San Francisco Konferansı."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "İnkılap Tarihi",
+    "soru": "Halifeliğin kaldırılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1922",
+      "1923",
+      "1924",
+      "1925"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Halifelik 1924'te kaldırılmıştır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "Atatürk İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Din ve devlet işlerinin ayrılması",
+      "Halkçılık",
+      "Devletçilik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik din ve devlet işlerinin ayrılmasıdır."
+  },
+  {
+    "konu": "İslamiyet Öncesi Türk Tarihi",
+    "soru": "Türklerde boyların birleşmesiyle oluşan siyasi birliğe ne ad verilir?",
+    "secenekler": [
+      "İl",
+      "Budun",
+      "Toy",
+      "Tigin"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Budun: millet/topluluk."
+  },
+  {
+    "konu": "İlk Müslüman Türk Devletleri",
+    "soru": "Türkçenin ilk sözlüğü kabul edilen 'Divânü Lügati't-Türk' kime aittir?",
+    "secenekler": [
+      "Yusuf Has Hacip",
+      "Kaşgarlı Mahmut",
+      "Ali Şir Nevai",
+      "İbn Sina"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kaşgarlı Mahmut."
+  },
+  {
+    "konu": "Osmanlı Tarihi",
+    "soru": "Osmanlı'da tımar sisteminin temel amacı hangisidir?",
+    "secenekler": [
+      "Deniz ticareti",
+      "Asker yetiştirmek ve vergiyi düzenlemek",
+      "Sanayiyi geliştirmek",
+      "Eğitimi yaygınlaştırmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tımar, sipahi askerini besler ve vergi düzenler."
+  },
+  {
+    "konu": "Yenileşme",
+    "soru": "I. Meşrutiyet hangi padişah döneminde ilan edilmiştir?",
+    "secenekler": [
+      "II. Mahmut",
+      "Abdülaziz",
+      "II. Abdülhamit",
+      "V. Mehmet"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1876 II. Abdülhamit."
+  },
+  {
+    "konu": "XX. Yüzyıl Osmanlı",
+    "soru": "Balkan Savaşları sonunda Osmanlı'nın Avrupa'daki toprakları büyük ölçüde hangi bölgeye inmiştir?",
+    "secenekler": [
+      "Edirne ve çevresi",
+      "Anadolu",
+      "Kıbrıs",
+      "Trablusgarp"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Edirne çevresine kadar gerilemiştir."
+  },
+  {
+    "konu": "Kurtuluş Savaşı Hazırlık",
+    "soru": "Misak-ı Milli kararları hangi mecliste kabul edilmiştir?",
+    "secenekler": [
+      "TBMM",
+      "Son Osmanlı Mebusan Meclisi",
+      "Amasya Genelgesi",
+      "Sivas Kongresi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Son Osmanlı Mebusan Meclisi."
+  },
+  {
+    "konu": "Muharebeler",
+    "soru": "İnönü Savaşları'nın kazanılmasıyla aşağıdakilerden hangisi gerçekleşmiştir?",
+    "secenekler": [
+      "Lozan imzalandı",
+      "Londra Konferansı'na davet",
+      "Cumhuriyet ilan edildi",
+      "Saltanat kaldırıldı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İnönü zaferleri sonrası Londra Konferansı."
+  },
+  {
+    "konu": "Cumhuriyet Dönemi",
+    "soru": "Şapka Kanunu hangi yıl çıkarılmıştır?",
+    "secenekler": [
+      "1923",
+      "1924",
+      "1925",
+      "1934"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1925."
+  },
+  {
+    "konu": "Dış Politika",
+    "soru": "Hatay'ın Türkiye'ye katılması hangi yıl olmuştur?",
+    "secenekler": [
+      "1936",
+      "1938",
+      "1939",
+      "1945"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Hatay 1939'da katıldı."
+  },
+  {
+    "konu": "Çağdaş Dünya",
+    "soru": "Soğuk Savaş döneminde oluşturulan askeri ittifaklardan biri hangisidir?",
+    "secenekler": [
+      "NATO",
+      "OPEC",
+      "AB",
+      "UNESCO"
+    ],
+    "dogru_index": 0,
+    "aciklama": "NATO 1949."
+  }
 ]
