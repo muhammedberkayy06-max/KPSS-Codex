@@ -417,7 +417,7 @@ async function fetchJSON(path){
     if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
     const rawText = await res.text();
     const parsed = tryParse(rawText);
-    if (parsed !== null) return parsed;
+    if (parsed) return parsed;
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
   };
 
