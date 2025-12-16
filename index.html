@@ -165,8 +165,8 @@
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
           <p class="text-sm text-slate-500 font-semibold uppercase">Ücretsiz yapay zeka</p>
-          <h3 class="text-xl font-extrabold">İnternet + Yerel Soru Üretici</h3>
-          <p class="hint">Hugging Face (ücretsiz, internet) veya yerel üreticiyle sınırsız soru ekleyebilirsin.</p>
+          <h3 class="text-xl font-extrabold">Ücretsiz Yerel + İnternet Soru Üretici</h3>
+          <p class="hint">Varsayılan olarak yerel/ücretsiz üretici çalışır; istersen Hugging Face veya Ollama (localhost) seçebilirsin.</p>
         </div>
         <button id="btnAiGenerate" class="btn sm primary">🤖 Yapay soru üret</button>
       </div>
@@ -191,11 +191,11 @@
         <div class="field">
           <label for="aiProvider">Üretici</label>
           <select id="aiProvider" class="w-full">
-            <option value="ollama">Ollama (lokal, ücretsiz)</option>
-            <option value="hf">Hugging Face (ücretsiz, internet)</option>
-            <option value="local">Yerel (offline şablon)</option>
+            <option value="local" selected>Yerel (offline/ücretsiz)</option>
+            <option value="ollama">Ollama (localhost, ücretsiz)</option>
+            <option value="hf">Hugging Face (ücretsiz community)</option>
           </select>
-          <p class="hint">Varsayılan: Ollama (lokal). Hugging Face seçildiğinde community/free endpoint kullanılır.</p>
+          <p class="hint">Yerel veya Ollama seçtiğinde internet gerekmez; Hugging Face opsiyoneldir.</p>
         </div>
         <div class="field">
           <label for="hfToken">HF Token (opsiyonel)</label>
@@ -207,26 +207,15 @@
           <input id="hfModel" type="text" class="w-full" value="HuggingFaceH4/zephyr-7b-beta">
           <p class="hint">Topik listesine göre JSON dönen üretim ister. Dilersen başka ücretsiz modeli yazabilirsin.</p>
         </div>
-      </div>
-
-      <div class="grid gap-4 md:grid-cols-3">
         <div class="field">
           <label for="ollamaUrl">Ollama URL</label>
           <input id="ollamaUrl" type="text" class="w-full" value="http://localhost:11434">
-          <p class="hint">Lokal ücretsiz kullanım: <code>ollama run mistral</code> sonrası bu adresle bağlanır.</p>
+          <p class="hint">Yerel ücretsiz model için varsayılan Ollama endpoint’i.</p>
         </div>
         <div class="field">
           <label for="ollamaModel">Ollama Model</label>
           <input id="ollamaModel" type="text" class="w-full" value="mistral">
-          <p class="hint">Donanımına göre farklı modeli yazabilirsin (örn. <code>mistral:instruct</code>).</p>
-        </div>
-        <div class="field">
-          <label for="aiTemp">Sıcaklık / Top P</label>
-          <div class="grid grid-cols-2 gap-2">
-            <input id="aiTemp" type="number" step="0.05" min="0.1" max="1.2" value="0.78" class="w-full">
-            <input id="aiTopP" type="number" step="0.05" min="0.1" max="1" value="0.9" class="w-full">
-          </div>
-          <p class="hint">Çeşitlilik ve benzersizlik için ayarlanabilir. Ollama/HF ikisi de okur.</p>
+          <p class="hint">Yerel model adını gir (ör. mistral, zephyr). İnternet gerekmez.</p>
         </div>
       </div>
     </section>
