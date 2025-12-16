@@ -49,14 +49,15 @@ async function cacheFirst(req){
   return res;
 }
 
-async function networkFirst(req){
+async function networkFirst(req, cacheKeyOverride){
   const cache = await caches.open(RUNTIME_CACHE);
+  const cacheKey = cacheKeyOverride || req;
   try {
     const fresh = await fetch(req);
-    cache.put(req, fresh.clone());
+    cache.put(cacheKey, fresh.clone());
     return fresh;
   } catch (e) {
-    const cached = await cache.match(req, { ignoreSearch:true }) || await caches.match(req, { ignoreSearch:true });
+    const cached = await cache.match(cacheKey) || await caches.match(cacheKey);
     if (cached) return cached;
     return new Response('Offline', {status: 503, statusText: 'Offline'});
   }
@@ -98,7 +99,8 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (url.origin === location.origin && url.pathname.endsWith('.json')){
-    event.respondWith(networkFirst(req));
+    const cacheKey = new Request(url.origin + url.pathname);
+    event.respondWith(networkFirst(req, cacheKey));
     return;
   }
 

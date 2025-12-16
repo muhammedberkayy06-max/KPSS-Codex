@@ -361,7 +361,9 @@ function renderLessonIcons(mode="single"){
 async function fetchJSON(path){
   const urlObj = new URL(path, location.href);
   urlObj.searchParams.set("v", APP_VERSION);
-  const url = urlObj.toString();
+  const versioned = urlObj.toString();
+  const bare = new URL(path, location.href).toString();
+  const cacheKey = bare.split("?")[0];
 
   const tryParse = (txt) => {
     const clean = txt.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
@@ -371,50 +373,48 @@ async function fetchJSON(path){
     } catch { return null; }
   };
 
-  const attempt = async (target, label) => {
-    const res = await fetch(target, { cache: "no-store" });
-    if (!res.ok) throw new Error(`${label} (${target}) ${res.status}`);
+  const fetchAndParse = async (reqLabel, reqInit) => {
+    const res = await fetch(reqLabel, { cache: "reload", ...reqInit });
+    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
     const rawText = await res.text();
     const parsed = tryParse(rawText);
     if (parsed) return parsed;
-    throw new Error(`JSON parse hatası (${label}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
+    throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
   };
 
-  // önce versiyon parametresiyle dene, sonra düz URL'e ve cache'e düş
+  const restoreFromCache = async () => {
+    if (typeof caches === "undefined") return null;
+    const keys = [versioned, bare, cacheKey];
+    for (const key of keys){
+      try{
+        const cached = await caches.match(key) || await caches.match(new Request(key));
+        if (!cached) continue;
+        const txt = await cached.text();
+        const parsed = tryParse(txt);
+        if (Array.isArray(parsed)) {
+          console.info(`Cache'ten geri yüklendi (${key})`);
+          return parsed;
+        }
+      }catch(e){ console.warn(`Cache okuma hatası (${key}):`, e); }
+    }
+    return null;
+  };
+
+  // Ana deneme + bare fallback
   try {
-    const data = await attempt(url, "versiyonlu istek");
+    const data = await fetchAndParse(versioned);
     if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
     return data.map(normalizeQuestion);
-  } catch (err1) {
-    console.warn(`Versiyonlu deneme başarısız (${path}):`, err1);
-
+  } catch (err) {
+    console.warn(`İlk deneme başarısız (${path}):`, err);
     try {
-      const data = await attempt(path, "parametresiz istek");
+      const data = await fetchAndParse(bare);
       if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
       return data.map(normalizeQuestion);
     } catch (err2) {
-      console.warn(`Parametresiz deneme de başarısız (${path}):`, err2);
-
-      // SW cache veya tarayıcı cache'inde kalan sağlam kopyayı deneyelim (ignoreSearch)
-      if (typeof caches !== "undefined") {
-        const cacheKeys = [url, path];
-        for (const key of cacheKeys) {
-          try {
-            const cached = await caches.match(key, { ignoreSearch:true });
-            if (cached) {
-              const txt = await cached.text();
-              const parsed = tryParse(txt);
-              if (Array.isArray(parsed)) {
-                console.info(`Cache'ten geri yüklendi (${key})`);
-                return parsed.map(normalizeQuestion);
-              }
-            }
-          } catch (e) {
-            console.warn(`Cache okuma hatası (${key}):`, e);
-          }
-        }
-      }
-
+      console.warn(`İkinci deneme başarısız (${path}):`, err2);
+      const cached = await restoreFromCache();
+      if (cached) return cached.map(normalizeQuestion);
       throw err2;
     }
   }
