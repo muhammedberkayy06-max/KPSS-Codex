@@ -4,6 +4,7 @@
 */
 
 const APP_VERSION = "v6";
+const CACHE_PREFIX = "kpss-ultimate";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -359,56 +360,38 @@ function renderLessonIcons(mode="single"){
 // ---------- loading question banks ----------
 async function fetchJSON(path){
   const url = `${path}?v=${APP_VERSION}`;
-  const tryParse = (text) => {
-    const start = Math.min(...[text.indexOf("[") >= 0 ? text.indexOf("[") : Infinity, text.indexOf("{") >= 0 ? text.indexOf("{") : Infinity]);
-    const sliced = start === Infinity ? "" : text.slice(start);
-    const clean = sliced.replace(/^\uFEFF/, "").trim();
-    if (!clean.startsWith("[") && !clean.startsWith("{")) {
-      throw new Error("JSON beklenirken HTML/boş yanıt geldi");
-    }
-    return JSON.parse(clean);
-  };
-
-  const parseOrThrow = (text, origin) => {
-    try {
-      return tryParse(text);
-    } catch (err) {
-      console.error(`JSON parse hatası (${path}, ${origin}):`, err, text.slice(0, 200));
-      throw err;
-    }
-  };
-
-  const fromCache = async () => {
-    if (!("caches" in window)) return null;
-    const maybe = await caches.match(path) || await caches.match(path.split("?")[0]);
-    if (!maybe) return null;
-    const cachedText = await maybe.text();
-    try {
-      const data = parseOrThrow(cachedText, "cache");
-      return Array.isArray(data) ? data.map(normalizeQuestion) : null;
-    } catch {
-      return null;
-    }
-  };
-
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
 
+  // Bazı ortamlarda (GH Pages, SW kalıntısı) JSON yerine HTML/yanıt kırpığı dönebilir;
+  // önce metni alıp temizlemeyi deneriz, yine de olmazsa hatayı detaylı loglarız.
   const rawText = await res.text();
+  const cleanText = rawText.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
 
+  let data;
   try {
-    const data = parseOrThrow(rawText, "network");
-    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-    return data.map(normalizeQuestion);
+    data = JSON.parse(cleanText);
   } catch (err) {
-    // Ağdan gelen yanıt HTML/boşsa cache'e başvurmayı dene
-    const fallback = await fromCache();
-    if (fallback) {
-      setNotice(`${path} ağdan okunamadı, önbellekten yüklendi. (Tarayıcı önbelleğini temizlemek gerekebilir)`, "error");
-      return fallback;
-    }
+    console.error(`JSON parse hatası (${path}):`, err, rawText.slice(0, 200));
     throw new Error(`${path} JSON okunamadı: ${err.message}`);
   }
+
+  if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+  return data.map(normalizeQuestion);
+}
+
+async function purgeOldCaches(){
+  if (!("caches" in window)) return;
+  const keep = new Set([
+    `${CACHE_PREFIX}-static-${APP_VERSION}`,
+    `${CACHE_PREFIX}-runtime-${APP_VERSION}`
+  ]);
+  const keys = await caches.keys();
+  await Promise.all(keys.map(k => {
+    if (k.startsWith(`${CACHE_PREFIX}-`) && !keep.has(k)){
+      return caches.delete(k);
+    }
+  }));
 }
 
 async function loadAllBanks(){
@@ -1060,6 +1043,7 @@ async function installPWA(){
 }
 
 async function init(){
+  await purgeOldCaches();
   fillLessonSelect();
   setMode("single");
 
