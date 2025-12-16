@@ -778,5 +778,149 @@
     ],
     "dogru_index": 1,
     "aciklama": "Cumhurbaşkanlığı Hükümet Sistemi sert kuvvetler ayrılığına dayanır."
+  },
+  {
+    "konu": "Anayasa Hukuku",
+    "soru": "Türkiye'de kanun teklif etme yetkisi kimdedir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "TBMM üyesi milletvekilleri",
+      "Anayasa Mahkemesi",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Cumhurbaşkanlığı Hükümet Sisteminde kanun teklif yetkisi yalnızca milletvekillerine aittir."
+  },
+  {
+    "konu": "İdare Hukuku",
+    "soru": "Hangi işlem için idari yargıda iptal davası açılabilir?",
+    "secenekler": [
+      "Hukuka uygun işlemler",
+      "İdari sözleşmeler",
+      "Genel düzenleyici işlemler",
+      "Yargı kararları"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Genel düzenleyici işlemler hukuka aykırılık iddiasıyla iptal davasına konu olabilir."
+  },
+  {
+    "konu": "Medeni Hukuk",
+    "soru": "Fiil ehliyeti kazanımı için gerekli şartlardan biri değildir?",
+    "secenekler": [
+      "Ayırt etme gücü",
+      "Erginlik",
+      "Kısıtlı olmama",
+      "Medeni nikah"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Medeni nikah fiil ehliyeti için şart değildir; ayırt etme gücü, erginlik ve kısıtlı olmama gerekir."
+  },
+  {
+    "konu": "Ceza Hukuku",
+    "soru": "Hapis cezasının ertelenebilmesi için aşağıdakilerden hangisi aranır?",
+    "secenekler": [
+      "Suçun kasıtlı olması",
+      "Daha önce hapis cezası almamış olmak",
+      "Zararın giderilmemesi",
+      "Üst sınırın 10 yıl olması"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Belirli süreli hapis cezalarının ertelenmesi için sanığın daha önce kasıtlı suçtan mahkûm olmaması gerekir."
+  },
+  {
+    "konu": "Borçlar Hukuku",
+    "soru": "Sözleşmede karşılıklı edimlerin aynı anda ifası zorunluluğu hangi ilke ile ifade edilir?",
+    "secenekler": [
+      "Hakkaniyet",
+      "Dürüstlük",
+      "Önce sözleşme",
+      "Aynı anda ifa"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Karşılıklı borçların aynı anda ifa edilmesi ilkesi, ayni anda ifa kuralıdır."
+  },
+  {
+    "konu": "İdare Hukuku",
+    "soru": "İdari işlemlerin yargısal denetimini yapan mahkeme türü hangisidir?",
+    "secenekler": [
+      "Adli yargı",
+      "İdari yargı",
+      "Anayasa yargısı",
+      "Tahkim"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İdari işlemler idari yargı mercilerinde denetlenir."
+  },
+  {
+    "konu": "Ticaret Hukuku",
+    "soru": "Anonim şirketlerde genel kurul toplantılarına katılanların oy hakkı hangi ilkeye dayanır?",
+    "secenekler": [
+      "Payın itibari değerine göre oy",
+      "Eşit oy hakkı",
+      "Oy hakkı yoktur",
+      "Sadece yönetim kurulu oy kullanır"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Oy hakkı kural olarak payın itibari değeriyle orantılıdır."
+  },
+  {
+    "konu": "Anayasa Hukuku",
+    "soru": "Temel hak ve özgürlüklerin olağanüstü dönemlerde durdurulması hangi maddede düzenlenmiştir?",
+    "secenekler": [
+      "Anayasa m.13",
+      "Anayasa m.15",
+      "Anayasa m.23",
+      "Anayasa m.40"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'nın 15. maddesi olağanüstü hallerde hakların durdurulmasını düzenler."
+  },
+  {
+    "konu": "Usul Hukuku",
+    "soru": "Davacının açtığı davadan feragat etmesi hangi sonuç doğurur?",
+    "secenekler": [
+      "Davanın reddi kararı",
+      "Davanın kabulü",
+      "Davaya devam edilir",
+      "Ceza verilmesi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Feragat davanın reddiyle sonuçlanır ve kesin hüküm doğurur."
+  },
+  {
+    "konu": "Ceza Muhakemesi",
+    "soru": "Tutuklama kararını vermeye yetkili merci kimdir?",
+    "secenekler": [
+      "Savcı",
+      "Sulh ceza hakimi",
+      "Ağır ceza mahkemesi başkanı",
+      "Polis"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tutuklama kararı sulh ceza hakimi tarafından verilir."
+  },
+  {
+    "konu": "İcra İflas",
+    "soru": "İcra takibine itiraz süresi ödeme emrinin tebliğinden itibaren kaç gündür?",
+    "secenekler": [
+      "3",
+      "5",
+      "7",
+      "10"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Para alacaklarında itiraz süresi 7 gündür."
+  },
+  {
+    "konu": "Medeni Usul",
+    "soru": "Geçici hukuki koruma tedbirlerinden biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İhtiyati tedbir",
+      "Hükmün açıklanmasının geri bırakılması",
+      "Uzlaşma",
+      "Zamanaşımı"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İhtiyati tedbir, dava sonuçlanana kadar geçici koruma sağlayan usul kurumudur."
   }
 ]
