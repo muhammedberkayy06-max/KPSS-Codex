@@ -359,31 +359,56 @@ function renderLessonIcons(mode="single"){
 // ---------- loading question banks ----------
 async function fetchJSON(path){
   const url = `${path}?v=${APP_VERSION}`;
+  const tryParse = (text) => {
+    const start = Math.min(...[text.indexOf("[") >= 0 ? text.indexOf("[") : Infinity, text.indexOf("{") >= 0 ? text.indexOf("{") : Infinity]);
+    const sliced = start === Infinity ? "" : text.slice(start);
+    const clean = sliced.replace(/^\uFEFF/, "").trim();
+    if (!clean.startsWith("[") && !clean.startsWith("{")) {
+      throw new Error("JSON beklenirken HTML/boş yanıt geldi");
+    }
+    return JSON.parse(clean);
+  };
+
+  const parseOrThrow = (text, origin) => {
+    try {
+      return tryParse(text);
+    } catch (err) {
+      console.error(`JSON parse hatası (${path}, ${origin}):`, err, text.slice(0, 200));
+      throw err;
+    }
+  };
+
+  const fromCache = async () => {
+    if (!("caches" in window)) return null;
+    const maybe = await caches.match(path) || await caches.match(path.split("?")[0]);
+    if (!maybe) return null;
+    const cachedText = await maybe.text();
+    try {
+      const data = parseOrThrow(cachedText, "cache");
+      return Array.isArray(data) ? data.map(normalizeQuestion) : null;
+    } catch {
+      return null;
+    }
+  };
+
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
 
-  // Bazı ortamlarda (GH Pages, SW kalıntısı) JSON yerine HTML/yanıt kırpığı dönebilir;
-  // öncelikle metni alıp başı/sonu temizlemeyi deneriz, ardından yalnızca gerçek
-  // JSON gövdesini parse ederiz.
   const rawText = await res.text();
-  const noBom = rawText.replace(/^\uFEFF/, "");
-  const start = noBom.search(/[\[{]/);
-  const end = Math.max(noBom.lastIndexOf(']'), noBom.lastIndexOf('}'));
-  const sliced = (start >= 0 && end > start)
-    ? noBom.slice(start, end + 1)
-    : noBom.replace(/^[^\[{]+/, "").trim();
-  const cleanText = sliced.trim();
 
-  let data;
   try {
-    data = JSON.parse(cleanText);
+    const data = parseOrThrow(rawText, "network");
+    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+    return data.map(normalizeQuestion);
   } catch (err) {
-    console.error(`JSON parse hatası (${path}):`, err, rawText.slice(0, 200));
+    // Ağdan gelen yanıt HTML/boşsa cache'e başvurmayı dene
+    const fallback = await fromCache();
+    if (fallback) {
+      setNotice(`${path} ağdan okunamadı, önbellekten yüklendi. (Tarayıcı önbelleğini temizlemek gerekebilir)`, "error");
+      return fallback;
+    }
     throw new Error(`${path} JSON okunamadı: ${err.message}`);
   }
-
-  if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-  return data.map(normalizeQuestion);
 }
 
 async function loadAllBanks(){
