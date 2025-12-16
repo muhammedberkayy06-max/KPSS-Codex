@@ -793,4 +793,1206 @@
     "dogru_index": 0,
     "aciklama": "İl genel idaresinin başı validir."
   }
+],
+[
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Hobbes’a göre doğal durumda insanların hayatı nasıldır?",
+    "secenekler": [
+      "Barış ve huzur içinde",
+      "Kargaşa ve savaş halinde",
+      "Dini kurallara göre",
+      "Eşit ve özgür"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hobbes, doğal durumu herkesin herkesle savaşı olarak tanımlar; devlet bu nedenle gereklidir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Meclis hükümet sistemi aşağıdaki ülkelerden hangisinde uygulanmıştır?",
+    "secenekler": [
+      "Fransa",
+      "İsviçre",
+      "Türkiye (1921-1923)",
+      "İngiltere"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1921-1923 arasında Türkiye’de Meclis Hükümeti sistemi uygulanmıştır."
+  },
+  {
+    "konu": "Yönetim Bilimleri & Kamu Politikası",
+    "soru": "Kamu politikalarının belirlenmesinde hangi aşama ilk sıradadır?",
+    "secenekler": [
+      "Uygulama",
+      "Gündem oluşturma",
+      "Değerlendirme",
+      "Formülasyon"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu politikası sürecinin ilk adımı sorunların kamu gündemine alınmasıdır."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdari işlemlerde yetki genişliği ilkesinin tanımı nedir?",
+    "secenekler": [
+      "Yetkinin kanunla sınırlandırılması",
+      "Yetkinin devredilmesi",
+      "Görevin gerektirdiği ölçüde takdir yetkisi",
+      "Yetki gaspı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yetki genişliği, idarenin kamu hizmetini aksatmamak için kanunun izin verdiği ölçüde takdir kullanabilmesini ifade eder."
+  },
+  {
+    "konu": "Kentleşme & Çevre Sorunları",
+    "soru": "Kentsel dönüşüm projelerinin başlıca amacı nedir?",
+    "secenekler": [
+      "Tarımsal üretimi artırmak",
+      "Sosyal kontrolü sağlamak",
+      "Afet riskini azaltmak ve yaşam kalitesini yükseltmek",
+      "Nüfusu azaltmak"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kentsel dönüşüm projeleri, riskli yapı stoğunu yenileyerek afet riskini azaltmayı ve yaşam kalitesini artırmayı amaçlar."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Çok partili hayata geçiş Türkiye’de ilk kez hangi yılda denenmiştir?",
+    "secenekler": [
+      "1923",
+      "1924",
+      "1946",
+      "1950"
+    ],
+    "dogru_index": 0,
+    "aciklama": "1923’te Terakkiperver Cumhuriyet Fırkası’nın kurulması ile çok partili yaşam ilk kez denenmiştir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Meşrutiyet kavramı neyi ifade eder?",
+    "secenekler": [
+      "Saltanatın kaldırılmasını",
+      "Anayasa ile sınırlandırılmış monarşiyi",
+      "Cumhuriyet yönetimini",
+      "Diktatörlüğü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Meşrutiyet, hükümdarın yetkilerinin anayasal düzenle sınırlandığı monarşi tipidir."
+  },
+  {
+    "konu": "Yönetim Bilimleri & Kamu Politikası",
+    "soru": "Yönetişim anlayışının temel vurgusu nedir?",
+    "secenekler": [
+      "Merkeziyetçilik",
+      "Hiyerarşi",
+      "Katılımcılık ve işbirliği",
+      "Otoriterlik"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yönetişim, karar süreçlerine paydaşların katılımını ve işbirliğini öne çıkaran bir yönetim anlayışıdır."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "Kamu görevlilerine ilişkin disiplin cezalarını düzenleyen hukuk dalı hangisidir?",
+    "secenekler": [
+      "Ceza hukuku",
+      "Medeni hukuk",
+      "İdare hukuku",
+      "Ticaret hukuku"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Kamu görevlilerinin disiplin işlemleri idare hukuku kapsamında düzenlenir."
+  },
+  {
+    "konu": "Kentleşme & Çevre Sorunları",
+    "soru": "Planlı şehirleşmenin avantajları arasında aşağıdakilerden hangisi yer alır?",
+    "secenekler": [
+      "Arazi kullanımının düzensizleşmesi",
+      "Trafik sıkışıklığının artması",
+      "Yeşil alanların korunması",
+      "Kaçak yapıların çoğalması"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Planlı şehirleşme, yeşil alanların korunması ve sürdürülebilir yaşam alanlarının oluşmasını sağlar."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Yönetim Bilimleri",
+    "soru": "Planlama, örgütleme, yöneltme ve denetim hangi kavramı ifade eder?",
+    "secenekler": [
+      "Yönetim süreci",
+      "Kamu politikası",
+      "Bürokrasi",
+      "Siyaset"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bunlar yönetim sürecinin temel aşamalarıdır."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağının halka ait olması hangi ilkeyi ifade eder?",
+    "secenekler": [
+      "Monarşi",
+      "Oligarşi",
+      "Demokrasi",
+      "Teokrasi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Egemenliğin halka ait olması demokrasidir."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de çok partili hayata geçiş hangi yıl olmuştur?",
+    "secenekler": [
+      "1923",
+      "1930",
+      "1945",
+      "1950"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Çok partili hayata geçiş 1945 yılında olmuştur."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Siyasal iktidarın meşruiyeti aşağıdakilerden hangisiyle en çok ilişkilidir?",
+    "secenekler": [
+      "Zor kullanımı",
+      "Hukuka uygunluk ve kabul görme",
+      "Nüfus yoğunluğu",
+      "İklim koşulları"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Meşruiyet, iktidarın kabul görmesi ve hukuka dayanmasıyla ilgilidir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Kuvvetler ayrılığı ilkesinin temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Devleti zayıflatmak",
+      "Güçler arasında denge-denetim sağlamak",
+      "Yürütmeyi güçlendirmek",
+      "Yasama yetkisini kaldırmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kuvvetler ayrılığı denge-denetim mekanizması kurar."
+  },
+  {
+    "konu": "Yönetim Bilimleri & Kamu Politikası",
+    "soru": "Kamu politikasının 'gündeme alma' aşamasında temel olarak ne yapılır?",
+    "secenekler": [
+      "Politika uygulanır",
+      "Sorunlar kamu gündemine taşınır",
+      "Değerlendirme raporu yazılır",
+      "Bütçe kapatılır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Gündeme alma aşaması sorunun görünür hale gelmesidir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin hukuka bağlı olması ilkesine ne ad verilir?",
+    "secenekler": [
+      "Merkeziyetçilik",
+      "Hukuk devleti",
+      "Yerinden yönetim",
+      "Bürokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hukuk devleti idarenin işlem ve eylemlerinin hukuka bağlı olmasıdır."
+  },
+  {
+    "konu": "Kentleşme & Çevre Sorunları",
+    "soru": "Hızlı kentleşmenin en yaygın sorunlarından biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Nüfusun kırsalda artması",
+      "Gecekondu sorunu",
+      "Tarım üretiminin kesin artması",
+      "İşsizliğin tamamen bitmesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hızlı kentleşme gecekondu, altyapı gibi sorunlar doğurur."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "Türkiye'de 1961 Anayasası'nın kabul edilmesinde hangi gelişme etkili olmuştur?",
+    "secenekler": [
+      "1923 Devrimleri",
+      "1960 askeri müdahalesi",
+      "1980 darbesi",
+      "Kurtuluş Savaşı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1960 sonrası 1961 Anayasası hazırlanmıştır."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Otoriter rejimlerde aşağıdakilerden hangisi daha sınırlıdır?",
+    "secenekler": [
+      "Siyasal katılım ve özgürlükler",
+      "Vergi oranları",
+      "Coğrafi sınırlar",
+      "Nüfus artışı"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Otoriter rejimler siyasal özgürlükleri kısıtlar."
+  },
+  {
+    "konu": "Yönetim Bilimleri & Kamu Politikası",
+    "soru": "Stratejik planlama aşağıdakilerden hangisiyle en çok ilişkilidir?",
+    "secenekler": [
+      "Kısa vadeli günlük işler",
+      "Uzun vadeli hedef ve vizyon",
+      "Rastgele karar alma",
+      "Sadece personel sayımı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Stratejik planlama uzun vadeli hedef/vizyon belirler."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "Yetki genişliği ilkesi daha çok hangi idari yapıyla ilgilidir?",
+    "secenekler": [
+      "Merkezden yönetim",
+      "Yerinden yönetim",
+      "Özerk üniversite",
+      "Özel sektör"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yetki genişliği, merkezden yönetimde taşraya verilen yetkidir."
+  },
+  {
+    "konu": "Kentleşme & Çevre Sorunları",
+    "soru": "Çevresel etki değerlendirmesi (ÇED) raporu temel olarak neyi amaçlar?",
+    "secenekler": [
+      "Projeyi gizlemek",
+      "Projelerin çevreye etkisini önceden belirlemek",
+      "Vergiyi artırmak",
+      "Nüfusu azaltmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "ÇED, çevresel etkileri önceden analiz eder."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Yönetim",
+    "soru": "Kamu yönetiminin temel amacı nedir?",
+    "secenekler": [
+      "Kâr",
+      "Kamu yararı",
+      "Rekabet",
+      "Büyüme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu yararı esastır."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Siyasal partiler demokrasi açısından neden önemlidir?",
+    "secenekler": [
+      "Seçimlere katılımı azaltır",
+      "Temsili sağlar",
+      "Yargıyı yönetir",
+      "Ekonomiyi tek başına belirler"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Partiler temsil ve katılımı organize eder."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Üniter devlet yapısı aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Federal yapı",
+      "Tek merkezli egemenlik",
+      "İki meclis",
+      "Bölgesel bağımsızlık"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Üniter devlette egemenlik tek merkezde toplanır."
+  },
+  {
+    "konu": "Yönetim Bilimi",
+    "soru": "Bürokrasi kavramı en çok hangi isimle ilişkilidir?",
+    "secenekler": [
+      "Weber",
+      "Keynes",
+      "Smith",
+      "Durkheim"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Max Weber bürokrasi tipolojisiyle bilinir."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Politika değerlendirme aşamasında temel amaç nedir?",
+    "secenekler": [
+      "Sorunu gizlemek",
+      "Uygulamanın sonuçlarını ölçmek",
+      "Bütçeyi kapatmak",
+      "Seçim yapmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Değerlendirme, etkililik/verimlilik analizidir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin işlem ve eylemlerinin yargı denetimine açık olması hangi ilkeyle ilişkilidir?",
+    "secenekler": [
+      "Hukuk devleti",
+      "Oligarşi",
+      "Monarşi",
+      "Feodalite"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Hukuk devletinde yargı denetimi esastır."
+  },
+  {
+    "konu": "Kentleşme",
+    "soru": "Kentsel dönüşüm projelerinin temel hedefi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Köy nüfusunu artırmak",
+      "Riskli yapı stokunu yenilemek",
+      "Tarımı büyütmek",
+      "Göçü durdurmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Riskli yapıların yenilenmesi amaçlanır."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "1960 sonrası kurulan ve 1961 Anayasası'nı hazırlayan organ hangisidir?",
+    "secenekler": [
+      "TBMM",
+      "Kurucu Meclis",
+      "Danıştay",
+      "MGK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kurucu Meclis görev yapmıştır."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Seçim sistemlerinde barajın temel amacı nedir?",
+    "secenekler": [
+      "Temsili artırmak",
+      "Yönetimde istikrar sağlamak",
+      "Oy vermeyi kaldırmak",
+      "Partileri çoğaltmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Baraj yönetimde istikrar hedefler (temsili azaltabilir)."
+  },
+  {
+    "konu": "Yönetim Bilimi",
+    "soru": "Yetki devri ile yetki genişliği arasındaki temel fark hangisidir?",
+    "secenekler": [
+      "İkisi aynıdır",
+      "Yetki devri kişiye, genişlik coğrafyaya bağlıdır",
+      "Genişlik geçicidir",
+      "Devir sadece belediyede olur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yetki genişliği taşraya, yetki devri ast-üst ilişkisine dayanır."
+  },
+  {
+    "konu": "Kentleşme",
+    "soru": "Çarpık kentleşmenin en tipik göstergelerinden biri hangisidir?",
+    "secenekler": [
+      "Planlı imar",
+      "Gecekondu",
+      "Yeşil alan artışı",
+      "Ulaşım kolaylığı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Plansız yapılaşma/gecekondu tipiktir."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Kamu politikalarının uygulanma aşaması hangisidir?",
+    "secenekler": [
+      "Gündem",
+      "Formülasyon",
+      "Uygulama",
+      "Değerlendirme"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Politikaların hayata geçirilmesi uygulama aşamasıdır."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "İdarenin tek yanlı işlem yapmasına ne denir?",
+    "secenekler": [
+      "Sözleşme",
+      "İdari işlem",
+      "Yargı kararı",
+      "Kanun"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Tek yanlı işlem idari işlemdir."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Egemenliğin kaynağı bakımından demokrasi hangi ilkeye dayanır?",
+    "secenekler": [
+      "Milli egemenlik",
+      "Sultan egemenliği",
+      "Sınıf egemenliği",
+      "Askeri egemenlik"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Egemenlik millete aittir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Parlamenter sistemde yürütmenin sorumluluğu daha çok kime karşıdır?",
+    "secenekler": [
+      "Seçmene",
+      "Meclise",
+      "Yargıya",
+      "Belediyeye"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hükümet meclise karşı sorumludur."
+  },
+  {
+    "konu": "Yönetim Bilimi",
+    "soru": "Kamu yönetiminde 'etkinlik' en çok neyi ifade eder?",
+    "secenekler": [
+      "Az kaynakla çok çıktı",
+      "Daha çok personel",
+      "Daha çok bina",
+      "Daha çok kural"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kaynak/çıktı verimliliği."
+  },
+  {
+    "konu": "Kamu Politikası",
+    "soru": "Politika formülasyonu aşamasında ne yapılır?",
+    "secenekler": [
+      "Sorun tanımlanır",
+      "Çözüm alternatifleri geliştirilir",
+      "Uygulanır",
+      "Sonuç raporu yazılır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Alternatifler oluşturulur."
+  },
+  {
+    "konu": "Yönetim Hukuku",
+    "soru": "Merkezden yönetimin temel özelliği hangisidir?",
+    "secenekler": [
+      "Tek merkezde karar",
+      "Özerk yerel birimler",
+      "Seçimli valiler",
+      "Sınırsız yetki"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Karar alma merkezde toplanır."
+  },
+  {
+    "konu": "Kentleşme",
+    "soru": "Gecekondu olgusunun temel nedeni hangisidir?",
+    "secenekler": [
+      "Planlı imar",
+      "Hızlı göç ve barınma ihtiyacı",
+      "Nüfusun azalması",
+      "Kırsal refah"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hızlı göç ve konut ihtiyacı."
+  },
+  {
+    "konu": "Türk Siyasi Hayatı",
+    "soru": "1982 Anayasası hangi olay sonrası hazırlanmıştır?",
+    "secenekler": [
+      "1960 müdahalesi",
+      "1971 muhtırası",
+      "1980 müdahalesi",
+      "2001 krizi"
+    ],
+    "dogru_index": 2,
+    "aciklama": "1980 sonrası."
+  },
+  {
+    "konu": "Siyaset Bilimi",
+    "soru": "Çoğulculuk aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Tek görüş",
+      "Farklı görüşlerin varlığı",
+      "Askeri yönetim",
+      "Tek parti"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Pluralizm."
+  },
+  {
+    "konu": "Yönetim Bilimi",
+    "soru": "Hiyerarşi ilkesi en çok hangi yapıda belirgindir?",
+    "secenekler": [
+      "Bürokrasi",
+      "Aile",
+      "Pazar",
+      "Dernek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Bürokratik örgüt."
+  },
+  {
+    "konu": "Kentleşme",
+    "soru": "Sürdürülebilir şehircilik hangi hedefi önceler?",
+    "secenekler": [
+      "Kaynakları hoyratça tüketmek",
+      "Çevre-toplum-ekonomi dengesini korumak",
+      "Sadece rant",
+      "Sadece beton"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Üçlü denge."
+  }
 ]
