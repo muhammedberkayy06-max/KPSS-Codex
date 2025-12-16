@@ -78,6 +78,8 @@ const TOPIC_GUIDE = {
 };
 
 const HF_MODEL_DEFAULT = "HuggingFaceH4/zephyr-7b-beta";
+const OLLAMA_MODEL_DEFAULT = "mistral";
+const OLLAMA_URL_DEFAULT = "http://localhost:11434";
 
 // ---------- ücretsiz yerel AI soru üretici ----------
 const AI_TEMPLATES = {
@@ -313,16 +315,23 @@ function appendQuestions(lesson, questions, sourceLabel, desiredCount){
   const bank = App.allBanks[lesson] || [];
   const stamped = [];
   const seen = App.fingerprints || new Set();
-  const corpus = App.aiCorpus || loadAICorpus();
+  const corpus = Array.isArray(App.canonicals) ? [...App.canonicals] : [];
+  const recentCorpus = corpus.slice(-600); // near-dup kontrolü için son kayıtları tara
+  const existingCanon = bank.slice(-220).map(q => canonicalizeForSim(q));
+  const nearDupes = [];
 
   const tryAdd = (q, idx)=>{
     const base = normalizeQuestion(q);
     const fp = fingerprintQuestion(base);
+    const canonical = canonicalizeForSim(base);
     if (fp && seen.has(fp)) return false;
-    const canon = canonicalQuestionText(base);
-    if (isNearDuplicate(canon, corpus)) return false;
+    const isNearDup = recentCorpus.some(text => trigramSimilarity(text, canonical) > 0.86) || existingCanon.some(text => trigramSimilarity(text, canonical) > 0.86);
+    if (isNearDup){
+      nearDupes.push(base.soru?.slice(0,80) || "benzer soru");
+      return false;
+    }
     if (fp) seen.add(fp);
-    if (canon) corpus.push(canon);
+    if (canonical) corpus.push(canonical);
     base.id = base.id || `${sourceLabel||"AI"}-${lesson}-${Date.now()}-${idx}-${Math.random().toString(36).slice(2,6)}`;
     base.kaynak = sourceLabel || base.kaynak || "AI";
     base.lesson = base.lesson || lesson;
@@ -346,12 +355,15 @@ function appendQuestions(lesson, questions, sourceLabel, desiredCount){
   }
 
   App.fingerprints = seen;
+  App.canonicals = corpus;
   persistFingerprintSet(seen);
-  App.aiCorpus = corpus;
-  persistAICorpus(corpus);
+  persistCanonicalCorpus(corpus);
 
   if (stamped.length < questions.length){
     recordError(lesson, `${questions.length - stamped.length} soru yinelenme nedeniyle atlandı`, { kind:"warn" });
+  }
+  if (nearDupes.length){
+    recordError(lesson, `${nearDupes.length} soru benzerlikten reddedildi`, { kind:"warn", detail: nearDupes.slice(0,3).join(" | ") });
   }
 
   bank.push(...stamped);
@@ -360,15 +372,53 @@ function appendQuestions(lesson, questions, sourceLabel, desiredCount){
   return stamped;
 }
 
+function buildExamBlueprint(lesson, count){
+  const topics = TOPIC_GUIDE[lesson] || ["Genel"];
+  const types = ["yorum", "bilgi", "senaryo", "uygulama", "tablo/grafik"];
+  const plan = [];
+  const rotatedTopics = shuffle([...topics]);
+  const difficultyTargets = {
+    easy: Math.max(10, Math.round(count * 0.35)),
+    medium: Math.max(10, Math.round(count * 0.4)),
+    hard: Math.max(6, count - Math.round(count * 0.35) - Math.round(count * 0.4)),
+  };
+  let idx = 0;
+  const difficulties = [];
+  difficulties.push(...Array(difficultyTargets.easy).fill("kolay"));
+  difficulties.push(...Array(difficultyTargets.medium).fill("orta"));
+  difficulties.push(...Array(difficultyTargets.hard).fill("zor"));
+  shuffle(difficulties);
+
+  while (plan.length < count){
+    const konu = rotatedTopics[idx % rotatedTopics.length];
+    const tur = types[idx % types.length];
+    const diff = difficulties[plan.length] || "orta";
+    plan.push({ konu, tur, zorluk: diff });
+    idx++;
+  }
+  return plan;
+}
+
 function buildAIPrompt(lesson, count){
   const topics = TOPIC_GUIDE[lesson] || ["genel"];
   const hedefler = topics.slice(0, 8).map((t,i)=> `${i+1}. ${t}`).join("\n");
-  return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet benzersiz çoktan seçmeli soru üret.
-Her kayıt JSON olarak dönsün: {"konu","soru","paragraf"(opsiyonel),"secenekler":["A","B","C","D"],"dogru_index":0-3,"aciklama":"kısa çözüm"}.
-Kazanımlar (öncelik sırasıyla):\n${hedefler}\n
-Anti-tekrar kuralları: aynı kalıp, aynı sayılar/isimler, aynı paragraf veya benzer cümleler kesinlikle tekrar etmeyecek; her soru farklı bağlam/isim/sayı içerecek, seçenek sıraları karışık olacak. Soru tiplerini karıştır (yorum, bilgi, çıkarım, tablo/mini-problem). JSON dışında metin ekleme.`;
-}
+  const blueprint = buildExamBlueprint(lesson, count);
+  const blueprintLines = blueprint.slice(0, 24).map((b,i)=> `${i+1}. konu=${b.konu} tip=${b.tur} zorluk=${b.zorluk}`).join("\n");
 
+  return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet çoktan seçmeli soru üret.
+Her kayıt JSON olarak dönsün: {"konu","soru","paragraf"(isteğe bağlı),"secenekler":["A","B","C","D"],"dogru_index":0-3,"aciklama":"kısa çözüm"}.
+Kazanımlar (öncelik sırasıyla):\n${hedefler}\n
+Plan/blueprint (çeşitliliği koru, mümkün olduğunca bu plana uy):\n${blueprintLines}\n
+Anti-tekrar ve çeşitlilik kuralları:
+- Aynı kalıp, aynı sayılar, aynı karakter isimleri TEKRAR ETME.
+- Soruları farklı bağlam, farklı veri/isim/tarih ile kur; her soru benzersiz olsun.
+- Seçenekler karışık sırada, en az 4 şık üret; doğru cevap tekil olsun.
+- Paragraf varsa özgün metin yaz, başka sorularla paylaşma.
+- Matematikte sayıları, katsayıları ve işlemleri değiştir; aynı çözüm yolunu kopyalama.
+- Açıklama kısa ve hedefe yönelik olsun, MathJax/LaTeX uyumlu yazılabilir.
+
+Yalnızca JSON array döndür.`;
+}
 function extractJSONSegment(text){
   const match = text.match(/\[[\s\S]*\]/);
   if (match) return match[0];
@@ -431,6 +481,32 @@ async function fetchHuggingFaceAI(lesson, count, opts = {}){
   return questions;
 }
 
+async function fetchOllamaAI(lesson, count, opts = {}){
+  const { ollamaUrl = OLLAMA_URL_DEFAULT, ollamaModel = OLLAMA_MODEL_DEFAULT, temperature = 0.78, topP = 0.9, maxTokens } = opts;
+  const prompt = buildAIPrompt(lesson, count);
+  const url = `${ollamaUrl.replace(/\/$/, "")}/api/generate`;
+  const body = JSON.stringify({
+    model: ollamaModel,
+    prompt,
+    stream: false,
+    options: {
+      temperature,
+      top_p: topP,
+      num_predict: Math.min(maxTokens || (520 * count), 4096),
+    }
+  });
+
+  const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body, signal: opts.signal });
+  if (!res.ok){
+    const detail = await res.text();
+    throw new Error(`Ollama yanıtı alınamadı (${res.status}): ${detail.slice(0,120)}`);
+  }
+  const data = await res.json();
+  const text = data?.response || data?.message?.content || JSON.stringify(data);
+  const questions = parseAITextToQuestions(text || "", lesson).map(q => ({ ...q, kaynak: "AI (Ollama yerel)" }));
+  return questions;
+}
+
 async function fetchHFBatched(lesson, total){
   const out = [];
   const guard = Math.max(3, Math.ceil(total / 12));
@@ -450,6 +526,40 @@ async function fetchHFBatched(lesson, total){
   return out.slice(0, total);
 }
 
+async function fetchOllamaBatched(lesson, total, opts = {}){
+  const out = [];
+  const guard = Math.max(3, Math.ceil(total / 10));
+  let tries = 0;
+  while (out.length < total && tries < guard){
+    tries++;
+    const need = Math.min(10, total - out.length);
+    try {
+      const batch = await fetchOllamaAI(lesson, need, { ...opts, maxTokens: 520 * need });
+      out.push(...batch);
+    } catch (e) {
+      console.warn("Ollama batch hatası", e);
+      if (tries >= guard) throw e;
+    }
+    if (out.length < total) await delay(320);
+  }
+  return out.slice(0, total);
+}
+
+async function produceAIQuestions(provider, lesson, count, settings){
+  if (provider === "ollama"){
+    return fetchOllamaBatched(lesson, count, {
+      ollamaUrl: settings?.ollamaUrl,
+      ollamaModel: settings?.ollamaModel,
+      temperature: settings?.temperature,
+      topP: settings?.topP,
+    });
+  }
+  if (provider === "hf"){
+    return fetchHFBatched(lesson, count);
+  }
+  return [];
+}
+
 function typesetMath(root){
   try{
     if (!window.MathJax || !MathJax.typesetPromise) return;
@@ -458,40 +568,42 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
-function openExamWindowShell(title, subtitle){
-  const w = window.open("", `exam-${Date.now()}`, "noopener");
+function openExamWindowShell(title, subtitle, jobId){
+  const shellHTML = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+  <style>
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+    .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:480px;margin:60px auto;text-align:center;}
+    h1{margin:0 0 8px;font-size:20px;font-weight:800;}
+    p{margin:0;color:#475569;}
+  </style></head><body>
+    <div class="box">
+      <h1>${escapeHTML(title)}</h1>
+      <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
+      <p>Yeni sekme açıldıysa lütfen bekleyin.</p>
+    </div>
+  </body></html>`;
+
+  const url = `${location.origin}${location.pathname}#${encodeURIComponent(jobId || "exam-shell")}`;
+  const w = window.open(url, jobId ? `exam-shell-${jobId}` : "exam-shell", "noopener");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return null;
   }
   w.document.open();
-  w.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
-  <style>
-    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f172a;color:#0f172a;margin:0;padding:32px;}
-    .box{background:rgba(255,255,255,0.9);backdrop-filter:blur(10px);border:1px solid #e2e8f0;border-radius:18px;padding:20px;box-shadow:0 16px 40px rgba(15,23,42,0.15);max-width:520px;margin:80px auto;text-align:center;}
-    h1{margin:0 0 8px;font-size:20px;font-weight:800;color:#0f172a;}
-    p{margin:6px 0;color:#334155;}
-    .spinner{width:44px;height:44px;border-radius:50%;border:4px solid #bae6fd;border-top-color:#0ea5e9;margin:14px auto;animation:spin 1s linear infinite;}
-    @keyframes spin{to{transform:rotate(360deg);}}
-  </style></head><body>
-    <div class="box">
-      <div class="spinner"></div>
-      <h1>${escapeHTML(title)}</h1>
-      <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
-      <p>Yeni sekme açıldı; sorular hazırlanırken bu pencerede bekleyebilirsin.</p>
-    </div>
-  </body></html>`);
+  w.document.write(shellHTML);
   w.document.close();
+  try {
+    w.history.replaceState(null, "", url);
+  } catch (e){ /* history replace can fail on some browsers */ }
   return w;
 }
 
 function renderExamWindow(title, questions, subtitle, existingWin){
-  const w = existingWin || openExamWindowShell(title, subtitle || "Sorular hazırlanıyor…");
+  const w = existingWin && !existingWin.closed ? existingWin : window.open(`${location.origin}${location.pathname}#exam-shell`, "exam-shell");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return;
   }
-  w.document.open();
   const list = questions.map((q, i)=>{
     const lesson = q.lesson || inferLesson(q);
     const opts = (q.options||[]).map((opt, idx)=>`<li><strong>${String.fromCharCode(65+idx)}.</strong> ${escapeHTML(opt)}</li>`).join("");
@@ -601,51 +713,38 @@ function hashString(str){
 
 function fingerprintQuestion(q){
   const base = q && q.soru !== undefined ? q : normalizeQuestion(q);
-  const content = [base.konu, base.paragraf || "", base.soru, ...(base.options||[]), base.explain || ""]
-    .map(normalizeForFingerprint)
-    .join("|");
-  const canon = normalizeForFingerprint(content);
+  const canon = canonicalizeForSim(base);
   if (!canon) return null;
   return hashString(canon);
 }
 
-function canonicalQuestionText(q){
-  const base = q && q.soru !== undefined ? q : normalizeQuestion(q);
-  const parts = [base.konu, base.paragraf || "", base.soru, ...(base.options||[]), base.explain || ""];
-  return normalizeForFingerprint(parts.join(" "));
+function canonicalizeForSim(base){
+  if (!base) return "";
+  const content = [base.konu, base.paragraf || "", base.soru, ...(base.options||[]), base.explain || ""]
+    .map(normalizeForFingerprint)
+    .join("|");
+  return normalizeForFingerprint(content);
 }
 
-function trigramSet(text){
-  const clean = normalizeForFingerprint(text);
-  const out = new Set();
+function trigramTokens(str){
+  const clean = normalizeForFingerprint(str);
+  const grams = new Set();
   for (let i = 0; i < clean.length - 2; i++){
-    out.add(clean.slice(i, i + 3));
+    grams.add(clean.slice(i, i + 3));
   }
-  return out;
+  return grams;
 }
 
-function trigramJaccard(a, b){
+function trigramSimilarity(a, b){
   if (!a || !b) return 0;
-  const setA = trigramSet(a);
-  const setB = trigramSet(b);
-  let inter = 0;
-  for (const tri of setA){
-    if (setB.has(tri)) inter++;
+  const A = trigramTokens(a);
+  const B = trigramTokens(b);
+  if (!A.size || !B.size) return 0;
+  let intersect = 0;
+  for (const g of A){
+    if (B.has(g)) intersect++;
   }
-  const union = setA.size + setB.size - inter || 1;
-  return inter / union;
-}
-
-function isNearDuplicate(canon, corpus, threshold = 0.86){
-  if (!canon || !corpus || !corpus.length) return false;
-  const recent = corpus.slice(-400);
-  let maxSim = 0;
-  for (const c of recent){
-    const sim = trigramJaccard(canon, c);
-    if (sim > maxSim) maxSim = sim;
-    if (sim >= threshold) return true;
-  }
-  return false;
+  return intersect / Math.max(A.size, B.size);
 }
 
 function normalizeQuestion(q){
@@ -1122,15 +1221,20 @@ function ensureState(){
   s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
   s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
   s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
-  s.ai ??= { provider: "hf", token: "", model: HF_MODEL_DEFAULT };
+  s.ai ??= { provider: "ollama", token: "", model: HF_MODEL_DEFAULT, ollamaUrl: OLLAMA_URL_DEFAULT, ollamaModel: OLLAMA_MODEL_DEFAULT, temperature: 0.78, topP: 0.9 };
   s.aiFingerprints ??= [];
-  s.aiCorpus ??= [];
+  s.aiCanonicals ??= [];
   return s;
 }
 
 function loadFingerprintSet(){
   const state = ensureState();
   return new Set(state.aiFingerprints || []);
+}
+
+function loadCanonicalCorpus(){
+  const state = ensureState();
+  return Array.isArray(state.aiCanonicals) ? [...state.aiCanonicals] : [];
 }
 
 function persistFingerprintSet(set){
@@ -1141,14 +1245,9 @@ function persistFingerprintSet(set){
   saveState(state);
 }
 
-function loadAICorpus(){
+function persistCanonicalCorpus(list){
   const state = ensureState();
-  return state.aiCorpus || [];
-}
-
-function persistAICorpus(arr){
-  const state = ensureState();
-  state.aiCorpus = (arr || []).slice(-1200);
+  state.aiCanonicals = (list || []).slice(-1200);
   saveState(state);
 }
 
@@ -1200,7 +1299,7 @@ const App = {
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
   fingerprints: loadFingerprintSet(),
-  aiCorpus: loadAICorpus(),
+  canonicals: loadCanonicalCorpus(),
 };
 
 // ---------- UI wiring ----------
@@ -1818,6 +1917,137 @@ function goHome(){
   setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
 }
 
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function togglePlanCta(show){
+  const box = $("planCta");
+  if (!box) return;
+  box.hidden = !show;
+  if (show){
+    $("btnPlanStart")?.focus();
+  }
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "ollama";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const ollamaUrl = state.ai?.ollamaUrl || OLLAMA_URL_DEFAULT;
+  const ollamaModel = state.ai?.ollamaModel || OLLAMA_MODEL_DEFAULT;
+  const temperature = state.ai?.temperature ?? 0.78;
+  const topP = state.ai?.topP ?? 0.9;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+  const oUrl = $("ollamaUrl");
+  if (oUrl) oUrl.value = ollamaUrl;
+  const oModel = $("ollamaModel");
+  if (oModel) oModel.value = ollamaModel;
+  const temp = $("aiTemp");
+  if (temp) temp.value = temperature;
+  const top = $("aiTopP");
+  if (top) top.value = topP;
+}
+
+function readAISettings(){
+  const state = ensureState();
+  const provider = $("aiProvider")?.value || state.ai.provider || "ollama";
+  const token = $("hfToken")?.value || state.ai.token || "";
+  const model = $("hfModel")?.value || state.ai.model || HF_MODEL_DEFAULT;
+  const ollamaUrl = $("ollamaUrl")?.value || state.ai.ollamaUrl || OLLAMA_URL_DEFAULT;
+  const ollamaModel = $("ollamaModel")?.value || state.ai.ollamaModel || OLLAMA_MODEL_DEFAULT;
+  const temperature = parseFloat($("aiTemp")?.value) || state.ai.temperature || 0.78;
+  const topP = parseFloat($("aiTopP")?.value) || state.ai.topP || 0.9;
+
+  state.ai.provider = provider;
+  state.ai.token = token;
+  state.ai.model = model;
+  state.ai.ollamaUrl = ollamaUrl;
+  state.ai.ollamaModel = ollamaModel;
+  state.ai.temperature = clamp(temperature, 0.1, 1.2);
+  state.ai.topP = clamp(topP, 0.1, 1);
+  saveState(state);
+
+  return {
+    provider,
+    token,
+    model,
+    ollamaUrl,
+    ollamaModel,
+    temperature: state.ai.temperature,
+    topP: state.ai.topP,
+  };
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
   document.querySelectorAll(".mode-btn").forEach(b=>{
@@ -2023,19 +2253,6 @@ async function loadAllBanks(){
   await Promise.all(jobs);
   App.allBanks = banks;
   rebuildFingerprints(banks);
-
-  const corpusSeed = [];
-  Object.values(banks).forEach(list => {
-    (list||[]).forEach(q => {
-      const c = canonicalQuestionText(q);
-      if (c) corpusSeed.push(c);
-    });
-  });
-  if (corpusSeed.length){
-    const merged = (App.aiCorpus || []).concat(corpusSeed);
-    App.aiCorpus = merged.slice(-1200);
-    persistAICorpus(App.aiCorpus);
-  }
 
    renderLessonIcons(App.mode);
 
@@ -2691,40 +2908,31 @@ function buildExamPlan(type){
 
 async function handleAIExam(type){
   const { plan, total, label } = buildExamPlan(type);
-  const providerSel = $("aiProvider");
-  if (providerSel && providerSel.value !== "hf") {
-    providerSel.value = "hf";
-    setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılıyor.", "info");
-  }
+  const settings = readAISettings();
+  const provider = settings.provider;
 
-  // var olan AI ayarlarını formdan çekip sakla
-  const state = ensureState();
-  state.ai.provider = "hf";
-  state.ai.token = $("hfToken")?.value || "";
-  state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
-  saveState(state);
-
-  const previewWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…");
+  const jobId = `exam-${Date.now()}-${Math.random().toString(36).slice(2,8)}`;
+  const previewWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…", jobId);
 
   if (!Object.keys(App.allBanks||{}).length){
     await loadAllBanks();
   }
 
-  setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
+  setNotice(`${label} deneme için AI soru üretimi (${provider}) başlatıldı…`, "info");
   const created = [];
   for (const [lesson, n] of Object.entries(plan)){
     let batch = [];
     try {
-      batch = await fetchHFBatched(lesson, n);
+      batch = await produceAIQuestions(provider, lesson, n, settings);
     } catch (e) {
       console.warn(e);
-      setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
+      setNotice(`${lesson} için ${provider} üretimi kısmen başarısız: ${e.message}`, "error");
     }
     if (batch.length < n){
       const fallback = injectAIQuestions(lesson, n - batch.length);
       batch.push(...fallback);
     }
-    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)", n);
+    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : (batch[0]?.kaynak || "AI (ücretsiz yerel)"), n);
     stamped.forEach(q=> created.push({ ...q, lesson }));
   }
 
@@ -2740,7 +2948,7 @@ async function handleAIExam(type){
     return;
   }
 
-  const subtitle = `${label} · ${created.length} soru · ${now()} · Hugging Face (internet) + yerel yedek`;
+  const subtitle = `${label} · ${created.length} soru · ${now()} · ${provider === "ollama" ? "Ollama (yerel)" : provider === "hf" ? "Hugging Face (internet)" : "Yerel üretici"}`;
   renderExamWindow(`${label} AI Deneme`, created, subtitle, previewWin);
   setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
 }
@@ -2748,26 +2956,22 @@ async function handleAIExam(type){
 async function handleAIGenerate(){
   const lesson = $("aiLesson")?.value || App.lesson;
   const count = clamp(parseInt($("aiCount")?.value || "3", 10) || 3, 1, 20);
-  const provider = $("aiProvider")?.value || "hf";
-
-  const state = ensureState();
-  state.ai.provider = provider;
-  state.ai.token = $("hfToken")?.value || "";
-  state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
-  saveState(state);
+  const settings = readAISettings();
+  const provider = settings.provider;
 
   if (!Object.keys(App.allBanks||{}).length){
     await loadAllBanks();
   }
 
   let fresh = [];
-  if (provider === "hf"){
+  if (provider === "hf" || provider === "ollama"){
     try{
-      const onlineQs = await fetchHuggingFaceAI(lesson, count);
-      fresh = appendQuestions(lesson, onlineQs, "AI (Hugging Face internet)", count);
+      const onlineQs = await produceAIQuestions(provider, lesson, count, settings);
+      const src = provider === "ollama" ? "AI (Ollama yerel)" : "AI (Hugging Face internet)";
+      fresh = appendQuestions(lesson, onlineQs, src, count);
     }catch(e){
       console.warn(e);
-      setNotice("İnternet AI üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
+      setNotice(`AI üretimi (${provider}) başarısız: ${e.message} · yerel üreticiye düşülüyor`, "error");
     }
   }
 
@@ -2779,7 +2983,7 @@ async function handleAIGenerate(){
   const msg = `🤖 ${lesson}: ${fresh.length} yeni soru eklendi (toplam ${total})`;
   setNotice(msg, "info");
   const status = $("aiStatus");
-  if (status) status.textContent = msg + (provider === "hf" && fresh[0]?.kaynak?.includes("Hugging") ? " · Hugging Face (internet)" : " · yerel üretim");
+  if (status) status.textContent = msg + (provider === "hf" && fresh[0]?.kaynak?.includes("Hugging") ? " · Hugging Face (internet)" : provider === "ollama" ? " · Ollama (yerel)" : " · yerel üretim");
 }
 
 // PWA install helper
