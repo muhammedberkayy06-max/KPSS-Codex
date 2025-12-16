@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v9";
+const APP_VERSION = "v10";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -395,11 +395,24 @@ async function fetchJSON(path){
   const cacheKey = bare.split("?")[0];
 
   const tryParse = (txt) => {
-    const clean = txt.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
+    const clean = txt.replace(/^\uFEFF/, "").trim();
     if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
-    try {
-      return JSON.parse(clean);
-    } catch { return null; }
+
+    const attempt = (payload) => {
+      try { return JSON.parse(payload); } catch { return null; }
+    };
+
+    // doğrudan dene
+    const direct = attempt(clean);
+    if (direct) return direct;
+
+    // Dosya başı/sonuna sızan gereksiz metinleri ayıkla
+    const match = clean.match(/(\{[\s\S]*\}|\[[\s\S]*\])/);
+    if (match) {
+      const trimmed = attempt(match[1]);
+      if (trimmed) return trimmed;
+    }
+    return null;
   };
 
   const tryEmbedded = () => {
