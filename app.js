@@ -420,8 +420,31 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
-function renderExamWindow(title, questions, subtitle, preOpened){
-  const w = preOpened || window.open("", "_blank");
+function openExamWindowShell(title, subtitle){
+  const w = window.open("about:blank", "_blank", "noopener");
+  if (!w){
+    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
+    return null;
+  }
+  w.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+  <style>
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+    .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:480px;margin:60px auto;text-align:center;}
+    h1{margin:0 0 8px;font-size:20px;font-weight:800;}
+    p{margin:0;color:#475569;}
+  </style></head><body>
+    <div class="box">
+      <h1>${escapeHTML(title)}</h1>
+      <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
+      <p>Yeni sekme açıldıysa lütfen bekleyin.</p>
+    </div>
+  </body></html>`);
+  w.document.close();
+  return w;
+}
+
+function renderExamWindow(title, questions, subtitle, existingWin){
+  const w = existingWin || window.open("", "_blank");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return;
@@ -1822,21 +1845,14 @@ async function handleAIExam(type){
     setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılıyor.", "info");
   }
 
-  // Mobil/iPad pop-up engeline takılmamak için sekmeyi hemen açıp içeride güncelleriz
-  const examWin = window.open("about:blank", "_blank");
-  if (!examWin) {
-    setNotice("Yeni sekme açılamadı. Tarayıcıdan pop-up izni verip tekrar dene.", "error");
-    return;
-  }
-  examWin.document.write(`<p style="font-family:Inter, sans-serif; padding:18px;">${label} hazırlanıyor…</p>`);
-  examWin.document.close();
-
   // var olan AI ayarlarını formdan çekip sakla
   const state = ensureState();
   state.ai.provider = "hf";
   state.ai.token = $("hfToken")?.value || "";
   state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
   saveState(state);
+
+  const previewWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…");
 
   if (!Object.keys(App.allBanks||{}).length){
     await loadAllBanks();
@@ -1861,12 +1877,19 @@ async function handleAIExam(type){
   }
 
   if (!created.length){
+    if (previewWin){
+      previewWin.document.body.innerHTML = `
+        <div style="font-family:Inter,-apple-system;max-width:520px;margin:80px auto;text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);">
+          <h1 style="margin:0 0 6px;font-size:20px;">Deneme üretilemedi</h1>
+          <p style="color:#475569;">Bağlantıyı veya modeli kontrol edip tekrar dener misin?</p>
+        </div>`;
+    }
     setNotice("AI deneme üretilemedi. Bağlantıyı veya modeli kontrol et.", "error");
     return;
   }
 
   const subtitle = `${label} · ${created.length} soru · ${now()} · Hugging Face (internet) + yerel yedek`;
-  renderExamWindow(`${label} AI Deneme`, created, subtitle, examWin);
+  renderExamWindow(`${label} AI Deneme`, created, subtitle, previewWin);
   setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
 }
 
