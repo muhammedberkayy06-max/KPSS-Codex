@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v12";
+const APP_VERSION = "v13";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -39,6 +39,15 @@ const GK_GY_DISTRIBUTION = {
   "Vatandaşlık": 9,
 };
 
+// 120 soruluk AI deneme için ölçeklenmiş dağılım
+const GK_GY_EXAM_DISTRIBUTION = {
+  "Türkçe": 30,
+  "Matematik": 30,
+  "Tarih": 27,
+  "Coğrafya": 18,
+  "Vatandaşlık": 15,
+};
+
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
 
 const STORE_KEY = "kpss_ultimate_v1";
@@ -50,6 +59,7 @@ const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
 const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
 const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const delay = (ms) => new Promise((resolve)=> setTimeout(resolve, ms));
 
 // ---------- konu rehberi (AI istemi için) ----------
 const TOPIC_GUIDE = {
@@ -303,6 +313,7 @@ function appendQuestions(lesson, questions, sourceLabel){
     const base = normalizeQuestion(q);
     base.id = base.id || `${sourceLabel||"AI"}-${lesson}-${Date.now()}-${idx}-${Math.random().toString(36).slice(2,6)}`;
     base.kaynak = sourceLabel || base.kaynak || "AI";
+    base.lesson = base.lesson || lesson;
     return base;
   });
   bank.push(...stamped);
@@ -350,9 +361,10 @@ function parseAITextToQuestions(text, lesson){
   });
 }
 
-async function fetchHuggingFaceAI(lesson, count){
-  const token = $("hfToken")?.value.trim();
-  const model = $("hfModel")?.value.trim() || HF_MODEL_DEFAULT;
+async function fetchHuggingFaceAI(lesson, count, opts = {}){
+  const token = ((opts.tokenOverride !== undefined ? opts.tokenOverride : $("hfToken")?.value) || "").trim();
+  const modelRaw = (opts.modelOverride !== undefined ? opts.modelOverride : $("hfModel")?.value) || HF_MODEL_DEFAULT;
+  const model = (modelRaw || HF_MODEL_DEFAULT).trim() || HF_MODEL_DEFAULT;
   const url = `https://api-inference.huggingface.co/models/${encodeURIComponent(model)}`;
   const prompt = buildAIPrompt(lesson, count);
   const headers = { "Content-Type": "application/json" };
@@ -360,7 +372,12 @@ async function fetchHuggingFaceAI(lesson, count){
 
   const body = JSON.stringify({
     inputs: prompt,
-    parameters: { max_new_tokens: 512, temperature: 0.6 },
+    parameters: {
+      max_new_tokens: Math.min(opts.maxTokens || (520 * count), 4096),
+      temperature: opts.temperature ?? 0.65,
+      top_p: opts.top_p ?? 0.9,
+      return_full_text: false,
+    },
     options: { wait_for_model: true },
   });
 
@@ -376,12 +393,87 @@ async function fetchHuggingFaceAI(lesson, count){
   return questions;
 }
 
+async function fetchHFBatched(lesson, total){
+  const out = [];
+  const guard = Math.max(3, Math.ceil(total / 12));
+  let tries = 0;
+  while (out.length < total && tries < guard){
+    tries++;
+    const need = Math.min(12, total - out.length);
+    try {
+      const batch = await fetchHuggingFaceAI(lesson, need, { maxTokens: 600 * need });
+      out.push(...batch);
+    } catch (e) {
+      console.warn("HF batch hatası", e);
+      if (tries >= guard) throw e;
+    }
+    if (out.length < total) await delay(320);
+  }
+  return out.slice(0, total);
+}
+
 function typesetMath(root){
   try{
     if (!window.MathJax || !MathJax.typesetPromise) return;
     const target = root || document.body;
     MathJax.typesetPromise([target]).catch(console.warn);
   }catch(e){ console.warn(e); }
+}
+
+function renderExamWindow(title, questions, subtitle){
+  const w = window.open("", "_blank");
+  if (!w){
+    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
+    return;
+  }
+  const list = questions.map((q, i)=>{
+    const lesson = q.lesson || inferLesson(q);
+    const opts = (q.options||[]).map((opt, idx)=>`<li><strong>${String.fromCharCode(65+idx)}.</strong> ${escapeHTML(opt)}</li>`).join("");
+    const answer = q.correctIndex ?? 0;
+    const exp = escapeHTML(q.explain || "Kısa açıklama eklenecek.");
+    const para = q.paragraf ? `<p class="para">${escapeHTML(q.paragraf)}</p>` : "";
+    return `<article class="item">
+      <div class="meta">${i+1}. ${escapeHTML(lesson)} · ${escapeHTML(q.konu || "Konu")} · Kaynak: ${escapeHTML(q.kaynak||"AI")}</div>
+      <h3>${escapeHTML(q.soru)}</h3>
+      ${para}
+      <ol>${opts}</ol>
+      <div class="exp"><strong>Cevap:</strong> ${String.fromCharCode(65+(answer||0))} · ${exp}</div>
+    </article>`;
+  }).join("");
+
+  const html = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+  <style>
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+    h1{font-size:24px;margin:0 0 4px;font-weight:800;}
+    .sub{color:#475569;margin-bottom:16px;}
+    .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    .item{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);}
+    .item h3{margin:8px 0 6px;font-size:17px;}
+    .para{background:#f8fafc;padding:10px;border-radius:12px;margin:6px 0;font-size:14px;}
+    .meta{font-size:13px;color:#475569;margin-bottom:6px;}
+    ol{padding-left:16px;margin:8px 0;}
+    ol li{margin:4px 0;padding:4px 0;font-size:15px;}
+    .exp{margin-top:8px;font-size:14px;color:#0f172a;}
+    .bar{height:12px;border-radius:999px;background:linear-gradient(90deg,#0ea5e9,#a855f7);margin:12px 0;}
+    .hint{font-size:13px;color:#475569;}
+    .row{display:flex;gap:8px;align-items:center;margin:12px 0;flex-wrap:wrap;}
+    .pill{padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#0369a1;font-size:13px;border:1px solid #bae6fd;}
+    button{background:#0ea5e9;color:white;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(14,165,233,0.35);} 
+    button:hover{transform:translateY(-1px);} button:active{transform:translateY(0);} 
+  </style></head><body>
+  <h1>${escapeHTML(title)}</h1>
+  <div class="sub">${escapeHTML(subtitle || "AI deneme sınavı")}</div>
+  <div class="row">
+    <div class="pill">${questions.length} soru</div>
+    <button onclick="window.print()">🖨️ Yazdır / PDF</button>
+  </div>
+  <div class="bar"></div>
+  <div class="grid">${list}</div>
+  <p class="hint">Yeni sekmeye her tıklamada farklı sorular üretilir. Sorular Hugging Face (internet, ücretsiz) yanıtı veya yerel üretici ile tamamlandı.</p>
+  </body></html>`;
+
+  w.document.write(html);
+  w.document.close();
 }
 
 function syncLessonUI(mode = App.mode){
@@ -414,6 +506,13 @@ function syncLessonUI(mode = App.mode){
 
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
+}
+
+function escapeHTML(str){
+  return safeText(str).replace(/[&<>"']/g, (ch)=>{
+    const map = {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"};
+    return map[ch] || ch;
+  });
 }
 
 function normalizeQuestion(q){
@@ -1248,7 +1347,7 @@ function renderQuestion(){
 function inferLesson(q){
   // We don’t store lesson inside question; use current mode mapping by reference
   // fall back to selected
-  return (App.currentTest && App.currentTest.lesson) ? App.currentTest.lesson : "Ders";
+  return q.lesson || App.currentTest?.lesson || "Ders";
 }
 
 function paintOptions(){
@@ -1693,6 +1792,62 @@ function share(){
   }
 }
 
+function buildExamPlan(type){
+  if (type === "gkgy") {
+    return { plan: GK_GY_EXAM_DISTRIBUTION, total: 120, label: "GK-GY 120" };
+  }
+  const plan = {};
+  A_GROUP_LESSONS.forEach(l => plan[l] = 40);
+  return { plan, total: 200, label: "A Grubu 200" };
+}
+
+async function handleAIExam(type){
+  const { plan, total, label } = buildExamPlan(type);
+  const providerSel = $("aiProvider");
+  if (providerSel && providerSel.value !== "hf") {
+    providerSel.value = "hf";
+    setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılıyor.", "info");
+  }
+
+  // var olan AI ayarlarını formdan çekip sakla
+  const state = ensureState();
+  state.ai.provider = "hf";
+  state.ai.token = $("hfToken")?.value || "";
+  state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
+  saveState(state);
+
+  if (!Object.keys(App.allBanks||{}).length){
+    await loadAllBanks();
+  }
+
+  setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
+  const created = [];
+  for (const [lesson, n] of Object.entries(plan)){
+    let batch = [];
+    try {
+      batch = await fetchHFBatched(lesson, n);
+    } catch (e) {
+      console.warn(e);
+      setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
+    }
+    if (batch.length < n){
+      const fallback = injectAIQuestions(lesson, n - batch.length);
+      batch.push(...fallback);
+    }
+    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)");
+    stamped.forEach(q=> created.push({ ...q, lesson }));
+  }
+
+  if (!created.length){
+    setNotice("AI deneme üretilemedi. Bağlantıyı veya modeli kontrol et.", "error");
+    return;
+  }
+
+  const subtitle = `${label} · ${created.length} soru · ${now()} · Hugging Face (internet) + yerel yedek`;
+  renderExamWindow(`${label} AI Deneme`, created, subtitle);
+  setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
+}
+
 async function handleAIGenerate(){
   const lesson = $("aiLesson")?.value || App.lesson;
   const count = clamp(parseInt($("aiCount")?.value || "3", 10) || 3, 1, 20);
@@ -1777,6 +1932,8 @@ async function init(){
 
   $("btnVoice").addEventListener("click", ()=> startVoice());
   $("btnRead").addEventListener("click", ()=> readCurrent());
+  $("btnExamGK")?.addEventListener("click", ()=> handleAIExam("gkgy"));
+  $("btnExamA")?.addEventListener("click", ()=> handleAIExam("a"));
   $("btnInstall").addEventListener("click", ()=> installPWA());
   $("alertClose").addEventListener("click", ()=> showAlert(null));
 

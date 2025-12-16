@@ -150,6 +150,35 @@
       </div>
     </section>
 
+    <section id="aiExamCard" class="card space-y-4">
+      <div class="flex items-start justify-between gap-4 flex-wrap">
+        <div>
+          <p class="text-sm text-slate-500 font-semibold uppercase">AI deneme üretici</p>
+          <h3 class="text-xl font-extrabold">GK-GY 120 & A Grubu 200 soruluk sınav</h3>
+          <p class="hint">Her tıklama yeni sekmede yepyeni sorularla deneme oluşturur. İnternet tabanlı Hugging Face üretimi, eksik kaldığında yerel üreticiyle tamamlanır.</p>
+        </div>
+        <div class="pill">Ücretsiz · İnternet + Yerel yedek</div>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="field space-y-2">
+          <div>
+            <label>GY-GK (120 soru)</label>
+            <p class="hint">Türkçe 30, Matematik 30, Tarih 27, Coğrafya 18, Vatandaşlık 15.</p>
+          </div>
+          <button id="btnExamGK" class="btn primary w-full">🧠 120 soruluk GK-GY AI deneme</button>
+        </div>
+        <div class="field space-y-2">
+          <div>
+            <label>A Grubu (200 soru)</label>
+            <p class="hint">Kamu Yönetimi, İktisat, Çalışma Ekonomisi, Hukuk, Uluslararası İlişkiler'den 40'ar soru.</p>
+          </div>
+          <button id="btnExamA" class="btn w-full">🏛️ 200 soruluk A Grubu AI deneme</button>
+        </div>
+      </div>
+      <p class="hint">Yeni sekmede açılır, yazdırılabilir/PDF alınabilir. Daha yüksek kapasite için Hugging Face token ekleyebilirsin (ücretsiz community erişimi).</p>
+    </section>
+
     <section id="quizCard" class="card space-y-4" hidden>
       <div class="quiz-top">
         <span id="pillMeta" class="pill">Ders · Konu</span>
