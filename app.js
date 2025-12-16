@@ -362,27 +362,14 @@ async function fetchJSON(path){
   const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
 
-  // Bazı istemcilerde BOM veya HTML kalıntıları gelebiliyor; temizle
-  const rawText = await res.text();
-  const cleaned = rawText
-    .replace(/^\uFEFF/, "") // BOM
-    .trim();
-
+  const raw = await res.text();
   let data;
+
   try {
-    data = JSON.parse(cleaned);
-  } catch (e) {
-    // Baştaki beklenmeyen karakterleri atarak tekrar dene (örn. BOM, log çıktısı)
-    const idx = cleaned.search(/[\[{]/);
-    if (idx > 0) {
-      try {
-        data = JSON.parse(cleaned.slice(idx));
-      } catch (e2) {
-        throw new Error(`${path} JSON parse hatası: ${e2.message}`);
-      }
-    } else {
-      throw new Error(`${path} JSON parse hatası: ${e.message}`);
-    }
+    data = JSON.parse(raw);
+  } catch (err) {
+    const preview = raw.slice(0, 180).replace(/\s+/g, " ");
+    throw new Error(`${path} JSON parse hatası: ${err.message}. Örnek: ${preview}`);
   }
 
   if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
