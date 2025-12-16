@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v15";
+const APP_VERSION = "v16";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -1092,8 +1092,25 @@ function renderLessonIcons(mode="single"){
     div.className = "icon-tile";
     div.dataset.lesson = lesson;
     const count = App.allBanks?.[lesson]?.length || 0;
-    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
-                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    const emoji = document.createElement("span");
+    emoji.className = "emoji";
+    emoji.textContent = LESSON_ICONS[lesson] || "📘";
+
+    const meta = document.createElement("div");
+    meta.className = "meta";
+
+    const name = document.createElement("span");
+    name.className = "name";
+    name.textContent = lesson;
+
+    const cnt = document.createElement("span");
+    cnt.className = "count";
+    cnt.textContent = `${count} soru`;
+
+    meta.appendChild(name);
+    meta.appendChild(cnt);
+    div.appendChild(emoji);
+    div.appendChild(meta);
     div.addEventListener("click", ()=> setLesson(lesson));
     wrap.appendChild(div);
   });
@@ -1361,7 +1378,7 @@ function renderQuestion(){
   q.options.forEach((text, i)=>{
     const b = document.createElement("button");
     b.className = "opt";
-    b.innerHTML = `${String.fromCharCode(65+i)}) ${safeText(text)}`;
+    b.textContent = `${String.fromCharCode(65+i)}) ${safeText(text)}`;
     b.onclick = () => onPick(i);
     if (locked) b.classList.add("disabled");
     opts.appendChild(b);
