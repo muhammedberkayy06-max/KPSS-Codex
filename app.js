@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
- const APP_VERSION = "v15";
+const APP_VERSION = "v15";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -420,11 +420,38 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
-function renderExamWindow(title, questions, subtitle, existingWin){
-  const w = existingWin || window.open("", "_blank");
+function openExamWindowShell(title, message){
+  const w = window.open("about:blank", "_blank");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return null;
+  }
+  const html = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+    <style>
+      body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:32px;display:flex;align-items:center;justify-content:center;min-height:100vh;}
+      .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:18px 20px;box-shadow:0 12px 30px rgba(15,23,42,0.08);text-align:center;max-width:520px;}
+      h1{margin:0 0 6px;font-size:20px;font-weight:800;}
+      p{margin:0;color:#475569;}
+      .spin{margin:14px auto;width:34px;height:34px;border-radius:50%;border:4px solid #e2e8f0;border-top-color:#0ea5e9;animation:spin 1s linear infinite;}
+      @keyframes spin{to{transform:rotate(360deg);}}
+    </style></head><body>
+    <div class="box">
+      <div class="spin"></div>
+      <h1>${escapeHTML(title)}</h1>
+      <p>${escapeHTML(message||"Sorular hazırlanıyor…")}</p>
+    </div>
+  </body></html>`;
+  w.document.open();
+  w.document.write(html);
+  w.document.close();
+  return w;
+}
+
+function renderExamWindow(title, questions, subtitle, existingWin){
+  const w = (existingWin && !existingWin.closed) ? existingWin : window.open("", "_blank");
+  if (!w){
+    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
+    return;
   }
   const list = questions.map((q, i)=>{
     const lesson = q.lesson || inferLesson(q);
@@ -472,6 +499,7 @@ function renderExamWindow(title, questions, subtitle, existingWin){
   <p class="hint">Yeni sekmeye her tıklamada farklı sorular üretilir. Sorular Hugging Face (internet, ücretsiz) yanıtı veya yerel üretici ile tamamlandı.</p>
   </body></html>`;
 
+  w.document.open();
   w.document.write(html);
   w.document.close();
 }
@@ -1173,44 +1201,46 @@ async function loadAllBanks(){
   const missing = [];
 
   const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
-    let errorMsg = null;
     try {
       const data = await fetchJSON(file);
       banks[lesson] = data;
     } catch (e) {
       console.error(e);
       banks[lesson] = [];
-      errorMsg = e?.message || e;
-    }
-
-    // Eğer ağ/önbellek hata verirse gömülü yedeğe düş
-    if ((!banks[lesson]?.length) && Array.isArray(window.EMBEDDED_BANKS?.[file])){
-      banks[lesson] = window.EMBEDDED_BANKS[file].map(normalizeQuestion);
-      errorMsg = null; // yedekten kurtarıldı
-    }
-
-    if (errorMsg){
-      missing.push({ lesson, file, error: errorMsg });
+      missing.push({ lesson, file, error: e?.message || e });
     }
   });
 
   await Promise.all(jobs);
+  const usedFallback = [];
+  Object.entries(FILES).forEach(([lesson, file]) => {
+    if (!Array.isArray(banks[lesson]) || banks[lesson].length === 0){
+      const embedded = window.EMBEDDED_BANKS?.[file];
+      if (Array.isArray(embedded)){
+        banks[lesson] = embedded.map(normalizeQuestion);
+        usedFallback.push(lesson);
+      }
+    }
+  });
+
   App.allBanks = banks;
 
-   renderLessonIcons(App.mode);
+  renderLessonIcons(App.mode);
 
-   const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
-   updateStats(total);
+  const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
+  updateStats(total);
 
-   if (missing.length){
-     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
-     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
-     showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
-   } else {
-     setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
-   }
+  const stillMissing = Object.entries(FILES).filter(([lesson]) => !banks[lesson]?.length);
+  if (stillMissing.length){
+    const names = stillMissing.map(([lesson, file])=>`${lesson} (${file})`).join(", ");
+    setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
+    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+  } else {
+    const fallbackMsg = usedFallback.length ? ` · ${usedFallback.join(', ')} dersleri gömülü yedekten yüklendi` : "";
+    setNotice(`Soru paketleri hazır ✅ · ${total} soru${fallbackMsg}`, "info");
+  }
 
-   syncLessonUI(App.mode);
+  syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -1826,25 +1856,16 @@ function buildExamPlan(type){
 }
 
 async function handleAIExam(type){
-  const popup = window.open("about:blank", "_blank");
-  if (!popup){
-    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
-    return;
-  }
-
-  const renderLoading = (msg)=>{
-    popup.document.open();
-    popup.document.write(`<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>Deneme hazırlanıyor…</title><style>body{font-family:'Inter',-apple-system,'Segoe UI',sans-serif; padding:28px; color:#0f172a;} .pill{display:inline-block;padding:6px 12px;border-radius:999px;background:#e0f2fe;color:#0369a1;font-weight:800;border:1px solid #bae6fd;}</style></head><body><div class="pill">⏳</div><h2>${msg}</h2><p>Yeni sekme açık kaldı; üretim tamamlanınca sorular burada gösterilecek.</p></body></html>`);
-    popup.document.close();
-  };
-
-  renderLoading("Deneme hazırlanıyor…");
-
   const { plan, total, label } = buildExamPlan(type);
   const providerSel = $("aiProvider");
   if (providerSel && providerSel.value !== "hf") {
     providerSel.value = "hf";
     setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılıyor.", "info");
+  }
+
+  const examWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…");
+  if (!examWin){
+    return;
   }
 
   // var olan AI ayarlarını formdan çekip sakla
@@ -1854,44 +1875,36 @@ async function handleAIExam(type){
   state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
   saveState(state);
 
-  try {
-    if (!Object.keys(App.allBanks||{}).length){
-      await loadAllBanks();
-    }
-
-    setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
-    const created = [];
-    for (const [lesson, n] of Object.entries(plan)){
-      let batch = [];
-      try {
-        batch = await fetchHFBatched(lesson, n);
-      } catch (e) {
-        console.warn(e);
-        setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
-      }
-      if (batch.length < n){
-        const fallback = injectAIQuestions(lesson, n - batch.length);
-        batch.push(...fallback);
-      }
-      const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)");
-      stamped.forEach(q=> created.push({ ...q, lesson }));
-    }
-
-    if (!created.length){
-      renderLoading("AI deneme üretilemedi");
-      setNotice("AI deneme üretilemedi. Bağlantıyı veya modeli kontrol et.", "error");
-      return;
-    }
-
-    const subtitle = `${label} · ${created.length} soru · ${now()} · Hugging Face (internet) + yerel yedek`;
-    renderExamWindow(`${label} AI Deneme`, created, subtitle, popup);
-    setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
-  } catch (e) {
-    console.error(e);
-    renderLoading("Üretim başarısız oldu");
-    popup.document.body.innerHTML += `<p style="color:#b91c1c; font-weight:700">${escapeHTML(e.message||"Bilinmeyen hata")}</p>`;
-    setNotice("AI deneme üretimi başarısız oldu.", "error");
+  if (!Object.keys(App.allBanks||{}).length){
+    await loadAllBanks();
   }
+
+  setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
+  const created = [];
+  for (const [lesson, n] of Object.entries(plan)){
+    let batch = [];
+    try {
+      batch = await fetchHFBatched(lesson, n);
+    } catch (e) {
+      console.warn(e);
+      setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
+    }
+    if (batch.length < n){
+      const fallback = injectAIQuestions(lesson, n - batch.length);
+      batch.push(...fallback);
+    }
+    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)");
+    stamped.forEach(q=> created.push({ ...q, lesson }));
+  }
+
+  if (!created.length){
+    setNotice("AI deneme üretilemedi. Bağlantıyı veya modeli kontrol et.", "error");
+    return;
+  }
+
+  const subtitle = `${label} · ${created.length} soru · ${now()} · Hugging Face (internet) + yerel yedek`;
+  renderExamWindow(`${label} AI Deneme`, created, subtitle, examWin);
+  setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
 }
 
 async function handleAIGenerate(){
