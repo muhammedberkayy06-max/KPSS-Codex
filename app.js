@@ -399,15 +399,7 @@ async function fetchJSON(path){
     if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
     try {
       return JSON.parse(clean);
-    } catch (err) {
-      try {
-        const fixed = clean.replace(/,\s*([}\]])/g, "$1");
-        return JSON.parse(fixed);
-      } catch (err2) {
-        console.warn("JSON ayrıştırma hatası:", err2?.message || err2);
-        return null;
-      }
-    }
+    } catch { return null; }
   };
 
   const tryEmbedded = () => {
@@ -425,7 +417,7 @@ async function fetchJSON(path){
     if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
     const rawText = await res.text();
     const parsed = tryParse(rawText);
-    if (parsed) return parsed;
+    if (parsed !== null) return parsed;
     throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
   };
 
