@@ -9,7 +9,8 @@
       "8"
     ],
     "dogru_index": 1,
-    "aciklama": "3x − 5 = 16 → 3x = 21 → x = 7"
+    "aciklama": "3x − 5 = 16 ise her iki tarafa 5 ekleyip 3'e böleriz.",
+    "cozum": "\\(3x - 5 = 16 \\Rightarrow 3x = 21 \\Rightarrow x = 7\\)"
   },
   {
     "konu": "Temel Kavramlar",
@@ -21,7 +22,8 @@
       "24"
     ],
     "dogru_index": 2,
-    "aciklama": "x/2 + 4 = 14 → x/2 = 10 → x = 20"
+    "aciklama": "Denklemi x/2 + 4 = 14 şeklinde yazar, 4'ü diğer tarafa alırız.",
+    "cozum": "\\(\frac{x}{2} + 4 = 14 \\Rightarrow \frac{x}{2} = 10 \\Rightarrow x = 20\\)"
   },
   {
     "konu": "Problemler",
@@ -382,6 +384,45 @@
     ],
     "dogru_index": 1,
     "aciklama": "20 / 4 = 5"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir otobüs 240 km yolu 3 saatte alıyor. Hızı %20 artırılırsa aynı yolu kaç saatte alır?",
+    "secenekler": [
+      "2",
+      "2.5",
+      "3",
+      "3.5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Başlangıç hızı 80 km/sa. %20 artınca 96 km/sa olur. 240/96 ≈ 2,5 saat.",
+    "cozum": "\\(v=\\tfrac{240}{3}=80\\,\\text{km/sa}, \\%20\\text{ artış}\\Rightarrow 96. \\; t=\\tfrac{240}{96}=2{,}5\\)"
+  },
+  {
+    "konu": "Geometri",
+    "soru": "Bir dik üçgende dik kenarlar 6 ve 8 birimdir. Hipotenüsün orta noktasının köşelere uzaklığı kaç birimdir?",
+    "secenekler": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Dik üçgende hipotenüs orta noktası üç köşeye eşit uzaklıktadır ve bu uzaklık hipotenüsün yarısıdır. 6-8-10 üçgeninde cevap 5'tir.",
+    "cozum": "\\(c=\\sqrt{6^2+8^2}=10, \\; MH=\\tfrac{c}{2}=5\\)"
+  },
+  {
+    "konu": "Sayı Dizileri",
+    "soru": "Aritmetik dizide a_1 = 4, a_4 = 13 ise ortak fark kaçtır?",
+    "secenekler": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "dogru_index": 1,
+    "aciklama": "a_4 = a_1 + 3d = 13 ⇒ 4 + 3d = 13 ⇒ d = 3.",
+    "cozum": "\\(a_n=a_1+(n-1)d, \\; 13=4+3d \\Rightarrow d=3\\)"
   },
   {
     "konu": "Denklemler",
@@ -1138,5 +1179,129 @@
     ],
     "dogru_index": 2,
     "aciklama": "3x−5=2x+7 → x=12"
+  },
+  {
+    "konu": "Problemler",
+    "soru": "Bir bisikletli saatte 12 km hızla gidiyor. 30 dakika sonra hızını %25 artırırsa 1,5 saatte toplam kaç kilometre yol alır?",
+    "secenekler": [
+      "21",
+      "22,5",
+      "24",
+      "25,5"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İlk 0,5 saatte 6 km; hız artınca kalan 1 saatte 15 km, toplam 21 km.",
+    "cozum": "İlk yarım saat: 12×0,5=6 km. Hız %25 artınca 12×1,25=15 km/sa. Kalan 1 saat: 15 km. Toplam 6+15=21 km."
+  },
+  {
+    "konu": "Denklemler",
+    "soru": "|2x-5| = 9 denkleminin kökleri toplamı kaçtır?",
+    "secenekler": [
+      "7",
+      "5",
+      "-2",
+      "10"
+    ],
+    "dogru_index": 1,
+    "aciklama": "|2x-5|=9 için kökler 7 ve -2 bulunur, toplam 5tir.",
+    "cozum": "|2x-5|=9 ⇒ 2x-5=9 veya 2x-5=-9 → x=7, x=-2; toplam 5."
+  },
+  {
+    "konu": "Olasılık",
+    "soru": "Bir torbada 3 kırmızı, 2 mavi, 1 yeşil top vardır. Rastgele çekilen iki topun farklı renklerde olma olasılığı nedir?",
+    "secenekler": [
+      "14/15",
+      "4/5",
+      "2/3",
+      "11/15"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Toplam 6 top, iki çekiliş kombinasyonu 15. Farklı renkli seçme 14 olasılık verir."
+  },
+  {
+    "konu": "Geometri",
+    "soru": "Bir dik üçgende hipotenüs 13 cm, kısa kenar 5 cm ise alanı kaç cm²'dir?",
+    "secenekler": [
+      "30",
+      "24",
+      "60",
+      "26"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Uzun kenar 12 cm olur (5-12-13). Alan = 5×12/2 = 30 cm²."
+  },
+  {
+    "konu": "Fonksiyonlar",
+    "soru": "f(x)=2x^2-3x+1 fonksiyonunun x=2 noktasındaki değeri kaçtır?",
+    "secenekler": [
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "dogru_index": 0,
+    "aciklama": "f(2)=2·4−6+1=3, doğru cevap 3.",
+    "cozum": "f(2)=2(2^2)−3·2+1=8−6+1=3"
+  },
+  {
+    "konu": "Trigonometri",
+    "soru": "sin30°·cos60° ifadesinin değeri nedir?",
+    "secenekler": [
+      "1/4",
+      "1/2",
+      "√3/4",
+      "√3/2"
+    ],
+    "dogru_index": 0,
+    "aciklama": "sin30=1/2, cos60=1/2; çarpım 1/4."
+  },
+  {
+    "konu": "Logaritma",
+    "soru": "log_2 8 + log_2 4 ifadesinin sonucu nedir?",
+    "secenekler": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "dogru_index": 2,
+    "aciklama": "log₂8=3 ve log₂4=2, toplam 5 eder.",
+    "cozum": "log_2 8=3, log_2 4=2, toplam 5."
+  },
+  {
+    "konu": "İşlem",
+    "soru": "(3◦4)=3·4+4 tanımlı işlemine göre 5◦2 değeri kaçtır?",
+    "secenekler": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşlem: a◦b=a·b+b. 5◦2=10+2=12."
+  },
+  {
+    "konu": "Permütasyon",
+    "soru": "4 farklı kitabı bir rafa kaç farklı şekilde dizeriz?",
+    "secenekler": [
+      "12",
+      "16",
+      "24",
+      "20"
+    ],
+    "dogru_index": 2,
+    "aciklama": "4! = 24"
+  },
+  {
+    "konu": "Matris",
+    "soru": "A=\\begin{pmatrix}1&2\\\\0&3\\end{pmatrix} matrisinin determinantı kaçtır?",
+    "secenekler": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Determinant 1·3−0·2=3."
   }
 ]
