@@ -429,4 +429,1194 @@
     "dogru_index": 3,
     "aciklama": "Sendika üyeliği için vatandaşlık ve fiil ehliyeti şarttır."
   }
+],
+[
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "İş sözleşmesinin feshinde ihbar süresi işçinin kıdemine göre nasıl belirlenir?",
+    "secenekler": [
+      "İşveren keyfine göre",
+      "İşçinin çalıştığı süreye göre artar",
+      "Sabittir",
+      "Toplu sözleşmeyle belirlenir"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İhbar süresi, işçinin kıdemine göre farklılık gösterir ve çalışma süresi arttıkça uzar."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Emek talebinin fiyat esnekliği ne anlama gelir?",
+    "secenekler": [
+      "Emek arzının değişmesine",
+      "Ücret değişikliklerinin emek talebini ne kadar etkilediğine",
+      "Kapital stokunun artmasına",
+      "Çalışan sayısının azalmasına"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Emek talebinin ücret esnekliği, ücret değiştiğinde işverenlerin talep ettiği emek miktarının ne kadar değişeceğini ifade eder."
+  },
+  {
+    "konu": "Çalışma Psikolojisi ve Sosyolojisi",
+    "soru": "Maslow’un ihtiyaçlar hiyerarşisinde en üst basamak hangisidir?",
+    "secenekler": [
+      "Güvenlik ihtiyacı",
+      "Ait olma ihtiyacı",
+      "Saygı duyulma ihtiyacı",
+      "Kendini gerçekleştirme"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Maslow’un hiyerarşisinde kendini gerçekleştirme, bireyin potansiyelini tam anlamıyla kullanmasıdır ve en üst basamaktadır."
+  },
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "Kıdem tazminatının ödenmesi için işçinin aynı işverene bağlı olarak en az kaç yıl çalışması gerekir?",
+    "secenekler": [
+      "3 ay",
+      "1 yıl",
+      "3 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İş Kanunu’na göre işçi kıdem tazminatına hak kazanmak için en az bir yıl çalışmış olmalıdır."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşverenleri desteklemek",
+      "İşçilerin ekonomik ve sosyal haklarını korumak",
+      "Hükümeti denetlemek",
+      "Vergi toplamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikaların amacı işçilerin ekonomik, sosyal ve hukuki haklarını korumak ve geliştirmektir."
+  },
+  {
+    "konu": "Çalışma Psikolojisi ve Sosyolojisi",
+    "soru": "Motivasyon teorilerinden Herzberg’in çift faktör kuramında hangi faktörler memnuniyetsizliği önler?",
+    "secenekler": [
+      "Maaş ve çalışma koşulları",
+      "Kişisel gelişim",
+      "Yaratıcılık",
+      "Takdir edilme"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Herzberg’e göre hijyen faktörleri (maaş, çalışma koşulları vb.) yetersiz olduğunda memnuniyetsizlik yaratır; yeterli olduğunda memnuniyetsizlik ortadan kalkar."
+  },
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "Sosyal sigortaların finansmanı esas olarak hangi kaynakla sağlanır?",
+    "secenekler": [
+      "Vergiler",
+      "Primler",
+      "Bağışlar",
+      "Faiz gelirleri"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal sigorta sistemleri işçi ve işverenlerden alınan primlerle finanse edilir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Tam istihdam nedir?",
+    "secenekler": [
+      "İşsizliğin %0 olduğu durum",
+      "Her çalışanın tam zamanlı çalıştığı durum",
+      "Gönüllü işsizliğin dışında işsizlik olmadığı durum",
+      "Kamu istihdamının tümünü kapsar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Tam istihdam, ekonomik anlamda, yalnızca gönüllü işsizliğin var olduğu ve herkesin iş bulabildiği durumdur."
+  },
+  {
+    "konu": "Çalışma Psikolojisi ve Sosyolojisi",
+    "soru": "Grup içinde karar alırken 'grup düşüncesi' (groupthink) olgusu ne anlama gelir?",
+    "secenekler": [
+      "Çeşitli fikirlerin özgürce ifade edilmesi",
+      "Çatışmanın artması",
+      "Farklı görüşlerin bastırılarak uyum uğruna ortak görüşe varılması",
+      "Oylama yoluyla çoğunluk kararı"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Groupthink, uyum baskısıyla eleştirel düşüncenin azalması ve farklı bakış açılarının susturularak ortak karar alınması durumudur."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş sözleşmesi hangi iki taraf arasında yapılır?",
+    "secenekler": [
+      "İşçi - Devlet",
+      "İşveren - Devlet",
+      "İşçi - İşveren",
+      "Sendika - İşveren"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İş sözleşmesi işçi ile işveren arasında yapılır."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşsizliği artırmak",
+      "İşçilerin haklarını korumak",
+      "Vergileri artırmak",
+      "Devlet denetimini sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar işçi haklarını korur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Türkiye'de sosyal güvenlik sisteminin temel kurumu hangisidir?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "SSK",
+      "Bağ-Kur"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal Güvenlik Kurumu (SGK) temel kurumdur."
+  },
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "Kıdem tazminatına hak kazanmanın temel şartlarından biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşçinin aynı işverene bağlı çalışması",
+      "İşçinin her yıl izin kullanması",
+      "İşçinin sendikaya üye olması",
+      "İşverenin kamu olması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kıdem tazminatı için işverene bağlı çalışma süresi şarttır."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşgücü piyasasında ücretin oluşumunu etkileyen en temel unsur aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Arz ve talep",
+      "İklim",
+      "Nüfusun boyu",
+      "Coğrafi enlem"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Ücret, işgücü arz-talebine göre şekillenir."
+  },
+  {
+    "konu": "Çalışma Psikolojisi ve Sosyoloji",
+    "soru": "İş tatmini arttıkça aşağıdakilerden hangisinin azalması beklenir?",
+    "secenekler": [
+      "İş devri",
+      "Verimlilik",
+      "Motivasyon",
+      "Bağlılık"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İş tatmini artınca işten ayrılma eğilimi azalır."
+  },
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "Toplu iş sözleşmesi hangi taraflar arasında yapılır?",
+    "secenekler": [
+      "İşçi - işçi",
+      "Sendika - işveren/işveren sendikası",
+      "Devlet - işveren",
+      "Mahkeme - işçi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Toplu sözleşme sendika ile işveren/işveren sendikası arasında yapılır."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik oranı hesaplanırken paydada hangi büyüklük yer alır?",
+    "secenekler": [
+      "Toplam nüfus",
+      "İşgücü",
+      "Çalışan sayısı",
+      "Emekli sayısı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsizlik oranı = işsiz / işgücü."
+  },
+  {
+    "konu": "Çalışma Psikolojisi ve Sosyoloji",
+    "soru": "Maslow'un ihtiyaçlar hiyerarşisinde güvenlik ihtiyacı hangi düzeydedir?",
+    "secenekler": [
+      "Fizyolojik",
+      "Güvenlik",
+      "Saygı",
+      "Kendini gerçekleştirme"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Güvenlik ikinci basamaktır."
+  },
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "İş sözleşmesinin deneme süreli yapılması en çok hangi amaçla kullanılır?",
+    "secenekler": [
+      "Vergi artırmak",
+      "Tarafların uyumunu görmek",
+      "Sendikayı kapatmak",
+      "Ücreti kaldırmak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Deneme süresi uyumu test etmeye yarar."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Asgari ücretin artırılması kısa dönemde en çok hangi kesimi doğrudan etkiler?",
+    "secenekler": [
+      "Yüksek gelirli çalışanları",
+      "Asgari ücretle çalışanları",
+      "Emeklileri",
+      "Öğrencileri"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Asgari ücret artışı doğrudan düşük ücretlileri etkiler."
+  },
+  {
+    "konu": "Çalışma Psikolojisi ve Sosyoloji",
+    "soru": "İş yerinde mobbing aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İş kazası",
+      "Psikolojik yıldırma",
+      "Ücret zammı",
+      "Terfi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Mobbing, sistematik psikolojik yıldırmadır."
+  },
+  {
+    "konu": "İş ve Sosyal Güvenlik Hukuku",
+    "soru": "İş kazası ve meslek hastalığı sigortası hangi kurum tarafından yürütülür?",
+    "secenekler": [
+      "İŞKUR",
+      "SGK",
+      "MEB",
+      "YÖK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sosyal güvenlik sigortaları SGK tarafından yürütülür."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşsizlik sigortası hangi durum için vardır?",
+    "secenekler": [
+      "Hastalık",
+      "İşsizlik",
+      "Emeklilik",
+      "Doğum"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşsiz kalanlar içindir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İşçinin haftalık çalışma süresi genel olarak kaç saattir?",
+    "secenekler": [
+      "35",
+      "40",
+      "45",
+      "50"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Genel kural 45 saattir."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "İşsizlik sigortası primlerini kimler öder?",
+    "secenekler": [
+      "Sadece işçi",
+      "Sadece işveren",
+      "İşçi+işveren+devlet",
+      "Sadece devlet"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Üçlü prim yapısı vardır."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Gizli işsizlik en çok hangi sektörde görülür?",
+    "secenekler": [
+      "Sanayi",
+      "Tarım",
+      "Hizmet",
+      "Bankacılık"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Aile işgücü ve düşük verimlilik nedeniyle tarımda."
+  },
+  {
+    "konu": "Endüstri İlişkileri",
+    "soru": "Toplu pazarlık sürecinin temel aktörleri hangileridir?",
+    "secenekler": [
+      "İşçi-işveren-sendika",
+      "Sendika-işveren",
+      "Devlet-işçi",
+      "Mahkeme-sendika"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Temel aktörler sendika ve işverendir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Fazla çalışma ücretinin zamlı oranı genel olarak kaçtır?",
+    "secenekler": [
+      "%10",
+      "%25",
+      "%50",
+      "%100"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Fazla çalışma %50 zamlı ödenir (genel kural)."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Genel sağlık sigortası hangi kurum çatısı altındadır?",
+    "secenekler": [
+      "MEB",
+      "SGK",
+      "İŞKUR",
+      "TBMM"
+    ],
+    "dogru_index": 1,
+    "aciklama": "SGK çatısı altındadır."
+  },
+  {
+    "konu": "Çalışma Psikolojisi",
+    "soru": "İş yerinde motivasyonu artıran unsurlardan biri hangisidir?",
+    "secenekler": [
+      "Belirsiz görev",
+      "Adil ödüllendirme",
+      "Sürekli ceza",
+      "İletişimsizlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Adil ödüllendirme motivasyonu artırır."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikalılaşma oranının artması en çok hangi gücü artırır?",
+    "secenekler": [
+      "Bireysel pazarlık",
+      "Toplu pazarlık",
+      "İşsizliği kesin artırır",
+      "Vergiyi azaltır"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Sendikalar toplu pazarlığı güçlendirir."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Asgari ücret artışı kısa dönemde en çok hangi maliyeti etkiler?",
+    "secenekler": [
+      "Sabit maliyet",
+      "İşgücü maliyeti",
+      "Amortisman",
+      "Kira"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Ücret artışı işgücü maliyetidir."
+  },
+  {
+    "konu": "Endüstri İlişkileri",
+    "soru": "Grev hakkı hangi hak grubunda değerlendirilir?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal ve ekonomik haklar",
+      "Siyasi haklar",
+      "Mülkiyet hakkı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Grev sosyal-ekonomik haklardandır."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "Kıdem tazminatı için gereken asgari süre nedir?",
+    "secenekler": [
+      "6 ay",
+      "1 yıl",
+      "2 yıl",
+      "5 yıl"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kıdem tazminatı için en az 1 yıl gerekir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Güvenliği",
+    "soru": "İş sağlığı ve güvenliğinin amacı nedir?",
+    "secenekler": [
+      "Üretimi azaltmak",
+      "Kazaları önlemek",
+      "Vergi toplamak",
+      "Ceza vermek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Amaç kazaları önlemektir."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İşçi ve işveren arasında kurulan sözleşmenin adı nedir?",
+    "secenekler": [
+      "Kira",
+      "İş sözleşmesi",
+      "Satış",
+      "Vekalet"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İş ilişkisi iş sözleşmesiyle kurulur."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İşçinin yıllık ücretli izin hakkı hangi tür haktır?",
+    "secenekler": [
+      "Sosyal hak",
+      "Kişi hakkı",
+      "Ceza",
+      "Mülkiyet"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Sosyal-ekonomik haklar."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "Emeklilik aylığı hangi sigorta koluyla ilişkilidir?",
+    "secenekler": [
+      "Kısa vadeli",
+      "Uzun vadeli",
+      "Genel sağlık",
+      "İşsizlik"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Malullük-yaşlılık-ölüm uzun vadeli."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "İşgücü arzının artması (diğer şartlar sabit) ücreti nasıl etkiler?",
+    "secenekler": [
+      "Artırır",
+      "Azaltır",
+      "Değiştirmez",
+      "Sıfırlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Arz artınca ücret baskılanır."
+  },
+  {
+    "konu": "Endüstri İlişkileri",
+    "soru": "Lokavt aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşçilerin işi bırakması",
+      "İşverenin işçileri işten uzaklaştırması",
+      "Mahkeme kararı",
+      "Vergi affı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İşverenin işi durdurması."
+  },
+  {
+    "konu": "Çalışma Psikolojisi",
+    "soru": "Tükenmişlik sendromu en çok hangi durumla ilişkilidir?",
+    "secenekler": [
+      "Aşırı stres",
+      "Tatiller",
+      "Ücret artışı",
+      "Kısa çalışma"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Aşırı stres ve duygusal yorgunluk."
+  },
+  {
+    "konu": "Çalışma Sosyolojisi",
+    "soru": "Sendikaların temel işlevlerinden biri hangisidir?",
+    "secenekler": [
+      "Üyeleri adına pazarlık yapmak",
+      "Vergi toplamak",
+      "Yargılamak",
+      "İmar vermek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Toplu pazarlık."
+  },
+  {
+    "konu": "İş Hukuku",
+    "soru": "İş güvencesi hükümleri genellikle neyi amaçlar?",
+    "secenekler": [
+      "İşçiyi korumak",
+      "Vergiyi artırmak",
+      "İşvereni güçsüzleştirmek",
+      "Sözleşmeyi kaldırmak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Keyfi feshe karşı koruma."
+  },
+  {
+    "konu": "Çalışma Ekonomisi",
+    "soru": "Kayıt dışı istihdamın artması hangi sonucu doğurabilir?",
+    "secenekler": [
+      "Prim gelirlerinin azalması",
+      "Vergi gelirlerinin artması",
+      "Sosyal güvenliğin güçlenmesi",
+      "İş kazalarının kesin azalması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Prim/tahsilat kaybı oluşur."
+  },
+  {
+    "konu": "Sosyal Güvenlik",
+    "soru": "İş kazası bildirimi genellikle hangi tarafa yükümlülük getirir?",
+    "secenekler": [
+      "İşverene",
+      "Komşuya",
+      "Belediyeye",
+      "Okula"
+    ],
+    "dogru_index": 0,
+    "aciklama": "İşveren bildirim yükümlüsüdür."
+  }
 ]
