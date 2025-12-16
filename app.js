@@ -3,6 +3,10 @@
    - Offline için sw.js cache'ler
 */
 
+const APP_VERSION = "v18";
+
+const Diagnostics = { entries: [] };
+
 const FILES = {
   "Türkçe": "turkce.json",
   "Matematik": "matematik.json",
@@ -16,12 +20,34 @@ const FILES = {
   "Uluslararası İlişkiler": "uluslararasiiliskiler.json",
 };
 
+const LESSON_ICONS = {
+  "Türkçe": "📝",
+  "Matematik": "🔢",
+  "Tarih": "📜",
+  "Coğrafya": "🗺️",
+  "Vatandaşlık": "⚖️",
+  "İktisat": "📈",
+  "Çalışma Ekonomisi": "🏭",
+  "Hukuk": "🏛️",
+  "Kamu Yönetimi": "🏢",
+  "Uluslararası İlişkiler": "🌐",
+};
+
 const GK_GY_DISTRIBUTION = {
   "Türkçe": 30,
   "Matematik": 30,
   "Tarih": 27,
   "Coğrafya": 18,
   "Vatandaşlık": 9,
+};
+
+// 120 soruluk AI deneme için ölçeklenmiş dağılım
+const GK_GY_EXAM_DISTRIBUTION = {
+  "Türkçe": 30,
+  "Matematik": 30,
+  "Tarih": 27,
+  "Coğrafya": 18,
+  "Vatandaşlık": 15,
 };
 
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
@@ -32,9 +58,682 @@ const STORE_KEY = "kpss_ultimate_v1";
 const $ = (id) => document.getElementById(id);
 const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
 const now = () => new Date().toISOString();
+const rand = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+const delay = (ms) => new Promise((resolve)=> setTimeout(resolve, ms));
+
+// ---------- konu rehberi (AI istemi için) ----------
+const TOPIC_GUIDE = {
+  "Türkçe": ["Sözcükte Anlam", "Cümlede Anlam", "Paragraf", "Ses Bilgisi", "Sözcükte Yapı", "Sözcük Türleri", "Cümlenin Türleri", "Yazım Kuralları", "Noktalama İşaretleri", "Anlatım Bozuklukları", "Sözel Mantık", "Cümle Ögeleri / Anlatım Biçimleri"],
+  "Matematik": ["Temel Kavramlar", "Sayılar", "EBOB-EKOK", "Denklemler", "Rasyonel Sayılar", "Eşitsizlik", "Mutlak Değer", "Üslü ve Köklü Sayılar", "Çarpanlara Ayırma", "Oran-Orantı", "Problemler", "Kümeler", "Permütasyon", "Kombinasyon", "Olasılık", "Tablo & Grafikler", "Sayısal Mantık"],
+  "Tarih": ["İslamiyet Öncesi Türk Tarihi", "İlk Müslüman Türk Devletleri", "Osmanlı Tarihi", "Yenileşme ve Demokratikleşme", "XX. Yüzyıl Osmanlı", "Kurtuluş Savaşı", "Cumhuriyet Dönemi", "Atatürk Dönemi Dış Politika", "Çağdaş Türk ve Dünya Tarihi"],
+  "Coğrafya": ["Türkiye Coğrafi Konumu", "Türkiye İklimi", "Bitki Örtüsü", "Fiziki Özellikler", "Nüfus & Yerleşme", "Ekonomik Coğrafya", "Bölgeler Coğrafyası"],
+  "Vatandaşlık": ["Temel Hukuk", "Anayasa ve Devlet Yapısı", "1982 Anayasası İlkeleri", "Temel Hak ve Hürriyetler", "Yasama", "Yürütme", "Yargı", "İdare Hukuku"],
+  "Kamu Yönetimi": ["Siyaset Bilimi", "Anayasa", "Yönetim Bilimleri", "Kamu Politikası", "Yönetim Hukuku", "Kentleşme", "Çevre Sorunları", "Türk Siyasi Hayatı"],
+  "Uluslararası İlişkiler": ["Uluslararası İlişkiler Teorisi", "Uluslararası Hukuk", "Siyasi Tarih", "Güncel Sorunlar", "Uluslararası Örgütler", "Türk Dış Politikası"],
+  "Çalışma Ekonomisi": ["İş ve Sosyal Güvenlik Hukuku", "Çalışma Ekonomisi", "Psikoloji", "Sosyoloji"],
+  "Hukuk": ["Anayasa Hukuku", "İdare Hukuku", "İdari Yargı", "Ceza Hukuku", "Ceza Usulü", "Borçlar Hukuku", "Medeni Hukuk", "Ticaret Hukuku", "İcra-İflas"],
+  "İktisat": ["Mikro İktisat", "Makro İktisat", "Para-Banka-Kredi", "Uluslararası İktisat", "Kalkınma & Büyüme", "Türkiye Ekonomisi", "İktisadi Düşünceler Tarihi"],
+};
+
+const HF_MODEL_DEFAULT = "HuggingFaceH4/zephyr-7b-beta";
+const OLLAMA_MODEL_DEFAULT = "mistral";
+
+// ---------- ücretsiz yerel AI soru üretici ----------
+const AI_TEMPLATES = {
+  "Türkçe": () => {
+    const temas = ["dil bilgisi", "paragraf yorumu", "anlatım bozukluğu", "anlam ilişkisi"];
+    const konu = pick(temas);
+    const paragraf = "Okuma alışkanlığı, düşünme biçimimizi ve kelime hazinemizi geliştirirken, " +
+      "farklı bakış açılarını tanımamıza da yardımcı olur.";
+    const yorumlar = [
+      "Okuma, zihinsel esnekliği artırır",
+      "Okuma yalnızca akademik başarı için değildir",
+      "Okuma, empati kurma becerisini güçlendirir",
+      "Okuma zamanı planlı olmalıdır",
+    ];
+    const dogru = pick(yorumlar);
+    const secenekler = [dogru,
+      "Okuma yalnızca sınav başarısını etkiler",
+      "Okuma kelime hazinesini daraltır",
+      "Okuma alışkanlığı iletişim becerisine katkı sağlamaz",
+      "Okuma eleştirel düşünmeyi zayıflatır"].sort(() => Math.random() - 0.5);
+    const dogru_index = secenekler.indexOf(dogru);
+    return {
+      konu: `AI ${konu}`,
+      soru: "Paragrafın temel çıkarımı nedir?",
+      paragraf,
+      secenekler,
+      dogru_index,
+      aciklama: "Yerel üretici, paragrafın vurguladığı olumlu etkilerden birini seçmeni ister.",
+    };
+  },
+  "Matematik": () => {
+    const a = rand(5, 30);
+    const b = rand(2, 15);
+    const c = rand(2, 9);
+    const soruTipi = pick(["işlem", "oran-orantı", "kâr-zarar"]);
+    if (soruTipi === "işlem") {
+      const sonuc = a * b - c;
+      return {
+        konu: "AI İşlem",
+        soru: `${a} × ${b} - ${c} işleminin sonucu kaçtır?`,
+        secenekler: [sonuc, sonuc + 2, sonuc - 3, sonuc + 5].map(String),
+        dogru_index: 0,
+        aciklama: "Çarpma önce yapılır, ardından çıkarma uygulanır.",
+      };
+    }
+    const toplam = a + b;
+    const oran = toplam / c;
+    const dogru = oran.toFixed(1);
+    const secenekler = [dogru, (oran + 0.5).toFixed(1), (oran - 0.5).toFixed(1), (oran + 1).toFixed(1)];
+    return {
+      konu: "AI Oran-Orantı",
+      soru: `${a} ve ${b} sayılarının toplamının ${c} katına oranı kaçtır?`,
+      secenekler,
+      dogru_index: 0,
+      aciklama: "Toplam hesaplanır, ardından oran bulunur.",
+    };
+  },
+  "Tarih": () => {
+    const olaylar = [
+      { y: 1921, acik: "Teşkilat-ı Esasiye" },
+      { y: 1923, acik: "Cumhuriyetin ilanı" },
+      { y: 1934, acik: "Soyadı Kanunu" },
+      { y: 1946, acik: "Çok partili hayata geçiş" },
+    ];
+    const sec = pick(olaylar);
+    const sirali = olaylar.map(o => `${o.y} - ${o.acik}`);
+    return {
+      konu: "AI İnkılap Tarihi",
+      soru: `${sec.y} yılında gerçekleşen gelişme aşağıdakilerden hangisidir?`,
+      secenekler: sirali,
+      dogru_index: sirali.indexOf(`${sec.y} - ${sec.acik}`),
+      aciklama: "Zaman çizelgesindeki yıl-gelişme eşleşmesi istenir.",
+    };
+  },
+  "Coğrafya": () => {
+    const sehirler = [
+      { ad: "Erzurum", iklim: "Karasal iklim etkilidir" },
+      { ad: "Antalya", iklim: "Akdeniz iklimi baskındır" },
+      { ad: "Rize", iklim: "Karadeniz iklimi hâkimdir" },
+      { ad: "İzmir", iklim: "Akdeniz iklimi özellikleri görülür" },
+    ];
+    const sec = pick(sehirler);
+    const dogru = `${sec.ad} - ${sec.iklim}`;
+    const yanlis = sehirler.filter(s => s.ad !== sec.ad).map(s => `${sec.ad} - ${s.iklim}`);
+    const secenekler = [dogru, ...yanlis.slice(0,3)].sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI İklim Bilgisi",
+      soru: `${sec.ad} şehri için doğru iklim eşleşmesi hangisidir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Şehir-iklim eşleştirmesi temel coğrafya bilgisidir.",
+    };
+  },
+  "Vatandaşlık": () => {
+    const kavramlar = [
+      { k: "yürütme", org: "Cumhurbaşkanı ve Cumhurbaşkanlığı kabinesi" },
+      { k: "yasama", org: "TBMM" },
+      { k: "yargı", org: "Bağımsız ve tarafsız mahkemeler" },
+    ];
+    const sec = pick(kavramlar);
+    const dogru = `${sec.k} - ${sec.org}`;
+    const secenekler = kavramlar.map(x => `${x.k} - ${x.org}`);
+    const karisik = [...secenekler];
+    while (karisik.length < 4) karisik.push("Temel hak ve özgürlükler");
+    karisik.sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Anayasa",
+      soru: "Kuvvetler ayrılığına göre aşağıdaki eşleşmelerden hangisi doğrudur?",
+      secenekler: karisik,
+      dogru_index: karisik.indexOf(dogru),
+      aciklama: "Yasama-yürütme-yargı organlarının doğru eşleşmesi istenir.",
+    };
+  },
+  "Uluslararası İlişkiler": () => {
+    const kurumlar = ["NATO", "BM", "AB", "OECD"];
+    const gorev = {
+      "NATO": "kolektif savunma",
+      "BM": "barış ve güvenliği koruma",
+      "AB": "ekonomik ve siyasal bütünleşme",
+      "OECD": "ekonomik iş birliği",
+    };
+    const sec = pick(kurumlar);
+    const dogru = `${sec} - ${gorev[sec]}`;
+    const yanlis = kurumlar.filter(k => k !== sec).map(k => `${sec} - ${gorev[k]}`);
+    const secenekler = [dogru, ...yanlis.slice(0,3)].sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Uluslararası Kurumlar",
+      soru: `${sec} kurumunun temel fonksiyonu nedir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Kurumsal misyonu doğru eşleştiren seçenek doğrudur.",
+    };
+  },
+  "Çalışma Ekonomisi": () => {
+    const kavramlar = [
+      { t: "işsizlik türü", cevap: "doğal işsizlik" },
+      { t: "sendika", cevap: "toplu pazarlık" },
+      { t: "ücret", cevap: "reel ücret" },
+    ];
+    const sec = pick(kavramlar);
+    const dogru = `${sec.t} - ${sec.cevap}`;
+    const secenekler = [dogru, "işgücü maliyeti", "asgari ücret", "işgücü devri"];
+    secenekler.sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Emek Piyasası",
+      soru: `${sec.t} kavramı ile en doğru ilişki hangisidir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Temel çalışma ekonomisi kavram eşleştirmesi sorusudur.",
+    };
+  },
+  "Hukuk": () => {
+    const dallar = [
+      { d: "Anayasa Hukuku", oz: "temel hak ve özgürlükler" },
+      { d: "İdare Hukuku", oz: "idarenin işlemleri" },
+      { d: "Ceza Hukuku", oz: "suç ve yaptırım" },
+    ];
+    const sec = pick(dallar);
+    const dogru = `${sec.d} - ${sec.oz}`;
+    const secenekler = [dogru, ...dallar.filter(x => x.d !== sec.d).map(x => `${sec.d} - ${x.oz}`)];
+    secenekler.sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Hukuk Dalları",
+      soru: `${sec.d} aşağıdakilerden hangisi ile en yakından ilişkilidir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Hukuk dalının konu edindiği temel alan sorgulanır.",
+    };
+  },
+  "İktisat": () => {
+    const arz = rand(10,50);
+    const talep = rand(20,60);
+    const fiyat = rand(5,25);
+    const denge = Math.round((arz + talep)/2);
+    const secenekler = [denge, denge+5, denge-5, denge+10].map(String).sort(() => Math.random() - 0.5);
+    const dogru = secenekler.indexOf(String(denge));
+    return {
+      konu: "AI Mikro İktisat",
+      soru: `Arz ${arz}, talep ${talep} iken denge miktarı yaklaşık kaç olur?`,
+      secenekler,
+      dogru_index: dogru,
+      aciklama: "Basitleştirilmiş arz-talep ortalaması kullanıldı.",
+    };
+  },
+  "Kamu Yönetimi": () => {
+    const yaklasimlar = [
+      { ad: "Yeni Kamu Yönetimi", vurgu: "piyasa mekanizmaları ve performans" },
+      { ad: "Klasik Bürokrasi", vurgu: "hiyerarşi ve kurallar" },
+      { ad: "Yönetişim", vurgu: "katılımcılık ve ağlar" },
+    ];
+    const sec = pick(yaklasimlar);
+    const dogru = `${sec.ad} - ${sec.vurgu}`;
+    const secenekler = yaklasimlar.map(y => `${y.ad} - ${y.vurgu}`).sort(() => Math.random() - 0.5);
+    return {
+      konu: "AI Yönetim Yaklaşımları",
+      soru: `${sec.ad} yaklaşımının temel vurgusu nedir?`,
+      secenekler,
+      dogru_index: secenekler.indexOf(dogru),
+      aciklama: "Yönetim yaklaşımının öne çıkan ilkesine odaklanır.",
+    };
+  }
+};
+
+function genericAIQuestion(lesson){
+  const tema = pick(["temel kavram", "yorum", "eşleştirme", "uygulama"]);
+  const dogru = "Analitik düşünme gerektirir";
+  const secenekler = [dogru, "Sadece ezbere dayalıdır", "Uygulaması yoktur", "Tesadüfi sonuç verir"].sort(() => Math.random() - 0.5);
+  return {
+    konu: `AI ${tema}`,
+    soru: `${lesson} dersinde ${tema} sorusu için doğru yaklaşım nedir?`,
+    secenekler,
+    dogru_index: secenekler.indexOf(dogru),
+    aciklama: "Ücretsiz yerel üretici, analitik/yorum temelli yaklaşımı vurgular.",
+  };
+}
+
+function generateAIQuestion(lesson){
+  const fn = AI_TEMPLATES[lesson] || genericAIQuestion;
+  const q = fn(lesson);
+  q.kaynak = "AI (ücretsiz yerel)";
+  return normalizeQuestion(q);
+}
+
+function injectAIQuestions(lesson, count){
+  const list = [];
+  for (let i=0; i<count; i++){
+    list.push(generateAIQuestion(lesson));
+  }
+  return appendQuestions(lesson, list, "AI (ücretsiz yerel)", count);
+}
+
+function appendQuestions(lesson, questions, sourceLabel, desiredCount){
+  const bank = App.allBanks[lesson] || [];
+  const stamped = [];
+  const seen = App.fingerprints || new Set();
+  const corpus = Array.isArray(App.canonicals) ? [...App.canonicals] : [];
+  const recentCorpus = corpus.slice(-600); // near-dup kontrolü için son kayıtları tara
+  const existingCanon = bank.slice(-220).map(q => canonicalizeForSim(q));
+  const nearDupes = [];
+
+  const tryAdd = (q, idx)=>{
+    const base = normalizeQuestion(q);
+    const fp = fingerprintQuestion(base);
+    const canonical = canonicalizeForSim(base);
+    if (fp && seen.has(fp)) return false;
+    const isNearDup = recentCorpus.some(text => trigramSimilarity(text, canonical) > 0.86) || existingCanon.some(text => trigramSimilarity(text, canonical) > 0.86);
+    if (isNearDup){
+      nearDupes.push(base.soru?.slice(0,80) || "benzer soru");
+      return false;
+    }
+    if (fp) seen.add(fp);
+    if (canonical) corpus.push(canonical);
+    base.id = base.id || `${sourceLabel||"AI"}-${lesson}-${Date.now()}-${idx}-${Math.random().toString(36).slice(2,6)}`;
+    base.kaynak = sourceLabel || base.kaynak || "AI";
+    base.lesson = base.lesson || lesson;
+    base.fingerprint = fp;
+    stamped.push(base);
+    return true;
+  };
+
+  questions.forEach((q, idx)=> tryAdd(q, idx));
+
+  if (desiredCount && stamped.length < desiredCount){
+    let guard = 0;
+    while (stamped.length < desiredCount && guard < desiredCount * 3){
+      guard++;
+      const filler = generateAIQuestion(lesson);
+      tryAdd(filler, stamped.length + guard);
+    }
+    if (stamped.length < desiredCount){
+      recordError(lesson, `Benzersiz soru sayısı hedefin altında kaldı (${stamped.length}/${desiredCount})`, { kind:"warn" });
+    }
+  }
+
+  App.fingerprints = seen;
+  App.canonicals = corpus;
+  persistFingerprintSet(seen);
+  persistCanonicalCorpus(corpus);
+
+  if (stamped.length < questions.length){
+    recordError(lesson, `${questions.length - stamped.length} soru yinelenme nedeniyle atlandı`, { kind:"warn" });
+  }
+  if (nearDupes.length){
+    recordError(lesson, `${nearDupes.length} soru benzerlikten reddedildi`, { kind:"warn", detail: nearDupes.slice(0,3).join(" | ") });
+  }
+
+  bank.push(...stamped);
+  App.allBanks[lesson] = bank;
+  renderLessonIcons(App.mode);
+  return stamped;
+}
+
+function buildExamBlueprint(lesson, count){
+  const topics = TOPIC_GUIDE[lesson] || ["Genel"];
+  const types = ["yorum", "bilgi", "senaryo", "uygulama", "tablo/grafik"];
+  const plan = [];
+  const rotatedTopics = shuffle([...topics]);
+  const difficultyTargets = {
+    easy: Math.max(10, Math.round(count * 0.35)),
+    medium: Math.max(10, Math.round(count * 0.4)),
+    hard: Math.max(6, count - Math.round(count * 0.35) - Math.round(count * 0.4)),
+  };
+  let idx = 0;
+  const difficulties = [];
+  difficulties.push(...Array(difficultyTargets.easy).fill("kolay"));
+  difficulties.push(...Array(difficultyTargets.medium).fill("orta"));
+  difficulties.push(...Array(difficultyTargets.hard).fill("zor"));
+  shuffle(difficulties);
+
+  while (plan.length < count){
+    const konu = rotatedTopics[idx % rotatedTopics.length];
+    const tur = types[idx % types.length];
+    const diff = difficulties[plan.length] || "orta";
+    plan.push({ konu, tur, zorluk: diff });
+    idx++;
+  }
+  return plan;
+}
+
+function buildAIPrompt(lesson, count){
+  const topics = TOPIC_GUIDE[lesson] || ["genel"];
+  const hedefler = topics.slice(0, 8).map((t,i)=> `${i+1}. ${t}`).join("\n");
+  const blueprint = buildExamBlueprint(lesson, count);
+  const blueprintLines = blueprint.slice(0, 24).map((b,i)=> `${i+1}. konu=${b.konu} tip=${b.tur} zorluk=${b.zorluk}`).join("\n");
+
+  return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet çoktan seçmeli soru üret.
+Her kayıt JSON olarak dönsün: {"konu","soru","paragraf"(isteğe bağlı),"secenekler":["A","B","C","D"],"dogru_index":0-3,"aciklama":"kısa çözüm"}.
+Kazanımlar (öncelik sırasıyla):\n${hedefler}\n
+Plan/blueprint (çeşitliliği koru, mümkün olduğunca bu plana uy):\n${blueprintLines}\n
+Anti-tekrar ve çeşitlilik kuralları:
+- Aynı kalıp, aynı sayılar, aynı karakter isimleri TEKRAR ETME.
+- Soruları farklı bağlam, farklı veri/isim/tarih ile kur; her soru benzersiz olsun.
+- Seçenekler karışık sırada, en az 4 şık üret; doğru cevap tekil olsun.
+- Paragraf varsa özgün metin yaz, başka sorularla paylaşma.
+- Matematikte sayıları, katsayıları ve işlemleri değiştir; aynı çözüm yolunu kopyalama.
+- Açıklama kısa ve hedefe yönelik olsun, MathJax/LaTeX uyumlu yazılabilir.
+ - Her soru farklı soru tipi (tanım/yorum/çıkarım/problem/grafik) rotasyonuyla gelsin; aynı tip arka arkaya gelmesin.
+
+Yalnızca JSON array döndür.`;
+}
+function extractJSONSegment(text){
+  const match = text.match(/\[[\s\S]*\]/);
+  if (match) return match[0];
+  const obj = text.match(/\{[\s\S]*\}/);
+  if (obj) return `[${obj[0]}]`;
+  return null;
+}
+
+function parseAITextToQuestions(text, lesson){
+  const raw = extractJSONSegment(text) || text;
+  let arr = [];
+  try {
+    const parsed = JSON.parse(raw);
+    arr = Array.isArray(parsed) ? parsed : [parsed];
+  } catch (e){
+    // fallback: tek soru gömülü
+    arr = [{
+      konu:`AI ${lesson}`,
+      soru:text.slice(0,180) + "?",
+      secenekler:["Bilgi yok", "Model yanıtı", "Elle düzenle", "Tekrar dene"],
+      dogru_index:0,
+      aciklama:"Model çıktısı JSON formatında gelmedi; lütfen yeniden üretin.",
+    }];
+  }
+  return arr.map(q=>{
+    q.kaynak = q.kaynak || "AI (internet)";
+    return q;
+  });
+}
+
+async function fetchHuggingFaceAI(lesson, count, opts = {}){
+  const token = ((opts.tokenOverride !== undefined ? opts.tokenOverride : $("hfToken")?.value) || "").trim();
+  const modelRaw = (opts.modelOverride !== undefined ? opts.modelOverride : $("hfModel")?.value) || HF_MODEL_DEFAULT;
+  const model = (modelRaw || HF_MODEL_DEFAULT).trim() || HF_MODEL_DEFAULT;
+  const url = `https://api-inference.huggingface.co/models/${encodeURIComponent(model)}`;
+  const prompt = buildAIPrompt(lesson, count);
+  const headers = { "Content-Type": "application/json" };
+  if (token) headers["Authorization"] = `Bearer ${token}`;
+
+  const body = JSON.stringify({
+    inputs: prompt,
+    parameters: {
+      max_new_tokens: Math.min(opts.maxTokens || (520 * count), 4096),
+      temperature: opts.temperature ?? 0.65,
+      top_p: opts.top_p ?? 0.9,
+      return_full_text: false,
+    },
+    options: { wait_for_model: true },
+  });
+
+  const res = await fetch(url, { method:"POST", headers, body });
+  if (!res.ok){
+    const detail = await res.text();
+    throw new Error(`Hugging Face API hatası (${res.status}): ${detail.slice(0,120)}`);
+  }
+
+  const data = await res.json();
+  const text = Array.isArray(data) ? (data[0]?.generated_text || data[0]?.generated_texts?.[0] || JSON.stringify(data)) : (data.generated_text || JSON.stringify(data));
+  const questions = parseAITextToQuestions(text || "", lesson);
+  return questions;
+}
+
+async function fetchOllamaAI(lesson, count, opts = {}){
+  const state = ensureState();
+  const baseUrl = (opts.baseUrlOverride || state.ai?.ollamaUrl || "http://localhost:11434").replace(/\/$/, "");
+  const model = (opts.modelOverride || state.ai?.model || OLLAMA_MODEL_DEFAULT || "mistral").trim();
+  const prompt = buildAIPrompt(lesson, count);
+
+  const res = await fetch(`${baseUrl}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model,
+      prompt,
+      stream: false,
+      options: {
+        temperature: opts.temperature ?? 0.9,
+        top_p: opts.topP ?? 0.9,
+        num_predict: opts.maxTokens ?? 512 * count,
+      },
+    }),
+  });
+
+  if (!res.ok){
+    const detail = await res.text();
+    throw new Error(`Ollama yanıtı başarısız (${res.status}): ${detail.slice(0,120)}`);
+  }
+
+  const data = await res.json();
+  const text = data?.response || "";
+  return parseAITextToQuestions(text, lesson).map(q => ({ ...q, kaynak: q.kaynak || "AI (Ollama yerel)" }));
+}
+
+async function fetchOllamaBatched(lesson, total){
+  const out = [];
+  const guard = Math.max(3, Math.ceil(total / 10));
+  let tries = 0;
+  while (out.length < total && tries < guard){
+    tries++;
+    const need = Math.min(10, total - out.length);
+    try {
+      const batch = await fetchOllamaAI(lesson, need, { maxTokens: 600 * need });
+      out.push(...batch);
+    } catch (e) {
+      console.warn("Ollama batch hatası", e);
+      if (tries >= guard) throw e;
+    }
+    if (out.length < total) await delay(320);
+  }
+  return out.slice(0, total);
+}
+
+async function fetchHFBatched(lesson, total){
+  const out = [];
+  const guard = Math.max(3, Math.ceil(total / 12));
+  let tries = 0;
+  while (out.length < total && tries < guard){
+    tries++;
+    const need = Math.min(12, total - out.length);
+    try {
+      const batch = await fetchHuggingFaceAI(lesson, need, { maxTokens: 600 * need });
+      out.push(...batch);
+    } catch (e) {
+      console.warn("HF batch hatası", e);
+      if (tries >= guard) throw e;
+    }
+    if (out.length < total) await delay(320);
+  }
+  return out.slice(0, total);
+}
+
+function typesetMath(root){
+  try{
+    if (!window.MathJax || !MathJax.typesetPromise) return;
+    const target = root || document.body;
+    MathJax.typesetPromise([target]).catch(console.warn);
+  }catch(e){ console.warn(e); }
+}
+
+function openExamWindowShell(title, subtitle){
+  const shellHTML = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+  <style>
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+    .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:480px;margin:60px auto;text-align:center;}
+    h1{margin:0 0 8px;font-size:20px;font-weight:800;}
+    p{margin:0;color:#475569;}
+  </style></head><body>
+    <div class="box">
+      <h1>${escapeHTML(title)}</h1>
+      <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
+      <p>Yeni sekme açıldıysa lütfen bekleyin.</p>
+    </div>
+  </body></html>`;
+
+  const targetUrl = `${location.origin}${location.pathname}#exam-shell`;
+  const w = window.open(targetUrl, "exam-shell", "noopener");
+  if (!w){
+    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
+    return null;
+  }
+  w.document.open();
+  w.document.write(shellHTML);
+  w.document.close();
+  try {
+    w.history.replaceState(null, "", `${location.origin}${location.pathname}#exam-shell`);
+  } catch (e){ /* history replace can fail on some browsers */ }
+  return w;
+}
+
+function renderExamWindow(title, questions, subtitle, existingWin){
+  const w = existingWin || window.open(`${location.origin}${location.pathname}#exam-shell`, "exam-shell");
+  if (!w){
+    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
+    return;
+  }
+  const list = questions.map((q, i)=>{
+    const lesson = q.lesson || inferLesson(q);
+    const opts = (q.options||[]).map((opt, idx)=>`<li><strong>${String.fromCharCode(65+idx)}.</strong> ${escapeHTML(opt)}</li>`).join("");
+    const answer = q.correctIndex ?? 0;
+    const exp = escapeHTML(q.explain || "Kısa açıklama eklenecek.");
+    const para = q.paragraf ? `<p class="para">${escapeHTML(q.paragraf)}</p>` : "";
+    return `<article class="item">
+      <div class="meta">${i+1}. ${escapeHTML(lesson)} · ${escapeHTML(q.konu || "Konu")} · Kaynak: ${escapeHTML(q.kaynak||"AI")}</div>
+      <h3>${escapeHTML(q.soru)}</h3>
+      ${para}
+      <ol>${opts}</ol>
+      <div class="exp"><strong>Cevap:</strong> ${String.fromCharCode(65+(answer||0))} · ${exp}</div>
+    </article>`;
+  }).join("");
+
+  const html = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
+  <style>
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+    h1{font-size:24px;margin:0 0 4px;font-weight:800;}
+    .sub{color:#475569;margin-bottom:16px;}
+    .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    .item{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);}
+    .item h3{margin:8px 0 6px;font-size:17px;}
+    .para{background:#f8fafc;padding:10px;border-radius:12px;margin:6px 0;font-size:14px;}
+    .meta{font-size:13px;color:#475569;margin-bottom:6px;}
+    ol{padding-left:16px;margin:8px 0;}
+    ol li{margin:4px 0;padding:4px 0;font-size:15px;}
+    .exp{margin-top:8px;font-size:14px;color:#0f172a;}
+    .bar{height:12px;border-radius:999px;background:linear-gradient(90deg,#0ea5e9,#a855f7);margin:12px 0;}
+    .hint{font-size:13px;color:#475569;}
+    .row{display:flex;gap:8px;align-items:center;margin:12px 0;flex-wrap:wrap;}
+    .pill{padding:4px 10px;border-radius:999px;background:#e0f2fe;color:#0369a1;font-size:13px;border:1px solid #bae6fd;}
+    button{background:#0ea5e9;color:white;border:none;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(14,165,233,0.35);} 
+    button:hover{transform:translateY(-1px);} button:active{transform:translateY(0);} 
+  </style></head><body>
+  <h1>${escapeHTML(title)}</h1>
+  <div class="sub">${escapeHTML(subtitle || "AI deneme sınavı")}</div>
+  <div class="row">
+    <div class="pill">${questions.length} soru</div>
+    <button onclick="window.print()">🖨️ Yazdır / PDF</button>
+  </div>
+  <div class="bar"></div>
+  <div class="grid">${list}</div>
+  <p class="hint">Yeni sekmeye her tıklamada farklı sorular üretilir. Sorular Hugging Face (internet, ücretsiz) yanıtı veya yerel üretici ile tamamlandı.</p>
+  </body></html>`;
+
+  w.document.write(html);
+  w.document.close();
+}
+
+function syncLessonUI(mode = App.mode){
+  const sel = $("lessonSelect");
+  const wrap = $("lessonIcons");
+  if (!sel || !wrap) return;
+
+  // Seçili ders geçersizse veya yoksa ilk derse düş
+  if (!App.lesson || !FILES[App.lesson]) {
+    App.lesson = Object.keys(FILES)[0];
+  }
+
+  // Select boş kaldıysa yeniden doldur
+  if (!sel.options.length) {
+    Object.keys(FILES).forEach(name => {
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+
+  sel.value = App.lesson;
+  const aiSel = $("aiLesson");
+  if (aiSel) aiSel.value = App.lesson;
+
+  // Ikonları görünür kıl
+  renderLessonIcons(mode);
+}
 
 function safeText(v){
   return (v===null || v===undefined) ? "" : String(v);
+}
+
+function escapeHTML(str){
+  return safeText(str).replace(/[&<>"']/g, (ch)=>{
+    const map = {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"};
+    return map[ch] || ch;
+  });
+}
+
+function normalizeForFingerprint(text){
+  return safeText(text)
+    .toLowerCase()
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[0-9]+/g, "#")
+    .replace(/[^a-zçğıöşüâêîôû0-9#]+/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function hashString(str){
+  let h = 0;
+  for (let i = 0; i < str.length; i++){
+    h = (h * 31 + str.charCodeAt(i)) >>> 0;
+  }
+  return `q${h.toString(16)}`;
+}
+
+function fingerprintQuestion(q){
+  const base = q && q.soru !== undefined ? q : normalizeQuestion(q);
+  const canon = canonicalizeForSim(base);
+  if (!canon) return null;
+  return hashString(canon);
+}
+
+function canonicalizeForSim(base){
+  if (!base) return "";
+  const content = [base.konu, base.paragraf || "", base.soru, ...(base.options||[]), base.explain || ""]
+    .map(normalizeForFingerprint)
+    .join("|");
+  return normalizeForFingerprint(content);
+}
+
+function trigramTokens(str){
+  const clean = normalizeForFingerprint(str);
+  const grams = new Set();
+  for (let i = 0; i < clean.length - 2; i++){
+    grams.add(clean.slice(i, i + 3));
+  }
+  return grams;
+}
+
+function trigramSimilarity(a, b){
+  if (!a || !b) return 0;
+  const A = trigramTokens(a);
+  const B = trigramTokens(b);
+  if (!A.size || !B.size) return 0;
+  let intersect = 0;
+  for (const g of A){
+    if (B.has(g)) intersect++;
+  }
+  return intersect / Math.max(A.size, B.size);
 }
 
 function normalizeQuestion(q){
@@ -147,7 +846,34 @@ function ensureState(){
   s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
   s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
   s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
+  s.ai ??= { provider: "local", token: "", model: HF_MODEL_DEFAULT, ollamaUrl: "http://localhost:11434" };
+  s.aiFingerprints ??= [];
+  s.aiCanonicals ??= [];
   return s;
+}
+
+function loadFingerprintSet(){
+  const state = ensureState();
+  return new Set(state.aiFingerprints || []);
+}
+
+function loadCanonicalCorpus(){
+  const state = ensureState();
+  return Array.isArray(state.aiCanonicals) ? [...state.aiCanonicals] : [];
+}
+
+function persistFingerprintSet(set){
+  const state = ensureState();
+  const arr = Array.from(set || []);
+  // limit to last 8000 fingerprint
+  state.aiFingerprints = arr.slice(-8000);
+  saveState(state);
+}
+
+function persistCanonicalCorpus(list){
+  const state = ensureState();
+  state.aiCanonicals = (list || []).slice(-1200);
+  saveState(state);
 }
 
 function addXP(state, amount){
@@ -195,6 +921,8 @@ const App = {
   currentTest:null,
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
+  fingerprints: loadFingerprintSet(),
+  canonicals: loadCanonicalCorpus(),
 };
 
 // ---------- UI wiring ----------
@@ -207,9 +935,100 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function togglePlanCta(show){
+  const box = $("planCta");
+  if (!box) return;
+  box.hidden = !show;
+  if (show){
+    $("btnPlanStart")?.focus();
+  }
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "local";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+  const o = $("ollamaUrl");
+  if (o) o.value = state.ai?.ollamaUrl || "http://localhost:11434";
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.classList.toggle("active", b.dataset.mode===mode);
   });
 
@@ -228,44 +1047,205 @@ function setMode(mode){
     $("countInput").disabled = false;
     $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
   }
+
+  syncLessonUI(mode);
 }
 
 function fillLessonSelect(){
   const sel = $("lessonSelect");
   sel.innerHTML = "";
-  Object.keys(FILES).forEach(name=>{
-    const opt = document.createElement("option");
-    opt.value = name;
-    opt.textContent = name;
-    sel.appendChild(opt);
+  const aiSel = $("aiLesson");
+  [sel, aiSel].forEach(target => {
+    if (!target) return;
+    target.innerHTML = "";
+    Object.keys(FILES).forEach(name=>{
+      const opt = document.createElement("option");
+      opt.value = name;
+      opt.textContent = name;
+      target.appendChild(opt);
+    });
+    target.value = App.lesson;
   });
-  sel.value = App.lesson;
+}
+
+function setLesson(lesson){
+  if (!FILES[lesson]) return;
+  App.lesson = lesson;
+  $("lessonSelect").value = lesson;
+  highlightLessonIcon();
+}
+
+function highlightLessonIcon(){
+  document.querySelectorAll(".icon-tile").forEach(t=>{
+    t.classList.toggle("active", t.dataset.lesson === App.lesson);
+  });
+}
+
+function renderLessonIcons(mode="single"){
+  const allowed = mode === "gkgy" ? Object.keys(GK_GY_DISTRIBUTION)
+    : mode === "a" ? [...A_GROUP_LESSONS]
+    : Object.keys(FILES);
+
+  if (!allowed.includes(App.lesson)){
+    App.lesson = allowed[0];
+    $("lessonSelect").value = App.lesson;
+  }
+
+  const wrap = $("lessonIcons");
+  wrap.innerHTML = "";
+
+  allowed.forEach(lesson=>{
+    const div = document.createElement("button");
+    div.className = "icon-tile";
+    div.dataset.lesson = lesson;
+    const count = App.allBanks?.[lesson]?.length || 0;
+    div.innerHTML = `<span class="emoji">${LESSON_ICONS[lesson]||"📘"}</span>`+
+                    `<div class="meta"><span class="name">${lesson}</span><span class="count">${count} soru</span></div>`;
+    div.addEventListener("click", ()=> setLesson(lesson));
+    wrap.appendChild(div);
+  });
+
+  highlightLessonIcon();
 }
 
 // ---------- loading question banks ----------
 async function fetchJSON(path){
-  const res = await fetch(path, { cache: "no-store" });
-  if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
-  const data = await res.json();
-  if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
-  return data.map(normalizeQuestion);
+  const urlObj = new URL(path, location.href);
+  urlObj.searchParams.set("v", APP_VERSION);
+  const versioned = urlObj.toString();
+  const bare = new URL(path, location.href).toString();
+  const cacheKey = bare.split("?")[0];
+
+  const tryParse = (txt) => {
+    const attempt = (raw) => {
+      const clean = raw.replace(/^\uFEFF/, "").trim();
+      if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
+      try { return JSON.parse(clean); } catch { return null; }
+    };
+
+    // İlk deneme: doğrudan temiz içerik
+    const direct = attempt(txt);
+    if (direct) return direct;
+
+    // Kurtarma: metindeki ilk [/{ ile son ]/} arasını dene (HTML veya log enkapsülasyonunda işe yarar)
+    const start = txt.search(/[\[{]/);
+    const end = Math.max(txt.lastIndexOf("]"), txt.lastIndexOf("}"));
+    if (start >= 0 && end > start){
+      const sliced = txt.slice(start, end + 1);
+      const rescued = attempt(sliced);
+      if (rescued) return rescued;
+    }
+    return null;
+  };
+
+  const tryEmbedded = () => {
+    const fname = cacheKey.split("/").pop();
+    const embedded = window.EMBEDDED_BANKS?.[fname];
+    if (Array.isArray(embedded)) {
+      console.info(`Gömülü banka kullanılıyor (${fname})`);
+      return embedded;
+    }
+    return null;
+  };
+
+  const fetchAndParse = async (reqLabel, reqInit) => {
+    const res = await fetch(reqLabel, { cache: "reload", ...reqInit });
+    if (!res.ok) throw new Error(`${path} yüklenemedi (${res.status})`);
+    const rawText = await res.text();
+    const parsed = tryParse(rawText);
+    if (parsed) return parsed;
+    throw new Error(`JSON parse hatası (${path}): Beklenmeyen içerik (ilk bayt: ${rawText[0]||"?"})`);
+  };
+
+  const restoreFromCache = async () => {
+    if (typeof caches === "undefined") return null;
+    const keys = [versioned, bare, cacheKey];
+    for (const key of keys){
+      try{
+        const cached = await caches.match(key) || await caches.match(new Request(key));
+        if (!cached) continue;
+        const txt = await cached.text();
+        const parsed = tryParse(txt);
+        if (Array.isArray(parsed)) {
+          console.info(`Cache'ten geri yüklendi (${key})`);
+          return parsed;
+        }
+      }catch(e){ console.warn(`Cache okuma hatası (${key}):`, e); }
+    }
+    return null;
+  };
+
+  // Ana deneme + bare fallback
+  try {
+    const data = await fetchAndParse(versioned);
+    if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+    return data.map(normalizeQuestion);
+  } catch (err) {
+    console.warn(`İlk deneme başarısız (${path}):`, err);
+    recordError(path, err?.message || "İlk deneme başarısız", { detail: err?.stack || String(err) });
+    try {
+      const data = await fetchAndParse(bare);
+      if (!Array.isArray(data)) throw new Error(`${path} geçerli bir dizi değil`);
+      return data.map(normalizeQuestion);
+    } catch (err2) {
+      console.warn(`İkinci deneme başarısız (${path}):`, err2);
+      recordError(path, err2?.message || "İkinci deneme başarısız", { detail: err2?.stack || String(err2) });
+      const cached = await restoreFromCache();
+      if (cached) return cached.map(normalizeQuestion);
+      const embedded = tryEmbedded();
+      if (embedded) return embedded.map(normalizeQuestion);
+      throw err2;
+    }
+  }
+}
+
+function rebuildFingerprints(banks){
+  const set = new Set(App.fingerprints || loadFingerprintSet());
+  for (const list of Object.values(banks || {})){
+    (list||[]).forEach(q => {
+      const fp = fingerprintQuestion(q);
+      if (fp) set.add(fp);
+    });
+  }
+  App.fingerprints = set;
+  persistFingerprintSet(set);
 }
 
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
-  for (const [lesson, file] of Object.entries(FILES)){
-    try{
+  const missing = [];
+
+  const jobs = Object.entries(FILES).map(async ([lesson, file]) => {
+    try {
       const data = await fetchJSON(file);
       banks[lesson] = data;
-    } catch (e){
+    } catch (e) {
       console.error(e);
-      setNotice(`Hata: ${file} okunamadı. (İpucu: dosya adı tam aynı mı? Ü/ı harfleri?)`, "error");
-      throw e;
+      recordError(file, e?.message || "Bankası okunamadı", { detail: String(e) });
+      banks[lesson] = [];
+      missing.push({ lesson, file, error: e?.message || e });
     }
-  }
+  });
+
+  await Promise.all(jobs);
   App.allBanks = banks;
-  setNotice("Soru paketleri hazır ✅", "info");
+  rebuildFingerprints(banks);
+
+   renderLessonIcons(App.mode);
+
+   const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
+   updateStats(total);
+
+   if (missing.length){
+     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
+     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
+     showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+   } else {
+     setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
+   }
+
+   syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -417,12 +1397,14 @@ function renderQuestion(){
     paintOptions();
     showExplanation();
   }
+
+  typesetMath($("quizCard"));
 }
 
 function inferLesson(q){
   // We don’t store lesson inside question; use current mode mapping by reference
   // fall back to selected
-  return App.currentTest?.lesson || "Ders";
+  return q.lesson || App.currentTest?.lesson || "Ders";
 }
 
 function paintOptions(){
@@ -475,7 +1457,9 @@ function showExplanation(){
   $("tagResult").className = "tag " + (ok ? "ok" : "bad");
 
   const explain = q.explain || "";
-  $("explainText").textContent = explain ? explain : (ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.");
+  const fallback = ok ? "Kısa not: Doğru seçeneği koru." : "Kısa not: Açıklama eklenmemiş.";
+  const html = (explain || fallback).replace(/\n/g, "<br>");
+  $("explainText").innerHTML = html;
 
   const lessonName = (t.mode === "single") ? t.lesson : inferLesson(q);
   $("coachTip").textContent = getCoachTip(lessonName, q.konu, ok);
@@ -483,6 +1467,8 @@ function showExplanation(){
   if (App.ttsEnabled){
     speak(`${ok ? "Doğru" : "Yanlış"}. ${$("explainText").textContent}`);
   }
+
+  typesetMath($("explain"));
 }
 
 function onPick(i){
@@ -771,7 +1757,7 @@ function handleVoiceCommand(raw){
     };
     const lesson = map[name] || "Matematik";
     setMode("single");
-    $("lessonSelect").value = lesson;
+    setLesson(lesson);
     $("countInput").value = clamp(n,5,300);
     return;
   }
@@ -802,8 +1788,13 @@ async function startTest(){
     if (!Object.keys(App.allBanks||{}).length) await loadAllBanks();
   }catch{ return; }
 
+  togglePlanCta(false);
+  $("btnStart")?.classList.remove("pulse");
+
   const mode = App.mode;
-  const lesson = $("lessonSelect").value;
+  // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
+  // doğrudan bu kaynaktan alarak seçim sorunlarını önlüyoruz.
+  const lesson = App.lesson;
   const count = clamp(parseInt($("countInput").value||"10",10), 5, 300);
   const goal = $("goal").value;
   const diffSel = $("difficulty").value;
@@ -826,6 +1817,11 @@ function quick2hPlan(){
   setMode("gkgy");
   $("goal").value = "mastery";
   $("difficulty").value = "auto";
+  $("countInput").value = "120";
+  togglePlanCta(true);
+  const start = $("btnStart");
+  start?.classList.add("pulse");
+  start?.scrollIntoView({ behavior:"smooth", block:"center" });
   setNotice("2 saat plan: GK-GY karışık + zayıf konulara ağırlık. Başlat’a bas.", "info");
 }
 
@@ -853,6 +1849,125 @@ function share(){
   }
 }
 
+function buildExamPlan(type){
+  if (type === "gkgy") {
+    return { plan: GK_GY_EXAM_DISTRIBUTION, total: 120, label: "GK-GY 120" };
+  }
+  const plan = {};
+  A_GROUP_LESSONS.forEach(l => plan[l] = 40);
+  return { plan, total: 200, label: "A Grubu 200" };
+}
+
+async function handleAIExam(type){
+  const { plan, total, label } = buildExamPlan(type);
+  const providerSel = $("aiProvider");
+  const provider = providerSel?.value || "local";
+
+  if (provider === "hf") {
+    setNotice("AI denemeleri için Hugging Face (ücretsiz, internet) kullanılacak.", "info");
+  } else if (provider === "ollama") {
+    setNotice("AI denemeleri yerel Ollama üzerinden üretilecek (ücretsiz, offline).", "info");
+  } else {
+    setNotice("AI denemeleri yerel üretici ile üretilecek (ücretsiz, offline).", "info");
+  }
+
+  // var olan AI ayarlarını formdan çekip sakla
+  const state = ensureState();
+  state.ai.provider = provider;
+  state.ai.token = $("hfToken")?.value || "";
+  state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
+  state.ai.ollamaUrl = $("ollamaUrl")?.value || state.ai.ollamaUrl || "http://localhost:11434";
+  saveState(state);
+
+  const previewWin = openExamWindowShell(`${label} AI Deneme`, "Sorular hazırlanıyor…");
+
+  if (!Object.keys(App.allBanks||{}).length){
+    await loadAllBanks();
+  }
+
+  setNotice(`${label} deneme için AI soru üretimi başlatıldı…`, "info");
+  const created = [];
+  for (const [lesson, n] of Object.entries(plan)){
+    let batch = [];
+    try {
+      if (provider === "hf") batch = await fetchHFBatched(lesson, n);
+      else if (provider === "ollama") batch = await fetchOllamaBatched(lesson, n);
+    } catch (e) {
+      console.warn(e);
+      setNotice(`${lesson} için ${provider.toUpperCase()} üretimi kısmen başarısız: ${e.message}`, "error");
+    }
+
+    if (batch.length < n){
+      const fallback = injectAIQuestions(lesson, n - batch.length);
+      batch.push(...fallback);
+    }
+    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)", n);
+    stamped.forEach(q=> created.push({ ...q, lesson }));
+  }
+
+  if (!created.length){
+    if (previewWin){
+      previewWin.document.body.innerHTML = `
+        <div style="font-family:Inter,-apple-system;max-width:520px;margin:80px auto;text-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);">
+          <h1 style="margin:0 0 6px;font-size:20px;">Deneme üretilemedi</h1>
+          <p style="color:#475569;">Bağlantıyı veya modeli kontrol edip tekrar dener misin?</p>
+        </div>`;
+    }
+    setNotice("AI deneme üretilemedi. Bağlantıyı veya modeli kontrol et.", "error");
+    return;
+  }
+
+  const subtitle = `${label} · ${created.length} soru · ${now()} · ${provider === "hf" ? "Hugging Face (internet)" : provider === "ollama" ? "Ollama (yerel)" : "Yerel üretici"}`;
+  renderExamWindow(`${label} AI Deneme`, created, subtitle, previewWin);
+  setNotice(`${label} hazır! Yeni sekmede açıldı.`, "info");
+}
+
+async function handleAIGenerate(){
+  const lesson = $("aiLesson")?.value || App.lesson;
+  const count = clamp(parseInt($("aiCount")?.value || "3", 10) || 3, 1, 20);
+  const provider = $("aiProvider")?.value || "hf";
+
+  const state = ensureState();
+  state.ai.provider = provider;
+  state.ai.token = $("hfToken")?.value || "";
+  state.ai.model = $("hfModel")?.value || HF_MODEL_DEFAULT;
+  state.ai.ollamaUrl = $("ollamaUrl")?.value || state.ai.ollamaUrl || "http://localhost:11434";
+  saveState(state);
+
+  if (!Object.keys(App.allBanks||{}).length){
+    await loadAllBanks();
+  }
+
+  let fresh = [];
+  if (provider === "hf"){
+    try{
+      const onlineQs = await fetchHuggingFaceAI(lesson, count);
+      fresh = appendQuestions(lesson, onlineQs, "AI (Hugging Face internet)", count);
+    }catch(e){
+      console.warn(e);
+      setNotice("İnternet AI üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
+    }
+  } else if (provider === "ollama"){
+    try{
+      const localQs = await fetchOllamaAI(lesson, count);
+      fresh = appendQuestions(lesson, localQs, "AI (Ollama yerel)", count);
+    }catch(e){
+      console.warn(e);
+      setNotice("Yerel Ollama üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
+    }
+  }
+
+  if (!fresh.length){
+    fresh = injectAIQuestions(lesson, count);
+  }
+
+  const total = App.allBanks[lesson]?.length || 0;
+  const msg = `🤖 ${lesson}: ${fresh.length} yeni soru eklendi (toplam ${total})`;
+  setNotice(msg, "info");
+  const status = $("aiStatus");
+  if (status) status.textContent = msg + (provider === "hf" && fresh[0]?.kaynak?.includes("Hugging") ? " · Hugging Face (internet)" : " · yerel üretim");
+}
+
 // PWA install helper
 let deferredPrompt = null;
 window.addEventListener("beforeinstallprompt", (e)=>{
@@ -871,20 +1986,33 @@ async function installPWA(){
   deferredPrompt = null;
 }
 
-function init(){
+async function init(){
   fillLessonSelect();
+  syncAIForm();
   setMode("single");
 
-  // mode buttons
-  document.querySelectorAll(".seg-btn").forEach(b=>{
+  document.querySelectorAll('[data-scroll]').forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      const target = $(btn.dataset.scroll);
+      if (target) target.scrollIntoView({ behavior:"smooth", block:"start" });
+      document.querySelectorAll('.nav-link').forEach(n => n.classList.toggle('active', n.dataset.scroll === btn.dataset.scroll));
+    });
+  });
+
+  // mode buttons (yalnızca mod anahtarları)
+  document.querySelectorAll(".mode-btn").forEach(b=>{
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
   });
 
-  $("lessonSelect").addEventListener("change", (e)=>{ App.lesson = e.target.value; });
+  $("lessonSelect").addEventListener("change", (e)=> setLesson(e.target.value));
 
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
+  $("btnPlanStart")?.addEventListener("click", startTest);
+  $("btnPlanDismiss")?.addEventListener("click", ()=>{ togglePlanCta(false); $("btnStart")?.classList.remove("pulse"); });
   $("btnUpdate").addEventListener("click", checkUpdates);
+  $("btnHome").addEventListener("click", goHome);
+  $("btnAiGenerate")?.addEventListener("click", ()=> handleAIGenerate());
 
   $("btnNext").addEventListener("click", next);
   $("btnPrev").addEventListener("click", prev);
@@ -897,7 +2025,19 @@ function init(){
 
   $("btnVoice").addEventListener("click", ()=> startVoice());
   $("btnRead").addEventListener("click", ()=> readCurrent());
+  $("btnExamGK")?.addEventListener("click", ()=> handleAIExam("gkgy"));
+  $("btnExamA")?.addEventListener("click", ()=> handleAIExam("a"));
   $("btnInstall").addEventListener("click", ()=> installPWA());
+  $("alertClose").addEventListener("click", ()=> showAlert(null));
+  $("btnDiagClear")?.addEventListener("click", clearDiagnostics);
+  $("btnDiagExport")?.addEventListener("click", exportDiagnostics);
+
+  window.addEventListener("error", (ev)=>{
+    recordError(ev.filename || "window", ev.message || "Bilinmeyen hata", { detail: ev.error?.stack || "" });
+  });
+  window.addEventListener("unhandledrejection", (ev)=>{
+    recordError("promise", ev.reason?.message || "Yakalanmayan söz verisi", { detail: ev.reason?.stack || String(ev.reason) });
+  });
 
   $("btnWhy").addEventListener("click", ()=>{
     const t = App.currentTest;
@@ -915,7 +2055,20 @@ function init(){
   // initial state info
   const state = ensureState();
   saveState(state);
-  setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  updateStats();
+  setNotice("Soru paketleri yükleniyor…", "info");
+
+  try {
+    await loadAllBanks();
+    syncLessonUI(App.mode);
+    setNotice("Hazır. Başlamak için ‘Testi Başlat’.", "info");
+  } catch (e) {
+    console.error(e);
+    recordError("init", e?.message || "Soru bankaları yüklenemedi", { detail: e?.stack || String(e) });
+    setNotice("Soru bankaları yüklenemedi. Dosyaları yenileyip tekrar deneyin.", "error");
+    // UI boş kalmasın diye son kez senkronla
+    syncLessonUI(App.mode);
+  }
 }
 
 window.addEventListener("DOMContentLoaded", init);
