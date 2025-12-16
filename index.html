@@ -37,6 +37,42 @@
   </header>
 
   <main class="container space-y-6">
+    <section class="card hero-card">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p class="eyebrow">Yeni görünüm</p>
+          <h1 class="hero-title">KPSS Dijital Koç – Ultimate</h1>
+          <p class="hero-sub">Modern sekmeler, hızlı kısayollar ve canlı kartlarla ders çalışmayı hızlandırdık.</p>
+          <div class="hero-actions row">
+            <button class="btn primary sm" data-scroll="setupCard">🚀 Teste başla</button>
+            <button class="btn ghost sm" data-scroll="aiCard">🤖 Yapay zeka paneli</button>
+            <button class="btn ghost sm" data-scroll="aiExamCard">🧠 120/200 soruluk denemeler</button>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-tile">
+            <div class="stat-value" id="statQuestions">–</div>
+            <div class="stat-label">Toplam soru</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value" id="statLessons">–</div>
+            <div class="stat-label">Ders</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-value" id="statVersion">v14</div>
+            <div class="stat-label">Sürüm</div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-bar" id="navShortcuts">
+        <button class="nav-link active" data-scroll="setupCard">Hazırlık</button>
+        <button class="nav-link" data-scroll="aiCard">AI üretici</button>
+        <button class="nav-link" data-scroll="aiExamCard">AI deneme</button>
+        <button class="nav-link" data-scroll="quizCard">Canlı test</button>
+        <button class="nav-link" data-scroll="resultsCard">Sonuçlar</button>
+      </div>
+    </section>
+
     <div id="loadStatus" class="notice" hidden></div>
 
     <div id="alertBox" class="notice flex items-start gap-3" hidden>

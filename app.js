@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v13";
+const APP_VERSION = "v14";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -955,6 +955,17 @@ function setNotice(msg, kind="info"){
   el.style.borderColor = kind==="error" ? "rgba(220,38,38,.18)" : "rgba(17,24,39,.08)";
 }
 
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
 function showAlert(msg){
   const box = $("alertBox");
   const txt = $("alertText");
@@ -1175,18 +1186,20 @@ async function loadAllBanks(){
   await Promise.all(jobs);
   App.allBanks = banks;
 
-  renderLessonIcons(App.mode);
+   renderLessonIcons(App.mode);
 
-  if (missing.length){
-    const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
-    setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
-    showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
-  } else {
-    const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
-    setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
-  }
+   const total = Object.values(banks).reduce((a,b)=> a + (b?.length||0), 0);
+   updateStats(total);
 
-  syncLessonUI(App.mode);
+   if (missing.length){
+     const names = missing.map(m=>`${m.lesson} (${m.file})`).join(", ");
+     setNotice(`Bazı paketler okunamadı: ${names}. Yenileyip tekrar dene.`, "error");
+     showAlert("Güncel dosyalar tarayıcıda önbelleğe takılmış olabilir. Sayfayı yenileyip ⚡ Güncellemeleri denetle, ardından 🏠 Ana sayfa ile yeniden başlatmayı dene.");
+   } else {
+     setNotice(`Soru paketleri hazır ✅ · ${total} soru`, "info");
+   }
+
+   syncLessonUI(App.mode);
 }
 
 // ---------- test builder ----------
@@ -1908,6 +1921,14 @@ async function init(){
   syncAIForm();
   setMode("single");
 
+  document.querySelectorAll('[data-scroll]').forEach(btn => {
+    btn.addEventListener('click', ()=>{
+      const target = $(btn.dataset.scroll);
+      if (target) target.scrollIntoView({ behavior:"smooth", block:"start" });
+      document.querySelectorAll('.nav-link').forEach(n => n.classList.toggle('active', n.dataset.scroll === btn.dataset.scroll));
+    });
+  });
+
   // mode buttons (yalnızca mod anahtarları)
   document.querySelectorAll(".mode-btn").forEach(b=>{
     b.addEventListener("click", ()=> setMode(b.dataset.mode));
@@ -1953,6 +1974,7 @@ async function init(){
   // initial state info
   const state = ensureState();
   saveState(state);
+  updateStats();
   setNotice("Soru paketleri yükleniyor…", "info");
 
   try {

@@ -1,6 +1,6 @@
 // KPSS Dijital Koç – Ultimate Service Worker
-const STATIC_CACHE = 'kpss-ultimate-static-v13';
-const RUNTIME_CACHE = 'kpss-ultimate-runtime-v13';
+const STATIC_CACHE = 'kpss-ultimate-static-v14';
+const RUNTIME_CACHE = 'kpss-ultimate-runtime-v14';
 const STATIC_ASSETS = [
   './',
   './index.html',
