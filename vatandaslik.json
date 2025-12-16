@@ -1091,4 +1091,1206 @@
     "dogru_index": 0,
     "aciklama": "Ombudsman TBMM'ye bağlıdır."
   }
+],
+[
+  {
+    "konu": "Temel Hukuk",
+    "soru": "Hukukun temel amacı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Bireysel çıkarları korumak",
+      "Toplumsal düzeni sağlamak",
+      "Sadece devletin çıkarlarını gözetmek",
+      "Ekonomik kalkınmayı sağlamak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hukuk düzeni, toplum düzenini sağlamak ve hakları korumak amacıyla oluşur."
+  },
+  {
+    "konu": "Anayasa ve Devlet Yapısı",
+    "soru": "Türkiye Cumhuriyeti’nde yürürlükte olan Anayasa hangi yılda kabul edilmiştir?",
+    "secenekler": [
+      "1961",
+      "1982",
+      "1980",
+      "2001"
+    ],
+    "dogru_index": 1,
+    "aciklama": "1982 Anayasası 7 Kasım 1982’de halkoyuyla kabul edilmiştir."
+  },
+  {
+    "konu": "1982 Anayasası’nın İlkeleri",
+    "soru": "1982 Anayasası’na göre devletin şekli hangi maddedede belirtilmiştir?",
+    "secenekler": [
+      "Madde 1",
+      "Madde 2",
+      "Madde 3",
+      "Madde 4"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Türkiye Devleti’nin şeklinin Cumhuriyet olduğu 1. maddede belirtilir."
+  },
+  {
+    "konu": "Temel Hak & Hürriyetler",
+    "soru": "Kişi dokunulmazlığı ve özgürlüğü hangi haklar arasında yer alır?",
+    "secenekler": [
+      "Sosyal haklar",
+      "Kişi hakları",
+      "Ekonomik haklar",
+      "Siyasi haklar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kişi dokunulmazlığı, kişi hakları ve ödevleri kapsamında yer alır."
+  },
+  {
+    "konu": "Yasama, Yürütme, Yargı",
+    "soru": "Türkiye Büyük Millet Meclisi’nin yasama yetkisi hangi kavramla ifade edilir?",
+    "secenekler": [
+      "Genelge",
+      "Kanun",
+      "Kararname",
+      "Tüzük"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yasama yetkisi kanun çıkarma yetkisi ile ifade edilir."
+  },
+  {
+    "konu": "İdare Hukuku",
+    "soru": "Kamu hizmeti imtiyaz sözleşmelerini onaylama yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Danıştay",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "İdare Hukukuna göre imtiyaz sözleşmelerini Danıştay inceler ve uygun bulursa onaylar."
+  },
+  {
+    "konu": "Anayasa ve Devlet Yapısı",
+    "soru": "Cumhurbaşkanı kaç yıllığına seçilir?",
+    "secenekler": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "dogru_index": 1,
+    "aciklama": "2017 Anayasa değişikliği ile Cumhurbaşkanı 5 yıllık süre için seçilir."
+  },
+  {
+    "konu": "Temel Hukuk",
+    "soru": "Uyuşmazlıkların çözümünde kullanılan arabuluculuk yöntemi hangi hukuk dalına girer?",
+    "secenekler": [
+      "Ceza hukuku",
+      "Medeni hukuk",
+      "İş hukuku",
+      "Ticaret hukuku"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Arabuluculuk, iş hukuku ve bazı özel hukuk uyuşmazlıklarında başvurulan alternatif çözüm yoludur."
+  },
+  {
+    "konu": "Yasama, Yürütme, Yargı",
+    "soru": "TBMM başkanlık divanı kaç kişiden oluşur?",
+    "secenekler": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Meclis başkanı, başkanvekilleri, katip üyeler ve idare amirlerinden oluşan divan genellikle 9 kişidir."
+  },
+  {
+    "konu": "Temel Hak & Hürriyetler",
+    "soru": "Seyahat özgürlüğü hangi koşulda sınırlandırılabilir?",
+    "secenekler": [
+      "Askeri nedenlerle",
+      "Ekonomik kriz nedeniyle",
+      "Bireysel tercih",
+      "Yargı kararı ile"
+    ],
+    "dogru_index": 3,
+    "aciklama": "Temel haklar ancak yargı kararı ile veya kanunda belirtilen istisnalar dahilinde sınırlandırılabilir."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin düşüncelerini açıklama özgürlüğü hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Siyasi haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Düşünceyi açıklama özgürlüğü kişi hakları arasındadır."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Türkiye'de yasama yetkisi kime aittir?",
+    "secenekler": [
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "TBMM",
+      "Bakanlar Kurulu"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yasama yetkisi TBMM’ye aittir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Türkiye Cumhuriyeti'nin yönetim şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Oligarşi",
+      "Teokrasi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa'ya göre Türkiye Cumhuriyeti bir cumhuriyettir."
+  },
+  {
+    "konu": "Temel Hukuk",
+    "soru": "Hukuk kurallarının yazılı ve yazısız kaynaklardan oluşması aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Hukukun bölünmezliğini",
+      "Hukukun kaynaklarını",
+      "Hukukun yaptırımını",
+      "Hukukun üstünlüğünü"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yazılı-yazısız ayrımı hukukun kaynaklarıyla ilgilidir."
+  },
+  {
+    "konu": "Anayasa ve Devlet Yapısı",
+    "soru": "Türkiye Cumhuriyeti'nde egemenlik kayıtsız şartsız kime aittir?",
+    "secenekler": [
+      "Millete",
+      "Hükümete",
+      "Cumhurbaşkanına",
+      "Yargıya"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Egemenlik kayıtsız şartsız milletindir."
+  },
+  {
+    "konu": "1982 Anayasası’nın İlkeleri",
+    "soru": "Laiklik ilkesi aşağıdakilerden hangisini ifade eder?",
+    "secenekler": [
+      "Devletin dine bağlı olmasını",
+      "Din ve devlet işlerinin ayrılmasını",
+      "Tek parti yönetimini",
+      "Yargının bağımsız olmamasını"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Laiklik, din ve devlet işlerinin ayrılığıdır."
+  },
+  {
+    "konu": "Temel Hak & Hürriyetler",
+    "soru": "Kişinin konut dokunulmazlığı hangi hak grubunda değerlendirilir?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "TBMM'nin başlıca görevlerinden biri aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Kanun yapmak",
+      "Anayasa Mahkemesine üye seçmek",
+      "Bakanları atamak",
+      "Valileri belirlemek"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yasama organının temel görevi kanun yapmaktır."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Cumhurbaşkanı aşağıdakilerden hangisi tarafından seçilir?",
+    "secenekler": [
+      "TBMM",
+      "Halk",
+      "Yargıtay",
+      "Bakanlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Mevcut sistemde Cumhurbaşkanı halk tarafından seçilir."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yasaların Anayasa'ya uygunluğunu denetleyen yüksek mahkeme hangisidir?",
+    "secenekler": [
+      "Yargıtay",
+      "Danıştay",
+      "Anayasa Mahkemesi",
+      "Sayıştay"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Anayasa Mahkemesi norm denetimi yapar."
+  },
+  {
+    "konu": "İdare Hukuku",
+    "soru": "İdarenin işlem ve eylemlerine karşı açılan davalara bakan yüksek mahkeme hangisidir?",
+    "secenekler": [
+      "Yargıtay",
+      "Danıştay",
+      "Anayasa Mahkemesi",
+      "Uyuşmazlık Mahkemesi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İdari yargının en üst merci Danıştay'dır."
+  },
+  {
+    "konu": "Temel Hak & Hürriyetler",
+    "soru": "Kişinin düşünce ve kanaatlerini açıklamaya zorlanamaması hangi özgürlüğe örnektir?",
+    "secenekler": [
+      "Din ve vicdan özgürlüğü",
+      "Düşünce ve kanaat özgürlüğü",
+      "Toplantı özgürlüğü",
+      "Sendika hakkı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Düşünce ve kanaat özgürlüğü kapsamında değerlendirilir."
+  },
+  {
+    "konu": "Anayasa ve Devlet Yapısı",
+    "soru": "Türkiye Devleti'nin şekli aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Cumhuriyet",
+      "Monarşi",
+      "Federasyon",
+      "Teokrasi"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Anayasa'nın 1. maddesi: Devletin şekli cumhuriyettir."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Yargı yetkisi kime aittir?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Bağımsız mahkemeler",
+      "Bakanlar"
+    ],
+    "dogru_index": 2,
+    "aciklama": "Yargı bağımsız mahkemelerce kullanılır."
+  },
+  {
+    "konu": "Temel Hukuk",
+    "soru": "Hukuk kurallarının aykırılığı halinde uygulanan güç ne olarak adlandırılır?",
+    "secenekler": [
+      "Teamül",
+      "Yaptırım",
+      "Ahlak",
+      "Gelenek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Hukuk kurallarının zorlayıcı gücü yaptırımdır."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Anayasanın değiştirilmesi TBMM'de hangi çoğunlukla mümkündür?",
+    "secenekler": [
+      "Basit çoğunluk",
+      "Nitelikli çoğunluk",
+      "Oybirliği",
+      "Teklif yeter"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasa değişikliği için nitelikli çoğunluk aranır."
+  },
+  {
+    "konu": "İlkeler",
+    "soru": "Sosyal devlet ilkesi aşağıdakilerden hangisini amaçlar?",
+    "secenekler": [
+      "Gelir adaletsizliğini azaltmak",
+      "Devleti küçültmek",
+      "Vergiyi kaldırmak",
+      "Yargıyı yürütmeye bağlamak"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Sosyal devlet sosyal adaleti ve refahı hedefler."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Yaşama hakkı hangi hak grubuna girer?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Yaşama hakkı kişi haklarındandır."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "TBMM'nin bilgi edinme yollarından biri hangisidir?",
+    "secenekler": [
+      "Soru",
+      "Af",
+      "Tüzük",
+      "Hâkim ataması"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Soru, gensoru vb. denetim yollarındandır."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Cumhurbaşkanlığı kararnamesi ile düzenlenemeyecek alan hangisidir?",
+    "secenekler": [
+      "Temel hakların özüne dokunma",
+      "İdari teşkilat",
+      "Kamu kurumları",
+      "Atamalar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Temel hakların özü CBK ile düzenlenemez."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Danıştay hangi yargı kolunun en üst mahkemesidir?",
+    "secenekler": [
+      "Adli yargı",
+      "İdari yargı",
+      "Askeri yargı",
+      "Anayasa yargısı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Danıştay idari yargının üst mahkemesidir."
+  },
+  {
+    "konu": "İdare Hukuku",
+    "soru": "Belediyeler aşağıdakilerden hangisine örnektir?",
+    "secenekler": [
+      "Merkezden yönetim",
+      "Yerinden yönetim",
+      "Özel hukuk tüzel kişisi",
+      "Yargı organı"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Belediyeler mahalli idarelerdir (yerinden yönetim)."
+  },
+  {
+    "konu": "Hak ve Özgürlükler",
+    "soru": "Kişi hürriyeti ve güvenliği hakkı hangi durumlarda sınırlanabilir?",
+    "secenekler": [
+      "Kanunla",
+      "Keyfi",
+      "Sözlü emirle",
+      "Gelenekle"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Temel haklar kanunla sınırlanabilir."
+  },
+  {
+    "konu": "Devlet Yapısı",
+    "soru": "Türkiye'de yargı yetkisi aşağıdakilerden hangisi adına kullanılır?",
+    "secenekler": [
+      "Hükümet",
+      "Millet",
+      "Partiler",
+      "Bakanlık"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yargı yetkisi Türk Milleti adına kullanılır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Konut dokunulmazlığı hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Konut dokunulmazlığı kişi haklarındandır."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Yürütme yetkisi kim tarafından kullanılır?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "Anayasa Mahkemesi",
+      "YSK"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Yürütme yetkisi Cumhurbaşkanı’na aittir."
+  },
+  {
+    "konu": "Temel Hukuk",
+    "soru": "Hukuk kurallarının devlet gücüyle desteklenmesine ne denir?",
+    "secenekler": [
+      "Gelenek",
+      "Yaptırım",
+      "Nezaket",
+      "Ahlak"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Devlet gücü = yaptırım."
+  },
+  {
+    "konu": "Devlet Yapısı",
+    "soru": "Türkiye'nin yönetim şekli Anayasa'ya göre nedir?",
+    "secenekler": [
+      "Monarşi",
+      "Cumhuriyet",
+      "Teokrasi",
+      "Oligarşi"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Cumhuriyet."
+  },
+  {
+    "konu": "İlkeler",
+    "soru": "Hukuk devleti ilkesinin bir sonucu hangisidir?",
+    "secenekler": [
+      "Keyfi yönetim",
+      "Yargı denetimi",
+      "Seçimsizlik",
+      "Tek parti zorunluluğu"
+    ],
+    "dogru_index": 1,
+    "aciklama": "İdarenin yargı denetimi."
+  },
+  {
+    "konu": "Temel Haklar",
+    "soru": "Kişinin özel hayatının gizliliği hangi hak grubundadır?",
+    "secenekler": [
+      "Kişi hakları",
+      "Siyasi haklar",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Kişi hakları."
+  },
+  {
+    "konu": "Yasama",
+    "soru": "Kanun teklif etmeye kim yetkilidir?",
+    "secenekler": [
+      "Bakanlar",
+      "Milletvekilleri",
+      "Valiler",
+      "Kaymakamlar"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kanun teklifi milletvekillerince verilir."
+  },
+  {
+    "konu": "Yürütme",
+    "soru": "Cumhurbaşkanı yardımcılarını kim atar?",
+    "secenekler": [
+      "TBMM",
+      "Cumhurbaşkanı",
+      "YSK",
+      "Danıştay"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Atama yetkisi Cumhurbaşkanındadır."
+  },
+  {
+    "konu": "Yargı",
+    "soru": "Sayıştay'ın temel görevi hangisidir?",
+    "secenekler": [
+      "Norm denetimi",
+      "Mali denetim",
+      "Ceza yargısı",
+      "İdari iptal"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Kamu harcamalarını denetler."
+  },
+  {
+    "konu": "İdare Hukuku",
+    "soru": "Vali hangi idari birimin başıdır?",
+    "secenekler": [
+      "İl",
+      "İlçe",
+      "Belde",
+      "Köy"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Vali ilin başıdır."
+  },
+  {
+    "konu": "Hak ve Özgürlükler",
+    "soru": "Toplantı ve gösteri yürüyüşü hakkı hangi hak grubunda sayılır?",
+    "secenekler": [
+      "Siyasi haklar",
+      "Kişi hakları",
+      "Sosyal haklar",
+      "Ekonomik haklar"
+    ],
+    "dogru_index": 0,
+    "aciklama": "Siyasi hak/özgürlüklerdendir."
+  },
+  {
+    "konu": "Anayasa",
+    "soru": "Anayasanın en üst norm olması hangi kavramla ifade edilir?",
+    "secenekler": [
+      "Hiyerarşi",
+      "Üstünlük",
+      "Mülkiyet",
+      "Gelenek"
+    ],
+    "dogru_index": 1,
+    "aciklama": "Anayasanın üstünlüğü ilkesi."
+  }
 ]
