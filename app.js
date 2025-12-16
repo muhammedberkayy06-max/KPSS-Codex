@@ -42,6 +42,7 @@ const GK_GY_DISTRIBUTION = {
 const A_GROUP_LESSONS = ["Kamu Yönetimi", "İktisat", "Çalışma Ekonomisi", "Hukuk", "Uluslararası İlişkiler"]; // 40'ar
 
 const STORE_KEY = "kpss_ultimate_v1";
+const CACHE_KEYS = ["kpss-ultimate-static-v7", "kpss-ultimate-runtime-v7"];
 
 // ---------- small helpers ----------
 const $ = (id) => document.getElementById(id);
@@ -89,10 +90,10 @@ function safeText(v){
 function normalizeQuestion(q){
   const konu = q.konu || q.topic || "Genel";
   const soru = q.soru || q.question || "";
-  const paragraf = (q.paragraf ?? q.paragraph) || null;
+  const paragraf = (q.paragraf !== undefined && q.paragraf !== null) ? q.paragraf : (q.paragraph || null);
 
   // --- seçenekleri normalize et: array veya {A:..,B:..} gelebilir ---
-  let optionsRaw = q.secenekler ?? q.options ?? [];
+  let optionsRaw = (q.secenekler !== undefined && q.secenekler !== null) ? q.secenekler : (q.options !== undefined && q.options !== null ? q.options : []);
   let options = [];
 
   if (Array.isArray(optionsRaw)) {
@@ -110,9 +111,15 @@ function normalizeQuestion(q){
   }
 
   // --- doğru cevabı normalize et: index veya harf gelebilir ---
-  let correct = (q.dogru_index ?? q.dogruIndex ?? q.correct_index ?? q.correctIndex ?? q.answer_index ?? q.answerIndex);
+  let correct = (q.dogru_index !== undefined && q.dogru_index !== null) ? q.dogru_index
+    : (q.dogruIndex !== undefined && q.dogruIndex !== null ? q.dogruIndex
+    : (q.correct_index !== undefined && q.correct_index !== null ? q.correct_index
+    : (q.correctIndex !== undefined && q.correctIndex !== null ? q.correctIndex
+    : (q.answer_index !== undefined && q.answer_index !== null ? q.answer_index
+    : q.answerIndex))));
   if (correct === undefined || correct === null) {
-    correct = q.dogru ?? q.correct ?? q.answer; // "A" / "B" gibi
+    const alt = (q.dogru !== undefined && q.dogru !== null) ? q.dogru : (q.correct !== undefined && q.correct !== null ? q.correct : q.answer);
+    correct = alt; // "A" / "B" gibi
   }
 
   let ci = 0;
@@ -150,7 +157,7 @@ function normalizeQuestion(q){
 
 function estimateDifficulty(q){
   // heuristic: longer prompt/paragraph and options => harder
-  const len = (q.soru?.length||0) + (q.paragraf?.length||0);
+  const len = ((q.soru && q.soru.length) || 0) + ((q.paragraf && q.paragraf.length) || 0);
   if (len < 90) return "easy";
   if (len < 170) return "medium";
   return "hard";
@@ -193,9 +200,9 @@ function saveState(s){
 
 function ensureState(){
   const s = loadState();
-  s.profile ??= { xp:0, level:1, streak:0, badges:[], lastActive:null };
-  s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
-  s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
+  if (!s.profile) s.profile = { xp:0, level:1, streak:0, badges:[], lastActive:null };
+  if (!s.history) s.history = []; // {date, lesson, mode, total, correct, topicStats}
+  if (!s.topicPerf) s.topicPerf = {}; // lesson -> topic -> {correct,total}
   return s;
 }
 
@@ -415,6 +422,7 @@ async function fetchJSON(path){
 
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
+  const previous = App.allBanks || {};
   const banks = {};
   const missing = [];
 
@@ -459,7 +467,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   };
 
   const preferWeak = (lessonName, topic) => {
-    const tp = state.topicPerf?.[lessonName]?.[topic];
+    const tp = (state.topicPerf && state.topicPerf[lessonName]) ? state.topicPerf[lessonName][topic] : undefined;
     if (!tp || tp.total < 6) return 1.0;
     const acc = tp.correct / tp.total;
     // lower accuracy => higher weight
@@ -526,7 +534,7 @@ function buildTest(mode, lesson, count, goal, diffSel){
   shuffle(out);
 
   return {
-    id: crypto.randomUUID?.() || String(Math.random()).slice(2),
+    id: (crypto && typeof crypto.randomUUID === "function" ? crypto.randomUUID() : String(Math.random()).slice(2)),
     mode,
     lesson,
     createdAt: now(),
@@ -574,7 +582,7 @@ function renderQuestion(){
 
   const opts = $("options");
   opts.innerHTML = "";
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const locked = t.answers[t.index] !== null;
 
   q.options.forEach((text, i)=>{
@@ -602,13 +610,13 @@ function renderQuestion(){
 function inferLesson(q){
   // We don’t store lesson inside question; use current mode mapping by reference
   // fall back to selected
-  return App.currentTest?.lesson || "Ders";
+  return (App.currentTest && App.currentTest.lesson) ? App.currentTest.lesson : "Ders";
 }
 
 function paintOptions(){
   const t = App.currentTest;
   const q = t.questions[t.index];
-  const picked = t.answers[t.index]?.picked;
+  const picked = (t.answers && t.answers[t.index]) ? t.answers[t.index].picked : undefined;
   const correct = q.correctIndex;
   const buttons = [...$("options").children];
 
@@ -648,7 +656,7 @@ function showExplanation(){
   const t = App.currentTest;
   const q = t.questions[t.index];
   const ans = t.answers[t.index];
-  const ok = !!ans?.correct;
+  const ok = !!(ans && ans.correct);
 
   $("explain").hidden = false;
   $("tagResult").textContent = ok ? "Doğru ✅" : "Yanlış ❌";
@@ -682,7 +690,7 @@ function onPick(i){
   // stats
   if (ok) t.correct++;
   const topic = q.konu;
-  t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
   t.topicStats[topic].total++;
   if (ok) t.topicStats[topic].correct++;
 
@@ -728,7 +736,7 @@ function skip(){
     t.answers[t.index] = {picked:null, correct:false, skipped:true};
     const q = t.questions[t.index];
     const topic = q.konu;
-    t.topicStats[topic] ??= {correct:0,total:0};
+    if (!t.topicStats[topic]) t.topicStats[topic] = {correct:0,total:0};
     t.topicStats[topic].total++;
   }
   next();
@@ -743,8 +751,8 @@ function finish(){
   // merge topic perf
   for (const [topic, st] of Object.entries(t.topicStats)){
     const lessonName = (t.mode === "single") ? t.lesson : "Karma";
-    state.topicPerf[lessonName] ??= {};
-    state.topicPerf[lessonName][topic] ??= {correct:0,total:0};
+    if (!state.topicPerf[lessonName]) state.topicPerf[lessonName] = {};
+    if (!state.topicPerf[lessonName][topic]) state.topicPerf[lessonName][topic] = {correct:0,total:0};
     state.topicPerf[lessonName][topic].correct += st.correct;
     state.topicPerf[lessonName][topic].total += st.total;
   }
@@ -774,7 +782,7 @@ function renderResults(){
 
   const acc = t.total ? Math.round((t.correct / t.total) * 100) : 0;
   const lvl = state.profile.level;
-  const badges = state.profile.badges?.slice(0,6).join(" · ") || "—";
+  const badges = (state.profile.badges ? state.profile.badges.slice(0,6).join(" · ") : null) || "—";
 
   $("summary").textContent = `Doğru: ${t.correct} / ${t.total}  ·  Başarı: %${acc}  ·  Seviye: ${lvl}  ·  Rozetler: ${badges}`;
 
@@ -896,7 +904,8 @@ function startVoice(){
   rec.maxAlternatives = 1;
 
   rec.onresult = (e)=>{
-    const text = (e.results?.[0]?.[0]?.transcript || "").trim();
+    const res = (e && e.results && e.results[0] && e.results[0][0]) ? e.results[0][0].transcript : "";
+    const text = (res || "").trim();
     if (!text) return;
     handleVoiceCommand(text);
   };
@@ -1034,7 +1043,9 @@ function share(){
   if (navigator.share){
     navigator.share({ title:"KPSS Dijital Koç", text: msg, url: location.href }).catch(()=>{});
   } else {
-    navigator.clipboard?.writeText(msg + " " + location.href);
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(msg + " " + location.href);
+    }
     setNotice("Paylaşım metni panoya kopyalandı ✅", "info");
   }
 }
