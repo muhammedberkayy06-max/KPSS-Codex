@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v8";
+const APP_VERSION = "v9";
 
 const FILES = {
   "Türkçe": "turkce.json",
@@ -395,11 +395,35 @@ async function fetchJSON(path){
   const cacheKey = bare.split("?")[0];
 
   const tryParse = (txt) => {
-    const clean = txt.replace(/^\uFEFF/, "").replace(/^[^\[{]+/, "").trim();
-    if (!clean || /^[<]/.test(clean)) return null; // büyük ihtimalle HTML veya boş yanıt
-    try {
-      return JSON.parse(clean);
-    } catch { return null; }
+    const withoutBom = txt.replace(/^\uFEFF/, "");
+    const trimmed = withoutBom.trim();
+    if (!trimmed || /^[<]/.test(trimmed)) return null; // büyük ihtimalle HTML veya boş yanıt
+
+    const tryJSON = (payload) => {
+      try { return JSON.parse(payload); } catch { return null; }
+    };
+
+    const direct = tryJSON(trimmed);
+    if (direct) return direct;
+
+    // HTML/artık metin arasına gömülü JSON dizisini çekmeye çalış
+    const arrStart = trimmed.indexOf("[");
+    const arrEnd = trimmed.lastIndexOf("]");
+    if (arrStart !== -1 && arrEnd > arrStart){
+      const fragment = trimmed.slice(arrStart, arrEnd + 1);
+      const salvaged = tryJSON(fragment);
+      if (salvaged) return salvaged;
+    }
+
+    const objStart = trimmed.indexOf("{");
+    const objEnd = trimmed.lastIndexOf("}");
+    if (objStart !== -1 && objEnd > objStart){
+      const fragObj = trimmed.slice(objStart, objEnd + 1);
+      const salvagedObj = tryJSON(fragObj);
+      if (salvagedObj) return Array.isArray(salvagedObj) ? salvagedObj : [salvagedObj];
+    }
+
+    return null;
   };
 
   const tryEmbedded = () => {
