@@ -186,16 +186,17 @@ select,input{
   border-color: transparent;
   color:#fff;
 }
-.btn.success{
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  border-color: transparent;
-  color: #fff;
-  box-shadow:0 10px 22px rgba(34,197,94,.28);
-}
 .btn.ghost{background:rgba(255,255,255,.78); border-color: rgba(15,23,42,.08); color:var(--text); box-shadow:0 10px 20px rgba(15,23,42,.06);}
 .btn.danger{background:#fff; border-color: rgba(220,38,38,.25); color: var(--red)}
 .btn:hover{transform:translateY(-1px); box-shadow:0 10px 20px rgba(79,70,229,.18)}
 .btn:active{transform:scale(.99)}
+.btn.pulse{position:relative; box-shadow:0 14px 26px rgba(37,99,235,.22)}
+.btn.pulse::after{content:""; position:absolute; inset:-4px; border-radius:14px; border:2px solid rgba(37,99,235,.35); opacity:.6; animation:pulse 1.5s ease infinite;}
+
+.plan-cta{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px; border:1px dashed rgba(37,99,235,.35); border-radius:14px; background:rgba(37,99,235,.06); box-shadow:0 12px 22px rgba(37,99,235,.12); margin-top:10px;}
+.plan-cta .text{font-weight:800; color:#0f172a;}
+
+@keyframes pulse{0%{transform:scale(1); opacity:0.75;}50%{transform:scale(1.03); opacity:1;}100%{transform:scale(1); opacity:0.75;}}
 
 .toggle{display:flex; align-items:center; gap:10px; font-size:13px; color:var(--text); font-weight:700}
 .toggle input{width:18px; height:18px}

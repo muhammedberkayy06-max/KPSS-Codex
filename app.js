@@ -306,60 +306,61 @@ function injectAIQuestions(lesson, count){
   for (let i=0; i<count; i++){
     list.push(generateAIQuestion(lesson));
   }
-  return appendQuestions(lesson, list, "AI (ücretsiz yerel)");
+  return appendQuestions(lesson, list, "AI (ücretsiz yerel)", count);
 }
 
-function appendQuestions(lesson, questions, sourceLabel){
+function appendQuestions(lesson, questions, sourceLabel, desiredCount){
   const bank = App.allBanks[lesson] || [];
-  const localSeen = new Set();
   const stamped = [];
-  let rejected = 0;
-  questions.forEach((q, idx)=>{
+  const seen = App.fingerprints || new Set();
+
+  const tryAdd = (q, idx)=>{
     const base = normalizeQuestion(q);
-    const fp = computeFingerprint(base);
-    if (fp) {
-      if (App.fingerprints.has(fp) || localSeen.has(fp)) {
-        rejected++;
-        return;
-      }
-      base.fingerprint = fp;
-      localSeen.add(fp);
-    }
+    const fp = fingerprintQuestion(base);
+    if (fp && seen.has(fp)) return false;
+    if (fp) seen.add(fp);
     base.id = base.id || `${sourceLabel||"AI"}-${lesson}-${Date.now()}-${idx}-${Math.random().toString(36).slice(2,6)}`;
     base.kaynak = sourceLabel || base.kaynak || "AI";
     base.lesson = base.lesson || lesson;
+    base.fingerprint = fp;
     stamped.push(base);
-  });
+    return true;
+  };
 
-  stamped.forEach(q => { if (q.fingerprint) App.fingerprints.add(q.fingerprint); });
-  if (stamped.length) persistFingerprints();
+  questions.forEach((q, idx)=> tryAdd(q, idx));
+
+  if (desiredCount && stamped.length < desiredCount){
+    let guard = 0;
+    while (stamped.length < desiredCount && guard < desiredCount * 3){
+      guard++;
+      const filler = generateAIQuestion(lesson);
+      tryAdd(filler, stamped.length + guard);
+    }
+    if (stamped.length < desiredCount){
+      recordError(lesson, `Benzersiz soru sayısı hedefin altında kaldı (${stamped.length}/${desiredCount})`, { kind:"warn" });
+    }
+  }
+
+  App.fingerprints = seen;
+  persistFingerprintSet(seen);
+
+  if (stamped.length < questions.length){
+    recordError(lesson, `${questions.length - stamped.length} soru yinelenme nedeniyle atlandı`, { kind:"warn" });
+  }
 
   bank.push(...stamped);
   App.allBanks[lesson] = bank;
   renderLessonIcons(App.mode);
-  if (rejected) {
-    recordError("ai-dedup", `Benzer ${rejected} soru atlandı (${lesson})`, {});
-  }
   return stamped;
 }
 
-function planTopicsForLesson(lesson, count){
-  const topics = [...(TOPIC_GUIDE[lesson] || ["Genel"])];
-  shuffle(topics);
-  const need = clamp(Math.ceil(count / 2), 3, topics.length);
-  const picked = topics.slice(0, need);
-  // vary order to reduce tekrar
-  return shuffle(picked);
-}
-
-function buildAIPrompt(lesson, count, topicPlan){
-  const topics = topicPlan && topicPlan.length ? topicPlan : planTopicsForLesson(lesson, count);
-  const hedefler = topics.map((t,i)=> `${i+1}. ${t}`).join("\n");
-  const guard = "Her soru FARKLI bağlam ve rakamlarla gelsin; aynı kalıp, aynı isimler, aynı sayıları kullanma. Tekrar tespit edilirse soru geçersiz sayılacak.";
-  return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet benzersiz, çoktan seçmeli soru üret.
-Her kayıt JSON array içinde nesne olsun: {"konu","soru","paragraf"(isteğe bağlı),"secenekler":["A","B","C","D","E"],"dogru_index":0-4,"aciklama":"kısa çözüm"}.
-Kazanımlar/konular: \n${hedefler}\n
-Kurallar: Türkçe yanıtla, seçenekler 4-5 adet olsun, paragraf varsa string ver, sadece geçerli JSON array döndür. ${guard}`;
+function buildAIPrompt(lesson, count){
+  const topics = TOPIC_GUIDE[lesson] || ["genel"];
+  const hedefler = topics.slice(0, 8).map((t,i)=> `${i+1}. ${t}`).join("\n");
+  return `KPSS soru üreticisisin. Ders: ${lesson}. ${count} adet çoktan seçmeli soru üret.
+Her kayıt JSON olarak dönsün: {"konu","soru","paragraf"(isteğe bağlı),"secenekler":["A","B","C","D"],"dogru_index":0-3,"aciklama":"kısa çözüm"}.
+Kazanımlar (öncelik sırasıyla):\n${hedefler}\n
+Kurallar: Türkçe yanıtla, seçenekler 4-5 adet olsun, paragraf alanı varsa string olarak gönder, sadece JSON array döndür.`;
 }
 
 function extractJSONSegment(text){
@@ -397,7 +398,7 @@ async function fetchHuggingFaceAI(lesson, count, opts = {}){
   const modelRaw = (opts.modelOverride !== undefined ? opts.modelOverride : $("hfModel")?.value) || HF_MODEL_DEFAULT;
   const model = (modelRaw || HF_MODEL_DEFAULT).trim() || HF_MODEL_DEFAULT;
   const url = `https://api-inference.huggingface.co/models/${encodeURIComponent(model)}`;
-  const prompt = buildAIPrompt(lesson, count, opts.topicPlan);
+  const prompt = buildAIPrompt(lesson, count);
   const headers = { "Content-Type": "application/json" };
   if (token) headers["Authorization"] = `Bearer ${token}`;
 
@@ -426,27 +427,19 @@ async function fetchHuggingFaceAI(lesson, count, opts = {}){
 
 async function fetchHFBatched(lesson, total){
   const out = [];
-  const seen = new Set();
-  const guard = Math.max(4, Math.ceil(total / 10));
+  const guard = Math.max(3, Math.ceil(total / 12));
   let tries = 0;
   while (out.length < total && tries < guard){
     tries++;
     const need = Math.min(12, total - out.length);
     try {
-      const topicPlan = planTopicsForLesson(lesson, need + 2);
-      const batch = await fetchHuggingFaceAI(lesson, need + 2, { maxTokens: 620 * need, topicPlan, temperature: 0.85, top_p: 0.92 });
-      batch.forEach(q => {
-        const base = normalizeQuestion(q);
-        const fp = computeFingerprint(base);
-        if (fp && (App.fingerprints.has(fp) || seen.has(fp))) return;
-        if (fp) { base.fingerprint = fp; seen.add(fp); }
-        out.push(base);
-      });
+      const batch = await fetchHuggingFaceAI(lesson, need, { maxTokens: 600 * need });
+      out.push(...batch);
     } catch (e) {
       console.warn("HF batch hatası", e);
       if (tries >= guard) throw e;
     }
-    if (out.length < total) await delay(360 + tries * 40);
+    if (out.length < total) await delay(320);
   }
   return out.slice(0, total);
 }
@@ -577,21 +570,32 @@ function escapeHTML(str){
   });
 }
 
-function canonicalText(str){
-  return safeText(str)
+function normalizeForFingerprint(text){
+  return safeText(text)
     .toLowerCase()
-    .replace(/\d+/g, "#")
-    .replace(/[^a-zçğıöşü0-9#]+/gi, " ")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/[0-9]+/g, "#")
+    .replace(/[^a-zçğıöşüâêîôû0-9#]+/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
 
-function hashFingerprint(str){
+function hashString(str){
   let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = (h * 31 + str.charCodeAt(i)) | 0;
+  for (let i = 0; i < str.length; i++){
+    h = (h * 31 + str.charCodeAt(i)) >>> 0;
   }
-  return `fp_${(h >>> 0).toString(16)}`;
+  return `q${h.toString(16)}`;
+}
+
+function fingerprintQuestion(q){
+  const base = q && q.soru !== undefined ? q : normalizeQuestion(q);
+  const content = [base.konu, base.paragraf || "", base.soru, ...(base.options||[]), base.explain || ""]
+    .map(normalizeForFingerprint)
+    .join("|");
+  const canon = normalizeForFingerprint(content);
+  if (!canon) return null;
+  return hashString(canon);
 }
 
 function normalizeQuestion(q){
@@ -1069,36 +1073,21 @@ function ensureState(){
   s.history ??= []; // {date, lesson, mode, total, correct, topicStats}
   s.topicPerf ??= {}; // lesson -> topic -> {correct,total}
   s.ai ??= { provider: "hf", token: "", model: HF_MODEL_DEFAULT };
+  s.aiFingerprints ??= [];
   return s;
 }
 
-function loadFingerprints(){
-  const s = ensureState();
-  const stored = Array.isArray(s.ai?.fingerprints) ? s.ai.fingerprints : [];
-  App.fingerprints = new Set(stored);
+function loadFingerprintSet(){
+  const state = ensureState();
+  return new Set(state.aiFingerprints || []);
 }
 
-function persistFingerprints(){
-  const s = ensureState();
-  s.ai ??= { provider: "hf", token: "", model: HF_MODEL_DEFAULT };
-  const arr = Array.from(App.fingerprints).slice(-6000);
-  s.ai.fingerprints = arr;
-  saveState(s);
-}
-
-function seedFingerprintsFromBanks(banks){
-  let added = 0;
-  Object.values(banks || {}).forEach(list => {
-    (list || []).forEach(q => {
-      const fp = computeFingerprint(q);
-      if (!fp) return;
-      if (!App.fingerprints.has(fp)) {
-        App.fingerprints.add(fp);
-        added++;
-      }
-    });
-  });
-  if (added) persistFingerprints();
+function persistFingerprintSet(set){
+  const state = ensureState();
+  const arr = Array.from(set || []);
+  // limit to last 8000 fingerprint
+  state.aiFingerprints = arr.slice(-8000);
+  saveState(state);
 }
 
 function addXP(state, amount){
@@ -1148,7 +1137,7 @@ const App = {
   currentTest:null,
   voice:{ rec:null, enabled:false },
   ttsEnabled:false,
-  fingerprints:new Set(),
+  fingerprints: loadFingerprintSet(),
 };
 
 // ---------- UI wiring ----------
@@ -1499,6 +1488,95 @@ function goHome(){
   setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
 }
 
+function renderDiagnostics(){
+  const panel = $("diagPanel");
+  const list = $("diagList");
+  if (!panel || !list) return;
+  panel.hidden = Diagnostics.entries.length === 0;
+  list.innerHTML = Diagnostics.entries.map((e)=>{
+    const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
+    return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
+  }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function togglePlanCta(show){
+  const box = $("planCta");
+  if (!box) return;
+  box.hidden = !show;
+  if (show){
+    $("btnPlanStart")?.focus();
+  }
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
 function setMode(mode){
   App.mode = mode;
   document.querySelectorAll(".mode-btn").forEach(b=>{
@@ -1672,6 +1750,18 @@ async function fetchJSON(path){
   }
 }
 
+function rebuildFingerprints(banks){
+  const set = new Set(App.fingerprints || loadFingerprintSet());
+  for (const list of Object.values(banks || {})){
+    (list||[]).forEach(q => {
+      const fp = fingerprintQuestion(q);
+      if (fp) set.add(fp);
+    });
+  }
+  App.fingerprints = set;
+  persistFingerprintSet(set);
+}
+
 async function loadAllBanks(){
   setNotice("Soru paketleri yükleniyor…", "info");
   const banks = {};
@@ -1691,7 +1781,7 @@ async function loadAllBanks(){
 
   await Promise.all(jobs);
   App.allBanks = banks;
-  seedFingerprintsFromBanks(banks);
+  rebuildFingerprints(banks);
 
    renderLessonIcons(App.mode);
 
@@ -2272,7 +2362,8 @@ async function startTest(){
     if (!Object.keys(App.allBanks||{}).length) await loadAllBanks();
   }catch{ return; }
 
-  hideQuickStartCTA();
+  togglePlanCta(false);
+  $("btnStart")?.classList.remove("pulse");
 
   const mode = App.mode;
   // App.lesson her zaman ikonlar ve açılır liste ile senkron tutuluyor;
@@ -2300,6 +2391,11 @@ function quick2hPlan(){
   setMode("gkgy");
   $("goal").value = "mastery";
   $("difficulty").value = "auto";
+  $("countInput").value = "120";
+  togglePlanCta(true);
+  const start = $("btnStart");
+  start?.classList.add("pulse");
+  start?.scrollIntoView({ behavior:"smooth", block:"center" });
   setNotice("2 saat plan: GK-GY karışık + zayıf konulara ağırlık. Başlat’a bas.", "info");
   showQuickStartCTA();
 }
@@ -2370,11 +2466,11 @@ async function handleAIExam(type){
       console.warn(e);
       setNotice(`${lesson} için Hugging Face üretimi kısmen başarısız: ${e.message}`, "error");
     }
-    let stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)");
-    if (stamped.length < n){
-      const fallback = injectAIQuestions(lesson, n - stamped.length);
-      stamped = stamped.concat(fallback);
+    if (batch.length < n){
+      const fallback = injectAIQuestions(lesson, n - batch.length);
+      batch.push(...fallback);
     }
+    const stamped = appendQuestions(lesson, batch, batch[0]?.kaynak?.includes("Hugging") ? "AI (internet)" : "AI (ücretsiz yerel)", n);
     stamped.forEach(q=> created.push({ ...q, lesson }));
   }
 
@@ -2413,18 +2509,16 @@ async function handleAIGenerate(){
   let fresh = [];
   if (provider === "hf"){
     try{
-      const onlineQs = await fetchHuggingFaceAI(lesson, count + 2, { topicPlan: planTopicsForLesson(lesson, count + 2), temperature: 0.85, top_p: 0.92 });
-      fresh = appendQuestions(lesson, onlineQs, "AI (Hugging Face internet)");
+      const onlineQs = await fetchHuggingFaceAI(lesson, count);
+      fresh = appendQuestions(lesson, onlineQs, "AI (Hugging Face internet)", count);
     }catch(e){
       console.warn(e);
       setNotice("İnternet AI üretimi başarısız: " + e.message + " · yerel üreticiye düşülüyor", "error");
     }
   }
 
-  if (fresh.length < count){
-    const need = count - fresh.length;
-    const fallback = injectAIQuestions(lesson, need);
-    fresh = fresh.concat(fallback);
+  if (!fresh.length){
+    fresh = injectAIQuestions(lesson, count);
   }
 
   const total = App.allBanks[lesson]?.length || 0;
@@ -2453,7 +2547,6 @@ async function installPWA(){
 }
 
 async function init(){
-  loadFingerprints();
   fillLessonSelect();
   syncAIForm();
   setMode("single");
@@ -2475,6 +2568,8 @@ async function init(){
 
   $("btnStart").addEventListener("click", startTest);
   $("btnQuick10").addEventListener("click", quick2hPlan);
+  $("btnPlanStart")?.addEventListener("click", startTest);
+  $("btnPlanDismiss")?.addEventListener("click", ()=>{ togglePlanCta(false); $("btnStart")?.classList.remove("pulse"); });
   $("btnUpdate").addEventListener("click", checkUpdates);
   $("btnHome").addEventListener("click", goHome);
   $("btnAiGenerate")?.addEventListener("click", ()=> handleAIGenerate());
