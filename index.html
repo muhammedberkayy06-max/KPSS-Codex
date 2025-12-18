@@ -191,11 +191,11 @@
         <div class="field">
           <label for="aiProvider">Üretici</label>
           <select id="aiProvider" class="w-full">
-            <option value="local" selected>Yerel (offline, ücretsiz)</option>
-            <option value="ollama">Ollama (localhost, ücretsiz)</option>
+            <option value="ollama">Ollama (lokal, ücretsiz)</option>
             <option value="hf">Hugging Face (ücretsiz, internet)</option>
+            <option value="local">Yerel (offline şablon)</option>
           </select>
-          <p class="hint">Varsayılan yerel üretici ücretsizdir; Ollama seçersen localhost'ta çalışan modeli kullanır.</p>
+          <p class="hint">Varsayılan: Ollama (lokal). Hugging Face seçildiğinde community/free endpoint kullanılır.</p>
         </div>
         <div class="field">
           <label for="hfToken">HF Token (opsiyonel)</label>
@@ -207,10 +207,26 @@
           <input id="hfModel" type="text" class="w-full" value="HuggingFaceH4/zephyr-7b-beta">
           <p class="hint">Topik listesine göre JSON dönen üretim ister. Dilersen başka ücretsiz modeli yazabilirsin.</p>
         </div>
+      </div>
+
+      <div class="grid gap-4 md:grid-cols-3">
         <div class="field">
           <label for="ollamaUrl">Ollama URL</label>
           <input id="ollamaUrl" type="text" class="w-full" value="http://localhost:11434">
-          <p class="hint">Ollama çalışıyorsa bu URL üzerinden ücretsiz ve güçlü yerel üretim yapılır.</p>
+          <p class="hint">Lokal ücretsiz kullanım: <code>ollama run mistral</code> sonrası bu adresle bağlanır.</p>
+        </div>
+        <div class="field">
+          <label for="ollamaModel">Ollama Model</label>
+          <input id="ollamaModel" type="text" class="w-full" value="mistral">
+          <p class="hint">Donanımına göre farklı modeli yazabilirsin (örn. <code>mistral:instruct</code>).</p>
+        </div>
+        <div class="field">
+          <label for="aiTemp">Sıcaklık / Top P</label>
+          <div class="grid grid-cols-2 gap-2">
+            <input id="aiTemp" type="number" step="0.05" min="0.1" max="1.2" value="0.78" class="w-full">
+            <input id="aiTopP" type="number" step="0.05" min="0.1" max="1" value="0.9" class="w-full">
+          </div>
+          <p class="hint">Çeşitlilik ve benzersizlik için ayarlanabilir. Ollama/HF ikisi de okur.</p>
         </div>
       </div>
     </section>
