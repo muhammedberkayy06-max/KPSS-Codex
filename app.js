@@ -3,7 +3,7 @@
    - Offline için sw.js cache'ler
 */
 
-const APP_VERSION = "v19";
+const APP_VERSION = "v17";
 
 const Diagnostics = { entries: [] };
 
@@ -570,39 +570,22 @@ function typesetMath(root){
   }catch(e){ console.warn(e); }
 }
 
-function openExamWindowShell(title, subtitle, jobId){
-  const id = jobId || `exam-${Date.now()}`;
-  updateExamJob(id, { id, title, subtitle, status: "pending" });
-
-  const examStyleInline = examDocStyle();
-
-  const loaderScript = [
-    `const JOB_ID = ${JSON.stringify(id)};`,
-    `const STORE_KEY = ${JSON.stringify(EXAM_JOB_STORE_KEY)};`,
-    "function escapeHTML(str){ return (str==null?'':String(str)).replace(/[&<>\"']/g, ch=>({ '&':'&amp;','<':'&lt;','>':'&gt;','\\\"':'&quot;','\'':'&#39;' }[ch])); }",
-    "function renderJob(job){ if(!job || job.status!=='ready' || !Array.isArray(job.questions)) return;",
-    "  const list = job.questions.map((q,i)=>{ const opts=(q.options||[]).map((o,idx)=>'<li><strong>'+String.fromCharCode(65+idx)+'.</strong> '+escapeHTML(o)+'</li>').join(''); const ans=q.correctIndex||0; const para=q.paragraf ? '<p class\\\"para\\\">'+escapeHTML(q.paragraf)+'</p>' : ''; const meta=escapeHTML(q.lesson||'Ders'); return '<article class\\\"item\\\"><div class\\\"meta\\\">'+(i+1)+'. '+meta+' · '+escapeHTML(q.konu||'Konu')+' · Kaynak: '+escapeHTML(q.kaynak||'AI')+'</div><h3>'+escapeHTML(q.soru||'Soru')+'</h3>'+para+'<ol>'+opts+'</ol><div class\\\"exp\\\"><strong>Cevap:</strong> '+String.fromCharCode(65+ans)+' · '+escapeHTML(q.explain||'')+'</div></article>'; }).join('');",
-    `  const html = '<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>'+escapeHTML(job.title||'Deneme')+'</title><style>${examStyleInline}</style></head><body><h1>'+escapeHTML(job.title||'Deneme')+'</h1><div class="sub">'+escapeHTML(job.subtitle||'AI deneme sınavı')+'</div><div class="row"><div class="pill">'+job.questions.length+' soru</div><button onclick="window.print()">🖨️ Yazdır / PDF</button></div><div class="bar"></div><div class="grid">'+list+'</div><p class="hint">Yükleme tamamlandı. Sorular benzersizlik filtresi ve '+escapeHTML(job.provider||'AI')+' kaynağıyla üretildi.</p></body></html>';`,
-    "  document.open(); document.write(html); document.close(); }",
-    "function readJob(){ try{ const all=JSON.parse(localStorage.getItem(STORE_KEY)||'{}'); return all && all[JOB_ID]; }catch{return null;} }",
-    "function tick(){ const job = readJob(); if (job && job.status==='ready'){ renderJob(job); return; } setTimeout(tick, 800); }",
-    "window.addEventListener('message', (ev)=>{ const data = ev.data || {}; if(data.type==='exam-ready' && data.jobId===JOB_ID){ try{ const store = JSON.parse(localStorage.getItem(STORE_KEY)||'{}'); store[JOB_ID] = data.payload || data.job || {}; localStorage.setItem(STORE_KEY, JSON.stringify(store)); }catch(e){} renderJob(data.payload || data.job); }});",
-    "tick();",
-  ].join("\n");
-
+function openExamWindowShell(title, subtitle){
   const shellHTML = `<!doctype html><html lang="tr"><head><meta charset="utf-8"><title>${escapeHTML(title)}</title>
-  <style>${loaderStyle()}</style></head><body>
+  <style>
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}
+    .box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:480px;margin:60px auto;text-align:center;}
+    h1{margin:0 0 8px;font-size:20px;font-weight:800;}
+    p{margin:0;color:#475569;}
+  </style></head><body>
     <div class="box">
-      <div class="spinner"></div>
       <h1>${escapeHTML(title)}</h1>
       <p>${escapeHTML(subtitle || "Hazırlanıyor…")}</p>
-      <p style="margin-top:8px;">Sekme otomatik güncellenecek.</p>
+      <p>Yeni sekme açıldıysa lütfen bekleyin.</p>
     </div>
-    <script>${loaderScript}</script>
   </body></html>`;
 
-  const url = `${location.origin}${location.pathname}#${encodeURIComponent(id)}`;
-  const w = window.open(url, `exam-shell-${id}`, "noopener");
+  const w = window.open("", "exam-shell", "noopener");
   if (!w){
     setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
     return null;
@@ -610,21 +593,18 @@ function openExamWindowShell(title, subtitle, jobId){
   w.document.open();
   w.document.write(shellHTML);
   w.document.close();
-  try { w.history.replaceState(null, "", url); } catch (e){ /* ignore */ }
-  App.examWindows[id] = w;
+  try {
+    w.history.replaceState(null, "", `${location.origin}${location.pathname}#exam-shell`);
+  } catch (e){ /* history replace can fail on some browsers */ }
   return w;
 }
 
-function loaderStyle(){
-  return "body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}h1{margin:0 0 8px;font-size:20px;font-weight:800;}p{margin:0;color:#475569;}.box{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);max-width:520px;margin:60px auto;text-align:center;}.spinner{width:40px;height:40px;border-radius:50%;border:4px solid #e2e8f0;border-top-color:#0ea5e9;margin:16px auto;animation:spin 1s linear infinite;}@keyframes spin{to{transform:rotate(360deg);}}";
-}
-
-function examDocStyle(){
-  return "body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:24px;}h1{font-size:24px;margin:0 0 4px;font-weight:800;}.sub{color:#475569;margin-bottom:16px;}.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}.item{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:16px;box-shadow:0 12px 30px rgba(15,23,42,0.08);}.item h3{margin:8px 0 6px;font-size:17px;}.para{background:#f8fafc;padding:10px;border-radius:12px;margin:6px 0;font-size:14px;}.meta{font-size:13px;color:#475569;margin-bottom:6px;}ol{padding-left:16px;margin:8px 0;}ol li{margin:4px 0;padding:4px 0;font-size:15px;}.exp{margin-top:8px;font-size:14px;color:#0f172a;}.bar{height:12px;border-radius:999px;background:linear-gradient(90deg,#0ea5e9,#a855f7);margin:12px 0;}.hint{font-size:13px;color:#475569;}.row{display:flex;gap:8px;align-items:center;margin:12px 0;flex-wrap:wrap;}.pill{padding:6px 12px;border-radius:999px;background:rgba(14,165,233,0.1);color:#0ea5e9;font-weight:700;font-size:13px;}button{border:none;background:#0ea5e9;color:white;border-radius:10px;padding:10px 14px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(14,165,233,0.35);}button:hover{transform:translateY(-1px);}button:active{transform:translateY(0);}";
-}
-
-function buildExamDocument(job){
-  const questions = job.questions || [];
+function renderExamWindow(title, questions, subtitle, existingWin){
+  const w = existingWin || window.open(`${location.origin}${location.pathname}#exam-shell`, "exam-shell");
+  if (!w){
+    setNotice("Tarayıcı yeni sekmeyi engelledi. Pop-up izni verip tekrar dene.", "error");
+    return null;
+  }
   const list = questions.map((q, i)=>{
     const lesson = q.lesson || inferLesson(q);
     const opts = (q.options||[]).map((opt, idx)=>`<li><strong>${String.fromCharCode(65+idx)}.</strong> ${escapeHTML(opt)}</li>`).join("");
@@ -1964,6 +1944,109 @@ function renderDiagnostics(){
     const detail = e.detail ? `<div class="diag-meta">${escapeHTML(e.detail)}</div>` : "";
     return `<li><div class="diag-title">${escapeHTML(e.scope)} · ${escapeHTML(e.message)}</div><div class="diag-meta">${escapeHTML(e.time)} · ${escapeHTML(e.kind)}</div>${detail}</li>`;
   }).join("");
+}
+
+function recordError(scope, message, opts={}){
+  Diagnostics.entries.unshift({
+    time: now(),
+    scope,
+    message: message || "Hata",
+    detail: opts.detail || "",
+    kind: opts.kind || "error",
+  });
+  if (Diagnostics.entries.length > 80) Diagnostics.entries.pop();
+  renderDiagnostics();
+}
+
+function clearDiagnostics(){
+  Diagnostics.entries = [];
+  renderDiagnostics();
+}
+
+function exportDiagnostics(){
+  const payload = Diagnostics.entries.map(e => ({...e}));
+  const blob = new Blob([JSON.stringify({ exportedAt: now(), entries: payload }, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `kpss-diagnostics-${Date.now()}.json`;
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(url), 2000);
+}
+
+function updateStats(totalProvided){
+  const lessonCount = Object.keys(App.allBanks || {}).length || Object.keys(FILES).length;
+  const total = totalProvided ?? Object.values(App.allBanks||{}).reduce((a,b)=> a + (b?.length||0), 0);
+  const qs = $("statQuestions");
+  const ls = $("statLessons");
+  const v = $("statVersion");
+  if (qs) qs.textContent = total ? `${total}` : "–";
+  if (ls) ls.textContent = `${lessonCount}`;
+  if (v) v.textContent = APP_VERSION;
+}
+
+function showAlert(msg){
+  const box = $("alertBox");
+  const txt = $("alertText");
+  if (!msg){
+    box.hidden = true;
+    return;
+  }
+  txt.textContent = msg;
+  box.hidden = false;
+}
+
+function togglePlanCta(show){
+  const box = $("planCta");
+  if (!box) return;
+  box.hidden = !show;
+  if (show){
+    $("btnPlanStart")?.focus();
+  }
+}
+
+function syncAIForm(){
+  const state = ensureState();
+  const provider = state.ai?.provider || "hf";
+  const token = state.ai?.token || "";
+  const model = state.ai?.model || HF_MODEL_DEFAULT;
+  const sel = $("aiProvider");
+  if (sel) sel.value = provider;
+  const t = $("hfToken");
+  if (t) t.value = token;
+  const m = $("hfModel");
+  if (m) m.value = model;
+}
+
+function goHome(){
+  setView("setup");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  setNotice("Başlangıç ekranına döndün. Yeni testi başlatabilirsin.", "info");
+}
+
+function setMode(mode){
+  App.mode = mode;
+  document.querySelectorAll(".mode-btn").forEach(b=>{
+    b.classList.toggle("active", b.dataset.mode===mode);
+  });
+
+  const showLesson = (mode === "single");
+  $("fieldLesson").hidden = !showLesson;
+
+  if (mode === "gkgy"){
+    $("countInput").value = Object.values(GK_GY_DISTRIBUTION).reduce((a,b)=>a+b,0);
+    $("countInput").disabled = true;
+    $("countHint").textContent = "GK-GY: Türkçe 30, Matematik 30, Tarih 27, Coğrafya 18, Vatandaşlık 9 (toplam 114).";
+  } else if (mode === "a"){
+    $("countInput").value = 200;
+    $("countInput").disabled = true;
+    $("countHint").textContent = "A Grubu deneme: 5 ders x 40 = 200 soru (maraton).";
+  } else {
+    $("countInput").disabled = false;
+    $("countHint").textContent = "Tek ders pratik: 5-300 arası seçebilirsin.";
+  }
+
+  syncLessonUI(mode);
 }
 
 function recordError(scope, message, opts={}){
