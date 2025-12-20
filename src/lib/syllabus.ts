@@ -60,6 +60,15 @@ export const gkGyCourses: SyllabusCourse[] = [
       { topic: 'Yargı', weight: 2 },
       { topic: 'Temel Haklar', weight: 3 }
     ]
+  },
+  {
+    ders: 'Güncel Bilgi',
+    topics: [
+      { topic: 'Güncel Olaylar', weight: 2 },
+      { topic: 'Türkiye Gündemi', weight: 2 },
+      { topic: 'Dünya Gündemi', weight: 1 },
+      { topic: 'Kültür-Sanat', weight: 1 }
+    ]
   }
 ];
 
@@ -90,33 +99,33 @@ export const aGrubuCourses: SyllabusCourse[] = [
     ]
   },
   {
-    ders: 'Maliye',
+    ders: 'Çalışma Eko',
     topics: [
-      { topic: 'Kamu Maliyesi', weight: 1 },
-      { topic: 'Vergi Hukuku', weight: 1 },
-      { topic: 'Bütçe', weight: 1 },
-      { topic: 'Kamu Harcamaları', weight: 1 },
-      { topic: 'Maliye Politikası', weight: 1 }
+      { topic: 'İş Hukuku Temelleri', weight: 1 },
+      { topic: 'Sosyal Güvenlik', weight: 1 },
+      { topic: 'Çalışma Ekonomisi', weight: 1 },
+      { topic: 'Endüstri İlişkileri', weight: 1 },
+      { topic: 'İstihdam Politikaları', weight: 1 }
     ]
   },
   {
-    ders: 'Muhasebe',
+    ders: 'Kamu Yön',
     topics: [
-      { topic: 'Genel Muhasebe', weight: 1 },
-      { topic: 'Maliyet Muhasebesi', weight: 1 },
-      { topic: 'Finansal Tablolar', weight: 1 },
-      { topic: 'Envanter', weight: 1 },
-      { topic: 'Şirket Muhasebesi', weight: 1 }
+      { topic: 'Yönetim Bilimi', weight: 1 },
+      { topic: 'Siyaset Bilimi', weight: 1 },
+      { topic: 'Kamu Politikası', weight: 1 },
+      { topic: 'Kamu Yönetimi', weight: 1 },
+      { topic: 'Yerel Yönetimler', weight: 1 }
     ]
   },
   {
-    ders: 'İşletme',
+    ders: 'Uluslararası İlişkiler',
     topics: [
-      { topic: 'Yönetim ve Organizasyon', weight: 1 },
-      { topic: 'Pazarlama', weight: 1 },
-      { topic: 'Üretim Yönetimi', weight: 1 },
-      { topic: 'Finansman', weight: 1 },
-      { topic: 'İnsan Kaynakları', weight: 1 }
+      { topic: 'Uluslararası Hukuk', weight: 1 },
+      { topic: 'Türk Dış Politikası', weight: 1 },
+      { topic: 'Uluslararası Örgütler', weight: 1 },
+      { topic: 'Güvenlik Çalışmaları', weight: 1 },
+      { topic: 'Küresel Siyaset', weight: 1 }
     ]
   }
 ];

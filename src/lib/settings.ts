@@ -19,7 +19,7 @@ const SETTINGS_KEY = 'kpss-settings';
 
 export const defaultSettings: AppSettings = {
   apiKey: null,
-  model: 'mistralai/Mistral-7B-Instruct-v0.2',
+  model: 'meta-llama/Meta-Llama-3-8B-Instruct',
   difficulty: {
     kolay: 25,
     orta: 55,
