@@ -11,8 +11,33 @@ if (!root) {
   throw new Error('Root element not found');
 }
 
-registerSW({
-  immediate: true
+const cleanupLegacyServiceWorker = async () => {
+  if (!('serviceWorker' in navigator)) {
+    return;
+  }
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  await Promise.all(
+    registrations.map((registration) => {
+      if (registration.active?.scriptURL.endsWith('/sw.js')) {
+        return registration.unregister();
+      }
+      return Promise.resolve(false);
+    })
+  );
+  if ('caches' in window) {
+    const keys = await caches.keys();
+    await Promise.all(
+      keys
+        .filter((key) => key.startsWith('kpss-ultimate'))
+        .map((key) => caches.delete(key))
+    );
+  }
+};
+
+cleanupLegacyServiceWorker().finally(() => {
+  registerSW({
+    immediate: true
+  });
 });
 
 ReactDOM.createRoot(root).render(
