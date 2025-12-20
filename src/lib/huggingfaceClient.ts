@@ -2,7 +2,7 @@ import { questionListSchema, Question } from '../types/question';
 
 export type HFClientOptions = {
   apiKey: string;
-  model: string;
+  model?: string;
   timeoutMs?: number;
 };
 
@@ -12,6 +12,7 @@ export type HFError = {
 };
 
 const DEFAULT_TIMEOUT = 30000;
+const DEFAULT_MODEL = 'meta-llama/Meta-Llama-3-8B-Instruct';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -31,14 +32,36 @@ const withTimeout = async <T>(promise: Promise<T>, timeoutMs: number): Promise<T
   }
 };
 
-const parseJsonFromResponse = (raw: string): unknown => {
+const extractJsonCandidate = (raw: string): string => {
   const trimmed = raw.trim();
+  const fencedMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fencedMatch?.[1]) {
+    return fencedMatch[1].trim();
+  }
+  return trimmed;
+};
+
+const extractJsonBlock = (raw: string): string | null => {
+  const text = extractJsonCandidate(raw);
+  const firstBrace = text.search(/[\[{]/);
+  if (firstBrace === -1) {
+    return null;
+  }
+  const lastBrace = Math.max(text.lastIndexOf('}'), text.lastIndexOf(']'));
+  if (lastBrace === -1 || lastBrace <= firstBrace) {
+    return null;
+  }
+  return text.slice(firstBrace, lastBrace + 1).trim();
+};
+
+const parseJsonFromResponse = (raw: string): unknown => {
+  const candidate = extractJsonCandidate(raw);
   try {
-    return JSON.parse(trimmed);
+    return JSON.parse(candidate);
   } catch (error) {
-    const match = trimmed.match(/\{[\s\S]*\}/);
-    if (match) {
-      return JSON.parse(match[0]);
+    const block = extractJsonBlock(raw);
+    if (block) {
+      return JSON.parse(block);
     }
     throw error;
   }
@@ -46,7 +69,7 @@ const parseJsonFromResponse = (raw: string): unknown => {
 
 export const requestHF = async (
   prompt: string,
-  { apiKey, model, timeoutMs = DEFAULT_TIMEOUT }: HFClientOptions
+  { apiKey, model = DEFAULT_MODEL, timeoutMs = DEFAULT_TIMEOUT }: HFClientOptions
 ): Promise<Question[]> => {
   const endpoint = `https://api-inference.huggingface.co/models/${model}`;
   const body = JSON.stringify({
@@ -113,7 +136,7 @@ export const requestHF = async (
 
 export const testApiKey = async (options: HFClientOptions): Promise<void> => {
   const testPrompt = `Sadece JSON döndür. Markdown yok. {"ping":"ok"}`;
-  const endpoint = `https://api-inference.huggingface.co/models/${options.model}`;
+  const endpoint = `https://api-inference.huggingface.co/models/${options.model ?? DEFAULT_MODEL}`;
   const response = await withTimeout(
     fetch(endpoint, {
       method: 'POST',

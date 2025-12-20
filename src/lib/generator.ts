@@ -163,7 +163,8 @@ export const generateExam = async (
       Matematik: 30,
       Tarih: 27,
       Coğrafya: 18,
-      Vatandaşlık: 15
+      Vatandaşlık: 9,
+      'Güncel Bilgi': 6
     };
 
     let progressOffset = 0;
