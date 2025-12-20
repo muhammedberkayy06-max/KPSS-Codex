@@ -1307,7 +1307,7 @@ function updateStreak(state){
 }
 
 // ---------- app state ----------
-const App = {
+var App = window.App || {
   mode:"single",
   lesson:"Matematik",
   allBanks:{}, // lesson -> questions[]
@@ -1318,6 +1318,7 @@ const App = {
   ttsEnabled:false,
   fingerprints: loadFingerprintSet(),
   canonicals: loadCanonicalCorpus(),
+  examWindows:{},
 };
 
 // ---------- UI wiring ----------
@@ -2389,19 +2390,6 @@ function showAlert(msg){
   txt.textContent = msg;
   box.hidden = false;
 }
-
-// ---------- app state ----------
-const App = {
-  mode:"single",
-  lesson:"Matematik",
-  allBanks:{}, // lesson -> questions[]
-  currentTest:null,
-  voice:{ rec:null, enabled:false },
-  ttsEnabled:false,
-  fingerprints: loadFingerprintSet(),
-  canonicals: loadCanonicalCorpus(),
-  examWindows:{},
-};
 
 function syncAIForm(){
   const state = ensureState();
