@@ -1307,7 +1307,7 @@ function updateStreak(state){
 }
 
 // ---------- app state ----------
-const App = {
+var App = window.App || {
   mode:"single",
   lesson:"Matematik",
   allBanks:{}, // lesson -> questions[]
